@@ -4,8 +4,6 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a chart object in a workbook.
 
-## Properties
-
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |height|double|Represents the height, in points, of the chart object.|
@@ -31,6 +29,7 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes the chart object.|
+|[getImage(width?: number, height?: number)](#getimagewidth-number-height-number)|string|Return a chart as a base64 string.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[setData(sourceData: Range or string, seriesBy: string)](#setdatasourcedata-range-or-string-seriesby-string)|void|Resets the source data for the chart.|
 |[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|
@@ -57,12 +56,28 @@ Excel.run(function (ctx) {
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.delete();
 	return ctx.sync(); 
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+}); 
+```
+### getImage(width?: number, height?: number)
+Return a chart as a base64 string.
+
+#### Syntax
+```js
+chartObject.getImage(width, height);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|width|number|Optional. The width of the output image in pixels. Default is the width of the original chart.|
+|height|number|Optional. The height of the output image in pixels. Default is the height of the original chart. |
+
+#### Returns
+string
+
+#### Examples
+```js
+
 ```
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -79,6 +94,11 @@ object.load(param);
 
 #### Returns
 void
+
+#### Examples
+```js
+
+```
 ### setData(sourceData: Range or string, seriesBy: string)
 Resets the source data for the chart.
 
@@ -106,12 +126,7 @@ Excel.run(function (ctx) {
 	var sourceData = "A1:B4";
 	chart.setData(sourceData, "Columns");
 	return ctx.sync(); 
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+}); 
 ```
 
 ### setPosition(startCell: Range or string, endCell: Range or string)
@@ -143,12 +158,7 @@ Excel.run(function (ctx) {
 	chart.height = 300;
 	chart.setPosition("C2", null);
 	return ctx.sync(); 
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+}); 
 ```
 
 ### Property access examples
@@ -160,13 +170,8 @@ Excel.run(function (ctx) {
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.load('name');
 	return ctx.sync().then(function() {
-			console.log(chart.name);
+			Console.log(chart.name);
 	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
 });
 ```
 
@@ -181,12 +186,7 @@ Excel.run(function (ctx) {
 	chart.height = 200;
 	chart.weight = 200;
 	return ctx.sync(); 
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+}); 
 ```
 
 Rename the chart to new name, resize the chart to 200 points in both height and weight. Move Chart1 to 100 points to the top and left. 
@@ -200,10 +200,5 @@ Excel.run(function (ctx) {
 	chart.height =200;
 	chart.width =200;
 	return ctx.sync(); 
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+}); 
 ```

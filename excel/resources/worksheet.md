@@ -4,14 +4,12 @@ _Applies to: Excel 2016, Office 2016_
 
 An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
-## Properties
-
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|
 |name|string|The display name of the worksheet.|
 |position|int|The zero-based position of the worksheet within the workbook.|
-|visibility|string|The Visibility of the worksheet, Read-only. Possible values are: Visible, Hidden, VeryHidden.|
+|visibility|string|The Visibility of the worksheet, Possible values are: Visible, Hidden, VeryHidden.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -56,13 +54,8 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	worksheet.activate();
 	return ctx.sync(); 
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+	}); 
+}); 
 ```
 
 ### delete()
@@ -87,13 +80,8 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	worksheet.delete();
 	return ctx.sync(); 
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+	}); 
+}); 
 ```
 
 ### getCell(row: number, column: number)
@@ -121,15 +109,10 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var cell = worksheet.getCell(0,0);
-	cell.load('address');
+	cell.load(address);
 	return ctx.sync().then(function() {
-		console.log(cell.address);
+		Console.log(cell.address);
 	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
 });
 ```
 
@@ -158,15 +141,10 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	range.load('cellCount');
+	range.load(cellCount);
 	return ctx.sync().then(function() {
-		console.log(range.cellCount);
+		Console.log(range.cellCount);
 	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
 });
 ```
 
@@ -178,15 +156,10 @@ Excel.run(function (ctx) {
 	var sheetName = "Sheet1";
 	var rangeName = 'MyRange';
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeName);
-	range.load('address');
+	range.load(address);
 	return ctx.sync().then(function() {
-		console.log(range.address);
+		Console.log(range.address);
 	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
 });
 ```
 ### getUsedRange()
@@ -210,15 +183,10 @@ Excel.run(function (ctx) {
 	var wSheetName = 'Sheet1';
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	var usedRange = worksheet.getUsedRange();
-	usedRange.load('address');
+	usedRange.load(address);
 	return ctx.sync().then(function() {
-			console.log(usedRange.address);
+			Console.log(usedRange.address);
 	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
 });
 ```
 
@@ -237,6 +205,11 @@ object.load(param);
 
 #### Returns
 void
+
+#### Examples
+```js
+
+```
 ### Property access examples
 
 Get worksheet properties based on sheet name.
@@ -245,15 +218,9 @@ Get worksheet properties based on sheet name.
 Excel.run(function (ctx) { 
 	var wSheetName = 'Sheet1';
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-	worksheet.load('position')
 	return ctx.sync().then(function() {
-			console.log(worksheet.position);
+			Console.log(worksheet.index);
 	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
 });
 ```
 
@@ -263,13 +230,8 @@ Set worksheet position.
 Excel.run(function (ctx) { 
 	var wSheetName = 'Sheet1';
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-	worksheet.position = 2;
+	worksheet.position = 0;
 	return ctx.sync(); 
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
+}); 
 ```
 
