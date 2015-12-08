@@ -11,14 +11,12 @@ As indicated, this branch is holding the  API additions our team is working on r
 
 We are adding the following members:
 
-
-	```js
-		Range Body.GetChildRange(RangeOrigin rangeOrigin, int length);
-		Range ContentControl.GetChildRange(RangeOrigin rangeOrigin, int length);
-		Range Paragraph.GetChildRange(RangeOrigin rangeOrigin, int length);
-		Range Range.GetChildRange(RangeOrigin rangeOrigin, int length);
-	```
-
+```js
+	Range Body.GetChildRange(RangeOrigin rangeOrigin, int length);
+	Range ContentControl.GetChildRange(RangeOrigin rangeOrigin, int length);
+	Range Paragraph.GetChildRange(RangeOrigin rangeOrigin, int length);
+	Range Range.GetChildRange(RangeOrigin rangeOrigin, int length);
+```
 
 
 ###2. The capability of creating and openening a separate Word Document.
