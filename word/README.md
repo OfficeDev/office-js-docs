@@ -11,7 +11,7 @@ As indicated, this branch is holding the  API additions our team is working on r
 
 We are adding the following members:
 
-	__GetChildRange Functionality:__
+	**GetChildRange Functionality:**
 	```js
 		Range Body.GetChildRange(RangeOrigin rangeOrigin, int length);
 		Range ContentControl.GetChildRange(RangeOrigin rangeOrigin, int length);
@@ -19,20 +19,7 @@ We are adding the following members:
 		Range Range.GetChildRange(RangeOrigin rangeOrigin, int length);
 	```
 
-	**GetRanges Functionality:**
-	```js
-		RangeCollection Body.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars);
-		RangeCollection ContentControl.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeEop, [Optional] bool within);
-		RangeCollection Paragraph.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace);
-		RangeCollection Range.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars, [Optional] bool within);
-```
-	**Range Manipulation Functionality:**
-	```js
-		bool Range.HasRange(Range range, [Optional] bool isSubset);
-		void Range.ExpandTo(Range range);
-		void Range.Adjust(int startAdjust, int endAdjust);
 
-```
 
 ###2. The capability of creating and openening a separate Word Document.
 ###3. The ability to get and create Lists 
