@@ -7,7 +7,7 @@ This documentation is [published on MSDN](https://msdn.microsoft.com/EN-US/libra
 ## What's new
 As indicated, this branch is holding the  API additions our team is working on right now and we are planning to ship in the next few months.
 
-1. Granular access to ranges and range manipulation: We are adding the following members:
+###1. Granular access to ranges and range manipulation: We are adding the following members:
 
 
   
@@ -21,14 +21,14 @@ As indicated, this branch is holding the  API additions our team is working on r
 		Range Range.GetChildRange(RangeOrigin rangeOrigin, int length);
 	```
 
-	###GetRanges Functionality:
+	**GetRanges Functionality:**
 	```js
 		RangeCollection Body.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars);
 		RangeCollection ContentControl.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeEop, [Optional] bool within);
 		RangeCollection Paragraph.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace);
 		RangeCollection Range.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars, [Optional] bool within);
 ```
-	###Range Manipulation Functionality:
+	**###Range Manipulation Functionality:**
 	```js
 		bool Range.HasRange(Range range, [Optional] bool isSubset);
 		void Range.ExpandTo(Range range);
@@ -36,9 +36,9 @@ As indicated, this branch is holding the  API additions our team is working on r
 
 ```
 
-2. The capability of creating and openening a separate Word Document.
-3. The ability to get and create Lists 
-4. Strongly type objects to allow Table manipulation.
+###2. The capability of creating and openening a separate Word Document.
+###3. The ability to get and create Lists 
+###4. Strongly type objects to allow Table manipulation.
 
 ## Try it out
 
