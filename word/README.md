@@ -9,21 +9,25 @@ As indicated, this branch is holding the  API additions our team is working on r
 
 ###1. Granular access to ranges. 
 
-We are adding the following members to the body, contentControl, paragraph and range objects
-:
-**1.1 Granular Access to Ranges**
+We are adding the following members to the body, contentControl, paragraph and range objects:
+
 
 ```js
+//getting a child range.
 	Range Body.GetChildRange(RangeOrigin rangeOrigin, int length);
 	Range ContentControl.GetChildRange(RangeOrigin rangeOrigin, int length);
 	Range Paragraph.GetChildRange(RangeOrigin rangeOrigin, int length);
 	Range Range.GetChildRange(RangeOrigin rangeOrigin, int length);
+
+//granular access to ranges via delimiters...
 
 	RangeCollection Body.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars);
 	RangeCollection ContentControl.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeEop, [Optional] bool within);
 	RangeCollection Paragraph.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace);
 	RangeCollection Range.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars, [Optional] bool within);
 
+//other range capabilities, inclusion, expansion, adjustment...
+/
 	bool Range.HasRange(Range range, [Optional] bool isSubset);
 	void Range.ExpandTo(Range range);
 	void Range.Adjust(int startAdjust, int endAdjust);
