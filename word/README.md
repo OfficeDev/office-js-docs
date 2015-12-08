@@ -7,13 +7,12 @@ This documentation is [published on MSDN](https://msdn.microsoft.com/EN-US/libra
 ## What's new
 As indicated, this branch is holding the  API additions our team is working on right now and we are planning to ship in the next few months.
 
-###1. Granular access to ranges and range manipulation: We are adding the following members:
+###1. Granular access to ranges. 
 
+We are adding the following members:
 
-  
-
-
-	**GetChildRange Functionality:**
+	__GetChildRange Functionality:__
+	
 	```js
 		Range Body.GetChildRange(RangeOrigin rangeOrigin, int length);
 		Range ContentControl.GetChildRange(RangeOrigin rangeOrigin, int length);
