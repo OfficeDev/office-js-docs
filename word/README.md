@@ -13,7 +13,7 @@ As indicated, this branch is holding the  API additions our team is working on r
   
 
 
-	###GetChildRange Functionality:
+	**GetChildRange Functionality:**
 	```js
 		Range Body.GetChildRange(RangeOrigin rangeOrigin, int length);
 		Range ContentControl.GetChildRange(RangeOrigin rangeOrigin, int length);
