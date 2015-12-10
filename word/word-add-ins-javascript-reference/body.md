@@ -40,11 +40,55 @@ _See property access [examples.](#property-access-examples)_
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the body and navigates the Word UI to it. The selectionMode values can be 'Select', 'Start', or 'End'.|
 |[getChildRange(rangeOrigin: string, length: number)](#getchildrangerangeorigin-string-length-number) ![new](../media/new.jpg) | [Range](range.md) | Gets a range from the start/end of body to the number of specified positions. This method is useful to get the first or last characters in the body of the document. | 
-|[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool-excludeendingmarks-bool)![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of Ranges within the body of the document each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending marks|
+|[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool-excludeendingmarks-bool)![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of Ranges within the body of the document each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.|
+
 
 
 
 ## Method details
+
+### getChildRange(rangeOrigin: string, length: number)  ![new](../media/new.jpg)
+Gets a range from the start/end of body to the number of specified positions. This method is useful to get the first or last characters in the body of the document.
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|rangeOrigin|Type|rangeOrigin|Required. Indicates if the Range is to be retrieved from the start or from the end of the Body of the document. The value can be 'Start' or "End".|
+|length|InsertLocation|Required. The number of character positions to be included from the 'Start' or 'End'.|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+With the exception of line breaks, you can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes.  
+
+#### Examples
+```js
+// Run a batch operation against the Word object model.
+Word.run(function (ctx) {
+    
+    // Create a proxy object for the document body.
+    var body = ctx.document.body;
+    
+    // Queue a commmand to insert a page break at the start of the document body.
+    body.insertBreak(Word.BreakType.page, Word.InsertLocation.start);
+    
+    // Synchronize the document state by executing the queued commands, 
+    // and return a promise to indicate task completion.
+    return ctx.sync().then(function () {
+        console.log('Added a page break at the start of the document body.');
+    });  
+})
+.catch(function (error) {
+    console.log("Error: " + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
+
+
 
 ### clear()
 Clears the contents of the body object. The user can perform the undo operation on the cleared content.
