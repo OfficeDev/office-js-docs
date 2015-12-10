@@ -9,7 +9,7 @@ As indicated, this branch is holding the  API additions our team is working on r
 
 ###1. Granular access to ranges. 
 
-We are adding the following members to the [body](/word-add-ins-javascript-reference/body.md), contentControl, paragraph and range objects:
+We are adding the following members to the [body](/word/word-add-ins-javascript-reference/body.md), contentControl, paragraph and range objects:
 
 
 ```js
