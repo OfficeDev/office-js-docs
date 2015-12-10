@@ -40,6 +40,10 @@ _See property access [examples.](#property-access-examples)_
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the body and navigates the Word UI to it. The selectionMode values can be 'Select', 'Start', or 'End'.|
 |[getChildRange(rangeOrigin: string, length: number)](#getchildrangerangeorigin-string-length-number) ![new](../media/new.jpg) | [Range](range.md) | Gets a range from the start/end of body to the number of specified positions. This method is useful to get the first or last characters in the body of the document. | 
+|[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool-excludeendingmarks-bool)![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of Ranges within the body of the document each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending marks|
+
+
+
 ## Method details
 
 ### clear()
