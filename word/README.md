@@ -14,7 +14,7 @@ We are adding the following members to the [body](/word/word-add-ins-javascript-
 ```js
     
     // Get child range.
-    
+         
 	Range Body.GetChildRange(RangeOrigin rangeOrigin, int length);
 	Range ContentControl.GetChildRange(RangeOrigin rangeOrigin, int length);
 	Range Paragraph.GetChildRange(RangeOrigin rangeOrigin, int length);
