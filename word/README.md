@@ -22,8 +22,8 @@ We are adding the following members to the [body](/word/word-add-ins-javascript-
 
     // Granular access to ranges via delimiters.
 
-	RangeCollection Body.GetRanges(string[] delimiters, [Optional] bool excludeDelimiters, [Optional] bool excludeDelimiters, [Optional] bool trimWhite, [Optional] bool excludeEndingMarks); 
-	RangeCollection ContentControl.GetRanges(string[] delimiters, [Optional] bool excludeDelimiters, [Optional] bool trimWhite, [Optional] bool excludeEop, [Optional] bool within);
+	RangeCollection Body.GetRanges(string[] delimiters, [Optional] bool excludeDelimiters, [Optional] bool trimWhite, [Optional] bool excludeEndingMarks); 
+	RangeCollection ContentControl.GetRanges(string[] delimiters, [Optional] bool excludeDelimiters, [Optional] bool trimWhite, [Optional] bool excludeEndingMarks, [Optional] bool within);
 	RangeCollection Paragraph.GetRanges(string[] delimiters, [Optional] bool excludeDelimiters, [Optional] bool trimWhite);
 	RangeCollection Range.GetRanges(string[] delimiters, [Optional] bool excludeDelimiters, [Optional] bool trimWhite, [Optional] bool excludeEndingMarks, [Optional] bool within);
 
