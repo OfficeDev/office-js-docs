@@ -4,43 +4,47 @@ Welcome to the Word JavaScript API documentation repository. Here you'll find wh
 
 This documentation is [published on MSDN](https://msdn.microsoft.com/EN-US/library/office/mt616496.aspx). 
 
-## What's new
-As indicated, this branch is holding the  API additions our team is working on right now and we are planning to ship in the next few months.
+## What's new in the WordAPI 1.3 requirement set
+This branch contains the new APIs that our team is working on. We are plan to ship these changes in the next few months. This is a great time to give feedback on these APIs.
 
-###1. Granular access to ranges. 
+### 1. Granular access to [range](/word/word-add-ins-javascript-reference/range.md) objects. 
 
-We are adding the following members to the [body](/word/word-add-ins-javascript-reference/body.md), contentControl, paragraph and range objects:
-
+We are adding the following members to the [body](/word/word-add-ins-javascript-reference/body.md), [contentcontrol](/word/word-add-ins-javascript-reference/contentcontrol.md), [paragraph](/word/word-add-ins-javascript-reference/paragraph.md) and [range](/word/word-add-ins-javascript-reference/range.md) objects:
 
 ```js
-//getting a child range.
+    
+    // Get child range.
+    
 	Range Body.GetChildRange(RangeOrigin rangeOrigin, int length);
 	Range ContentControl.GetChildRange(RangeOrigin rangeOrigin, int length);
 	Range Paragraph.GetChildRange(RangeOrigin rangeOrigin, int length);
 	Range Range.GetChildRange(RangeOrigin rangeOrigin, int length);
 
-//granular access to ranges via delimiters...
+    // Granular access to ranges via delimiters.
 
 	RangeCollection Body.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars);
 	RangeCollection ContentControl.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeEop, [Optional] bool within);
 	RangeCollection Paragraph.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace);
 	RangeCollection Range.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars, [Optional] bool within);
 
-//other range capabilities, inclusion, expansion, adjustment...
+    // New range object features: range inclusion comparison, expansion, and range boundary adjustments.
 
-	bool Range.HasRange(Range range, [Optional] bool isSubset);
-	void Range.ExpandTo(Range range);
-	void Range.Adjust(int startAdjust, int endAdjust);
-
+	bool Range.HasRange(Range range, [Optional] bool isSubset); // Determine whether a range includes another range.
+	void Range.ExpandTo(Range range); // Expand a range to include the bounds of another range.
+	void Range.Adjust(int startAdjust, int endAdjust); // Adjust the start and end of the range by the specified number of characters. 
 
 ```
 
 
-###2. The capability of creating and openening a separate Word Document.
-###3. The ability to get and create Lists 
-###4. Strongly type objects to allow Table manipulation.
+### 2. Create and open a new Word Document. 
 
-## Try it out
+This feature enables you to create, change, open, and make changes to a Word document (.docx) before it is displayed in the Word UI.
+
+### 3. Strongly typed List objects.
+
+### 4. Strongly typed Table objects.
+
+## Try it out (only available for released features)
 
 We've been working on a Snippet Explorer to let you browse through common code snippets and learn how the new APIs work. Give it a try. The code snippets referenced by the Snippet Explorer are available [here](https://officesnippetexplorer.azurewebsites.net/#/snippets/word). 
 
