@@ -9,7 +9,7 @@ As indicated, this branch is holding the  API additions our team is working on r
 
 ###1. Granular access to ranges. 
 
-We are adding the following members to the body, contentControl, paragraph and range objects:
+We are adding the following members to the [body](/reference/body.md), contentControl, paragraph and range objects:
 
 
 ```js
@@ -27,7 +27,7 @@ We are adding the following members to the body, contentControl, paragraph and r
 	RangeCollection Range.GetRanges(string[] delimiters, [Optional] bool excludeDelimiter, [Optional] bool trimSpace, [Optional] bool excludeHiddenChars, [Optional] bool within);
 
 //other range capabilities, inclusion, expansion, adjustment...
-/
+
 	bool Range.HasRange(Range range, [Optional] bool isSubset);
 	void Range.ExpandTo(Range range);
 	void Range.Adjust(int startAdjust, int endAdjust);
