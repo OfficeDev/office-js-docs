@@ -82,7 +82,7 @@ Word.run(function (ctx) {
         console.log(JSON.stringify(error));
     });
 }); 
-
+```
 
 ### getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)  ![new](../media/new.jpg)
 Gets a collection of Ranges within the body of the document each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.
