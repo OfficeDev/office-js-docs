@@ -54,40 +54,34 @@ Gets a range from the start/end of body to the number of specified positions. Th
 | Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |rangeOrigin|Type|rangeOrigin|Required. Indicates if the Range is to be retrieved from the start or from the end of the Body of the document. The value can be 'Start' or "End".|
-|length|InsertLocation|Required. The number of character positions to be included from the 'Start' or 'End'.|
+|length|InsertLocation|Required. The number of character positions to be included from the 'Start' or 'End'. 0 is a valid option and will return a range representing the start/end of the document|
 
 #### Returns
 [Range](range.md)
 
 #### Additional details
-With the exception of line breaks, you can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes.  
+This method can be used to get the first or last charachter od the document as Ranges, for intance for formatting purposes. Can also be used to construct a range: developers can get the  body start/end ranges and expand the current range till there. This is useful, for instance, to build a range from the current selection till the end or start of the document.
 
 #### Examples
 ```js
-// Run a batch operation against the Word object model.
+// The following example gets the first 10 characters of the current selection.
 Word.run(function (ctx) {
-    
-    // Create a proxy object for the document body.
-    var body = ctx.document.body;
-    
-    // Queue a commmand to insert a page break at the start of the document body.
-    body.insertBreak(Word.BreakType.page, Word.InsertLocation.start);
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
+    var cc = ctx.document.getSelection();
+    ctx.load(cc);
+
     return ctx.sync().then(function () {
-        console.log('Added a page break at the start of the document body.');
-    });  
-})
-.catch(function (error) {
-    console.log("Error: " + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
-});
-```
+        var r = cc.getChildRange('Start', 10);
+        ctx.load(r);
 
-
+        return ctx.sync().then(function () {
+            console.log("r=[" + r.text + "]");
+        }).catch(function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+}); 
 
 
 ### clear()
