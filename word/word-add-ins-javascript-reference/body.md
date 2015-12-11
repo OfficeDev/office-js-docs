@@ -2,7 +2,7 @@
 
 Represents the body of a document or a section.
 
-_Applies to: Word 2016, Word for iPad_  _New members on this release tagged with this icon:_ ![new](../media/new.jpg)
+_Applies to: Word 2016, Word for iPad._  _New members on this release tagged with this icon:_ ![new](../media/new.jpg)
 
 ## Properties
 | Property	   | Type	|Description
