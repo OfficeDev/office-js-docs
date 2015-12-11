@@ -121,7 +121,8 @@ Word.run(function (ctx) {
     }).catch(function(error) {
         console.log(JSON.stringify(error));
     });
-}); 
+});
+```
 
 ### clear()
 Clears the contents of the body object. The user can perform the undo operation on the cleared content.
