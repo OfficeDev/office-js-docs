@@ -49,8 +49,88 @@ _See property access [examples.](#property-access-examples)_
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the content control. This causes Word to scroll to the selection. The selection mode can be 'Select', 'Start' or 'End'.|
+|[getChildRange(rangeOrigin: string, length: number)](#getchildrangerangeorigin-string-length-number) ![new](../media/new.jpg) | [Range](range.md) | Gets a range from the start/end of content control to the number of specified positions. This method is useful to get the first or last characters within the content control | 
+|[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool, within:bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool-excludeendingmarks-bool)![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of Ranges within the content control each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.|
 
 ## Method details
+
+### getChildRange(rangeOrigin: string, length: number)  ![new](../media/new.jpg)
+Gets a range from the start/end of content control to the number of specified positions. This method is useful to get the first or last characters within the content control.
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|rangeOrigin|rangeOrigin|Required. Indicates if the Range is to be retrieved from the start or from the end of the content control. The value can be 'Start' or "End".|
+|length|InsertLocation|Required. The number of character positions to be included from the 'Start' or 'End'. 0 is a valid option and will return a range representing the start/end of the content control|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+This method can be used to get the first or last character of the content control as Ranges, for instance for formatting purposes. Can also be used to construct a range: developers can get the  content control start/end ranges and expand the current range till there. This is useful, for instance, to build a range from the current selection till the end or start of the content control.
+
+#### Examples
+```js
+// The following example gets the first 10 characters of the current selection.
+Word.run(function (ctx) {
+    var cc = ctx.document.getSelection();
+    ctx.load(cc);
+
+    return ctx.sync().then(function () {
+        var r = cc.getChildRange('Start', 10);
+        ctx.load(r);
+
+        return ctx.sync().then(function () {
+            console.log("r=[" + r.text + "]");
+        }).catch(function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+}); 
+```
+
+### getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)  ![new](../media/new.jpg)
+Gets a collection of Ranges within the content control each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|delimiters|string[]|Required. Array of delimiters to be used to populate the resulting collection. Valid  delimiter examplese are " " (space) to get all the words in a given range, "." will get the sentences, etc.|
+|excludeDelimiters|bool|Optional. False by Default.  Indicates if the specified delimiters are to be included as individual range objects within the resulting Range collection.|
+|trimWhite|bool|Optional. False by Default.  Indicates if spaces, singles spaces or tabs, should be removed from the resulting ranges.|
+|excludeEndingMarks|bool|Optional. False by Default.  Indicates if invisible ending marks (such as end of paragraph, end of cell, end of table, line breaks) are to be included as individual ranges within the collection.|
+|within|bool|Optional. False by Default.  Indicates if the delimiters will be searched only within the content control boundaries (true) or if it expands outside of the content control boundary until delimiters are found top/down.|
+
+
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+The method will return text (as ranges) within the specified delimiters and if so applicable  within paragraphs, content controls and tables. Text within tables is retrieved cell by cell, left to right (RTL in some cultures) top-down.
+
+When endingMarks option is selected individual ending marks are returned as a single range and coded (i.e End Paragraph mark = '\r'). Supported ending marks: Paragraphs, end of cell and end of row and end of table.
+
+sub documents are not returned, this includes text within shapes, text boxes, comments, etc.
+
+#### Examples
+```js
+// The following exammple retrieves sentences with different ending delimiters.
+Word.run(function (ctx) {
+    var delim = [".", "?", ":", "!", "。"];
+    var s = ctx.document.body.getRanges(delim, false, true, false, false);
+    ctx.load(s);
+
+    return ctx.sync().then(function () {
+        for (var i = 0; i < s.items.length; i++)
+            console.log("[" + s.items[i].text + "]");
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+});
+```
 
 ### clear()
 Clears the contents of the content control. The user can perform the undo operation on the cleared content.

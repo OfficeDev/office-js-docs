@@ -85,7 +85,7 @@ Word.run(function (ctx) {
 ```
 
 ### getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)  ![new](../media/new.jpg)
-Gets a collection of Ranges within the body of the document each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.
+Gets a collection of Ranges within the body of the document each one within the specified delimiter(s) and either including or not the actual delimiters, blanks or ending mark.
 
 #### Parameters
 | Parameter    | Type   |Description|
@@ -103,7 +103,7 @@ Gets a collection of Ranges within the body of the document each one within the 
 #### Additional details
 The method will return text (as ranges) within the specified delimiters and if so applicable  within paragraphs, content controls and tables. Text within tables is retrieved cell by cell, left to right (RTL in some cultures) top-down.
 
-When endingMarks option is selected individual ending marks are return as a single range and coded (i.e End Paragraph mark = '\r'). Supported ending marks: Paragrpahs, end of cell and end of row and end of table.
+When endingMarks option is selected individual ending marks are returned as a single range and coded (i.e End Paragraph mark = '\r'). Supported ending marks: Paragraphs, end of cell and end of row and end of table.
 
 sub documents are not returned, this includes text within shapes, text boxes, comments, etc.
 
