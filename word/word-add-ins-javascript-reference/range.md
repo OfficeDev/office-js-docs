@@ -42,11 +42,98 @@ _See property access [examples.](#property-access-examples)_
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the range. The selectionMode values can be 'Select', 'Start', or 'End'.|
 |[adjust(startAdjust: number, endAdjust: number)](#adjust) ![new](../media/new.jpg) | [Range](range.md) | Adjusts the current range to 'startAdjust' positions from start to 'endAdjust' positions to end. Negative values and zero are valid options. |
 |[expandTo(range: Range)](#expand) ![new](../media/new.jpg) | [Range](range.md) | Expands the current range until the bounds of the specified Range |
-|[hasRange(range: Range, isSubset: bool)](#hasrange) ![new](../media/new.jpg) | bool | Determines whether the calling range contains the specified range. |
 |[getChildRange(rangeOrigin: string, length: number)](#getchildrangerangeorigin-string-length-number) ![new](../media/new.jpg) | [Range](range.md) | Gets a range from the start/end of calling range to the number of specified positions. This method is useful to get the first or last characters within the range | 
 |[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool, within:bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool-excludeendingmarks-bool)![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of Ranges within the calling range each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.|
+|[hasRange(range: Range, isSubset: bool)](#hasrange) ![new](../media/new.jpg) | bool | Determines whether the calling range contains the specified range. Deverlopers can also determine if its fully contained or not. |
+
 
 ## Method details
+
+### adjust((startAdjust: number, endAdjust: number)  ![new](../media/new.jpg)
+Adjusts the current range to 'startAdjust' positions from start to 'endAdjust' positions to end. Negative values and zero are valid options.
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|startAdjust|number|Required. Indicates number of character positions to adjust from the start of the calling range.|
+|endAdjust|number|Required. Indicates number of character positios to adjust from the end of the calling range.|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+Negative values will take the positions before start/end
+Error conditions:
+Method will fail if the start/end adjust values reach start or end of document.
+
+
+
+#### Examples
+```js
+
+//following example adjusts the current selection to include one character to the left and one to the right.
+
+Word.run(function (ctx) {
+    var cc = ctx.document.getSelection();
+    ctx.load(cc);
+
+    return ctx.sync().then(function () {
+        var r = s.Adjust(-1, 1);  // adjust current range one character to the left and one to the right.
+        ctx.load(r);
+
+        return ctx.sync().then(function () {
+            console.log("r=[" + r.text + "]");
+        }).catch(function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+}); 
+
+### expandTo(range: Range)  ![new](../media/new.jpg)
+Expands the current range until the bounds of the specified Range
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|range |Range|Required. Range to where the calling range will be expanded.|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+Can be used in conjunction with the getChildRange method, for intance, to expand the calling range all the way to the end of the document. Same can be applied to specific paragraph or content control range.
+
+
+#### Examples
+```js
+
+
+Word.run(function (ctx) {
+
+//following example expands current selection range all the way to the end of the document.
+    
+    var eof = ctx.document.getChildRange('end', 0); //gets the range at the end of the document.
+    ctx.load(cc);
+
+    return ctx.sync().then(function () {
+      var currentSelection = ctx.document.getSelection();
+      ctx.load(currentSelection);
+
+        return ctx.sync().then(function () {
+
+           var newRange = currentSelection.expand(eof);
+           ctx.sync();
+        }).catch(function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+}); 
+
+
 
 ### getChildRange(rangeOrigin: string, length: number)  ![new](../media/new.jpg)
 Gets a range from the start/end of calling range to the number of specified positions. This method is useful to get the first or last characters within the ccalling range. 
@@ -127,6 +214,28 @@ Word.run(function (ctx) {
     });
 });
 ```
+
+### [hasRange(range: Range, isSubset: bool)  ![new](../media/new.jpg)
+ Determines whether the calling range contains the specified range. Deverlopers can also determine if its fully contained or not. 
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|range|Range|Required. The Range that will be verified to be contained within the calling range..|
+|isSubset|bool|Optional. Used to verify if the supplied range is fully or partially contained within the calling Range.|
+
+#### Returns
+Bool
+
+#### Additional details
+R1.HasRange(R2, false) returns true if and only if the R1 and R2 overlap.
+R1.HasRange(R2, true) returns true if and only if R2 is inside R1.
+
+
+
+#### Examples
+```js
+
 
 ### clear()
 Clears the contents of the range object. The user can perform the undo operation on the cleared content.
