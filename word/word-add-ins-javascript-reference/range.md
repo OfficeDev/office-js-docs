@@ -236,7 +236,7 @@ R1.HasRange(R2, true) returns true if and only if R2 is inside R1.
 
 #### Examples
 ```js
-
+```
 
 ### clear()
 Clears the contents of the range object. The user can perform the undo operation on the cleared content.
