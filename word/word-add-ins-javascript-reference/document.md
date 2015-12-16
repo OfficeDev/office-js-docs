@@ -8,7 +8,7 @@ _Applies to: Word 2016, Word for iPad_
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |saved|bool|Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved. Read-only.|
-|opened|bool|To be used in conjunction with application.createDoc and document.open. Its false until the created document is opened. Read-only.|
+|opened  ![new](../media/new.jpg)|bool|To be used in conjunction with application.createDoc and document.open. Its false until the created document is opened. Read-only.|
 
 
 ## Relationships
