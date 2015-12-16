@@ -216,7 +216,7 @@ Word.run(function (ctx) {
 });
 ```
 
-### [hasRange(range: Range, isSubset: bool)  ![new](../media/new.jpg)
+### hasRange(range: Range, isSubset: bool)  ![new](../media/new.jpg)
  Determines whether the calling range contains the specified range. Deverlopers can also determine if its fully contained or not. 
 
 #### Parameters
@@ -236,6 +236,7 @@ R1.HasRange(R2, true) returns true if and only if R2 is inside R1.
 
 #### Examples
 ```js
+
 ```
 
 ### clear()
