@@ -39,6 +39,7 @@ We are adding the following members to the [body](/word/word-add-ins-javascript-
 ### 2. Create and open a new Word Document. 
 
 This feature enables you to create, change, open, and make changes to a Word document (.docx) before it is displayed in the Word UI.
+In order to achieve this we are exposing a create document method inside an [Application](/word/word-add-ins-javascript-reference/application.md) object, as well as a method in the [Document](/word/word-add-ins-javascript-reference/document.md) object to open it.
 
 ### 3. Strongly typed List objects.
 
