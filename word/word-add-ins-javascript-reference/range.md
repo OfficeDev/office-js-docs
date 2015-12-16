@@ -90,6 +90,7 @@ Word.run(function (ctx) {
         console.log(JSON.stringify(error));
     });
 }); 
+```
 
 ### expandTo(range: Range)  ![new](../media/new.jpg)
 Expands the current range until the bounds of the specified Range
@@ -133,7 +134,7 @@ Word.run(function (ctx) {
     });
 }); 
 
-
+```
 
 ### getChildRange(rangeOrigin: string, length: number)  ![new](../media/new.jpg)
 Gets a range from the start/end of calling range to the number of specified positions. This method is useful to get the first or last characters within the ccalling range. 
