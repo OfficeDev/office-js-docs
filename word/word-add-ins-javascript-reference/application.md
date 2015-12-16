@@ -20,7 +20,7 @@ No relationships on this release.
 
 ## Method details
 
-### createDoc(base64File: string)base64File: string ![new](../media/new.jpg) 
+### createDoc(base64File: string)![new](../media/new.jpg) 
 
 Creates a new document, optionally taking an existing one as template (supplied as a base64 encoded docx).
 
