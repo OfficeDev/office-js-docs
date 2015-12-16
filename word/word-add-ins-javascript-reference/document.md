@@ -8,6 +8,8 @@ _Applies to: Word 2016, Word for iPad_
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |saved|bool|Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved. Read-only.|
+|opened|bool|To be used in conjunction with application.createDoc and document.open. Its false until the created document is opened. Read-only.|
+
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -23,7 +25,7 @@ _Applies to: Word 2016, Word for iPad_
 |[getSelection()](#getselection)|[Range](range.md)|Gets the current selection of the document. Multiple selections are not supported.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[save()](#save)|void|Saves the document. This will use the Word default file naming convention if the document has not been saved before.|
-|[open()](#open)![new](../media/new.jpg) |Void | Opens a document created via the application.createDoc() method.|
+|[open()](#open)![new](../media/new.jpg) |void | Opens a document created via the application.createDoc() method.|
 
 
 ## Method details
