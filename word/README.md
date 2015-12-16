@@ -45,7 +45,8 @@ In order to achieve this we are exposing a create document method inside an [App
 
 ### 4. Strongly typed Table objects.
 
-## Try it out (only available for released features)
+## Try it out 
+(NEW FEATURES CANNOT BE TRIED RIGHT NOW)
 
 We've been working on a Snippet Explorer to let you browse through common code snippets and learn how the new APIs work. Give it a try. The code snippets referenced by the Snippet Explorer are available [here](https://officesnippetexplorer.azurewebsites.net/#/snippets/word). 
 
