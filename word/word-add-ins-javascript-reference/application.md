@@ -2,7 +2,7 @@
 
 Represents the Microsoft Word application. Holds application-level functionalities.
 
-_Applies to: Word 2016, Word for iPad_
+_Applies to: Word 2016_
 
 ## Properties
 No properties on this release.

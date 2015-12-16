@@ -24,6 +24,7 @@ _Applies to: Word 2016, Word for iPad_
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[save()](#save)|void|Saves the document. This will use the Word default file naming convention if the document has not been saved before.|
 
+
 ## Method details
 
 ### getSelection()
