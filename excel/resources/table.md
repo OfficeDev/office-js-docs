@@ -21,14 +21,14 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.|
 |rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.|
-|**sort**|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|
+|sort:new:|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current table. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|**[convertToRange()](#converttorange)**|[Range](range.md)|Converts the table into a normal range of cells. All data is preserved.|
+|[convertToRange()](#converttorange):new:|[Range](range.md)|Converts the table into a normal range of cells. All data is preserved.|
 |[delete()](#delete)|void|Deletes the table.|
 |[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.|
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.|

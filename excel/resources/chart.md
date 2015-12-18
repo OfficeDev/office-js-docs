@@ -33,7 +33,7 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes the chart object.|
-|**[getImage(height: number, width: number, fittingMode: ImageFittingMode)](#getimageheight-number-width-number-fittingmode-imagefittingmode)**|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|
+|[getImage(height: number, width: number, fittingMode: ImageFittingMode)](#getimageheight-number-width-number-fittingmode-imagefittingmode):new:|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Resets the source data for the chart.|
 |[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|

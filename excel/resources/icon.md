@@ -1,4 +1,4 @@
-# Icon Object (JavaScript API for Excel)
+# :new:Icon Object  (JavaScript API for Excel)
 
 _Applies to: Excel 2016, Excel Online, Office 2016_
 
