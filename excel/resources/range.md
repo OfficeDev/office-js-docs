@@ -15,7 +15,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.|
 |formulas|object[][]|Represents the formula in A1-style notation.|
 |formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|
-|**formulasR1C1**|object[][]|Represents the formula in R1C1-style notation.|
+|formulasR1C1:new:|object[][]|Represents the formula in R1C1-style notation.|
 |numberFormat|object[][]|Represents Excel's number format code for the given cell.|
 |rowCount|int|Returns the total number of rows in the range. Read-only.|
 |rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.|
@@ -29,7 +29,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|
-|**sort**|[RangeSort](rangesort.md)|The worksheet containing the current range. Read-only.|
+|sort:new:|[RangeSort](rangesort.md)|The worksheet containing the current range. Read-only.|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|
 
 ## Methods
@@ -49,12 +49,12 @@ _See property access [examples.](#property-access-examples)_
 |[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|
 |[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|
-|**[getUsedRange(valuesOnly: ApiSetVersion)](#getusedrangevaluesonly-apisetversion)**|[Range](range.md)|Returns the used range of the given range object.|
+|[getUsedRange(valuesOnly: ApiSetVersion)](#getusedrangevaluesonly-apisetversion):new:|[Range](range.md)|Returns the used range of the given range object.|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|**[merge(across: bool)](#mergeacross-bool)**|void|Merge the range cells into one region in the worksheet.|
+|[merge(across: bool)](#mergeacross-bool):new:|void|Merge the range cells into one region in the worksheet.|
 |[select()](#select)|void|Selects the specified range in the Excel UI.|
-|**[unmerge()](#unmerge)**|void|Unmerge the range cells into separate cells.|
+|[unmerge()](#unmerge):new:|void|Unmerge the range cells into separate cells.|
 
 ## Method Details
 

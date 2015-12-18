@@ -11,7 +11,7 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|
 |name|string|The display name of the worksheet.|
 |position|int|The zero-based position of the worksheet within the workbook.|
-|**visibility**|string|The Visibility of the worksheet.|
+|visibility:new:|string|The Visibility of the worksheet.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,7 +19,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |charts|[ChartCollection](chartcollection.md)|Returns collection of charts that are part of the worksheet. Read-only.|
-|**protection**|[WorksheetProtection](worksheetprotection.md)|Returns sheet protection object for a worksheet. Read-only.|
+|protection:new:|[WorksheetProtection](worksheetprotection.md)|Returns sheet protection object for a worksheet. Read-only.|
 |tables|[TableCollection](tablecollection.md)|Collection of tables that are part of the worksheet. Read-only.|
 
 ## Methods
@@ -30,7 +30,7 @@ _See property access [examples.](#property-access-examples)_
 |[delete()](#delete)|void|Deletes the worksheet from the workbook.|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|
-|**[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)**|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool):new:|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
