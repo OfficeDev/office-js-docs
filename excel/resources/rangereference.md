@@ -1,13 +1,14 @@
-# InlinePictureCollection object (JavaScript API for Word)
+# RangeReference Object (JavaScript API for Excel)
 
-Contains a collection of [inlinePicture](inlinepicture.md) objects.
+_Applies to: Excel 2016, Excel Online, Office 2016_
 
-_Applies to: Word 2016, Word for iPad_
+Represents a string reference of the form SheetName!A1:B5, or a global or local named range
 
 ## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|
+|address|string|The worksheet containing the current range.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,7 +22,8 @@ None
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## Method details
+## Method Details
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -38,7 +40,3 @@ object.load(param);
 
 #### Returns
 void
-
-## Support details
-
-Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 

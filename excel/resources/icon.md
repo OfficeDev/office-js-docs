@@ -1,21 +1,24 @@
-# ChartGridlines Object (JavaScript API for Excel)
+# Icon Object (JavaScript API for Excel)
 
 _Applies to: Excel 2016, Excel Online, Office 2016_
 
-Represents major or minor gridlines on a chart axis.
+Represents a cell icon.
+
+_**Note**: This is a proposed feature that is still under design phase and hence not yet available as part of the product. The specification is being made available for community review and feedback. The final design may change. Help us make this feature better by providing your feedback [here](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-icon)._
+
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|visible|bool|Boolean value representing if the axis gridlines are visible or not.|
+|index|int|Represents the index of the icon in the given set.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.|
+|set|[IconSet](iconset.md)|Represents the set that the icon is part of.|
 
 ## Methods
 
