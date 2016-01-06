@@ -49,7 +49,7 @@ _See property access [examples.](#property-access-examples)_
 |[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|
 |[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|
-|[getUsedRange(valuesOnly: ApiSetVersion)](#getusedrangevaluesonly-apisetversion):new:|[Range](range.md)|Returns the used range of the given range object.|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool):new:|[Range](range.md)|Returns the used range of the given range object.|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[merge(across: bool)](#mergeacross-bool):new:|void|Merge the range cells into one region in the worksheet.|
@@ -259,7 +259,7 @@ rangeObject.getRow(row);
 #### Returns
 [Range](range.md)
 
-### getUsedRange(valuesOnly: [ApiSetVersion)
+### getUsedRange(valuesOnly: bool)
 Returns the used range of the given range object.
 
 _**Note**: This is a proposed feature that is still under design phase and hence not yet available as part of the product. The specification is being made available for community review and feedback. The final design may change. Help us make this feature better by providing your feedback [here](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-range-getusedrange)._
@@ -272,7 +272,7 @@ rangeObject.getUsedRange(valuesOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|valuesOnly|[ApiSetVersion|Considers only cells with values as used cells.|
+|valuesOnly|[Bool|Considers only cells with values as used cells.|
 
 #### Returns
 [Range](range.md)
