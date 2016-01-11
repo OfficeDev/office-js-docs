@@ -8,6 +8,8 @@ _Applies to: Word 2016, Word for iPad_
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |saved|bool|Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved. Read-only.|
+|opened  ![new](../media/new.jpg)|bool|To be used in conjunction with application.createDoc and document.open. Its false until the created document is opened. Read-only.|
+
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -23,8 +25,50 @@ _Applies to: Word 2016, Word for iPad_
 |[getSelection()](#getselection)|[Range](range.md)|Gets the current selection of the document. Multiple selections are not supported.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[save()](#save)|void|Saves the document. This will use the Word default file naming convention if the document has not been saved before.|
+|[open()](#open)![new](../media/new.jpg) |void | Opens a document created via the application.createDoc() method.|
+
 
 ## Method details
+
+### open()  ![new](../media/new.jpg)
+ Opens a document created via the application.createDoc() method.
+
+
+#### Parameters
+None
+
+#### Returns
+void
+
+#### Additional details
+Once this method is called all subsequent calls to the created document object will fail. 
+
+#### Examples
+```js
+//creates a documents adds a paragrpah at the end of it and finally it opens that document.
+Word.run(function (ctx) {
+    
+    var doc = ctx.application.createDoc();
+    ctx.load(doc);
+
+    
+    // Synchronize the document state by executing the queued commands, 
+    // and return a promise to indicate task completion.
+    return context.sync().then(function () {
+            doc.body.insertParagraph("New Paragraph!", "end");
+            doc.open();
+            ctx.sync();
+
+    });  
+})
+.catch(function (error) {
+    console.log('Error: ' + JSON.stringify(error));
+    if (error instanceof OfficeExtension.Error) {
+        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
 
 ### getSelection()
 Gets the current selection of the document. Multiple selections are not supported.

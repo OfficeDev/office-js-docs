@@ -4,6 +4,9 @@ Represents a single paragraph in a selection, range, content control, or documen
 
 _Applies to: Word 2016, Word for iPad_
 
+_**Note**: This object contains some features that are still under the design and review phase and are not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
+
+
 ## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -36,8 +39,10 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.|
 |[delete()](#delete)|void|Deletes the paragraph and its content from the document.|
+|[getChildRange(rangeOrigin: string, length: number)](#getchildrangerangeorigin-string-length-number) ![new](../media/new.jpg) | [Range](range.md) | Gets a range from the start/end of paragraph to the number of specified positions. This method is useful to get the first or last characters within the paragraph | 
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|
+|[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool)![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of Ranges within the paragraph each one within the specified delimiter(s) and either including or not blanks.|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into paragraphs that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Start' or 'End'.|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|
@@ -50,7 +55,9 @@ _See property access [examples.](#property-access-examples)_
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the paragraph. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
 
-## Method details
+## Method 
+
+
 
 ### clear()
 Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.
@@ -98,6 +105,45 @@ Word.run(function (context) {
     }
 });
 ```
+
+### getChildRange(rangeOrigin: string, length: number)  
+![new](../media/new.jpg)
+Gets a range from the start/end of body to the number of specified positions. This method is useful to get the first or last characters in the paragraph.
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|rangeOrigin|rangeOrigin|Required. Indicates if the Range is to be retrieved from the start or from the end of the paragraph. The value can be 'Start' or "End".|
+|length|InsertLocation|Required. The number of character positions to be included from the 'Start' or 'End'. 0 is a valid option and will return a range representing the start/end of the paragraph|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+This method can be used to get the first or last character of the paragraph as Ranges, for intance for formatting purposes. Can also be used to construct a range: developers can get the  body start/end ranges and expand the current range till there. This is useful, for instance, to build a range from the current selection till the end or start of the paragraph.
+
+#### Examples
+```js
+// The following example gets the first 10 characters of the current selection.
+Word.run(function (ctx) {
+    var cc = ctx.document.getSelection();
+    ctx.load(cc);
+
+    return ctx.sync().then(function () {
+        var r = cc.getChildRange('Start', 10);
+        ctx.load(r);
+
+        return ctx.sync().then(function () {
+            console.log("r=[" + r.text + "]");
+        }).catch(function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+}); 
+```
+
 
 ### delete()
 Deletes the paragraph and its content from the document.
@@ -237,6 +283,45 @@ Word.run(function (context) {
     if (error instanceof OfficeExtension.Error) {
         console.log('Debug info: ' + JSON.stringify(error.debugInfo));
     }
+});
+```
+
+
+### getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool)  
+![new](../media/new.jpg)
+Gets a collection of Ranges within the paragraph each one within the specified delimiter(s) and either including or not blanks
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|delimiters|string[]|Required. Array of delimiters to be used to populate the resulting collection. Valid  delimiter examplese are " " (space) to get all the words in a given range, "." will get the sentences, etc.|
+|excludeDelimiters|bool|Optional. False by Default.  Indicates if the specified delimiters are to be included as individual range objects within the resulting Range collection.|
+|trimWhite|bool|Optional. False by Default.  Indicates if spaces, singles spaces or tabs, should be removed from the resulting ranges.|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+The method will return a set of ranges that are identified by the specified delimiters. The search for ranges will cross paragraphs, content controls, and tables. Text within tables is retrieved cell by cell, left to right (RTL in some cultures), and then top-down.
+
+When the endingMarks option is selected, individual ending marks are returned as a single range and coded if applicable (i.e end paragraph mark = '\r'). Supported ending marks are: paragraphs, end of cell, end of row, and end of table.
+
+Sub-documents are not returned. This includes text within shapes, text boxes, and comments.
+
+#### Examples
+```js
+// The following exammple retrieves sentences with different ending delimiters.
+Word.run(function (ctx) {
+    var delim = [".", "?", ":", "!", "。"];
+    var s = ctx.document.body.getRanges(delim, false, true, false, false);
+    ctx.load(s);
+
+    return ctx.sync().then(function () {
+        for (var i = 0; i < s.items.length; i++)
+            console.log("[" + s.items[i].text + "]");
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
 });
 ```
 

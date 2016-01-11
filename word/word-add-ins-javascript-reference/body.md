@@ -2,7 +2,9 @@
 
 Represents the body of a document or a section.
 
-_Applies to: Word 2016, Word for iPad._  _New members on this release tagged with this icon:_ ![new](../media/new.jpg)
+_Applies to: Word 2016, Word for iPad._  
+
+_**Note**: This object contains some features that are still under the design and review phase and are not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
 ## Properties
 | Property	   | Type	|Description
@@ -26,8 +28,10 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Clears the contents of the body object. The user can perform the undo operation on the cleared content.|
+|[getChildRange(rangeOrigin: string, length: number)](#getchildrangerangeorigin-string-length-number) ![new](../media/new.jpg) | [Range](range.md) | Gets a range from the start or end of body with a specified number of characters. Use this method get the first or last characters in the body of the document. | 
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the body object.|
 |[getOoxml()](#getooxml)|string|Gets the OOXML (Office Open XML) representation of the body object.|
+|[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool-excludeendingmarks-bool) ![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of range objects by using delimiters. |
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Start' or 'End'.|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
@@ -39,90 +43,8 @@ _See property access [examples.](#property-access-examples)_
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the body and navigates the Word UI to it. The selectionMode values can be 'Select', 'Start', or 'End'.|
-|[getChildRange(rangeOrigin: string, length: number)](#getchildrangerangeorigin-string-length-number) ![new](../media/new.jpg) | [Range](range.md) | Gets a range from the start/end of body to the number of specified positions. This method is useful to get the first or last characters in the body of the document. | 
-|[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool-excludeendingmarks-bool)![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of Ranges within the body of the document each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.|
-
-
-
 
 ## Method details
-
-### getChildRange(rangeOrigin: string, length: number)  ![new](../media/new.jpg)
-Gets a range from the start/end of body to the number of specified positions. This method is useful to get the first or last characters in the body of the document.
-
-#### Parameters
-| Parameter    | Type   |Description|
-|:---------------|:--------|:----------|
-|rangeOrigin|rangeOrigin|Required. Indicates if the Range is to be retrieved from the start or from the end of the Body of the document. The value can be 'Start' or "End".|
-|length|InsertLocation|Required. The number of character positions to be included from the 'Start' or 'End'. 0 is a valid option and will return a range representing the start/end of the document|
-
-#### Returns
-[Range](range.md)
-
-#### Additional details
-This method can be used to get the first or last character of the document as Ranges, for intance for formatting purposes. Can also be used to construct a range: developers can get the  body start/end ranges and expand the current range till there. This is useful, for instance, to build a range from the current selection till the end or start of the document.
-
-#### Examples
-```js
-// The following example gets the first 10 characters of the current selection.
-Word.run(function (ctx) {
-    var cc = ctx.document.getSelection();
-    ctx.load(cc);
-
-    return ctx.sync().then(function () {
-        var r = cc.getChildRange('Start', 10);
-        ctx.load(r);
-
-        return ctx.sync().then(function () {
-            console.log("r=[" + r.text + "]");
-        }).catch(function(error) {
-            console.log(JSON.stringify(error));
-        });
-    }).catch(function(error) {
-        console.log(JSON.stringify(error));
-    });
-}); 
-```
-
-### getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)  ![new](../media/new.jpg)
-Gets a collection of Ranges within the body of the document each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.
-
-#### Parameters
-| Parameter    | Type   |Description|
-|:---------------|:--------|:----------|
-|delimiters|string[]|Required. Array of delimiters to be used to populate the resulting collection. Valid  delimiter examplese are " " (space) to get all the words in a given range, "." will get the sentences, etc.|
-|excludeDelimiters|bool|Optional. False by Default.  Indicates if the specified delimiters are to be included as individual range objects within the resulting Range collection.|
-|trimWhite|bool|Optional. False by Default.  Indicates if spaces, singles spaces or tabs, should be removed from the resulting ranges.|
-|excludeEndingMarks|bool|Optional. False by Default.  Indicates if invisible ending marks (such as end of paragraph, end of cell, end of table, line breaks) are to be included as individual ranges within the collection.|
-
-
-
-#### Returns
-[Range](range.md)
-
-#### Additional details
-The method will return text (as ranges) within the specified delimiters and if so applicable  within paragraphs, content controls and tables. Text within tables is retrieved cell by cell, left to right (RTL in some cultures) top-down.
-
-When endingMarks option is selected individual ending marks are return as a single range and coded (i.e End Paragraph mark = '\r'). Supported ending marks: Paragrpahs, end of cell and end of row and end of table.
-
-sub documents are not returned, this includes text within shapes, text boxes, comments, etc.
-
-#### Examples
-```js
-// The following exammple retrieves sentences with different ending delimiters.
-Word.run(function (ctx) {
-    var delim = [".", "?", ":", "!", "。"];
-    var s = ctx.document.body.getRanges(delim, false, true, false, false);
-    ctx.load(s);
-
-    return ctx.sync().then(function () {
-        for (var i = 0; i < s.items.length; i++)
-            console.log("[" + s.items[i].text + "]");
-    }).catch(function(error) {
-        console.log(JSON.stringify(error));
-    });
-});
-```
 
 ### clear()
 Clears the contents of the body object. The user can perform the undo operation on the cleared content.
@@ -164,6 +86,44 @@ Word.run(function (context) {
 ```
 
 The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how the **clear** method can be used to clear the contents of a document.
+
+### getChildRange(rangeOrigin: string, length: number)  
+![new](../media/new.jpg)
+Gets a range from the start or end of body with a specified number of characters. Use this method get the first or last characters in the body of the document.
+ 
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|rangeOrigin|rangeOrigin|Required. Indicates if the Range is to be retrieved from the start or from the end of the Body of the document. The value can be 'Start' or "End".|
+|length|InsertLocation|Required. The number of character positions to be included from the 'Start' or 'End'. 0 is a valid option and will return a range representing the start/end of the document|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+This method can be used to get the first or last character of the document as Ranges, for intance for formatting purposes. Can also be used to construct a range: developers can get the  body start/end ranges and expand the current range till there. This is useful, for instance, to build a range from the current selection till the end or start of the document.
+
+#### Examples
+```js
+// The following example gets the first 10 characters of the current selection.
+Word.run(function (ctx) {
+    var cc = ctx.document.getSelection();
+    ctx.load(cc);
+
+    return ctx.sync().then(function () {
+        var r = cc.getChildRange('Start', 10);
+        ctx.load(r);
+
+        return ctx.sync().then(function () {
+            console.log("r=[" + r.text + "]");
+        }).catch(function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+}); 
+```
 
 ### getHtml()
 Gets the HTML representation of the body object.
@@ -240,6 +200,47 @@ Word.run(function (context) {
     if (error instanceof OfficeExtension.Error) {
         console.log("Debug info: " + JSON.stringify(error.debugInfo));
     }
+});
+```
+
+### getRanges(delimiters: string\[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool)  
+![new](../media/new.jpg)
+Gets a collection of range objects by using delimiters. 
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|delimiters|string[]|Required. Array of delimiters to be used to populate the resulting collection. Valid  delimiter examplese are " " (space) to get all the words in a given range, "." will get the sentences, etc.|
+|excludeDelimiters|bool|Optional. False by Default.  Indicates if the specified delimiters are to be included as individual range objects within the resulting Range collection.|
+|trimWhite|bool|Optional. False by Default.  Indicates if spaces, singles spaces or tabs, should be removed from the resulting ranges.|
+|excludeEndingMarks|bool|Optional. False by Default.  Indicates if invisible ending marks (such as end of paragraph, end of cell, end of table, line breaks) are to be included as individual ranges within the collection.|
+
+
+
+#### Returns
+[RangeCollection](range.md)
+
+#### Additional details
+The method will return a set of ranges that are identified by the specified delimiters. The search for ranges will cross paragraphs, content controls, and tables. Text within tables is retrieved cell by cell, left to right (RTL in some cultures), and then top-down.
+
+When the endingMarks option is selected, individual ending marks are returned as a single range and coded if applicable (i.e end paragraph mark = '\r'). Supported ending marks are: paragraphs, end of cell, end of row, and end of table.
+
+Sub-documents are not returned. This includes text within shapes, text boxes, and comments.
+
+#### Examples
+```js
+// The following exammple retrieves sentences with different ending delimiters.
+Word.run(function (ctx) {
+    var delim = [".", "?", ":", "!", "。"];
+    var s = ctx.document.body.getRanges(delim, false, true, false, false);
+    ctx.load(s);
+
+    return ctx.sync().then(function () {
+        for (var i = 0; i < s.items.length; i++)
+            console.log("[" + s.items[i].text + "]");
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
 });
 ```
 

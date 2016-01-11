@@ -4,6 +4,9 @@ Represents a content control. Content controls are bounded and potentially label
 
 _Applies to: Word 2016, Word for iPad_
 
+_**Note**: This object contains some features that are still under the design and review phase and are not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
+
+
 ## Properties
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -37,8 +40,10 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Clears the contents of the content control. The user can perform the undo operation on the cleared content.|
 |[delete(keepContent: bool)](#deletekeepcontent-bool)|void|Deletes the content control and its content. If keepContent is set to true, the content is not deleted.|
+|[getChildRange(rangeOrigin: string, length: number)](#getchildrangerangeorigin-string-length-number) ![new](../media/new.jpg) | [Range](range.md) | Gets a range from the start/end of content control to the number of specified positions. This method is useful to get the first or last characters within the content control | 
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|
+|[getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool, within:bool)](#getrangesdelimiters-string-excludedelimiters-bool-trimwhite-bool-excludeendingmarks-bool) ![new](../media/new.jpg) | RangeCollection(rangeCollection.md) | Gets a collection of Ranges within the content control each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
@@ -51,6 +56,7 @@ _See property access [examples.](#property-access-examples)_
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the content control. This causes Word to scroll to the selection. The selection mode can be 'Select', 'Start' or 'End'.|
 
 ## Method details
+
 
 ### clear()
 Clears the contents of the content control. The user can perform the undo operation on the cleared content.
@@ -104,6 +110,46 @@ Word.run(function (context) {
 });
 
 ```
+
+### getChildRange(rangeOrigin: string, length: number)  
+![new](../media/new.jpg)
+Gets a range from the start/end of content control to the number of specified positions. This method is useful to get the first or last characters within the content control.
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|rangeOrigin|rangeOrigin|Required. Indicates if the Range is to be retrieved from the start or from the end of the content control. The value can be 'Start' or "End".|
+|length|InsertLocation|Required. The number of character positions to be included from the 'Start' or 'End'. 0 is a valid option and will return a range representing the start/end of the content control|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+This method can be used to get the first or last character of the content control as Ranges, for instance for formatting purposes. Can also be used to construct a range: developers can get the  content control start/end ranges and expand the current range till there. This is useful, for instance, to build a range from the current selection till the end or start of the content control.
+
+#### Examples
+```js
+// The following example gets the first 10 characters of the current selection.
+Word.run(function (ctx) {
+    var cc = ctx.document.getSelection();
+    ctx.load(cc);
+
+    return ctx.sync().then(function () {
+        var r = cc.getChildRange('Start', 10);
+        ctx.load(r);
+
+        return ctx.sync().then(function () {
+            console.log("r=[" + r.text + "]");
+        }).catch(function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+}); 
+```
+
+
 
 ### delete(keepContent: bool)
 Deletes the content control and its content. If keepContent is set to true, the content is not deleted.
@@ -264,6 +310,47 @@ Word.run(function (context) {
     }
 });
 ```
+
+### getRanges(delimiters: string[], excludeDelimiters: bool, trimWhite: bool, excludeEndingMarks: bool) 
+![new](../media/new.jpg)
+Gets a collection of Ranges within the content control each one within the specified delimiter(s) and either including or nor the actual delimiters, blanks or ending mark.
+
+#### Parameters
+| Parameter    | Type   |Description|
+|:---------------|:--------|:----------|
+|delimiters|string[]|Required. Array of delimiters to be used to populate the resulting collection. Valid  delimiter examplese are " " (space) to get all the words in a given range, "." will get the sentences, etc.|
+|excludeDelimiters|bool|Optional. False by Default.  Indicates if the specified delimiters are to be included as individual range objects within the resulting Range collection.|
+|trimWhite|bool|Optional. False by Default.  Indicates if spaces, singles spaces or tabs, should be removed from the resulting ranges.|
+|excludeEndingMarks|bool|Optional. False by Default.  Indicates if invisible ending marks (such as end of paragraph, end of cell, end of table, line breaks) are to be included as individual ranges within the collection.|
+|within|bool|Optional. False by Default.  Indicates if the delimiters will be searched only within the content control boundaries (true) or if it expands outside of the content control boundary until delimiters are found top/down.|
+
+#### Returns
+[Range](range.md)
+
+#### Additional details
+The method will return a set of ranges that are identified by the specified delimiters. The search for ranges will cross paragraphs, content controls, and tables. Text within tables is retrieved cell by cell, left to right (RTL in some cultures), and then top-down.
+
+When the endingMarks option is selected, individual ending marks are returned as a single range and coded if applicable (i.e end paragraph mark = '\r'). Supported ending marks are: paragraphs, end of cell, end of row, and end of table.
+
+Sub-documents are not returned. This includes text within shapes, text boxes, and comments.
+
+#### Examples
+```js
+// The following exammple retrieves sentences with different ending delimiters.
+Word.run(function (ctx) {
+    var delim = [".", "?", ":", "!", "。"];
+    var s = ctx.document.body.getRanges(delim, false, true, false, false);
+    ctx.load(s);
+
+    return ctx.sync().then(function () {
+        for (var i = 0; i < s.items.length; i++)
+            console.log("[" + s.items[i].text + "]");
+    }).catch(function(error) {
+        console.log(JSON.stringify(error));
+    });
+});
+```
+
 
 ### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 Inserts a break at the specified location. A break can only be inserted into objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.
