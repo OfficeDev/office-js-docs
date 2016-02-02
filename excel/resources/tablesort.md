@@ -80,6 +80,20 @@ None
 #### Returns
 void
 
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.sort.clear();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -109,3 +123,17 @@ None
 
 #### Returns
 void
+
+####Examples
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.sort.reapply();	
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});

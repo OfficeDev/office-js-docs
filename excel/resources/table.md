@@ -21,7 +21,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.|
 |rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.|
-|sort|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|
+|sort|[TableSort](tablesort.md)|Represents the sorting configuration for the table. Read-only.|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current table. Read-only.|
 
 ## Methods

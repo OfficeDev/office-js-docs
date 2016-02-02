@@ -8,7 +8,7 @@ Represents the protection of a sheet object.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|protected|bool|Indicates if the worksheet is protected. Read-Only. Read-only.|
+|protected|bool|Indicates if the worksheet is protected. Read-Only.|
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -19,7 +19,7 @@ Represents the protection of a sheet object.
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object with protection details of the sheet.|
 |[protect(options: WorksheetProtectionOptions, password: string)](#protectoptions-worksheetprotectionoptions-password-string)|void|Protect a worksheet. It throws if the worksheet has been protected.|
 |[unprotect(password: string)](#unprotectpassword-string)|void|Unprotect a worksheet|
 
@@ -42,8 +42,29 @@ object.load(param);
 #### Returns
 void
 
+#### Examples
+Below example loads the protection details for the active worksheet.
+```js
+Excel.run(function (ctx) {
+    var worksheet = ctx.workbook.worksheets.getActiveWorksheet();
+    worksheet.protection.load();            
+    return ctx.sync()
+        .then(function () {
+            console.log("Active worksheet's protection status: " + worksheet.protection.protected);
+        });
+})
+.catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+```
+
 ### protect(options: WorksheetProtectionOptions, password: string)
-Protect a worksheet. It throws if the worksheet has been protected.
+Protect a worksheet with optional protection policies and an optional password. It throws an exception if the worksheet has been protected. 
+
+When options are specified, individual policies can be toggled enabled or diabled. If a policy isn't specified, then its enabled by default. 
 
 #### Syntax
 ```js
@@ -75,7 +96,7 @@ Excel.run(function (ctx) {
 
 ```
 ### unprotect(password: string)
-Unprotect a worksheet
+Unprotect a worksheet with an optional password which was used to protect the sheet. It throws an exception if the password supplied is wrong.
 
 #### Syntax
 ```js
@@ -89,3 +110,17 @@ worksheetProtectionObject.unprotect(password);
 
 #### Returns
 void
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var sheet = ctx.workbook.worksheets.getItem("Sheet1");	
+	sheet.protection.unprotect();
+	return ctx.sync(); 
+}).catch(function(error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+```

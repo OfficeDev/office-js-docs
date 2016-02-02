@@ -40,3 +40,24 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 
 #### Returns
 void
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+    var sheetName = "Sheet1";
+    var rangeAddress = "D4:G6";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.sort.apply([ 
+            {
+                key: 2,
+                ascending: true
+            },
+        ], true);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```

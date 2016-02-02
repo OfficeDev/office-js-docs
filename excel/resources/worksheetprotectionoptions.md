@@ -50,3 +50,22 @@ object.load(param);
 
 #### Returns
 void
+
+#### Examples
+Below example loads the protection options for the active worksheet.
+```js
+Excel.run(function (ctx) {
+    var worksheet = ctx.workbook.worksheets.getActiveWorksheet();
+    worksheet.protection.load();            
+    return ctx.sync()
+        .then(function () {
+            console.log("Active worksheet's protection options: " + worksheet.protection.options);
+        });
+})
+.catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+```

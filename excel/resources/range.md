@@ -32,7 +32,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|
-|sort|[RangeSort](rangesort.md)|The worksheet containing the current range. Read-only.|
+|sort|[RangeSort](rangesort.md)|Represents the sorting configuration for the range. Read-only.|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|
 
 ## Methods
@@ -52,7 +52,7 @@ _See property access [examples.](#property-access-examples)_
 |[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|
 |[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|
-|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|Returns the used range of the given range object.|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|Returns the used subrange of the range object.|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[merge(across: bool)](#mergeacross-bool)|void|Merge the range cells into one region in the worksheet.|
@@ -537,7 +537,7 @@ Excel.run(function (ctx) {
 
 
 ### getUsedRange(valuesOnly: bool)
-Returns the used range of the given range object.
+Returns the used subrange of the range object. 
 
 #### Syntax
 ```js
@@ -547,7 +547,7 @@ rangeObject.getUsedRange(valuesOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|valuesOnly|bool|Considers only cells with values as used cells.|
+|valuesOnly|bool|Optional. When true only cells that currently have values are considered used cells. The default, false, counts any cell that ever had a value as used.|
 
 #### Returns
 [Range](range.md)
@@ -659,24 +659,6 @@ Excel.run(function (ctx) {
 ```
 
 
-
-#### Examples
-```js
-Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:C3";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.unmerge();
-	return ctx.sync(); 
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-
-
 ### select()
 Selects the specified range in the Excel UI.
 
@@ -712,7 +694,7 @@ Excel.run(function (ctx) {
 
 
 ### unmerge()
-Unmerge the range cells into separate cells.
+Unmerge the range of merged cells into separate cells.
 
 #### Syntax
 ```js
@@ -783,7 +765,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-The example below sets number-format, values and formulas on a grid that contains 2x3 grid.
+The example below sets numberFormat, values and formulas on a grid that contains 2x3 grid.
 
 ```js
 Excel.run(function (ctx) { 
@@ -796,6 +778,30 @@ Excel.run(function (ctx) {
 	range.numberFormat = numberFormat;
 	range.values = values;
 	range.formulas= formulas;
+	range.load('text');
+	return ctx.sync().then(function() {
+		console.log(range.text);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+The example below is the same as the one just above, except that it uses R1C1 notation for the formulas.
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:G7";
+	var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
+	var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
+	var formulasR1C1 = [[null,null], [null,null], [null,"=R[-1]C-R[-2]C"]];
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.numberFormat = numberFormat;
+	range.values = values;
+	range.formulasR1C1= formulasR1C1;
 	range.load('text');
 	return ctx.sync().then(function() {
 		console.log(range.text);
