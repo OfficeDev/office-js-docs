@@ -1,6 +1,6 @@
 # ChartAxisTitle Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents the title of a chart axis.
 
@@ -42,3 +42,38 @@ object.load(param);
 
 #### Returns
 void
+### Property access examples
+Get the `text` of Chart Axis Title from the value axis of Chart1.
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	var title = chart.axes.valueaxis.title;
+	title.load('text');
+	return ctx.sync().then(function() {
+			console.log(title.text);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Add "Values" as the title for the value Axis
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	chart.axes.valueaxis.title.text = "Values";
+	return ctx.sync().then(function() {
+			console.log("Axis Title Added ");
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

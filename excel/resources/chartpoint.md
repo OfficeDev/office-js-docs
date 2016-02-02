@@ -1,6 +1,6 @@
 # ChartPoint Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a point of a series in a chart.
 
@@ -9,8 +9,6 @@ Represents a point of a series in a chart.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |value|object|Returns the value of a chart point. Read-only.|
-
-_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|

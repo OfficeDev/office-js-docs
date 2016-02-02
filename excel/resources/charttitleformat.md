@@ -1,6 +1,6 @@
 # ChartTitleFormat Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Provides access to the office art formatting for chart title.
 

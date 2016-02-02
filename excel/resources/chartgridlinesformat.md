@@ -1,6 +1,6 @@
 # ChartGridlinesFormat Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Encapsulates the format properties for chart gridlines.
 

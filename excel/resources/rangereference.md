@@ -1,6 +1,6 @@
 # RangeReference Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a string reference of the form SheetName!A1:B5, or a global or local named range
 

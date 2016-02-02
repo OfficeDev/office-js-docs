@@ -1,6 +1,6 @@
 # Table Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents an Excel table.
 
@@ -21,28 +21,42 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.|
 |rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.|
-|sort:new:|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|
+|sort|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current table. Read-only.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[convertToRange()](#converttorange):new:|[Range](range.md)|Converts the table into a normal range of cells. All data is preserved.|
+|[clearFilters()](#clearfilters)|void|Clears all the filters currently applied on the table.|
+|[convertToRange()](#converttorange)|[Range](range.md)|Converts the table into a normal range of cells. All data is preserved.|
 |[delete()](#delete)|void|Deletes the table.|
 |[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.|
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.|
 |[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[reapplyFilters()](#reapplyfilters)|void|Reapplies all the filters currently on the table.|
 
 ## Method Details
 
 
+### clearFilters()
+Clears all the filters currently applied on the table.
+
+#### Syntax
+```js
+tableObject.clearFilters();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
 ### convertToRange()
 Converts the table into a normal range of cells. All data is preserved.
-
-_**Note**: This is a proposed feature that is still under design phase and hence not yet available as part of the product. The specification is being made available for community review and feedback. The final design may change. Help us make this feature better by providing your feedback [here](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-table-convertToRange)._
 
 #### Syntax
 ```js
@@ -54,6 +68,21 @@ None
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.convertToRange();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
 
 ### delete()
 Deletes the table.
@@ -69,6 +98,22 @@ None
 #### Returns
 void
 
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.delete();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### getDataBodyRange()
 Gets the range object associated with the data body of the table.
 
@@ -82,6 +127,24 @@ None
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	var tableDataRange = table.getDataBodyRange();
+	tableDataRange.load('address')
+	return ctx.sync().then(function() {
+			console.log(tableDataRange.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
 
 ### getHeaderRowRange()
 Gets the range object associated with header row of the table.
@@ -97,6 +160,25 @@ None
 #### Returns
 [Range](range.md)
 
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	var tableHeaderRange = table.getHeaderRowRange();
+	tableHeaderRange.load('address');
+	return ctx.sync().then(function() {
+		console.log(tableHeaderRange.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### getRange()
 Gets the range object associated with the entire table.
 
@@ -111,6 +193,24 @@ None
 #### Returns
 [Range](range.md)
 
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItem(tableName);
+	var tableRange = table.getRange();
+	tableRange.load('address');	
+	return ctx.sync().then(function() {
+			console.log(tableRange.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### getTotalRowRange()
 Gets the range object associated with totals row of the table.
 
@@ -124,6 +224,25 @@ None
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	var tableTotalsRange = table.getTotalRowRange();
+	tableTotalsRange.load('address');	
+	return ctx.sync().then(function() {
+			console.log(tableTotalsRange.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -140,3 +259,75 @@ object.load(param);
 
 #### Returns
 void
+
+### reapplyFilters()
+Reapplies all the filters currently on the table.
+
+#### Syntax
+```js
+tableObject.reapplyFilters();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+### Property access examples
+
+Get a table by name. 
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.load('index')
+	return ctx.sync().then(function() {
+			console.log(table.index);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Get a table by index.
+
+```js
+Excel.run(function (ctx) { 
+	var index = 0;
+	var table = ctx.workbook.tables.getItemAt(0);
+	table.name('name')
+	return ctx.sync().then(function() {
+			console.log(table.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Set table style. 
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.name = 'Table1-Renamed';
+	table.showTotals = false;
+	table.tableStyle = 'TableStyleMedium2';
+	table.load('tableStyle');
+	return ctx.sync().then(function() {
+			console.log(table.tableStyle);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

@@ -1,6 +1,6 @@
 # Chart Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a chart object in a workbook.
 
@@ -33,7 +33,7 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes the chart object.|
-|[getImage(height: number, width: number, fittingMode: ImageFittingMode)](#getimageheight-number-width-number-fittingmode-imagefittingmode):new:|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|
+|[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Resets the source data for the chart.|
 |[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|
@@ -55,10 +55,22 @@ None
 #### Returns
 void
 
-### getImage(height: number, width: number, fittingMode: ImageFittingMode)
-Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	chart.delete();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
 
-_**Note**: This is a proposed feature that is still under design phase and hence not yet available as part of the product. The specification is being made available for community review and feedback. The final design may change. Help us make this feature better by providing your feedback [here](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-chart-getImage)._
+### getImage(height: number, width: number, fittingMode: string)
+Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.
 
 #### Syntax
 ```js
@@ -70,10 +82,28 @@ chartObject.getImage(height, width, fittingMode);
 |:---------------|:--------|:----------|
 |height|number|Optional. (Optional) The desired height of the resulting image.|
 |width|number|Optional. (Optional) The desired width of the resulting image.|
-|fittingMode|ImageFittingMode|Optional. (Optional) The method used to scale the chart to the specified to the specified dimensions (if both height and width are set)."|
+|fittingMode|string|Optional. (Optional) The method used to scale the chart to the specified to the specified dimensions (if both height and width are set)."  Possible values are: Fit, FitAndCenter, Fill|
 
 #### Returns
 [System.IO.Stream](system.io.stream.md)
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	var image = chart.getImage();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -103,10 +133,29 @@ chartObject.setData(sourceData, seriesBy);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |sourceData|Range|The Range object corresponding to the source data.|
-|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.|
+|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
 
 #### Returns
 void
+
+#### Examples
+
+Set the `sourceData` to be "A1:B4" and `seriesBy` to be "Columns"
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	var sourceData = "A1:B4";
+	chart.setData(sourceData, "Columns");
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### setPosition(startCell: Range or string, endCell: Range or string)
 Positions the chart relative to cells on the worksheet.
@@ -124,3 +173,81 @@ chartObject.setPosition(startCell, endCell);
 
 #### Returns
 void
+
+#### Examples
+
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Charts";
+	var sourceData = sheetName + "!" + "A1:B4";
+	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("pie", sourceData, "auto");
+	chart.width = 500;
+	chart.height = 300;
+	chart.setPosition("C2", null);
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+### Property access examples
+
+Get a chart named "Chart1"
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	chart.load('name');
+	return ctx.sync().then(function() {
+			console.log(chart.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Update a chart including renaming, positioning and resizing.
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	chart.name="New Name";
+	chart.top = 100;
+	chart.left = 100;
+	chart.height = 200;
+	chart.weight = 200;
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Rename the chart to new name, resize the chart to 200 points in both height and weight. Move Chart1 to 100 points to the top and left. 
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+	chart.name="New Name";	
+	chart.top = 100;
+	chart.left = 100;
+	chart.height =200;
+	chart.width =200;
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+

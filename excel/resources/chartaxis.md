@@ -1,6 +1,6 @@
 # ChartAxis Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a single axis in a chart.
 
@@ -47,3 +47,41 @@ object.load(param);
 
 #### Returns
 void
+### Property access examples
+Get the `maximum` of Chart Axis from Chart1
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	var axis = chart.axes.valueaxis;
+	axis.load('maximum');
+	return ctx.sync().then(function() {
+			console.log(axis.maximum);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Set the  `maximum`,  `minimum`,  `majorunit`, `minorunit` of valueaxis. 
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	chart.axes.valueaxis.maximum = 5;
+	chart.axes.valueaxis.minimum = 0;
+	chart.axes.valueaxis.majorunit = 1;
+	chart.axes.valueaxis.minorunit = 0.2;
+	return ctx.sync().then(function() {
+			console.log("Axis Settings Changed");
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

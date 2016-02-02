@@ -1,6 +1,6 @@
 # TableRowCollection Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the rows that are part of the table.
 
@@ -45,6 +45,25 @@ tableRowCollectionObject.add(index, values);
 #### Returns
 [TableRow](tablerow.md)
 
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	var values = [["Sample", "Values", "For", "New", "Row"]];
+	var row = tables.getItem("Table1").rows.add(null, values);
+	row.load('index');
+	return ctx.sync().then(function() {
+		console.log(row.index);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 ### getItemAt(index: number)
 Gets a row based on its position in the collection.
 
@@ -61,6 +80,23 @@ tableRowCollectionObject.getItemAt(index);
 #### Returns
 [TableRow](tablerow.md)
 
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
+	tablerow.load('name');
+	return ctx.sync().then(function() {
+			console.log(tablerow.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -76,3 +112,23 @@ object.load(param);
 
 #### Returns
 void
+### Property access examples
+
+```js
+Excel.run(function (ctx) { 
+	var tablerows = ctx.workbook.tables.getItem('Table1').rows;
+	tablerows.load('items');
+	return ctx.sync().then(function() {
+		console.log("tablerows Count: " + tablerows.count);
+		for (var i = 0; i < tablerows.items.length; i++)
+		{
+			console.log(tablerows.items[i].index);
+		}
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

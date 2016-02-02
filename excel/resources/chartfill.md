@@ -1,6 +1,6 @@
 # ChartFill Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents the fill formatting for a chart element.
 
@@ -36,6 +36,25 @@ None
 #### Returns
 void
 
+#### Examples
+
+Clear the line format of the major Gridlines on value axis of the Chart named "Chart1"
+
+```js
+Excel.run(function (ctx) { 
+	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
+	gridlines.format.line.clear();
+	return ctx.sync().then(function() {
+			console.log"Chart Major Gridlines Format Cleared");
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 ### setSolidColor(color: string)
 Sets the fill formatting of a chart element to a uniform color.
 
@@ -51,3 +70,24 @@ chartFillObject.setSolidColor(color);
 
 #### Returns
 void
+
+#### Examples
+
+Set BackGround Color of Chart1 to be red.
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+
+	chart.format.fill.setSolidColor("#FF0000");
+
+	return ctx.sync().then(function() {
+			console.log("Chart1 Background Color Changed.");
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

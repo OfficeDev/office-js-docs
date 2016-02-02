@@ -1,30 +1,43 @@
-## Introduction to Excel JS APIs 1.2 
+# Excel add-ins
 
 _Applies to: Excel 2016, Office 2016_
 
-Below links describes the new set of Excel JavaScript APIs that are being planned for the next release (Requirement Set 1.2). Please review and provide your feedback. One of the best ways of providing your input is by opening new issue in GitHub using the links available below. 
+Welcome to the Excel JavaScript API documentation. Here you can find everything you need to create the next generation of Excel add-ins in Office 2016 for Windows and Excel Online. The new APIs provide a variety of Excel-specific functionality related to worksheets, tables, charts, ranges, formatting, etc., and complements features present in our existing Office.js library.
 
-_**Note**: below listed features are still under design and review phase and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
+Explore the following resources to learn more. 
 
-
-| New feature	   | Description	| Give feedback|
-|:---------------|:--------|:----------|
-|[Worksheet Protection](resources/worksheetprotection.md)| Represents the sorting for the Range. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-worksheetprotection)_|
-|[R1C1 Addressing](resources/range.md)|  R1C1 addressing is now available on Range objects. R1C1 format can also be used for addressing the range.| _[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-R1C1-addressing)_|
-|[Range Sort](resources/rangesort.md)| Represents the sorting for the Range. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-sort)_|
-|[Table Sort](resources/tablesort.md)| Represents the sorting for the table. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-sort)_|
-|[Get used range](resources/range.md#getusedrangevaluesonlyboolean)| Returns the used range of the given range object. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-range-getusedrange)_|
-|[Merge cells](resources/range.md#mergeacross-boolean)| Creates a merged cell from the specified Range object. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-range-merge)_|
-|[Covert Table to Range](resources/table.md#converttorange)|  Converts the table into a normal range of cells. All data is preserved.| _[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-table-convertToRange)_|
-|[Export Chart as Image](resources/chart.md#getimagewidth-number-height-number)|  Return a chart as a base64 string.| _[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-chart-getImage)_|
+* [Build your first Excel add-in](build-your-first-excel-add-in.md)
+* [Code snippet explorer](https://github.com/OfficeDev/office-js-snippet-explorer)
+* [Excel add-ins JavaScript API reference](excel-add-ins-javascript-reference.md)
+* [Excel add-ins programming overview](excel-add-ins-programming-overview.md)
 
 
+## Try it out
+
+Here're two resources to help you try out and get familiar with the APIs.
+
+### Code snippets
+
+You can use the [Office 2016 JavaScript Snippet Explorer](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel) to browse through code examples for common scenarios and to learn how the new APIs work. 
+
+### Sample add-ins
+
+**[Quarterly Sales Report Sample](https://github.com/OfficeDev/Excel-Add-in-JS-QuarterlySalesReport)** : A simple task pane add-in that loads some data into a worksheet and creates a basic chart in Excel 2016. 
+
+**[College Budget Tracker Sample](https://github.com/OfficeDev/Excel-Add-in-JS-CollegeBudgetTracker)** : A task pane add-in that shows how to create a college budget tracker using the JavaScript APIs in Excel 2016. 
+
+**[College Credits Tracker Sample](https://github.com/OfficeDev/Excel-Add-in-JS-CollegeCreditsTracker)** : A task pane add-in that shows how to create a college credits tracker using the JavaScript APIs in Excel 2016. 
+
+**[Sheet Switcher Sample](https://github.com/OfficeDev/Excel-Add-in-JS-SheetSwitcher)** : A task pane add-in that provides a way to add new sheets to a workbook and navigate to them in Excel 2016. 
+
+**[Consolidated Sales Report Sample](https://github.com/OfficeDev/Excel-Add-in-JS-ConsolidatedSalesReport)** : A task pane add-in that shows how to consolidate data from multiple worksheets using the JavaScript APIs in Excel 2016. 
+
+**[Range Highlighter Sample](https://github.com/OfficeDev/Excel-Add-in-JS-RangeHighlighter)** : A task pane add-in that shows how to do common operations using the Range API in Excel 2016.
 
 
-## Your feedback is important to us 
+## Give us your feedback
 
+Your feedback is important to us. 
 
-* Check out the new features and let us know about any comments, questions and issues by following the feedback links provided all through the docs or by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository. 
-* Let us know about your programming experience, what you would like to see in future versions, code samples, etc. 
-
-
+* Check out the docs and let us know about any questions and issues you find in them by [submitting an issue](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
+* Let us know about your programming experience, what you would like to see in future versions, code samples, etc. Use [this site](http://officespdev.uservoice.com/) for entering your suggestions and ideas.

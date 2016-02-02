@@ -1,6 +1,6 @@
 # TableCollection Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the tables that are part of the workbook.
 
@@ -46,6 +46,23 @@ tableCollectionObject.add(address, hasHeaders);
 #### Returns
 [Table](table.md)
 
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
+	table.load('name');
+	return ctx.sync().then(function() {
+		console.log(table.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 ### getItem(key: number or string)
 Gets a table by Name or ID.
 
@@ -61,6 +78,41 @@ tableCollectionObject.getItem(key);
 
 #### Returns
 [Table](table.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	return ctx.sync().then(function() {
+			console.log(table.index);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItemAt(0);
+	return ctx.sync().then(function() {
+			console.log(table.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### getItemAt(index: number)
 Gets a table based on its position in the collection.
@@ -78,6 +130,23 @@ tableCollectionObject.getItemAt(index);
 #### Returns
 [Table](table.md)
 
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItemAt(0);
+	return ctx.sync().then(function() {
+			console.log(table.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -93,3 +162,40 @@ object.load(param);
 
 #### Returns
 void
+### Property access examples
+
+```js
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	tables.load('items');
+	return ctx.sync().then(function() {
+		console.log("tables Count: " + tables.count);
+		for (var i = 0; i < tables.items.length; i++)
+		{
+			console.log(tables.items[i].name);
+		}
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+Get the number of tables
+
+```js
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	tables.load('count');
+	return ctx.sync().then(function() {
+		console.log(tables.count);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

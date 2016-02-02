@@ -1,6 +1,6 @@
 # TableColumn Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a column in a table.
 
@@ -16,8 +16,9 @@ Represents a column in a table.
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|filter|[Filter](filter.md)|Retrieve the filter applied to the column. Read-only.|
 
 ## Methods
 
@@ -47,6 +48,23 @@ None
 #### Returns
 void
 
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+	column.delete();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### getDataBodyRange()
 Gets the range object associated with the data body of the column.
 
@@ -60,6 +78,25 @@ None
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var dataBodyRange = column.getDataBodyRange();
+	dataBodyRange.load('address');
+	return ctx.sync().then(function() {
+		console.log(dataBodyRange.address);
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### getHeaderRowRange()
 Gets the range object associated with the header row of the column.
@@ -75,6 +112,25 @@ None
 #### Returns
 [Range](range.md)
 
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var headerRowRange = columns.getHeaderRowRange();
+	headerRowRange.load('address');
+	return ctx.sync().then(function() {
+		console.log(headerRowRange.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 ### getRange()
 Gets the range object associated with the entire column.
 
@@ -89,6 +145,26 @@ None
 #### Returns
 [Range](range.md)
 
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columnRange = columns.getRange();
+	columnRange.load('address');
+	return ctx.sync().then(function() {
+		console.log(columnRange.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### getTotalRowRange()
 Gets the range object associated with the totals row of the column.
 
@@ -102,6 +178,26 @@ None
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var totalRowRange = columns.getTotalRowRange();
+	totalRowRange.load('address');
+	return ctx.sync().then(function() {
+		console.log(totalRowRange.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -118,3 +214,38 @@ object.load(param);
 
 #### Returns
 void
+### Property access examples
+
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
+	column.load('index');
+	return ctx.sync().then(function() {
+		console.log(column.index);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+```js
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
+	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+	column.values = newValues;
+	column.load('values');
+	return ctx.sync().then(function() {
+		console.log(column.values);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

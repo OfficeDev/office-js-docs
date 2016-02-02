@@ -1,6 +1,6 @@
 # ChartDataLabels Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the data labels on a chart point.
 
@@ -8,7 +8,7 @@ Represents a collection of all the data labels on a chart point.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|position|string|DataLabelPosition value that represents the position of the data label.|
+|position|string|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|
 |separator|string|String representing the separator used for the data labels on a chart.|
 |showBubbleSize|bool|Boolean value representing if the data label bubble size is visible or not.|
 |showCategoryName|bool|Boolean value representing if the data label category name is visible or not.|
@@ -48,3 +48,23 @@ object.load(param);
 
 #### Returns
 void
+### Property access examples
+
+Make Series Name shown in Datalabels and set the `position` of datalabels to be "top";
+
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	chart.datalabels.visible = true;
+	chart.datalabels.position = "top";
+	chart.datalabels.ShowSeriesName = true;
+	return ctx.sync().then(function() {
+			console.log("Datalabels Shown");
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

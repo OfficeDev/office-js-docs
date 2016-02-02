@@ -1,18 +1,14 @@
-# :new:WorksheetProtection Object (JavaScript API for Excel)
+# WorksheetProtection Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Office 2016_
+_Applies to: Excel 2016, Office 2016_
 
 Represents the protection of a sheet object.
-
-_**Note**: This is a proposed feature that is still under design phase and hence not yet available as part of the product. The specification is being made available for community review and feedback. The final design may change. Help us make this feature better by providing your feedback [here](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-worksheetprotection)._
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |protected|bool|Indicates if the worksheet is protected. Read-Only. Read-only.|
-
-_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -63,6 +59,21 @@ worksheetProtectionObject.protect(options, password);
 #### Returns
 void
 
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var sheet = ctx.workbook.worksheets.getItem("Sheet1");
+	var range = sheet.getRange("A1:B3").format.protection.locked = false;
+	sheet.protection.protect({allowInsertRows:true});
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+
+```
 ### unprotect(password: string)
 Unprotect a worksheet
 
