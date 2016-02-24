@@ -11,7 +11,7 @@ Represents a placeholder object for top leve content under page. These contents 
 |id|string|Gets the ID. Read-only.|
 |type|string|Gets the Type of the Content. Read-only. Possible values are: Outline, Image, Ink, InsertedFile, MediaFile, Other.|
 
-_See property access [examples.](#property-access-examples)_
+
 
 ## Relationships
 | Relationship | Type	|Description|

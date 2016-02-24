@@ -11,7 +11,7 @@ Represents a placeholder object for contents in an Outline. It can hold any one 
 |id|string|Gets the ID. Read-only.|
 |type|string|Gets the ParagraphType of this Paragraph. Read-only. Possible values are: RichText, Image, Table, InkDrawing, InsertedFile, MediaFile, InkParagraph, Other.|
 
-_See property access [examples.](#property-access-examples)_
+
 
 ## Relationships
 | Relationship | Type	|Description|

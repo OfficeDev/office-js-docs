@@ -11,7 +11,7 @@ Represents the Image object.
 |description|string|Gets Image description. Read-only.|
 |hyperlink|string|Gets the hyperlink.|
 
-_See property access [examples.](#property-access-examples)_
+
 
 ## Relationships
 | Relationship | Type	|Description|

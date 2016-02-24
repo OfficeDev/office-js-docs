@@ -10,7 +10,7 @@ Represents RichText object.
 |:---------------|:--------|:----------|
 |text|string|Gets text. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+
 
 ## Relationships
 | Relationship | Type	|Description|

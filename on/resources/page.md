@@ -12,7 +12,7 @@ Represents the Page in OneNote.
 |pageLevel|int|Gets the page level which indicates the number of indentation in the page tab. Read-only.|
 |title|string|Gets the title. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+
 
 ## Relationships
 | Relationship | Type	|Description|

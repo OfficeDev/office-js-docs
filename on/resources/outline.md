@@ -10,7 +10,7 @@ Represents a collection of PageContents.
 |:---------------|:--------|:----------|
 |id|string|Gets the ID. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+
 
 ## Relationships
 | Relationship | Type	|Description|

@@ -11,7 +11,7 @@ Represents the SectionGroup in OneNote.
 |id|string|Gets the ID. Read-only.|
 |name|string|Gets the name. Read-only.|
 
-_See property access [examples.](#property-access-examples)_
+
 
 ## Relationships
 | Relationship | Type	|Description|

@@ -11,7 +11,7 @@ Reresents the x, y position which offset from top-left corner.
 |x|int|Gets or Sets X position.|
 |y|int|Gets or Sets Y position.|
 
-_See property access [examples.](#property-access-examples)_
+
 
 ## Relationships
 None
