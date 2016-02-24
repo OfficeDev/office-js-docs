@@ -13,9 +13,9 @@ The links below show the high level OneNote objects available in the APIs. Each 
 	* [SectionGroupCollection](resources/sectiongroupcollection.md): Represents the SectionGroup in OneNote.  
 	* [SectionCollection](resources/sectioncollection.md): Represents a collection of Sections.  
 * [Section](resources/section.md): Represents the Section in OneNote.  Contains Pages as child.
-	* [Pages](resources/pages.md): Represents a collection of Pages.  
+	* [PageCollection](resources/pagecollection.md): Represents a collection of Pages.  
 * [Page](resources/page.md): Represents the Page in OneNote.  Contains PageContents as child.
-	* [PageContents](resources/pagecontents.md): Represents a collection of PageContents.  
+	* [PageContentCollection](resources/pagecontentcollection.md): Represents a collection of PageContents.  
 * [PageContent](resources/pagecontent.md): Represents a placeholder object for top leve content under page. These contents can be asigned x,y position in a page. It can be either an image or an outline.  
 * [Outline](resources/outline.md): Represents a region that contains text. Contains paragraphs as child.  
 	* [ParagraphCollection](resources/paragraphcollection.md): Collection of paragraph. 
