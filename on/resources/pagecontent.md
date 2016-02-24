@@ -1,6 +1,6 @@
-# PageContent Object (JavaScript API for OneNote)
+# PageContent Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a placeholder object for top leve content under page. These contents can be asigned x,y position in a page.
 
@@ -10,14 +10,15 @@ Represents a placeholder object for top leve content under page. These contents 
 |:---------------|:--------|:----------|
 |id|string|Gets the ID. Read-only.|
 |type|string|Gets the Type of the Content. Read-only. Possible values are: Outline, Image, Ink, InsertedFile, MediaFile, Other.|
+|xPosition|int|Gets or Sets the x position of this content.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
+|get;|[{]({.md)|Gets or Sets the y position of this content.|
 |parent|[Page](page.md)|Gets the parent Page. Read-only.|
-|position|[Position](position.md)|Gets or Sets the x,y position of this content.|
 
 ## Methods
 

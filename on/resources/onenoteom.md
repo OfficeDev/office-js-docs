@@ -1,6 +1,6 @@
-# OneNoteOM Object (JavaScript API for OneNote)
+# OneNoteOM Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Represents the top level object which contains any globaly addressable objects such as Notebooks, Current Notebook, Current Section, etc.
 
@@ -11,7 +11,7 @@ None
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|notebooks|[Notebooks](notebooks.md)|Gets the collection of notebooks objects that are open in the OneNote Application instance. Read-only.|
+|notebooks|[NotebookCollection](notebookcollection.md)|Gets the collection of notebooks objects that are open in the OneNote Application instance. Read-only.|
 
 ## Methods
 

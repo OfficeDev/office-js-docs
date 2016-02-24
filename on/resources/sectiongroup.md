@@ -1,6 +1,6 @@
-# SectionGroup Object (JavaScript API for OneNote)
+# SectionGroup Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Represents the SectionGroup in OneNote.
 
@@ -11,7 +11,7 @@ Represents the SectionGroup in OneNote.
 |id|string|Gets the ID. Read-only.|
 |name|string|Gets the name. Read-only.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -23,44 +23,42 @@ Represents the SectionGroup in OneNote.
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getChildSectionGroups(recursive: bool)](#getchildsectiongroupsrecursive-bool)|[SectionGroups](sectiongroups.md)|todo|
-|[getChildSections(name: bool)](#getchildsectionsname-bool)|[Sections](sections.md)|Gets the collection of Notebooks with specified name.|
+|[getChildSectionGroups()](#getchildsectiongroups)|[SectionGroupCollection](sectiongroupcollection.md)|Gets the child SectionGroups.|
+|[getChildSections(recursive: bool)](#getchildsectionsrecursive-bool)|[SectionCollection](sectioncollection.md)|Gets the collection of Sections.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### getChildSectionGroups(recursive: bool)
-todo
+### getChildSectionGroups()
+Gets the child SectionGroups.
 
 #### Syntax
 ```js
-sectionGroupObject.getChildSectionGroups(recursive);
+sectionGroupObject.getChildSectionGroups();
+```
+
+#### Parameters
+None
+
+#### Returns
+[SectionGroupCollection](sectiongroupcollection.md)
+
+### getChildSections(recursive: bool)
+Gets the collection of Sections.
+
+#### Syntax
+```js
+sectionGroupObject.getChildSections(recursive);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|recursive|bool|todo.|
+|recursive|bool|Boolean value to indicate whether to retrieve all child sections or immediate child sections.|
 
 #### Returns
-[SectionGroups](sectiongroups.md)
-
-### getChildSections(name: bool)
-Gets the collection of Notebooks with specified name.
-
-#### Syntax
-```js
-sectionGroupObject.getChildSections(name);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|name|bool|Name of the Notebook to search.|
-
-#### Returns
-[Sections](sections.md)
+[SectionCollection](sectioncollection.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

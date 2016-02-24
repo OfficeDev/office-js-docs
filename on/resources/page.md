@@ -1,6 +1,6 @@
-# Page Object (JavaScript API for OneNote)
+# Page Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Represents the Page in OneNote.
 
@@ -12,7 +12,7 @@ Represents the Page in OneNote.
 |pageLevel|int|Gets the page level which indicates the number of indentation in the page tab. Read-only.|
 |title|string|Gets the title. Read-only.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -23,10 +23,10 @@ Represents the Page in OneNote.
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[addImageFromBase64(position: Position, base64EncodedImage: String)](#addimagefrombase64position-position-base64encodedimage-string)|[Image](image.md)|Adds an image in a new PageContent under this Page.|
-|[addOutline(position: Position, DispatchIds: String)](#addoutlineposition-position-dispatchids-string)|[Outline](outline.md)|Adds an outline in a new PageContent under this Page.|
+|[addImageFromBase64(xPosition: number, yPosition: number, base64EncodedImage: String)](#addimagefrombase64xposition-number-yposition-number-base64encodedimage-string)|[Image](image.md)|Adds an image in a new PageContent under this Page.|
+|[addOutline(xPosition: number, yPosition: number, html: String)](#addoutlinexposition-number-yposition-number-html-string)|[Outline](outline.md)|Adds an outline in a new PageContent under this Page.|
 |[changeTitle(title: string)](#changetitletitle-string)|void|Updates the Title.|
-|[getContents()](#getcontents)|[PageContents](pagecontents.md)|Gets the collection of child PageContents.|
+|[getContents()](#getcontents)|[PageContentCollection](pagecontentcollection.md)|Gets the collection of child PageContents.|
 |[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|insert a new page as a sibling of this page|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 |[setPageLevel(level: number)](#setpagelevellevel-number)|void|Sets the page level which indicates the number of indentation in the page tab.|
@@ -34,36 +34,38 @@ Represents the Page in OneNote.
 ## Method Details
 
 
-### addImageFromBase64(position: Position, base64EncodedImage: String)
+### addImageFromBase64(xPosition: number, yPosition: number, base64EncodedImage: String)
 Adds an image in a new PageContent under this Page.
 
 #### Syntax
 ```js
-pageObject.addImageFromBase64(position, base64EncodedImage);
+pageObject.addImageFromBase64(xPosition, yPosition, base64EncodedImage);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|position|Position|Position of the Outline.|
+|xPosition|number|Position x of the Outline.|
+|yPosition|number|Position y of the Outline.|
 |base64EncodedImage|String|Base64 encoded image.|
 
 #### Returns
 [Image](image.md)
 
-### addOutline(position: Position, DispatchIds: String)
+### addOutline(xPosition: number, yPosition: number, html: String)
 Adds an outline in a new PageContent under this Page.
 
 #### Syntax
 ```js
-pageObject.addOutline(position, DispatchIds);
+pageObject.addOutline(xPosition, yPosition, html);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|position|Position|Position of the Outline.|
-|DispatchIds|String|Html string describing the Outline visual presentation.|
+|xPosition|number|Position x of the Outline.|
+|yPosition|number|Position y of the Outline.|
+|html|String|Html string describing the Outline visual presentation.|
 
 #### Returns
 [Outline](outline.md)
@@ -96,7 +98,7 @@ pageObject.getContents();
 None
 
 #### Returns
-[PageContents](pagecontents.md)
+[PageContentCollection](pagecontentcollection.md)
 
 ### insertPageAsSibling(location: string, title: string)
 insert a new page as a sibling of this page

@@ -1,64 +1,63 @@
-# Outline Object (JavaScript API for Excel)
+# PageContentCollection Object (JavaScript API for Excel)
 
 _Applies to: Excel 2016, Office 2016_
 
-Represents a region that contains Paragraphs. It can be positioned.
+Represents a collection of PageContents.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|id|string|Gets the ID. Read-only.|
+|items|[PageContent[]](pagecontent.md)|A collection of pageContent objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the child Paragraphs. Read-only.|
-|parent|[PageContent](pagecontent.md)|Gets the parent PageContent. Read-only.|
+None
+
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[append(location: string, html: string)](#appendlocation-string-html-string)|void|Appends specified html to this Outline.|
-|[getHtml()](#gethtml)|string|Gets the html representation of the Outline.|
+|[getById(id: string)](#getbyidid-string)|[PageContent](pagecontent.md)|Gets a page content by its identifier.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[PageContent](pagecontent.md)|Gets an PageContent object by its index in the collection. Read-only.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### append(location: string, html: string)
-Appends specified html to this Outline.
+### getById(id: string)
+Gets a page content by its identifier.
 
 #### Syntax
 ```js
-outlineObject.append(location, html);
+pageContentCollectionObject.getById(id);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|location|string|Append location.  Possible values are: Begin, End|
-|html|string|HTML string to append.|
+|id|string|Required. A content control identifier.|
 
 #### Returns
-void
+[PageContent](pagecontent.md)
 
-### getHtml()
-Gets the html representation of the Outline.
+### getItem(index: number or string)
+Gets an PageContent object by its index in the collection. Read-only.
 
 #### Syntax
 ```js
-outlineObject.getHtml();
+pageContentCollectionObject.getItem(index);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number or string|A number or an id that identifies the index location of a PageContent object.|
 
 #### Returns
-string
+[PageContent](pagecontent.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

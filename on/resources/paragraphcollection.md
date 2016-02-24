@@ -1,64 +1,63 @@
-# Outline Object (JavaScript API for Excel)
+# ParagraphCollection Object (JavaScript API for Excel)
 
 _Applies to: Excel 2016, Office 2016_
 
-Represents a region that contains Paragraphs. It can be positioned.
+Represents a collection of Paragraphs.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|id|string|Gets the ID. Read-only.|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the child Paragraphs. Read-only.|
-|parent|[PageContent](pagecontent.md)|Gets the parent PageContent. Read-only.|
+None
+
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[append(location: string, html: string)](#appendlocation-string-html-string)|void|Appends specified html to this Outline.|
-|[getHtml()](#gethtml)|string|Gets the html representation of the Outline.|
+|[getById(id: string)](#getbyidid-string)|[Paragraph](paragraph.md)|Gets a paragraph by its identifier.|
+|[getItem(index: number or string)](#getitemindex-number-or-string)|[Paragraph](paragraph.md)|Gets an Paragraph object by its index in the collection. Read-only.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### append(location: string, html: string)
-Appends specified html to this Outline.
+### getById(id: string)
+Gets a paragraph by its identifier.
 
 #### Syntax
 ```js
-outlineObject.append(location, html);
+paragraphCollectionObject.getById(id);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|location|string|Append location.  Possible values are: Begin, End|
-|html|string|HTML string to append.|
+|id|string|Required. A content control identifier.|
 
 #### Returns
-void
+[Paragraph](paragraph.md)
 
-### getHtml()
-Gets the html representation of the Outline.
+### getItem(index: number or string)
+Gets an Paragraph object by its index in the collection. Read-only.
 
 #### Syntax
 ```js
-outlineObject.getHtml();
+paragraphCollectionObject.getItem(index);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|number or string|A number or an id that identifies the index location of a Paragraph object.|
 
 #### Returns
-string
+[Paragraph](paragraph.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

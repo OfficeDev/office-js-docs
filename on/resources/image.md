@@ -1,6 +1,6 @@
-# Image Object (JavaScript API for OneNote)
+# Image Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Represents the Image object.
 
@@ -9,30 +9,30 @@ Represents the Image object.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |description|string|Gets Image description. Read-only.|
-|hyperlink|string|Gets the hyperlink.|
+|hyperlink|string|Gets or Sets the hyperlink.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |height|[float](float.md)|Gets height of the image layout. Read-only.|
 |parent|[Paragraph](paragraph.md)|Gets the parent Paragraph of this Image. Read-only.|
-|width|[float](float.md)|Gets width of the image layout.|
+|width|[float](float.md)|Gets or Sets width of the image layout.|
 
 ## Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[changeDescription(description: string)](#changedescriptiondescription-string)|void|Gets width of the image layout.|
-|[getBase64ImageSrc()](#getbase64imagesrc)|string|Gets width of the image layout.|
+|[changeDescription(description: string)](#changedescriptiondescription-string)|void|Change the description.|
+|[getBase64ImageSrc()](#getbase64imagesrc)|string|Gets base64 encoded image.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### changeDescription(description: string)
-Gets width of the image layout.
+Change the description.
 
 #### Syntax
 ```js
@@ -48,7 +48,7 @@ imageObject.changeDescription(description);
 void
 
 ### getBase64ImageSrc()
-Gets width of the image layout.
+Gets base64 encoded image.
 
 #### Syntax
 ```js

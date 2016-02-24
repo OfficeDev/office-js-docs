@@ -1,6 +1,6 @@
-# Paragraph Object (JavaScript API for OneNote)
+# Paragraph Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Represents a placeholder object for contents in an Outline. It can hold any one ParagraphType type of content. Paragraph is auto laid out.
 
@@ -11,14 +11,14 @@ Represents a placeholder object for contents in an Outline. It can hold any one 
 |id|string|Gets the ID. Read-only.|
 |type|string|Gets the ParagraphType of this Paragraph. Read-only. Possible values are: RichText, Image, Table, InkDrawing, InsertedFile, MediaFile, InkParagraph, Other.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |parentOutline|[Outline](outline.md)|Gets the parent Outline. Read-only.|
 |parentParagraph|[Paragraph](paragraph.md)|Gets the parent Paragraph. It can be null if it is one of the top Paragraphs under Outline. Read-only.|
-|subParagraphs|[Paragraphs](paragraphs.md)|Gets the child Paragraphs if it contains them. Only List and Table can have child Paragraphs. Read-only.|
+|subParagraphs|[ParagraphCollection](paragraphcollection.md)|Gets the child Paragraphs if it contains them. Only List and Table can have child Paragraphs. Read-only.|
 
 ## Methods
 

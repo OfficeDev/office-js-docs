@@ -1,6 +1,6 @@
-# Position Object (JavaScript API for OneNote)
+# Position Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Reresents the x, y position which offset from top-left corner.
 
@@ -11,7 +11,7 @@ Reresents the x, y position which offset from top-left corner.
 |x|int|Gets or Sets X position.|
 |y|int|Gets or Sets Y position.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None

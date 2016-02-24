@@ -1,6 +1,6 @@
-# Section Object (JavaScript API for OneNote)
+# Section Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Represents the Section in OneNote.
 
@@ -11,7 +11,7 @@ Represents the Section in OneNote.
 |id|string|Gets the ID. Read-only.|
 |name|string|Gets the name. Read-only.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -24,7 +24,7 @@ Represents the Section in OneNote.
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[addPage(location: string, title: string)](#addpagelocation-string-title-string)|[Page](page.md)|add a new page at begining or end.|
-|[getPages(name: bool)](#getpagesname-bool)|[Pages](pages.md)|Gets the child Pages.|
+|[getPages()](#getpages)|[PageCollection](pagecollection.md)|Gets the child Pages.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -47,21 +47,19 @@ sectionObject.addPage(location, title);
 #### Returns
 [Page](page.md)
 
-### getPages(name: bool)
+### getPages()
 Gets the child Pages.
 
 #### Syntax
 ```js
-sectionObject.getPages(name);
+sectionObject.getPages();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|name|bool|name of the SectionGroup to search.|
+None
 
 #### Returns
-[Pages](pages.md)
+[PageCollection](pagecollection.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

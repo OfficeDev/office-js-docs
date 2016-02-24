@@ -1,6 +1,6 @@
-# RichText Object (JavaScript API for OneNote)
+# RichText Object (JavaScript API for Excel)
 
-_Applies to: OneNote Online_
+_Applies to: Excel 2016, Office 2016_
 
 Represents RichText object.
 
@@ -10,7 +10,7 @@ Represents RichText object.
 |:---------------|:--------|:----------|
 |text|string|Gets text. Read-only.|
 
-
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
