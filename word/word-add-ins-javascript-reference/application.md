@@ -70,7 +70,20 @@ Word.run(function (ctx) {
 });
 ```
 
+### open() ![new](../media/new.jpg) 
 
+Opens the new document in a new instance of Word.
+
+#### Syntax
+```js
+document.open();
+```
+
+#### Parameters
+None.
+
+#### Returns
+void
 
 ## Support details
 
