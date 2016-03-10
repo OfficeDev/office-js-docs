@@ -9,8 +9,8 @@ The Office UI Namespace provides objects and methods used to create UI component
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[close()](#close)|void|Closes the dialog.|
-|[displayDialogAsync()](#displaydialogasync)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
-|[messageParentAsync()](#messageparentasync)|void|Sends a message from a dialog to the parent add-in.|
+|[displayDialogAsync(startAddress: string[, options: object], callback: function)](#displaydialogasyncstartaddress-string-options-object-callback-function)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
+|[messageParentAsync(messageObject: object[, callback: function])](#messageparentasyncmessageobject-object-callback-function)|void|Sends a message from a dialog to the parent add-in.|
 
 ## Method Details
 
