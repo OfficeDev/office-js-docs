@@ -7,5 +7,5 @@ Common objects and APIs available to Office add-ins.
 ## Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|[office.ui.displayDialogAsync()](office/ui/officeui.md)|function|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
+|[office.ui.displayDialogAsync()](officeui.md)|function|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
 
