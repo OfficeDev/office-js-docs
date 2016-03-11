@@ -9,8 +9,8 @@ The Office UI Namespace provides objects and methods used to create UI component
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[close()](#close)|void|Closes the dialog.|
-|[displayDialogAsync(startAddress: string[, options: object], callback: function)](#displaydialogasyncstartaddress-string-options-object-callback-function)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
-|[messageParentAsync(messageObject: object[, callback: function])](#messageparentasyncmessageobject-object-callback-function)|void|Sends a message from a dialog to the parent add-in.|
+|[displayDialogAsync()](#displaydialogasync)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
+|[messageParent()](#messageparent)|void|Sends a message from a dialog to the parent add-in.|
 
 ## Method Details
 
@@ -98,20 +98,18 @@ The callback for displayDialogAsync, in the success case, includes a dialog obje
 #### Returns
 void
 
-### messageParentAsync(messageObject: object[, callback: function])
+### messageParent(messageObject: object)
 Delivers a message from the dialog to its parent add-in.
 
 #### Syntax
 ```js
-messageParentAsync("Message from Dialog", callback);
+messageParent("Message from Dialog");
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |messageObject|object|Accepts a message from the dialog to deliver to the add-in.|
-|callback|function|Optional. Accepts a callback method to confirm the message's delivery.|
-
 
 #### Returns
 void
@@ -119,15 +117,7 @@ void
 #### Examples
 
 ```js
-function messageCallback(asyncResult){ 
-	var outcome = asyncResult.status; 
-	if (outcome == Office.AsyncResultStatus.Succeeded)
-	{
-		office.ui.close();
-	}
-} 
-
-messageParentAsync("Message from Dialog", messageCallback);
+messageParent("Message from Dialog");
 ```
 
 ## Objects
