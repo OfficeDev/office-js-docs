@@ -8,31 +8,10 @@ The Office UI Namespace provides objects and methods used to create UI component
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[close()](#close)|void|Closes the dialog.|
 |[displayDialogAsync()](#displaydialogasync)|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
 |[messageParent()](#messageparent)|void|Sends a message from a dialog to the parent add-in.|
 
 ## Method Details
-
-### close()
-When called from an active add-in dialog, immediately closes the dialog.
-
-#### Syntax
-```js
-close();
-```
-
-#### Parameters
-None.
-
-#### Returns
-void
-
-#### Examples
-
-```js
-closeButton.addEventListener("click", office.ui.close);
-```
 
 ### displayDialogAsync(startAddress: string[, options: object], callback: function)
 Display up to one Web dialog that opens at startAddress.
@@ -137,3 +116,37 @@ Dialogs support a number of configuration options.
 1.	The default dialog dimensions are 80% display width x 80% display height (based on the current device dimensions) 
 2.	Dialogs have a minimum size to avoid discoverability problems 
 3.	The dialog display may be in portrait or landscape orientation, and the width and height will adjust accordingly
+
+
+## Sample - Putting it all together
+### Add-in Page
+The following code sample illustrates how to display a dialog and close it when the add-in receives a "success" message from it:
+```js
+<script src="//appsforoffice.microsoft.com/lib/beta/hosted/office.js”></script>
+<script>
+       var _dlg;
+       
+        Office.context.ui.displayDialogAsync(URL,
+            { height: 40, width: 40 },
+            function (result) {
+                _dlg = result.value;
+                _dlg.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, processMessage);
+            });
+
+function processMessage(arg) {
+    if (arg.message == "success") {
+        _dlg.close();
+    }
+}
+</script>
+```
+### Dialog Page
+On dialog page you need to load Office.js to be able to call the messageParent API on the *ui* namespace:
+
+```js
+<script src="//appsforoffice.microsoft.com/lib/beta/hosted/office.js”></script>
+<script>
+	//To send data back to the parent add-in call:
+	Office.context.ui.messageParent(“success”);
+<script>
+```
