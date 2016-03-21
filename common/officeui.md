@@ -121,9 +121,11 @@ Dialogs support a number of configuration options.
 ## Sample - Putting it all together
 ### Add-in Page
 The following code sample illustrates how to display a dialog and close it when the add-in receives a "success" message from it:
-```js
+```html
 <script src="//appsforoffice.microsoft.com/lib/beta/hosted/office.js”></script>
 <script>
+```
+```js
        var _dlg;
        
         Office.context.ui.displayDialogAsync(URL,
@@ -138,15 +140,21 @@ function processMessage(arg) {
         _dlg.close();
     }
 }
+```
+```html
 </script>
 ```
 ### Dialog Page
 On dialog page you need to load Office.js to be able to call the messageParent API on the *ui* namespace:
 
-```js
+```html
 <script src="//appsforoffice.microsoft.com/lib/beta/hosted/office.js”></script>
 <script>
+```
+```js
 	//To send data back to the parent add-in call:
 	Office.context.ui.messageParent(“success”);
+```
+```html
 <script>
 ```
