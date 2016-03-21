@@ -120,15 +120,16 @@ Dialogs support a number of configuration options.
 
 ## Sample - Putting it all together
 ### Add-in Page
-The following code sample illustrates how to display a dialog and close it when the add-in receives a "success" message from it:
+The following code sample illustrates the key elements needed to display a dialog from within and add-in page and close it when a "success" message is received. For simplicity many details required on a real implementation have been ommitted. 
 ```html
 <script src="//appsforoffice.microsoft.com/lib/beta/hosted/office.js”></script>
 <script>
 ```
 ```js
        var _dlg;
+       var url = "dialog.html";
        
-        Office.context.ui.displayDialogAsync(URL,
+        Office.context.ui.displayDialogAsync(url,
             { height: 40, width: 40 },
             function (result) {
                 _dlg = result.value;
@@ -152,7 +153,8 @@ On dialog page you need to load Office.js to be able to call the messageParent A
 <script>
 ```
 ```js
-	//To send data back to the parent add-in call:
+	//Your dialog logic goes here. 
+	//To send data back to the parent add-in, call:
 	Office.context.ui.messageParent(“success”);
 ```
 ```html
