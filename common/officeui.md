@@ -61,8 +61,8 @@ function openDialog() {
 4.	Every dialog opens centered on the screen 
 5.	Dialogs always open on top
 6.	Dialogs can only navigate to secured (TLS) sites 
-7.	Dialogs must initially open a site on the Trusted Domains list
-8.	Dialogs cannot send messages from pages outside the Trusted Domains list
+7.	Dialogs must initially open a site on the App Domains list
+8.	Dialogs cannot send messages from pages outside the App Domains list
 
 ### callback()
 The callback for displayDialogAsync, in the success case, includes a dialog object. This dialog object has additional behaviors. 
@@ -110,7 +110,7 @@ Dialogs support a number of configuration options.
 |width|object|Optional. Defines the width of the dialog as a percentage of the current display. Defaults to 80%. 250px minimum.|
 |height|object|Optional. Defines the height of the dialog as a percentage of the current display. Defaults to 80%. 150px minimum.|
 |xFrameDenySafe|object|Optional. Determines whether the dialog is safe to display within a Web frame.|
-|enforceAppDomains|object|Optional|object|Optional. Restricts the dialog's navigation to the add-in's trusted sites.|
+|enforceAppDomains|object|Optional. Restricts the dialog's navigation to the add-in's trusted AppDomain sites.|
 
 #### Comments
 1.	The default dialog dimensions are 80% display width x 80% display height (based on the current device dimensions) 
@@ -158,5 +158,5 @@ On dialog page you need to load Office.js to be able to call the messageParent A
 	Office.context.ui.messageParent(“success”);
 ```
 ```html
-<script>
+</script>
 ```
