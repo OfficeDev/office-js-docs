@@ -1,14 +1,15 @@
-# Document object (JavaScript API for Word)
+# Document Object (JavaScript API for Word)
+
+_Applies to: Word 2016, Word for iPad, Word for Mac 2016, Office 2016_
 
 The Document object is the top level object. A Document object contains one or more sections, content controls, and the body that contains the contents of the document.
 
-_Applies to: Word 2016, Word for iPad_
-
 ## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |saved|bool|Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved. Read-only.|
-|opened  ![new](../media/new.jpg)|bool|To be used in conjunction with application.createDoc and document.open. Its false until the created document is opened. Read-only.|
+
 
 
 ## Relationships
@@ -24,50 +25,10 @@ _Applies to: Word 2016, Word for iPad_
 |:---------------|:--------|:----------|
 |[getSelection()](#getselection)|[Range](range.md)|Gets the current selection of the document. Multiple selections are not supported.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[open()](#open)|void|Open the document.|
 |[save()](#save)|void|Saves the document. This will use the Word default file naming convention if the document has not been saved before.|
-|[open()](#open)![new](../media/new.jpg) |void | Opens a document created via the application.createDoc() method.|
 
-
-## Method details
-
-### open()  ![new](../media/new.jpg)
- Opens a document created via the application.createDoc() method.
-
-
-#### Parameters
-None
-
-#### Returns
-void
-
-#### Additional details
-Once this method is called all subsequent calls to the created document object will fail. 
-
-#### Examples
-```js
-//creates a documents adds a paragrpah at the end of it and finally it opens that document.
-Word.run(function (ctx) {
-    
-    var doc = ctx.application.createDoc();
-    ctx.load(doc);
-
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-            doc.body.insertParagraph("New Paragraph!", "end");
-            doc.open();
-            ctx.sync();
-
-    });  
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
+## Method Details
 
 
 ### getSelection()
@@ -83,37 +44,6 @@ None
 
 #### Returns
 [Range](range.md)
-
-#### Examples
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-    
-    var textSample = 'This is an example of the insert text method. This is a method ' + 
-        'which allows users to insert text into a selection. It can insert text into a ' +
-        'relative location or it can overwrite the current selection. Since the ' +
-        'getSelection method returns a range object, look up the range object documentation ' +
-        'for everything you can do with a selection.';
-    
-    // Create a range proxy object for the current selection.
-    var range = context.document.getSelection();
-    
-    // Queue a commmand to insert text at the end of the selection.
-    range.insertText(textSample, Word.InsertLocation.end);
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Inserted the text at the end of the selection.');
-    });  
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -131,38 +61,19 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
+### open()
+Open the document.
+
+#### Syntax
 ```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-    
-    // Create a proxy object for the document.
-    var thisDocument = context.document;
-    
-    // Queue a command to load content control properties.
-    context.load(thisDocument, 'contentControls/id, contentControls/text, contentControls/tag');
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        if (thisDocument.contentControls.items.length !== 0) {
-            for (var i = 0; i < thisDocument.contentControls.items.length; i++) {
-                console.log(thisDocument.contentControls.items[i].id);
-                console.log(thisDocument.contentControls.items[i].text);
-                console.log(thisDocument.contentControls.items[i].tag);
-            }
-        } else {
-            console.log('No content controls in this document.');
-        }
-    });  
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
+documentObject.open();
 ```
+
+#### Parameters
+None
+
+#### Returns
+void
 
 ### save()
 Saves the document. This will use the Word default file naming convention if the document has not been saved before.
@@ -177,44 +88,3 @@ None
 
 #### Returns
 void
-
-#### Examples
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-    
-    // Create a proxy object for the document.
-    var thisDocument = context.document;
-
-    // Queue a commmand to load the document save state (on the saved property).
-    context.load(thisDocument, 'saved');    
-    
-    // Synchronize the document state by executing the queued commands, 
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        
-        if (thisDocument.saved === false) {
-            // Queue a command to save this document.
-            thisDocument.save();
-            
-            // Synchronize the document state by executing the queued commands, 
-            // and return a promise to indicate task completion.
-            return context.sync().then(function () {
-                console.log('Saved the document');
-            });
-        } else {
-            console.log('The document has not changed since the last save.');
-        }
-    });  
-})
-.catch(function (error) {
-    console.log("Error: " + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-## Support details
-
-Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 

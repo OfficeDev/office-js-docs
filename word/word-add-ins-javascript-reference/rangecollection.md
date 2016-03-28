@@ -1,14 +1,14 @@
-# InlinePictureCollection Object (JavaScript API for Word)
+# RangeCollection Object (JavaScript API for Word)
 
 _Applies to: Word 2016, Word for iPad, Word for Mac 2016, Office 2016_
 
-Contains a collection of [inlinePicture](inlinePicture.md) objects.
+Contains a collection of [range](range.md) objects.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|
+|items|[Range[]](range.md)|A collection of range objects. Read-only.|
 
 
 
@@ -20,27 +20,27 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[InlinePicture](inlinepicture.md)|Gets an inline picture object by its index in the collection.|
+|[getItem(index: number)](#getitemindex-number)|[Range](range.md)|Gets a range object by its index in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
 ### getItem(index: number)
-Gets an inline picture object by its index in the collection.
+Gets a range object by its index in the collection.
 
 #### Syntax
 ```js
-inlinePictureCollectionObject.getItem(index);
+rangeCollectionObject.getItem(index);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of an inline picture object.|
+|index|number|A number that identifies the index location of a range object.|
 
 #### Returns
-[InlinePicture](inlinepicture.md)
+[Range](range.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

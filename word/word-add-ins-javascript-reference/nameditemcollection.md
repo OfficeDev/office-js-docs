@@ -1,14 +1,14 @@
-# InlinePictureCollection Object (JavaScript API for Word)
+# NamedItemCollection Object (JavaScript API for Word)
 
 _Applies to: Word 2016, Word for iPad, Word for Mac 2016, Office 2016_
 
-Contains a collection of [inlinePicture](inlinePicture.md) objects.
+A collection of all the nameditem objects that are part of the workbook.
 
 ## Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|
+|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|
 
 
 
@@ -20,27 +20,27 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[getItem(index: number)](#getitemindex-number)|[InlinePicture](inlinepicture.md)|Gets an inline picture object by its index in the collection.|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
 
 
-### getItem(index: number)
-Gets an inline picture object by its index in the collection.
+### getItem(name: string)
+Gets a nameditem object using its name
 
 #### Syntax
 ```js
-inlinePictureCollectionObject.getItem(index);
+namedItemCollectionObject.getItem(name);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of an inline picture object.|
+|name|string|nameditem name.|
 
 #### Returns
-[InlinePicture](inlinepicture.md)
+[NamedItem](nameditem.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
