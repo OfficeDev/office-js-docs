@@ -90,16 +90,12 @@ For more information about the JavaScript API for Office, see [Understanding the
 The Word and Excel JavaScript APIs provide host-specific object models that you can use in an Office Add-in. These APIs provide access to well-known objects such as paragraphs and workbooks, which makes it easier to create an add-in for Word or Excel. To learn more about these APIs, see the [Word add-ins](../word/word-add-ins.md) and [Excel add-ins](../excel/excel-add-ins-javascript-programming-overview.md) overview topics.
 
 
-## Types of Office Add-ins
+## Extension Capabilities of Office Add-ins
 
-You can create the following types of Office Add-ins:
- 
-- Word, Excel and PowerPoint Add-ins
-- Excel and PowerPoint Content Add-ins
-- Outlook Add-ins
+Office Add-ins can extend different aspects of an Office application. The type of extension depends on the Office application your add-in is extending. Some extension types (like add-in commands) are supported across different Office applications, while others, like item extensions, are specific to a particular application. This section provides an overview of the different extension capabilities available to Add-ins.
 
-### Word, Excel and PowerPoint Add-ins 
-You can **add new functionality** to Office clients using Add-ins. Use add-in commands to extend the Office UI. For example, you can add buttons for your add-ins on the ribbon or selected contextual menus allowing users to easily access their add-ins within Office. Commands buttons can launch the different actions such as showing a pane with a custom HTML or execute a JavaScript function. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
+### Add-in Commands in Word, Excel, PowerPoint and Outlook
+Add-ins can extend the Office user interface by adding custom commands to specific commanding surfaces that support this type of extensibility. For example, you can add buttons for your add-ins on the ribbon or extend selected contextual menus with custom menu items. This allows you to leverage the familiar Office user interface to provide easy access to your add-in's functionality making your solution look and feel a native part of Office. Add-in commands can perform different actions such as showing a pane with a custom HTML or execute a JavaScript function. We recommend that you [watch this Channel9 video](https://channel9.msdn.com/Events/Visual-Studio/Connect-event-2015/316) for a deeper overview of this feature.
 
 **Add-in with commands running in Excel Desktop**
 ![Add-in commands](../../images/addincommands1.png)
@@ -107,40 +103,42 @@ You can **add new functionality** to Office clients using Add-ins. Use add-in co
 **Add-in with commands running in Excel Online**
 ![Add-in commands](../../images/addincommands2.png)
 
+**Outlook add-in with command buttons on the ribbon**
+![Add-in Command](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
+
 You can define your commands in your add-in manifest and the Office platform takes care of interpreting them into native UI. To get started check out these [samples on GitHub](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/), and see [Add-in commands for Excel, Word and PowerPoint](../design/add-in-commands-for-excel-and-word-preview.md)
 
->**Note:** Clients that do not support Add-in commands yet will run your Add-in as a **Taskpane** using the DefaultUrl provided on the manifest. The add-in can then be launched using the "My Add-ins" menu from the Insert Tab.
+>**Note:** To make your add-in compatible with clients that do not support Add-in commands, you can provide an alternative experience through a **Taskpane** (see below) specified via the DefaultUrl on the manifest. In this case, in order to launch the taskpane the user will use the "My Add-ins" menu on the Insert ribbon tab.
 
-### Excel and PowerPoint Content Add-ins 
+### Taskpanes in Word, Excel and PowerPoint
+Your add-in can provide a custom taskpane that shows side-by-side with the Office document to provide custom functionality that can read and write the document's content. Custom taskpanes can be inserted into a document through the "My Add-ins" menu on the Insert ribbon tab.  
 
-Content add-ins integrate web-based features as **objects that are embedded inside documents**. Content add-ins let you integrate rich, web-based data visualizations, embedded media (such as a YouTube video player or a picture gallery), as well as other external content.
+### Content Extensions in Excel and PowerPoint
 
-**Content add-in**
+Add-ins can extend the types of content that can be inserted in a Worksheet or PowerPoint slide. Using HTML, CSS and Javascript your add-in can provide a wide variety of content types like rich data visualizations (like a map or interactive chart), embedded media (such as a YouTube video player or a picture gallery) or live external content. 
 
-![In content add-in](../../images/DK2_AgaveOverview05.png)
+**Content extension**
 
-To try out a content add-in in Excel 2013 or Excel Online, install the [Bing Maps](https://store.office.com/bing-maps-WA102957661.aspx?assetid=WA102957661) add-in.
+![Content extension](../../images/DK2_AgaveOverview05.png)
 
-### Outlook Add-ins
+To try out a content extensions in Excel 2013 or Excel Online by installing the [Bing Maps](https://store.office.com/bing-maps-WA102957661.aspx?assetid=WA102957661) add-in.
 
-Outlook add-ins can extend the Office Ribbon and also display contextually next to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment in a read scenario - the user viewing a received item - or in a compose scenario - the user replying or creating a new item. 
+### Item Extensions in Outlook
 
-Outlook add-ins can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences. In most cases, an Outlook add-in runs without modification on the various supporting host applications, including Outlook, Outlook for Mac, Outlook Web App and OWA for Devices, to provide a seamless experience on the desktop, web, and tablet and mobile devices.
+In Outlook, add-ins canalso add contextual panes to an Outlook item when you're viewing or composing it. They can work with an email message, meeting request, meeting response, meeting cancellation, or appointment in a read scenario - the user viewing a received item - or in a compose scenario - the user replying or creating a new item. 
+
+Add-ins in Outlook implementing item extensions can access contextual information from the item, such as address or tracking ID, and then use that data to access additional information on the server and from web services to create compelling user experiences.
 
 [Learn more about Outlook Add-ins](../outlook/add-in-commands-for-outlook.md)
 
- >**Note**  Outlook add-ins require a minimum version of Exchange 2013 or Exchange Online to host the user's mailbox. POP and IMAP email accounts aren't supported.
+ >**Note**  In Outlook, add-ins require a minimum version of Exchange 2013 or Exchange Online to host the user's mailbox. POP and IMAP email accounts aren't supported.
 
-**Outlook add-in with command buttons on the ribbon**
 
-![Add-in Command](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
+**Contextual Read Pane in Outlook**
 
-**Outlook add-in contextual**
+![Contextual Read Pane](../../images/DK2_AgaveOverview06.png)
 
-![Contextual add-in](../../images/DK2_AgaveOverview06.png)
-
-To try out an Outlook add-in in Outlook, Outlook for Mac, or Outlook Web App, install the [Package Tracker](https://store.office.com/package-tracker-WA104162083.aspx?assetid=WA104162083) add-in.
-
+To try out item extensions in Outlook, Outlook for Mac, or Outlook Web App, install the [Package Tracker](https://store.office.com/package-tracker-WA104162083.aspx?assetid=WA104162083) add-in.
 
 
 ## What can an Office Add-in do?
