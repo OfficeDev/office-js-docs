@@ -13,7 +13,7 @@ _**Note**: The listed features are still under the design and review phase and a
 
 ### FEATURES
 
-**Resource name:** [application](application.md) </br>
+**Resource name:** [application](resources/application.md) </br>
 **What's new:** Method **[createDocument(base64File: string)](resources/application.md#createdocumentbase64file-string)** returning **[Document](resources/document.md)** </br>
 **Description:** Creates a new document by using a base64 encoded .docx file. </br>
 **Available in requirement set:** WordApiDesktop, 1.3 </br>
@@ -43,13 +43,13 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-type)_ </br>
 
-**Resource name:** [body](body.md) </br>
+**Resource name:** [body](resources/body.md) </br>
 **What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/body.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the whole body, or the starting or ending point of the body, as a range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-getRange)_ </br>
 
-**Resource name:** [body](body.md) </br>
+**Resource name:** [body](resources/body.md) </br>
 **What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/body.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'. </br>
 **Available in requirement set:** 1.3 </br>
@@ -85,37 +85,37 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-tables)_ </br>
 
-**Resource name:** [contentControl](contentcontrol.md) </br>
+**Resource name:** [contentControl](resources/contentcontrol.md) </br>
 **What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/contentcontrol.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the whole content control, or the starting or ending point of the content control, as a range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-getRange)_ </br>
 
-**Resource name:** [contentControl](contentcontrol.md) </br>
+**Resource name:** [contentControl](resources/contentcontrol.md) </br>
 **What's new:** Method **[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](resources/contentcontrol.md#gettextrangespunctuationmarks-string-trimspacing-bool)** returning **[RangeCollection](resources/rangecollection.md)** </br>
 **Description:** Gets the text ranges in the content control by using punctuation marks andor space character. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-getTextRanges)_ </br>
 
-**Resource name:** [contentControl](contentcontrol.md) </br>
+**Resource name:** [contentControl](resources/contentcontrol.md) </br>
 **What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/contentcontrol.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-insertTable)_ </br>
 
-**Resource name:** [contentControl](contentcontrol.md) </br>
+**Resource name:** [contentControl](resources/contentcontrol.md) </br>
 **What's new:** Method **[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](resources/contentcontrol.md#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)** returning **[RangeCollection](resources/rangecollection.md)** </br>
 **Description:** Splits the content control into child ranges by using delimiters. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-split)_ </br>
 
-**Resource name:** [contentControlCollection](contentcontrolcollection.md) </br>
+**Resource name:** [contentControlCollection](resources/contentcontrolcollection.md) </br>
 **What's new:** Method **[getByTypes(types: ContentControlType[])](resources/contentcontrolcollection.md#getbytypestypes-contentcontroltype)** returning **[ContentControlCollection](resources/contentcontrolcollection.md)** </br>
 **Description:** Gets the content controls that have the specified types andor subtypes. </br>
 **Available in requirement set:** WordApiDesktop, 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControlCollection-getByTypes)_ </br>
 
-**Resource name:** [document](document.md) </br>
+**Resource name:** [document](resources/document.md) </br>
 **What's new:** Method **[open()](resources/document.md#open)** returning **void** </br>
 **Description:** Open the document. </br>
 **Available in requirement set:** WordApiDesktop, 1.3 </br>
@@ -151,7 +151,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-parentTableCell)_ </br>
 
-**Resource name:** [inlinePicture](inlinepicture.md) </br>
+**Resource name:** [inlinePicture](resources/inlinepicture.md) </br>
 **What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/inlinepicture.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the picture, or the starting or ending point of the picture, as a range. </br>
 **Available in requirement set:** 1.3 </br>
@@ -175,7 +175,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-paragraphs)_ </br>
 
-**Resource name:** [list](list.md) </br>
+**Resource name:** [list](resources/list.md) </br>
 **What's new:** Method **[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](resources/list.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)** returning **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
@@ -193,13 +193,13 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listCollection-first)_ </br>
 
-**Resource name:** [listCollection](listcollection.md) </br>
+**Resource name:** [listCollection](resources/listcollection.md) </br>
 **What's new:** Method **[getById(id: number)](resources/listcollection.md#getbyidid-number)** returning **[List](resources/list.md)** </br>
 **Description:** Gets a list by its identifier. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listCollection-getById)_ </br>
 
-**Resource name:** [listCollection](listcollection.md) </br>
+**Resource name:** [listCollection](resources/listcollection.md) </br>
 **What's new:** Method **[getItem(index: number)](resources/listcollection.md#getitemindex-number)** returning **[List](resources/list.md)** </br>
 **Description:** Gets a list object by its index in the collection. </br>
 **Available in requirement set:** 1.3 </br>
@@ -259,25 +259,25 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-previous)_ </br>
 
-**Resource name:** [paragraph](paragraph.md) </br>
+**Resource name:** [paragraph](resources/paragraph.md) </br>
 **What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/paragraph.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the whole paragraph, or the starting or ending point of the paragraph, as a range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-getRange)_ </br>
 
-**Resource name:** [paragraph](paragraph.md) </br>
+**Resource name:** [paragraph](resources/paragraph.md) </br>
 **What's new:** Method **[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](resources/paragraph.md#gettextrangespunctuationmarks-string-trimspacing-bool)** returning **[RangeCollection](resources/rangecollection.md)** </br>
 **Description:** Gets the text ranges in the paragraph by using punctuation marks andor space character. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-getTextRanges)_ </br>
 
-**Resource name:** [paragraph](paragraph.md) </br>
+**Resource name:** [paragraph](resources/paragraph.md) </br>
 **What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/paragraph.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-insertTable)_ </br>
 
-**Resource name:** [paragraph](paragraph.md) </br>
+**Resource name:** [paragraph](resources/paragraph.md) </br>
 **What's new:** Method **[split(delimiters: string[], trimDelimiters: bool, trimSpacing: bool)](resources/paragraph.md#splitdelimiters-string-trimdelimiters-bool-trimspacing-bool)** returning **[RangeCollection](resources/rangecollection.md)** </br>
 **Description:** Splits the paragraph into child ranges by using delimiters. </br>
 **Available in requirement set:** 1.3 </br>
@@ -337,55 +337,55 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-tables)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[compareLocationWith(range: Range)](resources/range.md#comparelocationwithrange-range)** returning **[LocationRelation](resources/locationrelation.md)** </br>
 **Description:** Compares this range's location with another range's location. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-compareLocationWith)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[expandTo(range: Range)](resources/range.md#expandtorange-range)** returning **void** </br>
 **Description:** Expands the range in either direction to cover another range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-expandTo)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[getHyperlinkRanges()](resources/range.md#gethyperlinkranges)** returning **[RangeCollection](resources/rangecollection.md)** </br>
 **Description:** Gets hyperlink child ranges within the range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getHyperlinkRanges)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[getNextTextRange(punctuationMarks: string[], trimSpacing: bool)](resources/range.md#getnexttextrangepunctuationmarks-string-trimspacing-bool)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the next text range by using punctuation marks andor space character. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getNextTextRange)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/range.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
 **Description:** Clones the range, or gets the starting or ending point of the range as a new range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getRange)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](resources/range.md#gettextrangespunctuationmarks-string-trimspacing-bool)** returning **[RangeCollection](resources/rangecollection.md)** </br>
 **Description:** Gets the text child ranges in the range by using punctuation marks andor space character. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getTextRanges)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/range.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-insertTable)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[intersectWith(range: Range)](resources/range.md#intersectwithrange-range)** returning **void** </br>
 **Description:** Shrinks the range to the intersection of the range with another range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-intersectWith)_ </br>
 
-**Resource name:** [range](range.md) </br>
+**Resource name:** [range](resources/range.md) </br>
 **What's new:** Method **[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](resources/range.md#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)** returning **[RangeCollection](resources/rangecollection.md)** </br>
 **Description:** Splits the range into child ranges by using delimiters. </br>
 **Available in requirement set:** 1.3 </br>
@@ -403,7 +403,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-rangeCollection-first)_ </br>
 
-**Resource name:** [rangeCollection](rangecollection.md) </br>
+**Resource name:** [rangeCollection](resources/rangecollection.md) </br>
 **What's new:** Method **[getItem(index: number)](resources/rangecollection.md#getitemindex-number)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets a range object by its index in the collection. </br>
 **Available in requirement set:** 1.3 </br>
@@ -595,115 +595,115 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-width)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](resources/table.md#addcolumnsinsertlocation-insertlocation-columncount-number-values-string)** returning **void** </br>
 **Description:** Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-addColumns)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](resources/table.md#addrowsinsertlocation-insertlocation-rowcount-number-values-string)** returning **void** </br>
 **Description:** Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-addRows)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[autoFitContents()](resources/table.md#autofitcontents)** returning **void** </br>
 **Description:** Autofits the table columns to the width of their contents. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-autoFitContents)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[autoFitWindow()](resources/table.md#autofitwindow)** returning **void** </br>
 **Description:** Autofits the table columns to the width of the window. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-autoFitWindow)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[clear()](resources/table.md#clear)** returning **void** </br>
 **Description:** Clears the contents of the table. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-clear)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[delete()](resources/table.md#delete)** returning **void** </br>
 **Description:** Deletes the entire table. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-delete)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[deleteColumns(columnIndex: number, columnCount: number)](resources/table.md#deletecolumnscolumnindex-number-columncount-number)** returning **void** </br>
 **Description:** Deletes specific columns. This is applicable to uniform tables. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-deleteColumns)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[deleteRows(rowIndex: number, rowCount: number)](resources/table.md#deleterowsrowindex-number-rowcount-number)** returning **void** </br>
 **Description:** Deletes specific rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-deleteRows)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[distributeColumns()](resources/table.md#distributecolumns)** returning **void** </br>
 **Description:** Distributes the column widths evenly. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-distributeColumns)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[distributeRows()](resources/table.md#distributerows)** returning **void** </br>
 **Description:** Distributes the row heights evenly. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-distributeRows)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[getBorderStyle(borderLocation: BorderLocation)](resources/table.md#getborderstyleborderlocation-borderlocation)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
 **Description:** Gets the border style for the specified border. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getBorderStyle)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[getCell(rowIndex: number, cellIndex: number)](resources/table.md#getcellrowindex-number-cellindex-number)** returning **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets the table cell at a specified row and column. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getCell)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/table.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the range that contains this table, or the range at the start or end of the table. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getRange)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[insertContentControl()](resources/table.md#insertcontentcontrol)** returning **[ContentControl](resources/contentcontrol.md)** </br>
 **Description:** Inserts a content control on the table. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertContentControl)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](resources/table.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)** returning **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertParagraph)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/table.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertTable)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](resources/table.md#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)** returning **[TableCell](resources/tablecell.md)** </br>
 **Description:** Merges the cells bounded inclusively by a first and last cell. </br>
 **Available in requirement set:** WordApiDesktop, 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-mergeCells)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](resources/table.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)** returning **[SearchResultCollection](resources/searchresultcollection.md)** </br>
 **Description:** Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-search)_ </br>
 
-**Resource name:** [table](table.md) </br>
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[select(selectionMode: SelectionMode)](resources/table.md#selectselectionmode-selectionmode)** returning **void** </br>
 **Description:** Selects the table, or the position at the start or end of the table, and navigates the Word UI to it. </br>
 **Available in requirement set:** 1.3 </br>
@@ -817,37 +817,37 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-width)_ </br>
 
-**Resource name:** [tableCell](tablecell.md) </br>
+**Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Method **[deleteColumn()](resources/tablecell.md#deletecolumn)** returning **void** </br>
 **Description:** Deletes the column containing this cell. This is applicable to uniform tables. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-deleteColumn)_ </br>
 
-**Resource name:** [tableCell](tablecell.md) </br>
+**Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Method **[deleteRow()](resources/tablecell.md#deleterow)** returning **void** </br>
 **Description:** Deletes the row containing this cell. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-deleteRow)_ </br>
 
-**Resource name:** [tableCell](tablecell.md) </br>
+**Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Method **[getBorderStyle(borderLocation: BorderLocation)](resources/tablecell.md#getborderstyleborderlocation-borderlocation)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
 **Description:** Gets the border style for the specified border. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-getBorderStyle)_ </br>
 
-**Resource name:** [tableCell](tablecell.md) </br>
+**Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Method **[insertColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](resources/tablecell.md#insertcolumnsinsertlocation-insertlocation-columncount-number-values-string)** returning **void** </br>
 **Description:** Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-insertColumns)_ </br>
 
-**Resource name:** [tableCell](tablecell.md) </br>
+**Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Method **[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](resources/tablecell.md#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)** returning **void** </br>
 **Description:** Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-insertRows)_ </br>
 
-**Resource name:** [tableCell](tablecell.md) </br>
+**Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Method **[split(rowCount: number, columnCount: number)](resources/tablecell.md#splitrowcount-number-columncount-number)** returning **void** </br>
 **Description:** Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** WordApiDesktop, 1.3 </br>
@@ -865,7 +865,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCellCollection-first)_ </br>
 
-**Resource name:** [tableCellCollection](tablecellcollection.md) </br>
+**Resource name:** [tableCellCollection](resources/tablecellcollection.md) </br>
 **What's new:** Method **[getItem(index: number)](resources/tablecellcollection.md#getitemindex-number)** returning **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets a table cell object by its index in the collection. </br>
 **Available in requirement set:** 1.3 </br>
@@ -883,7 +883,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCollection-first)_ </br>
 
-**Resource name:** [tableCollection](tablecollection.md) </br>
+**Resource name:** [tableCollection](resources/tablecollection.md) </br>
 **What's new:** Method **[getItem(index: number)](resources/tablecollection.md#getitemindex-number)** returning **[Table](resources/table.md)** </br>
 **Description:** Gets a table object by its index in the collection. </br>
 **Available in requirement set:** 1.3 </br>
@@ -979,43 +979,43 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-verticalAlignment)_ </br>
 
-**Resource name:** [tableRow](tablerow.md) </br>
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[clear()](resources/tablerow.md#clear)** returning **void** </br>
 **Description:** Clears the contents of the row. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-clear)_ </br>
 
-**Resource name:** [tableRow](tablerow.md) </br>
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[delete()](resources/tablerow.md#delete)** returning **void** </br>
 **Description:** Deletes the entire row. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-delete)_ </br>
 
-**Resource name:** [tableRow](tablerow.md) </br>
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[getBorderStyle(borderLocation: BorderLocation)](resources/tablerow.md#getborderstyleborderlocation-borderlocation)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
 **Description:** Gets the border style of the cells in the row. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-getBorderStyle)_ </br>
 
-**Resource name:** [tableRow](tablerow.md) </br>
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](resources/tablerow.md#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)** returning **void** </br>
 **Description:** Inserts rows using this row as a template. If values are specified, inserts the values into the new rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-insertRows)_ </br>
 
-**Resource name:** [tableRow](tablerow.md) </br>
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[merge()](resources/tablerow.md#merge)** returning **[TableCell](resources/tablecell.md)** </br>
 **Description:** Merges the row into one cell. </br>
 **Available in requirement set:** WordApiDesktop, 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-merge)_ </br>
 
-**Resource name:** [tableRow](tablerow.md) </br>
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](resources/tablerow.md#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)** returning **[SearchResultCollection](resources/searchresultcollection.md)** </br>
 **Description:** Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-search)_ </br>
 
-**Resource name:** [tableRow](tablerow.md) </br>
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[select(selectionMode: SelectionMode)](resources/tablerow.md#selectselectionmode-selectionmode)** returning **void** </br>
 **Description:** Selects the row and navigates the Word UI to it. </br>
 **Available in requirement set:** 1.3 </br>
@@ -1033,11 +1033,12 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRowCollection-first)_ </br>
 
-**Resource name:** [tableRowCollection](tablerowcollection.md) </br>
+**Resource name:** [tableRowCollection](resources/tablerowcollection.md) </br>
 **What's new:** Method **[getItem(index: number)](resources/tablerowcollection.md#getitemindex-number)** returning **[TableRow](resources/tablerow.md)** </br>
 **Description:** Gets a table row object by its index in the collection. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRowCollection-getItem)_ </br>
+
 
 ## Try it out 
 
