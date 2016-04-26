@@ -12,6 +12,7 @@ Represents a table cell in a Word document.
 |rowIndex|int|Gets the index of the cell's row in the table. Read-only.|1.3||
 |shadingColor|string|Gets or sets the shading color of the cell. Color is specified in "#RRGGBB" format or by using the color name.|1.3||
 |value|string|Gets and sets the text of the cell.|1.3||
+|verticalAlignment|string|Gets and sets the vertical alignment of the cell. Possible values are: Mixed, Top, Center, Bottom.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
@@ -27,7 +28,6 @@ _See property access [examples.](#property-access-examples)_
 |next|[TableCell](tablecell.md)|Gets the next cell. Read-only.|1.3||
 |parentRow|[TableRow](tablerow.md)|Gets the parent row of the cell. Read-only.|1.3||
 |parentTable|[Table](table.md)|Gets the parent table of the cell. Read-only.|1.3||
-|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of the cell.|1.3||
 |width|[float](float.md)|Gets the width of the cell in points. Read-only.|1.3||
 
 ## Methods
@@ -36,9 +36,9 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[deleteColumn()](#deletecolumn)|void|Deletes the column containing this cell. This is applicable to uniform tables.|1.3|
 |[deleteRow()](#deleterow)|void|Deletes the row containing this cell.|1.3|
-|[getBorderStyle(borderLocation: BorderLocation)](#getborderstyleborderlocation-borderlocation)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|1.3|
-|[insertColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](#insertcolumnsinsertlocation-insertlocation-columncount-number-values-string)|void|Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|1.3|
-|[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)|void|Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.|1.3|
+|[getBorderStyle(borderLocation: string)](#getborderstyleborderlocation-string)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|1.3|
+|[insertColumns(insertLocation: string, columnCount: number, values: string[][])](#insertcolumnsinsertlocation-string-columncount-number-values-string)|void|Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|1.3|
+|[insertRows(insertLocation: string, rowCount: number, values: string[][])](#insertrowsinsertlocation-string-rowcount-number-values-string)|void|Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 |[split(rowCount: number, columnCount: number)](#splitrowcount-number-columncount-number)|void|Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.|WordApiDesktop, 1.3|
 
@@ -73,7 +73,7 @@ None
 #### Returns
 void
 
-### getBorderStyle(borderLocation: BorderLocation)
+### getBorderStyle(borderLocation: string)
 Gets the border style for the specified border.
 
 #### Syntax
@@ -84,12 +84,12 @@ tableCellObject.getBorderStyle(borderLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|borderLocation|BorderLocation|Required. The border location.|
+|borderLocation|string|Required. The border location.  Possible values are: Top, Left, Bottom, Right, InsideHorizontal, InsideVertical, Inside, Outside, All|
 
 #### Returns
 [TableBorderStyle](tableborderstyle.md)
 
-### insertColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])
+### insertColumns(insertLocation: string, columnCount: number, values: string[][])
 Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -100,14 +100,14 @@ tableCellObject.insertColumns(insertLocation, columnCount, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|insertLocation|InsertLocation|Required. It can be 'Before' or 'After'.|
+|insertLocation|string|Required. It can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |columnCount|number|Required. Number of columns to add|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 void
 
-### insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])
+### insertRows(insertLocation: string, rowCount: number, values: string[][])
 Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -118,7 +118,7 @@ tableCellObject.insertRows(insertLocation, rowCount, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|insertLocation|InsertLocation|Required. It can be 'Before' or 'After'.|
+|insertLocation|string|Required. It can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |rowCount|number|Required. Number of rows to add.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
