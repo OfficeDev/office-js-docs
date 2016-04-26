@@ -10,8 +10,6 @@ Contains a collection of [inlinePicture](inlinePicture.md) objects.
 |:---------------|:--------|:----------|:----|
 |items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|1.1||
 
-_See property access [examples.](#property-access-examples)_
-
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
