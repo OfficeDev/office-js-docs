@@ -12,7 +12,6 @@ This section describes the new set of Word JavaScript APIs that are being planne
 _**Note**: The listed features are still under the design and review phase and are not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
 ### FEATURES
-
 **Resource name:** [application](resources/application.md) </br>
 **What's new:** Method **[createDocument(base64File: string)](resources/application.md#createdocumentbase64file-string)** returning **[Document](resources/document.md)** </br>
 **Description:** Creates a new document by using a base64 encoded .docx file. </br>
@@ -20,25 +19,25 @@ _**Note**: The listed features are still under the design and review phase and a
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-application-createDocument)_ </br>
 
 **Resource name:** [body](resources/body.md) </br>
-**What's new:** Relationship **lists** of type **[ListCollection](listcollection.md)** </br>
+**What's new:** Relationship **lists** of type **[ListCollection](resources/listcollection.md)** </br>
 **Description:** Gets the collection of list objects in the body. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-lists)_ </br>
 
 **Resource name:** [body](resources/body.md) </br>
-**What's new:** Relationship **parentBody** of type **[Body](body.md)** </br>
+**What's new:** Relationship **parentBody** of type **[Body](resources/body.md)** </br>
 **Description:** Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-parentBody)_ </br>
 
 **Resource name:** [body](resources/body.md) </br>
-**What's new:** Relationship **tables** of type **[TableCollection](tablecollection.md)** </br>
+**What's new:** Relationship **tables** of type **[TableCollection](resources/tablecollection.md)** </br>
 **Description:** Gets the collection of table objects in the body. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-tables)_ </br>
 
 **Resource name:** [body](resources/body.md) </br>
-**What's new:** Relationship **type** of type **[BodyType](bodytype.md)** </br>
+**What's new:** Relationship **type** of type **[BodyType](resources/bodytype.md)** </br>
 **Description:** Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-type)_ </br>
@@ -56,31 +55,31 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-insertTable)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
-**What's new:** Relationship **lists** of type **[ListCollection](listcollection.md)** </br>
+**What's new:** Relationship **lists** of type **[ListCollection](resources/listcollection.md)** </br>
 **Description:** Gets the collection of list objects in the content control. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-lists)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
-**What's new:** Relationship **parentTable** of type **[Table](table.md)** </br>
+**What's new:** Relationship **parentTable** of type **[Table](resources/table.md)** </br>
 **Description:** Gets the table that contains the content control. Returns null if it is not contained in a table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-parentTable)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
-**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)** </br>
+**What's new:** Relationship **parentTableCell** of type **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets the table cell that contains the content control. Returns null if it is not contained in a table cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-parentTableCell)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
-**What's new:** Relationship **subtype** of type **[ContentControlType](contentcontroltype.md)** </br>
+**What's new:** Relationship **subtype** of type **[ContentControlType](resources/contentcontroltype.md)** </br>
 **Description:** Gets the content control subtype. The subtype can be 'RichTextInline', 'RichTextParagraphs', 'RichTextTableCell', 'RichTextTableRow' and 'RichTextTable' for rich text content controls. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-subtype)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
-**What's new:** Relationship **tables** of type **[TableCollection](tablecollection.md)** </br>
+**What's new:** Relationship **tables** of type **[TableCollection](resources/tablecollection.md)** </br>
 **Description:** Gets the collection of table objects in the content control. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-tables)_ </br>
@@ -128,25 +127,25 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-font-doubleStrikeThrough)_ </br>
 
 **Resource name:** [inlinePicture](resources/inlinepicture.md) </br>
-**What's new:** Relationship **imageFormat** of type **[ImageFormat](imageformat.md)** </br>
+**What's new:** Relationship **imageFormat** of type **[ImageFormat](resources/imageformat.md)** </br>
 **Description:** Gets the format of the inline image. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-imageFormat)_ </br>
 
 **Resource name:** [inlinePicture](resources/inlinepicture.md) </br>
-**What's new:** Relationship **next** of type **[InlinePicture](inlinepicture.md)** </br>
+**What's new:** Relationship **next** of type **[InlinePicture](resources/inlinepicture.md)** </br>
 **Description:** Gets the next inline image. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-next)_ </br>
 
 **Resource name:** [inlinePicture](resources/inlinepicture.md) </br>
-**What's new:** Relationship **parentTable** of type **[Table](table.md)** </br>
+**What's new:** Relationship **parentTable** of type **[Table](resources/table.md)** </br>
 **Description:** Gets the table that contains the inline image. Returns null if it is not contained in a table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-parentTable)_ </br>
 
 **Resource name:** [inlinePicture](resources/inlinepicture.md) </br>
-**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)** </br>
+**What's new:** Relationship **parentTableCell** of type **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets the table cell that contains the inline image. Returns null if it is not contained in a table cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-parentTableCell)_ </br>
@@ -158,7 +157,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-getRange)_ </br>
 
 **Resource name:** [inlinePictureCollection](resources/inlinepicturecollection.md) </br>
-**What's new:** Relationship **first** of type **[InlinePicture](inlinepicture.md)** </br>
+**What's new:** Relationship **first** of type **[InlinePicture](resources/inlinepicture.md)** </br>
 **Description:** Gets the first inline image in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePictureCollection-first)_ </br>
@@ -170,7 +169,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-id)_ </br>
 
 **Resource name:** [list](resources/list.md) </br>
-**What's new:** Relationship **paragraphs** of type **[ParagraphCollection](paragraphcollection.md)** </br>
+**What's new:** Relationship **paragraphs** of type **[ParagraphCollection](resources/paragraphcollection.md)** </br>
 **Description:** A collection containing the paragraphs in this list. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-paragraphs)_ </br>
@@ -182,13 +181,13 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-insertParagraph)_ </br>
 
 **Resource name:** [listCollection](resources/listcollection.md) </br>
-**What's new:** Property **items** of type **[List[]](list.md)** </br>
+**What's new:** Property **items** of type **[List[]](resources/list[].md)** </br>
 **Description:** A collection of list objects. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listCollection-items)_ </br>
 
 **Resource name:** [listCollection](resources/listcollection.md) </br>
-**What's new:** Relationship **first** of type **[List](list.md)** </br>
+**What's new:** Relationship **first** of type **[List](resources/list.md)** </br>
 **Description:** Gets the first list in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listCollection-first)_ </br>
@@ -224,37 +223,37 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-tableNestingLevel)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Relationship **list** of type **[List](list.md)** </br>
+**What's new:** Relationship **list** of type **[List](resources/list.md)** </br>
 **Description:** Gets the List to which this paragraph belongs. Returns null if the paragraph is not in a list. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-list)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Relationship **next** of type **[Paragraph](paragraph.md)** </br>
+**What's new:** Relationship **next** of type **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Gets the next paragraph. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-next)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Relationship **parentBody** of type **[Body](body.md)** </br>
+**What's new:** Relationship **parentBody** of type **[Body](resources/body.md)** </br>
 **Description:** Gets the parent body of the paragraph. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-parentBody)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Relationship **parentTable** of type **[Table](table.md)** </br>
+**What's new:** Relationship **parentTable** of type **[Table](resources/table.md)** </br>
 **Description:** Gets the table that contains the paragraph. Returns null if it is not contained in a table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-parentTable)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)** </br>
+**What's new:** Relationship **parentTableCell** of type **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets the table cell that contains the paragraph. Returns null if it is not contained in a table cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-parentTableCell)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Relationship **previous** of type **[Paragraph](paragraph.md)** </br>
+**What's new:** Relationship **previous** of type **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Gets the previous paragraph. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-previous)_ </br>
@@ -284,13 +283,13 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-split)_ </br>
 
 **Resource name:** [paragraphCollection](resources/paragraphcollection.md) </br>
-**What's new:** Relationship **first** of type **[Paragraph](paragraph.md)** </br>
+**What's new:** Relationship **first** of type **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Gets the first paragraph in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraphCollection-first)_ </br>
 
 **Resource name:** [paragraphCollection](resources/paragraphcollection.md) </br>
-**What's new:** Relationship **last** of type **[Paragraph](paragraph.md)** </br>
+**What's new:** Relationship **last** of type **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Gets the last paragraph in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraphCollection-last)_ </br>
@@ -308,31 +307,31 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-isEmpty)_ </br>
 
 **Resource name:** [range](resources/range.md) </br>
-**What's new:** Relationship **lists** of type **[ListCollection](listcollection.md)** </br>
+**What's new:** Relationship **lists** of type **[ListCollection](resources/listcollection.md)** </br>
 **Description:** Gets the collection of list objects in the range. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-lists)_ </br>
 
 **Resource name:** [range](resources/range.md) </br>
-**What's new:** Relationship **parentBody** of type **[Body](body.md)** </br>
+**What's new:** Relationship **parentBody** of type **[Body](resources/body.md)** </br>
 **Description:** Gets the parent body of the range. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-parentBody)_ </br>
 
 **Resource name:** [range](resources/range.md) </br>
-**What's new:** Relationship **parentTable** of type **[Table](table.md)** </br>
+**What's new:** Relationship **parentTable** of type **[Table](resources/table.md)** </br>
 **Description:** Gets the table that contains the range. Returns null if it is not contained in a table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-parentTable)_ </br>
 
 **Resource name:** [range](resources/range.md) </br>
-**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)** </br>
+**What's new:** Relationship **parentTableCell** of type **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets the table cell that contains the range. Returns null if it is not contained in a table cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-parentTableCell)_ </br>
 
 **Resource name:** [range](resources/range.md) </br>
-**What's new:** Relationship **tables** of type **[TableCollection](tablecollection.md)** </br>
+**What's new:** Relationship **tables** of type **[TableCollection](resources/tablecollection.md)** </br>
 **Description:** Gets the collection of table objects in the range. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-tables)_ </br>
@@ -392,13 +391,13 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-split)_ </br>
 
 **Resource name:** [rangeCollection](resources/rangecollection.md) </br>
-**What's new:** Property **items** of type **[Range[]](range.md)** </br>
+**What's new:** Property **items** of type **[Range[]](resources/range[].md)** </br>
 **Description:** A collection of range objects. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-rangeCollection-items)_ </br>
 
 **Resource name:** [rangeCollection](resources/rangecollection.md) </br>
-**What's new:** Relationship **first** of type **[Range](range.md)** </br>
+**What's new:** Relationship **first** of type **[Range](resources/range.md)** </br>
 **Description:** Gets the first range in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-rangeCollection-first)_ </br>
@@ -410,19 +409,19 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-rangeCollection-getItem)_ </br>
 
 **Resource name:** [searchResultCollection](resources/searchresultcollection.md) </br>
-**What's new:** Relationship **first** of type **[Range](range.md)** </br>
+**What's new:** Relationship **first** of type **[Range](resources/range.md)** </br>
 **Description:** Gets the first searched result in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-searchResultCollection-first)_ </br>
 
 **Resource name:** [section](resources/section.md) </br>
-**What's new:** Relationship **next** of type **[Section](section.md)** </br>
+**What's new:** Relationship **next** of type **[Section](resources/section.md)** </br>
 **Description:** Gets the next section. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-section-next)_ </br>
 
 **Resource name:** [sectionCollection](resources/sectioncollection.md) </br>
-**What's new:** Relationship **first** of type **[Section](section.md)** </br>
+**What's new:** Relationship **first** of type **[Section](resources/section.md)** </br>
 **Description:** Gets the first section in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-sectionCollection-first)_ </br>
@@ -500,97 +499,97 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-values)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **cellPaddingBottom** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingBottom** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default bottom cell padding in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingBottom)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **cellPaddingLeft** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingLeft** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default left cell padding in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingLeft)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **cellPaddingRight** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingRight** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default right cell padding in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingRight)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **cellPaddingTop** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingTop** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default top cell padding in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingTop)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **font** of type **[Font](font.md)** </br>
+**What's new:** Relationship **font** of type **[Font](resources/font.md)** </br>
 **Description:** Gets the font. Use this to get and set font name, size, color, and other properties. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-font)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **height** of type **[float](float.md)** </br>
+**What's new:** Relationship **height** of type **[float](resources/float.md)** </br>
 **Description:** Gets the height of the table in points. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-height)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **next** of type **[Table](table.md)** </br>
+**What's new:** Relationship **next** of type **[Table](resources/table.md)** </br>
 **Description:** Gets the next table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-next)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **paragraphAfter** of type **[Paragraph](paragraph.md)** </br>
+**What's new:** Relationship **paragraphAfter** of type **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Gets the paragraph after the table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-paragraphAfter)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **paragraphBefore** of type **[Paragraph](paragraph.md)** </br>
+**What's new:** Relationship **paragraphBefore** of type **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Gets the paragraph before the table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-paragraphBefore)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **parentContentControl** of type **[ContentControl](contentcontrol.md)** </br>
+**What's new:** Relationship **parentContentControl** of type **[ContentControl](resources/contentcontrol.md)** </br>
 **Description:** Gets the content control that contains the table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-parentContentControl)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **parentTable** of type **[Table](table.md)** </br>
+**What's new:** Relationship **parentTable** of type **[Table](resources/table.md)** </br>
 **Description:** Gets the table that contains this table. Returns null if it is not contained in a table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-parentTable)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **parentTableCell** of type **[TableCell](tablecell.md)** </br>
+**What's new:** Relationship **parentTableCell** of type **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets the table cell that contains this table. Returns null if it is not contained in a table cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-parentTableCell)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **rows** of type **[TableRowCollection](tablerowcollection.md)** </br>
+**What's new:** Relationship **rows** of type **[TableRowCollection](resources/tablerowcollection.md)** </br>
 **Description:** Gets all of the table rows. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-rows)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **tables** of type **[TableCollection](tablecollection.md)** </br>
+**What's new:** Relationship **tables** of type **[TableCollection](resources/tablecollection.md)** </br>
 **Description:** Gets the child tables nested one level deeper. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-tables)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](verticalalignment.md)** </br>
+**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](resources/verticalalignment.md)** </br>
 **Description:** Gets and sets the vertical alignment of every cell in the table. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-verticalAlignment)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **width** of type **[float](float.md)** </br>
+**What's new:** Relationship **width** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the width of the table in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-width)_ </br>
@@ -716,13 +715,13 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableBorderStyle-color)_ </br>
 
 **Resource name:** [tableBorderStyle](resources/tableborderstyle.md) </br>
-**What's new:** Relationship **type** of type **[BorderType](bordertype.md)** </br>
+**What's new:** Relationship **type** of type **[BorderType](resources/bordertype.md)** </br>
 **Description:** Gets or sets the type of the table border style. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableBorderStyle-type)_ </br>
 
 **Resource name:** [tableBorderStyle](resources/tableborderstyle.md) </br>
-**What's new:** Relationship **width** of type **[float](float.md)** </br>
+**What's new:** Relationship **width** of type **[float](resources/float.md)** </br>
 **Description:** Gets or sets the width, in points, of the table border style. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableBorderStyle-width)_ </br>
@@ -752,67 +751,67 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-value)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **body** of type **[Body](body.md)** </br>
+**What's new:** Relationship **body** of type **[Body](resources/body.md)** </br>
 **Description:** Gets the body object of the cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-body)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **cellPaddingBottom** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingBottom** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the bottom padding of the cell in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingBottom)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **cellPaddingLeft** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingLeft** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the left padding of the cell in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingLeft)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **cellPaddingRight** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingRight** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the right padding of the cell in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingRight)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **cellPaddingTop** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingTop** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the top padding of the cell in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingTop)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **columnWidth** of type **[float](float.md)** </br>
+**What's new:** Relationship **columnWidth** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the width of the cell's column in points. This is applicable to uniform tables. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-columnWidth)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **next** of type **[TableCell](tablecell.md)** </br>
+**What's new:** Relationship **next** of type **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets the next cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-next)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **parentRow** of type **[TableRow](tablerow.md)** </br>
+**What's new:** Relationship **parentRow** of type **[TableRow](resources/tablerow.md)** </br>
 **Description:** Gets the parent row of the cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-parentRow)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **parentTable** of type **[Table](table.md)** </br>
+**What's new:** Relationship **parentTable** of type **[Table](resources/table.md)** </br>
 **Description:** Gets the parent table of the cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-parentTable)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](verticalalignment.md)** </br>
+**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](resources/verticalalignment.md)** </br>
 **Description:** Gets and sets the vertical alignment of the cell. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-verticalAlignment)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **width** of type **[float](float.md)** </br>
+**What's new:** Relationship **width** of type **[float](resources/float.md)** </br>
 **Description:** Gets the width of the cell in points. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-width)_ </br>
@@ -854,13 +853,13 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-split)_ </br>
 
 **Resource name:** [tableCellCollection](resources/tablecellcollection.md) </br>
-**What's new:** Property **items** of type **[TableCell[]](tablecell.md)** </br>
+**What's new:** Property **items** of type **[TableCell[]](resources/tablecell[].md)** </br>
 **Description:** A collection of tableCell objects. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCellCollection-items)_ </br>
 
 **Resource name:** [tableCellCollection](resources/tablecellcollection.md) </br>
-**What's new:** Relationship **first** of type **[TableCell](tablecell.md)** </br>
+**What's new:** Relationship **first** of type **[TableCell](resources/tablecell.md)** </br>
 **Description:** Gets the first table cell in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCellCollection-first)_ </br>
@@ -872,13 +871,13 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCellCollection-getItem)_ </br>
 
 **Resource name:** [tableCollection](resources/tablecollection.md) </br>
-**What's new:** Property **items** of type **[Table[]](table.md)** </br>
+**What's new:** Property **items** of type **[Table[]](resources/table[].md)** </br>
 **Description:** A collection of table objects. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCollection-items)_ </br>
 
 **Resource name:** [tableCollection](resources/tablecollection.md) </br>
-**What's new:** Relationship **first** of type **[Table](table.md)** </br>
+**What's new:** Relationship **first** of type **[Table](resources/table.md)** </br>
 **Description:** Gets the first table in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCollection-first)_ </br>
@@ -920,61 +919,61 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-values)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cellPaddingBottom** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingBottom** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default bottom cell padding for the row in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingBottom)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cellPaddingLeft** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingLeft** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default left cell padding for the row in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingLeft)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cellPaddingRight** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingRight** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default right cell padding for the row in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingRight)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cellPaddingTop** of type **[float](float.md)** </br>
+**What's new:** Relationship **cellPaddingTop** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default top cell padding for the row in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingTop)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cells** of type **[TableCellCollection](tablecellcollection.md)** </br>
+**What's new:** Relationship **cells** of type **[TableCellCollection](resources/tablecellcollection.md)** </br>
 **Description:** Gets cells. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cells)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **font** of type **[Font](font.md)** </br>
+**What's new:** Relationship **font** of type **[Font](resources/font.md)** </br>
 **Description:** Gets the font. Use this to get and set font name, size, color, and other properties. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-font)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **next** of type **[TableRow](tablerow.md)** </br>
+**What's new:** Relationship **next** of type **[TableRow](resources/tablerow.md)** </br>
 **Description:** Gets the next row. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-next)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **parentTable** of type **[Table](table.md)** </br>
+**What's new:** Relationship **parentTable** of type **[Table](resources/table.md)** </br>
 **Description:** Gets parent table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-parentTable)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **preferredHeight** of type **[float](float.md)** </br>
+**What's new:** Relationship **preferredHeight** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the preferred height of the row in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-preferredHeight)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](verticalalignment.md)** </br>
+**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](resources/verticalalignment.md)** </br>
 **Description:** Gets and sets the vertical alignment of the cells in the row. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-verticalAlignment)_ </br>
@@ -1022,13 +1021,13 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-select)_ </br>
 
 **Resource name:** [tableRowCollection](resources/tablerowcollection.md) </br>
-**What's new:** Property **items** of type **[TableRow[]](tablerow.md)** </br>
+**What's new:** Property **items** of type **[TableRow[]](resources/tablerow[].md)** </br>
 **Description:** A collection of tableRow objects. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRowCollection-items)_ </br>
 
 **Resource name:** [tableRowCollection](resources/tablerowcollection.md) </br>
-**What's new:** Relationship **first** of type **[TableRow](tablerow.md)** </br>
+**What's new:** Relationship **first** of type **[TableRow](resources/tablerow.md)** </br>
 **Description:** Gets the first row in this collection. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRowCollection-first)_ </br>
@@ -1038,6 +1037,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets a table row object by its index in the collection. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRowCollection-getItem)_ </br>
+
 
 
 ## Try it out 
