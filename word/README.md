@@ -12,11 +12,19 @@ This section describes the new set of Word JavaScript APIs that are being planne
 _**Note**: The listed features are still under the design and review phase and are not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
 ### FEATURES
+
+
 **Resource name:** [application](resources/application.md) </br>
 **What's new:** Method **[createDocument(base64File: string)](resources/application.md#createdocumentbase64file-string)** returning **[Document](resources/document.md)** </br>
 **Description:** Creates a new document by using a base64 encoded .docx file. </br>
 **Available in requirement set:** WordApiDesktop, 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-application-createDocument)_ </br>
+
+**Resource name:** [body](resources/body.md) </br>
+**What's new:** Property **type** of type **string** </br>
+**Description:** Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only. Possible values are: Unknown, MainDoc, Section, Header, Footer, TableCell. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-type)_ </br>
 
 **Resource name:** [body](resources/body.md) </br>
 **What's new:** Relationship **lists** of type **[ListCollection](resources/listcollection.md)** </br>
@@ -37,22 +45,22 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-tables)_ </br>
 
 **Resource name:** [body](resources/body.md) </br>
-**What's new:** Relationship **type** of type **[BodyType](resources/bodytype.md)** </br>
-**Description:** Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-type)_ </br>
-
-**Resource name:** [body](resources/body.md) </br>
-**What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/body.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
+**What's new:** Method **[getRange(rangeLocation: string)](resources/body.md#getrangerangelocation-string)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the whole body, or the starting or ending point of the body, as a range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-getRange)_ </br>
 
 **Resource name:** [body](resources/body.md) </br>
-**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/body.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
+**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](resources/body.md#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-body-insertTable)_ </br>
+
+**Resource name:** [contentControl](resources/contentcontrol.md) </br>
+**What's new:** Property **subtype** of type **string** </br>
+**Description:** Gets the content control subtype. The subtype can be 'RichTextInline', 'RichTextParagraphs', 'RichTextTableCell', 'RichTextTableRow' and 'RichTextTable' for rich text content controls. Read-only. Possible values are: RichText, Unknown, RichTextInline, RichTextParagraphs, RichTextTableCell, RichTextTableRow, RichTextTable, PlainTextInline, PlainTextParagraph, Picture, BuildingBlockGallery, CheckBox, ComboBox, DropDownList, DatePicker, RepeatingSection, PlainText. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-subtype)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
 **What's new:** Relationship **lists** of type **[ListCollection](resources/listcollection.md)** </br>
@@ -73,19 +81,13 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-parentTableCell)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
-**What's new:** Relationship **subtype** of type **[ContentControlType](resources/contentcontroltype.md)** </br>
-**Description:** Gets the content control subtype. The subtype can be 'RichTextInline', 'RichTextParagraphs', 'RichTextTableCell', 'RichTextTableRow' and 'RichTextTable' for rich text content controls. Read-only. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-subtype)_ </br>
-
-**Resource name:** [contentControl](resources/contentcontrol.md) </br>
 **What's new:** Relationship **tables** of type **[TableCollection](resources/tablecollection.md)** </br>
 **Description:** Gets the collection of table objects in the content control. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-tables)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
-**What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/contentcontrol.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
+**What's new:** Method **[getRange(rangeLocation: string)](resources/contentcontrol.md#getrangerangelocation-string)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the whole content control, or the starting or ending point of the content control, as a range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-getRange)_ </br>
@@ -97,7 +99,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-getTextRanges)_ </br>
 
 **Resource name:** [contentControl](resources/contentcontrol.md) </br>
-**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/contentcontrol.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
+**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](resources/contentcontrol.md#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-insertTable)_ </br>
@@ -107,6 +109,12 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 **Description:** Splits the content control into child ranges by using delimiters. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControl-split)_ </br>
+
+**Resource name:** [contentControlCollection](resources/contentcontrolcollection.md) </br>
+**What's new:** Relationship **first** of type **[ContentControl](resources/contentcontrol.md)** </br>
+**Description:** Gets the first content control in this collection. Read-only. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-contentControlCollection-first)_ </br>
 
 **Resource name:** [contentControlCollection](resources/contentcontrolcollection.md) </br>
 **What's new:** Method **[getByTypes(types: ContentControlType[])](resources/contentcontrolcollection.md#getbytypestypes-contentcontroltype)** returning **[ContentControlCollection](resources/contentcontrolcollection.md)** </br>
@@ -127,7 +135,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-font-doubleStrikeThrough)_ </br>
 
 **Resource name:** [inlinePicture](resources/inlinepicture.md) </br>
-**What's new:** Relationship **imageFormat** of type **[ImageFormat](resources/imageformat.md)** </br>
+**What's new:** Property **imageFormat** of type **string** </br>
 **Description:** Gets the format of the inline image. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-imageFormat)_ </br>
@@ -151,7 +159,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-parentTableCell)_ </br>
 
 **Resource name:** [inlinePicture](resources/inlinepicture.md) </br>
-**What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/inlinepicture.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
+**What's new:** Method **[getRange(rangeLocation: string)](resources/inlinepicture.md#getrangerangelocation-string)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the picture, or the starting or ending point of the picture, as a range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-inlinePicture-getRange)_ </br>
@@ -169,16 +177,94 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-id)_ </br>
 
 **Resource name:** [list](resources/list.md) </br>
+**What's new:** Property **levelExistences** of type **bool** </br>
+**Description:** Checks whether each of the 9 levels exists in the list. A true value indicates the level exists, which means there is at least one list item at that level. Read-only. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-levelExistences)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Relationship **levelTypes** of type **[ListLevelType](resources/listleveltype.md)** </br>
+**Description:** Gets all 9 level types in the list. Each type can be 'Bullet', 'Number' or 'Picture'. Read-only. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-levelTypes)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
 **What's new:** Relationship **paragraphs** of type **[ParagraphCollection](resources/paragraphcollection.md)** </br>
-**Description:** A collection containing the paragraphs in this list. Read-only. </br>
+**Description:** Gets paragraphs in the list. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-paragraphs)_ </br>
 
 **Resource name:** [list](resources/list.md) </br>
-**What's new:** Method **[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](resources/list.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)** returning **[Paragraph](resources/paragraph.md)** </br>
+**What's new:** Method **[getLevelFont(level: number)](resources/list.md#getlevelfontlevel-number)** returning **[Font](resources/font.md)** </br>
+**Description:** Gets the font of the bullet, number or picture at the specified level in the list. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-getLevelFont)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[getLevelParagraphs(level: number)](resources/list.md#getlevelparagraphslevel-number)** returning **[ParagraphCollection](resources/paragraphcollection.md)** </br>
+**Description:** Gets the paragraphs that occur at a specified level in the list. </br>
+**Available in requirement set:** 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-getLevelParagraphs)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[getLevelPicture(level: number)](resources/list.md#getlevelpicturelevel-number)** returning **string** </br>
+**Description:** Gets the base64 encoded string representation of the picture at the specified level in the list. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-getLevelPicture)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[getLevelString(level: number)](resources/list.md#getlevelstringlevel-number)** returning **string** </br>
+**Description:** Gets the bullet, number or picture at the specified level as a string. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-getLevelString)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[insertParagraph(paragraphText: string, insertLocation: string)](resources/list.md#insertparagraphparagraphtext-string-insertlocation-string)** returning **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-insertParagraph)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[resetLevelFont(level: number, resetFontName: bool)](resources/list.md#resetlevelfontlevel-number-resetfontname-bool)** returning **void** </br>
+**Description:** Resets the font of the bullet, number or picture at the specified level in the list. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-resetLevelFont)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[setLevelAlignment(level: number, alignment: string)](resources/list.md#setlevelalignmentlevel-number-alignment-string)** returning **void** </br>
+**Description:** Sets the alignment of the bullet, number or picture at the specified level in the list. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-setLevelAlignment)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[setLevelBullet(level: number, listBullet: ListBullet, charCode: number, fontName: string)](resources/list.md#setlevelbulletlevel-number-listbullet-listbullet-charcode-number-fontname-string)** returning **void** </br>
+**Description:** Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-setLevelBullet)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[setLevelIndents(level: number, textIndent: float, textIndent: float)](resources/list.md#setlevelindentslevel-number-textindent-float-textindent-float)** returning **void** </br>
+**Description:** Sets the two indents of the specified level in the list. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-setLevelIndents)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[setLevelNumbering(level: number, listNumbering: ListNumbering, formatString: object[])](resources/list.md#setlevelnumberinglevel-number-listnumbering-listnumbering-formatstring-object)** returning **void** </br>
+**Description:** Sets the numbering format at the specified level in the list. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-setLevelNumbering)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[setLevelPicture(level: number, base64EncodedImage: string)](resources/list.md#setlevelpicturelevel-number-base64encodedimage-string)** returning **void** </br>
+**Description:** Sets the picture at the specified level in the list. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-setLevelPicture)_ </br>
+
+**Resource name:** [list](resources/list.md) </br>
+**What's new:** Method **[setLevelStartingNumber(level: number, startingNumber: number)](resources/list.md#setlevelstartingnumberlevel-number-startingnumber-number)** returning **void** </br>
+**Description:** Sets the starting number at the specified level in the list. Default value is 1. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-list-setLevelStartingNumber)_ </br>
 
 **Resource name:** [listCollection](resources/listcollection.md) </br>
 **What's new:** Property **items** of type **[List[]](resources/list[].md)** </br>
@@ -204,11 +290,41 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listCollection-getItem)_ </br>
 
-**Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Property **listLevel** of type **int** </br>
-**Description:** Gets or sets the list level of the paragraph. </br>
+**Resource name:** [listItem](resources/listitem.md) </br>
+**What's new:** Property **level** of type **int** </br>
+**Description:** Gets or sets the level of the item in the list. </br>
 **Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-listLevel)_ </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listItem-level)_ </br>
+
+**Resource name:** [listItem](resources/listitem.md) </br>
+**What's new:** Property **listString** of type **string** </br>
+**Description:** Gets the list item bullet, number or picture as a string. Read-only. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listItem-listString)_ </br>
+
+**Resource name:** [listItem](resources/listitem.md) </br>
+**What's new:** Property **siblingIndex** of type **int** </br>
+**Description:** Gets the list item order number in relation to its siblings. Read-only. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listItem-siblingIndex)_ </br>
+
+**Resource name:** [listItem](resources/listitem.md) </br>
+**What's new:** Method **[getAncestor(parentOnly: bool)](resources/listitem.md#getancestorparentonly-bool)** returning **[Paragraph](resources/paragraph.md)** </br>
+**Description:** Gets the list item parent, or the closest ancestor if the parent does not exist. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listItem-getAncestor)_ </br>
+
+**Resource name:** [listItem](resources/listitem.md) </br>
+**What's new:** Method **[getDescendants(directChildrenOnly: bool)](resources/listitem.md#getdescendantsdirectchildrenonly-bool)** returning **[ParagraphCollection](resources/paragraphcollection.md)** </br>
+**Description:** Gets all descendant list items of the list item. </br>
+**Available in requirement set:** WordApiDesktop, 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-listItem-getDescendants)_ </br>
+
+**Resource name:** [paragraph](resources/paragraph.md) </br>
+**What's new:** Property **isListItem** of type **bool** </br>
+**Description:** Checks whether the paragraph is a list item. Read-only. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-isListItem)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
 **What's new:** Property **outlineLevel** of type **int** </br>
@@ -227,6 +343,12 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets the List to which this paragraph belongs. Returns null if the paragraph is not in a list. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-list)_ </br>
+
+**Resource name:** [paragraph](resources/paragraph.md) </br>
+**What's new:** Relationship **listItem** of type **[ListItem](resources/listitem.md)** </br>
+**Description:** Gets the ListItem for the paragraph. Returns null if the paragraph is not part of a list. Read-only. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-listItem)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
 **What's new:** Relationship **next** of type **[Paragraph](resources/paragraph.md)** </br>
@@ -259,7 +381,19 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-previous)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/paragraph.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
+**What's new:** Method **[attachToList(listId: number, level: number)](resources/paragraph.md#attachtolistlistid-number-level-number)** returning **[List](resources/list.md)** </br>
+**Description:** Lets the paragraph join an existing list at the specified level. Fails if the paragraph cannot join the list or if the paragraph is already a list item. </br>
+**Available in requirement set:** 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-attachToList)_ </br>
+
+**Resource name:** [paragraph](resources/paragraph.md) </br>
+**What's new:** Method **[detachFromList()](resources/paragraph.md#detachfromlist)** returning **void** </br>
+**Description:** Moves this paragraph out of any list. Fails if the paragraph is not a list item. </br>
+**Available in requirement set:** 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-detachFromList)_ </br>
+
+**Resource name:** [paragraph](resources/paragraph.md) </br>
+**What's new:** Method **[getRange(rangeLocation: string)](resources/paragraph.md#getrangerangelocation-string)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the whole paragraph, or the starting or ending point of the paragraph, as a range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-getRange)_ </br>
@@ -271,7 +405,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-getTextRanges)_ </br>
 
 **Resource name:** [paragraph](resources/paragraph.md) </br>
-**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/paragraph.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
+**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](resources/paragraph.md#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-insertTable)_ </br>
@@ -281,6 +415,12 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 **Description:** Splits the paragraph into child ranges by using delimiters. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-split)_ </br>
+
+**Resource name:** [paragraph](resources/paragraph.md) </br>
+**What's new:** Method **[startNewList()](resources/paragraph.md#startnewlist)** returning **[List](resources/list.md)** </br>
+**Description:** Uses the paragraph to start a new list. Fails if the paragraph is already a list item. </br>
+**Available in requirement set:** 1.3 </br>
+_[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-paragraph-startNewList)_ </br>
 
 **Resource name:** [paragraphCollection](resources/paragraphcollection.md) </br>
 **What's new:** Relationship **first** of type **[Paragraph](resources/paragraph.md)** </br>
@@ -361,7 +501,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getNextTextRange)_ </br>
 
 **Resource name:** [range](resources/range.md) </br>
-**What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/range.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
+**What's new:** Method **[getRange(rangeLocation: string)](resources/range.md#getrangerangelocation-string)** returning **[Range](resources/range.md)** </br>
 **Description:** Clones the range, or gets the starting or ending point of the range as a new range. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getRange)_ </br>
@@ -373,7 +513,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-getTextRanges)_ </br>
 
 **Resource name:** [range](resources/range.md) </br>
-**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/range.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
+**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](resources/range.md#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-range-insertTable)_ </br>
@@ -499,6 +639,12 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-values)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
+**What's new:** Property **verticalAlignment** of type **string** </br>
+**Description:** Gets and sets the vertical alignment of every cell in the table. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-verticalAlignment)_ </br>
+
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Relationship **cellPaddingBottom** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default bottom cell padding in points. </br>
 **Available in requirement set:** 1.3 </br>
@@ -583,25 +729,19 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-tables)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](resources/verticalalignment.md)** </br>
-**Description:** Gets and sets the vertical alignment of every cell in the table. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-verticalAlignment)_ </br>
-
-**Resource name:** [table](resources/table.md) </br>
 **What's new:** Relationship **width** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the width of the table in points. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-width)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Method **[addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](resources/table.md#addcolumnsinsertlocation-insertlocation-columncount-number-values-string)** returning **void** </br>
+**What's new:** Method **[addColumns(insertLocation: string, columnCount: number, values: string[][])](resources/table.md#addcolumnsinsertlocation-string-columncount-number-values-string)** returning **void** </br>
 **Description:** Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-addColumns)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Method **[addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](resources/table.md#addrowsinsertlocation-insertlocation-rowcount-number-values-string)** returning **void** </br>
+**What's new:** Method **[addRows(insertLocation: string, rowCount: number, values: string[][])](resources/table.md#addrowsinsertlocation-string-rowcount-number-values-string)** returning **void** </br>
 **Description:** Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-addRows)_ </br>
@@ -655,7 +795,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-distributeRows)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Method **[getBorderStyle(borderLocation: BorderLocation)](resources/table.md#getborderstyleborderlocation-borderlocation)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
+**What's new:** Method **[getBorderStyle(borderLocation: string)](resources/table.md#getborderstyleborderlocation-string)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
 **Description:** Gets the border style for the specified border. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getBorderStyle)_ </br>
@@ -667,7 +807,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getCell)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Method **[getRange(rangeLocation: RangeLocation)](resources/table.md#getrangerangelocation-rangelocation)** returning **[Range](resources/range.md)** </br>
+**What's new:** Method **[getRange(rangeLocation: string)](resources/table.md#getrangerangelocation-string)** returning **[Range](resources/range.md)** </br>
 **Description:** Gets the range that contains this table, or the range at the start or end of the table. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-getRange)_ </br>
@@ -679,13 +819,13 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertContentControl)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Method **[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](resources/table.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)** returning **[Paragraph](resources/paragraph.md)** </br>
+**What's new:** Method **[insertParagraph(paragraphText: string, insertLocation: string)](resources/table.md#insertparagraphparagraphtext-string-insertlocation-string)** returning **[Paragraph](resources/paragraph.md)** </br>
 **Description:** Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertParagraph)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](resources/table.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)** returning **[Table](resources/table.md)** </br>
+**What's new:** Method **[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](resources/table.md#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)** returning **[Table](resources/table.md)** </br>
 **Description:** Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-insertTable)_ </br>
@@ -703,7 +843,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-search)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Method **[select(selectionMode: SelectionMode)](resources/table.md#selectselectionmode-selectionmode)** returning **void** </br>
+**What's new:** Method **[select(selectionMode: string)](resources/table.md#selectselectionmode-string)** returning **void** </br>
 **Description:** Selects the table, or the position at the start or end of the table, and navigates the Word UI to it. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-select)_ </br>
@@ -715,8 +855,8 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableBorderStyle-color)_ </br>
 
 **Resource name:** [tableBorderStyle](resources/tableborderstyle.md) </br>
-**What's new:** Relationship **type** of type **[BorderType](resources/bordertype.md)** </br>
-**Description:** Gets or sets the type of the table border style. </br>
+**What's new:** Property **type** of type **string** </br>
+**Description:** Gets or sets the type of the table border style. Possible values are: Mixed, None, Single, Thick, Double, Hairline, Dotted, Dashed, DotDashed, Dot2Dashed, Triple, ThinThickSmall, ThickThinSmall, ThinThickThinSmall, ThinThickMed, ThickThinMed, ThinThickThinMed, ThinThickLarge, ThickThinLarge, ThinThickThinLarge, Wave, DoubleWave, DashedSmall, DashDotStroked, ThreeDEmboss, ThreeDEngrave. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableBorderStyle-type)_ </br>
 
@@ -749,6 +889,12 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets and sets the text of the cell. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-value)_ </br>
+
+**Resource name:** [tableCell](resources/tablecell.md) </br>
+**What's new:** Property **verticalAlignment** of type **string** </br>
+**Description:** Gets and sets the vertical alignment of the cell. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-verticalAlignment)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Relationship **body** of type **[Body](resources/body.md)** </br>
@@ -805,12 +951,6 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-parentTable)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](resources/verticalalignment.md)** </br>
-**Description:** Gets and sets the vertical alignment of the cell. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-verticalAlignment)_ </br>
-
-**Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Relationship **width** of type **[float](resources/float.md)** </br>
 **Description:** Gets the width of the cell in points. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
@@ -829,19 +969,19 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-deleteRow)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Method **[getBorderStyle(borderLocation: BorderLocation)](resources/tablecell.md#getborderstyleborderlocation-borderlocation)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
+**What's new:** Method **[getBorderStyle(borderLocation: string)](resources/tablecell.md#getborderstyleborderlocation-string)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
 **Description:** Gets the border style for the specified border. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-getBorderStyle)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Method **[insertColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](resources/tablecell.md#insertcolumnsinsertlocation-insertlocation-columncount-number-values-string)** returning **void** </br>
+**What's new:** Method **[insertColumns(insertLocation: string, columnCount: number, values: string[][])](resources/tablecell.md#insertcolumnsinsertlocation-string-columncount-number-values-string)** returning **void** </br>
 **Description:** Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-insertColumns)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Method **[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](resources/tablecell.md#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)** returning **void** </br>
+**What's new:** Method **[insertRows(insertLocation: string, rowCount: number, values: string[][])](resources/tablecell.md#insertrowsinsertlocation-string-rowcount-number-values-string)** returning **void** </br>
 **Description:** Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-insertRows)_ </br>
@@ -919,6 +1059,12 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-values)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
+**What's new:** Property **verticalAlignment** of type **string** </br>
+**Description:** Gets and sets the vertical alignment of the cells in the row. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-verticalAlignment)_ </br>
+
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Relationship **cellPaddingBottom** of type **[float](resources/float.md)** </br>
 **Description:** Gets and sets the default bottom cell padding for the row in points. </br>
 **Available in requirement set:** 1.3 </br>
@@ -973,12 +1119,6 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-preferredHeight)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **verticalAlignment** of type **[VerticalAlignment](resources/verticalalignment.md)** </br>
-**Description:** Gets and sets the vertical alignment of the cells in the row. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-verticalAlignment)_ </br>
-
-**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[clear()](resources/tablerow.md#clear)** returning **void** </br>
 **Description:** Clears the contents of the row. </br>
 **Available in requirement set:** 1.3 </br>
@@ -991,13 +1131,13 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-delete)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Method **[getBorderStyle(borderLocation: BorderLocation)](resources/tablerow.md#getborderstyleborderlocation-borderlocation)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
+**What's new:** Method **[getBorderStyle(borderLocation: string)](resources/tablerow.md#getborderstyleborderlocation-string)** returning **[TableBorderStyle](resources/tableborderstyle.md)** </br>
 **Description:** Gets the border style of the cells in the row. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-getBorderStyle)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Method **[insertRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](resources/tablerow.md#insertrowsinsertlocation-insertlocation-rowcount-number-values-string)** returning **void** </br>
+**What's new:** Method **[insertRows(insertLocation: string, rowCount: number, values: string[][])](resources/tablerow.md#insertrowsinsertlocation-string-rowcount-number-values-string)** returning **void** </br>
 **Description:** Inserts rows using this row as a template. If values are specified, inserts the values into the new rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-insertRows)_ </br>
@@ -1015,7 +1155,7 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-search)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Method **[select(selectionMode: SelectionMode)](resources/tablerow.md#selectselectionmode-selectionmode)** returning **void** </br>
+**What's new:** Method **[select(selectionMode: string)](resources/tablerow.md#selectselectionmode-string)** returning **void** </br>
 **Description:** Selects the row and navigates the Word UI to it. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-select)_ </br>
@@ -1037,6 +1177,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets a table row object by its index in the collection. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRowCollection-getItem)_ </br>
+
 
 
 
