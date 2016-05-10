@@ -8,9 +8,17 @@ Represents a single paragraph in a selection, range, content control, or documen
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|alignment|string|Gets or sets the alignment for a paragraph. The value can  be 'left', 'centered', 'right', or 'justified'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|1.1||
-|listLevel|int|Gets or sets the list level of the paragraph.|1.3||
+|alignment|string|Gets or sets the alignment for a paragraph. The value can be 'left', 'centered', 'right', or 'justified'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|1.1||
+|firstLineIndent|float|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|1.1||
+|isListItem|bool|Checks whether the paragraph is a list item. Read-only.|1.3||
+|leftIndent|float|Gets or sets the left indent value, in points, for the paragraph.|1.1||
+|lineSpacing|float|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|1.1||
+|lineUnitAfter|float|Gets or sets the amount of spacing, in grid lines. after the paragraph.|1.1||
+|lineUnitBefore|float|Gets or sets the amount of spacing, in grid lines, before the paragraph.|1.1||
 |outlineLevel|int|Gets or sets the outline level for the paragraph.|WordApiDesktop, 1.3||
+|rightIndent|float|Gets or sets the right indent value, in points, for the paragraph.|1.1||
+|spaceAfter|float|Gets or sets the spacing, in points, after the paragraph.|1.1||
+|spaceBefore|float|Gets or sets the spacing, in points, before the paragraph.|1.1||
 |style|string|Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style.|1.1||
 |tableNestingLevel|int|Gets the level of the paragraph's table. It returns 0 if the paragraph is not in a table. Read-only.|1.3||
 |text|string|Gets the text of the paragraph. Read-only.|1.1||
@@ -19,30 +27,25 @@ Represents a single paragraph in a selection, range, content control, or documen
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the paragraph. Read-only.|1.1||
-|firstLineIndent|[float](float.md)|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|1.1||
 |font|[Font](font.md)|Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties. Read-only.|1.1||
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the paragraph. The collection does not include floating images. Read-only.|1.1||
-|leftIndent|[float](float.md)|Gets or sets the left indent value, in points, for the paragraph.|1.1||
-|lineSpacing|[float](float.md)|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|1.1||
-|lineUnitAfter|[float](float.md)|Gets or sets the amount of spacing, in grid lines. after the paragraph.|1.1||
-|lineUnitBefore|[float](float.md)|Gets or sets the amount of spacing, in grid lines, before the paragraph.|1.1||
 |list|[List](list.md)|Gets the List to which this paragraph belongs. Returns null if the paragraph is not in a list. Read-only.|1.3||
+|listItem|[ListItem](listitem.md)|Gets the ListItem for the paragraph. Returns null if the paragraph is not part of a list. Read-only.|1.3||
 |next|[Paragraph](paragraph.md)|Gets the next paragraph. Read-only.|1.3||
 |parentBody|[Body](body.md)|Gets the parent body of the paragraph. Read-only.|1.3||
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the paragraph. Returns null if there isn't a parent content control. Read-only.|1.1||
 |parentTable|[Table](table.md)|Gets the table that contains the paragraph. Returns null if it is not contained in a table. Read-only.|1.3||
 |parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the paragraph. Returns null if it is not contained in a table cell. Read-only.|1.3||
 |previous|[Paragraph](paragraph.md)|Gets the previous paragraph. Read-only.|1.3||
-|rightIndent|[float](float.md)|Gets or sets the right indent value, in points, for the paragraph.|1.1||
-|spaceAfter|[float](float.md)|Gets or sets the spacing, in points, after the paragraph.|1.1||
-|spaceBefore|[float](float.md)|Gets or sets the spacing, in points, before the paragraph.|1.1||
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[attachToList(listId: number, level: number)](#attachtolistlistid-number-level-number)|[List](list.md)|Lets the paragraph join an existing list at the specified level. Fails if the paragraph cannot join the list or if the paragraph is already a list item.|1.3|
 |[clear()](#clear)|void|Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.|1.1|
 |[delete()](#delete)|void|Deletes the paragraph and its content from the document.|1.1|
+|[detachFromList()](#detachfromlist)|void|Moves this paragraph out of any list. Fails if the paragraph is not a list item.|1.3|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|1.1|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|1.1|
 |[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the whole paragraph, or the starting or ending point of the paragraph, as a range.|1.3|
@@ -60,9 +63,27 @@ Represents a single paragraph in a selection, range, content control, or documen
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|1.1|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects and navigates the Word UI to the paragraph.|1.1|
 |[split(delimiters: string[], trimDelimiters: bool, trimSpacing: bool)](#splitdelimiters-string-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the paragraph into child ranges by using delimiters.|1.3|
+|[startNewList()](#startnewlist)|[List](list.md)|Uses the paragraph to start a new list. Fails if the paragraph is already a list item.|1.3|
 
 ## Method Details
 
+
+### attachToList(listId: number, level: number)
+Lets the paragraph join an existing list at the specified level. Fails if the paragraph cannot join the list or if the paragraph is already a list item.
+
+#### Syntax
+```js
+paragraphObject.attachToList(listId, level);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|listId|number|Required. The ID of an existing list.|
+|level|number|Required. The level in the list.|
+
+#### Returns
+[List](list.md)
 
 ### clear()
 Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.
@@ -161,6 +182,20 @@ Word.run(function (context) {
 });
 ```
 
+
+### detachFromList()
+Moves this paragraph out of any list. Fails if the paragraph is not a list item.
+
+#### Syntax
+```js
+paragraphObject.detachFromList();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 
 ### getHtml()
 Gets the HTML representation of the paragraph object.
@@ -786,3 +821,17 @@ paragraphObject.split(delimiters, trimDelimiters, trimSpacing);
 
 #### Returns
 [RangeCollection](rangecollection.md)
+
+### startNewList()
+Uses the paragraph to start a new list. Fails if the paragraph is already a list item.
+
+#### Syntax
+```js
+paragraphObject.startNewList();
+```
+
+#### Parameters
+None
+
+#### Returns
+[List](list.md)

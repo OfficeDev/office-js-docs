@@ -9,10 +9,16 @@ Represents a table cell in a Word document.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |cellIndex|int|Gets the index of the cell in its row. Read-only.|1.3||
+|cellPaddingBottom|float|Gets and sets the bottom padding of the cell in points.|1.3||
+|cellPaddingLeft|float|Gets and sets the left padding of the cell in points.|1.3||
+|cellPaddingRight|float|Gets and sets the right padding of the cell in points.|1.3||
+|cellPaddingTop|float|Gets and sets the top padding of the cell in points.|1.3||
+|columnWidth|float|Gets and sets the width of the cell's column in points. This is applicable to uniform tables.|1.3||
 |rowIndex|int|Gets the index of the cell's row in the table. Read-only.|1.3||
 |shadingColor|string|Gets or sets the shading color of the cell. Color is specified in "#RRGGBB" format or by using the color name.|1.3||
 |value|string|Gets and sets the text of the cell.|1.3||
-|verticalAlignment|string|Gets and sets the vertical alignment of the cell. Possible values are: Mixed, Top, Center, Bottom.|1.3||
+|verticalAlignment|string|Gets and sets the vertical alignment of the cell. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom.|1.3||
+|width|float|Gets the width of the cell in points. Read-only.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,15 +26,9 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |body|[Body](body.md)|Gets the body object of the cell. Read-only.|1.3||
-|cellPaddingBottom|[float](float.md)|Gets and sets the bottom padding of the cell in points.|1.3||
-|cellPaddingLeft|[float](float.md)|Gets and sets the left padding of the cell in points.|1.3||
-|cellPaddingRight|[float](float.md)|Gets and sets the right padding of the cell in points.|1.3||
-|cellPaddingTop|[float](float.md)|Gets and sets the top padding of the cell in points.|1.3||
-|columnWidth|[float](float.md)|Gets and sets the width of the cell's column in points. This is applicable to uniform tables.|1.3||
 |next|[TableCell](tablecell.md)|Gets the next cell. Read-only.|1.3||
 |parentRow|[TableRow](tablerow.md)|Gets the parent row of the cell. Read-only.|1.3||
 |parentTable|[Table](table.md)|Gets the parent table of the cell. Read-only.|1.3||
-|width|[float](float.md)|Gets the width of the cell in points. Read-only.|1.3||
 
 ## Methods
 

@@ -10,20 +10,20 @@ Represents an inline picture.
 |:---------------|:--------|:----------|:----|
 |altTextDescription|string|Gets or sets a string that represents the alternative text associated with the inline image|1.1||
 |altTextTitle|string|Gets or sets a string that contains the title for the inline image.|1.1||
+|height|float|Gets or sets a number that describes the height of the inline image.|1.1||
 |hyperlink|string|Gets or sets the hyperlink associated with the inline image.|1.1||
 |imageFormat|string|Gets the format of the inline image. Read-only.|1.3||
 |lockAspectRatio|bool|Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.|1.1||
+|width|float|Gets or sets a number that describes the width of the inline image.|1.1||
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|height|[float](float.md)|Gets or sets a number that describes the height of the inline image.|1.1||
 |next|[InlinePicture](inlinepicture.md)|Gets the next inline image. Read-only.|1.3||
 |paragraph|[Paragraph](paragraph.md)|Gets the paragraph that contains the inline image. Read-only.|1.2||
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the inline image. Returns null if there isn't a parent content control. Read-only.|1.1||
 |parentTable|[Table](table.md)|Gets the table that contains the inline image. Returns null if it is not contained in a table. Read-only.|1.3||
 |parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the inline image. Returns null if it is not contained in a table cell. Read-only.|1.3||
-|width|[float](float.md)|Gets or sets a number that describes the width of the inline image.|1.1||
 
 ## Methods
 

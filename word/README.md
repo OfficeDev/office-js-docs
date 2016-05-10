@@ -13,7 +13,6 @@ _**Note**: The listed features are still under the design and review phase and a
 
 ### FEATURES
 
-
 **Resource name:** [application](resources/application.md) </br>
 **What's new:** Method **[createDocument(base64File: string)](resources/application.md#createdocumentbase64file-string)** returning **[Document](resources/document.md)** </br>
 **Description:** Creates a new document by using a base64 encoded .docx file. </br>
@@ -567,10 +566,40 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-sectionCollection-first)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
+**What's new:** Property **cellPaddingBottom** of type **float** </br>
+**Description:** Gets and sets the default bottom cell padding in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingBottom)_ </br>
+
+**Resource name:** [table](resources/table.md) </br>
+**What's new:** Property **cellPaddingLeft** of type **float** </br>
+**Description:** Gets and sets the default left cell padding in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingLeft)_ </br>
+
+**Resource name:** [table](resources/table.md) </br>
+**What's new:** Property **cellPaddingRight** of type **float** </br>
+**Description:** Gets and sets the default right cell padding in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingRight)_ </br>
+
+**Resource name:** [table](resources/table.md) </br>
+**What's new:** Property **cellPaddingTop** of type **float** </br>
+**Description:** Gets and sets the default top cell padding in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingTop)_ </br>
+
+**Resource name:** [table](resources/table.md) </br>
 **What's new:** Property **headerRowCount** of type **int** </br>
 **Description:** Gets and sets the number of header rows. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-headerRowCount)_ </br>
+
+**Resource name:** [table](resources/table.md) </br>
+**What's new:** Property **height** of type **float** </br>
+**Description:** Gets the height of the table in points. Read-only. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-height)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
 **What's new:** Property **isUniform** of type **bool** </br>
@@ -645,40 +674,16 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-verticalAlignment)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **cellPaddingBottom** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the default bottom cell padding in points. </br>
+**What's new:** Property **width** of type **float** </br>
+**Description:** Gets and sets the width of the table in points. </br>
 **Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingBottom)_ </br>
-
-**Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **cellPaddingLeft** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the default left cell padding in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingLeft)_ </br>
-
-**Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **cellPaddingRight** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the default right cell padding in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingRight)_ </br>
-
-**Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **cellPaddingTop** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the default top cell padding in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-cellPaddingTop)_ </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-width)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
 **What's new:** Relationship **font** of type **[Font](resources/font.md)** </br>
 **Description:** Gets the font. Use this to get and set font name, size, color, and other properties. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-font)_ </br>
-
-**Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **height** of type **[float](resources/float.md)** </br>
-**Description:** Gets the height of the table in points. Read-only. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-height)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
 **What's new:** Relationship **next** of type **[Table](resources/table.md)** </br>
@@ -727,12 +732,6 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets the child tables nested one level deeper. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-tables)_ </br>
-
-**Resource name:** [table](resources/table.md) </br>
-**What's new:** Relationship **width** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the width of the table in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-table-width)_ </br>
 
 **Resource name:** [table](resources/table.md) </br>
 **What's new:** Method **[addColumns(insertLocation: string, columnCount: number, values: string[][])](resources/table.md#addcolumnsinsertlocation-string-columncount-number-values-string)** returning **void** </br>
@@ -861,7 +860,7 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableBorderStyle-type)_ </br>
 
 **Resource name:** [tableBorderStyle](resources/tableborderstyle.md) </br>
-**What's new:** Relationship **width** of type **[float](resources/float.md)** </br>
+**What's new:** Property **width** of type **float** </br>
 **Description:** Gets or sets the width, in points, of the table border style. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableBorderStyle-width)_ </br>
@@ -871,6 +870,36 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets the index of the cell in its row. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellIndex)_ </br>
+
+**Resource name:** [tableCell](resources/tablecell.md) </br>
+**What's new:** Property **cellPaddingBottom** of type **float** </br>
+**Description:** Gets and sets the bottom padding of the cell in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingBottom)_ </br>
+
+**Resource name:** [tableCell](resources/tablecell.md) </br>
+**What's new:** Property **cellPaddingLeft** of type **float** </br>
+**Description:** Gets and sets the left padding of the cell in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingLeft)_ </br>
+
+**Resource name:** [tableCell](resources/tablecell.md) </br>
+**What's new:** Property **cellPaddingRight** of type **float** </br>
+**Description:** Gets and sets the right padding of the cell in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingRight)_ </br>
+
+**Resource name:** [tableCell](resources/tablecell.md) </br>
+**What's new:** Property **cellPaddingTop** of type **float** </br>
+**Description:** Gets and sets the top padding of the cell in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingTop)_ </br>
+
+**Resource name:** [tableCell](resources/tablecell.md) </br>
+**What's new:** Property **columnWidth** of type **float** </br>
+**Description:** Gets and sets the width of the cell's column in points. This is applicable to uniform tables. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-columnWidth)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Property **rowIndex** of type **int** </br>
@@ -897,40 +926,16 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-verticalAlignment)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
+**What's new:** Property **width** of type **float** </br>
+**Description:** Gets the width of the cell in points. Read-only. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-width)_ </br>
+
+**Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Relationship **body** of type **[Body](resources/body.md)** </br>
 **Description:** Gets the body object of the cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-body)_ </br>
-
-**Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **cellPaddingBottom** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the bottom padding of the cell in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingBottom)_ </br>
-
-**Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **cellPaddingLeft** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the left padding of the cell in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingLeft)_ </br>
-
-**Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **cellPaddingRight** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the right padding of the cell in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingRight)_ </br>
-
-**Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **cellPaddingTop** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the top padding of the cell in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-cellPaddingTop)_ </br>
-
-**Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **columnWidth** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the width of the cell's column in points. This is applicable to uniform tables. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-columnWidth)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Relationship **next** of type **[TableCell](resources/tablecell.md)** </br>
@@ -949,12 +954,6 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets the parent table of the cell. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-parentTable)_ </br>
-
-**Resource name:** [tableCell](resources/tablecell.md) </br>
-**What's new:** Relationship **width** of type **[float](resources/float.md)** </br>
-**Description:** Gets the width of the cell in points. Read-only. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableCell-width)_ </br>
 
 **Resource name:** [tableCell](resources/tablecell.md) </br>
 **What's new:** Method **[deleteColumn()](resources/tablecell.md#deletecolumn)** returning **void** </br>
@@ -1035,10 +1034,40 @@ _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpe
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellCount)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
+**What's new:** Property **cellPaddingBottom** of type **float** </br>
+**Description:** Gets and sets the default bottom cell padding for the row in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingBottom)_ </br>
+
+**Resource name:** [tableRow](resources/tablerow.md) </br>
+**What's new:** Property **cellPaddingLeft** of type **float** </br>
+**Description:** Gets and sets the default left cell padding for the row in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingLeft)_ </br>
+
+**Resource name:** [tableRow](resources/tablerow.md) </br>
+**What's new:** Property **cellPaddingRight** of type **float** </br>
+**Description:** Gets and sets the default right cell padding for the row in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingRight)_ </br>
+
+**Resource name:** [tableRow](resources/tablerow.md) </br>
+**What's new:** Property **cellPaddingTop** of type **float** </br>
+**Description:** Gets and sets the default top cell padding for the row in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingTop)_ </br>
+
+**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Property **isHeader** of type **bool** </br>
 **Description:** Gets a value that indicates whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-isHeader)_ </br>
+
+**Resource name:** [tableRow](resources/tablerow.md) </br>
+**What's new:** Property **preferredHeight** of type **float** </br>
+**Description:** Gets and sets the preferred height of the row in points. </br>
+**Available in requirement set:** 1.3 </br>
+_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-preferredHeight)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Property **rowIndex** of type **int** </br>
@@ -1065,30 +1094,6 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-verticalAlignment)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cellPaddingBottom** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the default bottom cell padding for the row in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingBottom)_ </br>
-
-**Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cellPaddingLeft** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the default left cell padding for the row in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingLeft)_ </br>
-
-**Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cellPaddingRight** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the default right cell padding for the row in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingRight)_ </br>
-
-**Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **cellPaddingTop** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the default top cell padding for the row in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-cellPaddingTop)_ </br>
-
-**Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Relationship **cells** of type **[TableCellCollection](resources/tablecellcollection.md)** </br>
 **Description:** Gets cells. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
@@ -1111,12 +1116,6 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets parent table. Read-only. </br>
 **Available in requirement set:** 1.3 </br>
 _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-parentTable)_ </br>
-
-**Resource name:** [tableRow](resources/tablerow.md) </br>
-**What's new:** Relationship **preferredHeight** of type **[float](resources/float.md)** </br>
-**Description:** Gets and sets the preferred height of the row in points. </br>
-**Available in requirement set:** 1.3 </br>
-_[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRow-preferredHeight)_ </br>
 
 **Resource name:** [tableRow](resources/tablerow.md) </br>
 **What's new:** Method **[clear()](resources/tablerow.md#clear)** returning **void** </br>
@@ -1177,7 +1176,6 @@ _[Give Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=Op
 **Description:** Gets a table row object by its index in the collection. </br>
 **Available in requirement set:** 1.3 </br>
 _[Feedback](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-tableRowCollection-getItem)_ </br>
-
 
 
 

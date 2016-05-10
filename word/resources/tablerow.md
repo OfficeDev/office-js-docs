@@ -9,26 +9,26 @@ Represents a row in a Word document.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |cellCount|int|Gets the number of cells in the row. Read-only.|1.3||
+|cellPaddingBottom|float|Gets and sets the default bottom cell padding for the row in points.|1.3||
+|cellPaddingLeft|float|Gets and sets the default left cell padding for the row in points.|1.3||
+|cellPaddingRight|float|Gets and sets the default right cell padding for the row in points.|1.3||
+|cellPaddingTop|float|Gets and sets the default top cell padding for the row in points.|1.3||
 |isHeader|bool|Gets a value that indicates whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object. Read-only.|1.3||
+|preferredHeight|float|Gets and sets the preferred height of the row in points.|1.3||
 |rowIndex|int|Gets the index of the row in its parent table. Read-only.|1.3||
 |shadingColor|string|Gets and sets the shading color.|1.3||
 |values|string|Gets and sets the text values in the row, as a 1D Javascript array.|1.3||
-|verticalAlignment|string|Gets and sets the vertical alignment of the cells in the row. Possible values are: Mixed, Top, Center, Bottom.|1.3||
+|verticalAlignment|string|Gets and sets the vertical alignment of the cells in the row. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|cellPaddingBottom|[float](float.md)|Gets and sets the default bottom cell padding for the row in points.|1.3||
-|cellPaddingLeft|[float](float.md)|Gets and sets the default left cell padding for the row in points.|1.3||
-|cellPaddingRight|[float](float.md)|Gets and sets the default right cell padding for the row in points.|1.3||
-|cellPaddingTop|[float](float.md)|Gets and sets the default top cell padding for the row in points.|1.3||
 |cells|[TableCellCollection](tablecellcollection.md)|Gets cells. Read-only.|1.3||
 |font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|1.3||
 |next|[TableRow](tablerow.md)|Gets the next row. Read-only.|1.3||
 |parentTable|[Table](table.md)|Gets parent table. Read-only.|1.3||
-|preferredHeight|[float](float.md)|Gets and sets the preferred height of the row in points.|1.3||
 
 ## Methods
 
