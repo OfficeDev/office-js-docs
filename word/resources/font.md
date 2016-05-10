@@ -14,6 +14,7 @@ Represents a font.
 |highlightColor|string|Gets or sets the highlight color for the specified font. You can provide the value as either in the '#RRGGBB' format or the color name.|1.1||
 |italic|bool|Gets or sets a value that indicates whether the font is italicized. True if the font is italicized, otherwise, false.|1.1||
 |name|string|Gets or sets a value that represents the name of the font.|1.1||
+|size|float|Gets or sets a value that represents the font size in points.|1.1||
 |strikeThrough|bool|Gets or sets a value that indicates whether the font has a strike through. True if the font is formatted as strikethrough text, otherwise, false.|1.1||
 |subscript|bool|Gets or sets a value that indicates whether the font is a subscript. True if the font is formatted as subscript, otherwise, false.|1.1||
 |superscript|bool|Gets or sets a value that indicates whether the font is a superscript. True if the font is formatted as superscript, otherwise, false.|1.1||
@@ -22,9 +23,8 @@ Represents a font.
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|size|[float](float.md)|Gets or sets a value that represents the font size in points.|1.1||
+None
+
 
 ## Methods
 

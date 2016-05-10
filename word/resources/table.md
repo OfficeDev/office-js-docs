@@ -8,7 +8,12 @@ Represents a table in a Word document.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|cellPaddingBottom|float|Gets and sets the default bottom cell padding in points.|1.3||
+|cellPaddingLeft|float|Gets and sets the default left cell padding in points.|1.3||
+|cellPaddingRight|float|Gets and sets the default right cell padding in points.|1.3||
+|cellPaddingTop|float|Gets and sets the default top cell padding in points.|1.3||
 |headerRowCount|int|Gets and sets the number of header rows.|1.3||
+|height|float|Gets the height of the table in points. Read-only.|1.3||
 |isUniform|bool|Indicates whether all of the table rows are uniform. Read-only.|1.3||
 |nestingLevel|int|Gets the nesting level of the table. Top-level tables have level 1. Read-only.|1.3||
 |rowCount|int|Gets the number of rows in the table. Read-only.|1.3||
@@ -20,19 +25,15 @@ Represents a table in a Word document.
 |styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|1.3||
 |styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|1.3||
 |values|string|Gets and sets the text values in the table, as a 2D Javascript array.|1.3||
-|verticalAlignment|string|Gets and sets the vertical alignment of every cell in the table. Possible values are: Mixed, Top, Center, Bottom.|1.3||
+|verticalAlignment|string|Gets and sets the vertical alignment of every cell in the table. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom.|1.3||
+|width|float|Gets and sets the width of the table in points.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|cellPaddingBottom|[float](float.md)|Gets and sets the default bottom cell padding in points.|1.3||
-|cellPaddingLeft|[float](float.md)|Gets and sets the default left cell padding in points.|1.3||
-|cellPaddingRight|[float](float.md)|Gets and sets the default right cell padding in points.|1.3||
-|cellPaddingTop|[float](float.md)|Gets and sets the default top cell padding in points.|1.3||
 |font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|1.3||
-|height|[float](float.md)|Gets the height of the table in points. Read-only.|1.3||
 |next|[Table](table.md)|Gets the next table. Read-only.|1.3||
 |paragraphAfter|[Paragraph](paragraph.md)|Gets the paragraph after the table. Read-only.|1.3||
 |paragraphBefore|[Paragraph](paragraph.md)|Gets the paragraph before the table. Read-only.|1.3||
@@ -41,7 +42,6 @@ _See property access [examples.](#property-access-examples)_
 |parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains this table. Returns null if it is not contained in a table cell. Read-only.|1.3||
 |rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|1.3||
 |tables|[TableCollection](tablecollection.md)|Gets the child tables nested one level deeper. Read-only.|1.3||
-|width|[float](float.md)|Gets and sets the width of the table in points.|1.3||
 
 ## Methods
 

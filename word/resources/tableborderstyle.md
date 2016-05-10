@@ -10,13 +10,13 @@ Specifies the border style
 |:---------------|:--------|:----------|:----|
 |color|string|Gets or sets the table border color, as a hex value or name.|1.3||
 |type|string|Gets or sets the type of the table border style. Possible values are: Mixed, None, Single, Thick, Double, Hairline, Dotted, Dashed, DotDashed, Dot2Dashed, Triple, ThinThickSmall, ThickThinSmall, ThinThickThinSmall, ThinThickMed, ThickThinMed, ThinThickThinMed, ThinThickLarge, ThickThinLarge, ThinThickThinLarge, Wave, DoubleWave, DashedSmall, DashDotStroked, ThreeDEmboss, ThreeDEngrave.|1.3||
+|width|float|Gets or sets the width, in points, of the table border style.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|width|[float](float.md)|Gets or sets the width, in points, of the table border style.|1.3||
+None
+
 
 ## Methods
 
