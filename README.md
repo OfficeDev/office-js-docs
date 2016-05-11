@@ -1,6 +1,13 @@
 # Office JavaScript APIs
 Welcome to the Office JavaScript API documentation. Here you can find everything you need to about Office add-ins.  To view these documents, we recommend you view them on [dev.office.com](https://dev.office.com/docs/add-ins/overview/office-add-ins).
 
+In order to try the Preview APIs please make sure to 
+1. Get on the First Release so you can get the latest Word! Follow the instructions here: https://github.com/OfficeDev/office-js-docs/blob/215f5d35490c943cc06c29b98357ba8cb034ec81/docs/develop/install-latest-office-version.md
+
+2. Use the PREVEW CDN for OFfice.js:https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+3. Code and provide feedback!!!
+
+
 
 ## Give us your feedback
 
