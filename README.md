@@ -136,7 +136,7 @@ Set/create a custom property.
 
 ###### Syntax
 ```js
-propertiesCollection.set(key);
+propertiesCollection.set(key, variable);
 
 ```
 
@@ -225,50 +225,44 @@ Excel.run(function (ctx) {
 
 ### Alternate Design 
  
-Instead of providing separate members on the document level to built-in and custom properties, provide a dynamic collection object that can host both types.
+Instead of providing separate members on the document level to built-in and custom properties, provide a dynamic collection object that can host both types. Library/corporate properties are not included in this model separately.
 
-#### `property` Object
+#### Add properties collection object to document object. 
 
-Represnts an individual property. 
+| Relationship	   | Type	|Description
+|:---------------|:--------|:----------|
+|properties|property collection|Properties object.|
+
+#### Property collection object 
+
+A collection of properties.
+
+##### Members
+
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|author|`string`|Author of the document.|
+|created|`Date`|Date created. Read-only.|
+|..other built-in properties..|..|..|
+|.other built-in properties..|..|..|
+|..other built-in properties..|..|..|
+|custom|CustomProperty collection|A collection of custom property objects|
+
+#### `customProperty` Object
+
+Represents an individual custom property. 
 
 ##### Members
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |key|`string`|Key value of the property. `key` value is case-sensitive. |
-|namespace|`string`|Namespace provided during the creation of the property. This is used for grouping the properties. By default, this will be set to `custom`.|
 |value|_varies_|Value of the property. Note: some of the values may be read-only. |
 |datatype|`string`|Datatype of the value. Could be one of the following: `string` or `number` or `date` or `boolean`|
-
-
-#### Property collection object 
-
-A collection of properties.
-
-##### Properties
-
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|author|`string`|Author of the document.|
-|created|`Date`|Date created. Read-only.|
-|.other built-in properties.|..|..|
-|.other built-in properties.|..|..|
-|.other built-in properties.|..|..|
-|count|`int`|Returns the number of items in collection. Read-only.|
-|items|property collection|A collection of property objects. Read-only.|
-
-
-#### Add new relations to document object. 
-
-| Relationship	   | Type	|Description
-|:---------------|:--------|:----------|
-|properties|property collection|Properties object.|
- 
 
 ##### Get or set built-in property
 
 Get and set operation on the built-in property would work just like any other object property's get/set. 
-
 
 ###### Built-in property get
 
@@ -311,13 +305,13 @@ Read collection of custom properties.
 
 ```js
 Excel.run(function (ctx) { 
-    var properties = ctx.workbook.properties;
-    tables.load('items');
+    var c_properties = ctx.workbook.properties.custom;
+    c_properties.load('items');
     return ctx.sync().then(function() {
         console.log("Properties Count: " + properties.count);
-        for (var i = 0; i < properties.items.length; i++)
+        for (var i = 0; i < c_properties.items.length; i++)
         {
-            console.log(properties.items[i].key + " : " + properties.items[i].value + " :" + );
+            console.log(properties.items[i].key + " : " + properties.items[i].value);
         }
     });
 }).catch(function(error) {
@@ -328,14 +322,13 @@ Excel.run(function (ctx) {
 });
 ```
 
-##### get(key: string, namespace?: string)
+##### getItem(key: string)
 
-Set/create a custom property. 
+Get a custom property. 
 
 ###### Syntax
 ```js
-propertiesCollection.get(key, namespace);
-
+customPropertiesCollection.getItem(key);
 ```
 
 ###### Parameters
@@ -343,8 +336,6 @@ propertiesCollection.get(key, namespace);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |key|`string`|Key of the property to be set.|
-|namespace|`string`|Optional. Namespace of the custom property. By default this is set to `custom`.|
-
 
 ###### Returns
 
@@ -353,13 +344,11 @@ Property object.
 
 ###### Example
 
-Use the `get` method available on the `properties` collection to get a property.   
+Use the `getItem` method available on the `custom` collection to get a custom property.   
 
 ```js
 Excel.run(function (ctx) { 
-    var properties = ctx.workbook.properties;
-	var property = ctx.workbook.properties.get("review-date", "custom");
-	property.load("value");
+	var property = ctx.workbook.properties.custom.getItem("review-date", "custom");
     return ctx.sync() .then(function() {
         console.log("value: " + property.value);
     }); 
@@ -371,13 +360,13 @@ Excel.run(function (ctx) {
 });
 ```
 
-##### set(key: string, value: _variable_, namespace?: string)
+##### set(key: string, value: _variable_)
 
 Set/create a custom property. 
 
 ###### Syntax
 ```js
-propertiesCollection.set(key);
+customPropertiesCollection.set(key);
 
 ```
 
@@ -387,8 +376,6 @@ propertiesCollection.set(key);
 |:---------------|:--------|:----------|
 |key|`string`|Key of the property to be set.|
 |value|_variable_|Value of the property to be set (created or updated). Datatype can vary: `string` or `number` or `date` or `boolean`|
-|namespace|`string`|Optional. Namespace of the custom property. By default this is set to `custom`.|
-
 
 Note: The datatype is implied based on the JavaScript type of the value and properly set on the `property` object.
 
@@ -398,13 +385,13 @@ Property object just set or created.
 
 ###### Example
 
-Use the `set` method available on the `properties` collection.   
+Use the `set` method available on the `custom` collection.   
 
 ```js
 Excel.run(function (ctx) { 
-    var properties = ctx.workbook.properties;
+    var c_properties = ctx.workbook.properties.custom;
     var today = new Date();
-	ctx.workbook.properties.set("review-date", today, "custom") 
+	c_properties.set("review-date", today) 
     return ctx.sync(); 
 }).catch(function(error) {
         console.log("Error: " + error);
@@ -433,8 +420,8 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-	var property = ctx.workbook.properties.get("review-date");	
-	property.delete();
+	var c_property = ctx.workbook.properties.custom("review-date");	
+	c_property.delete();
 	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);
