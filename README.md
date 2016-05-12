@@ -61,11 +61,11 @@ Represnts an individual property.
 |libraryProperties|property collection|Collection of library `property` objects. This could be customized as per organizational needs.|
  
 
-# Property collection object 
+#### Property collection object 
 
 A collection of built-in (or other supported kind of) properties.
 
-## Properties
+##### Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
