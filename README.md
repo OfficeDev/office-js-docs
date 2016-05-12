@@ -15,8 +15,10 @@ _Note: The listed features are still under the design and review phase and are n
 * Stored as part of the document. 
 * Avialable to all add-ins that run within the document. 
 * Types of document properties planned for support are:
-** *Built-in/Standard properties*: By default, Microsoft Office documents are associated with a set of standard properties, such as author, title, and subject. You can specify your own text values for these properties to make it easier to organize and identify your documents. For example, in Word, you can use the Keywords property to add the keyword customers to your sales files. You can search for all sales files with that keyword. *Automatically updated properties* - These properties include both file system properties (for example, file size or the dates when a file was created or last changed) and statistics that are maintained for you by Office programs (for example, the number of words or characters in a document). You cannot specify or change the automatically updated properties. You can use the automatically updated properties to identify or find documents. For example, you can search for all files created after August 3, 2005, or for all files that were last changed yesterday. 
-** *Custom properties*: You can define additional custom properties for your Office documents. You can assign a text, time, or numeric value to custom properties, and you can also assign them the values yes or no. Custom properties may include - library or organization customized properties as well.
+
+	** **Built-in/Standard properties**: By default, Microsoft Office documents are associated with a set of standard properties, such as author, title, and subject. You can specify your own text values for these properties to make it easier to organize and identify your documents. For example, in Word, you can use the Keywords property to add the keyword customers to your sales files. You can search for all sales files with that keyword. **Automatically updated properties** - These properties include both file system properties (for example, file size or the dates when a file was created or last changed) and statistics that are maintained for you by Office programs (for example, the number of words or characters in a document). You cannot specify or change the automatically updated properties. You can use the automatically updated properties to identify or find documents. For example, you can search for all files created after August 3, 2005, or for all files that were last changed yesterday. 
+
+	** **Custom properties**: You can define additional custom properties for your Office documents. You can assign a text, time, or numeric value to custom properties, and you can also assign them the values yes or no. Custom properties may include - library or organization customized properties as well.
 
 
 ### Target features
@@ -59,7 +61,19 @@ Represnts an individual property.
 |libraryProperties|property collection|Collection of library `property` objects. This could be customized as per organizational needs.|
  
 
-#### Methods on the document object 
+# Property collection object 
+
+A collection of built-in (or other supported kind of) properties.
+
+## Properties
+
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|count|int|Returns the number of items in collection. Read-only.|
+|items|property collection|A collection of property objects. Read-only.|
+
+
+#### Methods 
 
 
 ##### getItem(name: string)
@@ -130,7 +144,7 @@ propertiesCollection.set(key);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|string|Key of the property to be retrieved.|
+|key|string|Key of the property to be set.|
 |value|_variable_|Value of the property to be set (created or updated). Datatype can vary: `string` or `number` or `date` or `boolean`|
 
 Note: The datatype is implied based on the JavaScript type of the value and properly set on the `property` object.
@@ -206,8 +220,229 @@ Excel.run(function (ctx) {
 });
 ```
 
+[Tell us what you think](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-Doc-Properties)
 
 
+### Alternate Design 
+ 
+Instead of providing separate members on the document level to built-in and custom properties, provide a dynamic collection object that can host both types.
+
+#### `property` Object
+
+Represnts an individual property. 
+
+##### Members
+
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|key|string|Key value of the property. `key` value is case-sensitive. |
+|namespace|`string`|Namespace provided during the creation of the property. This is used for grouping the properties. By default, this will be set to `custom`.|
+|value|_varies_|Value of the property. Note: some of the values may be read-only. |
+|datatype|`string`|Datatype of the value. Could be one of the following: `string` or `number` or `date` or `boolean`|
+
+
+#### Property collection object 
+
+A collection of properties.
+
+## Properties
+
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|author|string|Author of the document.|
+|created|Date|Date created. Read-only.|
+|.other built-in properties.|..|..|
+|.other built-in properties.|..|..|
+|.other built-in properties.|..|..|
+|count|int|Returns the number of items in collection. Read-only.|
+|items|property collection|A collection of property objects. Read-only.|
+
+
+#### Add new relations to document object. 
+
+| Relationship	   | Type	|Description
+|:---------------|:--------|:----------|
+|properties|property collection|Properties object.|
+ 
+
+#### Get or set built-in property
+
+Get and set operation on the built-in property would work just like any other object property's get/set. 
+
+
+###### Built-in property get
+
+Just load the properties that you are interested in reading on the properties collection. 
+
+```js
+Excel.run(function (ctx) { 
+    var properties = ctx.workbook.properties;
+    properties.load('author');
+    return ctx.sync().then(function() {
+        console.log(properties.author);
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+###### Built-in property set
+
+Just load the properties that you are interested in reading on the properties collection. 
+
+```js
+Excel.run(function (ctx) { 
+    var properties = ctx.workbook.properties;
+    properties.author = "John Doe";
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+###### Read collection of custom properties
+
+Read collection of custom properties.
+
+```js
+Excel.run(function (ctx) { 
+    var properties = ctx.workbook.properties;
+    tables.load('items');
+    return ctx.sync().then(function() {
+        console.log("Properties Count: " + properties.count);
+        for (var i = 0; i < properties.items.length; i++)
+        {
+            console.log(properties.items[i].key + " : " + properties.items[i].value + " :" + );
+        }
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+##### get(key: string, namespace?: string)
+
+Set/create a custom property. 
+
+###### Syntax
+```js
+propertiesCollection.get(key, namespace);
+
+```
+
+###### Parameters
+
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|key|string|Key of the property to be set.|
+|namespace|string|Optional. Namespace of the custom property. By default this is set to `custom`.|
+
+
+###### Returns
+
+Property object. 
+
+
+###### Example
+
+Use the `get` method available on the `properties` collection to get a property.   
+
+```js
+Excel.run(function (ctx) { 
+    var properties = ctx.workbook.properties;
+	var property = ctx.workbook.properties.get("review-date", "custom");
+	property.load("value");
+    return ctx.sync() .then(function() {
+        console.log("value: " + property.value);
+    }); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+##### set(key: string, value: _variable_, namespace?: string)
+
+Set/create a custom property. 
+
+###### Syntax
+```js
+propertiesCollection.set(key);
+
+```
+
+###### Parameters
+
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|key|string|Key of the property to be set.|
+|value|_variable_|Value of the property to be set (created or updated). Datatype can vary: `string` or `number` or `date` or `boolean`|
+|namespace|string|Optional. Namespace of the custom property. By default this is set to `custom`.|
+
+
+Note: The datatype is implied based on the JavaScript type of the value and properly set on the `property` object.
+
+###### Returns
+
+Property object just set or created. 
+
+###### Example
+
+Use the `set` method available on the `properties` collection.   
+
+```js
+Excel.run(function (ctx) { 
+    var properties = ctx.workbook.properties;
+    var today = new Date();
+	ctx.workbook.properties.set("review-date", today, "custom") 
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+#### delete()
+
+Deletes the custom property object.
+
+###### Syntax
+```js
+propertyObject.delete();
+```
+
+###### Parameters
+None
+
+###### Returns
+void
+
+###### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var property = ctx.workbook.properties.get("review-date");	
+	property.delete();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
 
 ## Give us your feedback
 
