@@ -48,7 +48,7 @@ Represnts an individual property.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|key|string|Key value of the property. `key` value is case-sensitive. |
+|key|`string`|Key value of the property. `key` value is case-sensitive. |
 |value|_varies_|Value of the property. Note: some of the values may be read-only. |
 |datatype|`string`|Datatype of the value. Could be one of the following: `string` or `number` or `date` or `boolean`|
 
@@ -69,7 +69,7 @@ A collection of built-in (or other supported kind of) properties.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|count|int|Returns the number of items in collection. Read-only.|
+|count|`int`|Returns the number of items in collection. Read-only.|
 |items|property collection|A collection of property objects. Read-only.|
 
 
@@ -89,7 +89,7 @@ propertiesCollection.getItem(key);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|string|Key of the property to be retrieved.|
+|key|`string`|Key of the property to be retrieved.|
 
 ###### Returns
 
@@ -144,7 +144,7 @@ propertiesCollection.set(key);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|string|Key of the property to be set.|
+|key|`string`|Key of the property to be set.|
 |value|_variable_|Value of the property to be set (created or updated). Datatype can vary: `string` or `number` or `date` or `boolean`|
 
 Note: The datatype is implied based on the JavaScript type of the value and properly set on the `property` object.
@@ -235,7 +235,7 @@ Represnts an individual property.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|key|string|Key value of the property. `key` value is case-sensitive. |
+|key|`string`|Key value of the property. `key` value is case-sensitive. |
 |namespace|`string`|Namespace provided during the creation of the property. This is used for grouping the properties. By default, this will be set to `custom`.|
 |value|_varies_|Value of the property. Note: some of the values may be read-only. |
 |datatype|`string`|Datatype of the value. Could be one of the following: `string` or `number` or `date` or `boolean`|
@@ -249,12 +249,12 @@ A collection of properties.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|author|string|Author of the document.|
-|created|Date|Date created. Read-only.|
+|author|`string`|Author of the document.|
+|created|`Date`|Date created. Read-only.|
 |.other built-in properties.|..|..|
 |.other built-in properties.|..|..|
 |.other built-in properties.|..|..|
-|count|int|Returns the number of items in collection. Read-only.|
+|count|`int`|Returns the number of items in collection. Read-only.|
 |items|property collection|A collection of property objects. Read-only.|
 
 
@@ -342,8 +342,8 @@ propertiesCollection.get(key, namespace);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|string|Key of the property to be set.|
-|namespace|string|Optional. Namespace of the custom property. By default this is set to `custom`.|
+|key|`string`|Key of the property to be set.|
+|namespace|`string`|Optional. Namespace of the custom property. By default this is set to `custom`.|
 
 
 ###### Returns
@@ -385,9 +385,9 @@ propertiesCollection.set(key);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|string|Key of the property to be set.|
+|key|`string`|Key of the property to be set.|
 |value|_variable_|Value of the property to be set (created or updated). Datatype can vary: `string` or `number` or `date` or `boolean`|
-|namespace|string|Optional. Namespace of the custom property. By default this is set to `custom`.|
+|namespace|`string`|Optional. Namespace of the custom property. By default this is set to `custom`.|
 
 
 Note: The datatype is implied based on the JavaScript type of the value and properly set on the `property` object.
