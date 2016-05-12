@@ -220,7 +220,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-[Tell us what you think](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-Doc-Properties)
+**[Tell us what you think](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-Doc-Properties)**
 
 
 ### Alternate Design 
@@ -245,7 +245,7 @@ Represnts an individual property.
 
 A collection of properties.
 
-## Properties
+##### Properties
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -265,7 +265,7 @@ A collection of properties.
 |properties|property collection|Properties object.|
  
 
-#### Get or set built-in property
+##### Get or set built-in property
 
 Get and set operation on the built-in property would work just like any other object property's get/set. 
 
@@ -443,6 +443,9 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
+**[Tell us what you think](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-Doc-Properties)**
+
 
 ## Give us your feedback
 
