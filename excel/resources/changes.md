@@ -1,3 +1,5 @@
+|Resources|What's new| Description| Give feedback|
+|:-----|:-----|:-----|:-----|
 |[bindingCollection](bindingcollection.md)|_Method_ > [add(range: Range or string, bindingType: string, id: string)](resources/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|Add a new binding to a particular Range.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-bindingCollection-add)|
 |[bindingCollection](bindingcollection.md)|_Method_ > [addFromNamedItem(name: string, bindingType: string, id: string)](resources/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|Add a new binding based on a named item in the workbook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-bindingCollection-addFromNamedItem)|
 |[bindingCollection](bindingcollection.md)|_Method_ > [addFromSelection(bindingType: string, id: string)](resources/bindingcollection.md#addfromselectionbindingtype-string-id-string)|Add a new binding based on the current selection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-bindingCollection-addFromSelection)|
