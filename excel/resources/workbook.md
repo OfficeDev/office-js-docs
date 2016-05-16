@@ -1,27 +1,30 @@
-# Workbook object (JavaScript API for Excel)
+# Workbook Object (JavaScript API for Excel)
 
-Workbook is the top-level object that contains related workbook objects such as worksheets, tables, ranges, etc.
+_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
+
+Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
 ## Properties
 
 None
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|application|[Application](application.md)|Represents an instance of Excel application that contains this workbook. Read-only.|
-|bindings|[BindingCollection](bindingcollection.md)|Represents a collection of bindings that are part of the workbook. Read-only.|
-|functions|[Functions](functions.md)|Represents Excel application instance that contains this workbook. Read-only.|
-|names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.|
-|tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|
-|worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|application|[Application](application.md)|Represents Excel application instance that contains this workbook. Read-only.|1.1||
+|bindings|[BindingCollection](bindingcollection.md)|Represents a collection of bindings that are part of the workbook. Read-only.|1.1||
+|functions|[Functions](functions.md)|Represents Excel application instance that contains this workbook. Read-only.|1.2||
+|names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.|1.1||
+|pivotTables|[PivotTableCollection](pivottablecollection.md)|Returns sheet protection object for a worksheet. Read-only.|1.3||
+|tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|1.1||
+|worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|1.1||
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 
@@ -40,24 +43,8 @@ None
 #### Returns
 [Range](range.md)
 
-#### Examples
-
-```js
-Excel.run(function (ctx) { 
-	var selectedRange = ctx.workbook.getSelectedRange();
-	selectedRange.load('address');
-	return ctx.sync().then(function() {
-			console.log(selectedRange.address);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -66,8 +53,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void

@@ -1,6 +1,6 @@
-# RangeSort object (JavaScript API for Excel)
+# RangeSort Object (JavaScript API for Excel)
 
-_Applies to: Excel 2016, Excel Online, Excel for iOS, Office 2016_
+_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
 
 Manages sorting operations on Range objects.
 
@@ -14,14 +14,14 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: SortOrientation, method: SortMethod)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-sortorientation-method-sortmethod)|void|Perform a sort operation.|1.2|
 
 ## Method Details
 
 
-### apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
+### apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: SortOrientation, method: SortMethod)
 Perform a sort operation.
 
 #### Syntax
@@ -31,33 +31,12 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |fields|SortField[]|The list of conditions to sort on.|
 |matchCase|bool|Optional. Whether to have the casing impact string ordering.|
 |hasHeaders|bool|Optional. Whether the range has a header.|
-|orientation|string|Optional. Whether the operation is sorting rows or columns.  Possible values are: Rows, Columns|
-|method|string|Optional. The ordering method used for Chinese characters.  Possible values are: PinYin, StrokeCount|
+|orientation|SortOrientation|Optional. Whether the operation is sorting rows or columns.|
+|method|SortMethod|Optional. The ordering method used for Chinese characters.|
 
 #### Returns
 void
-
-#### Examples
-```js
-Excel.run(function (ctx) { 
-    var sheetName = "Sheet1";
-    var rangeAddress = "D4:G6";
-    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-    range.sort.apply([ 
-            {
-                key: 2,
-                ascending: true
-            },
-        ], true);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
