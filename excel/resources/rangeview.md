@@ -17,7 +17,7 @@ RangeView represents an abstract of Range, including basic Range properties valu
 |rowCount|int|Returns the total number of rows in the range. Read-only.|1.3||
 |text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|1.3||
 |values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|1.3||
-|valueTypes|[RangeValueType](rangevaluetype.md)|Represents the type of data of each cell. Read-only.|1.3||
+|valueTypes|string[][]|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
