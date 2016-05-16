@@ -8,8 +8,6 @@ RangeView represents an abstract of Range, including basic Range properties valu
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|1.3||
-|addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.|1.3||
 |cellCount|int|Number of cells in the range. Read-only.|1.3||
 |columnCount|int|Represents the total number of columns in the range. Read-only.|1.1||
 |formulas|object[][]|Represents the formula in A1-style notation.|1.3||
