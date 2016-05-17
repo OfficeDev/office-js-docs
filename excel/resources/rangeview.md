@@ -2,7 +2,7 @@
 
 _Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
 
-RangeView represents an abstract of Range, including basic Range properties values, text, numberFormat, address.
+RangeView represents logically-joined cells, with basic Range properties such as values, text, numberFormat, address.
 
 ## Properties
 
