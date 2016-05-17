@@ -9,7 +9,7 @@ Represents a collection of all the RangeView objects.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of RangeView in this collection. Read-only.|1.3||
-|items|[RangView[]](rangview.md)|A collection of RangeView objects. Read-only.|1.3||
+|items|[RangeView[]](rangeview.md)|A collection of RangeView objects. Read-only.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 
