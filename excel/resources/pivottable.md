@@ -55,3 +55,17 @@ None
 
 #### Returns
 void
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var worksheet = ctx.workbook.worksheets.getItemAt(0).pivotTables.getItemAt(0).refresh();
+    return ctx.sync(); 
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
