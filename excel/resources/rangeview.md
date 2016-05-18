@@ -41,7 +41,7 @@ Excel.run(function (ctx) {
                ctx.sync();
           })
           .then(function () {
-               console.log(values.toString());
+               console.log(visibleValues.values.toString());
           });
 
 }).catch(function(error) {
