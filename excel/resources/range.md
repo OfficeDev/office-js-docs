@@ -67,6 +67,86 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 ## Method Details
 
+### getExpandedRange(deltaRows: number, deltaColumns: number)
+Gets a Range object similar to the current Range object, but with its bottom right corner expanded by some number of rows and columns.
+
+#### Syntax
+```js
+rangeObject.getExpandedRange(deltaRows, deltaColumns);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|deltaRows|number|The number of rows by which to expand the resulting Range, relative to the current range. This is usually a positive number to expand the range; however, negative numbers (to shring the Range) are also accepted.
+|
+|deltaColumns|number|The number of rows by which to expand the resulting Range, relative to the current range. This is usually a positive number to expand the range; however, negative numbers (to shring the Range) are also accepted.
+
+### getRowsAfter(count: number)
+Gets X many rows below the current Range object.
+
+#### Syntax
+```js
+rangeObject.getRowsAfter(count);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|count|number|The number of rows to include in the resulting Range. This is usually a positive number (to create a range outside the current range). However, negative numbers - to create a range within the current Range - are also accepted. If not specified, the count defaults to 1.|
+
+#### Returns
+[Range](range.md)
+
+### getRowsBefore(count: number)
+Gets X many rows above the current Range object.
+
+#### Syntax
+```js
+rangeObject.getRowsBefore(count);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|count|number|The number of rows to include in the resulting Range. This is usually a positive number (to create a range outside the current range). However, negative numbers - to create a range within the current Range - are also accepted. If not specified, the count defaults to 1.|
+
+#### Returns
+[Range](range.md)
+
+
+
+### getColumnsAfter(count: number)
+Gets X many columns to the right of the current Range object.
+
+#### Syntax
+```js
+rangeObject.getColumnsAfter(count);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|count|number|The number of columns to include in the resulting Range. This is usually a positive number (to create a range outside the current range). However, negative numbers - to create a range within the current Range - are also accepted. If not specified, the count defaults to 1.|
+
+#### Returns
+[Range](range.md)
+
+### getColumnsBefore(count: number)
+Gets X many columns to the left of the current Range object.
+
+#### Syntax
+```js
+rangeObject.getColumnsBefore(count);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|count|number|The number of columns to include in the resulting Range. This is usually a positive number (to create a range outside the current range). However, negative numbers - to create a range within the current Range - are also accepted. If not specified, the count defaults to 1.|
+
+#### Returns
+[Range](range.md)
 
 ### clear(applyTo: string)
 Clear range values, format, fill, border, etc.
@@ -655,3 +735,19 @@ None
 
 #### Returns
 void
+
+### getIntersectionOrNull(anotherRange: Range or string)
+Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.
+
+#### Syntax
+```js
+rangeObject.getIntersectionOrNull(anotherRange);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
+
+#### Returns
+[Range](range.md)
