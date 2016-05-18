@@ -38,7 +38,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 | Method           | Return Type    |Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom right corner expanded by some number of rows and columns.|1.3|
+|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom right corner resized by some number of rows and columns.|1.3|
 |[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets X many columns to the right of the current Range object.|1.3|
 |[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets X many columns to the left of the current Range object.|1.3|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|1.3|
