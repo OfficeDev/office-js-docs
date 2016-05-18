@@ -46,26 +46,6 @@ pivotTableCollectionObject.getItem(key);
 #### Returns
 [PivotTable](pivottable.md)
 
-#### Example
-```js
-Excel.run(function (ctx) { 
-    var pivotTables = ctx.workbook.worksheets.getActiveWorksheet().pivotTables;
-    pivotTables.load('items');
-    return ctx.sync().then(function() {
-        for (var i = 0; i < pivotTables.items.length; i++)
-        {
-            console.log(pivotTables.items[i].name);
-            console.log(pivotTables.items[i].index);
-        }
-    });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
 
 ### getItemAt(index: number)
 Gets a pivot table based on its position in the collection.
