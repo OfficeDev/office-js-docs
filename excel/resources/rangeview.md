@@ -27,10 +27,25 @@ _See property access [examples.](#property-access-examples)_
 |rows|[RangeViewCollection](rangeviewcollection.md)|Represents a collection of all the rows in the RangeView. Read-only.|1.3||
 
 
-## Methods
+## Example
+Excel.run(function (ctx) { 
+    var tableName = 'Table1';
+    var table = ctx.workbook.tables.getItem(tableName);
+    var column = table.columns.getItemAt(1);
+    column.filter.applyTopItemsFilter(10);
+    return ctx.sync()
+          .then(function () {
+               visibleValues = table.getDataBodyRange().visibleView;
+               visibleValues.load("values");
+               ctx.sync();
+          })
+          .then(function () {
+               console.log(values.toString());
+          });
 
-| Method		   | Return Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-
-## Method Details
-
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
