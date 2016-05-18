@@ -8,7 +8,6 @@ RangeView represents logically-joined cells, with basic Range properties such as
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|cellCount|int|Number of cells in the range. Read-only.|1.3||
 |columnCount|int|Represents the total number of columns in the range. Read-only.|1.1||
 |formulas|object[][]|Represents the formula in A1-style notation.|1.3||
 |formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|1.3||
