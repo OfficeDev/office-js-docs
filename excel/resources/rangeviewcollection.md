@@ -63,47 +63,86 @@ void
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
-    var column = table.columns.getItemAt(1);
+    var column = table.columns.getItemAt(0);
     column.filter.applyTopItemsFilter(10);
     return ctx.sync()
           .then(function () {
-               visibleValues = table.getDataBodyRange().visibleView;
+               var visibleValues = table.getDataBodyRange().visibleView;
                visibleValues.load("values");
-               ctx.sync();
+               return visibleValues;
           })
-          .then(function () {
-               console.log(visibleValues.values.toString());
+          .then(ctx.sync)
+          .then(function (visibleValues) {
+               console.log(JSON.stringify(visibleValues.values));
           });
 
 }).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
 });
 
-For RangeViewRows
+
+// Note:  The visibleValues could also be passed through via:
+    .then(function () {
+        var visibleValues = table.getDataBodyRange().visibleView;
+        visibleValues.load("values");
+        ctx.sync(visibleValues);
+    })
+
+//===============================================================================
+
+// Single row:
 
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
-    var column = table.columns.getItemAt(1);
+    var column = table.columns.getItemAt(0);
     column.filter.applyTopItemsFilter(10);
     return ctx.sync()
           .then(function () {
-               visibleValues = table.getDataBodyRange().visibleView.rows.items[1];
-               visibleValues.load("values");
-               ctx.sync();
+                var firstVisibleRow = table.getDataBodyRange.visibleView.rows.getItemAt(0);
+                firstVisibleRow.load("values");
+                return firstVisibleRow;
           })
-          .then(function () {
-               console.log(visibleValues.values.toString());
+          .then(ctx.sync)
+          .then(function (firstVisibleRow) {
+               console.log(JSON.stringify(firstVisibleRow.values));
           });
-
 }).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+
+
+// Multiple rows (top 3)
+
+Excel.run(function (ctx) { 
+    var tableName = 'Table1';
+    var table = ctx.workbook.tables.getItem(tableName);
+    var column = table.columns.getItemAt(0);
+    column.filter.applyTopItemsFilter(10);
+    return ctx.sync()
+          .then(function () {
+                var visibleTop3Rows = table.getDataBodyRange().visibleView.rows;
+                visibleTop3Rows.load({select: "values", top: 3});
+                return visibleTop3Rows;
+          })
+          .then(ctx.sync)
+          .then(function (visibleTop3Rows) {
+                for (var i = 0; i < visibleTop3Rows.items.length; i++) {
+                    console.log(JSON.stringify(visibleTop3Rows.items[0].values));
+                }
+          });
+          
+}).catch(function(error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
 });
 
 ```
