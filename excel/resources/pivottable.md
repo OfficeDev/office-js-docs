@@ -59,7 +59,7 @@ void
 #### Example
 ```js
 Excel.run(function (ctx) { 
-    var worksheet = ctx.workbook.worksheets.getItemAt(0).pivotTables.getItemAt(0).refresh();
+    ctx.workbook.worksheets.getItemAt(0).pivotTables.getItemAt(0).refresh();
     return ctx.sync(); 
     });
 }).catch(function(error) {
