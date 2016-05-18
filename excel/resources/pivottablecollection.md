@@ -46,6 +46,27 @@ pivotTableCollectionObject.getItem(key);
 #### Returns
 [PivotTable](pivottable.md)
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var pivotTables = ctx.workbook.worksheets.getActiveWorksheet().pivotTables;
+    pivotTables.load('items');
+    return ctx.sync().then(function() {
+        for (var i = 0; i < pivotTables.items.length; i++)
+        {
+            console.log(pivotTables.items[i].name);
+            console.log(pivotTables.items[i].index);
+        }
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+
 ### getItemAt(index: number)
 Gets a pivot table based on its position in the collection.
 
@@ -61,6 +82,22 @@ pivotTableCollectionObject.getItemAt(index);
 
 #### Returns
 [PivotTable](pivottable.md)
+
+#### Example
+```js
+Excel.run(function (ctx) {  
+    var myPivotTables = ctx.workbook.worksheets.getActiveWorksheet().pivotTables.getItemAt(0);
+    myPivotTablse.load('name');
+    return ctx.sync().then(function() {
+            console.log(myPivotTable.name);
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### getItemOrNull(key: string)
 Gets a pivot table by Name. If the pivot table does not exist, the return object's isNull property will be true.
@@ -107,3 +144,17 @@ None
 
 #### Returns
 void
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var myPivotTables = ctx.workbook.worksheets.getItemAt(0).pivotTables.refreshAll();
+    return ctx.sync(); 
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
