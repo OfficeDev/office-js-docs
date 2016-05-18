@@ -38,6 +38,11 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[getExpandedRange(deltaRows: number, deltaColumns: number)](#getexpandedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom right corner expanded by some number of rows and columns.|1.1|
+|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets X many columns to the right of the current Range object.|1.1|
+|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets X many columns to the left of the current Range object.|1.1|
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|1.1|
+|[getRowsAfter(count: number)](#getrowsaftercount-number)|[Range](range.md)|Gets X many rows below the current Range object.|1.1|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|1.1|
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|1.1|
 |[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|1.1|
