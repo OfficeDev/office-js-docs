@@ -64,6 +64,24 @@ tableRowCollectionObject.addEmptyRows(index, count);
 #### Returns
 [TableRow](tablerow.md)
 
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var tables = ctx.workbook.tables;
+    var rows = tables.getItem("Table1").rows.addEmptyRows(3);
+    row.load('index');
+    return ctx.sync().then(function() {
+        console.log(row.index);
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
 ### addMultipleRows(index: number, values: (boolean or string or number)[][])
 Adds multiple new rows to the table. Return the first row that is added.
 
@@ -80,6 +98,23 @@ tableRowCollectionObject.addMultipleRows(index, values);
 
 #### Returns
 [TableRow](tablerow.md)
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var tables = ctx.workbook.tables;
+    var rows = tables.getItem("Table1").rows.addMultipleRows(-1,[["A","B"],["C","D"]]);
+    row.load('index');
+    return ctx.sync().then(function() {
+        console.log(row.index);
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### getItemAt(index: number)
 Gets a row based on its position in the collection.
