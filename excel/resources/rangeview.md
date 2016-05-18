@@ -28,6 +28,7 @@ _See property access [examples.](#property-access-examples)_
 
 
 ## Example
+```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
@@ -49,3 +50,4 @@ Excel.run(function (ctx) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
 });
+```
