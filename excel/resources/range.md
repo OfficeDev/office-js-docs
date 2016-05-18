@@ -148,6 +148,7 @@ rangeObject.getColumnsBefore(count);
 #### Returns
 [Range](range.md)
 
+
 ### clear(applyTo: string)
 Clear range values, format, fill, border, etc.
 
@@ -158,38 +159,31 @@ rangeObject.clear(applyTo);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|applyTo|string|Optional. Determines the type of clear action.|
+|:---------------|:--------|:----------|
+|applyTo|string|Optional. Determines the type of clear action. Possible values are: `All` Default-option,`Formats` ,`Contents`.|
 
 #### Returns
 void
 
 #### Examples
 
+The example below clears the format and contents of the range. 
+
 ```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to clear the contents of the proxy range object.
-    range.clear();
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Cleared the selection (range object)');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.clear();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### delete(shift: string)
 Deletes the cells associated with the range.
@@ -201,8 +195,8 @@ rangeObject.delete(shift);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|shift|string|Specifies which way to shift the cells.|
+|:---------------|:--------|:----------|
+|shift|string|Specifies which way to shift the cells.  Possible values are: Up, Left.|
 
 #### Returns
 void
@@ -210,33 +204,23 @@ void
 #### Examples
 
 ```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to delete the range object.
-    range.delete();
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Deleted the selection (range object)');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.delete();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
 
 ### getBoundingRect(anotherRange: Range or string)
-Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".
+Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E15".
 
 #### Syntax
 ```js
@@ -245,14 +229,36 @@ rangeObject.getBoundingRect(anotherRange);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or address or range name.|
 
 #### Returns
 [Range](range.md)
 
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D4:G6";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	var range = range.getBoundingRect("G4:H8");
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // Prints Sheet1!D4:H8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### getCell(row: number, column: number)
-Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.
+Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range as long as it stays within the worksheet grid. The returned cell is located relative to the top-left cell of the range.
 
 #### Syntax
 ```js
@@ -261,12 +267,34 @@ rangeObject.getCell(row, column);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Row number of the cell to be retrieved. Zero-indexed.|
 |column|number|Column number of the cell to be retrieved. Zero-indexed.|
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+	var range = worksheet.getRange(rangeAddress);
+	var cell = range.cell(0,0);
+	cell.load('address');
+	return ctx.sync().then(function() {
+		console.log(cell.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### getColumn(column: number)
 Gets a column contained in the range.
@@ -278,11 +306,32 @@ rangeObject.getColumn(column);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |column|number|Column number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet19";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!B1:B8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### getEntireColumn()
 Gets an object that represents the entire column of the range.
@@ -298,6 +347,29 @@ None
 #### Returns
 [Range](range.md)
 
+#### Examples
+
+Note: The grid properties of the Range (values, numberFormat, formulas) contain `null` because the range in question is unbounded.
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	var rangeEC = range.getEntireColumn();
+	rangeEC.load('address');
+	return ctx.sync().then(function() {
+		console.log(rangeEC.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 ### getEntireRow()
 Gets an object that represents the entire row of the range.
 
@@ -312,23 +384,26 @@ None
 #### Returns
 [Range](range.md)
 
-### getImage(height: number, width: number, fittingMode: ImageFittingMode)
-Renders the range as a base64-encoded image by scaling the range to fit the specified dimensions.
-
-#### Syntax
+#### Examples
 ```js
-rangeObject.getImage(height, width, fittingMode);
+
+Excel.run(function (ctx) {
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F"; 
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	var rangeER = range.getEntireRow();
+	rangeER.load('address');
+	return ctx.sync().then(function() {
+		console.log(rangeER.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|height|number|Optional. (Optional) The desired height of the resulting image.|
-|width|number|Optional. (Optional) The desired width of the resulting image.|
-|fittingMode|ImageFittingMode|Optional. (Optional) The method used to scale the chart to the specified to the specified dimensions (if both height and width are set)."|
-
-#### Returns
-[System.IO.Stream](system.io.stream.md)
+The grid properties of the Range (values, numberFormat, formulas) contain `null` because the range in question is unbounded.
 
 ### getIntersection(anotherRange: Range or string)
 Gets the range object that represents the rectangular intersection of the given ranges.
@@ -340,27 +415,32 @@ rangeObject.getIntersection(anotherRange);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
 
 #### Returns
 [Range](range.md)
 
-### getIntersectionOrNull(anotherRange: Range or string)
-Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.
+#### Examples
 
-#### Syntax
 ```js
-rangeObject.getIntersectionOrNull(anotherRange);
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!D4:F6
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
-
-#### Returns
-[Range](range.md)
 
 ### getLastCell()
 Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".
@@ -376,6 +456,27 @@ None
 #### Returns
 [Range](range.md)
 
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastCell();
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!F8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### getLastColumn()
 Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".
 
@@ -389,6 +490,27 @@ None
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastColumn();
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!F1:F8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### getLastRow()
 Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".
@@ -404,8 +526,30 @@ None
 #### Returns
 [Range](range.md)
 
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastRow();
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!A8:F8
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+
 ### getOffsetRange(rowOffset: number, columnOffset: number)
-Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.
+Gets an object that represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception is thrown.
 
 #### Syntax
 ```js
@@ -414,12 +558,32 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |rowOffset|number|The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
 |columnOffset|number|The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D4:F6";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!H3:K5
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### getRow(row: number)
 Gets a row contained in the range.
@@ -431,13 +595,34 @@ rangeObject.getRow(row);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Row number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
 [Range](range.md)
 
-### getUsedRange(valuesOnly: [ApiSet(Version)
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
+	range.load('address');
+	return ctx.sync().then(function() {
+		console.log(range.address); // prints Sheet1!A2:F2
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### getUsedRange(valuesOnly: bool)
 Returns the used range of the given range object.
 
 #### Syntax
@@ -447,11 +632,33 @@ rangeObject.getUsedRange(valuesOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells.|
+|:---------------|:--------|:----------|
+|valuesOnly|bool|Optional. When true only cells that currently have values are considered used cells. The default, false, counts any cell that ever had a value as used.|
 
 #### Returns
 [Range](range.md)
+
+#### Examples
+
+```js
+
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "D:F";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	var rangeUR = range.getUsedRange();
+	rangeUR.load('address');
+	return ctx.sync().then(function() {
+		console.log(rangeUR.address);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### insert(shift: string)
 Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.
@@ -463,8 +670,8 @@ rangeObject.insert(shift);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|shift|string|Specifies which way to shift the cells.|
+|:---------------|:--------|:----------|
+|shift|string|Specifies which way to shift the cells.  Possible values are: Down, Right.|
 
 #### Returns
 [Range](range.md)
@@ -472,212 +679,25 @@ rangeObject.insert(shift);
 #### Examples
 
 ```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to insert a page break after the selected text.
-    range.insertBreak('page', 'After');
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Inserted a page break after the selected text.');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to insert a content control around the selected text,
-    // and create a proxy content control object. We'll update the properties
-    // on the content control.
-    var myContentControl = range.insertContentControl();
-    myContentControl.tag = "Customer-Address";
-    myContentControl.title = "Enter Customer Address Here:";
-    myContentControl.style = "Normal";
-    myContentControl.insertText("One Microsoft Way, Redmond, WA 98052", 'replace');
-    myContentControl.cannotEdit = true;
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Wrapped a content control around the selected text.');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to insert base64 encoded .docx at the beginning of the range.
-    // You'll need to implement getBase64() to make this work.
-    range.insertFileFromBase64(getBase64(), Word.InsertLocation.start);
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Added base64 encoded text to the beginning of the range.');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to insert HTML in to the beginning of the range.
-    range.insertHtml('<strong>This is text inserted with range.insertHtml()</strong>', Word.InsertLocation.start);
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('HTML added to the beginning of the range.');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to insert OOXML in to the beginning of the range.
-    range.insertOoxml("<pkg:package xmlns:pkg='http://schemas.microsoft.com/office/2006/xmlPackage'><pkg:part pkg:name='/_rels/.rels' pkg:contentType='application/vnd.openxmlformats-package.relationships+xml' pkg:padding='512'><pkg:xmlData><Relationships xmlns='http://schemas.openxmlformats.org/package/2006/relationships'><Relationship Id='rId1' Type='http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument' Target='word/document.xml'/></Relationships></pkg:xmlData></pkg:part><pkg:part pkg:name='/word/document.xml' pkg:contentType='application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml'><pkg:xmlData><w:document xmlns:w='http://schemas.openxmlformats.org/wordprocessingml/2006/main' ><w:body><w:p><w:pPr><w:spacing w:before='360' w:after='0' w:line='480' w:lineRule='auto'/><w:rPr><w:color w:val='70AD47' w:themeColor='accent6'/><w:sz w:val='28'/></w:rPr></w:pPr><w:r><w:rPr><w:color w:val='70AD47' w:themeColor='accent6'/><w:sz w:val='28'/></w:rPr><w:t>This text has formatting directly applied to achieve its font size, color, line spacing, and paragraph spacing.</w:t></w:r></w:p></w:body></w:document></pkg:xmlData></pkg:part></pkg:package>", Word.InsertLocation.start);
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('OOXML added to the beginning of the range.');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-*Additional information* 
-Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML.
-
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to insert the paragraph after the range.
-    range.insertParagraph('Content of a new paragraph', Word.InsertLocation.after);
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Paragraph added to the end of the range.');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-
-#### Examples
-
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Queue a command to get the current selection and then
-    // create a proxy range object with the results.
-    var range = context.document.getSelection();
-
-    // Queue a commmand to insert the paragraph at the end of the range.
-    range.insertText('New text inserted into the range.', Word.InsertLocation.end);
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-        console.log('Text added to the end of the range.');
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+	
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:F10";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.insert();
+	return ctx.sync(); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
 
 ### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -686,8 +706,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
@@ -702,11 +722,28 @@ rangeObject.merge(across);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |across|bool|Optional. Set true to merge cells in each row of the specified range as separate merged cells. The default value is false.|
 
 #### Returns
 void
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.merge(true);
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 
 ### select()
 Selects the specified range in the Excel UI.
@@ -722,8 +759,28 @@ None
 #### Returns
 void
 
+#### Examples
+
+```js
+
+Excel.run(function (ctx) {
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:F10"; 
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.select();
+	return ctx.sync(); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 ### unmerge()
-Unmerge the range cells into separate cells.
+Unmerge the range of merged cells into separate cells.
 
 #### Syntax
 ```js
@@ -736,18 +793,129 @@ None
 #### Returns
 void
 
-### getIntersectionOrNull(anotherRange: Range or string)
-Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.
-
-#### Syntax
+#### Examples
 ```js
-rangeObject.getIntersectionOrNull(anotherRange);
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.unmerge();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
+### Property access examples
 
-#### Returns
-[Range](range.md)
+This example uses range address to get the range object.
+
+```js
+
+Excel.run(function (ctx) {
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8"; 
+	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+	var range = worksheet.getRange(rangeAddress);
+	range.load('cellCount');
+	return ctx.sync().then(function() {
+		console.log(range.cellCount);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+This example uses a named range to get the range object.
+
+```js
+
+Excel.run(function (ctx) { 
+	var rangeName = 'MyRange';
+	var range = ctx.workbook.names.getItem(rangeName).range;
+	range.load('cellCount');
+	return ctx.sync().then(function() {
+		console.log(range.cellCount);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+The example below sets the numberFormat, values, and formulas on a grid that contains a 2x3 grid.
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:G7";
+	var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
+	var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
+	var formulas = [[null,null], [null,null], [null,"=G6-G5"]];
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.numberFormat = numberFormat;
+	range.values = values;
+	range.formulas= formulas;
+	range.load('text');
+	return ctx.sync().then(function() {
+		console.log(range.text);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+The example below is the same as the one just above, except that it uses R1C1 notation for the formulas.
+
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F5:G7";
+	var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
+	var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
+	var formulasR1C1 = [[null,null], [null,null], [null,"=R[-1]C-R[-2]C"]];
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.numberFormat = numberFormat;
+	range.values = values;
+	range.formulasR1C1= formulasR1C1;
+	range.load('text');
+	return ctx.sync().then(function() {
+		console.log(range.text);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+Get the worksheet containing the range. 
+
+```js
+Excel.run(function (ctx) { 
+	var names = ctx.workbook.names;
+	var namedItem = names.getItem('MyRange');
+	range = namedItem.range;
+	var rangeWorksheet = range.worksheet;
+	rangeWorksheet.load('name');
+	return ctx.sync().then(function() {
+			console.log(rangeWorksheet.name);
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
