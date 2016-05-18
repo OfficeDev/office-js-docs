@@ -135,6 +135,20 @@ tableObject.getImage(height, width, fittingMode);
 #### Returns
 [System.IO.Stream](system.io.stream.md)
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var table = ctx.workbook.worksheets.getItem("Table1").charts.getItem("Table1"); 
+    var image = chart.getImage();
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
 ### getRange()
 Gets the range object associated with the entire table.
 
