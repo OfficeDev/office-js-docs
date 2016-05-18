@@ -43,6 +43,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets X many columns to the left of the current Range object.|1.3|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|1.3|
 |[getRowsAfter(count: number)](#getrowsaftercount-number)|[Range](range.md)|Gets X many rows below the current Range object.|1.3|
+|[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|Renders the range as a base64-encoded image by scaling the range to fit the specified dimensions.|1.3|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|1.1|
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|1.1|
 |[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|1.1|
@@ -240,6 +241,40 @@ Excel.run(function (ctx) {
 });
 
 ```
+
+### getImage(height: number, width: number, fittingMode: string)
+Renders the range as a base64-encoded image by scaling the range to fit the specified dimensions.
+
+#### Syntax
+```js
+rangeObject.getImage(height, width, fittingMode);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|height|number|Optional. (Optional) The desired height of the resulting image.|
+|width|number|Optional. (Optional) The desired width of the resulting image.|
+|fittingMode|string|Optional. (Optional) The method used to scale the chart to the specified to the specified dimensions (if both height and width are set)."  Possible values are: Fit, FitAndCenter, Fill|
+
+#### Returns
+[System.IO.Stream](system.io.stream.md)
+
+#### Examples
+```js
+Excel.run(function (ctx) { 
+	var range = ctx.workbook.worksheets.getItem("Sheet1").getUsedRange();
+	var image = range.getImage();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
 
 ### clear(applyTo: string)
 Clear range values, format, fill, border, etc.
