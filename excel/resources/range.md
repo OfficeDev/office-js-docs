@@ -6,7 +6,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
+| Property     | Type   |Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|1.1||
 |addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.|1.1||
@@ -26,7 +26,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|1.1||
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
+| Relationship | Type   |Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|1.1||
 |sort|[RangeSort](rangesort.md)|The worksheet containing the current range. Read-only.|1.2||
@@ -36,13 +36,13 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set|
+| Method           | Return Type    |Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getExpandedRange(deltaRows: number, deltaColumns: number)](#getexpandedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom right corner expanded by some number of rows and columns.|1.1|
-|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets X many columns to the right of the current Range object.|1.1|
-|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets X many columns to the left of the current Range object.|1.1|
-|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|1.1|
-|[getRowsAfter(count: number)](#getrowsaftercount-number)|[Range](range.md)|Gets X many rows below the current Range object.|1.1|
+|[getExpandedRange(deltaRows: number, deltaColumns: number)](#getexpandedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom right corner expanded by some number of rows and columns.|1.3|
+|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets X many columns to the right of the current Range object.|1.3|
+|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets X many columns to the left of the current Range object.|1.3|
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|1.3|
+|[getRowsAfter(count: number)](#getrowsaftercount-number)|[Range](range.md)|Gets X many rows below the current Range object.|1.3|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|1.1|
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|1.1|
 |[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|1.1|
@@ -76,11 +76,30 @@ rangeObject.getExpandedRange(deltaRows, deltaColumns);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|:---|
 |deltaRows|number|The number of rows by which to expand the resulting Range, relative to the current range. This is usually a positive number to expand the range; however, negative numbers (to shring the Range) are also accepted.
 |
 |deltaColumns|number|The number of rows by which to expand the resulting Range, relative to the current range. This is usually a positive number to expand the range; however, negative numbers (to shring the Range) are also accepted.
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var sheetName = "Sheet19";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getExpandedRange(1,1);
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!A1:G9
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+
+```
 
 ### getRowsAfter(count: number)
 Gets X many rows below the current Range object.
@@ -91,12 +110,31 @@ rangeObject.getRowsAfter(count);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|:---|
 |count|number|The number of rows to include in the resulting Range. This is usually a positive number (to create a range outside the current range). However, negative numbers - to create a range within the current Range - are also accepted. If not specified, the count defaults to 1.|
 
 #### Returns
 [Range](range.md)
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var sheetName = "Sheet19";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRowsAfter(3);
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!A9:F11
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+
+```
 
 ### getRowsBefore(count: number)
 Gets X many rows above the current Range object.
@@ -107,14 +145,31 @@ rangeObject.getRowsBefore(count);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|:---|
 |count|number|The number of rows to include in the resulting Range. This is usually a positive number (to create a range outside the current range). However, negative numbers - to create a range within the current Range - are also accepted. If not specified, the count defaults to 1.|
 
 #### Returns
 [Range](range.md)
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var sheetName = "Sheet19";
+    var rangeAddress = "A4:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRowsBefore(3);
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!A1:F3
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
 
+```
 
 ### getColumnsAfter(count: number)
 Gets X many columns to the right of the current Range object.
@@ -125,12 +180,31 @@ rangeObject.getColumnsAfter(count);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|:---|
 |count|number|The number of columns to include in the resulting Range. This is usually a positive number (to create a range outside the current range). However, negative numbers - to create a range within the current Range - are also accepted. If not specified, the count defaults to 1.|
 
 #### Returns
 [Range](range.md)
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var sheetName = "Sheet19";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getColumnsAfter(3);
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!G1:I8
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+
+```
 
 ### getColumnsBefore(count: number)
 Gets X many columns to the left of the current Range object.
@@ -141,13 +215,31 @@ rangeObject.getColumnsBefore(count);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|:---|
 |count|number|The number of columns to include in the resulting Range. This is usually a positive number (to create a range outside the current range). However, negative numbers - to create a range within the current Range - are also accepted. If not specified, the count defaults to 1.|
 
 #### Returns
 [Range](range.md)
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var sheetName = "Sheet19";
+    var rangeAddress = "D1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getColumnsAfter(3);
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!A1:C8
+    });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+
+```
 
 ### clear(applyTo: string)
 Clear range values, format, fill, border, etc.
@@ -158,7 +250,7 @@ rangeObject.clear(applyTo);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |applyTo|string|Optional. Determines the type of clear action. Possible values are: `All` Default-option,`Formats` ,`Contents`.|
 
@@ -171,16 +263,16 @@ The example below clears the format and contents of the range.
 
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "D:F";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.clear();
-	return ctx.sync(); 
+    var sheetName = "Sheet1";
+    var rangeAddress = "D:F";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.clear();
+    return ctx.sync(); 
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -194,7 +286,7 @@ rangeObject.delete(shift);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |shift|string|Specifies which way to shift the cells.  Possible values are: Up, Left.|
 
@@ -205,16 +297,16 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "D:F";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.delete();
-	return ctx.sync(); 
+    var sheetName = "Sheet1";
+    var rangeAddress = "D:F";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.delete();
+    return ctx.sync(); 
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -228,7 +320,7 @@ rangeObject.getBoundingRect(anotherRange);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or address or range name.|
 
@@ -240,19 +332,19 @@ rangeObject.getBoundingRect(anotherRange);
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "D4:G6";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	var range = range.getBoundingRect("G4:H8");
-	range.load('address');
-	return ctx.sync().then(function() {
-		console.log(range.address); // Prints Sheet1!D4:H8
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "D4:G6";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var range = range.getBoundingRect("G4:H8");
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // Prints Sheet1!D4:H8
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -266,7 +358,7 @@ rangeObject.getCell(row, column);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |row|number|Row number of the cell to be retrieved. Zero-indexed.|
 |column|number|Column number of the cell to be retrieved. Zero-indexed.|
@@ -278,20 +370,20 @@ rangeObject.getCell(row, column);
 
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:F8";
-	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-	var range = worksheet.getRange(rangeAddress);
-	var cell = range.cell(0,0);
-	cell.load('address');
-	return ctx.sync().then(function() {
-		console.log(cell.address);
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:F8";
+    var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+    var range = worksheet.getRange(rangeAddress);
+    var cell = range.cell(0,0);
+    cell.load('address');
+    return ctx.sync().then(function() {
+        console.log(cell.address);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -305,7 +397,7 @@ rangeObject.getColumn(column);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |column|number|Column number of the range to be retrieved. Zero-indexed.|
 
@@ -317,18 +409,18 @@ rangeObject.getColumn(column);
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet19";
-	var rangeAddress = "A1:F8";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
-	range.load('address');
-	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!B1:B8
-	});
+    var sheetName = "Sheet19";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!B1:B8
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -354,19 +446,19 @@ Note: The grid properties of the Range (values, numberFormat, formulas) contain 
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "D:F";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	var rangeEC = range.getEntireColumn();
-	rangeEC.load('address');
-	return ctx.sync().then(function() {
-		console.log(rangeEC.address);
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "D:F";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var rangeEC = range.getEntireColumn();
+    rangeEC.load('address');
+    return ctx.sync().then(function() {
+        console.log(rangeEC.address);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -388,19 +480,19 @@ None
 ```js
 
 Excel.run(function (ctx) {
-	var sheetName = "Sheet1";
-	var rangeAddress = "D:F"; 
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	var rangeER = range.getEntireRow();
-	rangeER.load('address');
-	return ctx.sync().then(function() {
-		console.log(rangeER.address);
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "D:F"; 
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var rangeER = range.getEntireRow();
+    rangeER.load('address');
+    return ctx.sync().then(function() {
+        console.log(rangeER.address);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 The grid properties of the Range (values, numberFormat, formulas) contain `null` because the range in question is unbounded.
@@ -414,7 +506,7 @@ rangeObject.getIntersection(anotherRange);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
 
@@ -426,18 +518,18 @@ rangeObject.getIntersection(anotherRange);
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:F8";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
-	range.load('address');
-	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!D4:F6
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!D4:F6
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -461,18 +553,18 @@ None
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:F8";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastCell();
-	range.load('address');
-	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!F8
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastCell();
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!F8
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -496,18 +588,18 @@ None
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:F8";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastColumn();
-	range.load('address');
-	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!F1:F8
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastColumn();
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!F1:F8
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -531,18 +623,18 @@ None
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:F8";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastRow();
-	range.load('address');
-	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!A8:F8
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastRow();
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!A8:F8
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -557,7 +649,7 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |rowOffset|number|The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
 |columnOffset|number|The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
@@ -569,18 +661,18 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "D4:F6";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
-	range.load('address');
-	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!H3:K5
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "D4:F6";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!H3:K5
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -594,7 +686,7 @@ rangeObject.getRow(row);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |row|number|Row number of the range to be retrieved. Zero-indexed.|
 
@@ -606,18 +698,18 @@ rangeObject.getRow(row);
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:F8";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
-	range.load('address');
-	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!A2:F2
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:F8";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
+    range.load('address');
+    return ctx.sync().then(function() {
+        console.log(range.address); // prints Sheet1!A2:F2
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -631,7 +723,7 @@ rangeObject.getUsedRange(valuesOnly);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |valuesOnly|bool|Optional. When true only cells that currently have values are considered used cells. The default, false, counts any cell that ever had a value as used.|
 
@@ -643,19 +735,19 @@ rangeObject.getUsedRange(valuesOnly);
 ```js
 
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "D:F";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	var rangeUR = range.getUsedRange();
-	rangeUR.load('address');
-	return ctx.sync().then(function() {
-		console.log(rangeUR.address);
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "D:F";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var rangeUR = range.getUsedRange();
+    rangeUR.load('address');
+    return ctx.sync().then(function() {
+        console.log(rangeUR.address);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -669,7 +761,7 @@ rangeObject.insert(shift);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |shift|string|Specifies which way to shift the cells.  Possible values are: Down, Right.|
 
@@ -679,19 +771,19 @@ rangeObject.insert(shift);
 #### Examples
 
 ```js
-	
+    
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "F5:F10";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.insert();
-	return ctx.sync(); 
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "F5:F10";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.insert();
+    return ctx.sync(); 
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -705,7 +797,7 @@ object.load(param);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
@@ -721,7 +813,7 @@ rangeObject.merge(across);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
+| Parameter    | Type   |Description|
 |:---------------|:--------|:----------|
 |across|bool|Optional. Set true to merge cells in each row of the specified range as separate merged cells. The default value is false.|
 
@@ -731,16 +823,16 @@ void
 #### Examples
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:C3";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.merge(true);
-	return ctx.sync(); 
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:C3";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.merge(true);
+    return ctx.sync(); 
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -764,17 +856,17 @@ void
 ```js
 
 Excel.run(function (ctx) {
-	var sheetName = "Sheet1";
-	var rangeAddress = "F5:F10"; 
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.select();
-	return ctx.sync(); 
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "F5:F10"; 
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.select();
+    return ctx.sync(); 
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -796,16 +888,16 @@ void
 #### Examples
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:C3";
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.unmerge();
-	return ctx.sync(); 
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:C3";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.unmerge();
+    return ctx.sync(); 
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -816,19 +908,19 @@ This example uses range address to get the range object.
 ```js
 
 Excel.run(function (ctx) {
-	var sheetName = "Sheet1";
-	var rangeAddress = "A1:F8"; 
-	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-	var range = worksheet.getRange(rangeAddress);
-	range.load('cellCount');
-	return ctx.sync().then(function() {
-		console.log(range.cellCount);
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:F8"; 
+    var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+    var range = worksheet.getRange(rangeAddress);
+    range.load('cellCount');
+    return ctx.sync().then(function() {
+        console.log(range.cellCount);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -837,17 +929,17 @@ This example uses a named range to get the range object.
 ```js
 
 Excel.run(function (ctx) { 
-	var rangeName = 'MyRange';
-	var range = ctx.workbook.names.getItem(rangeName).range;
-	range.load('cellCount');
-	return ctx.sync().then(function() {
-		console.log(range.cellCount);
-	});
+    var rangeName = 'MyRange';
+    var range = ctx.workbook.names.getItem(rangeName).range;
+    range.load('cellCount');
+    return ctx.sync().then(function() {
+        console.log(range.cellCount);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
@@ -855,67 +947,67 @@ The example below sets the numberFormat, values, and formulas on a grid that con
 
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "F5:G7";
-	var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
-	var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
-	var formulas = [[null,null], [null,null], [null,"=G6-G5"]];
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.numberFormat = numberFormat;
-	range.values = values;
-	range.formulas= formulas;
-	range.load('text');
-	return ctx.sync().then(function() {
-		console.log(range.text);
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "F5:G7";
+    var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
+    var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
+    var formulas = [[null,null], [null,null], [null,"=G6-G5"]];
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.numberFormat = numberFormat;
+    range.values = values;
+    range.formulas= formulas;
+    range.load('text');
+    return ctx.sync().then(function() {
+        console.log(range.text);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 The example below is the same as the one just above, except that it uses R1C1 notation for the formulas.
 
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var rangeAddress = "F5:G7";
-	var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
-	var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
-	var formulasR1C1 = [[null,null], [null,null], [null,"=R[-1]C-R[-2]C"]];
-	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.numberFormat = numberFormat;
-	range.values = values;
-	range.formulasR1C1= formulasR1C1;
-	range.load('text');
-	return ctx.sync().then(function() {
-		console.log(range.text);
-	});
+    var sheetName = "Sheet1";
+    var rangeAddress = "F5:G7";
+    var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
+    var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
+    var formulasR1C1 = [[null,null], [null,null], [null,"=R[-1]C-R[-2]C"]];
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.numberFormat = numberFormat;
+    range.values = values;
+    range.formulasR1C1= formulasR1C1;
+    range.load('text');
+    return ctx.sync().then(function() {
+        console.log(range.text);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 Get the worksheet containing the range. 
 
 ```js
 Excel.run(function (ctx) { 
-	var names = ctx.workbook.names;
-	var namedItem = names.getItem('MyRange');
-	range = namedItem.range;
-	var rangeWorksheet = range.worksheet;
-	rangeWorksheet.load('name');
-	return ctx.sync().then(function() {
-			console.log(rangeWorksheet.name);
-	});
+    var names = ctx.workbook.names;
+    var namedItem = names.getItem('MyRange');
+    range = namedItem.range;
+    var rangeWorksheet = range.worksheet;
+    rangeWorksheet.load('name');
+    return ctx.sync().then(function() {
+            console.log(rangeWorksheet.name);
+    });
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
 });
 ```
 
