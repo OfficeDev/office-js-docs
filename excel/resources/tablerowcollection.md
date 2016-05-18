@@ -47,40 +47,7 @@ tableRowCollectionObject.add(index, values);
 #### Returns
 [TableRow](tablerow.md)
 
-### addEmptyRows(index: number, count: number)
-Adds multiple empty rows to the table and return the first row that is added.
 
-#### Syntax
-```js
-tableRowCollectionObject.addEmptyRows(index, count);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|index|number|Optional. Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
-|count|number|Specifies the number of empty rows to be added.|
-
-#### Returns
-[TableRow](tablerow.md)
-
-
-#### Example
-```js
-Excel.run(function (ctx) { 
-    var tables = ctx.workbook.tables;
-    var rows = tables.getItem("Table1").rows.addEmptyRows(3);
-    row.load('index');
-    return ctx.sync().then(function() {
-        console.log(row.index);
-    });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
 
 ### InsertRows(index: number, values: (boolean or string or number)[][])
 Adds multiple new rows to the table. Return the first row that is added.
