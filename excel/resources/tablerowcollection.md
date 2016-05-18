@@ -23,7 +23,7 @@ None
 |:---------------|:--------|:----------|:----|
 |[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds a new row to the table.|1.1|
 |[addEmptyRows(index: number, count: number)](#addemptyrowsindex-number-count-number)|[TableRow](tablerow.md)|Adds multiple empty rows to the table and return the first row that is added.|1.3|
-|[addMultipleRows(index: number, values: (boolean or string or number)[][])](#addmultiplerowsindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds multiple new rows to the table. Return the first row that is added.|1.3|
+|[insertRows(index: number, values: (boolean or string or number)[][])](#insertrowsindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds multiple new rows to the table. Return the first row that is added.|1.3|
 |[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
@@ -82,12 +82,12 @@ Excel.run(function (ctx) {
 });
 ```
 
-### addMultipleRows(index: number, values: (boolean or string or number)[][])
+### InsertRows(index: number, values: (boolean or string or number)[][])
 Adds multiple new rows to the table. Return the first row that is added.
 
 #### Syntax
 ```js
-tableRowCollectionObject.addMultipleRows(index, values);
+tableRowCollectionObject.insertRows(index, values);
 ```
 
 #### Parameters
@@ -103,7 +103,7 @@ tableRowCollectionObject.addMultipleRows(index, values);
 ```js
 Excel.run(function (ctx) { 
     var tables = ctx.workbook.tables;
-    var rows = tables.getItem("Table1").rows.addMultipleRows(-1,[["A","B"],["C","D"]]);
+    var rows = tables.getItem("Table1").rows.insertRows(-1,[["A","B"],["C","D"]]);
     row.load('index');
     return ctx.sync().then(function() {
         console.log(row.index);
