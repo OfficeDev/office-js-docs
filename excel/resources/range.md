@@ -38,7 +38,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 | Method           | Return Type    |Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getExpandedRange(deltaRows: number, deltaColumns: number)](#getexpandedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom right corner expanded by some number of rows and columns.|1.3|
+|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom right corner expanded by some number of rows and columns.|1.3|
 |[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets X many columns to the right of the current Range object.|1.3|
 |[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets X many columns to the left of the current Range object.|1.3|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|1.3|
@@ -68,12 +68,12 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 ## Method Details
 
-### getExpandedRange(deltaRows: number, deltaColumns: number)
+### getResizedRange(deltaRows: number, deltaColumns: number)
 Gets a Range object similar to the current Range object, but with its bottom right corner expanded by some number of rows and columns.
 
 #### Syntax
 ```js
-rangeObject.getExpandedRange(deltaRows, deltaColumns);
+rangeObject.getResizedRange(deltaRows, deltaColumns);
 ```
 
 #### Parameters
@@ -88,7 +88,7 @@ rangeObject.getExpandedRange(deltaRows, deltaColumns);
 Excel.run(function (ctx) { 
     var sheetName = "Sheet19";
     var rangeAddress = "A1:F8";
-    var range = ctx.workbook.worksheets.getItem(sheetName).getExpandedRange(1,1);
+    var range = ctx.workbook.worksheets.getItem(sheetName).getResizedRange(1,1);
     range.load('address');
     return ctx.sync().then(function() {
         console.log(range.address); // prints Sheet1!A1:G9
