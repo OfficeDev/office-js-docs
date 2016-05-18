@@ -57,3 +57,53 @@ object.load(param);
 
 #### Returns
 void
+
+## Example
+```js
+Excel.run(function (ctx) { 
+    var tableName = 'Table1';
+    var table = ctx.workbook.tables.getItem(tableName);
+    var column = table.columns.getItemAt(1);
+    column.filter.applyTopItemsFilter(10);
+    return ctx.sync()
+          .then(function () {
+               visibleValues = table.getDataBodyRange().visibleView;
+               visibleValues.load("values");
+               ctx.sync();
+          })
+          .then(function () {
+               console.log(visibleValues.values.toString());
+          });
+
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+
+For RangeViewRows
+
+Excel.run(function (ctx) { 
+    var tableName = 'Table1';
+    var table = ctx.workbook.tables.getItem(tableName);
+    var column = table.columns.getItemAt(1);
+    column.filter.applyTopItemsFilter(10);
+    return ctx.sync()
+          .then(function () {
+               visibleValues = table.getDataBodyRange().visibleView.rows.items[1];
+               visibleValues.load("values");
+               ctx.sync();
+          })
+          .then(function () {
+               console.log(visibleValues.values.toString());
+          });
+
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+
+```
