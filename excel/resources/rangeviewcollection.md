@@ -102,7 +102,7 @@ Excel.run(function (ctx) {
     column.filter.applyTopItemsFilter(10);
     return ctx.sync()
           .then(function () {
-                var firstVisibleRow = table.getDataBodyRange.visibleView.rows.getItemAt(0);
+                var firstVisibleRow = table.getDataBodyRange().visibleView.rows.getItemAt(0);
                 firstVisibleRow.load("values");
                 return firstVisibleRow;
           })
