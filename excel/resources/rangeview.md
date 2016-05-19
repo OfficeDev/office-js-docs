@@ -31,7 +31,7 @@ _See property access [examples.](#property-access-examples)_
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
-    var column = table.columns.getItemAt(1);
+    var column = table.columns.getItemAt(0);
     column.filter.applyTopItemsFilter(10);
     return ctx.sync()
           .then(function () {
@@ -40,7 +40,7 @@ Excel.run(function (ctx) {
                ctx.sync();
           })
           .then(function () {
-               console.log(visibleValues.values.toString());
+               console.log(JSON.stringify(visibleValues.values));
           });
 
 }).catch(function(error) {
