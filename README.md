@@ -348,7 +348,7 @@ Use the `getItem` method available on the `custom` collection to get a custom pr
 
 ```js
 Excel.run(function (ctx) { 
-	var property = ctx.workbook.properties.custom.getItem("review-date", "custom");
+	var property = ctx.workbook.properties.custom.getItem("review-date");
     return ctx.sync() .then(function() {
         console.log("value: " + property.value);
     }); 
