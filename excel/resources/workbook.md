@@ -18,6 +18,7 @@ None
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Returns sheet protection object for a worksheet. Read-only.|1.3||
 |tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|1.1||
 |worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|1.1||
+|customXMLParts|[CustomXMLPartsCollection](customXMLPartsCollection.md)|Represents a collection of customXML parts associated with the workbook. Read-only.|1.3||
 
 ## Methods
 
