@@ -1,3 +1,20 @@
+# CustomXML Parts
+|Resources|What's new| Description| Give feedback|
+|:-----|:-----|:-----|:-----|
+|[customXmlPart](customxmlpart.md)|_Property_ > builtIn|Indicates whether the custom XML part is built-in. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=customXmlPart-builtIn)|
+|[customXmlPart](customxmlpart.md)|_Property_ > id|The custom XML part's ID. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=customXmlPart-id)|
+|[customXmlPart](customxmlpart.md)|_Property_ > namespaceUri|The custom XML part's namespace URI. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=customXmlPart-namespaceUri)|
+|[customXmlPart](customxmlpart.md)|_Relationship_ > xml|The custom XML part's XML content. This property is Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=customXmlPart-xml)|
+|[customXmlPart](customxmlpart.md)|_Method_ > [delete()](resources/customxmlpart.md#delete)|Deletes the custom XML part.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-customXmlPart-delete)|
+|[customXmlPartCollection](customxmlpartcollection.md)|_Property_ > items|A collection of customXmlPart objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=customXmlPartCollection-items)|
+|[customXmlPartCollection](customxmlpartcollection.md)|_Method_ > [add(xml: string)](resources/customxmlpartcollection.md#addxml-string)|Creates a new custom XML part and adds it to the collection.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-customXmlPartCollection-add)|
+|[customXmlPartCollection](customxmlpartcollection.md)|_Method_ > [getByNamespace(namespaceUri: string)](resources/customxmlpartcollection.md#getbynamespacenamespaceuri-string)|Gets a new collection of custom XML parts whose namespaces match the given namespace.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-customXmlPartCollection-getByNamespace)|
+|[customXmlPartCollection](customxmlpartcollection.md)|_Method_ > [getItem(id: string)](resources/customxmlpartcollection.md#getitemid-string)|Gets a custom XML part based on its ID.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-customXmlPartCollection-getItem)|
+|[customXmlPartScopedCollection](customxmlpartscopedcollection.md)|_Property_ > items|A collection of customXmlPartScoped objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=customXmlPartScopedCollection-items)|
+|[customXmlPartScopedCollection](customxmlpartscopedcollection.md)|_Method_ > [getItem(id: string)](resources/customxmlpartscopedcollection.md#getitemid-string)|Gets a custom XML part based on its ID.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-customXmlPartScopedCollection-getItem)|
+|[customXmlPartScopedCollection](customxmlpartscopedcollection.md)|_Method_ > [getOnlyItemOrNull()](resources/customxmlpartscopedcollection.md#getonlyitemornull)|If the collection contains exactly one item, this method returns it.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-customXmlPartScopedCollection-getOnlyItemOrNull)|
+
+
 # Binding
 |Resources|What's new| Description| Give feedback|
 |:-----|:-----|:-----|:-----|
