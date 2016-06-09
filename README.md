@@ -140,7 +140,7 @@ Get a custom property.
 
 ###### Syntax
 ```js
-customPropertiesCollection.getItem(key);
+customPropertiesCollection.getItem(key, value);
 ```
 
 ###### Parameters
