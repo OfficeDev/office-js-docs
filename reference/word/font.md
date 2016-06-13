@@ -16,14 +16,11 @@ _Applies to: Word 2016, Word for iPad, Word for Mac_
 |strikeThrough|bool|Gets or sets a value that indicates whether the font has a strike through. True if the font is formatted as strikethrough text, otherwise, false.|
 |subscript|bool|Gets or sets a value that indicates whether the font is a subscript. True if the font is formatted as subscript, otherwise, false.|
 |superscript|bool|Gets or sets a value that indicates whether the font is a superscript. True if the font is formatted as superscript, otherwise, false.|
+|size| float |Gets or sets a value that represents the font size in points.|
+|underline| [UnderlineType](underlinetype-enumeration.md) / string |Gets or sets a value that indicates the font's underline type. Valid values are: "None", "Single", "Word", "Double", "Dotted", "Hidden", "Thick", "Dashline", "Dotline", "DotDashLine", "TwoDotDashLine", and "Wave"|
 
 _See property access [examples.](#property-access-examples)_
 
-## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|size|**float**|Gets or sets a value that represents the font size in points.|
-|underline|**string**|Gets or sets a value that indicates the font's underline type. Valid values are: "None", "Single", "Word", "Double", "Dotted", "Hidden", "Thick", "Dashline", "Dotline", "DotDashLine", "TwoDotDashLine", and "Wave"|
 
 ## Methods
 
