@@ -2,6 +2,8 @@
 # SupportUrl element
 Specifies the URL of a page that provides support information for your add-in.
 
+Not applicable to Sharepoint add-ins.
+
  **Add-in type:** Content, Task pane, Mail
 
 
