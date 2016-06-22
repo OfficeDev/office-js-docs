@@ -84,7 +84,7 @@ Specifies the activation rule(s) that should be evaluated for this mail add-in.
 |**ItemType**|**Corresponding ItemClass**|
 |:-----|:-----|
 |Appointment|IPM.Appointment|
-|Message|Includes email messages, meeting requests, responses, and cancellations. The following are the corresponding message classes:IPM.NoteIPM.Schedule.Meeting.RequestIPM.Schedule.Meeting.NegIPM.Schedule.Meeting.PosIPM.Schedule.Meeting.TentIPM.Schedule.Meeting.Canceled|
+|Message|Includes email messages, meeting requests, responses, and cancellations. The following are the corresponding<br> message classes:IPM.NoteIPM.Schedule.Meeting.RequestIPM.Schedule.Meeting.NegIPM.Schedule.Meeting.PosIPM.Schedule.Meeting.TentIPM.<br>Schedule.Meeting.Canceled|
 |
 |FormType|ItemFormType (string)|required|Specifies whether the app should appear in read or edit form for the item. Can be one of the following:
 |
