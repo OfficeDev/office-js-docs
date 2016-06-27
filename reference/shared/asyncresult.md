@@ -30,6 +30,23 @@ AsyncResult
 
 ### Examples
 
+_asyncContext property_
+
+```js
+function getDataWithContext() {
+    var format = "Your data: ";
+    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, { asyncContext: format }, showDataWithContext);
+}
+
+ function showDataWithContext(asyncResult) {
+    write(asyncResult.asyncContext + asyncResult.value);
+}
+// Function that writes to a div with id='message' on the page.
+function write(message){
+    document.getElementById('message').innerText += message; 
+}
+```
+
 _error, status, and value properties_
 
 ```js
@@ -42,23 +59,6 @@ function getData() {
             write(asyncResult.value);
         }
     });
-}
-// Function that writes to a div with id='message' on the page.
-function write(message){
-    document.getElementById('message').innerText += message; 
-}
-```
-
-_asyncContext property_
-
-```js
-function getDataWithContext() {
-    var format = "Your data: ";
-    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, { asyncContext: format }, showDataWithContext);
-}
-
- function showDataWithContext(asyncResult) {
-    write(asyncResult.asyncContext + asyncResult.value);
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
