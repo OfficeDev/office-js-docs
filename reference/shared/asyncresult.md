@@ -7,6 +7,8 @@ An object which encapsulates the result of an asynchronous request, including st
 |**Hosts:**|Access, Excel, Outlook, PowerPoint, Project, Word|
 |**Last changed in**|1.1|
 
+**Syntax**
+
 ```
 AsyncResult
 ```
