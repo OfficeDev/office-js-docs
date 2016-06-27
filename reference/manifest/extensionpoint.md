@@ -16,6 +16,7 @@ For each form factor, you can define **ExtensionPoint** elements with the follow
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [PrimaryCommandSurface](#primarycommandsurface)
+- [ContextMenu](#contextmenu)
 - [CustomPane](#custompane) 
 - [Module](#module)
 
@@ -25,7 +26,7 @@ For each form factor, you can define **ExtensionPoint** elements with the follow
 
 ### AppointmentAttendeeCommandSurface
 
-This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting. 
+This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting. Applies to Outlook Add-ins.  
 
 #### Child elements
 |  Element |  Description  |
@@ -56,7 +57,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 
 ### AppointmentOrganizerCommandSurface
 
-This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting. 
+This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting. Applies to Outlook Add-ins.  
 
 #### Child elements
 |  Element |  Description  |
@@ -85,7 +86,7 @@ This extension point puts buttons on the ribbon for the form that's displayed to
 -------------------------------------------
 
 ### MessageComposeCommandSurface
-This extension point puts buttons on the ribbon for add-ins using mail compose form. 
+This extension point puts buttons on the ribbon for add-ins using mail compose form. Applies to Outlook Add-ins. 
 
 #### Child elements
 |  Element |  Description  |
@@ -116,7 +117,7 @@ This extension point puts buttons on the ribbon for add-ins using mail compose f
 -------------------------------------------
 
 ### MessageReadCommandSurface
-This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
+This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon. Applies to Outlook Add-ins. 
 
 #### Child elements
 | Element                     | Description                                    |
@@ -144,7 +145,7 @@ This extension point puts buttons in the command surface for the mail read view.
 -------------------------------------------
 
 ### PrimaryCommandSurface
-This extention point is used for placing buttons on Word, Excel and PowerPoint hosts. 
+This extention point is used for placing buttons into the Office ribbon. Applies to Word, Excel and PowerPoint Add-ins. 
 
 
 #### Child elements
@@ -172,14 +173,38 @@ This extention point is used for placing buttons on Word, Excel and PowerPoint h
   </CustomTab>
 </ExtensionPoint>
 ```
+ 
 
+-------------------------------------------
   
+### ContextMenu
+This extention point is used for adding items to the Office context menu (right-click menu). Applies to Word, Excel and PowerPoint Add-ins. 
+
+
+#### Child elements
+| Element                       | Description                                    |
+|:------------------------------|:-----------------------------------------------|
+| [OfficeMenu](./officemenu.md) | Adds the command(s) to the default ribbon tab. |
+
+
+#### Example
+```xml
+<ExtensionPoint xsi:type="ContextMenu">
+  <OfficeMenu id="ContextMenuCell">
+    <Control xsi:type="Menu" id="ContextMenu2">
+           <!-- information about the control -->
+    </Control>
+   <!-- other controls, as needed -->
+  </OfficeMenu>
+ </ExtensionPoint>
+```
+ 
 
 -------------------------------------------
 
 ### CustomPane
 
-The CustomPane extension point defines an add-in that activates when specified rules are satisfied. It is only for read form and it displays in a horizontal pane. 
+The CustomPane extension point defines an add-in that activates when specified rules are satisfied. It is only for read form and it displays in a horizontal pane. Applies to Outlook Add-ins. 
 
 #### Child elements
 
@@ -219,7 +244,7 @@ Optional. Specifies whether entity highlighting should be turned off for this Ou
 
 ### Module
 
-This extension point puts buttons on the ribbon for the module extension. 
+This extension point puts buttons on the ribbon for the module extension. Applies to Outlook Add-ins. 
 
 #### Child elements
 |  Element |  Description  |
