@@ -21,7 +21,7 @@ AsyncResult
 |:-----|:-----|:-----|:-----|
 |**asyncContext**|var myContext = asynchResult.asyncContext;|The user-defined item(1).|Gets the user-defined item passed to the optional  _asyncContext_ parameter of the invoked method in the same state as it was passed in.|
 |**error**|var errorObj = asyncResult.error;|An [Error](../../reference/shared/error.md) object.|Gets an  **Error** object that provides a description of the error, if any error occurred.|
-|**status**|var myStatus = asyncResult.status;|An [AsyncResultStatus](../../reference/shared/asyncresultstatus-enumeration.md) value.|GetsGets the status of the asynchronous operation.|
+|**status**|var myStatus = asyncResult.status;|An [AsyncResultStatus](../../reference/shared/asyncresultstatus-enumeration.md) value.|Gets the status of the asynchronous operation.|
 |**value**|var dataValue = asyncResult.value;|The value of the request when the asynchronous call was made(2).|Gets the payload or content of this asynchronous operation, if any.|
 
 (1) A User-defined item can be of any JavaScript type: **String, Number, Boolean, Object, Array, Null,** or **Undefined**) passed to the optional asyncContext parameter of the invoked method. Returns **Undefined**, if you didn't pass anything to the asyncContext parameter.
