@@ -28,10 +28,11 @@ AsyncResult
 
 (2) What the value property returns for a particular "Async" method varies depending on the purpose and context of that method. To determine what is returned by the value property for an "Async" method, refer to the "Callback value" section of the method's topic.
 
-**Examples**
+### Examples
 
 _error, status, and value properties_
 
+```js
 function getData() {
     Office.context.document.getSelectedDataAsync(Office.CoercionType.Table, function(asyncResult) {
         if (asyncResult.status == Office.AsyncResultStatus.Failed) {
@@ -46,9 +47,11 @@ function getData() {
 function write(message){
     document.getElementById('message').innerText += message; 
 }
+```
 
 _asyncContext property_
 
+```js
 function getDataWithContext() {
     var format = "Your data: ";
     Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, { asyncContext: format }, showDataWithContext);
@@ -61,9 +64,7 @@ function getDataWithContext() {
 function write(message){
     document.getElementById('message').innerText += message; 
 }
-
-
-
+```
 
 ## Remarks
 
