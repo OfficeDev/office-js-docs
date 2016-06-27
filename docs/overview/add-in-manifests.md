@@ -606,7 +606,6 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
                   <bt:Image size="32" resid="icon1_32x32" />
                   <bt:Image size="80" resid="icon1_32x32" />
                 </Icon>
-                <Tooltip resid="residToolTip" />
                 <Control xsi:type="Button" id="Button1Id1">
 
                    <!-- information about the control -->
@@ -634,7 +633,6 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 |**Group**|A group of user interface extension points on a tab. A group can have up to six controls. The  **id** attribute is required. It's a string with a maximum of 125 characters.|
 |**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
 |**Icon**|Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
-|**Tooltip**|Optional. The tooltip of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
 |**Control**|Each group requires at least one control. A  **Control** element can be either a **Button** or a **Menu**. Use  **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported.See the [Button controls](#button-controls) and [Menu controls](#menu-controls) sections for more information.<br/>**Note**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.
 
 |
@@ -652,7 +650,6 @@ A button performs a single action when the user selects it. It can either execut
 
                  <Control xsi:type="Button" id="Button1Id1">
                   <Label resid="residLabel" />
-                  <Tooltip resid="residToolTip" />
                   <Supertip>
                     <Title resid="residLabel" />
                     <Description resid="residToolTip" />
@@ -672,7 +669,6 @@ A button performs a single action when the user selects it. It can either execut
 
                 <Control xsi:type="Button" id="Button2Id1">
                   <Label resid="residLabel2" />
-                  <Tooltip resid="residToolTip" />
                   <Supertip>
                     <Title resid="residLabel" />
                     <Description resid="residToolTip" />
@@ -691,7 +687,6 @@ A button performs a single action when the user selects it. It can either execut
 |**Elements**|**Description**|
 |:-----|:-----|
 |**Label**|Required. The text for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
-|**Tooltip**|Optional. The tooltip for the button. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
 |**Supertip**|Required. The supertip for this button, which is defined by the following: <br/><br/>-  **Title** <br/> Required. The text for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources**  element. <br/>-  **Description** <br/> Required. The description for the supertip. The **resid**  attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element  of the **LongStrings** element, which is a child element of the **Resources** element.|
 |**Icon**|Required. Contains the  **Image** elements for the button. Image files must be .png format. <br/><br/> - **Image** <br/> Defines an image to display on the button. The **resid**  attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element  is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute indicates the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
 |**Action**|Required. Specifies the action to perform when the user selects the button. You can specify one of the following values for the  **xsi:type** attribute: <br/><br/> - **ExecuteFunction**, which runs a JavaScript function located in the file referenced by **FunctionFile**. ExecuteFunction does not display a UI. The FunctionName child element specifies the name of the function to execute. <br/> - **ShowTaskPane**, which shows a task pane add-in. The **SourceLocation** child element specifies the source file location of the task pane add-in to display. The **resid**  attribute must be set to the value of the **id** attribute of a **Url** element in the **Urls** element in the **Resources** element.
@@ -721,7 +716,6 @@ A  **Menu** control can be used with either **PrimaryCommandSurface** or **Conte
 ```
 <Control xsi:type="Menu" id="TestMenu2">
               <Label resid="residLabel3" />
-              <Tooltip resid="residToolTip" />
               <Supertip>
                 <Title resid="residLabel" />
                 <Description resid="residToolTip" />
@@ -772,7 +766,6 @@ A  **Menu** control can be used with either **PrimaryCommandSurface** or **Conte
 |**Elements**|**Description**|
 |:-----|:-----|
 |**Label**|Required. The text of the root menu item. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
-|**Tooltip**|Optional. The tooltip for the menu. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
 |**Supertip**|Required. The supertip for this menu, which is defined by the following: <br/><br/>-  **Title** <br/> Required. The text for the supertip. The **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources**  element. <br/>-  **Description** <br/> Required. The description for the supertip. The **resid**  attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element  of the **LongStrings** element, which is a child element of the **Resources** element.|
 |**Icon**|Required. Contains the  **Image** elements for the menu. Image files must be .png format. <br/><br/> - **Image** <br/> Defines an image to display on the menu. The **resid**  attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element  is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute indicates the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
 |**Items**|Required. Contains the  **Item** elements for each submenu item. Each **Item** element contains the same child elements as [Button controls](#button-controls).|
