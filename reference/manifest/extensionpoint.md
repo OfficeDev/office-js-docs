@@ -11,12 +11,171 @@
 ## xsi:type
 For each form factor, you can define **ExtensionPoint** elements with the following **xsi:type** values, with the exception of the **Module** value which can only be used in the [DesktopFormFactor](./formfactor.md):
 
-- [CustomPane](#custompane) 
-- [MessageReadCommandSurface](#messagereadcommandsurface) 
-- [MessageComposeCommandSurface](#messagecomposecommandsurface) 
-- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
+- [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
+- [MessageComposeCommandSurface](#messagecomposecommandsurface) 
+- [MessageReadCommandSurface](#messagereadcommandsurface) 
+- [PrimaryCommandSurface](#primarycommandsurface)
+- [CustomPane](#custompane) 
 - [Module](#module)
+
+
+
+-------------------------------------------
+
+### AppointmentAttendeeCommandSurface
+
+This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting. 
+
+#### Child elements
+|  Element |  Description  |
+|:-----|:-----|
+|  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
+|  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
+
+#### OfficeTab example
+```xml
+<ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
+  <OfficeTab id="TabDefault">
+        <-- OfficeTab Definition -->
+  </OfficeTab>
+</ExtensionPoint>
+```
+
+#### CustomTab example
+```xml
+<ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
+  <CustomTab id="TabCustom1">
+        <-- CustomTab Definition -->
+  </CustomTab>
+</ExtensionPoint>
+```
+
+
+-------------------------------------------
+
+### AppointmentOrganizerCommandSurface
+
+This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting. 
+
+#### Child elements
+|  Element |  Description  |
+|:-----|:-----|
+|  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
+|  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
+
+#### OfficeTab example
+```xml
+<ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+  <OfficeTab id="TabDefault">
+        <-- OfficeTab Definition -->
+  </OfficeTab>
+</ExtensionPoint>
+```
+
+#### CustomTab example
+```xml
+<ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+  <CustomTab id="TabCustom1">
+        <-- CustomTab Definition -->
+  </CustomTab>
+</ExtensionPoint>
+```
+
+-------------------------------------------
+
+### MessageComposeCommandSurface
+This extension point puts buttons on the ribbon for add-ins using mail compose form. 
+
+#### Child elements
+|  Element |  Description  |
+|:-----|:-----|
+|  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
+|  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
+
+#### OfficeTab example
+```xml
+<ExtensionPoint xsi:type="MessageComposeCommandSurface">
+  <OfficeTab id="TabDefault">
+        <-- OfficeTab Definition -->
+  </OfficeTab>
+</ExtensionPoint>
+```
+
+#### CustomTab example
+
+```xml
+<ExtensionPoint xsi:type="MessageComposeCommandSurface">
+  <CustomTab id="TabCustom1">
+        <-- CustomTab Definition -->
+  </CustomTab>
+</ExtensionPoint>
+```
+
+
+-------------------------------------------
+
+### MessageReadCommandSurface
+This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
+
+#### Child elements
+| Element                     | Description                                    |
+|:----------------------------|:-----------------------------------------------|
+| [OfficeTab](./officetab.md) | Adds the command(s) to the default ribbon tab. |
+| [CustomTab](./customtab.md) | Adds the command(s) to the custom ribbon tab.  |
+
+#### OfficeTab example
+```xml
+<ExtensionPoint xsi:type="MessageReadCommandSurface">
+  <OfficeTab id="TabDefault">
+        <-- OfficeTab Definition -->
+  </OfficeTab>
+</ExtensionPoint>
+```
+
+#### CustomTab example
+```xml
+<ExtensionPoint xsi:type="MessageReadCommandSurface">
+  <CustomTab id="TabCustom1">
+        <-- CustomTab Definition -->
+  </CustomTab>
+</ExtensionPoint>
+```
+-------------------------------------------
+
+### PrimaryCommandSurface
+This extention point is used for placing buttons on Word, Excel and PowerPoint hosts. 
+
+
+#### Child elements
+| Element                     | Description                                    |
+|:----------------------------|:-----------------------------------------------|
+| [OfficeTab](./officetab.md) | Adds the command(s) to the default ribbon tab. |
+| [CustomTab](./customtab.md) | Adds the command(s) to the custom ribbon tab.  |
+
+
+#### OfficeTab example
+```xml
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
+  <OfficeTab id="TabInsert">
+        <-- OfficeTab Definition -->
+  </OfficeTab>
+</ExtensionPoint>
+```
+
+
+#### CustomTab example
+```xml
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
+  <CustomTab id="TabCustom1">
+        <-- CustomTab Definition -->
+  </CustomTab>
+</ExtensionPoint>
+```
+
+  
+
+-------------------------------------------
 
 ### CustomPane
 
@@ -56,114 +215,7 @@ Optional. Specifies whether entity highlighting should be turned off for this Ou
 </ExtensionPoint>
 ```
 
-### MessageReadCommandSurface
-This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
-
-#### Child elements
-|  Element |  Description  |
-|:-----|:-----|
-|  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
-|  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
-
-#### OfficeTab example
-```xml
-<ExtensionPoint xsi:type="MessageReadCommandSurface">
-  <OfficeTab id="TabDefault">
-        <-- OfficeTab Definition -->
-  </OfficeTab>
-</ExtensionPoint>
-```
-
-#### CustomTab example
-```xml
-<ExtensionPoint xsi:type="MessageReadCommandSurface">
-  <CustomTab id="TabCustom1">
-        <-- CustomTab Definition -->
-  </CustomTab>
-</ExtensionPoint>
-```
-### MessageComposeCommandSurface
-This extension point puts buttons on the ribbon for add-ins using mail compose form. 
-
-#### Child elements
-|  Element |  Description  |
-|:-----|:-----|
-|  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
-|  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
-
-#### OfficeTab example
-```xml
-<ExtensionPoint xsi:type="MessageComposeCommandSurface">
-  <OfficeTab id="TabDefault">
-        <-- OfficeTab Definition -->
-  </OfficeTab>
-</ExtensionPoint>
-```
-
-#### CustomTab example
-
-```xml
-<ExtensionPoint xsi:type="MessageComposeCommandSurface">
-  <CustomTab id="TabCustom1">
-        <-- CustomTab Definition -->
-  </CustomTab>
-</ExtensionPoint>
-```
-### AppointmentOrganizerCommandSurface
-
-This extension point puts buttons on the ribbon for the form that's displayed to the organizer of the meeting. 
-
-#### Child elements
-|  Element |  Description  |
-|:-----|:-----|
-|  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
-|  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
-
-#### OfficeTab example
-```xml
-<ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-  <OfficeTab id="TabDefault">
-        <-- OfficeTab Definition -->
-  </OfficeTab>
-</ExtensionPoint>
-```
-
-#### CustomTab example
-```xml
-<ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-  <CustomTab id="TabCustom1">
-        <-- CustomTab Definition -->
-  </CustomTab>
-</ExtensionPoint>
-```
-
-### AppointmentAttendeeCommandSurface
-
-This extension point puts buttons on the ribbon for the form that's displayed to the attendee of the meeting. 
-
-#### Child elements
-|  Element |  Description  |
-|:-----|:-----|
-|  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
-|  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
-
-#### OfficeTab example
-```xml
-<ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-  <OfficeTab id="TabDefault">
-        <-- OfficeTab Definition -->
-  </OfficeTab>
-</ExtensionPoint>
-```
-
-#### CustomTab example
-```xml
-<ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-  <CustomTab id="TabCustom1">
-        <-- CustomTab Definition -->
-  </CustomTab>
-</ExtensionPoint>
-```
+-------------------------------------------
 
 ### Module
 
@@ -174,4 +226,3 @@ This extension point puts buttons on the ribbon for the module extension.
 |:-----|:-----|
 |  [OfficeTab](./officetab.md) |  Adds the command(s) to the default ribbon tab.  |
 |  [CustomTab](./customtab.md) |  Adds the command(s) to the custom ribbon tab.  |
-
