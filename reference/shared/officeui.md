@@ -1,14 +1,20 @@
-# Office UI Namespace (JavaScript API for Office)
+# Office.context.ui
 
-The Office UI Namespace, Office.context.ui, provides objects and methods used to create UI components for add-ins.
+Office.context.ui provides objects and methods used to interact with native client UI elements via Add-ins.
 
-##### Requirements
+## Requirements
 
-|Host|Introduced in|Last changed in|
-|:---------------|:--------|:----------|
-|Word, Excel, PowerPoint|1.1|1.1|
-|Outlook|Mailbox 1.4|Mailbox 1.4|
+| Host               | Introduced in | Last changed in |
+|:-------------------|:-------------:|:---------------:|
+| Word               | 1.1           | 1.1             |
+| Excel              | 1.1           | 1.1             |
+| PowerPoint         | 1.1           | 1.1             |
+| Outlook  (preview) | Mailbox 1.4   | Mailbox 1.4     | 
 
+> **Note:** Outlook Mailbox 1.4 is in "Preview" and only supported by the most recent build of Outlook 2016 for Windows. If your add-in requests a [MinVersion](../outlook/tutorial-api-requirement-sets.md) of 1.4 it will be unavailable in other Outlook clients such as Outlook Web App or Outlook 2013.  
+
+
+### Word, Excel and PowerPoint
 To require the `DialogAPI` [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md) 1.1 or later, your manifest should specify
 
 ```xml
@@ -33,16 +39,34 @@ Runtime detection of the `DialogAPI` capability can be done with the following c
 	 } 
 ```
 
+### Outlook 
+The `DialogAPI` is only available with Mailbox version 1.4 or higher. 
+```xml
+<VersionOverrides 
+  xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" 
+  xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.4">
+        <bt:Set Name="Mailbox" />
+      </bt:Sets>
+    </Requirements>
+    ...
+</VerionOverrides>
+
+```
+
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[displayDialogAsync()](#displayDialogAsync(startAddress: Url, options: Object, callback: function))|void|Displays a dialog to display or collect information from the user or to facilitate Web navigation.|
-|[messageParent()](#messageParent(messageObject: object))|void|Sends a message from a dialog to the parent add-in.|
+| Method		       | Return Type  | Description                                |
+|:---------------------|:------------:|:-------------------------------------------|
+| [displayDialogAsync] | void         | Displays a dialog                          |
+| [messageParent]      | void         | Sends a message back to parent add-in.     |
+
+
 
 ## Method Details
 
-### displayDialogAsync(startAddress: Url, options: Object, callback: function)
+### displayDialogAsync
 Display up to one Web dialog that opens at startAddress.
 
 #### Syntax
@@ -51,21 +75,16 @@ displayDialogAsync(startAddress, options, callback);
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|startAddress|string|Accepts the initial HTTPS Url that opens in the dialog.|
-|options|object|Optional. Accepts an options object to define dialog behaviors.|
-|callback|object|Accepts a callback method to handle the dialog creation attempt.|
+| Parameter	   | Type   | Description                                                       |
+|:-------------|:------:|:----------------------------------------------------------------- |
+| startAddress | string | Accepts the initial HTTPS Url that opens in the dialog.           |
+| [options]    | object | Optional. Accepts an options object to define dialog behaviors.   |
+| callback     | object | Accepts a callback method to handle the dialog creation attempt.  |
 
 #### Returns
 void
 
-#### Examples
-
-#####Full sample on GitHub
-[Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/)
-
-#####Snippet
+#### Example
 ```js
 var dialog;
 
@@ -89,6 +108,8 @@ function openDialog() {
 		{height:80, width:50}, dialogCallback); 
 }
 ```
+For a complete example, see [Office Add-in Dialog API Example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) on GitHub. 
+
 
 #### Comments
 1.	Dialogs will not create modal windows
@@ -105,11 +126,11 @@ function openDialog() {
 The callback for displayDialogAsync, in the success case, includes a dialog object. This dialog object has additional behaviors. 
 
 #### Dialog Object
-| Member	   | Type	|Description|
-|:---------------|:--------|:----------|
-|close|function|Allows the add-in to close its dialog.|
-|DialogMessageReceived|event|Optional. Triggered when the dialog sends a message.|
-|DialogEventReceived|event|Optional. Triggered when the dialog has been closed or otherwise unloaded.|
+| Member	            | Type	   | Description                                                               |
+|:----------------------|:--------:|:--------------------------------------------------------------------------|
+| close                 | function | Allows the add-in to close its dialog.                                    |
+| DialogMessageReceived | event    | Optional. Triggered when the dialog sends a message.                      |
+| DialogEventReceived   | event    | Optional. Triggered when the dialog has been closed or otherwise unloaded.|
 
 #### Returns
 void
@@ -128,14 +149,16 @@ None.
 #### Returns    
 void  
 
-#### Examples    
+#### Example    
     
 ```js    
 //using _dlg object provided by the displayDialogAsync callback method    
 closeButton.addEventListener("click", _dlg.close);    
 ```  
 
-### messageParent(messageObject: object)
+--- 
+
+### messageParent
 Delivers a message from the dialog to its parent add-in.
 
 #### Syntax
@@ -144,9 +167,9 @@ messageParent("Message from Dialog");
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|messageObject|object|Accepts a message from the dialog to deliver to the add-in.|
+| Parameter	    | Type	 | Description                                                |
+|:--------------|:------:|:-----------------------------------------------------------|
+| messageObject | object | Accepts a message from the dialog to deliver to the add-in.|
 
 #### Returns
 void
@@ -157,18 +180,20 @@ void
 messageParent("Message from Dialog");
 ```
 
+--- 
+
 ## Objects
 
 ### Dialog Options
 Dialogs support a number of configuration options.
 
 #### Properties
-| Properties	   | Type	|Description|
-|:---------------|:--------|:----------|
-|width|object|Optional. Defines the width of the dialog as a percentage of the current display. Defaults to 80%. 250px minimum.|
-|height|object|Optional. Defines the height of the dialog as a percentage of the current display. Defaults to 80%. 150px minimum.|
-|xFrameDenySafe|object|Optional. Determines whether the dialog is safe to display within a Web frame.|
-|enforceAppDomains|object|Optional. Restricts the dialog's navigation to the add-in's trusted sites.|
+| Properties	    | Type	 | Description |
+|:------------------|:------:|:------------|
+| width             | object | Optional. Defines the width of the dialog as a percentage of the current display. Defaults to 80%. 250px minimum. |
+| height            | object | Optional. Defines the height of the dialog as a percentage of the current display. Defaults to 80%. 150px minimum. |
+| xFrameDenySafe    | object | Optional. Determines whether the dialog is safe to display within a Web frame. |
+| enforceAppDomains | object | Optional. Restricts the dialog's navigation to the add-in's trusted sites. |
 
 #### Comments
 1.	The default dialog dimensions are 80% display width x 80% display height (based on the current device dimensions) 
@@ -176,8 +201,11 @@ Dialogs support a number of configuration options.
 3.	The dialog display may be in portrait or landscape orientation, and the width and height will adjust accordingly 
 
 ## Supported platforms
+
 The Dialog API is currently supported on the following platforms:
 
   - Office for Windows Desktop 2016 (build 16.0.6741.0000 or above)
 
-More platforms coming soon. 
+[displayDialogAsync]: #displaydialogasync
+[messageParent]: #messageparent
+[options]: #dialog-options
