@@ -146,6 +146,10 @@ This extension point puts buttons in the command surface for the mail read view.
 
 ### PrimaryCommandSurface
 This extention point is used for placing buttons into the Office ribbon. Applies to Word, Excel and PowerPoint Add-ins. 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 
 #### Child elements
 | Element                     | Description                                    |
@@ -173,6 +177,10 @@ This extention point is used for placing buttons into the Office ribbon. Applies
 </ExtensionPoint>
 ```
  
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 -------------------------------------------
   
 ### ContextMenu
