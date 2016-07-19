@@ -8,19 +8,16 @@ Represents a table in a Word document.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|cellPaddingBottom|float|Gets and sets the default bottom cell padding in points.|1.3||
-|cellPaddingLeft|float|Gets and sets the default left cell padding in points.|1.3||
-|cellPaddingRight|float|Gets and sets the default right cell padding in points.|1.3||
-|cellPaddingTop|float|Gets and sets the default top cell padding in points.|1.3||
 |headerRowCount|int|Gets and sets the number of header rows.|1.3||
 |height|float|Gets the height of the table in points. Read-only.|1.3||
 |isUniform|bool|Indicates whether all of the table rows are uniform. Read-only.|1.3||
 |nestingLevel|int|Gets the nesting level of the table. Top-level tables have level 1. Read-only.|1.3||
 |rowCount|int|Gets the number of rows in the table. Read-only.|1.3||
 |shadingColor|string|Gets and sets the shading color.|1.3||
-|style|string|Gets and sets the name of the table style.|1.3||
+|style|string|Gets or sets the style name for the table. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|1.3||
 |styleBandedColumns|bool|Gets and sets whether the table has banded columns.|1.3||
 |styleBandedRows|bool|Gets and sets whether the table has banded rows.|1.3||
+|styleBuiltIn|string|Gets or sets the built-in style name for the table. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1.|1.3||
 |styleFirstColumn|bool|Gets and sets whether the table has a first column with a special style.|1.3||
 |styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|1.3||
 |styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|1.3||
@@ -37,6 +34,7 @@ _See property access [examples.](#property-access-examples)_
 |next|[Table](table.md)|Gets the next table. Read-only.|1.3||
 |paragraphAfter|[Paragraph](paragraph.md)|Gets the paragraph after the table. Read-only.|1.3||
 |paragraphBefore|[Paragraph](paragraph.md)|Gets the paragraph before the table. Read-only.|1.3||
+|parentBody|[Body](body.md)|Gets the parent body of the table. Read-only.|1.3||
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the table. Read-only.|1.3||
 |parentTable|[Table](table.md)|Gets the table that contains this table. Returns null if it is not contained in a table. Read-only.|1.3||
 |parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains this table. Returns null if it is not contained in a table cell. Read-only.|1.3||
@@ -48,7 +46,7 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[addColumns(insertLocation: string, columnCount: number, values: string[][])](#addcolumnsinsertlocation-string-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|1.3|
-|[addRows(insertLocation: string, rowCount: number, values: string[][])](#addrowsinsertlocation-string-rowcount-number-values-string)|void|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|1.3|
+|[addRows(insertLocation: string, rowCount: number, values: string[][])](#addrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|1.3|
 |[autoFitContents()](#autofitcontents)|void|Autofits the table columns to the width of their contents.|1.3|
 |[autoFitWindow()](#autofitwindow)|void|Autofits the table columns to the width of the window.|1.3|
 |[clear()](#clear)|void|Clears the contents of the table.|1.3|
@@ -57,16 +55,18 @@ _See property access [examples.](#property-access-examples)_
 |[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes specific rows.|1.3|
 |[distributeColumns()](#distributecolumns)|void|Distributes the column widths evenly.|1.3|
 |[distributeRows()](#distributerows)|void|Distributes the row heights evenly.|1.3|
-|[getBorderStyle(borderLocation: string)](#getborderstyleborderlocation-string)|[TableBorderStyle](tableborderstyle.md)|Gets the border style for the specified border.|1.3|
+|[getBorder(borderLocation: string)](#getborderborderlocation-string)|[TableBorder](tableborder.md)|Gets the border style for the specified border.|WordApiDesktop, 1.3|
 |[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|1.3|
+|[getCellPadding(cellPaddingLocation: CellPaddingLocation)](#getcellpaddingcellpaddinglocation-cellpaddinglocation)|[float?](float?.md)|Gets cell padding in points.|WordApiDesktop, 1.3|
 |[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|1.3|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|1.3|
 |[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|1.3|
 |[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 |[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|WordApiDesktop, 1.3|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|1.3|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|1.3|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|1.3|
+|[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|WordApiDesktop, 1.3|
 
 ## Method Details
 
@@ -105,7 +105,7 @@ tableObject.addRows(insertLocation, rowCount, values);
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
-void
+[TableRowCollection](tablerowcollection.md)
 
 ### autoFitContents()
 Autofits the table columns to the width of their contents.
@@ -225,12 +225,12 @@ None
 #### Returns
 void
 
-### getBorderStyle(borderLocation: string)
+### getBorder(borderLocation: string)
 Gets the border style for the specified border.
 
 #### Syntax
 ```js
-tableObject.getBorderStyle(borderLocation);
+tableObject.getBorder(borderLocation);
 ```
 
 #### Parameters
@@ -239,7 +239,7 @@ tableObject.getBorderStyle(borderLocation);
 |borderLocation|string|Required. The border location.  Possible values are: Top, Left, Bottom, Right, InsideHorizontal, InsideVertical, Inside, Outside, All|
 
 #### Returns
-[TableBorderStyle](tableborderstyle.md)
+[TableBorder](tableborder.md)
 
 ### getCell(rowIndex: number, cellIndex: number)
 Gets the table cell at a specified row and column.
@@ -258,6 +258,22 @@ tableObject.getCell(rowIndex, cellIndex);
 #### Returns
 [TableCell](tablecell.md)
 
+### getCellPadding(cellPaddingLocation: CellPaddingLocation)
+Gets cell padding in points.
+
+#### Syntax
+```js
+tableObject.getCellPadding(cellPaddingLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|cellPaddingLocation|CellPaddingLocation|Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.|
+
+#### Returns
+[float?](float?.md)
+
 ### getRange(rangeLocation: string)
 Gets the range that contains this table, or the range at the start or end of the table.
 
@@ -269,7 +285,7 @@ tableObject.getRange(rangeLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|rangeLocation|string|Optional. The range location can be 'Whole', 'Start' or 'End'.  Possible values are: Whole, Start, End|
+|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start', 'End' or 'After'.  Possible values are: Whole, Start, End|
 
 #### Returns
 [Range](range.md)
@@ -374,7 +390,7 @@ tableObject.search(searchText, searchOptions);
 |searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
+[RangeCollection](rangecollection.md)
 
 ### select(selectionMode: string)
 Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.
@@ -388,6 +404,23 @@ tableObject.select(selectionMode);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
+
+#### Returns
+void
+
+### setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)
+Sets cell padding in points.
+
+#### Syntax
+```js
+tableObject.setCellPadding(cellPaddingLocation, cellPadding);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|cellPaddingLocation|CellPaddingLocation|Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.|
+|cellPadding|float|Cell padding value.|
 
 #### Returns
 void

@@ -10,16 +10,18 @@ Represents a single paragraph in a selection, range, content control, or documen
 |:---------------|:--------|:----------|:----|
 |alignment|string|Gets or sets the alignment for a paragraph. The value can be 'left', 'centered', 'right', or 'justified'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|1.1||
 |firstLineIndent|float|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|1.1||
+|isLastParagraph|bool|Indicates the paragraph is the last one inside its parent body. Read-only.|1.3||
 |isListItem|bool|Checks whether the paragraph is a list item. Read-only.|1.3||
 |leftIndent|float|Gets or sets the left indent value, in points, for the paragraph.|1.1||
 |lineSpacing|float|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|1.1||
 |lineUnitAfter|float|Gets or sets the amount of spacing, in grid lines. after the paragraph.|1.1||
 |lineUnitBefore|float|Gets or sets the amount of spacing, in grid lines, before the paragraph.|1.1||
-|outlineLevel|int|Gets or sets the outline level for the paragraph.|WordApiDesktop, 1.3||
+|outlineLevel|int|Gets or sets the outline level for the paragraph.|1.1||
 |rightIndent|float|Gets or sets the right indent value, in points, for the paragraph.|1.1||
 |spaceAfter|float|Gets or sets the spacing, in points, after the paragraph.|1.1||
 |spaceBefore|float|Gets or sets the spacing, in points, before the paragraph.|1.1||
-|style|string|Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style.|1.1||
+|style|string|Gets or sets the style name for the paragraph. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|1.1||
+|styleBuiltIn|string|Gets or sets the built-in style name for the paragraph. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1.|1.3||
 |tableNestingLevel|int|Gets the level of the paragraph's table. It returns 0 if the paragraph is not in a table. Read-only.|1.3||
 |text|string|Gets the text of the paragraph. Read-only.|1.1||
 
@@ -45,11 +47,11 @@ Represents a single paragraph in a selection, range, content control, or documen
 |[attachToList(listId: number, level: number)](#attachtolistlistid-number-level-number)|[List](list.md)|Lets the paragraph join an existing list at the specified level. Fails if the paragraph cannot join the list or if the paragraph is already a list item.|1.3|
 |[clear()](#clear)|void|Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.|1.1|
 |[delete()](#delete)|void|Deletes the paragraph and its content from the document.|1.1|
-|[detachFromList()](#detachfromlist)|void|Moves this paragraph out of any list. Fails if the paragraph is not a list item.|1.3|
+|[detachFromList()](#detachfromlist)|void|Moves this paragraph out of its list, if the paragraph is a list item.|1.3|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|1.1|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|1.1|
 |[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the whole paragraph, or the starting or ending point of the paragraph, as a range.|1.3|
-|[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](#gettextrangespunctuationmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the paragraph by using punctuation marks andor space character.|1.3|
+|[getTextRanges(endingMarks: string[], trimSpacing: bool)](#gettextrangesendingmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the paragraph by using punctuation marks andor other ending marks.|1.3|
 |[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|1.1|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|1.1|
 |[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
@@ -60,10 +62,10 @@ Represents a single paragraph in a selection, range, content control, or documen
 |[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|1.3|
 |[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|1.1|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|1.1|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects and navigates the Word UI to the paragraph.|1.1|
 |[split(delimiters: string[], trimDelimiters: bool, trimSpacing: bool)](#splitdelimiters-string-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the paragraph into child ranges by using delimiters.|1.3|
-|[startNewList()](#startnewlist)|[List](list.md)|Uses the paragraph to start a new list. Fails if the paragraph is already a list item.|1.3|
+|[startNewList()](#startnewlist)|[List](list.md)|Starts a new list with this paragraph. Fails if the paragraph is already a list item.|1.3|
 
 ## Method Details
 
@@ -184,7 +186,7 @@ Word.run(function (context) {
 
 
 ### detachFromList()
-Moves this paragraph out of any list. Fails if the paragraph is not a list item.
+Moves this paragraph out of its list, if the paragraph is a list item.
 
 #### Syntax
 ```js
@@ -306,23 +308,23 @@ paragraphObject.getRange(rangeLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start' or 'End'.  Possible values are: Whole, Start, End|
+|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.  Possible values are: Whole, Start, End|
 
 #### Returns
 [Range](range.md)
 
-### getTextRanges(punctuationMarks: string[], trimSpacing: bool)
-Gets the text ranges in the paragraph by using punctuation marks andor space character.
+### getTextRanges(endingMarks: string[], trimSpacing: bool)
+Gets the text ranges in the paragraph by using punctuation marks andor other ending marks.
 
 #### Syntax
 ```js
-paragraphObject.getTextRanges(punctuationMarks, trimSpacing);
+paragraphObject.getTextRanges(endingMarks, trimSpacing);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|punctuationMarks|string[]|Required. The punctuation marks and/or space character as an array of strings.|
+|endingMarks|string[]|Required. The punctuation marks and/or other ending marks as an array of strings.|
 |trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
 
 #### Returns
@@ -748,7 +750,7 @@ paragraphObject.search(searchText, searchOptions);
 |searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
+[RangeCollection](rangecollection.md)
 
 ### select(selectionMode: string)
 Selects and navigates the Word UI to the paragraph.
@@ -823,7 +825,7 @@ paragraphObject.split(delimiters, trimDelimiters, trimSpacing);
 [RangeCollection](rangecollection.md)
 
 ### startNewList()
-Uses the paragraph to start a new list. Fails if the paragraph is already a list item.
+Starts a new list with this paragraph. Fails if the paragraph is already a list item.
 
 #### Syntax
 ```js

@@ -8,9 +8,10 @@ Represents a contiguous area in a document.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|hyperlink|string|Gets the first hyperlink in the range, or sets a hyperlink on the range. Existing hyperlinks in this range are deleted when you set a new hyperlink.|1.3||
+|hyperlink|string|Gets the first hyperlink in the range, or sets a hyperlink on the range. All hyperlinks in the range are deleted when you set a new hyperlink on the range. Use a newline character ('\n') to separate the address part from the optional location part.|1.3||
 |isEmpty|bool|Checks whether the range length is zero. Read-only.|1.3||
-|style|string|Gets or sets the style used for the range. This is the name of the pre-installed or custom style.|1.1||
+|style|string|Gets or sets the style name for the range. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|1.1||
+|styleBuiltIn|string|Gets or sets the built-in style name for the range. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1.|1.3||
 |text|string|Gets the text of the range. Read-only.|1.1||
 
 ## Relationships
@@ -32,15 +33,15 @@ Represents a contiguous area in a document.
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[clear()](#clear)|void|Clears the contents of the range object. The user can perform the undo operation on the cleared content.|1.1|
-|[compareLocationWith(range: Range)](#comparelocationwithrange-range)|[LocationRelation](locationrelation.md)|Compares this range's location with another range's location.|1.3|
+|[compareLocationWith(range: Range)](#comparelocationwithrange-range)|String|Compares this range's location with another range's location. Returns a string with one of the following values: Unrelated, Equal, ContainsStart, ContainsEnd, Contains, InsideStart, InsideEnd, Inside, AdjacentBefore, OverlapsBefore, Before, AdjacentAfter, Overlapping. |1.3|
 |[delete()](#delete)|void|Deletes the range and its content from the document.|1.1|
-|[expandTo(range: Range)](#expandtorange-range)|void|Expands the range in either direction to cover another range.|1.3|
+|[expandTo(range: Range)](#expandtorange-range)|[Range](range.md)|Returns a new range that extends from this range in either direction to cover another range. This range is not changed.|1.3|
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the range object.|1.1|
 |[getHyperlinkRanges()](#gethyperlinkranges)|[RangeCollection](rangecollection.md)|Gets hyperlink child ranges within the range.|1.3|
-|[getNextTextRange(punctuationMarks: string[], trimSpacing: bool)](#getnexttextrangepunctuationmarks-string-trimspacing-bool)|[Range](range.md)|Gets the next text range by using punctuation marks andor space character.|1.3|
+|[getNextTextRange(endingMarks: string[], trimSpacing: bool)](#getnexttextrangeendingmarks-string-trimspacing-bool)|[Range](range.md)|Gets the next text range by using punctuation marks andor other ending marks.|1.3|
 |[getOoxml()](#getooxml)|string|Gets the OOXML representation of the range object.|1.1|
 |[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Clones the range, or gets the starting or ending point of the range as a new range.|1.3|
-|[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](#gettextrangespunctuationmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text child ranges in the range by using punctuation marks andor space character.|1.3|
+|[getTextRanges(endingMarks: string[], trimSpacing: bool)](#gettextrangesendingmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text child ranges in the range by using punctuation marks andor other ending marks.|1.3|
 |[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Replace', 'Before' or 'After'.|1.1|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the range object with a rich text content control.|1.1|
 |[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.1|
@@ -50,9 +51,9 @@ Represents a contiguous area in a document.
 |[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|1.1|
 |[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|1.3|
 |[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text at the specified location. The insertLocation value can be 'Replace', 'Start', 'End', 'Before' or 'After'.|1.1|
-|[intersectWith(range: Range)](#intersectwithrange-range)|void|Shrinks the range to the intersection of the range with another range.|1.3|
+|[intersectWith(range: Range)](#intersectwithrange-range)|[Range](range.md)|Returns a new range as the intersection of this range with another range. This range is not changed.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.|1.1|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the range object. The search results are a collection of range objects.|1.1|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects and navigates the Word UI to the range.|1.1|
 |[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the range into child ranges by using delimiters.|1.3|
 
@@ -101,7 +102,7 @@ Word.run(function (context) {
 ```
 
 ### compareLocationWith(range: Range)
-Compares this range's location with another range's location.
+Compares this range's location with another range's location. Returns a string with one of the following values: Unrelated, Equal, ContainsStart, ContainsEnd, Contains, InsideStart, InsideEnd, Inside, AdjacentBefore, OverlapsBefore, Before, AdjacentAfter, Overlapping.
 
 #### Syntax
 ```js
@@ -114,7 +115,7 @@ rangeObject.compareLocationWith(range);
 |range|Range|Required. The range to compare with this range.|
 
 #### Returns
-[LocationRelation](locationrelation.md)
+String
 
 ### delete()
 Deletes the range and its content from the document.
@@ -159,7 +160,7 @@ Word.run(function (context) {
 
 
 ### expandTo(range: Range)
-Expands the range in either direction to cover another range.
+Returns a new range that extends from this range in either direction to cover another range. This range is not changed.
 
 #### Syntax
 ```js
@@ -172,7 +173,7 @@ rangeObject.expandTo(range);
 |range|Range|Required. Another range.|
 
 #### Returns
-void
+[Range](range.md)
 
 ### getHtml()
 Gets the HTML representation of the range object.
@@ -230,18 +231,18 @@ None
 #### Returns
 [RangeCollection](rangecollection.md)
 
-### getNextTextRange(punctuationMarks: string[], trimSpacing: bool)
-Gets the next text range by using punctuation marks andor space character.
+### getNextTextRange(endingMarks: string[], trimSpacing: bool)
+Gets the next text range by using punctuation marks andor other ending marks.
 
 #### Syntax
 ```js
-rangeObject.getNextTextRange(punctuationMarks, trimSpacing);
+rangeObject.getNextTextRange(endingMarks, trimSpacing);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|punctuationMarks|string[]|Required. The punctuation marks and/or space character as an array of strings.|
+|endingMarks|string[]|Required. The punctuation marks and/or other ending marks as an array of strings.|
 |trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the returned range. Default is false which indicates that spacing characters at the start and end of the range are included.|
 
 #### Returns
@@ -300,23 +301,23 @@ rangeObject.getRange(rangeLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start' or 'End'.  Possible values are: Whole, Start, End|
+|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.  Possible values are: Whole, Start, End|
 
 #### Returns
 [Range](range.md)
 
-### getTextRanges(punctuationMarks: string[], trimSpacing: bool)
-Gets the text child ranges in the range by using punctuation marks andor space character.
+### getTextRanges(endingMarks: string[], trimSpacing: bool)
+Gets the text child ranges in the range by using punctuation marks andor other ending marks.
 
 #### Syntax
 ```js
-rangeObject.getTextRanges(punctuationMarks, trimSpacing);
+rangeObject.getTextRanges(endingMarks, trimSpacing);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|punctuationMarks|string[]|Required. The punctuation marks and/or space character as an array of strings.|
+|endingMarks|string[]|Required. The punctuation marks and/or other ending marks as an array of strings.|
 |trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
 
 #### Returns
@@ -682,7 +683,7 @@ Word.run(function (context) {
 
 
 ### intersectWith(range: Range)
-Shrinks the range to the intersection of the range with another range.
+Returns a new range as the intersection of this range with another range. This range is not changed.
 
 #### Syntax
 ```js
@@ -695,7 +696,7 @@ rangeObject.intersectWith(range);
 |range|Range|Required. Another range.|
 
 #### Returns
-void
+[Range](range.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -728,7 +729,7 @@ rangeObject.search(searchText, searchOptions);
 |searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
+[RangeCollection](rangecollection.md)
 
 #### Examples
 
