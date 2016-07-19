@@ -1,4 +1,4 @@
-# TableBorderStyle Object (JavaScript API for Word)
+# TableBorder Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac_
 
@@ -9,8 +9,8 @@ Specifies the border style
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |color|string|Gets or sets the table border color, as a hex value or name.|1.3||
-|type|string|Gets or sets the type of the table border style. Possible values are: Mixed, None, Single, Thick, Double, Hairline, Dotted, Dashed, DotDashed, Dot2Dashed, Triple, ThinThickSmall, ThickThinSmall, ThinThickThinSmall, ThinThickMed, ThickThinMed, ThinThickThinMed, ThinThickLarge, ThickThinLarge, ThinThickThinLarge, Wave, DoubleWave, DashedSmall, DashDotStroked, ThreeDEmboss, ThreeDEngrave.|1.3||
-|width|float|Gets or sets the width, in points, of the table border style.|1.3||
+|type|string|Gets or sets the type of the table border. Possible values are: Mixed, None, Single, Thick, Double, Hairline, Dotted, Dashed, DotDashed, Dot2Dashed, Triple, ThinThickSmall, ThickThinSmall, ThinThickThinSmall, ThinThickMed, ThickThinMed, ThinThickThinMed, ThinThickLarge, ThickThinLarge, ThinThickThinLarge, Wave, DoubleWave, DashedSmall, DashDotStroked, ThreeDEmboss, ThreeDEngrave.|1.3||
+|width|float|Gets or sets the width, in points, of the table border. Not applicable to table border types that have fixed widths.|1.3||
 
 _See property access [examples.](#property-access-examples)_
 

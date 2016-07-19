@@ -9,11 +9,7 @@ Represents a row in a Word document.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |cellCount|int|Gets the number of cells in the row. Read-only.|1.3||
-|cellPaddingBottom|float|Gets and sets the default bottom cell padding for the row in points.|1.3||
-|cellPaddingLeft|float|Gets and sets the default left cell padding for the row in points.|1.3||
-|cellPaddingRight|float|Gets and sets the default right cell padding for the row in points.|1.3||
-|cellPaddingTop|float|Gets and sets the default top cell padding for the row in points.|1.3||
-|isHeader|bool|Gets a value that indicates whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object. Read-only.|1.3||
+|isHeader|bool|Checks whether the row is a header row. Read-only. To set the number of header rows, use HeaderRowCount on the Table object. Read-only.|1.3||
 |preferredHeight|float|Gets and sets the preferred height of the row in points.|1.3||
 |rowIndex|int|Gets the index of the row in its parent table. Read-only.|1.3||
 |shadingColor|string|Gets and sets the shading color.|1.3||
@@ -36,12 +32,14 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[clear()](#clear)|void|Clears the contents of the row.|1.3|
 |[delete()](#delete)|void|Deletes the entire row.|1.3|
-|[getBorderStyle(borderLocation: string)](#getborderstyleborderlocation-string)|[TableBorderStyle](tableborderstyle.md)|Gets the border style of the cells in the row.|1.3|
-|[insertRows(insertLocation: string, rowCount: number, values: string[][])](#insertrowsinsertlocation-string-rowcount-number-values-string)|void|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|1.3|
+|[getBorder(borderLocation: string)](#getborderborderlocation-string)|[TableBorder](tableborder.md)|Gets the border style of the cells in the row.|WordApiDesktop, 1.3|
+|[getCellPadding(cellPaddingLocation: CellPaddingLocation)](#getcellpaddingcellpaddinglocation-cellpaddinglocation)|[float?](float?.md)|Gets cell padding in points.|WordApiDesktop, 1.3|
+|[insertRows(insertLocation: string, rowCount: number, values: string[][])](#insertrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 |[merge()](#merge)|[TableCell](tablecell.md)|Merges the row into one cell.|WordApiDesktop, 1.3|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.|1.3|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.|1.3|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the row and navigates the Word UI to it.|1.3|
+|[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|WordApiDesktop, 1.3|
 
 ## Method Details
 
@@ -74,12 +72,12 @@ None
 #### Returns
 void
 
-### getBorderStyle(borderLocation: string)
+### getBorder(borderLocation: string)
 Gets the border style of the cells in the row.
 
 #### Syntax
 ```js
-tableRowObject.getBorderStyle(borderLocation);
+tableRowObject.getBorder(borderLocation);
 ```
 
 #### Parameters
@@ -88,7 +86,23 @@ tableRowObject.getBorderStyle(borderLocation);
 |borderLocation|string|Required. The border location.  Possible values are: Top, Left, Bottom, Right, InsideHorizontal, InsideVertical, Inside, Outside, All|
 
 #### Returns
-[TableBorderStyle](tableborderstyle.md)
+[TableBorder](tableborder.md)
+
+### getCellPadding(cellPaddingLocation: CellPaddingLocation)
+Gets cell padding in points.
+
+#### Syntax
+```js
+tableRowObject.getCellPadding(cellPaddingLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|cellPaddingLocation|CellPaddingLocation|Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.|
+
+#### Returns
+[float?](float?.md)
 
 ### insertRows(insertLocation: string, rowCount: number, values: string[][])
 Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.
@@ -101,12 +115,12 @@ tableRowObject.insertRows(insertLocation, rowCount, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|insertLocation|string|Where the new rows should be inserted, relative to the current row. It can be 'Before' or 'After'. Required. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+|insertLocation|string|Required. Where the new rows should be inserted, relative to the current row. It can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |rowCount|number|Required. Number of rows to add|
-|values|string[][]|Optional. Strings to insert in the new rows, specified as a 2D array. The number of cells in each row must not exceed the number of cells in the existing row. Optional.|
+|values|string[][]|Optional. Optional. Strings to insert in the new rows, specified as a 2D array. The number of cells in each row must not exceed the number of cells in the existing row.|
 
 #### Returns
-void
+[TableRowCollection](tablerowcollection.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -153,7 +167,7 @@ tableRowObject.search(searchText, searchOptions);
 |searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
+[RangeCollection](rangecollection.md)
 
 ### select(selectionMode: string)
 Selects the row and navigates the Word UI to it.
@@ -167,6 +181,23 @@ tableRowObject.select(selectionMode);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
+
+#### Returns
+void
+
+### setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)
+Sets cell padding in points.
+
+#### Syntax
+```js
+tableRowObject.setCellPadding(cellPaddingLocation, cellPadding);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|cellPaddingLocation|CellPaddingLocation|Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.|
+|cellPadding|float|Cell padding value.|
 
 #### Returns
 void

@@ -10,13 +10,13 @@ Contains a collection of [paragraph](paragraph.md) objects.
 |:---------------|:--------|:----------|:----|
 |id|int|Gets the list's id. Read-only.|1.3||
 |levelExistences|bool|Checks whether each of the 9 levels exists in the list. A true value indicates the level exists, which means there is at least one list item at that level. Read-only.|WordApiDesktop, 1.3||
+|levelTypes|string|Gets all 9 level types in the list. Each type can be 'Bullet', 'Number' or 'Picture'. Read-only. Possible values are: Bullet, Number, Picture.|WordApiDesktop, 1.3||
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|levelTypes|[ListLevelType](listleveltype.md)|Gets all 9 level types in the list. Each type can be 'Bullet', 'Number' or 'Picture'. Read-only.|WordApiDesktop, 1.3||
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets paragraphs in the list. Read-only.|1.3||
 
 ## Methods
@@ -24,16 +24,16 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[getLevelFont(level: number)](#getlevelfontlevel-number)|[Font](font.md)|Gets the font of the bullet, number or picture at the specified level in the list.|WordApiDesktop, 1.3|
-|[getLevelParagraphs(level: number)](#getlevelparagraphslevel-number)|[ParagraphCollection](paragraphcollection.md)|Gets the paragraphs that occur at a specified level in the list.|1.3|
+|[getLevelParagraphs(level: number)](#getlevelparagraphslevel-number)|[ParagraphCollection](paragraphcollection.md)|Gets the paragraphs that occur at the specified level in the list.|1.3|
 |[getLevelPicture(level: number)](#getlevelpicturelevel-number)|string|Gets the base64 encoded string representation of the picture at the specified level in the list.|WordApiDesktop, 1.3|
 |[getLevelString(level: number)](#getlevelstringlevel-number)|string|Gets the bullet, number or picture at the specified level as a string.|WordApiDesktop, 1.3|
 |[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 |[resetLevelFont(level: number, resetFontName: bool)](#resetlevelfontlevel-number-resetfontname-bool)|void|Resets the font of the bullet, number or picture at the specified level in the list.|WordApiDesktop, 1.3|
 |[setLevelAlignment(level: number, alignment: string)](#setlevelalignmentlevel-number-alignment-string)|void|Sets the alignment of the bullet, number or picture at the specified level in the list.|WordApiDesktop, 1.3|
-|[setLevelBullet(level: number, listBullet: ListBullet, charCode: number, fontName: string)](#setlevelbulletlevel-number-listbullet-listbullet-charcode-number-fontname-string)|void|Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.|WordApiDesktop, 1.3|
+|[setLevelBullet(level: number, listBullet: string, charCode: number, fontName: string)](#setlevelbulletlevel-number-listbullet-string-charcode-number-fontname-string)|void|Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.|WordApiDesktop, 1.3|
 |[setLevelIndents(level: number, textIndent: float, textIndent: float)](#setlevelindentslevel-number-textindent-float-textindent-float)|void|Sets the two indents of the specified level in the list.|WordApiDesktop, 1.3|
-|[setLevelNumbering(level: number, listNumbering: ListNumbering, formatString: object[])](#setlevelnumberinglevel-number-listnumbering-listnumbering-formatstring-object)|void|Sets the numbering format at the specified level in the list.|WordApiDesktop, 1.3|
+|[setLevelNumbering(level: number, listNumbering: string, formatString: object[])](#setlevelnumberinglevel-number-listnumbering-string-formatstring-object)|void|Sets the numbering format at the specified level in the list.|WordApiDesktop, 1.3|
 |[setLevelPicture(level: number, base64EncodedImage: string)](#setlevelpicturelevel-number-base64encodedimage-string)|void|Sets the picture at the specified level in the list.|WordApiDesktop, 1.3|
 |[setLevelStartingNumber(level: number, startingNumber: number)](#setlevelstartingnumberlevel-number-startingnumber-number)|void|Sets the starting number at the specified level in the list. Default value is 1.|WordApiDesktop, 1.3|
 
@@ -57,7 +57,7 @@ listObject.getLevelFont(level);
 [Font](font.md)
 
 ### getLevelParagraphs(level: number)
-Gets the paragraphs that occur at a specified level in the list.
+Gets the paragraphs that occur at the specified level in the list.
 
 #### Syntax
 ```js
@@ -171,7 +171,7 @@ listObject.setLevelAlignment(level, alignment);
 #### Returns
 void
 
-### setLevelBullet(level: number, listBullet: ListBullet, charCode: number, fontName: string)
+### setLevelBullet(level: number, listBullet: string, charCode: number, fontName: string)
 Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.
 
 #### Syntax
@@ -183,7 +183,7 @@ listObject.setLevelBullet(level, listBullet, charCode, fontName);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |level|number|Required. The level in the list.|
-|listBullet|ListBullet|Required. The bullet.|
+|listBullet|string|Required. The bullet.  Possible values are: Custom, Solid, Hollow, Square, Diamonds, Arrow, Checkmark|
 |charCode|number|Optional. Optional. The bullet character's code value. Used only if the bullet is 'Custom'.|
 |fontName|string|Optional. Optional. The bullet's font name. Used only if the bullet is 'Custom'.|
 
@@ -208,7 +208,7 @@ listObject.setLevelIndents(level, textIndent, textIndent);
 #### Returns
 void
 
-### setLevelNumbering(level: number, listNumbering: ListNumbering, formatString: object[])
+### setLevelNumbering(level: number, listNumbering: string, formatString: object[])
 Sets the numbering format at the specified level in the list.
 
 #### Syntax
@@ -220,7 +220,7 @@ listObject.setLevelNumbering(level, listNumbering, formatString);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |level|number|Required. The level in the list.|
-|listNumbering|ListNumbering|Required. The ordinal format.|
+|listNumbering|string|Required. The ordinal format.  Possible values are: None, Arabic, UpperRoman, LowerRoman, UpperLetter, LowerLetter, Ordinal, CardinalText, OrdinalText|
 |formatString|object[]|Optional. Optional. The numbering string format defined as an array of strings and/or integers. Each integer is a level of number type that is higher than or equal to this level. For example, an array of ["(", level - 1, ".", level, ")"] can define the format of "(2.c)", where 2 is the parent's item number and c is this level's item number.|
 
 #### Returns

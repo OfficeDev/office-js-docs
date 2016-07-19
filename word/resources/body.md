@@ -8,7 +8,8 @@ Represents the body of a document or a section.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|style|string|Gets or sets the style used for the body. This is the name of the pre-installed or custom style.|1.1||
+|style|string|Gets or sets the style name for the body. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|1.1||
+|styleBuiltIn|string|Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1.|1.3||
 |text|string|Gets the text of the body. Use the insertText method to insert text. Read-only.|1.1||
 |type|string|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only. Possible values are: Unknown, MainDoc, Section, Header, Footer, TableCell.|1.3||
 
@@ -24,6 +25,7 @@ _See property access [examples.](#property-access-examples)_
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the body. Read-only.|1.1||
 |parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3||
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Returns null if there isn't a parent content control. Read-only.|1.1||
+|parentSection|[Section](section.md)|Gets the parent section of the body. Read-only.|1.3||
 |tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|1.3||
 
 ## Methods
@@ -44,7 +46,7 @@ _See property access [examples.](#property-access-examples)_
 |[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|1.3|
 |[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|1.1|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|1.1|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the body and navigates the Word UI to it.|1.1|
 
 ## Method Details
@@ -185,7 +187,7 @@ bodyObject.getRange(rangeLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start' or 'End'.  Possible values are: Whole, Start, End|
+|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.  Possible values are: Whole, Start, End|
 
 #### Returns
 [Range](range.md)
@@ -599,7 +601,7 @@ bodyObject.search(searchText, searchOptions);
 |searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
+[RangeCollection](rangecollection.md)
 
 #### Examples
 ```js

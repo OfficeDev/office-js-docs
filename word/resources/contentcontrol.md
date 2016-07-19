@@ -14,7 +14,8 @@ Represents a content control. Content controls are bounded and potentially label
 |color|string|Gets or sets the color of the content control. Color is specified in '#RRGGBB' format or by using the color name.|1.1||
 |placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty.|1.1||
 |removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|1.1||
-|style|string|Gets or sets the style used for the content control. This is the name of the pre-installed or custom style.|1.1||
+|style|string|Gets or sets the style name for the content control. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|1.1||
+|styleBuiltIn|string|Gets or sets the built-in style name for the content control. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1.|1.3||
 |subtype|string|Gets the content control subtype. The subtype can be 'RichTextInline', 'RichTextParagraphs', 'RichTextTableCell', 'RichTextTableRow' and 'RichTextTable' for rich text content controls. Read-only. Possible values are: RichText, Unknown, RichTextInline, RichTextParagraphs, RichTextTableCell, RichTextTableRow, RichTextTable, PlainTextInline, PlainTextParagraph, Picture, BuildingBlockGallery, CheckBox, ComboBox, DropDownList, DatePicker, RepeatingSection, PlainText.|1.3||
 |tag|string|Gets or sets a tag to identify a content control.|1.1||
 |text|string|Gets the text of the content control. Read-only.|1.1||
@@ -32,6 +33,7 @@ _See property access [examples.](#property-access-examples)_
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the content control. The collection does not include floating images. Read-only.|1.1||
 |lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the content control. Read-only.|1.3||
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Get the collection of paragraph objects in the content control. Read-only.|1.1||
+|parentBody|[Body](body.md)|Gets the parent body of the content control. Read-only.|1.3||
 |parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the content control. Returns null if there isn't a parent content control. Read-only.|1.1||
 |parentTable|[Table](table.md)|Gets the table that contains the content control. Returns null if it is not contained in a table. Read-only.|1.3||
 |parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains the content control. Returns null if it is not contained in a table cell. Read-only.|1.3||
@@ -46,7 +48,7 @@ _See property access [examples.](#property-access-examples)_
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|1.1|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|1.1|
 |[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the whole content control, or the starting or ending point of the content control, as a range.|1.3|
-|[getTextRanges(punctuationMarks: string[], trimSpacing: bool)](#gettextrangespunctuationmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the content control by using punctuation marks andor space character.|1.3|
+|[getTextRanges(endingMarks: string[], trimSpacing: bool)](#gettextrangesendingmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the content control by using punctuation marks andor other ending marks.|1.3|
 |[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. This method cannot be used with 'RichTextTable', 'RichTextTableRow' and 'RichTextTableCell' content controls.|1.1|
 |[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
 |[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
@@ -56,7 +58,7 @@ _See property access [examples.](#property-access-examples)_
 |[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|1.3|
 |[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|1.1|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|1.1|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|1.1|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the content control. This causes Word to scroll to the selection.|1.1|
 |[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the content control into child ranges by using delimiters.|1.3|
 
@@ -295,23 +297,23 @@ contentControlObject.getRange(rangeLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start' or 'End'.  Possible values are: Whole, Start, End|
+|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Before', 'Start', 'End', 'After' or 'Content'.  Possible values are: Whole, Start, End|
 
 #### Returns
 [Range](range.md)
 
-### getTextRanges(punctuationMarks: string[], trimSpacing: bool)
-Gets the text ranges in the content control by using punctuation marks andor space character.
+### getTextRanges(endingMarks: string[], trimSpacing: bool)
+Gets the text ranges in the content control by using punctuation marks andor other ending marks.
 
 #### Syntax
 ```js
-contentControlObject.getTextRanges(punctuationMarks, trimSpacing);
+contentControlObject.getTextRanges(endingMarks, trimSpacing);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|punctuationMarks|string[]|Required. The punctuation marks and/or space character as an array of strings.|
+|endingMarks|string[]|Required. The punctuation marks and/or other ending marks as an array of strings.|
 |trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
 
 #### Returns
@@ -727,7 +729,7 @@ contentControlObject.search(searchText, searchOptions);
 |searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
+[RangeCollection](rangecollection.md)
 
 #### Examples
 
