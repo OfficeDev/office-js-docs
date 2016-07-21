@@ -1,15 +1,12 @@
 # Word JavaScript APIs
 
-Welcome to the Word JavaScript API documentation repository. Here you'll find what you'll need to create the next generation of Word add-ins in Office 2016 for Windows (if you can't find it, open an issue). The new Word JavaScript APIs provide Word-specific functionality related to documents, paragraphs, content controls, and other common Word objects. This API complements the functionality of our existing Office.js library. 
+Welcome to the Word JavaScript API open specification documentation. The Word JavaScript API provides Word-specific functionality related to documents, paragraphs, content controls, and other common Word objects. This API complements the functionality of our existing Office.js library. This branch documents the new APIs that our team is working on and plans to ship in the next few months.
 
-This documentation is [published on MSDN](https://msdn.microsoft.com/EN-US/library/office/mt616496.aspx). 
+## Introduction to Word JavaScript API 1.3 
 
-## Introduction to Word JS APIs 1.3 
-This branch contains the new APIs that our team is working on. We are plan to ship these changes in the next few months. This is a great time to give feedback on these APIs.
+This section describes the new set of Word JavaScript APIs that are planned for the next release (requirement set 1.3). To provide feedback on the new APIs, use the links in the following table to open issues in GitHub. 
 
-This section describes the new set of Word JavaScript APIs that are being planned for the next release (Requirement Set 1.3). Please review and provide your feedback. Provide your feedback by opening new issues in GitHub using the links in the table. 
-
-_**Note**: The listed features are still under the design and review phase and are not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
+_**Note**: The features listed are still in the design and review phase and are not yet available as part of the product. The final design is subject to change. When the feature is made available, the final specification will be published as part of the master repository._
 
 ### FEATURES
 
@@ -214,13 +211,13 @@ _**Note**: The listed features are still under the design and review phase and a
 
 ## Try it out 
 
-_**Note**: New features cannot be tried out right now._
+_**Note**: This feature is not currently available for new features._
 
 
-We've been working on a Snippet Explorer to let you browse through common code snippets and learn how the new APIs work. Give it a try. The code snippets referenced by the Snippet Explorer are available [here](https://officesnippetexplorer.azurewebsites.net/#/snippets/word). 
+We've been working on a Snippet Explorer that you can use to browse through common code snippets and learn how the new APIs work. Give it a try. You can find the code snippets referenced by the Snippet Explorer at [Office 2016 JavaScript API Snippet Explorer (Preview)](https://officesnippetexplorer.azurewebsites.net/#/snippets/word). 
 
 ## Give feedback
 
-We need it, you want to give it. Feedback is much easier to give now that we're on GitHub. Check out the docs and let us know about any [issues](https://github.com/OfficeDev/office-js-docs/issues) you find in those docs by submitting issues directly in this repository. Let us know what you think about the APIs and the general programming experience. 
+We need it, you want to give it. Feedback is much easier to give now that we're on GitHub. Check out the docs and let us know your feedback by submitting [issues](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository. 
 
-We suggest you use the tags [office-js] and [word] on StackOverflow for asking questions to the community.
+For API support, you can post questions to the community on [StackOverflow](http://stackoverflow.com/questions/tagged/office-js) and tag them with [office-js] and [word].
