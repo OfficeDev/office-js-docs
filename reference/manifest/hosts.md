@@ -6,34 +6,36 @@ When included in the [VersionOverrides](./versionoverrides.md) node, this elemen
 
 ## Child elements
 
-|  Element |  Required  |  Description  |
-|:-----|:-----|:-----|
-|  [Host](#host-element)    |  Yes   |  Describes a host and its settings. |
+| Element               | Required | Description |
+|:----------------------|:--------:|:------------|
+| [Host](#host-element) | Yes      | Describes a host and its settings. |
 
-> ** Note: ** Outlook requires `Hosts`to contain a `Host` definition for `MailHost`.
 
 ---- 
 
 ## Host element
-Specifies an individual Office application type where the add-in should activate, such as “document”, “workbook”, “presentation”, “project”, “mailbox”.
+Specifies an individual Office application type where the add-in should activate.
 
 ### Attributes
 
-|  Attribute  |  Required  |  Description  |
-|:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Yes  | Describes the Office host these settings apply to.|
+| Attribute            | Required | Description |
+|:---------------------|:--------:|:------------|
+| [xsi:type](#xsitype) |  Yes     | Describes the Office host these settings apply to.|
 
 ### Child elements
 
-|  Element |  Required  |  Description  |
-|:-----|:-----|:-----|
-|  [FormFactor](./formfactor.md)    |  Yes   |  Defines the form factor affected. |
+| Element                       | Required | Description |
+|:------------------------------|:--------:|:------------|
+| [FormFactor](./formfactor.md) |  Yes     | Defines the form factor affected. |
 
 
 ### xsi:type
 Controls which Office host (Word, Excel, PowerPoint, Outlook) the contained settings apply too. The value must be one of the following:
 
-- `MailHost` (Outlook)    
+- `MailHost` (Outlook)
+- `Document` (Word)
+- `Presentation` (PowerPoint)
+- `Workbook` (Excel)
 
 
 ### FormFactor
