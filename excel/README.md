@@ -6,6 +6,9 @@ Below links describes the new set of Excel JavaScript APIs that are being planne
 
 _**Note**: below listed features are still under design and review phase and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
+# Conditional formatting
+
+Please refer [here](resources/condformatexamples.md) for list of scenarios and examples.
 
 # Pivot Table
 |Resources|What's new| Description| Give feedback|
