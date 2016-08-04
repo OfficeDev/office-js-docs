@@ -111,10 +111,6 @@ Please refer [here](resources/condformatexamples.md) for list of scenarios and e
 |:-----|:-----|:-----|:-----|
 |[namedItemCollection](/excel/resources/nameditemcollection.md)|_Method_ > [getItemOrNull(name: string)](/excel/resources/nameditemcollection.md#getitemornullname-string)|Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-namedItemCollection-getItemOrNull)|
 
-
-
-
-
 ## Your feedback is important to us 
 
 
