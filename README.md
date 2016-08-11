@@ -1,4 +1,4 @@
-## Introduction to Excel JS APIs 1.3 
+## Introduction to Excel JS APIs 1.4 
 
 _Applies to: Excel 2016, Excel Online, Excel for iOS, Excel for Mac
 
