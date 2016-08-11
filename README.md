@@ -2,7 +2,7 @@
 
 _Applies to: Excel 2016, Excel Online, Excel for iOS, Excel for Mac
 
-Below links describes the new set of Excel JavaScript APIs that are being planned for the next release (Requirement Set 1.3). Please review and provide your feedback. One of the best ways of providing your input is by opening new issue in GitHub using the links available below. 
+Below links describes the new set of Excel JavaScript APIs that are being planned for the next release (Requirement Set 1.4). Please review and provide your feedback. One of the best ways of providing your input is by opening new issue in GitHub using the links available below. 
 
 _**Note**: below listed features are still under design and review phase and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
