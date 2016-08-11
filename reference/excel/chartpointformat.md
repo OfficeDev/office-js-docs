@@ -1,4 +1,6 @@
-# ChartPointFormat object (JavaScript API for Excel)
+# ChartPointFormat Object (JavaScript API for Excel)
+
+_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
 
 Represents formatting object for chart points.
 
@@ -7,21 +9,21 @@ Represents formatting object for chart points.
 None
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart, which includes background formating information. Read-only.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart, which includes background formating information. Read-only.|1.1||
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
 
 
 ### load(param: object)
-Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
 ```js
@@ -30,8 +32,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|param|object|Optional. Accepts parameter and relationship names as a delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|:---------------|:--------|:----------|:---|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
