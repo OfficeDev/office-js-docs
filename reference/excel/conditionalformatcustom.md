@@ -1,4 +1,4 @@
-# CustomConditionalFormat Object (JavaScript API for Excel)
+# ConditionalFormatCustom Object (JavaScript API for Excel)
 
 _Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
 

@@ -12,6 +12,7 @@ Represents a rule, for all traditional ruleformat pairings.
 |datesOccurring|string|Takes a date-like enumeration to format cells based on. Possible values are: Yesterday, Today, Tomorrow, LastSevenDays, LastWeek, ThisWeek, NextWeek, LastMonth, ThisMonth, NextMonth.|1.3||
 |error|bool|If true, formats cells with errors. If false, formats cells without errors.|1.3||
 |formula|string|Represents all formula-based expressions, as a string.|1.3||
+|type|string|Tells what type of rule is being applied. If multiple exist, the first occurred is the one that is applied. Possible values are: Formula, Between, NotBetween, Count, Percent, Average, Blank, Unique, Error, TextContains, DateOccurring.|1.3||
 |unique|bool|If true, formats unique cells. If false, formats duplicate cells.|1.3||
 
 _See property access [examples.](#property-access-examples)_
@@ -26,7 +27,6 @@ _See property access [examples.](#property-access-examples)_
 |numberRule|[ConditionalFormatNumericalRule](conditionalformatnumericalrule.md)|Represents a numerical comparison rule type.|1.3||
 |percent|[ConditionalFormatPercentValueRule](conditionalformatpercentvaluerule.md)|Represents the top or bottom percentage of items to be formatted.|1.3||
 |textContains|[ConditionalFormatStringRule](conditionalformatstringrule.md)|Represents all text-contains or string based rules on cells.|1.3||
-|type|[ConditionalFormatCustomRuleType](conditionalformatcustomruletype.md)|Tells what type of rule is being applied. If multiple exist, the first occurred is the one that is applied.|1.3||
 
 ## Methods
 

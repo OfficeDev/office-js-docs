@@ -19,7 +19,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |colorScaleOrNull|[ConditionalFormatColorScale](conditionalformatcolorscale.md)|Represents a conditional format that applies a color scale on a range based on minimum, maximum, and Read-only.|1.3||
-|customOrNull|[CustomConditionalFormat](customconditionalformat.md)|A custom conditional format and rule. Read-only.|1.3||
+|customOrNull|[ConditionalFormatCustom](conditionalformatcustom.md)|A custom conditional format and rule. Read-only.|1.3||
 |dataBarOrNull|[ConditionalFormatDataBar](conditionalformatdatabar.md)|Represents databars with customizable color, gradient, axis, and range format options. Read-only.|1.3||
 |iconOrNull|[ConditionalFormatIcon](conditionalformaticon.md)|Represents a conditional format that applies icons based on criteria. The criteria can Read-only.|1.3||
 

@@ -11,6 +11,7 @@ A format object encapsulating the range's font, fill, borders, alignment, and ot
 |columnWidth|double|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|1.2||
 |horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|1.1||
 |rowHeight|double|Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.|1.2||
+|style|string|Returns the preset style, if one is used on a range. A null value indicates there is no preset style. Possible values are: Normal, Good, Bad, Neutral, Calculation, CheckCell, ExplanatoryText, Input, LinkedCell, Note, Output, WarningText, Heading1, Heading2, Heading3, Heading4, Title, Total, None.|1.2||
 |verticalAlignment|string|Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.|1.1||
 |wrapText|bool|Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting|1.1||
 
