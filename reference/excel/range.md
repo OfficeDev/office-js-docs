@@ -31,6 +31,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|conditionalFormats|[ConditionalFormatCollection](conditionalformatcollection.md)|Returns a Collection of conditional formats that overlap this range Read-only.|1.3||
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|1.1||
 |sort|[RangeSort](rangesort.md)|Represents the range sort of the current range. Read-only.|1.2||
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|1.1||
