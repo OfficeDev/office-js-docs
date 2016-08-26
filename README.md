@@ -70,7 +70,7 @@ Represents an individual custom property.
 |:---------------|:--------|:----------|
 |key|`string`|Key value of the property. `key` value is case-sensitive. |
 |value|_varies_|Value of the property. Note: some of the values may be read-only. |
-|datatype|`string`|Datatype of the value. Could be one of the following: `string` or `number` or `date` or `boolean`|
+|type|`string`|Type of the value. Could be one of the following: `string` or `number` or `date` or `boolean`. Read-only.|
 
 ##### Get or set built-in property
 
@@ -187,7 +187,7 @@ customPropertiesCollection.set(key);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |key|`string`|Key of the property to be set.|
-|value|_variable_|Value of the property to be set (created or updated). Datatype can vary: `string` or `number` or `date` or `boolean`|
+|value|_variable_|Value of the property to be set (created or updated). Type can vary: `string` or `number` or `date` or `boolean`|
 
 Note: The datatype is implied based on the JavaScript type of the value and properly set on the `property` object.
 
