@@ -19,6 +19,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |colorScaleOrNull|[ConditionalFormatColorScale](conditionalformatcolorscale.md)|Represents a conditional format that applies a color scale on a range based on minimum, maximum, and Read-only.|1.3||
+|colorScale|[NullableConditionalFormatColorScale](conditionalformatcolorscale.md)|Represents a conditional format that applies a color scale on a range based on minimum, maximum, and Read-only.|1.3||
 |customOrNull|[ConditionalFormatCustom](conditionalformatcustom.md)|A custom conditional format and rule. Read-only.|1.3||
 |dataBarOrNull|[ConditionalFormatDataBar](conditionalformatdatabar.md)|Represents databars with customizable color, gradient, axis, and range format options. Read-only.|1.3||
 |iconOrNull|[ConditionalFormatIcon](conditionalformaticon.md)|Represents a conditional format that applies icons based on criteria. The criteria can Read-only.|1.3||
@@ -29,7 +30,8 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|Deletes this conditional format from all ranges it affects.|1.3|
 |[deleteFromCurrentRange()](#deletefromcurrentrange)|void|Removes this conditional format from the current range. The conditional format will only be removed for the cells of the|1.3|
-|[getRangeOrNull()](#getrangeornull)|[Range](range.md)|Gets the entire range the conditional format affects, unless it is discontiguous, in which case it will return null.|1.3|
+|[getRange()](#getrangeornull)|[Range](range.md)|Gets the entire range the conditional format affects, unless it is discontiguous, in which case it will return null.|1.3|
+|[getRangeOrNull()](#getrangeornull)|[NullableRange](range.md)|Gets the entire range the conditional format affects, unless it is discontiguous, in which case it will return null.|1.3|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
 
 ## Method Details
