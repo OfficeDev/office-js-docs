@@ -4,7 +4,7 @@ Welcome to the Office JavaScript API documentation. Here you can find everything
 In order to try the Preview APIs please make sure to 
 1. Get on the First Release so you can get the latest Word! Follow the instructions here: https://github.com/OfficeDev/office-js-docs/blob/215f5d35490c943cc06c29b98357ba8cb034ec81/docs/develop/install-latest-office-version.md
 
-2. Use the PREVEW CDN for OFfice.js:https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+2. Use the PREVEW CDN for Office.js:https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
 3. Code and provide feedback!!!
 
 
