@@ -1,14 +1,16 @@
-# ParagraphCollection Object (JavaScript API for Word)
+# TableRowCollection Object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac, Word Online_
 
-Contains a collection of [paragraph](paragraph.md) objects.
+Contains the collection of the document's TableRow objects.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|[1.1](../reqset/word-requirement.md)|
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|[1.3](../reqset/word-requirement.md)|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -18,57 +20,42 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFirst()](#getfirst)|[Paragraph](paragraph.md)|Gets the first paragraph in this collection.|[1.3](../reqset/word-requirement.md)|
-|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|[1.1](../reqset/word-requirement.md)|
-|[getLast()](#getlast)|[Paragraph](paragraph.md)|Gets the last paragraph in this collection.|[1.3](../reqset/word-requirement.md)|
+|[getFirst()](#getfirst)|[TableRow](tablerow.md)|Gets the first row in this collection.|[1.3](../reqset/word-requirement.md)|
+|[getItem(index: number)](#getitemindex-number)|[TableRow](tablerow.md)|Gets a table row object by its index in the collection.|[1.3](../reqset/word-requirement.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
 
 ## Method Details
 
 
 ### getFirst()
-Gets the first paragraph in this collection.
+Gets the first row in this collection.
 
 #### Syntax
 ```js
-paragraphCollectionObject.getFirst();
+tableRowCollectionObject.getFirst();
 ```
 
 #### Parameters
 None
 
 #### Returns
-[Paragraph](paragraph.md)
+[TableRow](tablerow.md)
 
 ### getItem(index: number)
-Gets a paragraph object by its index in the collection.
+Gets a table row object by its index in the collection.
 
 #### Syntax
 ```js
-paragraphCollectionObject.getItem(index);
+tableRowCollectionObject.getItem(index);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|index|number|A number that identifies the index location of a paragraph object.|
+|index|number|A number that identifies the index location of a table row object.|
 
 #### Returns
-[Paragraph](paragraph.md)
-
-### getLast()
-Gets the last paragraph in this collection.
-
-#### Syntax
-```js
-paragraphCollectionObject.getLast();
-```
-
-#### Parameters
-None
-
-#### Returns
-[Paragraph](paragraph.md)
+[TableRow](tablerow.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

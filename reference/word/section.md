@@ -1,26 +1,29 @@
-# Section object (JavaScript API for Word)
+# Section Object (JavaScript API for Word)
+
+_Word 2016, Word for iPad, Word for Mac, Word Online_
 
 Represents a section in a Word document.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac_
-
 ## Properties
+
 None
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|body|[Body](body.md)|Gets the body of the section. This does not include the headerfooter and other section metadata. Read-only.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|body|[Body](body.md)|Gets the body object of the section. This does not include the headerfooter and other section metadata. Read-only.|[1.1](../reqset/word-requirement.md)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[getFooter(type: HeaderFooterType)](#getfootertype-headerfootertype)|[Body](body.md)|Gets one of the section's footers.|
-|[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|Gets one of the section's headers.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getFooter(type: HeaderFooterType)](#getfootertype-headerfootertype)|[Body](body.md)|Gets one of the section's footers.|[1.1](../reqset/word-requirement.md)|
+|[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|Gets one of the section's headers.|[1.1](../reqset/word-requirement.md)|
+|[getNext()](#getnext)|[Section](section.md)|Gets the next section.|[1.3](../reqset/word-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
 
-## Method details
+## Method Details
+
 
 ### getFooter(type: HeaderFooterType)
 Gets one of the section's footers.
@@ -32,13 +35,14 @@ sectionObject.getFooter(type);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |type|HeaderFooterType|Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'.|
 
 #### Returns
 [Body](body.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -77,6 +81,7 @@ Word.run(function (context) {
 	}
 });
 ```
+
 ### getHeader(type: HeaderFooterType)
 Gets one of the section's headers.
 
@@ -87,13 +92,14 @@ sectionObject.getHeader(type);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |type|HeaderFooterType|Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'.|
 
 #### Returns
 [Body](body.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -133,6 +139,20 @@ Word.run(function (context) {
 });
 ```
 
+### getNext()
+Gets the next section.
+
+#### Syntax
+```js
+sectionObject.getNext();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Section](section.md)
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -143,12 +163,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
-
-## Support details
-
-Use the [requirement set](https://msdn.microsoft.com/EN-US/library/office/mt590206.aspx) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/dn833104.aspx). 
