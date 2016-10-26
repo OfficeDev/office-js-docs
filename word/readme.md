@@ -14,15 +14,15 @@ _**Note**: The features listed are still in the design and review phase and are 
 |Object| What is new| Description|Req. Set|
 |:----|:----|:----|:----|
 |[application](reference/word/application.md)|_Method_ > [createDocument(base64File: string)](reference/word/application.md#createdocumentbase64file-string)|Creates a new document by using a base64 encoded .docx file.|1.3|
-|[body](../reference/wordbody.md)|_Relationship_ > lists|Gets the collection of list objects in the body. Read-only.|1.3|
-|[body](../reference/wordbody.md)|_Relationship_ > parentBody|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3|
-|[body](../reference/wordbody.md)|_Relationship_ > parentSection|Gets the parent section of the body. Read-only.|1.3|
-|[body](../reference/wordbody.md)|_Relationship_ > styleBuiltIn|Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property.|1.3|
-|[body](../reference/wordbody.md)|_Relationship_ > tables|Gets the collection of table objects in the body. Read-only.|1.3|
-|[body](../reference/wordbody.md)|_Relationship_ > type|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only.|1.3|
-|[body](../reference/wordbody.md)|_Method_ > [getRange(rangeLocation: RangeLocation)](../reference/wordbody.md#getrangerangelocation-rangelocation)|Gets the whole body, or the starting or ending point of the body, as a range.|1.3|
-|[body](../reference/wordbody.md)|_Method_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](../reference/wordbody.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.|1.2|
-|[body](../reference/wordbody.md)|_Method_ > [insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](../reference/wordbody.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|1.3|
+|[body](../reference/word/body.md)|_Relationship_ > lists|Gets the collection of list objects in the body. Read-only.|1.3|
+|[body](../reference/word/body.md)|_Relationship_ > parentBody|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3|
+|[body](../reference/word/body.md)|_Relationship_ > parentSection|Gets the parent section of the body. Read-only.|1.3|
+|[body](../reference/word/body.md)|_Relationship_ > styleBuiltIn|Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property.|1.3|
+|[body](../reference/word/body.md)|_Relationship_ > tables|Gets the collection of table objects in the body. Read-only.|1.3|
+|[body](../reference/word/body.md)|_Relationship_ > type|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only.|1.3|
+|[body](../reference/word/body.md)|_Method_ > [getRange(rangeLocation: RangeLocation)](../reference/word/body.md#getrangerangelocation-rangelocation)|Gets the whole body, or the starting or ending point of the body, as a range.|1.3|
+|[body](../reference/word/body.md)|_Method_ > [insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](../reference/word/body.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.|1.2|
+|[body](../reference/word/body.md)|_Method_ > [insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](../reference/word/body.md#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|1.3|
 |[contentControl](reference/word/contentcontrol.md)|_Relationship_ > lists|Gets the collection of list objects in the content control. Read-only.|1.3|
 |[contentControl](reference/word/contentcontrol.md)|_Relationship_ > parentBody|Gets the parent body of the content control. Read-only.|1.3|
 |[contentControl](reference/word/contentcontrol.md)|_Relationship_ > parentTable|Gets the table that contains the content control. Returns a null object if it is not contained in a table. Read-only.|1.3|
