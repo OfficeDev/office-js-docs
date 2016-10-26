@@ -13,7 +13,7 @@ _**Note**: The features listed are still in the design and review phase and are 
 
 |Object| What is new| Description|Req. Set|
 |:----|:----|:----|:----|
-|[application](reference/word/application.md)|_Method_ > [createDocument(base64File: string)](reference/word/application.md#createdocumentbase64file-string)|Creates a new document by using a base64 encoded .docx file.|1.3|
+|[application](../reference/word/application.md)|_Method_ > [createDocument(base64File: string)](reference/word/application.md#createdocumentbase64file-string)|Creates a new document by using a base64 encoded .docx file.|1.3|
 |[body](../reference/word/body.md)|_Relationship_ > lists|Gets the collection of list objects in the body. Read-only.|1.3|
 |[body](../reference/word/body.md)|_Relationship_ > parentBody|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|1.3|
 |[body](../reference/word/body.md)|_Relationship_ > parentSection|Gets the parent section of the body. Read-only.|1.3|
