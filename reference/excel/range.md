@@ -1,66 +1,69 @@
 # Range Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|1.1||
-|addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.|1.1||
-|cellCount|int|Number of cells in the range. Read-only.|1.1||
-|columnCount|int|Represents the total number of columns in the range. Read-only.|1.1||
-|columnHidden|bool|Represents if all columns of the current range are hidden.|1.2||
-|columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.|1.1||
-|formulas|object[][]|Represents the formula in A1-style notation.|1.1||
-|formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|1.1||
-|formulasR1C1|object[][]|Represents the formula in R1C1-style notation.|1.2||
-|hidden|bool|Represents if all cells of the current range are hidden. Read-only.|1.2||
-|numberFormat|object[][]|Represents Excel's number format code for the given cell.|1.1||
-|rowCount|int|Returns the total number of rows in the range. Read-only.|1.1||
-|rowHidden|bool|Represents if all rows of the current range are hidden.|1.2||
-|rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.|1.1||
-|text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|1.1||
-|valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|1.1||
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|1.1||
+|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|[1.1](../excel-requirement.md)|
+|addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.|[1.1](../excel-requirement.md)|
+|cellCount|int|Number of cells in the range. This API will return -1 if the cell count exceeds 2^31-1 (2,147,483,647). Read-only.|[1.1](../excel-requirement.md)|
+|columnCount|int|Represents the total number of columns in the range. Read-only.|[1.1](../excel-requirement.md)|
+|columnHidden|bool|Represents if all columns of the current range are hidden.|[1.2](../excel-requirement.md)|
+|columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.|[1.1](../excel-requirement.md)|
+|formulas|object[][]|Represents the formula in A1-style notation.|[1.1](../excel-requirement.md)|
+|formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|[1.1](../excel-requirement.md)|
+|formulasR1C1|object[][]|Represents the formula in R1C1-style notation.|[1.2](../excel-requirement.md)|
+|hidden|bool|Represents if all cells of the current range are hidden. Read-only.|[1.2](../excel-requirement.md)|
+|numberFormat|object[][]|Represents Excel's number format code for the given cell.|[1.1](../excel-requirement.md)|
+|rowCount|int|Returns the total number of rows in the range. Read-only.|[1.1](../excel-requirement.md)|
+|rowHidden|bool|Represents if all rows of the current range are hidden.|[1.2](../excel-requirement.md)|
+|rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.|[1.1](../excel-requirement.md)|
+|text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|[1.1](../excel-requirement.md)|
+|valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|[1.1](../excel-requirement.md)|
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|conditionalFormats|[ConditionalFormatCollection](conditionalformatcollection.md)|Returns a Collection of conditional formats that overlap this range Read-only.|1.3||
-|format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|1.1||
-|sort|[RangeSort](rangesort.md)|Represents the range sort of the current range. Read-only.|1.2||
-|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|1.1||
+|conditionalFormats|[ConditionalFormatCollection](conditionalformatcollection.md)|Collection of ConditionalFormats that intersect the range. Read-only.|[1.4](../excel-requirement.md)|
+|format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|[1.1](../excel-requirement.md)|
+|sort|[RangeSort](rangesort.md)|Represents the range sort of the current range. Read-only.|[1.2](../excel-requirement.md)|
+|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|[1.1](../excel-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|1.1|
-|[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|1.1|
-|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|1.1|
-|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|1.1|
-|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|1.1|
-|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.|1.1|
-|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.|1.1|
-|[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.|1.1|
-|[getIntersectionOrNull(anotherRange: Range or string)](#getintersectionornullanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|1.3|
-|[getLastCell()](#getlastcell)|[Range](range.md)|Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".|1.1|
-|[getLastColumn()](#getlastcolumn)|[Range](range.md)|Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".|1.1|
-|[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|1.1|
-|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|1.1|
-|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|1.1|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|Returns the used range of the given range object.|1.1|
-|[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Represents the visible rows of the current range.|1.3|
-|[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[merge(across: bool)](#mergeacross-bool)|void|Merge the range cells into one region in the worksheet.|1.2|
-|[select()](#select)|void|Selects the specified range in the Excel UI.|1.1|
-|[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|1.2|
+|[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|[1.1](../reqset/excel-requirement.md)|
+|[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|[1.1](../reqset/excel-requirement.md)|
+|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|[1.1](../reqset/excel-requirement.md)|
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|[1.1](../reqset/excel-requirement.md)|
+|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|[1.1](../reqset/excel-requirement.md)|
+|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets a certain number of columns to the right of the current Range object.|[1.2, 1.3](../reqset/excel-requirement.md)|
+|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets a certain number of columns to the left of the current Range object.|[1.2, 1.3](../reqset/excel-requirement.md)|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.|[1.1](../reqset/excel-requirement.md)|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.|[1.1](../reqset/excel-requirement.md)|
+|[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.|[1.1](../reqset/excel-requirement.md)|
+|[getIntersectionOrNull(anotherRange: Range or string)](#getintersectionornullanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|[1.3](../reqset/excel-requirement.md)|
+|[getLastCell()](#getlastcell)|[Range](range.md)|Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".|[1.1](../reqset/excel-requirement.md)|
+|[getLastColumn()](#getlastcolumn)|[Range](range.md)|Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".|[1.1](../reqset/excel-requirement.md)|
+|[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|[1.1](../reqset/excel-requirement.md)|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|[1.1](../reqset/excel-requirement.md)|
+|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.|[1.2, 1.3](../reqset/excel-requirement.md)|
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|[1.1](../reqset/excel-requirement.md)|
+|[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|Gets a certain number of rows above the current Range object.|[1.2, 1.3](../reqset/excel-requirement.md)|
+|[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Gets a certain number of rows below the current Range object.|[1.2, 1.3](../reqset/excel-requirement.md)|
+|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|Returns the used range of the given range object.|[1.1](../reqset/excel-requirement.md)|
+|[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Represents the visible rows of the current range.|[1.3](../reqset/excel-requirement.md)|
+|[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[merge(across: bool)](#mergeacross-bool)|void|Merge the range cells into one region in the worksheet.|[1.2](../reqset/excel-requirement.md)|
+|[select()](#select)|void|Selects the specified range in the Excel UI.|[1.1](../reqset/excel-requirement.md)|
+|[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|[1.2](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -248,6 +251,38 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### getColumnsAfter(count: number)
+Gets a certain number of columns to the right of the current Range object.
+
+#### Syntax
+```js
+rangeObject.getColumnsAfter(count);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|count|number|Optional. The number of columns to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
+
+#### Returns
+[Range](range.md)
+
+### getColumnsBefore(count: number)
+Gets a certain number of columns to the left of the current Range object.
+
+#### Syntax
+```js
+rangeObject.getColumnsBefore(count);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|count|number|Optional. The number of columns to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
+
+#### Returns
+[Range](range.md)
 
 ### getEntireColumn()
 Gets an object that represents the entire column of the range.
@@ -518,6 +553,23 @@ Excel.run(function (ctx) {
 ```
 
 
+### getResizedRange(deltaRows: number, deltaColumns: number)
+Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.
+
+#### Syntax
+```js
+rangeObject.getResizedRange(deltaRows, deltaColumns);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|deltaRows|number|The number of rows by which to expand the bottom-right corner, relative to the current range. Use a positive number to expand the range, or a negative number to decrease it.|
+|deltaColumns|number|The number of columnsby which to expand the bottom-right corner, relative to the current range. Use a positive number to expand the range, or a negative number to decrease it.|
+
+#### Returns
+[Range](range.md)
+
 ### getRow(row: number)
 Gets a row contained in the range.
 
@@ -554,6 +606,38 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### getRowsAbove(count: number)
+Gets a certain number of rows above the current Range object.
+
+#### Syntax
+```js
+rangeObject.getRowsAbove(count);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|count|number|Optional. The number of rows to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
+
+#### Returns
+[Range](range.md)
+
+### getRowsBelow(count: number)
+Gets a certain number of rows below the current Range object.
+
+#### Syntax
+```js
+rangeObject.getRowsBelow(count);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|count|number|Optional. The number of rows to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
+
+#### Returns
+[Range](range.md)
 
 ### getUsedRange(valuesOnly: [ApiSet(Version)
 Returns the used range of the given range object.
@@ -734,7 +818,6 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.select();
 	return ctx.sync(); 
-	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -843,10 +926,13 @@ Excel.run(function (ctx) {
 Get the worksheet containing the range. 
 
 ```js
+/* This might be broken still - it was broken before because it 
+	it was missing 'var', but might still be wrong because of
+	getting information without loading properly. */
 Excel.run(function (ctx) { 
 	var names = ctx.workbook.names;
 	var namedItem = names.getItem('MyRange');
-	range = namedItem.range;
+	var range = namedItem.range;
 	var rangeWorksheet = range.worksheet;
 	rangeWorksheet.load('name');
 	return ctx.sync().then(function() {

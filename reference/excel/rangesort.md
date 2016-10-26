@@ -1,7 +1,5 @@
 # RangeSort Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Manages sorting operations on Range objects.
 
 ## Properties
@@ -16,7 +14,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|1.2|
+|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|[1.2](../reqset/excel-requirement.md)|
 
 ## Method Details
 

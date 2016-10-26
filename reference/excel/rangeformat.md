@@ -1,37 +1,34 @@
 # RangeFormat Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 A format object encapsulating the range's font, fill, borders, alignment, and other properties.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|columnWidth|double|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|1.2||
-|horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|1.1||
-|rowHeight|double|Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.|1.2||
-|style|string|Returns the preset style, if one is used on a range. A null value indicates there is no preset style. Possible values are: Normal, Good, Bad, Neutral, Calculation, CheckCell, ExplanatoryText, Input, LinkedCell, Note, Output, WarningText, Heading1, Heading2, Heading3, Heading4, Title, Total, None.|1.2||
-|verticalAlignment|string|Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.|1.1||
-|wrapText|bool|Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting|1.1||
+|columnWidth|double|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|[1.2](../excel-requirement.md)|
+|horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|[1.1](../excel-requirement.md)|
+|rowHeight|double|Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.|[1.2](../excel-requirement.md)|
+|verticalAlignment|string|Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.|[1.1](../excel-requirement.md)|
+|wrapText|bool|Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|borders|[RangeBorderCollection](rangebordercollection.md)|Collection of border objects that apply to the overall range selected Read-only.|1.1||
-|fill|[RangeFill](rangefill.md)|Returns the fill object defined on the overall range. Read-only.|1.1||
-|font|[RangeFont](rangefont.md)|Returns the font object defined on the overall range selected Read-only.|1.1||
-|protection|[FormatProtection](formatprotection.md)|Returns the format protection object for a range. Read-only.|1.2||
+|borders|[RangeBorderCollection](rangebordercollection.md)|Collection of border objects that apply to the overall range selected Read-only.|[1.1](../excel-requirement.md)|
+|fill|[RangeFill](rangefill.md)|Returns the fill object defined on the overall range. Read-only.|[1.1](../excel-requirement.md)|
+|font|[RangeFont](rangefont.md)|Returns the font object defined on the overall range selected Read-only.|[1.1](../excel-requirement.md)|
+|protection|[FormatProtection](formatprotection.md)|Returns the format protection object for a range. Read-only.|[1.2](../excel-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[autofitColumns()](#autofitcolumns)|void|Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.|1.2|
-|[autofitRows()](#autofitrows)|void|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|1.2|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[autofitColumns()](#autofitcolumns)|void|Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.|[1.2](../reqset/excel-requirement.md)|
+|[autofitRows()](#autofitrows)|void|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|[1.2](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -129,12 +126,12 @@ Excel.run(function (ctx) {
 	var sheetName = "Sheet1";
 	var rangeAddress = "F:G";
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-	range.format.borders('InsideHorizontal').lineStyle = 'Continuous';
-	range.format.borders('InsideVertical').lineStyle = 'Continuous';
-	range.format.borders('EdgeBottom').lineStyle = 'Continuous';
-	range.format.borders('EdgeLeft').lineStyle = 'Continuous';
-	range.format.borders('EdgeRight').lineStyle = 'Continuous';
-	range.format.borders('EdgeTop').lineStyle = 'Continuous';
+	range.format.borders.getItem('InsideHorizontal').style = 'Continuous';
+	range.format.borders.getItem('InsideVertical').style = 'Continuous';
+	range.format.borders.getItem('EdgeBottom').style = 'Continuous';
+	range.format.borders.getItem('EdgeLeft').style = 'Continuous';
+	range.format.borders.getItem('EdgeRight').style = 'Continuous';
+	range.format.borders.getItem('EdgeTop').style = 'Continuous';
 	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);

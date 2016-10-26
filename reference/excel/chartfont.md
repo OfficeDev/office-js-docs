@@ -1,19 +1,17 @@
 # ChartFont Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 This object represents the font attributes (font name, font size, color, etc.) for a chart object.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|bold|bool|Represents the bold status of font.|1.1||
-|color|string|HTML color code representation of the text color. E.g. #FF0000 represents Red.|1.1||
-|italic|bool|Represents the italic status of the font.|1.1||
-|name|string|Font name (e.g. "Calibri")|1.1||
-|size|double|Size of the font (e.g. 11)|1.1||
-|underline|string|Type of underline applied to the font. Possible values are: None, Single.|1.1||
+|bold|bool|Represents the bold status of font.|[1.1](../excel-requirement.md)|
+|color|string|HTML color code representation of the text color. E.g. #FF0000 represents Red.|[1.1](../excel-requirement.md)|
+|italic|bool|Represents the italic status of the font.|[1.1](../excel-requirement.md)|
+|name|string|Font name (e.g. "Calibri")|[1.1](../excel-requirement.md)|
+|size|double|Size of the font (e.g. 11)|[1.1](../excel-requirement.md)|
+|underline|string|Type of underline applied to the font. Possible values are: None, Single.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -25,7 +23,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -57,7 +55,7 @@ Excel.run(function (ctx) {
 	title.format.font.color = "#FF0000";
 	title.format.font.italic =  false;
 	title.format.font.bold = true;
-	title.format.font.underline = false;
+	title.format.font.underline = "None";
 	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -77,7 +75,7 @@ Excel.run(function (ctx) {
 	title.format.font.color = "#FF0000";
 	title.format.font.italic =  false;
 	title.format.font.bold = true;
-	title.format.font.underline = false;
+	title.format.font.underline = "None";
 	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);

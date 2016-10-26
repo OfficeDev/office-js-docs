@@ -1,15 +1,13 @@
 # ChartSeriesCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents a collection of chart series.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of series in the collection. Read-only.|1.1||
-|items|[ChartSeries[]](chartseries.md)|A collection of chartSeries objects. Read-only.|1.1||
+|count|int|Returns the number of series in the collection. Read-only.|[1.1](../excel-requirement.md)|
+|items|[ChartSeries[]](chartseries.md)|A collection of chartSeries objects. Read-only.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,8 +19,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 

@@ -1,14 +1,12 @@
 # Application Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents the Excel application that manages the workbook.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|1.1||
+|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,8 +18,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -44,9 +42,9 @@ void
 
 #### Examples
 ```js
-Excel.run(function (ctx) { 
+Excel.run(function (ctx) {
 	ctx.workbook.application.calculate('Full');
-	return ctx.sync(); 
+	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -54,15 +52,6 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-
-ex2
-
-ex3
-
-ex3
-
-
-
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -81,7 +70,7 @@ object.load(param);
 void
 ### Property access examples
 ```js
-Excel.run(function (ctx) { 
+Excel.run(function (ctx) {
 	var application = ctx.workbook.application;
 	application.load('calculationMode');
 	return ctx.sync().then(function() {

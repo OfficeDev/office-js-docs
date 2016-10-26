@@ -1,7 +1,5 @@
 # ChartAxisTitleFormat Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents the chart axis title formatting.
 
 ## Properties
@@ -11,13 +9,13 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|font|[ChartFont](chartfont.md)|Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.|1.1||
+|font|[ChartFont](chartfont.md)|Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.|[1.1](../excel-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 

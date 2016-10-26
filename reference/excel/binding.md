@@ -1,15 +1,13 @@
 # Binding Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents an Office.js binding that is defined in the workbook.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|id|string|Represents binding identifier. Read-only.|1.1||
-|type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|1.1||
+|id|string|Represents binding identifier. Read-only.|[1.1](../excel-requirement.md)|
+|type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,13 +19,28 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
-|[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
-|[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[delete()](#delete)|void|Deletes the binding.|[1.3](../reqset/excel-requirement.md)|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../reqset/excel-requirement.md)|
+|[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../reqset/excel-requirement.md)|
+|[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
+
+### delete()
+Deletes the binding.
+
+#### Syntax
+```js
+bindingObject.delete();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 
 ### getRange()
 Returns the range represented by the binding. Will throw an error if binding is not of the correct type.
@@ -115,7 +128,7 @@ string
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var text = binding.getText();
-	ctx.load('text');
+	binding.load('text');
 	return ctx.sync().then(function() {
 		console.log(text);
 	});

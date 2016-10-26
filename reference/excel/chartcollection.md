@@ -1,15 +1,13 @@
 # ChartCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 A collection of all the chart objects on a worksheet.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of charts in the worksheet. Read-only.|1.1||
-|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.|1.1||
+|count|int|Returns the number of charts in the worksheet. Read-only.|[1.1](../excel-requirement.md)|
+|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,11 +19,11 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Creates a new chart.|1.1|
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|1.1|
-|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.|1.1|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Creates a new chart.|[1.1](../reqset/excel-requirement.md)|
+|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.1](../reqset/excel-requirement.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.|[1.1](../reqset/excel-requirement.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.3](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -54,10 +52,11 @@ Add a chart of `chartType` "ColumnClustered" on worksheet "Charts" with `sourceD
 
 ```js
 Excel.run(function (ctx) { 
-	var sheetName = "Sheet1";
-	var sourceData = sheetName + "!" + "A1:B4";
-	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
-	return ctx.sync().then(function() {
+	var rangeSelection = "A1:B4";
+	var range = ctx.workbook.worksheets.getItem(sheetName)
+		.getRange(rangeSelection);
+	var chart = ctx.workbook.worksheets.getItem(sheetName)
+		.charts.add("ColumnClustered", range, "auto");	return ctx.sync().then(function() {
 			console.log("New Chart Added");
 	});
 }).catch(function(error) {
@@ -215,7 +214,6 @@ Excel.run(function (ctx) {
 		for (var i = 0; i < charts.items.length; i++)
 		{
 			console.log(charts.items[i].name);
-			console.log(charts.items[i].index);
 		}
 	});
 }).catch(function(error) {

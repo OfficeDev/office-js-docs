@@ -1,15 +1,13 @@
 # TableCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents a collection of all the tables that are part of the workbook.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of tables in the workbook. Read-only.|1.1||
-|items|[Table[]](table.md)|A collection of table objects. Read-only.|1.1||
+|count|int|Returns the number of tables in the workbook. Read-only.|[1.1](../excel-requirement.md)|
+|items|[Table[]](table.md)|A collection of table objects. Read-only.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,17 +19,17 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|1.1|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|1.1|
-|[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|1.1|
-|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID. If the table does not exist, the return object's isNull property will be true.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[add(address: Range or string, hasHeaders: bool)](#addaddress-range-or-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range object or source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|[1.1](../reqset/excel-requirement.md)|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|[1.1](../reqset/excel-requirement.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|[1.1](../reqset/excel-requirement.md)|
+|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID. If the table does not exist, the return object's isNull property will be true.|[1.3](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
 
-### add(address: string, hasHeaders: bool)
-Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.
+### add(address: Range or string, hasHeaders: bool)
+Create a new table. The range object or source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.
 
 #### Syntax
 ```js
@@ -41,7 +39,7 @@ tableCollectionObject.add(address, hasHeaders);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|address|string|Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.|
+|address|Range or string|A Range object, or a string address or name of the range representing the data source. If the address does not contain a sheet name, the currently-active sheet is used. Need requirement set 1.1 for string parameter; 1.3 for accepting a Range object.|
 |hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
 
 #### Returns
@@ -86,8 +84,9 @@ tableCollectionObject.getItem(key);
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
+	table.load('name');
 	return ctx.sync().then(function() {
-			console.log(table.index);
+			console.log(table.name);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -103,6 +102,7 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.getItemAt(0);
+	table.load('name');
 	return ctx.sync().then(function() {
 			console.log(table.name);
 	});
@@ -136,6 +136,7 @@ tableCollectionObject.getItemAt(index);
 ```js
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.getItemAt(0);
+	table.load('name');
 	return ctx.sync().then(function() {
 			console.log(table.name);
 	});
@@ -184,7 +185,7 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tables = ctx.workbook.tables;
-	tables.load('items');
+	tables.load();
 	return ctx.sync().then(function() {
 		console.log("tables Count: " + tables.count);
 		for (var i = 0; i < tables.items.length; i++)

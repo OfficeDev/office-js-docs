@@ -1,15 +1,13 @@
 # ChartPointsCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 A collection of all the chart points within a series inside a chart.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of chart points in the collection. Read-only.|1.1||
-|items|[ChartPoint[]](chartpoint.md)|A collection of chartPoints objects. Read-only.|1.1||
+|count|int|Returns the number of chart points in the collection. Read-only.|[1.1](../excel-requirement.md)|
+|items|[ChartPoint[]](chartpoint.md)|A collection of chartPoints objects. Read-only.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,8 +19,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -48,7 +46,7 @@ Set the border color for the first points in the points collection
 
 ```js
 Excel.run(function (ctx) { 
-	var point = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;
+	var points = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;
 	points.getItemAt(0).format.fill.setSolidColor("8FBC8F");
 	return ctx.sync().then(function() {
 		console.log("Point Border Color Changed");
@@ -81,7 +79,7 @@ Get the names of points in the points collection
 
 ```js
 Excel.run(function (ctx) { 
-	var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
+	var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;
 	pointsCollection.load('items');
 	return ctx.sync().then(function() {
 		console.log("Points Collection loaded");
@@ -98,7 +96,7 @@ Get the number of points
 
 ```js
 Excel.run(function (ctx) { 
-	var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
+	var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;
 	pointsCollection.load('count');
 	return ctx.sync().then(function() {
 		console.log("points: Count= " + pointsCollection.count);

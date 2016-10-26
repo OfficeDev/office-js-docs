@@ -1,14 +1,12 @@
 # NamedItemCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 A collection of all the nameditem objects that are part of the workbook.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|1.1||
+|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,9 +18,9 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|1.1|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|[1.1](../reqset/excel-requirement.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.|[1.3](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -47,27 +45,11 @@ namedItemCollectionObject.getItem(name);
 
 ```js
 Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItem(wSheetName);
+	var sheetName = 'Sheet1';
+	var nameditem = ctx.workbook.names.getItem(sheetName);
 	nameditem.load('type');
 	return ctx.sync().then(function() {
 			console.log(nameditem.type);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-
-#### Examples
-
-```js
-Excel.run(function (ctx) { 
-	var nameditem = ctx.workbook.names.getItemAt(0);
-	nameditem.load('name');
-	return ctx.sync().then(function() {
-			console.log(nameditem.name);
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -128,20 +110,4 @@ Excel.run(function (ctx) {
 });
 ```
 
-Get the number of nameditems.
-
-```js
-Excel.run(function (ctx) { 
-	var nameditems = ctx.workbook.names;
-	nameditems.load('count');
-	return ctx.sync().then(function() {
-		console.log("nameditems: Count= " + nameditems.count);
-	});
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
 

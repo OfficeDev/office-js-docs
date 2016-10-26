@@ -1,16 +1,20 @@
-# ChartLegendFormat Object (JavaScript API for Excel)
+# ConditionalFormatDataBarPositiveFormat Object (JavaScript API for Excel)
 
-Encapsulates the format properties of a chart legend.
+Represents a conditional format DataBar Format for the positive side of the data bar.
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|borderColor|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.4](../excel-requirement.md)|
+|fillColor|string|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.4](../excel-requirement.md)|
+|gradientFill|bool|Boolean representation of whether or not the DataBar has a gradient.|[1.4](../excel-requirement.md)|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|fill|[ChartFill](chartfill.md)|Represents the fill format of an object, which includes background formating information. Read-only.|[1.1](../excel-requirement.md)|
-|font|[ChartFont](chartfont.md)|Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.|[1.1](../excel-requirement.md)|
+None
+
 
 ## Methods
 

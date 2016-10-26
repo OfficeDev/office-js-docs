@@ -1,15 +1,13 @@
 # RangeBorderCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents the border objects that make up range border.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Number of border objects in the collection. Read-only.|1.1||
-|items|[RangeBorder[]](rangeborder.md)|A collection of rangeBorder objects. Read-only.|1.1||
+|count|int|Number of border objects in the collection. Read-only.|[1.1](../excel-requirement.md)|
+|items|[RangeBorder[]](rangeborder.md)|A collection of rangeBorder objects. Read-only.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,9 +19,9 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name|1.1|
-|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name|[1.1](../reqset/excel-requirement.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -74,7 +72,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var border = ctx.workbook.borders.getItemAt(0);
+	var border = range.format.borders.getItemAt(0);
 	border.load('sideIndex');
 	return ctx.sync().then(function() {
 			console.log(border.sideIndex);
@@ -112,7 +110,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var border = ctx.workbook.borders.getItemAt(0);
+	var border = range.format.borders.getItemAt(0);
 	border.load('sideIndex');
 	return ctx.sync().then(function() {
 			console.log(border.sideIndex);

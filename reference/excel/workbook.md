@@ -1,7 +1,5 @@
 # Workbook Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
 ## Properties
@@ -11,20 +9,21 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|application|[Application](application.md)|Represents Excel application instance that contains this workbook. Read-only.|1.1||
-|bindings|[BindingCollection](bindingcollection.md)|Represents a collection of bindings that are part of the workbook. Read-only.|1.1||
-|functions|[Functions](functions.md)|Represents Excel application instance that contains this workbook. Read-only.|1.2||
-|names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.|1.1||
-|pivotTables|[PivotTableCollection](pivottablecollection.md)|Represents a collection of PivotTables associated with the workbook. Read-only.|1.3||
-|tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|1.1||
-|worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|1.1||
+|application|[Application](application.md)|Represents Excel application instance that contains this workbook. Read-only.|[1.1](../excel-requirement.md)|
+|bindings|[BindingCollection](bindingcollection.md)|Represents a collection of bindings that are part of the workbook. Read-only.|[1.1](../excel-requirement.md)|
+|functions|[Functions](functions.md)|Represents Excel application instance that contains this workbook. Read-only.|[1.2](../excel-requirement.md)|
+|names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.|[1.1](../excel-requirement.md)|
+|pivotTables|[PivotTableCollection](pivottablecollection.md)|Represents a collection of PivotTables associated with the workbook. Read-only.|[1.3](../excel-requirement.md)|
+|settings|[SettingCollection](settingcollection.md)|Represents a collection of Settings associated with the workbook. Read-only.|[1.3](../excel-requirement.md)|
+|tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|[1.1](../excel-requirement.md)|
+|worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|[1.1](../excel-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 

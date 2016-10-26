@@ -1,25 +1,23 @@
 # ChartPoint Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents a point of a series in a chart.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|value|object|Returns the value of a chart point. Read-only.|1.1||
+|value|object|Returns the value of a chart point. Read-only.|[1.1](../excel-requirement.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.|1.1||
+|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.|[1.1](../excel-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 

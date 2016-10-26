@@ -1,35 +1,33 @@
 # TableColumn Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents a column in a table.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|id|int|Returns a unique key that identifies the column within the table. Read-only.|1.1||
-|index|int|Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.|1.1||
-|name|string|Returns the name of the table column. Read-only.|1.1||
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|1.1||
+|id|int|Returns a unique key that identifies the column within the table. Read-only.|[1.1](../excel-requirement.md)|
+|index|int|Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.|[1.1](../excel-requirement.md)|
+|name|string|Returns the name of the table column. Read-only.|[1.1](../excel-requirement.md)|
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|filter|[Filter](filter.md)|Retrieve the filter applied to the column. Read-only.|1.2||
+|filter|[Filter](filter.md)|Retrieve the filter applied to the column. Read-only.|[1.2](../excel-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the column from the table.|1.1|
-|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the column.|1.1|
-|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with the header row of the column.|1.1|
-|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire column.|1.1|
-|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with the totals row of the column.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[delete()](#delete)|void|Deletes the column from the table.|[1.1](../reqset/excel-requirement.md)|
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the column.|[1.1](../reqset/excel-requirement.md)|
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with the header row of the column.|[1.1](../reqset/excel-requirement.md)|
+|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire column.|[1.1](../reqset/excel-requirement.md)|
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with the totals row of the column.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -53,7 +51,7 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
 	column.delete();
 	return ctx.sync(); 
 }).catch(function(error) {
@@ -84,7 +82,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var dataBodyRange = column.getDataBodyRange();
 	dataBodyRange.load('address');
 	return ctx.sync().then(function() {
@@ -117,7 +115,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var headerRowRange = columns.getHeaderRowRange();
 	headerRowRange.load('address');
 	return ctx.sync().then(function() {
@@ -150,7 +148,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var columnRange = columns.getRange();
 	columnRange.load('address');
 	return ctx.sync().then(function() {
@@ -184,7 +182,7 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
+	var columns = ctx.workbook.tables.getItem(tableName).columns.getItemAt(0);
 	var totalRowRange = columns.getTotalRowRange();
 	totalRowRange.load('address');
 	return ctx.sync().then(function() {
@@ -219,7 +217,7 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItem(0);
 	column.load('index');
 	return ctx.sync().then(function() {
 		console.log(column.index);
@@ -234,9 +232,10 @@ Excel.run(function (ctx) {
 
 ```js
 Excel.run(function (ctx) { 
+	var tableName = 'Table1';
 	var tables = ctx.workbook.tables;
 	var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
-	var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
+	var column = ctx.workbook.tables.getItem(tableName).columns.getItemAt(2);
 	column.values = newValues;
 	column.load('values');
 	return ctx.sync().then(function() {

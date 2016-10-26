@@ -1,42 +1,40 @@
 # Chart Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents a chart object in a workbook.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|height|double|Represents the height, in points, of the chart object.|1.1||
-|id|string|Gets a chart based on its position in the collection. Read-only.|1.2||
-|left|double|The distance, in points, from the left side of the chart to the worksheet origin.|1.1||
-|name|string|Represents the name of a chart object.|1.1||
-|top|double|Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|1.1||
-|width|double|Represents the width, in points, of the chart object.|1.1||
+|height|double|Represents the height, in points, of the chart object.|[1.1](../excel-requirement.md)|
+|id|string|Gets a chart based on its position in the collection. Read-only.|[1.2](../excel-requirement.md)|
+|left|double|The distance, in points, from the left side of the chart to the worksheet origin.|[1.1](../excel-requirement.md)|
+|name|string|Represents the name of a chart object.|[1.1](../excel-requirement.md)|
+|top|double|Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|[1.1](../excel-requirement.md)|
+|width|double|Represents the width, in points, of the chart object.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|axes|[ChartAxes](chartaxes.md)|Represents chart axes. Read-only.|1.1||
-|dataLabels|[ChartDataLabels](chartdatalabels.md)|Represents the datalabels on the chart. Read-only.|1.1||
-|format|[ChartAreaFormat](chartareaformat.md)|Encapsulates the format properties for the chart area. Read-only.|1.1||
-|legend|[ChartLegend](chartlegend.md)|Represents the legend for the chart. Read-only.|1.1||
-|series|[ChartSeriesCollection](chartseriescollection.md)|Represents either a single series or collection of series in the chart. Read-only.|1.1||
-|title|[ChartTitle](charttitle.md)|Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.|1.1||
-|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current chart. Read-only.|1.2||
+|axes|[ChartAxes](chartaxes.md)|Represents chart axes. Read-only.|[1.1](../excel-requirement.md)|
+|dataLabels|[ChartDataLabels](chartdatalabels.md)|Represents the datalabels on the chart. Read-only.|[1.1](../excel-requirement.md)|
+|format|[ChartAreaFormat](chartareaformat.md)|Encapsulates the format properties for the chart area. Read-only.|[1.1](../excel-requirement.md)|
+|legend|[ChartLegend](chartlegend.md)|Represents the legend for the chart. Read-only.|[1.1](../excel-requirement.md)|
+|series|[ChartSeriesCollection](chartseriescollection.md)|Represents either a single series or collection of series in the chart. Read-only.|[1.1](../excel-requirement.md)|
+|title|[ChartTitle](charttitle.md)|Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.|[1.1](../excel-requirement.md)|
+|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current chart. Read-only.|[1.2](../excel-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the chart object.|1.1|
-|[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|1.2|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Resets the source data for the chart.|1.1|
-|[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|1.1|
+|[delete()](#delete)|void|Deletes the chart object.|[1.1](../reqset/excel-requirement.md)|
+|[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|[1.2](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Resets the source data for the chart.|[1.1](../reqset/excel-requirement.md)|
+|[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -180,8 +178,10 @@ void
 ```js
 Excel.run(function (ctx) { 
 	var sheetName = "Charts";
+	var rangeSelection = "A1:B4";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeSelection);
 	var sourceData = sheetName + "!" + "A1:B4";
-	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("pie", sourceData, "auto");
+	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("pie", range, "auto");
 	chart.width = 500;
 	chart.height = 300;
 	chart.setPosition("C2", null);
@@ -222,7 +222,7 @@ Excel.run(function (ctx) {
 	chart.top = 100;
 	chart.left = 100;
 	chart.height = 200;
-	chart.weight = 200;
+	chart.width = 200;
 	return ctx.sync(); 
 }).catch(function(error) {
 		console.log("Error: " + error);

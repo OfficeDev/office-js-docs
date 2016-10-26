@@ -1,7 +1,5 @@
 # ChartFill Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents the fill formatting for a chart element.
 
 ## Properties
@@ -16,8 +14,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clear the fill color of a chart element.|1.1|
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|1.1|
+|[clear()](#clear)|void|Clear the fill color of a chart element.|[1.1](../reqset/excel-requirement.md)|
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -42,10 +40,10 @@ Clear the line format of the major Gridlines on value axis of the Chart named "C
 
 ```js
 Excel.run(function (ctx) { 
-	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
+	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;	
 	gridlines.format.line.clear();
 	return ctx.sync().then(function() {
-			console.log"Chart Major Gridlines Format Cleared");
+			console.log("Chart Major Gridlines Format Cleared");
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);

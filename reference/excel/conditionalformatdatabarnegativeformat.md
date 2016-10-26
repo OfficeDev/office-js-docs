@@ -1,15 +1,15 @@
-# ConditionalFormatDataBarRule Object (JavaScript API for Excel)
+# ConditionalFormatDataBarNegativeFormat Object (JavaScript API for Excel)
 
-Represents a rule-type for a Data Bar.
+Represents a conditional format DataBar Format for the negative side of the data bar.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|formula|object|The formula, if required, to evaluate the databar rule on.|[1.4](../excel-requirement.md)|
-|formulaLocal|object|The formula, if required, to evaluate the databar rule on in the user's language.|[1.4](../excel-requirement.md)|
-|formulaR1C1|object|The formula, if required, to evaluate the databar rule on in R1C1-style notation.|[1.4](../excel-requirement.md)|
-|type|string|What the databar should be based on. Possible values are: LowestValue, HighestValue, Number, Percent, Formula, Percentile, Automatic.|[1.4](../excel-requirement.md)|
+|borderColor|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.4](../excel-requirement.md)|
+|fillColor|string|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.4](../excel-requirement.md)|
+|matchPositiveBorderColor|bool|Boolean representation of whether or not the negative DataBar has the same border color as the positive DataBar.|[1.4](../excel-requirement.md)|
+|matchPositiveFillColor|bool|Boolean representation of whether or not the negative DataBar has the same fill color as the positive DataBar.|[1.4](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 

@@ -1,14 +1,12 @@
 # PivotTableCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents a collection of all the PivotTables that are part of the workbook or worksheet.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[PivotTable[]](pivottable.md)|A collection of pivotTable objects. Read-only.|1.3||
+|items|[PivotTable[]](pivottable.md)|A collection of pivotTable objects. Read-only.|[1.3](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,10 +18,10 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(name: string)](#getitemname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name.|1.3|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
-|[refreshAll()](#refreshall)|void|Refreshes all the PivotTables in the collection.|1.3|
+|[getItem(name: string)](#getitemname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name.|[1.3](../reqset/excel-requirement.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.|[1.3](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[refreshAll()](#refreshall)|void|Refreshes all the PivotTables in the collection.|[1.3](../reqset/excel-requirement.md)|
 
 ## Method Details
 

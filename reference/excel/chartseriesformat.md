@@ -1,7 +1,5 @@
 # ChartSeriesFormat Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 encapsulates the format properties for the chart series
 
 ## Properties
@@ -11,14 +9,14 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart series, which includes background formating information. Read-only.|1.1||
-|line|[ChartLineFormat](chartlineformat.md)|Represents line formatting. Read-only.|1.1||
+|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart series, which includes background formating information. Read-only.|[1.1](../excel-requirement.md)|
+|line|[ChartLineFormat](chartlineformat.md)|Represents line formatting. Read-only.|[1.1](../excel-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 

@@ -1,15 +1,13 @@
 # TableColumnCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents a collection of all the columns that are part of the table.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of columns in the table. Read-only.|1.1||
-|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.|1.1||
+|count|int|Returns the number of columns in the table. Read-only.|[1.1](../excel-requirement.md)|
+|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,11 +19,11 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|1.1|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|1.1|
-|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|1.1|
-|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.|1.3|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|[1.1, 1.1 requires an index smaller than the total column count; 1.4 allows index to be optional (null or -1](../reqset/excel-requirement.md)|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|[1.1](../reqset/excel-requirement.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|[1.1](../reqset/excel-requirement.md)|
+|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.|[1.3](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
@@ -41,7 +39,7 @@ tableColumnCollectionObject.add(index, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|index|number|Specifies the relative position of the new column. The previous column at this position is shifted to the right. The index value should be equal to or less than the last column's index value, so it cannot be used to append a column at the end of the table. Zero-indexed.|
+|index|number|Optional. Specifies the relative position of the new column. If null or -1, the addition happens at the end. Columns with a higher index will be shifted to the side. Zero-indexed.|
 |values|(boolean or string or number)[][]|Optional. A 2-dimensional array of unformatted values of the table column.|
 
 #### Returns
@@ -87,7 +85,7 @@ tableColumnCollectionObject.getItem(key);
 
 ```js
 Excel.run(function (ctx) { 
-	var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
+	var tablecolumn = ctx.workbook.tables.getItem('Table1').columns.getItem(0);
 	tablecolumn.load('name');
 	return ctx.sync().then(function() {
 			console.log(tablecolumn.name);
@@ -184,7 +182,7 @@ void
 
 ```js
 Excel.run(function (ctx) { 
-	var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
+	var tablecolumns = ctx.workbook.tables.getItem('Table1').columns;
 	tablecolumns.load('items');
 	return ctx.sync().then(function() {
 		console.log("tablecolumns Count: " + tablecolumns.count);

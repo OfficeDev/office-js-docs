@@ -1,15 +1,13 @@
 # TableRowCollection Object (JavaScript API for Excel)
 
-_Excel 2016, Excel Online, Excel for iPad, Excel for Mac_
-
 Represents a collection of all the rows that are part of the table.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of rows in the table. Read-only.|1.1||
-|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|1.1||
+|count|int|Returns the number of rows in the table. Read-only.|[1.1](../excel-requirement.md)|
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|[1.1](../excel-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,15 +19,15 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds a new row to the table.|1.1|
-|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|1.1|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds one or more rows to the table. The return object will be the top of the newly added row(s).|[1.1, 1.1 for adding a single row; 1.4 allows adding of multiple rows.](../reqset/excel-requirement.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
 
 ## Method Details
 
 
 ### add(index: number, values: (boolean or string or number)[][])
-Adds a new row to the table.
+Adds one or more rows to the table. The return object will be the top of the newly added row(s).
 
 #### Syntax
 ```js
@@ -39,7 +37,7 @@ tableRowCollectionObject.add(index, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|index|number|Optional. Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
+|index|number|Optional. Specifies the relative position of the new row. If null or -1, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
 |values|(boolean or string or number)[][]|Optional. A 2-dimensional array of unformatted values of the table row.|
 
 #### Returns
