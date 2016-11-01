@@ -1,18 +1,21 @@
 # Visio JavaScript APIs 1.1
 **Applies to**: Visio Online
+
 Welcome to the Visio JavaScript API documentation. Here you can find everything you need to know about Visio Online extensibility. Enabling Visio JavaScript APIs is the first step in making Visio Online extensible.
-**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
+
+>**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
+
 ## Using Visio JavaScript APIs with embedded Visio diagrams
-An embedded Microsoft Visio diagram is a diagram that is stored in a Microsoft SharePoint document library and displayed inside a SharePoint web page. One way to embed is to display the Visio diagram in an HTML &lt;iframe&gt; element. Then you can use Visio JavaScript APIs to programmatically work with the embedded diagram.
+An embedded Visio diagram is a diagram that is stored in a SharePoint document library and displayed inside a SharePoint web page. One way to embed is to display the Visio diagram in an HTML &lt;iframe&gt; element. Then you can use Visio JavaScript APIs to programmatically work with the embedded diagram.
 
 ![A web page wtih embedded Visio diagram in an iframe followed by JavaScript code](/images/visio-embedded-diagram.jpg)
 
 ## Give us your feedback
-The following links describe a subset of the Visio JavaScript APIs that are being planned as part of the first release. Please review and provide your feedback. One of the best ways of providing your input is by opening new issue in GitHub using the links available below.
+The following links describe a subset of the Visio JavaScript APIs that we're planning to include as part of the first release. We invite you to review the documentation and provide your feedback. One of the best ways to provide your input is to open new issue in GitHub using the links in the following table.
 
-   **Note:** The following features are still in a design and review phase, and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository.
+>**Note:** The following features are still in a design and review phase, and are not yet available as part of the product. The final design is subject to change. When the features are made available, the final specifications will be published as part of the master repository.
 
-|Object| What is new| Description|Feedback|
+|Object| What's new| Description|Feedback|
 |:----|:----|:----|:----|
 |[application](reference/visio/application.md)|_Property_ > showToolbars|Show or Hide the standard toolbars.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=application-showToolbars)|
 |[application](reference/visio/application.md)|_Method_ > [load(param: object)](reference/visio/application.md#loadparam-object)|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-application-load)|
