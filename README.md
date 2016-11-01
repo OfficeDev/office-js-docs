@@ -8,12 +8,9 @@ An embedded Microsoft Visio diagram is a diagram that is stored in a Microsoft S
 ![A web page wtih embedded Visio diagram in an iframe followed by JavaScript code](/images/visio-embedded-diagram.jpg)
 
 ## Give us your feedback
-Your feedback is important to us.
-* To let us know about any questions or issues you find in the docs, [submit an issue](https://github.com/OfficeDev/office-js-docs/issues) in this repository. Make sure you state the version+build number of the client you are using, and provide steps to reproduce the issue, console output, and error messages, as appropriate.
-* We also encourage you to fork, make the fix, and do a pull request of your proposed changes. For details, see [Contribute to this documentation](Contributing.md).
-* To let us know about your programming experience, what you would like to see in future versions, code samples, and so on, enter your suggestions and ideas at [Office Developer Platform UserVoice](https://officespdev.uservoice.com/).
+The following links describe a subset of the Visio JavaScript APIs that are being planned as part of the first release. Please review and provide your feedback. One of the best ways of providing your input is by opening new issue in GitHub using the links available below.
 
-The following table describes the Visio JavaScript APIs that are planned as part of the first release. Please review and provide your feedback. One of the best ways of providing your input is by opening a new issue in GitHub using the feedback links in the table.
+   **Note:** The following features are still in a design and review phase, and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository.
 
 |Object| What is new| Description|Feedback|
 |:----|:----|:----|:----|
