@@ -14,7 +14,7 @@ The following links describe a subset of the Visio JavaScript APIs that are bein
 
 |Object| What is new| Description|Feedback|
 |:----|:----|:----|:----|
-|[application](resources/application.md)|_Property_ > showToolbars|Show or Hide the standard toolbars.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=application-showToolbars)|
+|[application](reference/visio/application.md)|_Property_ > showToolbars|Show or Hide the standard toolbars.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=application-showToolbars)|
 |[application](resources/application.md)|_Method_ > [load(param: object)](resources/application.md#loadparam-object)|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-application-load)|
 |[document](resources/document.md)|_Relationship_ > application|Represents a Visio application instance that contains this document. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=document-application)|
 |[document](resources/document.md)|_Relationship_ > pages|Represents a collection of pages associated with the document. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=document-pages)|
