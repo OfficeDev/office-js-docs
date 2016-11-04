@@ -132,15 +132,12 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[sortField](resources/sortfield.md)|_Property_ > key|Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).|1.2|
 |[sortField](resources/sortfield.md)|_Property_ > sortOn|Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.|1.2|
 |[sortField](resources/sortfield.md)|_Relationship_ > icon|Represents the icon that is the target of the condition if the sorting is on the cell's icon.|1.2|
-|[table](resources/table.md)|_Property_ > highlightFirstColumn|Indicates whether the first column contains special formatting.|1.3|
-|[table](resources/table.md)|_Property_ > highlightLastColumn|Indicates whether the last column contains special formatting.|1.3|
 |[table](resources/table.md)|_Relationship_ > sort|Represents the sorting for the table. Read-only.|1.2|
 |[table](resources/table.md)|_Relationship_ > worksheet|The worksheet containing the current table. Read-only.|1.2|
 |[table](resources/table.md)|_Method_ > [clearFilters()](resources/table.md#clearfilters)|Clears all the filters currently applied on the table.|1.2|
 |[table](resources/table.md)|_Method_ > [convertToRange()](resources/table.md#converttorange)|Converts the table into a normal range of cells. All data is preserved.|1.2|
 |[table](resources/table.md)|_Method_ > [reapplyFilters()](resources/table.md#reapplyfilters)|Reapplies all the filters currently on the table.|1.2|
 |[tableColumn](resources/tablecolumn.md)|_Relationship_ > filter|Retrieve the filter applied to the column. Read-only.|1.2|
-|[tableColumnCollection](resources/tablecolumncollection.md)|_Method_ > [add(index: number, values: (boolean or string or number)[][])](resources/tablecolumncollection.md#addindex-number-values-boolean-or-string-or-number)|Adds a new column to the table.|1.1, introduced in 1.1 requires an index smaller than the total column count.|
 |[tableSort](resources/tablesort.md)|_Property_ > matchCase|Represents whether the casing impacted the last sort of the table. Read-only.|1.2|
 |[tableSort](resources/tablesort.md)|_Property_ > method|Represents Chinese character ordering method last used to sort the table. Read-only. Possible values are: PinYin, StrokeCount.|1.2|
 |[tableSort](resources/tablesort.md)|_Relationship_ > fields|Represents the current conditions used to last sort the table. Read-only.|1.2|
@@ -148,7 +145,6 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[tableSort](resources/tablesort.md)|_Method_ > [clear()](resources/tablesort.md#clear)|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|1.2|
 |[tableSort](resources/tablesort.md)|_Method_ > [reapply()](resources/tablesort.md#reapply)|Reapplies the current sorting parameters to the table.|1.2|
 |[workbook](resources/workbook.md)|_Relationship_ > functions|Represents Excel application instance that contains this workbook. Read-only.|1.2|
-|[worksheet](resources/worksheet.md)|_Property_ > visibility|The Visibility of the worksheet. Possible values are: Visible, Hidden, VeryHidden.|1.1, introduced in 1.1 for reading visibility; 1.2 for setting it.|
 |[worksheet](resources/worksheet.md)|_Relationship_ > protection|Returns sheet protection object for a worksheet. Read-only.|1.2|
 |[worksheetProtection](resources/worksheetprotection.md)|_Property_ > protected|Indicates if the worksheet is protected. Read-Only. Read-only.|1.2|
 |[worksheetProtection](resources/worksheetprotection.md)|_Relationship_ > options|Sheet protection options. Read-only.|1.2|
