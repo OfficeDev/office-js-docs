@@ -1,6 +1,6 @@
-# ChartPointFormat Object (JavaScript API for Excel)
+# SettingsChangedEventArgs Object (JavaScript API for Excel)
 
-Represents formatting object for chart points.
+Provides information about the setting that raised the SettingsChanged event
 
 ## Properties
 
@@ -9,7 +9,7 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart, which includes background formating information. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|settingCollection|[public](public.md)|Gets the Setting object that represents the binding that raised the SettingsChanged event|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 

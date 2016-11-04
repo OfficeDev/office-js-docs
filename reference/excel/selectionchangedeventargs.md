@@ -1,6 +1,6 @@
-# ChartPointFormat Object (JavaScript API for Excel)
+# SelectionChangedEventArgs Object (JavaScript API for Excel)
 
-Represents formatting object for chart points.
+Provides information about the document that raised the SelectionChanged event.
 
 ## Properties
 
@@ -9,7 +9,7 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart, which includes background formating information. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|workbook|[public](public.md)|Gets the workbook object that raised the SelectionChanged event.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 

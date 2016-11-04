@@ -1,19 +1,22 @@
-# FormatProtection Object (JavaScript API for Excel)
+# BindingSelectionChangedEventArgs Object (JavaScript API for Excel)
 
-Represents the format protection of a range object.
+Provides information about the binding that raised the SelectionChanged event.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|formulaHidden|bool|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|locked|bool|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|columnCount|int|Gets the number of columns selected.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|rowCount|int|Gets the number of rows selected.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|startColumn|int|Gets the index of the first column of the selection (zero-based).|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|startRow|int|Gets the index of the first row of the selection (zero-based).|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|binding|[public](public.md)|Gets the Binding object that represents the binding that raised the SelectionChanged event.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
