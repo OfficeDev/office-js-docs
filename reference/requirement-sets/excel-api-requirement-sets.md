@@ -68,6 +68,106 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 ## What's new in Excel JavaScript API 1.2
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
 
+|Object| What is new| Description|Req. Set.|
+|:----|:----|:----|:----|
+
+
+|[bindingDataChangedEventArgs](resources/bindingdatachangedeventargs.md)|_Relationship_ > binding|Gets the Binding object that represents the binding that raised the DataChanged event.|1.2, introduced in 1.3|
+|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > columnCount|Gets the number of columns selected.|1.2, introduced in 1.3|
+|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > rowCount|Gets the number of rows selected.|1.2, introduced in 1.3|
+|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > startColumn|Gets the index of the first column of the selection (zero-based).|1.2, introduced in 1.3|
+|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > startRow|Gets the index of the first row of the selection (zero-based).|1.2, introduced in 1.3|
+|[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Relationship_ > binding|Gets the Binding object that represents the binding that raised the SelectionChanged event.|1.2, introduced in 1.3|
+|[chart](resources/chart.md)|_Property_ > id|Gets a chart based on its position in the collection. Read-only.|1.2|
+|[chart](resources/chart.md)|_Relationship_ > worksheet|The worksheet containing the current chart. Read-only.|1.2|
+|[chart](resources/chart.md)|_Method_ > [getImage(height: number, width: number, fittingMode: string)](resources/chart.md#getimageheight-number-width-number-fittingmode-string)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|1.2|
+|[filter](resources/filter.md)|_Relationship_ > criteria|The currently applied filter on the given column. Read-only.|1.2|
+|[filter](resources/filter.md)|_Method_ > [apply(criteria: FilterCriteria)](resources/filter.md#applycriteria-filtercriteria)|Apply the given filter criteria on the given column.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyBottomItemsFilter(count: number)](resources/filter.md#applybottomitemsfiltercount-number)|Apply a "Bottom Item" filter to the column for the given number of elements.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyBottomPercentFilter(percent: number)](resources/filter.md#applybottompercentfilterpercent-number)|Apply a "Bottom Percent" filter to the column for the given percentage of elements.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyCellColorFilter(color: string)](resources/filter.md#applycellcolorfiltercolor-string)|Apply a "Cell Color" filter to the column for the given color.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyCustomFilter(criteria1: string, criteria2: string, oper: string)](resources/filter.md#applycustomfiltercriteria1-string-criteria2-string-oper-string)|Apply a "Icon" filter to the column for the given criteria strings.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyDynamicFilter(criteria: string)](resources/filter.md#applydynamicfiltercriteria-string)|Apply a "Dynamic" filter to the column.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyFontColorFilter(color: string)](resources/filter.md#applyfontcolorfiltercolor-string)|Apply a "Font Color" filter to the column for the given color.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyIconFilter(icon: Icon)](resources/filter.md#applyiconfiltericon-icon)|Apply a "Icon" filter to the column for the given icon.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyTopItemsFilter(count: number)](resources/filter.md#applytopitemsfiltercount-number)|Apply a "Top Item" filter to the column for the given number of elements.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyTopPercentFilter(percent: number)](resources/filter.md#applytoppercentfilterpercent-number)|Apply a "Top Percent" filter to the column for the given percentage of elements.|1.2|
+|[filter](resources/filter.md)|_Method_ > [applyValuesFilter(values: ()[])](resources/filter.md#applyvaluesfiltervalues-)|Apply a "Values" filter to the column for the given values.|1.2|
+|[filter](resources/filter.md)|_Method_ > [clear()](resources/filter.md#clear)|Clear the filter on the given column.|1.2|
+|[filterCriteria](resources/filtercriteria.md)|_Property_ > color|The HTML color string used to filter cells. Used with "cellColor" and "fontColor" filtering.|1.2|
+|[filterCriteria](resources/filtercriteria.md)|_Property_ > criterion1|The first criterion used to filter data. Used as an operator in the case of "custom" filtering.|1.2|
+|[filterCriteria](resources/filtercriteria.md)|_Property_ > criterion2|The second criterion used to filter data. Only used as an operator in the case of "custom" filtering.|1.2|
+|[filterCriteria](resources/filtercriteria.md)|_Property_ > dynamicCriteria|The dynamic criteria from the Excel.DynamicFilterCriteria set to apply on this column. Used with "dynamic" filtering. Possible values are: Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate, Yesterday.|1.2|
+|[filterCriteria](resources/filtercriteria.md)|_Property_ > filterOn|The property used by the filter to determine whether the values should stay visible. Possible values are: BottomItems, BottomPercent, CellColor, Dynamic, FontColor, Values, TopItems, TopPercent, Icon, Custom.|1.2|
+|[filterCriteria](resources/filtercriteria.md)|_Property_ > operator|The operator used to combine criterion 1 and 2 when using "custom" filtering. Possible values are: And, Or.|1.2|
+|[filterCriteria](resources/filtercriteria.md)|_Property_ > values|The set of values to be used as part of "values" filtering.|1.2|
+|[filterCriteria](resources/filtercriteria.md)|_Relationship_ > icon|The icon used to filter cells. Used with "icon" filtering.|1.2|
+|[filterDatetime](resources/filterdatetime.md)|_Property_ > date|The date in ISO8601 format used to filter data.|1.2|
+|[filterDatetime](resources/filterdatetime.md)|_Property_ > specificity|How specific the date should be used to keep data. For example, if the date is 2005-04-02 and the specifity is set to "month", the filter operation will keep all rows with a date in the month of april 2009. Possible values are: Year, Monday, Day, Hour, Minute, Second.|1.2|
+|[formatProtection](resources/formatprotection.md)|_Property_ > formulaHidden|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|1.2|
+|[formatProtection](resources/formatprotection.md)|_Property_ > locked|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|1.2|
+|[icon](resources/icon.md)|_Property_ > index|Represents the index of the icon in the given set.|1.2|
+|[icon](resources/icon.md)|_Property_ > set|Represents the set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.|1.2|
+|[range](resources/range.md)|_Property_ > columnHidden|Represents if all columns of the current range are hidden.|1.2|
+|[range](resources/range.md)|_Property_ > formulasR1C1|Represents the formula in R1C1-style notation.|1.2|
+|[range](resources/range.md)|_Property_ > hidden|Represents if all cells of the current range are hidden. Read-only.|1.2|
+|[range](resources/range.md)|_Property_ > rowHidden|Represents if all rows of the current range are hidden.|1.2|
+|[range](resources/range.md)|_Relationship_ > sort|Represents the range sort of the current range. Read-only.|1.2|
+|[range](resources/range.md)|_Method_ > [getColumnsAfter(count: number)](resources/range.md#getcolumnsaftercount-number)|Gets a certain number of columns to the right of the current Range object.|1.2, introduced in 1.3|
+|[range](resources/range.md)|_Method_ > [getColumnsBefore(count: number)](resources/range.md#getcolumnsbeforecount-number)|Gets a certain number of columns to the left of the current Range object.|1.2, introduced in 1.3|
+|[range](resources/range.md)|_Method_ > [getResizedRange(deltaRows: number, deltaColumns: number)](resources/range.md#getresizedrangedeltarows-number-deltacolumns-number)|Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.|1.2, introduced in 1.3|
+|[range](resources/range.md)|_Method_ > [getRowsAbove(count: number)](resources/range.md#getrowsabovecount-number)|Gets a certain number of rows above the current Range object.|1.2, introduced in 1.3|
+|[range](resources/range.md)|_Method_ > [getRowsBelow(count: number)](resources/range.md#getrowsbelowcount-number)|Gets a certain number of rows below the current Range object.|1.2, introduced in 1.3|
+|[range](resources/range.md)|_Method_ > [merge(across: bool)](resources/range.md#mergeacross-bool)|Merge the range cells into one region in the worksheet.|1.2|
+|[range](resources/range.md)|_Method_ > [unmerge()](resources/range.md#unmerge)|Unmerge the range cells into separate cells.|1.2|
+|[rangeFormat](resources/rangeformat.md)|_Property_ > columnWidth|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|1.2|
+|[rangeFormat](resources/rangeformat.md)|_Property_ > rowHeight|Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.|1.2|
+|[rangeFormat](resources/rangeformat.md)|_Relationship_ > protection|Returns the format protection object for a range. Read-only.|1.2|
+|[rangeFormat](resources/rangeformat.md)|_Method_ > [autofitColumns()](resources/rangeformat.md#autofitcolumns)|Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.|1.2|
+|[rangeFormat](resources/rangeformat.md)|_Method_ > [autofitRows()](resources/rangeformat.md#autofitrows)|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|1.2|
+|[rangeReference](resources/rangereference.md)|_Property_ > address|Represents the visible rows of the current range.|1.2|
+|[rangeSort](resources/rangesort.md)|_Method_ > [apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](resources/rangesort.md#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|Perform a sort operation.|1.2|
+|[selectionChangedEventArgs](resources/selectionchangedeventargs.md)|_Relationship_ > workbook|Gets the workbook object that raised the SelectionChanged event.|1.2, introduced in 1.3|
+|[sortField](resources/sortfield.md)|_Property_ > ascending|Represents whether the sorting is done in an ascending fashion.|1.2|
+|[sortField](resources/sortfield.md)|_Property_ > color|Represents the color that is the target of the condition if the sorting is on font or cell color.|1.2|
+|[sortField](resources/sortfield.md)|_Property_ > dataOption|Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.|1.2|
+|[sortField](resources/sortfield.md)|_Property_ > key|Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).|1.2|
+|[sortField](resources/sortfield.md)|_Property_ > sortOn|Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.|1.2|
+|[sortField](resources/sortfield.md)|_Relationship_ > icon|Represents the icon that is the target of the condition if the sorting is on the cell's icon.|1.2|
+|[table](resources/table.md)|_Property_ > highlightFirstColumn|Indicates whether the first column contains special formatting.|1.3|
+|[table](resources/table.md)|_Property_ > highlightLastColumn|Indicates whether the last column contains special formatting.|1.3|
+|[table](resources/table.md)|_Relationship_ > sort|Represents the sorting for the table. Read-only.|1.2|
+|[table](resources/table.md)|_Relationship_ > worksheet|The worksheet containing the current table. Read-only.|1.2|
+|[table](resources/table.md)|_Method_ > [clearFilters()](resources/table.md#clearfilters)|Clears all the filters currently applied on the table.|1.2|
+|[table](resources/table.md)|_Method_ > [convertToRange()](resources/table.md#converttorange)|Converts the table into a normal range of cells. All data is preserved.|1.2|
+|[table](resources/table.md)|_Method_ > [reapplyFilters()](resources/table.md#reapplyfilters)|Reapplies all the filters currently on the table.|1.2|
+|[tableColumn](resources/tablecolumn.md)|_Relationship_ > filter|Retrieve the filter applied to the column. Read-only.|1.2|
+|[tableColumnCollection](resources/tablecolumncollection.md)|_Method_ > [add(index: number, values: (boolean or string or number)[][])](resources/tablecolumncollection.md#addindex-number-values-boolean-or-string-or-number)|Adds a new column to the table.|1.1, introduced in 1.1 requires an index smaller than the total column count.|
+|[tableSort](resources/tablesort.md)|_Property_ > matchCase|Represents whether the casing impacted the last sort of the table. Read-only.|1.2|
+|[tableSort](resources/tablesort.md)|_Property_ > method|Represents Chinese character ordering method last used to sort the table. Read-only. Possible values are: PinYin, StrokeCount.|1.2|
+|[tableSort](resources/tablesort.md)|_Relationship_ > fields|Represents the current conditions used to last sort the table. Read-only.|1.2|
+|[tableSort](resources/tablesort.md)|_Method_ > [apply(fields: SortField[], matchCase: bool, method: string)](resources/tablesort.md#applyfields-sortfield-matchcase-bool-method-string)|Perform a sort operation.|1.2|
+|[tableSort](resources/tablesort.md)|_Method_ > [clear()](resources/tablesort.md#clear)|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|1.2|
+|[tableSort](resources/tablesort.md)|_Method_ > [reapply()](resources/tablesort.md#reapply)|Reapplies the current sorting parameters to the table.|1.2|
+|[workbook](resources/workbook.md)|_Relationship_ > functions|Represents Excel application instance that contains this workbook. Read-only.|1.2|
+|[worksheet](resources/worksheet.md)|_Property_ > visibility|The Visibility of the worksheet. Possible values are: Visible, Hidden, VeryHidden.|1.1, introduced in 1.1 for reading visibility; 1.2 for setting it.|
+|[worksheet](resources/worksheet.md)|_Relationship_ > protection|Returns sheet protection object for a worksheet. Read-only.|1.2|
+|[worksheetProtection](resources/worksheetprotection.md)|_Property_ > protected|Indicates if the worksheet is protected. Read-Only. Read-only.|1.2|
+|[worksheetProtection](resources/worksheetprotection.md)|_Relationship_ > options|Sheet protection options. Read-only.|1.2|
+|[worksheetProtection](resources/worksheetprotection.md)|_Method_ > [protect(options: WorksheetProtectionOptions)](resources/worksheetprotection.md#protectoptions-worksheetprotectionoptions)|Protects a worksheet. Fails if the worksheet has been protected.|1.2|
+|[worksheetProtection](resources/worksheetprotection.md)|_Method_ > [unprotect()](resources/worksheetprotection.md#unprotect)|Unprotects a worksheet.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowAutoFilter|Represents the worksheet protection option of allowing using auto filter feature.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowDeleteColumns|Represents the worksheet protection option of allowing deleting columns.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowDeleteRows|Represents the worksheet protection option of allowing deleting rows.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowFormatCells|Represents the worksheet protection option of allowing formatting cells.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowFormatColumns|Represents the worksheet protection option of allowing formatting columns.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowFormatRows|Represents the worksheet protection option of allowing formatting rows.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowInsertColumns|Represents the worksheet protection option of allowing inserting columns.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowInsertHyperlinks|Represents the worksheet protection option of allowing inserting hyperlinks.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowInsertRows|Represents the worksheet protection option of allowing inserting rows.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowPivotTables|Represents the worksheet protection option of allowing using PivotTable feature.|1.2|
+|[worksheetProtectionOptions](resources/worksheetprotectionoptions.md)|_Property_ > allowSort|Represents the worksheet protection option of allowing using sort feature.|1.2|
+
 ## Excel JavaScript API 1.1
 Excel JavaScript API 1.1 is the first version of the API. For details about the API,  see the Excel JavaScript API reference topics.  
     
