@@ -23,7 +23,7 @@ For information about common API requirement sets, see [Office common API requir
 ## What's new in Excel JavaScript API 1.3 
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3. 
 
-|Object| What is new| Description|Feedback|
+|Object| What's new| Description|Feedback|
 |:----|:----|:----|:----|
 |[bindingCollection](reference/excel/bindingcollection.md)|_Method_ > [add(range: Range or string, bindingType: string, id: string)](reference/excel/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|Add a new binding to a particular Range.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-bindingCollection-add)|
 |[bindingCollection](reference/excel/bindingcollection.md)|_Method_ > [addFromNamedItem(name: string, bindingType: string, id: string)](reference/excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|Add a new binding based on a named item in the workbook.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OpenSpec-bindingCollection-addFromNamedItem)|
@@ -68,10 +68,8 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 ## What's new in Excel JavaScript API 1.2
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.2. 
 
-|Object| What is new| Description|Req. Set.|
+|Object| What's new| Description|Requirement set|
 |:----|:----|:----|:----|
-
-
 |[bindingDataChangedEventArgs](resources/bindingdatachangedeventargs.md)|_Relationship_ > binding|Gets the Binding object that represents the binding that raised the DataChanged event.|1.2, introduced in 1.3|
 |[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > columnCount|Gets the number of columns selected.|1.2, introduced in 1.3|
 |[bindingSelectionChangedEventArgs](resources/bindingselectionchangedeventargs.md)|_Property_ > rowCount|Gets the number of rows selected.|1.2, introduced in 1.3|
