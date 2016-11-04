@@ -1,13 +1,14 @@
-# FormatProtection Object (JavaScript API for Excel)
+# ConditionalFormatDataBarPositiveFormat Object (JavaScript API for Excel)
 
-Represents the format protection of a range object.
+Represents a conditional format DataBar Format for the positive side of the data bar.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|formulaHidden|bool|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|locked|bool|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|borderColor|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|fillColor|string|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|gradientFill|bool|Boolean representation of whether or not the DataBar has a gradient.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

@@ -1,13 +1,15 @@
-# FormatProtection Object (JavaScript API for Excel)
+# ConditionalFormatDataBarRule Object (JavaScript API for Excel)
 
-Represents the format protection of a range object.
+Represents a rule-type for a Data Bar.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|formulaHidden|bool|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|locked|bool|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|formula|object|The formula, if required, to evaluate the databar rule on.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|formulaLocal|object|The formula, if required, to evaluate the databar rule on in the user's language.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|formulaR1C1|object|The formula, if required, to evaluate the databar rule on in R1C1-style notation.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|What the databar should be based on. Possible values are: LowestValue, HighestValue, Number, Percent, Formula, Percentile, Automatic.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
