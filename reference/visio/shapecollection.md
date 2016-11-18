@@ -44,7 +44,10 @@ int
 Visio.run(function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	var numShapesActivePage = activePage.shapes.getCount();
-	return ctx.sync();
+	return ctx.sync().then(function () {
+		console.log("Shapes Count: " + numShapesActivePage.value);
+	});
+
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
@@ -52,6 +55,7 @@ Visio.run(function (ctx) {
 		}
 });
 ```
+
 ### getItem(key: number or string)
 Gets a Shape using its key (name or Index).
 

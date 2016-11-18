@@ -9,6 +9,9 @@ Represents the DocumentView class.
 | Property	   | Type	|Description| Req. Set| Feedback|
 |:---------------|:--------|:----------|:----|:---|
 |disableHyperlinks|bool|Disable Hyperlinks.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableHyperlinks)|
+|disablePan|bool|Disable Pan.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disablePan)|
+|disableZoom|bool|Disable Zoom.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableZoom)|
+|hideDiagramBoundry|bool|Disable Hyperlinks.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-hideDiagramBoundry)|
 
 ## Relationships
 None

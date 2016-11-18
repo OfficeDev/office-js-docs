@@ -47,7 +47,7 @@ Visio.run(function (ctx) {
 	var document = ctx.document;
 	var activePage = document.getActivePage();
 	activePage.load();
-	return ctx.sync().then(function (count) {
+	return ctx.sync().then(function () {
 	console.log("pageName: " +activePage.name);
       });   
 }).catch(function(error) {
@@ -138,7 +138,9 @@ Visio.run(function (ctx) {
 Visio.run(function (ctx) { 
 	var pages = ctx.document.pages;
 	var pageCount = pages.getCount();
-	return ctx.sync();
+	return ctx.sync().then(function () {
+	    console.log("Pages Count: " +pageCount.value);
+        });
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {

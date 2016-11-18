@@ -76,13 +76,18 @@ void
 ```js
 Visio.run(function (ctx) { 
 	var activePage = ctx.document.getActivePage();
-	var shapeName = "Sample Name";
+	var shapeName = "Manager Belt";
 	var shape = activePage.shapes.getItem(shapeName);
-	var hyperlink = shape.hyperlinks.getItem(0);
-	return ctx.sync().then(function() {
-console.log(hyperlink.description);
-console.log(hyperlink.address);
- });
+	var hyperlinks = shape.hyperlinks;
+	shapeHyperlinks.load();
+		ctx.sync().then(function () {
+			for(var i=0; i<shapeHyperlinks.items.length;i++)
+				{
+				  var hyperlink = shapeHyperlinks.items[i];
+				  console.log("Description:"+hyperlink.description +"Address:"+hyperlink.address +"SubAddress:  "+ hyperlink.subAddress);
+				}
+
+			});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
