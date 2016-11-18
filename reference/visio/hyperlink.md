@@ -8,9 +8,9 @@ Represents the Hyperlink.
 
 | Property	   | Type	|Description| Req. Set| Feedback|
 |:---------------|:--------|:----------|:----|:---|
-|address|string|Gets the address for a shape's Hyperlink object, the address to which the hyperlink navigates. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
+|address|string|Gets the address of the Hyperlink object. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
 |description|string|Gets the description of a hyperlink. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
-|name|string|Hyperlink name. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-name)|
+|subAddress|string|Gets the sub-address of the Hyperlink object. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-subAddress)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -46,13 +46,14 @@ void
 ```js
 Visio.run(function (ctx) { 
 	var activePage = ctx.document.getActivePage();
-	var shapeName = "Sample Name";
-	var shape = activePage.shapes.getItem(shapeName);
+	var shape = activePage.shapes.getItem(0);
 	var hyperlink = shape.hyperlinks.getItem(0);
+	hyperlink.load();
 	return ctx.sync().then(function() {
-console.log(hyperlink.description);
-console.log(hyperlink.address);
- });
+		console.log(hyperlink.description);
+		console.log(hyperlink.address);
+		console.log(hyperlink.subAddress);
+ 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {

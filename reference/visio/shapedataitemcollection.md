@@ -78,7 +78,7 @@ Visio.run(function (ctx) {
 	var activePage = ctx.document.getActivePage();
 	var shape = activePage.shapes.getItem(0);
         var shapeDataItems = shape.shapeDataItems;
-        shapeDataItems.load('items');
+        shapeDataItems.load();
         return ctx.sync().then(function() {
             for (var i = 0; i < shapeDataItems.items.length; i++)
             {

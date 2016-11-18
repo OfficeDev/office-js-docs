@@ -8,11 +8,11 @@ Represents the Page class.
 
 | Property	   | Type	|Description| Req. Set| Feedback|
 |:---------------|:--------|:----------|:----|:---|
+|height|int|Returns the height of the page. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-height)|
 |index|int|Index of the Page. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-index)|
 |isBackground|bool|Whether the page is a background page or not. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-isBackground)|
 |name|string|Page name. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-name)|
-
-_See property access [examples.](#property-access-examples)_
+|width|int|Returns the width of the page. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-width)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set| Feedback|
@@ -44,22 +44,6 @@ None
 #### Returns
 void
 
-#### Examples
-```js
-Visio.run(function (ctx) { 
-	var pageName = 'Page-1';
-	var page = ctx.document.pages.getItem(pageName);
-	page.activate();
-	return ctx.sync();
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
-
-
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -75,17 +59,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Visio.run(function (ctx) { 
-	var activePage = ctx.document.getActivePage();
-	var isBackground = activePage.isBackground;
-	var pageName = activePage.name;
-	return ctx.sync();
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```

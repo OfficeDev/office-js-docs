@@ -8,9 +8,10 @@ Represents the ShapeDataItem.
 
 | Property	   | Type	|Description| Req. Set| Feedback|
 |:---------------|:--------|:----------|:----|:---|
-|label|string|Label. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
-|name|string|Name. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-name)|
-|value|string|Value. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
+|format|string|A string that specifies the format of the shape data item. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-format)|
+|formattedValue|string|A string that specifies the formatted value of the shape data item. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-formattedValue)|
+|label|string|A string that specifies the label of the shape data item. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
+|value|string|A string that specifies the value of the shape data item. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -47,14 +48,11 @@ void
 Visio.run(function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	var shape = activePage.shapes.getItem(0);
-        var shapeDataItems = shape.shapeDataItems;
-        shapeDataItems.load('items');
+        var shapeDataItem = shape.shapeDataItems.getItem(0);
+	shapeDataItem.load();
         return ctx.sync().then(function() {
-            for (var i = 0; i < shapeDataItems.items.length; i++)
-            {
-                console.log(shapeDataItems.items[i].label);
-                console.log(shapeDataItems.items[i].value);
-            }
+                console.log(shapeDataItem.label);
+                console.log(shapeDataItem.value);
         });
 }).catch(function(error) {
 		console.log("Error: " + error);
