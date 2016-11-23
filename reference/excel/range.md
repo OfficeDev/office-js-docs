@@ -681,8 +681,7 @@ Excel.run(function (ctx) {
 	var rangeAddress = "F5:F10"; 
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.select();
-	return ctx.sync(); 
-	});
+	return ctx.sync();
 }).catch(function(error) {
 		console.log("Error: " + error);
 		if (error instanceof OfficeExtension.Error) {
