@@ -1,56 +1,58 @@
 # ContentControl object (JavaScript API for Word)
 
+_Word 2016, Word for iPad, Word for Mac, Word Online_
+
 Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as images, tables, or paragraphs of formatted text. Currently, only rich text content controls are supported.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
-
 ## Properties
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|cannotDelete|bool|Gets or sets a value that indicates whether the user can delete the content control. Mutually exclusive with removeWhenEdited.|
-|cannotEdit|bool|Gets or sets a value that indicates whether the user can edit the contents of the content control.|
-|color|string|Gets or sets the color of the content control. Color is set in "#RRGGBB" format or by using the color name.|
-|placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty. This property is not currently supported in Word Online.|
-|removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|
-|style|string|Gets or sets the style used for the content control. This is the name of the pre-installed or custom style.|
-|tag|string|Gets or sets a tag to identify a content control. The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how you can use the **tag** property.|
-|text|string|Gets the text of the content control. Read-only.|
-|title|string|Gets or sets the title for a content control.|
+
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|appearance|string|Gets or sets the appearance of the content control. The value can be 'boundingBox', 'tags' or 'hidden'. Possible values are: `BoundingBox` Represents a content control shown as a shaded rectangle or bounding box (with optional title).,`Tags` Represents a content control shown as start and end markers.,`Hidden` Represents a content control that is not shown.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|cannotDelete|bool|Gets or sets a value that indicates whether the user can delete the content control. Mutually exclusive with removeWhenEdited.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|cannotEdit|bool|Gets or sets a value that indicates whether the user can edit the contents of the content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|color|string|Gets or sets the color of the content control. Color is specified in '#RRGGBB' format or by using the color name.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|style|string|Gets or sets the style name for the content control. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|tag|string|Gets or sets a tag to identify a content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|text|string|Gets the text of the content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|title|string|Gets or sets the title for a content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|type|string|Gets the content control type. Only rich text content controls are supported currently. Read-only. Possible values are: `RichText` Identifies a rich text content control.,`Unknown` ,`RichTextInline` ,`RichTextParagraphs` ,`RichTextTableCell` contains whole cell,`RichTextTableRow` contains whole row,`RichTextTable` contains whole table,`PlainTextInline` ,`PlainTextParagraph` ,`Picture` ,`BuildingBlockGallery` ,`CheckBox` ,`ComboBox` ,`DropDownList` ,`DatePicker` ,`RepeatingSection` ,`PlainText` |[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|appearance|**ContentControlAppearance**|Gets or sets the appearance of the content control. The value can be 'boundingBox', 'tags' or 'hidden'.|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the content control. Read-only.|
-|font|[Font](font.md)|Gets the text format of the content control. Use this to get and set font name, size, color, and other properties. Read-only.|
-|id|**uint**|Gets an integer that represents the content control identifier. Read-only.|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the content control. The collection does not include floating images. Read-only.|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Get the collection of paragraph objects in the content control. Read-only.|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the content control. Returns null if there isn't a parent content control. Read-only.|
-|type|**ContentControlType**|Gets the content control type. Only rich text content controls are supported currently. Read-only.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|font|[Font](font.md)|Gets the text format of the content control. Use this to get and set font name, size, color, and other properties. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|id|[uint](uint.md)|Gets an integer that represents the content control identifier. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the content control. The collection does not include floating images. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Get the collection of paragraph objects in the content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the content control. Throws if there isn't a parent content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[clear()](#clear)|void|Clears the contents of the content control. The user can perform the undo operation on the cleared content.|
-|[delete(keepContent: bool)](#deletekeepcontent-bool)|void|Deletes the content control and its content. If keepContent is set to true, the content is not deleted.|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|
-|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
-|[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'. |
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML or wordProcessingML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
-|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the content control. This causes Word to scroll to the selection. The selection mode can be 'Select', 'Start' or 'End'.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[clear()](#clear)|void|Clears the contents of the content control. The user can perform the undo operation on the cleared content.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[delete(keepContent: bool)](#deletekeepcontent-bool)|void|Deletes the content control and its content. If keepContent is set to true, the content is not deleted.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. This method cannot be used with 'RichTextTable', 'RichTextTableRow' and 'RichTextTableCell' content controls.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the content control. This causes Word to scroll to the selection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
-## Method details
+## Method Details
+
 
 ### clear()
 Clears the contents of the content control. The user can perform the undo operation on the cleared content.
@@ -67,6 +69,7 @@ None
 void
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -105,6 +108,7 @@ Word.run(function (context) {
 
 ```
 
+
 ### delete(keepContent: bool)
 Deletes the content control and its content. If keepContent is set to true, the content is not deleted.
 
@@ -115,13 +119,14 @@ contentControlObject.delete(keepContent);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |keepContent|bool|Required. Indicates whether the content should be deleted with the content control. If keepContent is set to true, the content is not deleted.|
 
 #### Returns
 void
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -161,6 +166,7 @@ Word.run(function (context) {
 ```
 
 
+
 ### getHtml()
 Gets the HTML representation of the content control object.
 
@@ -176,6 +182,7 @@ None
 string
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -213,6 +220,7 @@ Word.run(function (context) {
 });
 ```
 
+
 ### getOoxml()
 Gets the Office Open XML (OOXML) representation of the content control object.
 
@@ -228,6 +236,7 @@ None
 string
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -265,8 +274,9 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. A break can only be inserted into objects that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.
+
+### insertBreak(breakType: string, insertLocation: string)
+Inserts a break at the specified location in the main document. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. This method cannot be used with 'RichTextTable', 'RichTextTableRow' and 'RichTextTableCell' content controls.
 
 #### Syntax
 ```js
@@ -275,17 +285,15 @@ contentControlObject.insertBreak(breakType, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|breakType|BreakType|Required. Type of break (breakType.md)|
-|insertLocation|InsertLocation|Required. The value can be 'Before', 'After', 'Start' or 'End'.|
+|:---------------|:--------|:----------|:---|
+|breakType|string|Required. Type of break. Possible values are: `Page` Page break at the insertion point.,`Column` Column break at the insertion point.,`Next` Section break on next page.,`SectionContinuous` New section without a corresponding page break.,`SectionEven` Section break with the next section beginning on the next even-numbered page. If the section break falls on an even-numbered page, Word leaves the next odd-numbered page blank.,`SectionOdd` Section break with the next section beginning on the next odd-numbered page. If the section break falls on an odd-numbered page, Word leaves the next even-numbered page blank.,`Line` Line break.,`LineClearLeft` Line break.,`LineClearRight` Line break.,`TextWrapping` Ends the current line and forces the text to continue below a picture, table, or other item. The text continues on the next blank line that does not contain a table aligned with the left or right margin.|
+|insertLocation|string|Required. The value can be 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 void
 
-#### Additional details
-With the exception of line breaks, you can not insert a break into objects contained within headers, footers, footnotes, endnotes, comments, and textboxes.  
-
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -324,8 +332,9 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
-Inserts a document into the current content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+### insertFileFromBase64(base64File: string, insertLocation: string)
+Inserts a document into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -334,31 +343,15 @@ contentControlObject.insertFileFromBase64(base64File, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|base64File|string|Required. Base64 encoded contents of the file to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
-
-#### Returns
-[Range](range.md)
-
-### insertHtml(html: string, insertLocation: InsertLocation)
-Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
-
-#### Syntax
-```js
-contentControlObject.insertHtml(html, insertLocation);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|html|string|Required. The HTML to be inserted in to the content control.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|:---------------|:--------|:----------|:---|
+|base64File|string|Required. The base64 encoded content of a .docx file.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. 'Replace' cannot be used with 'RichTextTable' and 'RichTextTableRow' content controls. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -396,45 +389,43 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
-Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
-#### Syntax
-contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|base64EncodedImage|string|Required. The base64 encoded image to be inserted in the content control.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
-
-#### Returns
-[InlinePicture](inlinepicture.md)
-
-#### Known issues
-In Word Online, only the 'Replace' value is supported for the _insertLocation_ parameter. If you use the 'Start' or 'End' values, the operation will fail.
-
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Inserts OOXML or wordProcessingML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
+### insertHtml(html: string, insertLocation: string)
+Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
-contentControlObject.insertOoxml(ooxml, insertLocation);
+contentControlObject.insertHtml(html, insertLocation);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|ooxml|string|Required. The OOXML or wordProcessingML to be inserted in to the content control.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|:---------------|:--------|:----------|:---|
+|html|string|Required. The HTML to be inserted in to the content control.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. 'Replace' cannot be used with 'RichTextTable' and 'RichTextTableRow' content controls. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
-#### Known issues
-This method results in long latency in Word Online, which can affect users' experience of your add-in. We recommend that you use this method only when no other solution is available. 
+### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)
+Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+#### Syntax
+```js
+contentControlObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|base64EncodedImage|string|Required. The base64 encoded image to be inserted in the content control.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. 'Replace' cannot be used with 'RichTextTable' and 'RichTextTableRow' content controls. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+
+#### Returns
+[InlinePicture](inlinepicture.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -472,11 +463,29 @@ Word.run(function (context) {
 });
 ```
 
-#### Additional information
+*Additional information*
 Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML.
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
-Inserts a paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.
+
+### insertOoxml(ooxml: string, insertLocation: string)
+Inserts OOXML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
+
+#### Syntax
+```js
+contentControlObject.insertOoxml(ooxml, insertLocation);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|ooxml|string|Required. The OOXML to be inserted in to the content control.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. 'Replace' cannot be used with 'RichTextTable' and 'RichTextTableRow' content controls. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
+
+#### Returns
+[Range](range.md)
+
+### insertParagraph(paragraphText: string, insertLocation: string)
+Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -485,14 +494,15 @@ contentControlObject.insertParagraph(paragraphText, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |paragraphText|string|Required. The paragrph text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Before', 'After', 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Start', 'End', 'Before' or 'After'. 'Before' and 'After' cannot be used with 'RichTextTable', 'RichTextTableRow' and 'RichTextTableCell' content controls. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Paragraph](paragraph.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -530,7 +540,8 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation: InsertLocation)
+
+### insertText(text: string, insertLocation: string)
 Inserts text into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
@@ -540,17 +551,15 @@ contentControlObject.insertText(text, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |text|string|Required. The text to be inserted in to the content control.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. 'Replace' cannot be used with 'RichTextTable' and 'RichTextTableRow' content controls. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
-#### Known issues
-In Word Online, only the 'Replace' value is supported for the _insertLocation_ parameter. If you use the 'Start' or 'End' values, the operation will fail.
-
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -590,6 +599,7 @@ Word.run(function (context) {
 
 The [Silly stories](https://aka.ms/sillystorywordaddin) add-in sample shows how to use the **insertText** method.
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -600,13 +610,14 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -639,6 +650,7 @@ Word.run(function (context) {
 });
 ```
 
+
 ### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.
 
@@ -649,30 +661,15 @@ contentControlObject.search(searchText, searchOptions);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |searchText|string|Required. The search text.|
-|[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Optional. Options for the search.|
+|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
-
-### select(selectionMode: SelectionMode)
-Selects the content control. This causes Word to scroll to the selection. The selection mode can be 'Select', 'Start' or 'End'.
-
-#### Syntax
-```js
-contentControlObject.select(selectionMode);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
-
-#### Returns
-void
+[RangeCollection](rangecollection.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -710,9 +707,26 @@ Word.run(function (context) {
 });
 ```
 
-## Property access examples
 
-### Load all of the content control properties
+### select(selectionMode: string)
+Selects the content control. This causes Word to scroll to the selection.
+
+#### Syntax
+```js
+contentControlObject.select(selectionMode);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
+
+#### Returns
+void
+### Property access examples
+
+*Load all of the content control properties*
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -777,6 +791,3 @@ Word.run(function (context) {
     }
 });
 ```
-
-## Support details
-Use the [requirement set](../office-add-in-requirement-sets.md) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).

@@ -1,54 +1,56 @@
 # Paragraph object (JavaScript API for Word)
 
+_Word 2016, Word for iPad, Word for Mac, Word Online_
+
 Represents a single paragraph in a selection, range, content control, or document body.
 
-_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
-
 ## Properties
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|outlineLevel|int|Gets or sets the outline level for the paragraph.|
-|style|string|Gets or sets the style used for the paragraph. This is the name of the pre-installed or custom style. The [Word-Add-in-DocumentAssembly][paragraph.style] sample shows how you can set the paragraph style.|
-|text|string|Gets the text of the paragraph. Read-only.|
+
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|alignment|string|Gets or sets the alignment for a paragraph. The value can be 'left', 'centered', 'right', or 'justified'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|firstLineIndent|float|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|leftIndent|float|Gets or sets the left indent value, in points, for the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|lineSpacing|float|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|lineUnitAfter|float|Gets or sets the amount of spacing, in grid lines. after the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|lineUnitBefore|float|Gets or sets the amount of spacing, in grid lines, before the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|outlineLevel|int|Gets or sets the outline level for the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|rightIndent|float|Gets or sets the right indent value, in points, for the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|spaceAfter|float|Gets or sets the spacing, in points, after the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|spaceBefore|float|Gets or sets the spacing, in points, before the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|style|string|Gets or sets the style name for the paragraph. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|text|string|Gets the text of the paragraph. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
-| Relationship | Type	|Description|
-|:---------------|:--------|:----------|
-|alignment|**Alignment**|Gets or sets the alignment for a paragraph. The value can  be "left", "centered", "right", or "justified".|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects that are in the paragraph. Read-only.|
-|firstLineIndent|**float**|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|
-|font|[Font](font.md)|Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties. Read-only.|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects that are in the paragraph. The collection does not include floating images. Read-only.|
-|leftIndent|**float**|Gets or sets the left indent value, in points, for the paragraph.|
-|lineSpacing|**float**|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|
-|lineUnitAfter|**float**|Gets or sets the amount of spacing, in grid lines. after the paragraph.|
-|lineUnitBefore|**float**|Gets or sets the amount of spacing, in grid lines, before the paragraph.|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the paragraph. Returns null if there isn't a parent content control. Read-only.|
-|rightIndent|**float**|Gets or sets the right indent value, in points, for the paragraph.|
-|spaceAfter|**float**|Gets or sets the spacing, in points, after the paragraph.|
-|spaceBefore|**float**|Gets or sets the spacing, in points, before the paragraph.|
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the paragraph. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|font|[Font](font.md)|Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the paragraph. The collection does not include floating images. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the paragraph. Throws if there isn't a parent content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[clear()](#clear)|void|Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.|
-|[delete()](#delete)|void|Deletes the paragraph and its content from the document.|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|
-|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location. A break can only be inserted into paragraphs that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'After' or 'Before'.|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|
-|[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the current paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|
-|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Before', 'After', 'Start' or 'End'.|
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML or wordProcessingML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|
-|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects and navigates the Word UI to the paragraph. The selection mode can be 'Select', 'Start', or 'End'. 'Select' is the default.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[clear()](#clear)|void|Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[delete()](#delete)|void|Deletes the paragraph and its content from the document.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects and navigates the Word UI to the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
-## Method details
+## Method Details
+
 
 ### clear()
 Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.
@@ -65,6 +67,7 @@ None
 void
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -97,6 +100,7 @@ Word.run(function (context) {
 });
 ```
 
+
 ### delete()
 Deletes the paragraph and its content from the document.
 
@@ -112,6 +116,7 @@ None
 void
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -144,6 +149,7 @@ Word.run(function (context) {
 });
 ```
 
+
 ### getHtml()
 Gets the HTML representation of the paragraph object.
 
@@ -159,6 +165,7 @@ None
 string
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -191,6 +198,7 @@ Word.run(function (context) {
 });
 ```
 
+
 ### getOoxml()
 Gets the Office Open XML (OOXML) representation of the paragraph object.
 
@@ -206,6 +214,7 @@ None
 string
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -238,8 +247,9 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
-Inserts a break at the specified location. A break can only be inserted into paragraphs that are contained within the main document body, except if it is a line break which can be inserted into any body object. The insertLocation value can be 'Before' or 'After'.
+
+### insertBreak(breakType: string, insertLocation: string)
+Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
 ```js
@@ -248,17 +258,15 @@ paragraphObject.insertBreak(breakType, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|breakType|BreakType|Required. The break type to add to the document.|
-|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
+|:---------------|:--------|:----------|:---|
+|breakType|string|Required. The break type to add to the document. Possible values are: `Page` Page break at the insertion point.,`Column` Column break at the insertion point.,`Next` Section break on next page.,`SectionContinuous` New section without a corresponding page break.,`SectionEven` Section break with the next section beginning on the next even-numbered page. If the section break falls on an even-numbered page, Word leaves the next odd-numbered page blank.,`SectionOdd` Section break with the next section beginning on the next odd-numbered page. If the section break falls on an odd-numbered page, Word leaves the next even-numbered page blank.,`Line` Line break.,`LineClearLeft` Line break.,`LineClearRight` Line break.,`TextWrapping` Ends the current line and forces the text to continue below a picture, table, or other item. The text continues on the next blank line that does not contain a table aligned with the left or right margin.|
+|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 void
 
-#### Additional details
-You can not insert a break in headers, footers, footnotes, endnotes, comments, and textboxes.
-
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -295,6 +303,7 @@ Word.run(function (context) {
 });
 ```
 
+
 ### insertContentControl()
 Wraps the paragraph object with a rich text content control.
 
@@ -310,6 +319,7 @@ None
 [ContentControl](contentcontrol.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -346,11 +356,9 @@ Word.run(function (context) {
 });
 ```
 
-#### Additional information
-The [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] sample shows how you can use the insertContentControl method.
 
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
-Inserts a document into the current paragraph at the specified location. The insertLocation value can be ‘Replace’, 'Start', or 'End'.
+### insertFileFromBase64(base64File: string, insertLocation: string)
+Inserts a document into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -359,52 +367,15 @@ paragraphObject.insertFileFromBase64(base64File, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|base64File|string|Required. The file base64 encoded file contents to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be ‘Replace’, 'Start' or 'End'.|
+|:---------------|:--------|:----------|:---|
+|base64File|string|Required. The base64 encoded content of a .docx file.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
-#### Examples
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Create a proxy object for the paragraphs collection.
-    var paragraphs = context.document.body.paragraphs;
-
-    // Queue a commmand to load the style property for all of the paragraphs.
-    context.load(paragraphs, 'style');
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-
-        // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];
-
-        // Queue a command to insert base64 encoded .docx at the beginning of the first paragraph.
-        // This won't work unless you have a definition for getBase64().
-        paragraph.insertFileFromBase64(getBase64(), Word.InsertLocation.start);
-
-        // Synchronize the document state by executing the queued commands,
-        // and return a promise to indicate task completion.
-        return context.sync().then(function () {
-            console.log('Inserted base64 encoded content at the beginning of the first paragraph.');
-        });
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-### insertHtml(html: string, insertLocation: InsertLocation)
-Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.
+### insertHtml(html: string, insertLocation: string)
+Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -413,14 +384,15 @@ paragraphObject.insertHtml(html, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |html|string|Required. The HTML to be inserted in the paragraph.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', or 'End'.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -458,8 +430,9 @@ Word.run(function (context) {
 
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
-Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.
+
+### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)
+Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -468,14 +441,15 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|base64EncodedImage|string|Required. The HTML to be inserted in the paragraph.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', or 'End'.|
+|:---------------|:--------|:----------|:---|
+|base64EncodedImage|string|Required. The base64 encoded image to be inserted.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [InlinePicture](inlinepicture.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -513,11 +487,9 @@ Word.run(function (context) {
 });
 ```
 
-#### Additional information
-The [Word-Add-in-DocumentAssembly][paragraph.insertpicture] sample provides another example of how to insert an image into a paragraph.
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Inserts OOXML or wordProcessingML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.
+### insertOoxml(ooxml: string, insertLocation: string)
+Inserts OOXML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -526,58 +498,14 @@ paragraphObject.insertOoxml(ooxml, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|ooxml|string|Required. The OOXML or wordProcessingML to be inserted in the paragraph.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', or 'End'.|
+|:---------------|:--------|:----------|:---|
+|ooxml|string|Required. The OOXML to be inserted in the paragraph.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
-#### Known issues
-This method results in long latency in Word Online, which can affect users' experience of your add-in. We recommend that you use this method only when no other solution is available. 
-
-#### Examples
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Create a proxy object for the paragraphs collection.
-    var paragraphs = context.document.body.paragraphs;
-
-    // Queue a commmand to load the style property for the top 2 paragraphs.
-    // We never perform an empty load. We always must request a property.
-    context.load(paragraphs, {select: 'style', top: 2} );
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-
-        // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];
-
-        // Queue a command to insert Ooxml content into the first paragraph.
-        var ooxmlContent = "<pkg:package xmlns:pkg='http://schemas.microsoft.com/office/2006/xmlPackage'><pkg:part pkg:name='/_rels/.rels' pkg:contentType='application/vnd.openxmlformats-package.relationships+xml' pkg:padding='512'><pkg:xmlData><Relationships xmlns='http://schemas.openxmlformats.org/package/2006/relationships'><Relationship Id='rId1' Type='http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument' Target='word/document.xml'/></Relationships></pkg:xmlData></pkg:part><pkg:part pkg:name='/word/document.xml' pkg:contentType='application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml'><pkg:xmlData><w:document xmlns:w='http://schemas.openxmlformats.org/wordprocessingml/2006/main' ><w:body><w:p><w:pPr><w:spacing w:before='360' w:after='0' w:line='480' w:lineRule='auto'/><w:rPr><w:color w:val='70AD47' w:themeColor='accent6'/><w:sz w:val='28'/></w:rPr></w:pPr><w:r><w:rPr><w:color w:val='70AD47' w:themeColor='accent6'/><w:sz w:val='28'/></w:rPr><w:t>This text has formatting directly applied to achieve its font size, color, line spacing, and paragraph spacing.</w:t></w:r></w:p></w:body></w:document></pkg:xmlData></pkg:part></pkg:package>";
-        paragraph.insertOoxml(ooxmlContent, Word.InsertLocation.end);
-
-        // Synchronize the document state by executing the queued commands,
-        // and return a promise to indicate task completion.
-        return context.sync().then(function () {
-            console.log('Inserted OOXML at the end of the first paragraph.');
-        });
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
-
-#### Additional information
-Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML.
-
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### insertParagraph(paragraphText: string, insertLocation: string)
 Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
@@ -587,14 +515,15 @@ paragraphObject.insertParagraph(paragraphText, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |paragraphText|string|Required. The paragraph text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
+|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Paragraph](paragraph.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -631,8 +560,9 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation: InsertLocation)
-Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start', or 'End'.
+
+### insertText(text: string, insertLocation: string)
+Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
 ```js
@@ -641,14 +571,15 @@ paragraphObject.insertText(text, insertLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |text|string|Required. Text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start', or 'End'.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
 #### Examples
+
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -685,6 +616,8 @@ Word.run(function (context) {
 });
 ```
 
+
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -695,57 +628,11 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
-
-#### Examples
-```js
-// Run a batch operation against the Word object model.
-Word.run(function (context) {
-
-    // Create a proxy object for the paragraphs collection.
-    var paragraphs = context.document.body.paragraphs;
-
-    // Queue a commmand to load the style property for the top 2 paragraphs.
-    // We never perform an empty load. We always must request a property.
-    context.load(paragraphs, {select: 'style', top: 2} );
-
-    // Synchronize the document state by executing the queued commands,
-    // and return a promise to indicate task completion.
-    return context.sync().then(function () {
-
-        // Queue a command to get the first paragraph.
-        var paragraph = paragraphs.items[0];
-
-        // Queue a command to load font information for the paragraph.
-        context.load(paragraph, 'font/size, font/name, font/color');
-
-        // Synchronize the document state by executing the queued commands,
-        // and return a promise to indicate task completion.
-        return context.sync().then(function () {
-            // Show the results of the load method. Here we show the
-            // property values on the paragraph object. Note that we
-            // requested the style property in the first load command.
-            var results = "<strong>Paragraph</strong>--" +
-                          "--Font size: " + paragraph.font.size +
-                          "--Font name: " + paragraph.font.name +
-                          "--Font color: " + paragraph.font.color +
-                          "--Style: " + paragraph.style;
-
-            console.log(results);
-        });
-    });
-})
-.catch(function (error) {
-    console.log('Error: ' + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
-});
-```
 
 ### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.
@@ -757,14 +644,14 @@ paragraphObject.search(searchText, searchOptions);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |searchText|string|Required. The search text.|
-|[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Optional. Options for the search.|
+|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
 
 #### Returns
-[SearchResultCollection](searchresultcollection.md)
+[RangeCollection](rangecollection.md)
 
-### select(selectionMode: SelectionMode)
+### select(selectionMode: string)
 Selects and navigates the Word UI to the paragraph.
 
 #### Syntax
@@ -774,8 +661,8 @@ paragraphObject.select(selectionMode);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|selectionMode|SelectionMode|Optional. The selection mode can be 'Select', 'Start', or 'End'. 'Select' is the default.|
+|:---------------|:--------|:----------|:---|
+|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
 
 #### Returns
 void
@@ -817,11 +704,3 @@ Word.run(function (context) {
     }
 });
 ```
-
-## Support details
-Use the [requirement set](../office-add-in-requirement-sets.md) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
-
-
-[paragraph.insertContentControl]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L161 "insert content control"
-[paragraph.style]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L172 "set style"
-[paragraph.insertpicture]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L236 "insert picture"
