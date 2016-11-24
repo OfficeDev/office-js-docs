@@ -1,4 +1,4 @@
-# Paragraph Object (JavaScript API for Word)
+# Paragraph object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac, Word Online_
 

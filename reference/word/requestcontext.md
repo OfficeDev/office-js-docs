@@ -1,4 +1,4 @@
-# RequestContext Object (JavaScript API for Word)
+# RequestContext object (JavaScript API for Word)
 
 The RequestContext object facilitates requests to the Word application from the Word add-in since the two applications run in different processes.
 

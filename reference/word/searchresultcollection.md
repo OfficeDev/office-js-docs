@@ -1,4 +1,4 @@
-# SearchResultCollection Object (JavaScript API for Word)
+# SearchResultCollection object (JavaScript API for Word)
 
 Contains a collection of [range](range.md) objects as a result of a search operation.
 

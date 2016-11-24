@@ -1,4 +1,4 @@
-# SectionCollection Object (JavaScript API for Word)
+# SectionCollection object (JavaScript API for Word)
 
 _Word 2016, Word for iPad, Word for Mac, Word Online_
 
