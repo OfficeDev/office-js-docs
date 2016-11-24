@@ -1,13 +1,14 @@
-# InlinePictureCollection object (JavaScript API for Word)
+# InlinePictureCollection Object (JavaScript API for Word)
 
-Contains a collection of [inlinePicture](inlinepicture.md) objects.
+_Word 2016, Word for iPad, Word for Mac, Word Online_
 
-_Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
+Contains a collection of [inlinePicture](inlinePicture.md) objects.
 
 ## Properties
-| Property	   | Type	|Description
-|:---------------|:--------|:----------|
-|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|
+
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|[1.1](../reqset/word-requirement.md)|
 
 ## Relationships
 None
@@ -15,11 +16,29 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getItem(index: number)](#getitemindex-number)|[InlinePicture](inlinepicture.md)|Gets an inline picture object by its index in the collection.|[1.1](../reqset/word-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
 
-## Method details
+## Method Details
+
+
+### getItem(index: number)
+Gets an inline picture object by its index in the collection.
+
+#### Syntax
+```js
+inlinePictureCollectionObject.getItem(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|index|number|A number that identifies the index location of an inline picture object.|
+
+#### Returns
+[InlinePicture](inlinepicture.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -31,11 +50,8 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
-
-## Support details
-Use the [requirement set](../office-add-in-requirement-sets.md) in run time checks to make sure your application is supported by the host version of Word. For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).

@@ -1,4 +1,4 @@
-# OfficeExtension.Error object (JavaScript API for Word)
+# OfficeExtension.Error Object (JavaScript API for Word)
 
 Represents errors that occur when you use the Word JavaScript API.
 

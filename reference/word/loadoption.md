@@ -1,4 +1,4 @@
-# LoadOption object (JavaScript API for Word)
+# LoadOption Object (JavaScript API for Word)
 
 An object that specifies paging information and the properties to load when context.sync() is called.
 
