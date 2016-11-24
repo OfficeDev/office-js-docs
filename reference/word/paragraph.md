@@ -8,46 +8,46 @@ Represents a single paragraph in a selection, range, content control, or documen
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|alignment|string|Gets or sets the alignment for a paragraph. The value can be 'left', 'centered', 'right', or 'justified'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|[1.1](../reqset/word-requirement.md)|
-|firstLineIndent|float|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|[1.1](../reqset/word-requirement.md)|
-|leftIndent|float|Gets or sets the left indent value, in points, for the paragraph.|[1.1](../reqset/word-requirement.md)|
-|lineSpacing|float|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|[1.1](../reqset/word-requirement.md)|
-|lineUnitAfter|float|Gets or sets the amount of spacing, in grid lines. after the paragraph.|[1.1](../reqset/word-requirement.md)|
-|lineUnitBefore|float|Gets or sets the amount of spacing, in grid lines, before the paragraph.|[1.1](../reqset/word-requirement.md)|
-|outlineLevel|int|Gets or sets the outline level for the paragraph.|[1.1](../reqset/word-requirement.md)|
-|rightIndent|float|Gets or sets the right indent value, in points, for the paragraph.|[1.1](../reqset/word-requirement.md)|
-|spaceAfter|float|Gets or sets the spacing, in points, after the paragraph.|[1.1](../reqset/word-requirement.md)|
-|spaceBefore|float|Gets or sets the spacing, in points, before the paragraph.|[1.1](../reqset/word-requirement.md)|
-|style|string|Gets or sets the style name for the paragraph. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../reqset/word-requirement.md)|
-|text|string|Gets the text of the paragraph. Read-only.|[1.1](../reqset/word-requirement.md)|
+|alignment|string|Gets or sets the alignment for a paragraph. The value can be 'left', 'centered', 'right', or 'justified'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|firstLineIndent|float|Gets or sets the value, in points, for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|leftIndent|float|Gets or sets the left indent value, in points, for the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|lineSpacing|float|Gets or sets the line spacing, in points, for the specified paragraph. In the Word UI, this value is divided by 12.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|lineUnitAfter|float|Gets or sets the amount of spacing, in grid lines. after the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|lineUnitBefore|float|Gets or sets the amount of spacing, in grid lines, before the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|outlineLevel|int|Gets or sets the outline level for the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|rightIndent|float|Gets or sets the right indent value, in points, for the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|spaceAfter|float|Gets or sets the spacing, in points, after the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|spaceBefore|float|Gets or sets the spacing, in points, before the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|style|string|Gets or sets the style name for the paragraph. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|text|string|Gets the text of the paragraph. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the paragraph. Read-only.|[1.1](../reqset/word-requirement.md)|
-|font|[Font](font.md)|Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties. Read-only.|[1.1](../reqset/word-requirement.md)|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the paragraph. The collection does not include floating images. Read-only.|[1.1](../reqset/word-requirement.md)|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the paragraph. Throws if there isn't a parent content control. Read-only.|[1.1](../reqset/word-requirement.md)|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the paragraph. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|font|[Font](font.md)|Gets the text format of the paragraph. Use this to get and set font name, size, color, and other properties. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the paragraph. The collection does not include floating images. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the paragraph. Throws if there isn't a parent content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.|[1.1](../reqset/word-requirement.md)|
-|[delete()](#delete)|void|Deletes the paragraph and its content from the document.|[1.1](../reqset/word-requirement.md)|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|[1.1](../reqset/word-requirement.md)|
-|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|[1.1](../reqset/word-requirement.md)|
-|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|[1.1](../reqset/word-requirement.md)|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|[1.1](../reqset/word-requirement.md)|
-|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.1](../reqset/word-requirement.md)|
-|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|[1.1](../reqset/word-requirement.md)|
-|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects and navigates the Word UI to the paragraph.|[1.1](../reqset/word-requirement.md)|
+|[clear()](#clear)|void|Clears the contents of the paragraph object. The user can perform the undo operation on the cleared content.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[delete()](#delete)|void|Deletes the paragraph and its content from the document.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getHtml()](#gethtml)|string|Gets the HTML representation of the paragraph object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the paragraph object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the paragraph object with a rich text content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts a picture into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the paragraph at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the paragraph object. The search results are a collection of range objects.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects and navigates the Word UI to the paragraph.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 

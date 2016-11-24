@@ -8,48 +8,48 @@ Represents a content control. Content controls are bounded and potentially label
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|appearance|string|Gets or sets the appearance of the content control. The value can be 'boundingBox', 'tags' or 'hidden'. Possible values are: `BoundingBox` Represents a content control shown as a shaded rectangle or bounding box (with optional title).,`Tags` Represents a content control shown as start and end markers.,`Hidden` Represents a content control that is not shown.|[1.1](../reqset/word-requirement.md)|
-|cannotDelete|bool|Gets or sets a value that indicates whether the user can delete the content control. Mutually exclusive with removeWhenEdited.|[1.1](../reqset/word-requirement.md)|
-|cannotEdit|bool|Gets or sets a value that indicates whether the user can edit the contents of the content control.|[1.1](../reqset/word-requirement.md)|
-|color|string|Gets or sets the color of the content control. Color is specified in '#RRGGBB' format or by using the color name.|[1.1](../reqset/word-requirement.md)|
-|placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty.|[1.1](../reqset/word-requirement.md)|
-|removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|[1.1](../reqset/word-requirement.md)|
-|style|string|Gets or sets the style name for the content control. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../reqset/word-requirement.md)|
-|tag|string|Gets or sets a tag to identify a content control.|[1.1](../reqset/word-requirement.md)|
-|text|string|Gets the text of the content control. Read-only.|[1.1](../reqset/word-requirement.md)|
-|title|string|Gets or sets the title for a content control.|[1.1](../reqset/word-requirement.md)|
-|type|string|Gets the content control type. Only rich text content controls are supported currently. Read-only. Possible values are: `RichText` Identifies a rich text content control.,`Unknown` ,`RichTextInline` ,`RichTextParagraphs` ,`RichTextTableCell` contains whole cell,`RichTextTableRow` contains whole row,`RichTextTable` contains whole table,`PlainTextInline` ,`PlainTextParagraph` ,`Picture` ,`BuildingBlockGallery` ,`CheckBox` ,`ComboBox` ,`DropDownList` ,`DatePicker` ,`RepeatingSection` ,`PlainText` |[1.1](../reqset/word-requirement.md)|
+|appearance|string|Gets or sets the appearance of the content control. The value can be 'boundingBox', 'tags' or 'hidden'. Possible values are: `BoundingBox` Represents a content control shown as a shaded rectangle or bounding box (with optional title).,`Tags` Represents a content control shown as start and end markers.,`Hidden` Represents a content control that is not shown.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|cannotDelete|bool|Gets or sets a value that indicates whether the user can delete the content control. Mutually exclusive with removeWhenEdited.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|cannotEdit|bool|Gets or sets a value that indicates whether the user can edit the contents of the content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|color|string|Gets or sets the color of the content control. Color is specified in '#RRGGBB' format or by using the color name.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|placeholderText|string|Gets or sets the placeholder text of the content control. Dimmed text will be displayed when the content control is empty.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|removeWhenEdited|bool|Gets or sets a value that indicates whether the content control is removed after it is edited. Mutually exclusive with cannotDelete.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|style|string|Gets or sets the style name for the content control. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|tag|string|Gets or sets a tag to identify a content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|text|string|Gets the text of the content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|title|string|Gets or sets the title for a content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|type|string|Gets the content control type. Only rich text content controls are supported currently. Read-only. Possible values are: `RichText` Identifies a rich text content control.,`Unknown` ,`RichTextInline` ,`RichTextParagraphs` ,`RichTextTableCell` contains whole cell,`RichTextTableRow` contains whole row,`RichTextTable` contains whole table,`PlainTextInline` ,`PlainTextParagraph` ,`Picture` ,`BuildingBlockGallery` ,`CheckBox` ,`ComboBox` ,`DropDownList` ,`DatePicker` ,`RepeatingSection` ,`PlainText` |[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the content control. Read-only.|[1.1](../reqset/word-requirement.md)|
-|font|[Font](font.md)|Gets the text format of the content control. Use this to get and set font name, size, color, and other properties. Read-only.|[1.1](../reqset/word-requirement.md)|
-|id|[uint](uint.md)|Gets an integer that represents the content control identifier. Read-only.|[1.1](../reqset/word-requirement.md)|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the content control. The collection does not include floating images. Read-only.|[1.1](../reqset/word-requirement.md)|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Get the collection of paragraph objects in the content control. Read-only.|[1.1](../reqset/word-requirement.md)|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the content control. Throws if there isn't a parent content control. Read-only.|[1.1](../reqset/word-requirement.md)|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|font|[Font](font.md)|Gets the text format of the content control. Use this to get and set font name, size, color, and other properties. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|id|[uint](uint.md)|Gets an integer that represents the content control identifier. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the content control. The collection does not include floating images. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Get the collection of paragraph objects in the content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the content control. Throws if there isn't a parent content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clears the contents of the content control. The user can perform the undo operation on the cleared content.|[1.1](../reqset/word-requirement.md)|
-|[delete(keepContent: bool)](#deletekeepcontent-bool)|void|Deletes the content control and its content. If keepContent is set to true, the content is not deleted.|[1.1](../reqset/word-requirement.md)|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|[1.1](../reqset/word-requirement.md)|
-|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|[1.1](../reqset/word-requirement.md)|
-|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. This method cannot be used with 'RichTextTable', 'RichTextTableRow' and 'RichTextTableCell' content controls.|[1.1](../reqset/word-requirement.md)|
-|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.2](../reqset/word-requirement.md)|
-|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.1](../reqset/word-requirement.md)|
-|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|[1.1](../reqset/word-requirement.md)|
-|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the content control. This causes Word to scroll to the selection.|[1.1](../reqset/word-requirement.md)|
+|[clear()](#clear)|void|Clears the contents of the content control. The user can perform the undo operation on the cleared content.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[delete(keepContent: bool)](#deletekeepcontent-bool)|void|Deletes the content control and its content. If keepContent is set to true, the content is not deleted.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. This method cannot be used with 'RichTextTable', 'RichTextTableRow' and 'RichTextTableCell' content controls.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the content control. This causes Word to scroll to the selection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 

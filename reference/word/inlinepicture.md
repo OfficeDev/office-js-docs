@@ -8,35 +8,35 @@ Represents an inline picture.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|altTextDescription|string|Gets or sets a string that represents the alternative text associated with the inline image|[1.1](../reqset/word-requirement.md)|
-|altTextTitle|string|Gets or sets a string that contains the title for the inline image.|[1.1](../reqset/word-requirement.md)|
-|height|float|Gets or sets a number that describes the height of the inline image.|[1.1](../reqset/word-requirement.md)|
-|hyperlink|string|Gets or sets a hyperlink on the image. Use a '#' to separate the address part from the optional location part.|[1.1](../reqset/word-requirement.md)|
-|lockAspectRatio|bool|Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.|[1.1](../reqset/word-requirement.md)|
-|width|float|Gets or sets a number that describes the width of the inline image.|[1.1](../reqset/word-requirement.md)|
+|altTextDescription|string|Gets or sets a string that represents the alternative text associated with the inline image|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|altTextTitle|string|Gets or sets a string that contains the title for the inline image.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|height|float|Gets or sets a number that describes the height of the inline image.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|hyperlink|string|Gets or sets a hyperlink on the image. Use a '#' to separate the address part from the optional location part.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|lockAspectRatio|bool|Gets or sets a value that indicates whether the inline image retains its original proportions when you resize it.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|width|float|Gets or sets a number that describes the width of the inline image.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|paragraph|[Paragraph](paragraph.md)|Gets the parent paragraph that contains the inline image. Read-only.|[1.2](../reqset/word-requirement.md)|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the inline image. Throws if there isn't a parent content control. Read-only.|[1.1](../reqset/word-requirement.md)|
+|paragraph|[Paragraph](paragraph.md)|Gets the parent paragraph that contains the inline image. Read-only.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the inline image. Throws if there isn't a parent content control. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the inline picture from the document.|[1.2](../reqset/word-requirement.md)|
-|[getBase64ImageSrc()](#getbase64imagesrc)|string|Gets the base64 encoded string representation of the inline image.|[1.1](../reqset/word-requirement.md)|
-|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|[1.2](../reqset/word-requirement.md)|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the inline picture with a rich text content control.|[1.1](../reqset/word-requirement.md)|
-|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.2](../reqset/word-requirement.md)|
-|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.2](../reqset/word-requirement.md)|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts an inline picture at the specified location. The insertLocation value can be 'Replace', 'Before' or 'After'.|[1.2](../reqset/word-requirement.md)|
-|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Before' or 'After'.|[1.2](../reqset/word-requirement.md)|
-|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.2](../reqset/word-requirement.md)|
-|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.2](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
-|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the inline picture. This causes Word to scroll to the selection.|[1.2](../reqset/word-requirement.md)|
+|[delete()](#delete)|void|Deletes the inline picture from the document.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[getBase64ImageSrc()](#getbase64imagesrc)|string|Gets the base64 encoded string representation of the inline image.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Before' or 'After'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the inline picture with a rich text content control.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts an inline picture at the specified location. The insertLocation value can be 'Replace', 'Before' or 'After'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Before' or 'After'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the inline picture. This causes Word to scroll to the selection.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 

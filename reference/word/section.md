@@ -11,15 +11,15 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|body|[Body](body.md)|Gets the body object of the section. This does not include the headerfooter and other section metadata. Read-only.|[1.1](../reqset/word-requirement.md)|
+|body|[Body](body.md)|Gets the body object of the section. This does not include the headerfooter and other section metadata. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFooter(type: string)](#getfootertype-string)|[Body](body.md)|Gets one of the section's footers.|[1.1](../reqset/word-requirement.md)|
-|[getHeader(type: string)](#getheadertype-string)|[Body](body.md)|Gets one of the section's headers.|[1.1](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
+|[getFooter(type: string)](#getfootertype-string)|[Body](body.md)|Gets one of the section's footers.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getHeader(type: string)](#getheadertype-string)|[Body](body.md)|Gets one of the section's headers.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
