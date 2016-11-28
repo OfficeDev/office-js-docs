@@ -8,8 +8,8 @@ Represents a setting of the add-in.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|key|string|Gets the key of the setting. Read only. Read-only.|[1.4](../reqset/word-requirement.md)|
-|value|object|Gets or sets the value of the setting.|[1.4](../reqset/word-requirement.md)|
+|key|string|Gets the key of the setting. Read only. Read-only.|[1.4](../requirement-sets/word-api-requirement.md)|
+|value|object|Gets or sets the value of the setting.|[1.4](../requirement-sets/word-api-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,8 +21,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the setting.|[1.4](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
+|[delete()](#delete)|void|Deletes the setting.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 

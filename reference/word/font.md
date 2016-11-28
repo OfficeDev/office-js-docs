@@ -8,29 +8,29 @@ Represents a font.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|bold|bool|Gets or sets a value that indicates whether the font is bold. True if the font is formatted as bold, otherwise, false.|[1.1](../reqset/word-requirement.md)|
-|color|string|Gets or sets the color for the specified font. You can provide the value in the '#RRGGBB' format or the color name.|[1.1](../reqset/word-requirement.md)|
-|doubleStrikeThrough|bool|Gets or sets a value that indicates whether the font has a double strike through. True if the font is formatted as double strikethrough text, otherwise, false.|[1.1](../reqset/word-requirement.md)|
-|highlightColor|string|Gets or sets the highlight color. To set it, use a value either in the '#RRGGBB' format or the color name. To remove highlight color, set it to null. The returned highlight color can be in the '#RRGGBB' format, or an empty string for mixed highlight colors, or null for no highlight color.|[1.1](../reqset/word-requirement.md)|
-|italic|bool|Gets or sets a value that indicates whether the font is italicized. True if the font is italicized, otherwise, false.|[1.1](../reqset/word-requirement.md)|
-|name|string|Gets or sets a value that represents the name of the font.|[1.1](../reqset/word-requirement.md)|
-|size|float|Gets or sets a value that represents the font size in points.|[1.1](../reqset/word-requirement.md)|
-|strikeThrough|bool|Gets or sets a value that indicates whether the font has a strike through. True if the font is formatted as strikethrough text, otherwise, false.|[1.1](../reqset/word-requirement.md)|
-|subscript|bool|Gets or sets a value that indicates whether the font is a subscript. True if the font is formatted as subscript, otherwise, false.|[1.1](../reqset/word-requirement.md)|
-|superscript|bool|Gets or sets a value that indicates whether the font is a superscript. True if the font is formatted as superscript, otherwise, false.|[1.1](../reqset/word-requirement.md)|
+|bold|bool|Gets or sets a value that indicates whether the font is bold. True if the font is formatted as bold, otherwise, false.|[1.1](../requirement-sets/word-api-requirement.md)|
+|color|string|Gets or sets the color for the specified font. You can provide the value in the '#RRGGBB' format or the color name.|[1.1](../requirement-sets/word-api-requirement.md)|
+|doubleStrikeThrough|bool|Gets or sets a value that indicates whether the font has a double strike through. True if the font is formatted as double strikethrough text, otherwise, false.|[1.1](../requirement-sets/word-api-requirement.md)|
+|highlightColor|string|Gets or sets the highlight color. To set it, use a value either in the '#RRGGBB' format or the color name. To remove highlight color, set it to null. The returned highlight color can be in the '#RRGGBB' format, or an empty string for mixed highlight colors, or null for no highlight color.|[1.1](../requirement-sets/word-api-requirement.md)|
+|italic|bool|Gets or sets a value that indicates whether the font is italicized. True if the font is italicized, otherwise, false.|[1.1](../requirement-sets/word-api-requirement.md)|
+|name|string|Gets or sets a value that represents the name of the font.|[1.1](../requirement-sets/word-api-requirement.md)|
+|size|float|Gets or sets a value that represents the font size in points.|[1.1](../requirement-sets/word-api-requirement.md)|
+|strikeThrough|bool|Gets or sets a value that indicates whether the font has a strike through. True if the font is formatted as strikethrough text, otherwise, false.|[1.1](../requirement-sets/word-api-requirement.md)|
+|subscript|bool|Gets or sets a value that indicates whether the font is a subscript. True if the font is formatted as subscript, otherwise, false.|[1.1](../requirement-sets/word-api-requirement.md)|
+|superscript|bool|Gets or sets a value that indicates whether the font is a superscript. True if the font is formatted as superscript, otherwise, false.|[1.1](../requirement-sets/word-api-requirement.md)|
+|underline|string|Gets or sets a value that indicates the font's underline type. 'None' if the font is not underlined. Possible values are: `None` No underline.,`Single` A single underline. This is the default value.,`Word` Only underline individual words.,`Double` A double underline.,`Dotted` A dotted underline.,`Hidden` A hidden underline.,`Thick` A single thick underline.,`DashLine` A single dash underline.,`DotLine` A single dot underline.,`DotDashLine` An alternating dot-dash underline.,`TwoDotDashLine` An alternating dot-dot-dash underline.,`Wave` A single wavy underline.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|underline|[UnderlineType](underlinetype.md)|Gets or sets a value that indicates the font's underline type. 'None' if the font is not underlined.|[1.1](../reqset/word-requirement.md)|
+None
+
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 

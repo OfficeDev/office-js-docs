@@ -8,46 +8,49 @@ Represents the body of a document or a section.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|style|string|Gets or sets the style name for the body. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../reqset/word-requirement.md)|
-|text|string|Gets the text of the body. Use the insertText method to insert text. Read-only.|[1.1](../reqset/word-requirement.md)|
+|style|string|Gets or sets the style name for the body. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.1](../requirement-sets/word-api-requirement.md)|
+|styleBuiltIn|string|Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1, more...|[1.3](../requirement-sets/word-api-requirement.md)|
+|text|string|Gets the text of the body. Use the insertText method to insert text. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|type|string|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only. Possible values are: Unknown, MainDoc, Section, Header, Footer, TableCell.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of rich text content control objects in the body. Read-only.|[1.1](../reqset/word-requirement.md)|
-|font|[Font](font.md)|Gets the text format of the body. Use this to get and set font name, size, color and other properties. Read-only.|[1.1](../reqset/word-requirement.md)|
-|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the body. The collection does not include floating images. Read-only.|[1.1](../reqset/word-requirement.md)|
-|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the body. Read-only.|[1.3](../reqset/word-requirement.md)|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the body. Read-only.|[1.1](../reqset/word-requirement.md)|
-|parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Read-only.|[1.3](../reqset/word-requirement.md)|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Returns a null object if there isn't a parent content control. Read-only.|[1.1](../reqset/word-requirement.md)|
-|parentSection|[Section](section.md)|Gets the parent section of the body. Read-only.|[1.3](../reqset/word-requirement.md)|
-|styleBuiltIn|[Style](style.md)|Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property.|[1.3](../reqset/word-requirement.md)|
-|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|[1.3](../reqset/word-requirement.md)|
-|type|[BodyType](bodytype.md)|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only.|[1.3](../reqset/word-requirement.md)|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of rich text content control objects in the body. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|font|[Font](font.md)|Gets the text format of the body. Use this to get and set font name, size, color and other properties. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Gets the collection of inlinePicture objects in the body. The collection does not include floating images. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|lists|[ListCollection](listcollection.md)|Gets the collection of list objects in the body. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets the collection of paragraph objects in the body. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|parentBody|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Throws if there isn't a parent body. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentBodyOrNullObject|[Body](body.md)|Gets the parent body of the body. For example, a table cell body's parent body could be a header. Returns a null object if there isn't a parent body. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Throws if there isn't a parent content control. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|parentContentControlOrNullObject|[ContentControl](contentcontrol.md)|Gets the content control that contains the body. Returns a null object if there isn't a parent content control. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentSection|[Section](section.md)|Gets the parent section of the body. Throws if there isn't a parent section. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentSectionOrNullObject|[Section](section.md)|Gets the parent section of the body. Returns a null object if there isn't a parent section. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|tables|[TableCollection](tablecollection.md)|Gets the collection of table objects in the body. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clears the contents of the body object. The user can perform the undo operation on the cleared content.|[1.1](../reqset/word-requirement.md)|
-|[getHtml()](#gethtml)|string|Gets the HTML representation of the body object.|[1.1](../reqset/word-requirement.md)|
-|[getOoxml()](#getooxml)|string|Gets the OOXML (Office Open XML) representation of the body object.|[1.1](../reqset/word-requirement.md)|
-|[getRange(rangeLocation: RangeLocation)](#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the whole body, or the starting or ending point of the body, as a range.|[1.3](../reqset/word-requirement.md)|
-|[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|[1.1](../reqset/word-requirement.md)|
-|[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.|[1.2](../reqset/word-requirement.md)|
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|[1.3](../reqset/word-requirement.md)|
-|[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|[1.1](../reqset/word-requirement.md)|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the body and navigates the Word UI to it.|[1.1](../reqset/word-requirement.md)|
+|[clear()](#clear)|void|Clears the contents of the body object. The user can perform the undo operation on the cleared content.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getHtml()](#gethtml)|string|Gets the HTML representation of the body object.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getOoxml()](#getooxml)|string|Gets the OOXML (Office Open XML) representation of the body object.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the whole body, or the starting or ending point of the body, as a range.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Wraps the body object with a Rich Text content control.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.|[1.2](../requirement-sets/word-api-requirement.md)|
+|[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the body object. The search results are a collection of range objects.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the body and navigates the Word UI to it.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 
@@ -176,7 +179,7 @@ Word.run(function (context) {
 ```
 
 
-### getRange(rangeLocation: RangeLocation)
+### getRange(rangeLocation: string)
 Gets the whole body, or the starting or ending point of the body, as a range.
 
 #### Syntax
@@ -187,12 +190,12 @@ bodyObject.getRange(rangeLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|rangeLocation|RangeLocation|Optional. Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.|
+|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start', 'End', 'After' or 'Content'.  Possible values are: Whole, Start, End, Before, After, Content|
 
 #### Returns
 [Range](range.md)
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### insertBreak(breakType: string, insertLocation: string)
 Inserts a break at the specified location in the main document. The insertLocation value can be 'Start' or 'End'.
 
 #### Syntax
@@ -203,8 +206,8 @@ bodyObject.insertBreak(breakType, insertLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|breakType|BreakType|Required. The break type to add to the body.|
-|insertLocation|InsertLocation|Required. The value can be 'Start' or 'End'.|
+|breakType|string|Required. The break type to add to the body. Possible values are: `Page` Page break at the insertion point.,`Column` Column break at the insertion point.,`Next` Section break on next page.,`SectionContinuous` New section without a corresponding page break.,`SectionEven` Section break with the next section beginning on the next even-numbered page. If the section break falls on an even-numbered page, Word leaves the next odd-numbered page blank.,`SectionOdd` Section break with the next section beginning on the next odd-numbered page. If the section break falls on an odd-numbered page, Word leaves the next even-numbered page blank.,`Line` Line break.,`LineClearLeft` Line break.,`LineClearRight` Line break.,`TextWrapping` Ends the current line and forces the text to continue below a picture, table, or other item. The text continues on the next blank line that does not contain a table aligned with the left or right margin.|
+|insertLocation|string|Required. The value can be 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 void
@@ -275,7 +278,7 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+### insertFileFromBase64(base64File: string, insertLocation: string)
 Inserts a document into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
@@ -287,7 +290,7 @@ bodyObject.insertFileFromBase64(base64File, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |base64File|string|Required. The base64 encoded content of a .docx file.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
@@ -320,7 +323,7 @@ Word.run(function (context) {
 ```
 
 
-### insertHtml(html: string, insertLocation: InsertLocation)
+### insertHtml(html: string, insertLocation: string)
 Inserts HTML at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
@@ -332,7 +335,7 @@ bodyObject.insertHtml(html, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |html|string|Required. The HTML to be inserted in the document.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
@@ -364,7 +367,7 @@ Word.run(function (context) {
 ```
 
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)
 Inserts a picture into the body at the specified location. The insertLocation value can be 'Start' or 'End'.
 
 #### Syntax
@@ -376,7 +379,7 @@ bodyObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |base64EncodedImage|string|Required. The base64 encoded image to be inserted in the body.|
-|insertLocation|InsertLocation|Required. The value can be 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [InlinePicture](inlinepicture.md)
@@ -411,7 +414,7 @@ Word.run(function (context) {
 Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML. The [Word-Add-in-DocumentAssembly][body.insertOoxml] sample shows how you can use this API to assemble a document.
 
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### insertOoxml(ooxml: string, insertLocation: string)
 Inserts OOXML at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
@@ -423,12 +426,12 @@ bodyObject.insertOoxml(ooxml, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |ooxml|string|Required. The OOXML to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### insertParagraph(paragraphText: string, insertLocation: string)
 Inserts a paragraph at the specified location. The insertLocation value can be 'Start' or 'End'.
 
 #### Syntax
@@ -440,7 +443,7 @@ bodyObject.insertParagraph(paragraphText, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |paragraphText|string|Required. The paragraph text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Paragraph](paragraph.md)
@@ -475,7 +478,7 @@ Word.run(function (context) {
 The [Word-Add-in-DocumentAssembly][body.insertParagraph] sample shows how you can use the insertParagraph method to assemble a document.
 
 
-### insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])
+### insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])
 Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Start' or 'End'.
 
 #### Syntax
@@ -488,13 +491,13 @@ bodyObject.insertTable(rowCount, columnCount, insertLocation, values);
 |:---------------|:--------|:----------|:---|
 |rowCount|number|Required. The number of rows in the table.|
 |columnCount|number|Required. The number of columns in the table.|
-|insertLocation|InsertLocation|Required. The value can be 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 [Table](table.md)
 
-### insertText(text: string, insertLocation: InsertLocation)
+### insertText(text: string, insertLocation: string)
 Inserts text into the body at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.
 
 #### Syntax
@@ -506,7 +509,7 @@ bodyObject.insertText(text, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |text|string|Required. Text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Replace', 'Start' or 'End'.|
+|insertLocation|string|Required. The value can be 'Replace', 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Range](range.md)
@@ -649,7 +652,7 @@ Word.run(function (context) {
 The [Word-Add-in-DocumentAssembly][body.search] sample provides another example of how to search a document.
 
 
-### select(selectionMode: SelectionMode)
+### select(selectionMode: string)
 Selects the body and navigates the Word UI to it.
 
 #### Syntax
@@ -660,7 +663,7 @@ bodyObject.select(selectionMode);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|selectionMode|SelectionMode|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
+|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
 
 #### Returns
 void

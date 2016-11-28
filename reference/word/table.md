@@ -8,71 +8,76 @@ Represents a table in a Word document.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|headerRowCount|int|Gets and sets the number of header rows.|[1.3](../reqset/word-requirement.md)|
-|height|float|Gets the height of the table in points. Read-only.|[1.3](../reqset/word-requirement.md)|
-|isUniform|bool|Indicates whether all of the table rows are uniform. Read-only.|[1.3](../reqset/word-requirement.md)|
-|nestingLevel|int|Gets the nesting level of the table. Top-level tables have level 1. Read-only.|[1.3](../reqset/word-requirement.md)|
-|rowCount|int|Gets the number of rows in the table. Read-only.|[1.3](../reqset/word-requirement.md)|
-|shadingColor|string|Gets and sets the shading color.|[1.3](../reqset/word-requirement.md)|
-|style|string|Gets or sets the style name for the table. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.3](../reqset/word-requirement.md)|
-|styleBandedColumns|bool|Gets and sets whether the table has banded columns.|[1.3](../reqset/word-requirement.md)|
-|styleBandedRows|bool|Gets and sets whether the table has banded rows.|[1.3](../reqset/word-requirement.md)|
-|styleFirstColumn|bool|Gets and sets whether the table has a first column with a special style.|[1.3](../reqset/word-requirement.md)|
-|styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|[1.3](../reqset/word-requirement.md)|
-|styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|[1.3](../reqset/word-requirement.md)|
-|values|string|Gets and sets the text values in the table, as a 2D Javascript array.|[1.3](../reqset/word-requirement.md)|
-|width|float|Gets and sets the width of the table in points.|[1.3](../reqset/word-requirement.md)|
+|alignment|string|Gets or sets the alignment of the table against the page column. The value can be 'left', 'centered' or 'right'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|[1.3](../requirement-sets/word-api-requirement.md)|
+|headerRowCount|int|Gets and sets the number of header rows.|[1.3](../requirement-sets/word-api-requirement.md)|
+|horizontalAlignment|string|Gets and sets the horizontal alignment of every cell in the table. The value can be 'left', 'centered', 'right', or 'justified'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|[1.3](../requirement-sets/word-api-requirement.md)|
+|isUniform|bool|Indicates whether all of the table rows are uniform. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|nestingLevel|int|Gets the nesting level of the table. Top-level tables have level 1. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|rowCount|int|Gets the number of rows in the table. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|shadingColor|string|Gets and sets the shading color.|[1.3](../requirement-sets/word-api-requirement.md)|
+|style|string|Gets or sets the style name for the table. Use this property for custom styles and localized style names. To use the built-in styles that are portable between locales, see the "styleBuiltIn" property.|[1.3](../requirement-sets/word-api-requirement.md)|
+|styleBandedColumns|bool|Gets and sets whether the table has banded columns.|[1.3](../requirement-sets/word-api-requirement.md)|
+|styleBandedRows|bool|Gets and sets whether the table has banded rows.|[1.3](../requirement-sets/word-api-requirement.md)|
+|styleBuiltIn|string|Gets or sets the built-in style name for the table. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1, more...|[1.3](../requirement-sets/word-api-requirement.md)|
+|styleFirstColumn|bool|Gets and sets whether the table has a first column with a special style.|[1.3](../requirement-sets/word-api-requirement.md)|
+|styleLastColumn|bool|Gets and sets whether the table has a last column with a special style.|[1.3](../requirement-sets/word-api-requirement.md)|
+|styleTotalRow|bool|Gets and sets whether the table has a total (last) row with a special style.|[1.3](../requirement-sets/word-api-requirement.md)|
+|values|string|Gets and sets the text values in the table, as a 2D Javascript array.|[1.3](../requirement-sets/word-api-requirement.md)|
+|verticalAlignment|string|Gets and sets the vertical alignment of every cell in the table. The value can be 'top', 'center' or 'bottom'. Possible values are: Mixed, Top, Center, Bottom.|[1.3](../requirement-sets/word-api-requirement.md)|
+|width|float|Gets and sets the width of the table in points.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|[1.3](../reqset/word-requirement.md)|
-|horizontalAlignment|[Alignment](alignment.md)|Gets and sets the horizontal alignment of every cell in the table. The value can be 'left', 'centered', 'right', or 'justified'.|[1.3](../reqset/word-requirement.md)|
-|paragraphAfter|[Paragraph](paragraph.md)|Gets the paragraph after the table. Read-only.|[1.3](../reqset/word-requirement.md)|
-|paragraphBefore|[Paragraph](paragraph.md)|Gets the paragraph before the table. Read-only.|[1.3](../reqset/word-requirement.md)|
-|parentBody|[Body](body.md)|Gets the parent body of the table. Read-only.|[1.3](../reqset/word-requirement.md)|
-|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the table. Read-only.|[1.3](../reqset/word-requirement.md)|
-|parentTable|[Table](table.md)|Gets the table that contains this table. Returns a null object if it is not contained in a table. Read-only.|[1.3](../reqset/word-requirement.md)|
-|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains this table. Returns a null object if it is not contained in a table cell. Read-only.|[1.3](../reqset/word-requirement.md)|
-|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|[1.3](../reqset/word-requirement.md)|
-|styleBuiltIn|[Style](style.md)|Gets or sets the built-in style name for the table. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property.|[1.3](../reqset/word-requirement.md)|
-|tables|[TableCollection](tablecollection.md)|Gets the child tables nested one level deeper. Read-only.|[1.3](../reqset/word-requirement.md)|
-|verticalAlignment|[VerticalAlignment](verticalalignment.md)|Gets and sets the vertical alignment of every cell in the table. The value can be 'top', 'center' or 'bottom'.|[1.3](../reqset/word-requirement.md)|
+|font|[Font](font.md)|Gets the font. Use this to get and set font name, size, color, and other properties. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentBody|[Body](body.md)|Gets the parent body of the table. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentContentControl|[ContentControl](contentcontrol.md)|Gets the content control that contains the table. Throws if there isn't a parent content control. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentContentControlOrNullObject|[ContentControl](contentcontrol.md)|Gets the content control that contains the table. Returns a null object if there isn't a parent content control. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentTable|[Table](table.md)|Gets the table that contains this table. Throws if it is not contained in a table. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentTableCell|[TableCell](tablecell.md)|Gets the table cell that contains this table. Throws if it is not contained in a table cell. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentTableCellOrNullObject|[TableCell](tablecell.md)|Gets the table cell that contains this table. Returns a null object if it is not contained in a table cell. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|parentTableOrNullObject|[Table](table.md)|Gets the table that contains this table. Returns a null object if it is not contained in a table. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|rows|[TableRowCollection](tablerowcollection.md)|Gets all of the table rows. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|tables|[TableCollection](tablecollection.md)|Gets the child tables nested one level deeper. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])](#addcolumnsinsertlocation-insertlocation-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|[1.3](../reqset/word-requirement.md)|
-|[addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])](#addrowsinsertlocation-insertlocation-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|[1.3](../reqset/word-requirement.md)|
-|[autoFitContents()](#autofitcontents)|void|Autofits the table columns to the width of their contents.|[1.3](../reqset/word-requirement.md)|
-|[autoFitWindow()](#autofitwindow)|void|Autofits the table columns to the width of the window.|[1.3](../reqset/word-requirement.md)|
-|[clear()](#clear)|void|Clears the contents of the table.|[1.3](../reqset/word-requirement.md)|
-|[delete()](#delete)|void|Deletes the entire table.|[1.3](../reqset/word-requirement.md)|
-|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes specific columns. This is applicable to uniform tables.|[1.3](../reqset/word-requirement.md)|
-|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes specific rows.|[1.3](../reqset/word-requirement.md)|
-|[distributeColumns()](#distributecolumns)|void|Distributes the column widths evenly.|[1.3](../reqset/word-requirement.md)|
-|[distributeRows()](#distributerows)|void|Distributes the row heights evenly.|[1.3](../reqset/word-requirement.md)|
-|[getBorder(borderLocation: BorderLocation)](#getborderborderlocation-borderlocation)|[TableBorder](tableborder.md)|Gets the border style for the specified border.|[1.3](../reqset/word-requirement.md)|
-|[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|[1.3](../reqset/word-requirement.md)|
-|[getCellPadding(cellPaddingLocation: CellPaddingLocation)](#getcellpaddingcellpaddinglocation-cellpaddinglocation)|[float?](float?.md)|Gets cell padding in points.|[1.3](../reqset/word-requirement.md)|
-|[getNext()](#getnext)|[Table](table.md)|Gets the next table.|[1.3](../reqset/word-requirement.md)|
-|[getRange(rangeLocation: RangeLocation)](#getrangerangelocation-rangelocation)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|[1.3](../reqset/word-requirement.md)|
-|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|[1.3](../reqset/word-requirement.md)|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.3](../reqset/word-requirement.md)|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-insertlocation-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|[1.3](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
-|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|[1.4](../reqset/word-requirement.md)|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|[1.3](../reqset/word-requirement.md)|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|[1.3](../reqset/word-requirement.md)|
-|[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|[1.3](../reqset/word-requirement.md)|
+|[addColumns(insertLocation: string, columnCount: number, values: string[][])](#addcolumnsinsertlocation-string-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[addRows(insertLocation: string, rowCount: number, values: string[][])](#addrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[autoFitWindow()](#autofitwindow)|void|Autofits the table columns to the width of the window.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[clear()](#clear)|void|Clears the contents of the table.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[delete()](#delete)|void|Deletes the entire table.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[deleteColumns(columnIndex: number, columnCount: number)](#deletecolumnscolumnindex-number-columncount-number)|void|Deletes specific columns. This is applicable to uniform tables.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[deleteRows(rowIndex: number, rowCount: number)](#deleterowsrowindex-number-rowcount-number)|void|Deletes specific rows.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[distributeColumns()](#distributecolumns)|void|Distributes the column widths evenly. This is applicable to uniform tables.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getBorder(borderLocation: string)](#getborderborderlocation-string)|[TableBorder](tableborder.md)|Gets the border style for the specified border.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column. Throws if the specified table cell does not exist.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getCellOrNullObject(rowIndex: number, cellIndex: number)](#getcellornullobjectrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column. Returns a null object if the specified table cell does not exist.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getCellPadding(cellPaddingLocation: CellPaddingLocation)](#getcellpaddingcellpaddinglocation-cellpaddinglocation)|[float?](float?.md)|Gets cell padding in points.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getNext()](#getnext)|[Table](table.md)|Gets the next table. Throws if this table is the last one.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getNextOrNullObject()](#getnextornullobject)|[Table](table.md)|Gets the next table. Returns a null object if this table is the last one.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getParagraphAfter()](#getparagraphafter)|[Paragraph](paragraph.md)|Gets the paragraph after the table. Throws if there isn't a paragraph after the table.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getParagraphAfterOrNullObject()](#getparagraphafterornullobject)|[Paragraph](paragraph.md)|Gets the paragraph after the table. Returns a null object if there isn't a paragraph after the table.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getParagraphBefore()](#getparagraphbefore)|[Paragraph](paragraph.md)|Gets the paragraph before the table. Throws if there isn't a paragraph before the table.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getParagraphBeforeOrNullObject()](#getparagraphbeforeornullobject)|[Paragraph](paragraph.md)|Gets the paragraph before the table. Returns a null object if there isn't a paragraph before the table.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 
 
-### addColumns(insertLocation: InsertLocation, columnCount: number, values: string[][])
+### addColumns(insertLocation: string, columnCount: number, values: string[][])
 Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -83,14 +88,14 @@ tableObject.addColumns(insertLocation, columnCount, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|insertLocation|InsertLocation|Required. It can be 'Start' or 'End', corresponding to the appropriate side of the table.|
+|insertLocation|string|Required. It can be 'Start' or 'End', corresponding to the appropriate side of the table. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |columnCount|number|Required. Number of columns to add.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 void
 
-### addRows(insertLocation: InsertLocation, rowCount: number, values: string[][])
+### addRows(insertLocation: string, rowCount: number, values: string[][])
 Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -101,26 +106,12 @@ tableObject.addRows(insertLocation, rowCount, values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|insertLocation|InsertLocation|Required. It can be 'Start' or 'End'.|
+|insertLocation|string|Required. It can be 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |rowCount|number|Required. Number of rows to add.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 [TableRowCollection](tablerowcollection.md)
-
-### autoFitContents()
-Autofits the table columns to the width of their contents.
-
-#### Syntax
-```js
-tableObject.autoFitContents();
-```
-
-#### Parameters
-None
-
-#### Returns
-void
 
 ### autoFitWindow()
 Autofits the table columns to the width of the window.
@@ -199,7 +190,7 @@ tableObject.deleteRows(rowIndex, rowCount);
 void
 
 ### distributeColumns()
-Distributes the column widths evenly.
+Distributes the column widths evenly. This is applicable to uniform tables.
 
 #### Syntax
 ```js
@@ -212,21 +203,7 @@ None
 #### Returns
 void
 
-### distributeRows()
-Distributes the row heights evenly.
-
-#### Syntax
-```js
-tableObject.distributeRows();
-```
-
-#### Parameters
-None
-
-#### Returns
-void
-
-### getBorder(borderLocation: BorderLocation)
+### getBorder(borderLocation: string)
 Gets the border style for the specified border.
 
 #### Syntax
@@ -237,17 +214,34 @@ tableObject.getBorder(borderLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|borderLocation|BorderLocation|Required. The border location.|
+|borderLocation|string|Required. The border location.  Possible values are: Top, Left, Bottom, Right, InsideHorizontal, InsideVertical, Inside, Outside, All|
 
 #### Returns
 [TableBorder](tableborder.md)
 
 ### getCell(rowIndex: number, cellIndex: number)
-Gets the table cell at a specified row and column.
+Gets the table cell at a specified row and column. Throws if the specified table cell does not exist.
 
 #### Syntax
 ```js
 tableObject.getCell(rowIndex, cellIndex);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|rowIndex|number|Required. The index of the row.|
+|cellIndex|number|Required. The index of the cell in the row.|
+
+#### Returns
+[TableCell](tablecell.md)
+
+### getCellOrNullObject(rowIndex: number, cellIndex: number)
+Gets the table cell at a specified row and column. Returns a null object if the specified table cell does not exist.
+
+#### Syntax
+```js
+tableObject.getCellOrNullObject(rowIndex, cellIndex);
 ```
 
 #### Parameters
@@ -276,7 +270,7 @@ tableObject.getCellPadding(cellPaddingLocation);
 [float?](float?.md)
 
 ### getNext()
-Gets the next table.
+Gets the next table. Throws if this table is the last one.
 
 #### Syntax
 ```js
@@ -289,7 +283,77 @@ None
 #### Returns
 [Table](table.md)
 
-### getRange(rangeLocation: RangeLocation)
+### getNextOrNullObject()
+Gets the next table. Returns a null object if this table is the last one.
+
+#### Syntax
+```js
+tableObject.getNextOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Table](table.md)
+
+### getParagraphAfter()
+Gets the paragraph after the table. Throws if there isn't a paragraph after the table.
+
+#### Syntax
+```js
+tableObject.getParagraphAfter();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getParagraphAfterOrNullObject()
+Gets the paragraph after the table. Returns a null object if there isn't a paragraph after the table.
+
+#### Syntax
+```js
+tableObject.getParagraphAfterOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getParagraphBefore()
+Gets the paragraph before the table. Throws if there isn't a paragraph before the table.
+
+#### Syntax
+```js
+tableObject.getParagraphBefore();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getParagraphBeforeOrNullObject()
+Gets the paragraph before the table. Returns a null object if there isn't a paragraph before the table.
+
+#### Syntax
+```js
+tableObject.getParagraphBeforeOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getRange(rangeLocation: string)
 Gets the range that contains this table, or the range at the start or end of the table.
 
 #### Syntax
@@ -300,7 +364,7 @@ tableObject.getRange(rangeLocation);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|rangeLocation|RangeLocation|Optional. Optional. The range location can be 'Whole', 'Start', 'End' or 'After'.|
+|rangeLocation|string|Optional. Optional. The range location can be 'Whole', 'Start', 'End' or 'After'.  Possible values are: Whole, Start, End, Before, After, Content|
 
 #### Returns
 [Range](range.md)
@@ -319,7 +383,7 @@ None
 #### Returns
 [ContentControl](contentcontrol.md)
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### insertParagraph(paragraphText: string, insertLocation: string)
 Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
@@ -331,12 +395,12 @@ tableObject.insertParagraph(paragraphText, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |paragraphText|string|Required. The paragraph text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
+|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Paragraph](paragraph.md)
 
-### insertTable(rowCount: number, columnCount: number, insertLocation: InsertLocation, values: string[][])
+### insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])
 Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
@@ -349,7 +413,7 @@ tableObject.insertTable(rowCount, columnCount, insertLocation, values);
 |:---------------|:--------|:----------|:---|
 |rowCount|number|Required. The number of rows in the table.|
 |columnCount|number|Required. The number of columns in the table.|
-|insertLocation|InsertLocation|Required. The value can be 'Before' or 'After'.|
+|insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
@@ -407,7 +471,7 @@ tableObject.search(searchText, searchOptions);
 #### Returns
 [RangeCollection](rangecollection.md)
 
-### select(selectionMode: SelectionMode)
+### select(selectionMode: string)
 Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.
 
 #### Syntax
@@ -418,7 +482,7 @@ tableObject.select(selectionMode);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|selectionMode|SelectionMode|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.|
+|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
 
 #### Returns
 void

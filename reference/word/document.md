@@ -8,33 +8,34 @@ The Document object is the top level object. A Document object contains one or m
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|saved|bool|Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved. Read-only.|[1.1](../reqset/word-requirement.md)|
+|saved|bool|Indicates whether the changes in the document have been saved. A value of true indicates that the document hasn't changed since it was saved. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|body|[Body](body.md)|Gets the body object of the document. The body is the text that excludes headers, footers, footnotes, textboxes, etc.. Read-only.|[1.1](../reqset/word-requirement.md)|
-|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the current document. This includes content controls in the body of the document, headers, footers, textboxes, etc.. Read-only.|[1.1](../reqset/word-requirement.md)|
-|properties|[DocumentProperties](documentproperties.md)|Gets the properties of the current document. Read-only.|[1.3](../reqset/word-requirement.md)|
-|sections|[SectionCollection](sectioncollection.md)|Gets the collection of section objects in the document. Read-only.|[1.1](../reqset/word-requirement.md)|
-|settings|[SettingCollection](settingcollection.md)|Gets the add-in's settings in the current document. Read-only.|[1.4](../reqset/word-requirement.md)|
+|body|[Body](body.md)|Gets the body object of the document. The body is the text that excludes headers, footers, footnotes, textboxes, etc.. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|contentControls|[ContentControlCollection](contentcontrolcollection.md)|Gets the collection of content control objects in the current document. This includes content controls in the body of the document, headers, footers, textboxes, etc.. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|properties|[DocumentProperties](documentproperties.md)|Gets the properties of the current document. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|sections|[SectionCollection](sectioncollection.md)|Gets the collection of section objects in the document. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|settings|[SettingCollection](settingcollection.md)|Gets the add-in's settings in the current document. Read-only.|[1.4](../requirement-sets/word-api-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[deleteBookmark(name: string)](#deletebookmarkname-string)|void|Deletes a bookmark, if exists, from this document.|[1.4](../reqset/word-requirement.md)|
-|[getBookmarkRange(name: string)](#getbookmarkrangename-string)|[Range](range.md)|Gets a bookmark's range. Returns a null object if the bookmark does not exist.|[1.4](../reqset/word-requirement.md)|
-|[getSelection()](#getselection)|[Range](range.md)|Gets the current selection of the document. Multiple selections are not supported.|[1.1](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
-|[open()](#open)|void|Open the document.|[1.3](../reqset/word-requirement.md)|
-|[save()](#save)|void|Saves the document. This will use the Word default file naming convention if the document has not been saved before.|[1.1](../reqset/word-requirement.md)|
+|[deleteBookmark(name: string)](#deletebookmarkname-string)|void|Deletes a bookmark, if exists, from the document.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[getBookmarkRange(name: string)](#getbookmarkrangename-string)|[Range](range.md)|Gets a bookmark's range. Throws if the bookmark does not exist.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[getBookmarkRangeOrNullObject(name: string)](#getbookmarkrangeornullobjectname-string)|[Range](range.md)|Gets a bookmark's range. Returns a null object if the bookmark does not exist.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[getSelection()](#getselection)|[Range](range.md)|Gets the current selection of the document. Multiple selections are not supported.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[open()](#open)|void|Open the document.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[save()](#save)|void|Saves the document. This will use the Word default file naming convention if the document has not been saved before.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 
 
 ### deleteBookmark(name: string)
-Deletes a bookmark, if exists, from this document.
+Deletes a bookmark, if exists, from the document.
 
 #### Syntax
 ```js
@@ -50,11 +51,27 @@ documentObject.deleteBookmark(name);
 void
 
 ### getBookmarkRange(name: string)
-Gets a bookmark's range. Returns a null object if the bookmark does not exist.
+Gets a bookmark's range. Throws if the bookmark does not exist.
 
 #### Syntax
 ```js
 documentObject.getBookmarkRange(name);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|name|string|Required. The bookmark name, which is case-insensitive.|
+
+#### Returns
+[Range](range.md)
+
+### getBookmarkRangeOrNullObject(name: string)
+Gets a bookmark's range. Returns a null object if the bookmark does not exist.
+
+#### Syntax
+```js
+documentObject.getBookmarkRangeOrNullObject(name);
 ```
 
 #### Parameters

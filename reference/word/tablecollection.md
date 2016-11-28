@@ -8,7 +8,7 @@ Contains the collection of the document's Table objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Table[]](table.md)|A collection of table objects. Read-only.|[1.3](../reqset/word-requirement.md)|
+|items|[Table[]](table.md)|A collection of table objects. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,19 +20,34 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFirst()](#getfirst)|[Table](table.md)|Gets the first table in this collection.|[1.3](../reqset/word-requirement.md)|
-|[getItem(index: number)](#getitemindex-number)|[Table](table.md)|Gets a table object by its index in the collection.|[1.3](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
+|[getFirst()](#getfirst)|[Table](table.md)|Gets the first table in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[Table](table.md)|Gets the first table in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getItem(index: number)](#getitemindex-number)|[Table](table.md)|Gets a table object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 
 
 ### getFirst()
-Gets the first table in this collection.
+Gets the first table in this collection. Throws if this collection is empty.
 
 #### Syntax
 ```js
 tableCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Table](table.md)
+
+### getFirstOrNullObject()
+Gets the first table in this collection. Returns a null object if this collection is empty.
+
+#### Syntax
+```js
+tableCollectionObject.getFirstOrNullObject();
 ```
 
 #### Parameters

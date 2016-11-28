@@ -8,34 +8,34 @@ Contains a collection of [paragraph](paragraph.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|id|int|Gets the list's id. Read-only.|[1.3](../reqset/word-requirement.md)|
-|levelExistences|bool|Checks whether each of the 9 levels exists in the list. A true value indicates the level exists, which means there is at least one list item at that level. Read-only.|[1.3](../reqset/word-requirement.md)|
+|id|int|Gets the list's id. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|levelExistences|bool|Checks whether each of the 9 levels exists in the list. A true value indicates the level exists, which means there is at least one list item at that level. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|levelTypes|string|Gets all 9 level types in the list. Each type can be 'Bullet', 'Number' or 'Picture'. Read-only. Possible values are: Bullet, Number, Picture.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|levelTypes|[ListLevelType](listleveltype.md)|Gets all 9 level types in the list. Each type can be 'Bullet', 'Number' or 'Picture'. Read-only.|[1.3](../reqset/word-requirement.md)|
-|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets paragraphs in the list. Read-only.|[1.3](../reqset/word-requirement.md)|
+|paragraphs|[ParagraphCollection](paragraphcollection.md)|Gets paragraphs in the list. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getLevelFont(level: number)](#getlevelfontlevel-number)|[Font](font.md)|Gets the font of the bullet, number or picture at the specified level in the list.|[1.4](../reqset/word-requirement.md)|
-|[getLevelParagraphs(level: number)](#getlevelparagraphslevel-number)|[ParagraphCollection](paragraphcollection.md)|Gets the paragraphs that occur at the specified level in the list.|[1.3](../reqset/word-requirement.md)|
-|[getLevelPicture(level: number)](#getlevelpicturelevel-number)|string|Gets the base64 encoded string representation of the picture at the specified level in the list.|[1.4](../reqset/word-requirement.md)|
-|[getLevelString(level: number)](#getlevelstringlevel-number)|string|Gets the bullet, number or picture at the specified level as a string.|[1.3](../reqset/word-requirement.md)|
-|[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.3](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
-|[resetLevelFont(level: number, resetFontName: bool)](#resetlevelfontlevel-number-resetfontname-bool)|void|Resets the font of the bullet, number or picture at the specified level in the list.|[1.4](../reqset/word-requirement.md)|
-|[setLevelAlignment(level: number, alignment: Alignment)](#setlevelalignmentlevel-number-alignment-alignment)|void|Sets the alignment of the bullet, number or picture at the specified level in the list.|[1.3](../reqset/word-requirement.md)|
-|[setLevelBullet(level: number, listBullet: ListBullet, charCode: number, fontName: string)](#setlevelbulletlevel-number-listbullet-listbullet-charcode-number-fontname-string)|void|Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.|[1.3](../reqset/word-requirement.md)|
-|[setLevelIndents(level: number, textIndent: float, textIndent: float)](#setlevelindentslevel-number-textindent-float-textindent-float)|void|Sets the two indents of the specified level in the list.|[1.3](../reqset/word-requirement.md)|
-|[setLevelNumbering(level: number, listNumbering: ListNumbering, formatString: object[])](#setlevelnumberinglevel-number-listnumbering-listnumbering-formatstring-object)|void|Sets the numbering format at the specified level in the list.|[1.3](../reqset/word-requirement.md)|
-|[setLevelPicture(level: number, base64EncodedImage: string)](#setlevelpicturelevel-number-base64encodedimage-string)|void|Sets the picture at the specified level in the list.|[1.4](../reqset/word-requirement.md)|
-|[setLevelStartingNumber(level: number, startingNumber: number)](#setlevelstartingnumberlevel-number-startingnumber-number)|void|Sets the starting number at the specified level in the list. Default value is 1.|[1.3](../reqset/word-requirement.md)|
+|[getLevelFont(level: number)](#getlevelfontlevel-number)|[Font](font.md)|Gets the font of the bullet, number or picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[getLevelParagraphs(level: number)](#getlevelparagraphslevel-number)|[ParagraphCollection](paragraphcollection.md)|Gets the paragraphs that occur at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getLevelPicture(level: number)](#getlevelpicturelevel-number)|string|Gets the base64 encoded string representation of the picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[getLevelString(level: number)](#getlevelstringlevel-number)|string|Gets the bullet, number or picture at the specified level as a string.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[resetLevelFont(level: number, resetFontName: bool)](#resetlevelfontlevel-number-resetfontname-bool)|void|Resets the font of the bullet, number or picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[setLevelAlignment(level: number, alignment: string)](#setlevelalignmentlevel-number-alignment-string)|void|Sets the alignment of the bullet, number or picture at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[setLevelBullet(level: number, listBullet: string, charCode: number, fontName: string)](#setlevelbulletlevel-number-listbullet-string-charcode-number-fontname-string)|void|Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[setLevelIndents(level: number, textIndent: float, textIndent: float)](#setlevelindentslevel-number-textindent-float-textindent-float)|void|Sets the two indents of the specified level in the list.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[setLevelNumbering(level: number, listNumbering: string, formatString: object[])](#setlevelnumberinglevel-number-listnumbering-string-formatstring-object)|void|Sets the numbering format at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[setLevelPicture(level: number, base64EncodedImage: string)](#setlevelpicturelevel-number-base64encodedimage-string)|void|Sets the picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement.md)|
+|[setLevelStartingNumber(level: number, startingNumber: number)](#setlevelstartingnumberlevel-number-startingnumber-number)|void|Sets the starting number at the specified level in the list. Default value is 1.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 
@@ -104,7 +104,7 @@ listObject.getLevelString(level);
 #### Returns
 string
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### insertParagraph(paragraphText: string, insertLocation: string)
 Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
@@ -116,7 +116,7 @@ listObject.insertParagraph(paragraphText, insertLocation);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |paragraphText|string|Required. The paragraph text to be inserted.|
-|insertLocation|InsertLocation|Required. The value can be 'Start', 'End', 'Before' or 'After'.|
+|insertLocation|string|Required. The value can be 'Start', 'End', 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 
 #### Returns
 [Paragraph](paragraph.md)
@@ -154,7 +154,7 @@ listObject.resetLevelFont(level, resetFontName);
 #### Returns
 void
 
-### setLevelAlignment(level: number, alignment: Alignment)
+### setLevelAlignment(level: number, alignment: string)
 Sets the alignment of the bullet, number or picture at the specified level in the list.
 
 #### Syntax
@@ -166,12 +166,12 @@ listObject.setLevelAlignment(level, alignment);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |level|number|Required. The level in the list.|
-|alignment|Alignment|Required. The level alignment that can be 'left', 'centered' or 'right'.|
+|alignment|string|Required. The level alignment that can be 'left', 'centered' or 'right'. Possible values are: `Unknown` Unknown alignment.,`Left` Alignment to the left.,`Centered` Alignment to the center.,`Right` Alignment to the right.,`Justified` Fully justified alignment.|
 
 #### Returns
 void
 
-### setLevelBullet(level: number, listBullet: ListBullet, charCode: number, fontName: string)
+### setLevelBullet(level: number, listBullet: string, charCode: number, fontName: string)
 Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.
 
 #### Syntax
@@ -183,7 +183,7 @@ listObject.setLevelBullet(level, listBullet, charCode, fontName);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |level|number|Required. The level in the list.|
-|listBullet|ListBullet|Required. The bullet.|
+|listBullet|string|Required. The bullet.  Possible values are: Custom , Solid, Hollow, Square, Diamonds, Arrow, Checkmark|
 |charCode|number|Optional. Optional. The bullet character's code value. Used only if the bullet is 'Custom'.|
 |fontName|string|Optional. Optional. The bullet's font name. Used only if the bullet is 'Custom'.|
 
@@ -208,7 +208,7 @@ listObject.setLevelIndents(level, textIndent, textIndent);
 #### Returns
 void
 
-### setLevelNumbering(level: number, listNumbering: ListNumbering, formatString: object[])
+### setLevelNumbering(level: number, listNumbering: string, formatString: object[])
 Sets the numbering format at the specified level in the list.
 
 #### Syntax
@@ -220,7 +220,7 @@ listObject.setLevelNumbering(level, listNumbering, formatString);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
 |level|number|Required. The level in the list.|
-|listNumbering|ListNumbering|Required. The ordinal format.|
+|listNumbering|string|Required. The ordinal format.  Possible values are: None, Arabic, UpperRoman, LowerRoman, UpperLetter, LowerLetter|
 |formatString|object[]|Optional. Optional. The numbering string format defined as an array of strings and/or integers. Each integer is a level of number type that is higher than or equal to this level. For example, an array of ["(", level - 1, ".", level, ")"] can define the format of "(2.c)", where 2 is the parent's item number and c is this level's item number.|
 
 #### Returns

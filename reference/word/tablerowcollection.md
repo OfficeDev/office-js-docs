@@ -8,7 +8,7 @@ Contains the collection of the document's TableRow objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|[1.3](../reqset/word-requirement.md)|
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,19 +20,34 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFirst()](#getfirst)|[TableRow](tablerow.md)|Gets the first row in this collection.|[1.3](../reqset/word-requirement.md)|
-|[getItem(index: number)](#getitemindex-number)|[TableRow](tablerow.md)|Gets a table row object by its index in the collection.|[1.3](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
+|[getFirst()](#getfirst)|[TableRow](tablerow.md)|Gets the first row in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[TableRow](tablerow.md)|Gets the first row in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getItem(index: number)](#getitemindex-number)|[TableRow](tablerow.md)|Gets a table row object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 
 
 ### getFirst()
-Gets the first row in this collection.
+Gets the first row in this collection. Throws if this collection is empty.
 
 #### Syntax
 ```js
 tableRowCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[TableRow](tablerow.md)
+
+### getFirstOrNullObject()
+Gets the first row in this collection. Returns a null object if this collection is empty.
+
+#### Syntax
+```js
+tableRowCollectionObject.getFirstOrNullObject();
 ```
 
 #### Parameters

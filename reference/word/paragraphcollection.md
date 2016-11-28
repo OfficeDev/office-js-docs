@@ -8,7 +8,7 @@ Contains a collection of [paragraph](paragraph.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|[1.1](../reqset/word-requirement.md)|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Relationships
 None
@@ -18,20 +18,36 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFirst()](#getfirst)|[Paragraph](paragraph.md)|Gets the first paragraph in this collection.|[1.3](../reqset/word-requirement.md)|
-|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|[1.1](../reqset/word-requirement.md)|
-|[getLast()](#getlast)|[Paragraph](paragraph.md)|Gets the last paragraph in this collection.|[1.3](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
+|[getFirst()](#getfirst)|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Throws if the collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[Paragraph](paragraph.md)|Gets the first paragraph in this collection. Returns a null object if the collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getItem(index: number)](#getitemindex-number)|[Paragraph](paragraph.md)|Gets a paragraph object by its index in the collection.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getLast()](#getlast)|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Throws if the collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[getLastOrNullObject()](#getlastornullobject)|[Paragraph](paragraph.md)|Gets the last paragraph in this collection. Returns a null object if the collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 
 
 ### getFirst()
-Gets the first paragraph in this collection.
+Gets the first paragraph in this collection. Throws if the collection is empty.
 
 #### Syntax
 ```js
 paragraphCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getFirstOrNullObject()
+Gets the first paragraph in this collection. Returns a null object if the collection is empty.
+
+#### Syntax
+```js
+paragraphCollectionObject.getFirstOrNullObject();
 ```
 
 #### Parameters
@@ -57,11 +73,25 @@ paragraphCollectionObject.getItem(index);
 [Paragraph](paragraph.md)
 
 ### getLast()
-Gets the last paragraph in this collection.
+Gets the last paragraph in this collection. Throws if the collection is empty.
 
 #### Syntax
 ```js
 paragraphCollectionObject.getLast();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Paragraph](paragraph.md)
+
+### getLastOrNullObject()
+Gets the last paragraph in this collection. Returns a null object if the collection is empty.
+
+#### Syntax
+```js
+paragraphCollectionObject.getLastOrNullObject();
 ```
 
 #### Parameters

@@ -8,22 +8,22 @@ Represents a custom property.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|key|string|Gets the key of the custom property. Read only. Read-only.|[1.3](../reqset/word-requirement.md)|
-|value|object|Gets or sets the value of the custom property.|[1.3](../reqset/word-requirement.md)|
+|key|string|Gets the key of the custom property. Read only. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|type|string|Gets the value type of the custom property. Read only. Read-only. Possible values are: String, Number, Date, Boolean.|[1.3](../requirement-sets/word-api-requirement.md)|
+|value|object|Gets or sets the value of the custom property.|[1.3](../requirement-sets/word-api-requirement.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|type|[DocumentPropertyType](documentpropertytype.md)|Gets the value type of the custom property. Read only. Read-only.|[1.3](../reqset/word-requirement.md)|
+None
+
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the custom property.|[1.3](../reqset/word-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/word-requirement.md)|
+|[delete()](#delete)|void|Deletes the custom property.|[1.3](../requirement-sets/word-api-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
 
 ## Method Details
 
