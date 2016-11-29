@@ -8,7 +8,7 @@ Contains a collection of [range](range.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Range[]](range.md)|A collection of range objects. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|items|[Range[]](range.md)|A collection of range objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,10 +20,10 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFirst()](#getfirst)|[Range](range.md)|Gets the first range in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getFirstOrNullObject()](#getfirstornullobject)|[Range](range.md)|Gets the first range in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getItem(index: number)](#getitemindex-number)|[Range](range.md)|Gets a range object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getFirst()](#getfirst)|[Range](range.md)|Gets the first range in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[Range](range.md)|Gets the first range in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[Range](range.md)|Gets a range object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 

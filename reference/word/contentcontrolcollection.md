@@ -8,7 +8,7 @@ Contains a collection of [contentControl](contentControl.md) objects. Content co
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[ContentControl[]](contentcontrol.md)|A collection of contentControl objects. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|items|[ContentControl[]](contentcontrol.md)|A collection of contentControl objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -18,15 +18,15 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getById(id: number)](#getbyidid-number)|[ContentControl](contentcontrol.md)|Gets a content control by its identifier. Throws if there isn't a content control with the identifier in this collection.|[1.1](../requirement-sets/word-api-requirement.md)|
-|[getByIdOrNullObject(id: number)](#getbyidornullobjectid-number)|[ContentControl](contentcontrol.md)|Gets a content control by its identifier. Returns a null object if there isn't a content control with the identifier in this collection.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getByTag(tag: string)](#getbytagtag-string)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified tag.|[1.1](../requirement-sets/word-api-requirement.md)|
-|[getByTitle(title: string)](#getbytitletitle-string)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified title.|[1.1](../requirement-sets/word-api-requirement.md)|
-|[getByTypes(types: ContentControlType[])](#getbytypestypes-contentcontroltype)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified types andor subtypes.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getFirst()](#getfirst)|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getFirstOrNullObject()](#getfirstornullobject)|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getItem(index: number)](#getitemindex-number)|[ContentControl](contentcontrol.md)|Gets a content control by its index in the collection.|[1.1](../requirement-sets/word-api-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getById(id: number)](#getbyidid-number)|[ContentControl](contentcontrol.md)|Gets a content control by its identifier. Throws if there isn't a content control with the identifier in this collection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getByIdOrNullObject(id: number)](#getbyidornullobjectid-number)|[ContentControl](contentcontrol.md)|Gets a content control by its identifier. Returns a null object if there isn't a content control with the identifier in this collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getByTag(tag: string)](#getbytagtag-string)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified tag.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getByTitle(title: string)](#getbytitletitle-string)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified title.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getByTypes(types: ContentControlType[])](#getbytypestypes-contentcontroltype)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified types andor subtypes.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[ContentControl](contentcontrol.md)|Gets a content control by its index in the collection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 

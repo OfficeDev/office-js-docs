@@ -6,25 +6,22 @@ Represents a section in a Word document.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|headerFooterEvenPageDifferent|bool|Gets or sets a value that indicates whether even-numbered pages have a different header and footer from odd-numbered pages in the section.|[1.4](../requirement-sets/word-api-requirement.md)|
-|headerFooterFirstPageDifferent|bool|Gets or sets a value that indicates whether the first page has a different header and footer from the other pages in the section.|[1.4](../requirement-sets/word-api-requirement.md)|
+None
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|body|[Body](body.md)|Gets the body object of the section. This does not include the headerfooter and other section metadata. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|body|[Body](body.md)|Gets the body object of the section. This does not include the headerfooter and other section metadata. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFooter(type: string)](#getfootertype-string)|[Body](body.md)|Gets one of the section's footers.|[1.1](../requirement-sets/word-api-requirement.md)|
-|[getHeader(type: string)](#getheadertype-string)|[Body](body.md)|Gets one of the section's headers.|[1.1](../requirement-sets/word-api-requirement.md)|
-|[getNext()](#getnext)|[Section](section.md)|Gets the next section. Throws if this section is the last one.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getNextOrNullObject()](#getnextornullobject)|[Section](section.md)|Gets the next section. Returns a null object if this section is the last one.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getFooter(type: string)](#getfootertype-string)|[Body](body.md)|Gets one of the section's footers.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getHeader(type: string)](#getheadertype-string)|[Body](body.md)|Gets one of the section's headers.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[getNext()](#getnext)|[Section](section.md)|Gets the next section. Throws if this section is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getNextOrNullObject()](#getnextornullobject)|[Section](section.md)|Gets the next section. Returns a null object if this section is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 

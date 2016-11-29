@@ -8,7 +8,7 @@ Contains a collection of [list](list.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[List[]](list.md)|A collection of list objects. Read-only.|[1.3](../requirement-sets/word-api-requirement.md)|
+|items|[List[]](list.md)|A collection of list objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,12 +20,12 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getById(id: number)](#getbyidid-number)|[List](list.md)|Gets a list by its identifier. Throws if there isn't a list with the identifier in this collection.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getByIdOrNullObject(id: number)](#getbyidornullobjectid-number)|[List](list.md)|Gets a list by its identifier. Returns a null object if there isn't a list with the identifier in this collection.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getFirst()](#getfirst)|[List](list.md)|Gets the first list in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getFirstOrNullObject()](#getfirstornullobject)|[List](list.md)|Gets the first list in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getItem(index: number)](#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getById(id: number)](#getbyidid-number)|[List](list.md)|Gets a list by its identifier. Throws if there isn't a list with the identifier in this collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getByIdOrNullObject(id: number)](#getbyidornullobjectid-number)|[List](list.md)|Gets a list by its identifier. Returns a null object if there isn't a list with the identifier in this collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[List](list.md)|Gets the first list in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[List](list.md)|Gets the first list in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 

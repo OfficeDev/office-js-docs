@@ -8,7 +8,7 @@ Contains a collection of [inlinePicture](inlinePicture.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|[1.1](../requirement-sets/word-api-requirement.md)|
+|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -18,10 +18,10 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getFirst()](#getfirst)|[InlinePicture](inlinepicture.md)|Gets the first inline image in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getFirstOrNullObject()](#getfirstornullobject)|[InlinePicture](inlinepicture.md)|Gets the first inline image in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement.md)|
-|[getItem(index: number)](#getitemindex-number)|[InlinePicture](inlinepicture.md)|Gets an inline picture object by its index in the collection.|[1.1](../requirement-sets/word-api-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement.md)|
+|[getFirst()](#getfirst)|[InlinePicture](inlinepicture.md)|Gets the first inline image in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getFirstOrNullObject()](#getfirstornullobject)|[InlinePicture](inlinepicture.md)|Gets the first inline image in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[InlinePicture](inlinepicture.md)|Gets an inline picture object by its index in the collection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
