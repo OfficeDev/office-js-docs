@@ -1,7 +1,6 @@
 
 # Deploy and publish your Office Add-in
 
-
 You can use one of several methods to deploy your Office Add-in for testing or distribution to users: 
 
 - [Sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) - Use as part of your development process to test your add-in running on Windows, Office Online, iPad, or Mac.
@@ -11,7 +10,9 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 
 The options that are available depend on the Office host that you're targeting and the type of add-in you create.
 
-### Deployment Options for Word, Excel, and PowerPoint Add-ins
+>**Note:** When you build your add-in, if you plan to [publish](../publish/publish.md) your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+
+## Deployment options for Word, Excel, and PowerPoint Add-ins
 
 | Extension point            | Sideloading | Office 365 admin center preview |Office Store  | SharePoint catalog  |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
@@ -21,7 +22,7 @@ The options that are available depend on the Office host that you're targeting a
 
 > **NOTE:** SharePoint catalogs are not supported for Office 2016 for Mac. To deploy Office Add-ins to Mac clients, you must submit them to the [Office Store].    
 
-### Deployment Options for Outlook Add-ins
+## Deployment options for Outlook Add-ins
 
 | Extension point     | Sideloading | Exchange server | Office Store |
 |:---------|:-----------:|:---------------:|:------------:|
