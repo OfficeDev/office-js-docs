@@ -38,7 +38,6 @@ To detect this API at runtime, use the following code.
 ### Supported platforms
 The DialogAPI requirement set is currently supported on the following platforms:
 
-  - Office for Windows Desktop 2013 (build 15.0.4855.1000 or later)
   - Office for Windows Desktop 2016 (build 16.0.6741.0000 or later)
   - Office for IPad (build 1.22 or later)
   - Office for Mac (build 15.20 or later) 
@@ -54,14 +53,7 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 
 For a simple example that uses the **displayDialogAsync** method, see [Office Add-in Dialog API example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) on GitHub.
 
-For an examples that show authentication scenarios, see:
-
-- [PowerPoint Add-in in Microsoft Graph ASP.Net Insert Chart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Office Add-in Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Excel Add-in ASP.NET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
-- [Office Add-in Server Authentication Sample for ASP.net MVC](https://github.com/dougperkes/Office-Add-in-AspNetMvc-ServerAuth/tree/Office2016DisplayDialog)
-- [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
-
+For an example that shows an authentication scenario, see the [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) sample on GitHub.
 
  
 ## Parameters
@@ -80,7 +72,7 @@ The following configuration options are available for a dialog box.
 |:---------------|:--------|:----------|
 |**width**|object|Optional. Defines the width of the dialog box as a percentage of the current display. The default value is 80%. The minimum resolution is 250 pixels.|
 |**height**|object|Optional. Defines the height of the dialog box as a percentage of the current display. The default value is 80%. The minimum resolution is 150 pixels.|
-|**displayInIframe**|object|Optional. Determines whether the dialog box should be displayed within an IFrame. **This setting is only applicable in Office Online clients**, this setting is ignored by desktop clients. The following are the possible values:<ul><li>false (default) - The dialog will be displayed as a new browser window (pop-up). Recommended for authentication pages that cannot be displayed in an IFrame. </li><li>true - The dialog will be displayed as a floating overlay with an IFrame. This is best for user experience and performance.</li>|
+|**displayInIframe**|object|Optional. Determines whether the dialog box should be displayed within an IFrame in Office Online clients. This setting is ignored by desktop clients. The following are the possible values:<ul><li>false (default) - The dialog will be displayed as a new browser window (pop-up). Recommended for authentication pages that cannot be displayed in an IFrame. </li><li>true - The dialog will be displayed as a floating overlay with an IFrame. This is best for user experience and performance.</li>|
 
 
 ## Callback value
@@ -96,17 +88,6 @@ In the callback function passed to the  **displayDialogAsync** method, you can u
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determine the success or failure of the operation.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Access an [Error](../../reference/shared/error.md) object that provides error information if the operation failed.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Access your user-defined object or value, if you passed one as the _asyncContext_ parameter.|
-
-### Errors from displayDialogAsync
-
-In addition to general platform and system errors, the following errors are specific to calling **displayDialogAsync**.
-
-|**Code number**|**Meaning**|
-|:-----|:-----|
-|12004|The domain of the URL passed to `displayDialogAsync` is not trusted. The domain must be either the same domain as the host page (including protocol and port number), or it must be registered in the `<AppDomains>` section of the add-in manifest.|
-|12005|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. (In some versions of Office, the error message returned with 12005 is the same one returned for 12004.)|
-|12007|A dialog box is already opened from the task pane. A task pane add-in can only have one dialog box open at a time.|
-
 
 
 ## Design considerations

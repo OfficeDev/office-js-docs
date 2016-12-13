@@ -45,9 +45,6 @@ If the add-in doesn't activate when the user performs the following steps:
     
 Verify that the latest Office updates are installed, or download the [update for Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
 
-## Add-in doesn't load in task pane or other issues with the add-in manifest
-
-Try using [runtime logging](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) to debug add-in manifest issues.
 
 ## Additional resources
 
@@ -62,6 +59,4 @@ Try using [runtime logging](https://dev.office.com/docs/add-ins/develop/use-runt
 - [Create and debug Office Add-ins in Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
     
 - [Deploy and install Outlook add-ins for testing](../outlook/testing-and-tips.md)
-    
-- [Use runtime logging to debug manifest](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
     
