@@ -6,21 +6,21 @@ Represents a series in a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|name|string|Represents the name of a series in a chart.|[1.1](../excel-requirement.md)|
+|name|string|Represents the name of a series in a chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|format|[ChartSeriesFormat](chartseriesformat.md)|Represents the formatting of a chart series, which includes fill and line formatting. Read-only.|[1.1](../excel-requirement.md)|
-|points|[ChartPointsCollection](chartpointscollection.md)|Represents a collection of all points in the series. Read-only.|[1.1](../excel-requirement.md)|
+|format|[ChartSeriesFormat](chartseriesformat.md)|Represents the formatting of a chart series, which includes fill and line formatting. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|points|[ChartPointsCollection](chartpointscollection.md)|Represents a collection of all points in the series. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

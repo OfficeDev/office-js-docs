@@ -6,28 +6,32 @@ Represents a column in a table.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|id|int|Returns a unique key that identifies the column within the table. Read-only.|[1.1](../excel-requirement.md)|
-|index|int|Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.|[1.1](../excel-requirement.md)|
-|name|string|Returns the name of the table column. Read-only.|[1.1](../excel-requirement.md)|
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../excel-requirement.md)|
+|id|int|Returns a unique key that identifies the column within the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|index|int|Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Represents the name of the table column.|[1.1, 1.1 for getting the name; 1.4 for setting it.](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|filter|[Filter](filter.md)|Retrieve the filter applied to the column. Read-only.|[1.2](../excel-requirement.md)|
+|filter|[Filter](filter.md)|Retrieve the filter applied to the column. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the column from the table.|[1.1](../reqset/excel-requirement.md)|
-|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the column.|[1.1](../reqset/excel-requirement.md)|
-|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with the header row of the column.|[1.1](../reqset/excel-requirement.md)|
-|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire column.|[1.1](../reqset/excel-requirement.md)|
-|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with the totals row of the column.|[1.1](../reqset/excel-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[delete()](#delete)|void|Deletes the column from the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with the header row of the column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getNextColumn()](#getnextcolumn)|[TableColumn](tablecolumn.md)|Gets the table column that follows this one. If there are no table columns following this one, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getNextColumnOrNullObject()](#getnextcolumnornullobject)|[TableColumn](tablecolumn.md)|Gets the table column that follows this one. If there are no table columns following this one, this method will return a null object.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getPreviousColumn()](#getpreviouscolumn)|[TableColumn](tablecolumn.md)|Gets the table column that precedes this one. If there are no previous table columns, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getPreviousColumnOrNullObject()](#getpreviouscolumnornullobject)|[TableColumn](tablecolumn.md)|Gets the table column that precedes this one. If there are no previous table columns, this method will return a null objet.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with the totals row of the column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -128,6 +132,62 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
+### getNextColumn()
+Gets the table column that follows this one. If there are no table columns following this one, this method will throw an error.
+
+#### Syntax
+```js
+tableColumnObject.getNextColumn();
+```
+
+#### Parameters
+None
+
+#### Returns
+[TableColumn](tablecolumn.md)
+
+### getNextColumnOrNullObject()
+Gets the table column that follows this one. If there are no table columns following this one, this method will return a null object.
+
+#### Syntax
+```js
+tableColumnObject.getNextColumnOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[TableColumn](tablecolumn.md)
+
+### getPreviousColumn()
+Gets the table column that precedes this one. If there are no previous table columns, this method will throw an error.
+
+#### Syntax
+```js
+tableColumnObject.getPreviousColumn();
+```
+
+#### Parameters
+None
+
+#### Returns
+[TableColumn](tablecolumn.md)
+
+### getPreviousColumnOrNullObject()
+Gets the table column that precedes this one. If there are no previous table columns, this method will return a null objet.
+
+#### Syntax
+```js
+tableColumnObject.getPreviousColumnOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[TableColumn](tablecolumn.md)
 
 ### getRange()
 Gets the range object associated with the entire column.

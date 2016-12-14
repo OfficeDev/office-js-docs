@@ -14,8 +14,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clear the fill color of a chart element.|[1.1](../reqset/excel-requirement.md)|
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|[1.1](../reqset/excel-requirement.md)|
+|[clear()](#clear)|void|Clear the fill color of a chart element.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

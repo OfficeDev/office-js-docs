@@ -14,7 +14,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|[1.2](../reqset/excel-requirement.md)|
+|[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Perform a sort operation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

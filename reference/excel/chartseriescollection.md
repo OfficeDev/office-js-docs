@@ -6,8 +6,8 @@ Represents a collection of chart series.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of series in the collection. Read-only.|[1.1](../excel-requirement.md)|
-|items|[ChartSeries[]](chartseries.md)|A collection of chartSeries objects. Read-only.|[1.1](../excel-requirement.md)|
+|count|int|Returns the number of series in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartSeries[]](chartseries.md)|A collection of chartSeries objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,11 +19,42 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|[1.1](../reqset/excel-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[getCount()](#getcount)|int|Returns the number of series in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[ChartSeries](chartseries.md)|Gets the first series in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLast()](#getlast)|[ChartSeries](chartseries.md)|Gets the last series in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### getCount()
+Returns the number of series in the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
+
+### getFirst()
+Gets the first series in the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[ChartSeries](chartseries.md)
 
 ### getItemAt(index: number)
 Retrieves a series based on its position in the collection
@@ -60,6 +91,20 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### getLast()
+Gets the last series in the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.getLast();
+```
+
+#### Parameters
+None
+
+#### Returns
+[ChartSeries](chartseries.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.

@@ -6,18 +6,18 @@ Represents a point of a series in a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|value|object|Returns the value of a chart point. Read-only.|[1.1](../excel-requirement.md)|
+|value|object|Returns the value of a chart point. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.|[1.1](../excel-requirement.md)|
+|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

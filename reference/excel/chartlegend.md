@@ -6,22 +6,22 @@ Represents the legend in a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.|[1.1](../excel-requirement.md)|
-|position|string|Represents the position of the legend on the chart. Possible values are: Top, Bottom, Left, Right, Corner, Custom.|[1.1](../excel-requirement.md)|
-|visible|bool|A boolean value the represents the visibility of a ChartLegend object.|[1.1](../excel-requirement.md)|
+|overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|position|string|Represents the position of the legend on the chart. Possible values are: Top, Bottom, Left, Right, Corner, Custom.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visible|bool|A boolean value the represents the visibility of a ChartLegend object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|format|[ChartLegendFormat](chartlegendformat.md)|Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.|[1.1](../excel-requirement.md)|
+|format|[ChartLegendFormat](chartlegendformat.md)|Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

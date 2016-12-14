@@ -6,8 +6,8 @@ A collection of all the chart objects on a worksheet.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of charts in the worksheet. Read-only.|[1.1](../excel-requirement.md)|
-|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.|[1.1](../excel-requirement.md)|
+|count|int|Returns the number of charts in the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,11 +19,12 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Creates a new chart.|[1.1](../reqset/excel-requirement.md)|
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.1](../reqset/excel-requirement.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.|[1.1](../reqset/excel-requirement.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.3](../reqset/excel-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Creates a new chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Returns the number of charts in the worksheet.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -67,6 +68,20 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### getCount()
+Returns the number of charts in the worksheet.
+
+#### Syntax
+```js
+chartCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
 
 ### getItem(name: string)
 Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.
@@ -173,12 +188,12 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemOrNull(name: string)
+### getItemOrNullObject(name: string)
 Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.
 
 #### Syntax
 ```js
-chartCollectionObject.getItemOrNull(name);
+chartCollectionObject.getItemOrNullObject(name);
 ```
 
 #### Parameters

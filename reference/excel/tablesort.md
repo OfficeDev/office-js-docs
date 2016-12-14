@@ -6,22 +6,22 @@ Manages sorting operations on Table objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|matchCase|bool|Represents whether the casing impacted the last sort of the table. Read-only.|[1.2](../excel-requirement.md)|
-|method|string|Represents Chinese character ordering method last used to sort the table. Read-only. Possible values are: PinYin, StrokeCount.|[1.2](../excel-requirement.md)|
+|matchCase|bool|Represents whether the casing impacted the last sort of the table. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|method|string|Represents Chinese character ordering method last used to sort the table. Read-only. Possible values are: PinYin, StrokeCount.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|fields|[SortField](sortfield.md)|Represents the current conditions used to last sort the table. Read-only.|[1.2](../excel-requirement.md)|
+|fields|[SortField](sortfield.md)|Represents the current conditions used to last sort the table. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[apply(fields: SortField[], matchCase: bool, method: string)](#applyfields-sortfield-matchcase-bool-method-string)|void|Perform a sort operation.|[1.2](../reqset/excel-requirement.md)|
-|[clear()](#clear)|void|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|[1.2](../reqset/excel-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
-|[reapply()](#reapply)|void|Reapplies the current sorting parameters to the table.|[1.2](../reqset/excel-requirement.md)|
+|[apply(fields: SortField[], matchCase: bool, method: string)](#applyfields-sortfield-matchcase-bool-method-string)|void|Perform a sort operation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[clear()](#clear)|void|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[reapply()](#reapply)|void|Reapplies the current sorting parameters to the table.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

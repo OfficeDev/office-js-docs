@@ -6,12 +6,12 @@ This object represents the font attributes (font name, font size, color, etc.) f
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|bold|bool|Represents the bold status of font.|[1.1](../excel-requirement.md)|
-|color|string|HTML color code representation of the text color. E.g. #FF0000 represents Red.|[1.1](../excel-requirement.md)|
-|italic|bool|Represents the italic status of the font.|[1.1](../excel-requirement.md)|
-|name|string|Font name (e.g. "Calibri")|[1.1](../excel-requirement.md)|
-|size|double|Size of the font (e.g. 11)|[1.1](../excel-requirement.md)|
-|underline|string|Type of underline applied to the font. Possible values are: None, Single.|[1.1](../excel-requirement.md)|
+|bold|bool|Represents the bold status of font.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|color|string|HTML color code representation of the text color. E.g. #FF0000 represents Red.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|italic|bool|Represents the italic status of the font.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Font name (e.g. "Calibri")|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|size|double|Size of the font (e.g. 11)|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|underline|string|Type of underline applied to the font. Possible values are: None, Single.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -23,7 +23,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

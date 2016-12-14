@@ -6,7 +6,7 @@ Represents a collection of all the conditional formats that are overlap the rang
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[ConditionalFormat[]](conditionalformat.md)|A collection of conditionalFormat objects. Read-only.|[1.4](../excel-requirement.md)|
+|items|[ConditionalFormat[]](conditionalformat.md)|A collection of conditionalFormat objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -16,12 +16,49 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clearAll()](#clearall)|void|Clears all conditional formats active on the current specified range.|[1.4](../reqset/excel-requirement.md)|
-|[getCount()](#getcount)|int|Returns the number of conditional formats in the workbook. Read-only.|[1.4](../reqset/excel-requirement.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[ConditionalFormat](conditionalformat.md)|Returns a conditional format at the given index.|[1.4](../reqset/excel-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[add(type: string)](#addtype-string)|[ConditionalFormat](conditionalformat.md)|Adds a new conditional format to the collection at the firsttop priority.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[clearAll()](#clearall)|void|Clears all conditional formats active on the current specified range.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Returns the number of conditional formats in the workbook. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ConditionalFormat](conditionalformat.md)|Returns a conditional format at the given index.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
+
+
+### add(type: string)
+Adds a new conditional format to the collection at the firsttop priority.
+
+#### Syntax
+```js
+conditionalFormatCollectionObject.add(type);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|type|string|The type of conditional format being added.  Possible values are: Custom, DataBar, ColorScale, IconSet|
+
+#### Returns
+[ConditionalFormat](conditionalformat.md)
+
+#### Examples
+```js
+Excel.run(function (ctx) {
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:C3";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var conditionalFormat = range.conditionalFormats.add(Excel.ConditionalFormatType.iconSet);
+    conditionalFormat.iconOrNull.style = "YellowThreeArrows";
+    return ctx.sync().then(function () {
+        console.log("Added new yellow three arrow icon set.");
+    });
+}).catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+    });
+```
 
 
 ### clearAll()

@@ -9,25 +9,25 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|criteria|[FilterCriteria](filtercriteria.md)|The currently applied filter on the given column. Read-only.|[1.2](../excel-requirement.md)|
+|criteria|[FilterCriteria](filtercriteria.md)|The currently applied filter on the given column. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[apply(criteria: FilterCriteria)](#applycriteria-filtercriteria)|void|Apply the given filter criteria on the given column.|[1.2](../reqset/excel-requirement.md)|
-|[applyBottomItemsFilter(count: number)](#applybottomitemsfiltercount-number)|void|Apply a "Bottom Item" filter to the column for the given number of elements.|[1.2](../reqset/excel-requirement.md)|
-|[applyBottomPercentFilter(percent: number)](#applybottompercentfilterpercent-number)|void|Apply a "Bottom Percent" filter to the column for the given percentage of elements.|[1.2](../reqset/excel-requirement.md)|
-|[applyCellColorFilter(color: string)](#applycellcolorfiltercolor-string)|void|Apply a "Cell Color" filter to the column for the given color.|[1.2](../reqset/excel-requirement.md)|
-|[applyCustomFilter(criteria1: string, criteria2: string, oper: string)](#applycustomfiltercriteria1-string-criteria2-string-oper-string)|void|Apply a "Icon" filter to the column for the given criteria strings.|[1.2](../reqset/excel-requirement.md)|
-|[applyDynamicFilter(criteria: string)](#applydynamicfiltercriteria-string)|void|Apply a "Dynamic" filter to the column.|[1.2](../reqset/excel-requirement.md)|
-|[applyFontColorFilter(color: string)](#applyfontcolorfiltercolor-string)|void|Apply a "Font Color" filter to the column for the given color.|[1.2](../reqset/excel-requirement.md)|
-|[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Apply a "Icon" filter to the column for the given icon.|[1.2](../reqset/excel-requirement.md)|
-|[applyTopItemsFilter(count: number)](#applytopitemsfiltercount-number)|void|Apply a "Top Item" filter to the column for the given number of elements.|[1.2](../reqset/excel-requirement.md)|
-|[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Apply a "Top Percent" filter to the column for the given percentage of elements.|[1.2](../reqset/excel-requirement.md)|
-|[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Apply a "Values" filter to the column for the given values.|[1.2](../reqset/excel-requirement.md)|
-|[clear()](#clear)|void|Clear the filter on the given column.|[1.2](../reqset/excel-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
+|[apply(criteria: FilterCriteria)](#applycriteria-filtercriteria)|void|Apply the given filter criteria on the given column.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyBottomItemsFilter(count: number)](#applybottomitemsfiltercount-number)|void|Apply a "Bottom Item" filter to the column for the given number of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyBottomPercentFilter(percent: number)](#applybottompercentfilterpercent-number)|void|Apply a "Bottom Percent" filter to the column for the given percentage of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyCellColorFilter(color: string)](#applycellcolorfiltercolor-string)|void|Apply a "Cell Color" filter to the column for the given color.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyCustomFilter(criteria1: string, criteria2: string, oper: string)](#applycustomfiltercriteria1-string-criteria2-string-oper-string)|void|Apply a "Icon" filter to the column for the given criteria strings.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyDynamicFilter(criteria: string)](#applydynamicfiltercriteria-string)|void|Apply a "Dynamic" filter to the column.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyFontColorFilter(color: string)](#applyfontcolorfiltercolor-string)|void|Apply a "Font Color" filter to the column for the given color.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Apply a "Icon" filter to the column for the given icon.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyTopItemsFilter(count: number)](#applytopitemsfiltercount-number)|void|Apply a "Top Item" filter to the column for the given number of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Apply a "Top Percent" filter to the column for the given percentage of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Apply a "Values" filter to the column for the given values.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[clear()](#clear)|void|Clear the filter on the given column.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

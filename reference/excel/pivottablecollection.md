@@ -6,7 +6,7 @@ Represents a collection of all the PivotTables that are part of the workbook or 
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[PivotTable[]](pivottable.md)|A collection of pivotTable objects. Read-only.|[1.3](../excel-requirement.md)|
+|items|[PivotTable[]](pivottable.md)|A collection of pivotTable objects. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,13 +18,28 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(name: string)](#getitemname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name.|[1.3](../reqset/excel-requirement.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.|[1.3](../reqset/excel-requirement.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../reqset/excel-requirement.md)|
-|[refreshAll()](#refreshall)|void|Refreshes all the PivotTables in the collection.|[1.3](../reqset/excel-requirement.md)|
+|[getCount()](#getcount)|int|Gets the number of pivot tables in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[refreshAll()](#refreshall)|void|Refreshes all the pivot tables in the collection.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### getCount()
+Gets the number of pivot tables in the collection.
+
+#### Syntax
+```js
+pivotTableCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
 
 ### getItem(name: string)
 Gets a PivotTable by name.
@@ -42,12 +57,12 @@ pivotTableCollectionObject.getItem(name);
 #### Returns
 [PivotTable](pivottable.md)
 
-### getItemOrNull(name: string)
-Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.
+### getItemOrNullObject(name: string)
+Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.
 
 #### Syntax
 ```js
-pivotTableCollectionObject.getItemOrNull(name);
+pivotTableCollectionObject.getItemOrNullObject(name);
 ```
 
 #### Parameters
@@ -75,7 +90,7 @@ object.load(param);
 void
 
 ### refreshAll()
-Refreshes all the PivotTables in the collection.
+Refreshes all the pivot tables in the collection.
 
 #### Syntax
 ```js
