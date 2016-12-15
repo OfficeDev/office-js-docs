@@ -7,10 +7,10 @@ Represents the Position of the object in the view.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|x|int|An integer that specifies the x-coordinate of the object, which is the signed value of the distance in pixels from the viewport's center to the left boundary of the page.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-x)|
-|y|int|An integer that specifies the y-coordinate of the object, which is the signed value of the distance in pixels from the viewport's center to the top boundary of the page.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-y)|
+| Property	   | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|x|int|An integer that specifies the x-coordinate of the object, which is the signed value of the distance in pixels from the viewport's center to the left boundary of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-x)|
+|y|int|An integer that specifies the y-coordinate of the object, which is the signed value of the distance in pixels from the viewport's center to the top boundary of the page.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-y)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -20,9 +20,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-load)|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-load)|
 
 ## Method Details
 

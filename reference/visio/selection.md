@@ -10,15 +10,15 @@ Represents the Selection in the page.
 None
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|shapes|[ShapeCollection](shapecollection.md)|Gets the Shapes of the Selection Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-selection-shapes)|
+| Relationship | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|shapes|[ShapeCollection](shapecollection.md)|Gets the Shapes of the Selection Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-selection-shapes)|
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-selection-load)|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-selection-load)|
 
 ## Method Details
 

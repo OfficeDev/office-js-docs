@@ -7,12 +7,12 @@ Represents the BoundingBox of the shape.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|height|int|The distance between the top and bottom edges of the bounding box of the shape, excluding any data graphics associated with the shape.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-height)|
-|width|int|The distance between the left and right edges of the bounding box of the shape, excluding any data graphics associated with the shape.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-width)|
-|x|int|An integer that specifies the x-coordinate of the bounding box.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-x)|
-|y|int|An integer that specifies the y-coordinate of the bounding box.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-y)|
+| Property	   | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|height|int|The distance between the top and bottom edges of the bounding box of the shape, excluding any data graphics associated with the shape.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-height)|
+|width|int|The distance between the left and right edges of the bounding box of the shape, excluding any data graphics associated with the shape.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-width)|
+|x|int|An integer that specifies the x-coordinate of the bounding box.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-x)|
+|y|int|An integer that specifies the y-coordinate of the bounding box.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-y)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -22,9 +22,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-load)|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-boundingBox-load)|
 
 ## Method Details
 

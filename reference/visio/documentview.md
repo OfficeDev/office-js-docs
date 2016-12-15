@@ -7,12 +7,12 @@ Represents the DocumentView class.
 
 ## Properties
 
-| Property	   | Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|disableHyperlinks|bool|Disable Hyperlinks.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableHyperlinks)|
-|disablePan|bool|Disable Pan.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disablePan)|
-|disableZoom|bool|Disable Zoom.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableZoom)|
-|hideDiagramBoundry|bool|Disable Hyperlinks.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-hideDiagramBoundry)|
+| Property	   | Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|disableHyperlinks|bool|Disable Hyperlinks.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableHyperlinks)|
+|disablePan|bool|Disable Pan.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disablePan)|
+|disableZoom|bool|Disable Zoom.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableZoom)|
+|hideDiagramBoundry|bool|Disable Hyperlinks.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-hideDiagramBoundry)|
 
 ## Relationships
 None
@@ -20,9 +20,9 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description| Req. Set| Feedback|
-|:---------------|:--------|:----------|:----|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-load)|
+| Method		   | Return Type	|Description| Feedback|
+|:---------------|:--------|:----------|:---|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-load)|
 
 ## Method Details
 
