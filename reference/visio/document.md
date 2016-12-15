@@ -1,6 +1,7 @@
-# Document Object (JavaScript API for Visio)
+# Document object (JavaScript API for Visio)
 
-_Visio Online_
+Applies to: _Visio Online_
+>**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents the Document class.
 
@@ -13,6 +14,7 @@ None
 |:---------------|:--------|:----------|:----|:---|
 |application|[Application](application.md)|Represents a Visio application instance that contains this document. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
 |pages|[PageCollection](pagecollection.md)|Represents a collection of pages associated with the document. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-pages)|
+|view|[DocumentView](documentview.md)|Returns the DocumentView object. Read-only.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-view)|
 
 ## Methods
 

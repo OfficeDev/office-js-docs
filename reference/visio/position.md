@@ -1,15 +1,16 @@
-# Application object (JavaScript API for Visio)
+# Position object (JavaScript API for Visio)
 
 Applies to: _Visio Online_
 >**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
-Represents the Application.
+Represents the Position of the object in the view.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set| Feedback|
 |:---------------|:--------|:----------|:----|:---|
-|showToolbars|bool|Show or Hide the standard toolbars.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-showToolbars)|
+|x|int|An integer that specifies the x-coordinate of the object, which is the signed value of the distance in pixels from the viewport's center to the left boundary of the page.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-x)|
+|y|int|An integer that specifies the y-coordinate of the object, which is the signed value of the distance in pixels from the viewport's center to the top boundary of the page.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-y)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -21,7 +22,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set| Feedback|
 |:---------------|:--------|:----------|:----|:---|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-load)|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-position-load)|
 
 ## Method Details
 
@@ -41,16 +42,3 @@ object.load(param);
 
 #### Returns
 void
-### Property access examples
-```js
-Visio.run(function (ctx) { 
-	var application = ctx.document.application;
-	application.showToolbars = false;
-	return ctx.sync();
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```

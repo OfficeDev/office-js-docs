@@ -1,6 +1,7 @@
-# Shape Object (JavaScript API for Visio)
+# Shape object (JavaScript API for Visio)
 
-_Visio Online_
+Applies to: _Visio Online_
+>**Note:** The Visio JavaScript APIs are currently in preview and are subject to change. The Visio JavaScript APIs are not currently supported for use in production environments.
 
 Represents the Shape class.
 
@@ -27,10 +28,25 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set| Feedback|
 |:---------------|:--------|:----------|:----|:---|
+|[getBounds()](#getbounds)|[BoundingBox](boundingbox.md)|Returns the BoundingBox object that specifies bounding box of the shape.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-getBounds)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|1.1|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-load)|
 
 ## Method Details
 
+
+### getBounds()
+Returns the BoundingBox object that specifies bounding box of the shape.
+
+#### Syntax
+```js
+shapeObject.getBounds();
+```
+
+#### Parameters
+None
+
+#### Returns
+[BoundingBox](boundingbox.md)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
