@@ -6,13 +6,10 @@ Applies to: _Visio Online_
 Represents the PageView class.
 
 ## Properties
-
-None
+| Property | Type |Description| Feedback||:---------------|:--------|:----------|:---||zoom|int|GetSet Page's Zoom level.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
 
 ## Relationships
-| Relationship | Type	|Description| Feedback|
-|:---------------|:--------|:----------|:---|
-|zoom|[Double](double.md)|GetSet Page's Zoom level.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
+None
 
 ## Methods
 
