@@ -3,11 +3,13 @@
 
 Welcome to the Word JavaScript API open specification documentation. The Word JavaScript API provides Word-specific functionality related to documents, paragraphs, content controls, and other common Word objects. This API complements the functionality of our existing Office.js library. This branch documents the new APIs that our team is working on and plans to ship in the next few months.
 
-In order to try the Preview APIs please make sure to: 
+In order to try the Preview APIs in Word Desktop, please make sure to: 
 
 1. Get on the First Release so you can get the latest Word! Follow the instructions here: https://github.com/OfficeDev/office-js-docs/blob/215f5d35490c943cc06c29b98357ba8cb034ec81/docs/develop/install-latest-office-version.md
 2. Use the PREVEW CDN for OFfice.js:https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
 3. Code and provide feedback!!!
+
+To try the Preview APIs in Word Online, you can skip the first step above, and use the Preview CDN for Office.
 
 
 ## Introduction to Word JavaScript API 1.3 
