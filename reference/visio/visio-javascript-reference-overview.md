@@ -15,7 +15,7 @@ You can use the Visio JavaScript APIs to:
 
 This article describes how to use the Visio JavaScript APIs with Visio Online to build your solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as **EmbeddedSession**, **RequestContext**, and JavaScript proxy objects, and the **sync()**, **Visio.run()**, and **load()** methods. The code examples show you how to apply these concepts.
 
-## EmbeddedContext
+## EmbeddedSession
 
 The EmbeddedSession object initializes communication between the developer frame and the Visio Online frame.
 
