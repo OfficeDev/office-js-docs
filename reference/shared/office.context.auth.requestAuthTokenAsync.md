@@ -1,4 +1,4 @@
-# requestAuthTokenAsync method
+# RequestAuthTokenAsync method
 Requests an authentication Token for the user currently signed into Office.
 
  **Important:** This API currently works only in Excel, Outlook, PowerPoint, Word, and OneNote in [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview).
@@ -36,7 +36,7 @@ To detect this API at runtime, use the following code.
 ```js
  if (Office.context.requirements.isSetSupported('SSOAddin', 1.1)) 
  	{  
-    	 // Use Office UI methods; 
+    	 // Request an SSO Token 
  	} 
  else 
 	 { 
@@ -49,12 +49,12 @@ To detect this API at runtime, use the following code.
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |callback|object|Accepts a callback method to handle the identity objects.|
-|forceAction|string|Optional. Accepts a single string to prompt the Office for user input.|
+|forceAction|string|Optional. Accepts a single string to prompt the Office user for input.|
 
 ## Callback method
 When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
-In the callback function passed to the  **requestAuthToken** method, you can use the properties of the **AsyncResult** object to return [add-in identity objects](#Identity-Objects).
+In the callback function passed to the  **RequestAuthTokenAsync** method, you can use the properties of the **AsyncResult** object to return [add-in identity objects](#Identity-Objects).
 
 ### forceAction options
 The following actions are available during authentication.
@@ -92,12 +92,14 @@ For more information about Office host application and server requirements, see 
 |**Namespace**|Office|
 
 ## Identity Objects
-requestAuthTokenAsync returns an array of objects via the asyncResult.value with the following characteristics:
+RequestAuthTokenAsync returns an array of objects via the AsyncResult.value with the following properties:
 
 |**Property**|**Use to**|
 |:-----|:-----|
 |DirectoryType|Describes whether the attached Office account is an Organizational Account or a Microsoft Account.|
 |AccessToken|The Access Token, issued to your Add-in's Web service, returned from Azure on the user's behalf.|
+
+There will be an Identity Object per account connected to the user's current Office profile.
 
 ## Support history
 Page created.
