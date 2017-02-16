@@ -9,10 +9,6 @@ Requests an authentication Token for the user currently signed into Office.
 |**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|SingleSignOn|
 |**Added in**|1.1|
 
-```
-var swapToken = Office.context.auth.getAccessTokenAsync(handleAuthToken);
-```
-
 ## Requirements
 
 |Host|Introduced in|Last changed in|
@@ -44,7 +40,21 @@ To detect this API at runtime, use the following code.
 	 } 
 ```
 
-## Usage getAccessTokenAsync([Options,] callback);
+## Syntax
+
+```js
+getAccessTokenAsync([Options,] callback);
+```
+
+##Examples
+
+```
+Office.context.auth.getAccessTokenAsync(handleAuthToken);
+
+...
+
+var swapToken = handleAuthTokenResult;
+```
 
 ## Parameters
 
