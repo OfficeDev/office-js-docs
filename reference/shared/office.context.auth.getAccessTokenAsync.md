@@ -7,7 +7,7 @@ Requests an authentication Token for the user currently signed into Office.
 |:-----|:-----|
 |**Hosts:**|Excel, Outlook, PowerPoint, Word, OneNote|
 |**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|SingleSignOn|
-|**Added in**|1.3|
+|**Added in**|1.1|
 
 ```
 var swapToken = Office.context.auth.getAccessTokenAsync(handleAuthToken);
@@ -110,4 +110,4 @@ Page created.
 
 |**Version**|**Changes**|
 |:-----|:-----|
-|1.3|Introduced|
+|1.1|Introduced|
