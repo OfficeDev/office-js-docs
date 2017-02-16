@@ -72,6 +72,7 @@ The following actions are available during authentication.
 |:---------------|:--------|:----------|
 |**forceConsent**|bool|Optional. Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has been revoked.|
 |**forceAddAccount**|bool|Optional. Prompts the user to add (or to switch if already added) his or her Office account.|
+|**asyncContext**|any|Optional. A user-defined item of any type that is returned in the AsyncResult object without being altered.|
 
 ### callback method
 When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
