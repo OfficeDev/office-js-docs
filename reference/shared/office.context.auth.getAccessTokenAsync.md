@@ -110,8 +110,8 @@ getAccessTokenAsync returns an array of objects via the AsyncResult.value with t
 
 |**Property**|**Use to**|
 |:-----|:-----|
-|DirectoryType|Describes whether the attached Office account is an Organizational Account or a Microsoft Account.|
-|AccessToken|The Access Token, issued to your Add-in's Web service, returned from Azure on the user's behalf.|
+|directoryType|(string) Describes whether the attached Office account is an Organizational Account or a Microsoft Account.|
+|accessToken|(string) The Access Token, issued to your Add-in's Web service, returned from Azure on the user's behalf.|
 
 There will be an Identity Object per account connected to the user's current Office profile.
 
