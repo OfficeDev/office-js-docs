@@ -25,7 +25,7 @@ None
 |[getItem(key: string)](#getitemkey-string)|[CustomProperty](customproperty.md)|Gets a custom property object by its key, which is case-insensitive. Throws if the custom property does not exist.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[CustomProperty](customproperty.md)|Gets a custom property object by its key, which is case-insensitive. Returns a null object if the custom property does not exist.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[set(key: string, value: object)](#setkey-string-value-object)|[CustomProperty](customproperty.md)|Creates or sets a custom property.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[add(key: string, value: object)](#addkey-string-value-object)|[CustomProperty](customproperty.md)|Creates a custom property.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -106,12 +106,12 @@ object.load(param);
 #### Returns
 void
 
-### set(key: string, value: object)
-Creates or sets a custom property.
+### add(key: string, value: object)
+Creates a custom property.
 
 #### Syntax
 ```js
-customPropertyCollectionObject.set(key, value);
+customPropertyCollectionObject.add(key, value);
 ```
 
 #### Parameters
