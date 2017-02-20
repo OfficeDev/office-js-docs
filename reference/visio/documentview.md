@@ -12,7 +12,7 @@ Represents the DocumentView class.
 |disableHyperlinks|bool|Disable Hyperlinks.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableHyperlinks)|
 |disablePan|bool|Disable Pan.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disablePan)|
 |disableZoom|bool|Disable Zoom.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-disableZoom)|
-|hideDiagramBoundry|bool|Disable Hyperlinks.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-hideDiagramBoundry)|
+|hideDiagramBoundry|bool|Hide Diagram Boundry.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-documentView-hideDiagramBoundry)|
 
 ## Relationships
 None
