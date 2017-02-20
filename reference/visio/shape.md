@@ -19,6 +19,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:---|
+|comments|[CommentCollection](commentcollection.md)|Returns the Comments Collection. Read-only.|
 |hyperlinks|[HyperlinkCollection](hyperlinkcollection.md)|Returns the Hyperlinks collection for a Shape object. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-hyperlinks)|
 |shapeDataItems|[ShapeDataItemCollection](shapedataitemcollection.md)|Returns the Shape's Data Section. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-shapeDataItems)|
 |subShapes|[ShapeCollection](shapecollection.md)|Gets SubShape Collection. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-subShapes)|
