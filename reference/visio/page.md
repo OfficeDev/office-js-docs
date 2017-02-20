@@ -18,6 +18,7 @@ Represents the Page class.
 ## Relationships
 | Relationship | Type	|Description| Feedback|
 |:---------------|:--------|:----------|:---|
+|comments|[CommentCollection](commentcollection.md)|Returns the Comments Collection. Read-only.|
 |shapes|[ShapeCollection](shapecollection.md)|Shapes in the Page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-shapes)|
 |view|[PageView](pageview.md)|Returns the view of the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-view)|
 
