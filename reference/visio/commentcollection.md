@@ -21,7 +21,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[getCount()](#getcount)|int|Gets the number of Comments.|
-|[getItem(key: ]object key)](#getitemkey-object-key)|[Comment](comment.md)|Gets the Comment using its name.|
+|[getItem(key: string)](#getitemkey-string)|[Comment](comment.md)|Gets the Comment using its name.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
@@ -41,7 +41,7 @@ None
 #### Returns
 int
 
-### getItem(key: ]object key)
+### getItem(key: string)
 Gets the Comment using its name.
 
 #### Syntax
@@ -52,7 +52,7 @@ CommentCollectionObject.getItem(key);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|]object key|Key is the name of the Comment to be retrieved.|
+|key|string|Key is the name of the Comment to be retrieved.|
 
 #### Returns
 [Comment](comment.md)
