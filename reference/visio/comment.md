@@ -10,7 +10,7 @@ Represents the Comment.
 |:---------------|:--------|:----------|
 |author|string|A string that specifies the name of the author of the comment.|
 |text|string|A string that contains the comment text.|
-|date|string|A string that specifies the date that the comment was made.|
+|date|string|A string that specifies the date when the comment was created.|
 
 _See property access [examples.](#property-access-examples)_
 
