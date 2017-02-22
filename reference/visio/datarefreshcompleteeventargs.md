@@ -26,7 +26,7 @@ Visio.run(function (ctx) {
                var page = document1.getActivePage();
 	     eventResult1 = document1.onDataRefreshComplete.add(
 	function (args){
-	       console.log(Date.now()+":Date RefreshComplete Event:"+JSON.stringify(args));
+	       console.log("Data Refresh Result: "+args.success);
 	});
 
 	return ctx.sync().then(function () {
