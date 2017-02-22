@@ -46,8 +46,6 @@ void
 ```js
  Visio.run(function (ctx) { 
 	var activePage = ctx.document.getActivePage();
-        var comments = activePage.comments;
-        comments.load();
 	var shapeName = "Position Belt.41";
 	var shape = activePage.shapes.getItem(shapeName);
 	var shapecomments= shape.comments;
