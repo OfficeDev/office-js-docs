@@ -26,7 +26,7 @@ Visio.run(function (ctx) {
                var page = document1.getActivePage();
 	     	eventResult1 = document1.onPageLoadComplete.add(
 			function (args){
-			       console.log(Date.now()+":Page Load Complete Event:"+JSON.stringify(args));
+			       console.log("Page name: "+args.pageName);
 			});
 
 	return ctx.sync().then(function () {
