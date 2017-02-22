@@ -26,7 +26,7 @@ Visio.run(function (ctx) {
                var page = document1.getActivePage();
 	     	eventResult1 = document1.onSelectionChanged.add(
 		function (args){
-			       console.log(Date.now()+":Selection Changed Event:"+JSON.stringify(args));
+			       console.log("Selected Shape Name: "+args.shapeNames[0]);
 			});
 
 	return ctx.sync().then(function () {
