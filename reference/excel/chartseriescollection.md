@@ -1,4 +1,4 @@
-# ChartSeriesCollection object (JavaScript API for Excel)
+# ChartSeriesCollection Object (JavaScript API for Excel)
 
 Represents a collection of chart series.
 
@@ -19,11 +19,41 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|int|Returns the number of series in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[ChartSeries](chartseries.md)|Gets the first series in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLast()](#getlast)|[ChartSeries](chartseries.md)|Gets the last series in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### getCount()
+Returns the number of series in the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
+
+### getFirst()
+Gets the first series in the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[ChartSeries](chartseries.md)
 
 ### getItemAt(index: number)
 Retrieves a series based on its position in the collection
@@ -61,21 +91,19 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+### getLast()
+Gets the last series in the collection.
 
 #### Syntax
 ```js
-object.load(param);
+chartSeriesCollectionObject.getLast();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+None
 
 #### Returns
-void
+[ChartSeries](chartseries.md)
 ### Property access examples
 Getting the names of series in the series collection.
 

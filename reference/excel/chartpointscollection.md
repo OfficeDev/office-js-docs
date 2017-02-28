@@ -1,4 +1,4 @@
-# ChartPointsCollection object (JavaScript API for Excel)
+# ChartPointsCollection Object (JavaScript API for Excel)
 
 A collection of all the chart points within a series inside a chart.
 
@@ -6,7 +6,7 @@ A collection of all the chart points within a series inside a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Returns the number of chart points in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|count|int|Returns the number of chart points in the series. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[ChartPoint[]](chartpoint.md)|A collection of chartPoints objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
@@ -19,11 +19,41 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|int|Returns the number of chart points in the series.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[ChartPoint](chartpoint.md)|Gets the first point in the series.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLast()](#getlast)|[ChartPoint](chartpoint.md)|Gets the last point in the series.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### getCount()
+Returns the number of chart points in the series.
+
+#### Syntax
+```js
+chartPointsCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
+
+### getFirst()
+Gets the first point in the series.
+
+#### Syntax
+```js
+chartPointsCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[ChartPoint](chartpoint.md)
 
 ### getItemAt(index: number)
 Retrieve a point based on its position within the series.
@@ -58,21 +88,19 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+### getLast()
+Gets the last point in the series.
 
 #### Syntax
 ```js
-object.load(param);
+chartPointsCollectionObject.getLast();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+None
 
 #### Returns
-void
+[ChartPoint](chartpoint.md)
 ### Property access examples
 
 Get the names of points in the points collection

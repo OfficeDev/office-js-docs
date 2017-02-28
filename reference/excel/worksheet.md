@@ -1,4 +1,4 @@
-# Worksheet object (JavaScript API for Excel)
+# Worksheet Object (JavaScript API for Excel)
 
 An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
@@ -9,7 +9,7 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The display name of the worksheet.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|int|The zero-based position of the worksheet within the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|visibility|string|The Visibility of the worksheet. Possible values are: Visible, Hidden, VeryHidden.|[1.1, 1.1 for reading visibility; 1.2 for setting it.](../requirement-sets/excel-api-requirement-sets.md)|
+|visibility|string|The Visibility of the worksheet. Possible values are: Visible, Hidden, VeryHidden.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -17,6 +17,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |charts|[ChartCollection](chartcollection.md)|Returns collection of charts that are part of the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|names|[NamedItemCollection](nameditemcollection.md)|Collection of names scoped to the current worksheet. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Collection of PivotTables that are part of the worksheet. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |protection|[WorksheetProtection](worksheetprotection.md)|Returns sheet protection object for a worksheet. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |tables|[TableCollection](tablecollection.md)|Collection of tables that are part of the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -28,9 +29,13 @@ _See property access [examples.](#property-access-examples)_
 |[activate()](#activate)|void|Activate the worksheet in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete()](#delete)|void|Deletes the worksheet from the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getNext(visibleOnly: bool)](#getnextvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getNextOrNullObject(visibleOnly: bool)](#getnextornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getPrevious(visibleOnly: bool)](#getpreviousvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getPreviousOrNullObject(visibleOnly: bool)](#getpreviousornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -134,6 +139,70 @@ Excel.run(function (ctx) {
 ```
 
 
+### getNext(visibleOnly: bool)
+Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.
+
+#### Syntax
+```js
+worksheetObject.getNext(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
+### getNextOrNullObject(visibleOnly: bool)
+Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.
+
+#### Syntax
+```js
+worksheetObject.getNextOrNullObject(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
+### getPrevious(visibleOnly: bool)
+Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.
+
+#### Syntax
+```js
+worksheetObject.getPrevious(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
+### getPreviousOrNullObject(visibleOnly: bool)
+Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.
+
+#### Syntax
+```js
+worksheetObject.getPreviousOrNullObject(visibleOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+
+#### Returns
+[Worksheet](worksheet.md)
+
 ### getRange(address: string)
 Gets the range object specified by the address or name.
 
@@ -191,8 +260,8 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getUsedRange(valuesOnly)
-The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.
+### getUsedRange(valuesOnly: [ApiSet(Version)
+The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).
 
 #### Syntax
 ```js
@@ -202,7 +271,7 @@ worksheetObject.getUsedRange(valuesOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells (ignores formatting).|
+|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells (ignoring formatting).|
 
 #### Returns
 [Range](range.md)
@@ -227,21 +296,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+### getUsedRangeOrNullObject(valuesOnly: bool)
+The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.
 
 #### Syntax
 ```js
-object.load(param);
+worksheetObject.getUsedRangeOrNullObject(valuesOnly);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+|valuesOnly|bool|Optional. Considers only cells with values as used cells.|
 
 #### Returns
-void
+[Range](range.md)
 ### Property access examples
 
 Get worksheet properties based on sheet name.
