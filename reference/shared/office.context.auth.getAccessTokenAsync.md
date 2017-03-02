@@ -48,19 +48,21 @@ getAccessTokenAsync([Options,] callback);
 
 ##Examples
 
-```
-Office.context.auth.getAccessTokenAsync(handleAuthToken);
+	Office.context.auth.getAccessTokenAsync(function(result) {
+	    if (result.status === "succeeded") {
+		var token = result.value.accessToken;
+		...
+	    } else {
+		console.log("Error obtaining token", result.error);
+	    }
+	});
 
-...
-
-var swapToken = handleAuthTokenResult;
-```
 
 ## Parameters
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|Options|object|Optional. Accepts a single string to prompt the Office user for input.|
+|Options|object|Optional. An options object, described below|
 |callback|string|Accepts a callback method to handle the identity objects.|
 
 ### Options object
@@ -70,11 +72,12 @@ The following actions are available during authentication.
 |:---------------|:--------|:----------|
 |**forceConsent**|bool|Optional. Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has been revoked.|
 |**forceAddAccount**|bool|Optional. Prompts the user to add (or to switch if already added) his or her Office account.|
+|**asyncContext**|any|Optional. A user-defined item of any type that is returned in the AsyncResult object without being altered.|
 
 ### callback method
 When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
-In the callback function passed to the  **getAccessTokenAsync** method, you can use the properties of the **AsyncResult** object to return [add-in identity objects](#Identity-Objects).
+In the callback function passed to the  **getAccessTokenAsync** method, you can use the properties of the **AsyncResult** object to access the [add-in identity objects](#Identity-Objects).
 
 ## Remarks
 
@@ -108,8 +111,8 @@ getAccessTokenAsync returns an array of objects via the AsyncResult.value with t
 
 |**Property**|**Use to**|
 |:-----|:-----|
-|DirectoryType|Describes whether the attached Office account is an Organizational Account or a Microsoft Account.|
-|AccessToken|The Access Token, issued to your Add-in's Web service, returned from Azure on the user's behalf.|
+|directoryType|(string) Describes whether the attached Office account is an Organizational Account or a Microsoft Account.|
+|accessToken|(string) The Access Token, issued to your Add-in's Web service, returned from Azure on the user's behalf.|
 
 There will be an Identity Object per account connected to the user's current Office profile.
 
