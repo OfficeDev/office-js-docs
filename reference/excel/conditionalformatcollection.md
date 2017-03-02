@@ -6,7 +6,7 @@ Represents a collection of all the conditional formats that are overlap the rang
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[ConditionalFormat[]](conditionalformat.md)|A collection of conditionalFormat objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ConditionalFormat[]](conditionalformat.md)|A collection of conditionalFormat objects. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -16,10 +16,10 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(type: string)](#addtype-string)|[ConditionalFormat](conditionalformat.md)|Adds a new conditional format to the collection at the firsttop priority.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[clearAll()](#clearall)|void|Clears all conditional formats active on the current specified range.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Returns the number of conditional formats in the workbook. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[ConditionalFormat](conditionalformat.md)|Returns a conditional format at the given index.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(type: string)](#addtype-string)|[ConditionalFormat](conditionalformat.md)|Adds a new conditional format to the collection at the firsttop priority.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[clearAll()](#clearall)|void|Clears all conditional formats active on the current specified range.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Returns the number of conditional formats in the workbook. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ConditionalFormat](conditionalformat.md)|Returns a conditional format at the given index.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

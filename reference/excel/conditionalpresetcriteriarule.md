@@ -4,12 +4,15 @@ Represents the Preset Criteria Conditional Format Rule
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|criterion|string|The criterion of the conditional format. Possible values are: Invalid, Blanks, NonBlanks, Errors, NonErrors, Yesterday, Today, Tomorrow, LastSevenDays, LastWeek, ThisWeek, NextWeek, LastMonth, ThisMonth, NextMonth, AboveAverage, BelowAverage, EqualOrAboveAverage, EqualOrBelowAverage, OneStdDevAboveAverage, OneStdDevBelowAverage, TwoStdDevAboveAverage, TwoStdDevBelowAverage, ThreeStdDevAboveAverage, ThreeStdDevBelowAverage, UniqueValues, DuplicateValues.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|criterion|[ConditionalFormatPresetCriterion](conditionalformatpresetcriterion.md)|The criterion of the conditional format.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+None
+
 
 ## Methods
 None

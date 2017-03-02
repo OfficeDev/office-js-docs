@@ -9,7 +9,7 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|settingCollection|[public](public.md)|Gets the Setting object that represents the binding that raised the SettingsChanged event|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|settings|[SettingCollection](settingcollection.md)|Gets the Setting object that represents the binding that raised the SettingsChanged event|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None

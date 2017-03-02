@@ -6,7 +6,7 @@ Represents the background of a conditional range object.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|color|string|HTML color code representing the color of the fill, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|color|string|HTML color code representing the color of the fill, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,7 +18,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Resets the fill.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[clear()](#clear)|void|Resets the fill.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

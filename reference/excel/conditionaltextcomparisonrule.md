@@ -6,14 +6,14 @@ Represents a Cell Value Conditional Format Rule
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|text|string|The Text value of conditional format.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|operator|string|The operator of the text conditional format. Possible values are: Invalid, Contains, NotContains, BeginsWith, EndsWith.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|text|string|The Text value of conditional format.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-| Relationship | Type	|Description| Req. Set|
-|:---------------|:--------|:----------|:----|
-|operator|[ConditionalTextOperator](conditionaltextoperator.md)|The operator of the text conditional format.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+None
+
 
 ## Methods
 None

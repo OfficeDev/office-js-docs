@@ -6,25 +6,25 @@ Represents the border objects that make up range border.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Number of border objects in the collection. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[ConditionalRangeBorder[]](conditionalrangeborder.md)|A collection of conditionalRangeBorder objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|count|int|Number of border objects in the collection. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ConditionalRangeBorder[]](conditionalrangeborder.md)|A collection of conditionalRangeBorder objects. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|bottom|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|left|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|right|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|top|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|bottom|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|left|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|right|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|top|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(index: string)](#getitemindex-string)|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets a border object using its name|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets a border object using its index|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(index: string)](#getitemindex-string)|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets a border object using its name|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets a border object using its index|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -40,7 +40,7 @@ conditionalRangeBorderCollectionObject.getItem(index);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|:---|
-|index|string|Index value of the border object to be retrieved.|
+|index|string|Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight|
 
 #### Returns
 [ConditionalRangeBorder](conditionalrangeborder.md)

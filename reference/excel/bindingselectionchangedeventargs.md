@@ -16,7 +16,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|binding|[public](public.md)|Gets the Binding object that represents the binding that raised the SelectionChanged event.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|binding|[Binding](binding.md)|Gets the Binding object that represents the binding that raised the SelectionChanged event.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None
