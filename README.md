@@ -22,6 +22,17 @@ _**Note**: below listed features are still under design and review phase and hen
 * Query the XML content by xpath.
 * Insert, update and delete attribute.
 
+### Others
+* `range.getSurroundingRegion()` Returns a Range object that represents the surrounding region for this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
+* `getNextColumn()` and `getPreviousColumn()`, `getLast() on table column.
+* `getActiveWorksheet()` on the workbook.
+* `getRange(address: string)` off of workbook.
+* `getBoundingRange(ranges: [])` Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between "B2:C5" and "D10:E15" is "B2:E15".
+* `getCount()` on various collections such as named item, worksheet, table, etc. to get number of items in a collection. `workbook.worksheets.getCount()`
+* `getFirst()` and `getLast()` and get last on various collection such as tworksheet, able column, chart points, range view collection.
+* `getNext()` and `getPrevious()` on worksheet, table column collection.
+* `getRangeR1C1()` Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.
+
 ## Upcoming Excel 1.6 Release Features
 
 ### Conditional formatting
@@ -40,16 +51,7 @@ In addiiton:
 * Get collection of all conditional formatting on a given range.
 * Clears all conditional formats active on the current specified range.
 
-### Others
-* `range.getSurroundingRegion()` Returns a Range object that represents the surrounding region for this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
-* `getNextColumn()` and `getPreviousColumn()`, `getLast() on table column.
-* `getActiveWorksheet()` on the workbook.
-* `getRange(address: string)` off of workbook.
-* `getBoundingRange(ranges: [])` Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between "B2:C5" and "D10:E15" is "B2:E15".
-* `getCount()` on various collections such as named item, worksheet, table, etc. to get number of items in a collection. `workbook.worksheets.getCount()`
-* `getFirst()` and `getLast()` and get last on various collection such as tworksheet, able column, chart points, range view collection.
-* `getNext()` and `getPrevious()` on worksheet, table column collection.
-* `getRangeR1C1()` Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.
+
 
 |Object| What is new| Description |Requirement set|
 |:----|:----|:----|:----|
