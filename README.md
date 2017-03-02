@@ -1,6 +1,6 @@
 ## Introduction to Excel JS APIs 1.5+
 
-_Applies to: Excel 2016, Excel Online, Excel for iOS, Excel for Mac
+_Applies to: Excel 2016, Excel Online, Excel for iOS, Excel for Mac_
 
 Below links describes the new set of Excel JavaScript APIs that are being planned for the next releases (Requirement Set 1.5 and beyond). Please review and provide your feedback. One of the best ways of providing your input is by opening new issue in GitHub using the links available below.
 
