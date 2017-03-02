@@ -22,6 +22,8 @@ _**Note**: below listed features are still under design and review phase and hen
 * Query the XML content by xpath.
 * Insert, update and delete attribute.
 
+## Upcoming Excel 1.5 Release Features
+
 ### Conditional formatting
 
 Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpec/reference/excel/conditionalformat.md) of a range. Allows follwoing types of conditional formatting:
@@ -48,8 +50,6 @@ In addiiton:
 * `getFirst()` and `getLast()` and get last on various collection such as tworksheet, able column, chart points, range view collection.
 * `getNext()` and `getPrevious()` on worksheet, table column collection.
 * `getRangeR1C1()` Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.
-
-
 
 |Object| What is new| Description |Requirement set|
 |:----|:----|:----|:----|
