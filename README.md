@@ -22,7 +22,7 @@ _**Note**: below listed features are still under design and review phase and hen
 * Query the XML content by xpath.
 * Insert, update and delete attribute.
 
-## Upcoming Excel 1.5 Release Features
+## Upcoming Excel 1.6 Release Features
 
 ### Conditional formatting
 
