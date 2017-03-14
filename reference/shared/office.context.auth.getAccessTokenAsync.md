@@ -3,18 +3,7 @@ Requests an authentication Token for the user currently signed into Office.
 
  **Important:** This API currently works only in Excel, Outlook, PowerPoint, Word, and OneNote in [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview).
 
-|||
-|:-----|:-----|
-|**Hosts:**|Excel, Outlook, PowerPoint, Word, OneNote|
-|**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|SingleSignOn|
-|**Added in**|1.1|
-
 ## Requirements
-
-|Host|Introduced in|Last changed in|
-|:---------------|:--------|:----------|
-|Word, Excel, PowerPoint|1.1|1.1|
-|Outlook|Mailbox 1.4|Mailbox 1.4|
 
 This method is available in the SingleSignOn [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md). To specify the SingleSignOn requirement set, use the following in your manifest.
 
@@ -89,22 +78,7 @@ A capital Y in the following matrix indicates that this method is supported in t
 
 For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
 
-**Supported hosts, by platform**
 
-||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|**OWA for Devices**|
-|:-----|:-----|:-----|:-----|:-----|
-|**Excel**|Y|Y|Y|Y|
-|**Outlook**|Y|Y|Y|Y|
-|**PowerPoint**|Y|Y|Y|Y|
-|**Word**|Y|Y|Y|Y|
-|**OneNote**|Y|Y|Y|Y|
-
-|||
-|:-----|:-----|
-|**Minimum permission level**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Add-in types**|Content, task pane, Outlook|
-|**Library**|Office.js|
-|**Namespace**|Office|
 
 ## Identity Objects
 getAccessTokenAsync returns an array of objects via the AsyncResult.value with the following properties:
@@ -115,12 +89,3 @@ getAccessTokenAsync returns an array of objects via the AsyncResult.value with t
 |accessToken|(string) The Access Token, issued to your Add-in's Web service, returned from Azure on the user's behalf.|
 
 There will be an Identity Object per account connected to the user's current Office profile.
-
-## Support history
-Page created.
-
-****
-
-|**Version**|**Changes**|
-|:-----|:-----|
-|1.1|Introduced|
