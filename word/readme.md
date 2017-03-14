@@ -19,8 +19,8 @@ This section describes the new set of Word JavaScript APIs that are planned for 
 _**Note**: The features listed are still in the design and review phase and are not yet available as part of the product. The final design is subject to change. When the feature is made available, the final specification will be published as part of the master repository._
 
 ### FEATURES
-|Object| What is new| Description|Req. Set|
-|:----|:----|:----|:----|
+|Object                   | What is new        | Description                                         |Req. Set|
+|:------------------------|:-------------------|:----------------------------------------------------|:-------|
 |[body](../reference/word/body.md)|_Property_ > styleBuiltIn|Gets or sets the built-in style name for the body. Use this property for built-in styles that are portable between locales. To use custom styles or localized style names, see the "style" property. Possible values are: Other, Normal, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Heading7, Heading8, Heading9, Toc1, more...|1.3|
 |[body](../reference/word/body.md)|_Property_ > type|Gets the type of the body. The type can be 'MainDoc', 'Section', 'Header', 'Footer', or 'TableCell'. Read-only. Possible values are: Unknown, MainDoc, Section, Header, Footer, TableCell.|1.3|
 |[body](../reference/word/body.md)|_Property_ > lists|Gets the collection of list objects in the body. Read-only.|1.3|
