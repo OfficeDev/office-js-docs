@@ -41,7 +41,7 @@ contentControlCollectionObject.getById(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|number|Required. A content control identifier.|
 
 #### Returns
@@ -84,7 +84,7 @@ contentControlCollectionObject.getByIdOrNullObject(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|number|Required. A content control identifier.|
 
 #### Returns
@@ -100,7 +100,7 @@ contentControlCollectionObject.getByTag(tag);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |tag|string|Required. A tag set on a content control.|
 
 #### Returns
@@ -152,7 +152,7 @@ contentControlCollectionObject.getByTitle(title);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |title|string|Required. The title of a content control.|
 
 #### Returns
@@ -204,7 +204,7 @@ contentControlCollectionObject.getByTypes(types);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |types|ContentControlType[]|Required. An array of content control types and/or subtypes.|
 
 #### Returns
@@ -248,7 +248,7 @@ contentControlCollectionObject.getItem(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|The index.|
 
 #### Returns
@@ -264,7 +264,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
