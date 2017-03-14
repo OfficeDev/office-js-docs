@@ -1,5 +1,10 @@
-# Office JavaScript APIs
-Welcome to the Office JavaScript API documentation. Here you can find everything you need to know about Office add-ins.  For the best experience, we recommend you view this content on [dev.office.com](https://dev.office.com/docs/add-ins/overview/office-add-ins).
+## Office Add-in Single Sign-On
+
+This repository describes the design and steps for enabling single sign-on for Office Add-ins. 
+
+The main method for acquring the access token is described [here](https://github.com/OfficeDev/office-js-docs/blob/Addin_SSO_OpenSpec/reference/shared/office.context.auth.getAccessTokenAsync.md)
+
+_**Note**: this feature is still under design and review phase and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
 
 ## Give us your feedback
