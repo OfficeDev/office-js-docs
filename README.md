@@ -22,7 +22,7 @@ _**Note**: below listed features are still under design and review phase and hen
 * Query the XML content by xpath.
 * Insert, update and delete attribute.
 
-**Reference implementation:**: Please refer [here](https://github.com/mandren/Excel-CustomXMLPart-Demo) for a reference implementation that shows how custom XML parts can be used in an add-in.
+**Reference implementation:** Please refer [here](https://github.com/mandren/Excel-CustomXMLPart-Demo) for a reference implementation that shows how custom XML parts can be used in an add-in.
 
 ### Others
 * `range.getSurroundingRegion()` Returns a Range object that represents the surrounding region for this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
