@@ -20,7 +20,6 @@ None
 |:---------------|:--------|:----------|:----|
 |[getFirst()](#getfirst)|[Section](section.md)|Gets the first section in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getFirstOrNullObject()](#getfirstornullobject)|[Section](section.md)|Gets the first section in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getItem(index: number)](#getitemindex-number)|[Section](section.md)|Gets a section object by its index in the collection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
@@ -50,22 +49,6 @@ sectionCollectionObject.getFirstOrNullObject();
 
 #### Parameters
 None
-
-#### Returns
-[Section](section.md)
-
-### getItem(index: number)
-Gets a section object by its index in the collection.
-
-#### Syntax
-```js
-sectionCollectionObject.getItem(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a section object.|
 
 #### Returns
 [Section](section.md)
