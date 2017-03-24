@@ -25,7 +25,6 @@ None
 |[getByTypes(types: ContentControlType[])](#getbytypestypes-contentcontroltype)|[ContentControlCollection](contentcontrolcollection.md)|Gets the content controls that have the specified types andor subtypes.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getFirst()](#getfirst)|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getFirstOrNullObject()](#getfirstornullobject)|[ContentControl](contentcontrol.md)|Gets the first content control in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getItem(index: number)](#getitemindex-number)|[ContentControl](contentcontrol.md)|Gets a content control by its index in the collection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
@@ -234,22 +233,6 @@ contentControlCollectionObject.getFirstOrNullObject();
 
 #### Parameters
 None
-
-#### Returns
-[ContentControl](contentcontrol.md)
-
-### getItem(index: number)
-Gets a content control by its index in the collection.
-
-#### Syntax
-```js
-contentControlCollectionObject.getItem(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|The index.|
 
 #### Returns
 [ContentControl](contentcontrol.md)
