@@ -46,7 +46,7 @@ namespace Excel {
   }
 
   export class DataValidation {
-    status: 'empty' | 'same' | 'multiple';
+    status: 'none' | 'same' | 'multiple';
 
     setRule(
       type: 'comparison' | 'list' | 'formula',
@@ -86,7 +86,7 @@ range.dataValidation.setRule('comparison', comparisonData);
 
 range.dataValidation.setRule('comparison', { ...comparisonData, param2: 10 });
 
-if (range.status === 'empty' || 'same') {
+if (range.status === 'none' || 'same') {
   range.dataValidation.setRule('list', ['yes', 'no', 'maybe']);
 }
 
