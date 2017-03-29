@@ -63,11 +63,11 @@ namespace Excel {
     }
 
     getDataValidationOfSameType(): Range[] {
-      return Range[];
+
     }
 
     getInvalidDataValidation(): Range[] {
-      return Range[];
+      
     }
 
     clearDataValidation(): void {
