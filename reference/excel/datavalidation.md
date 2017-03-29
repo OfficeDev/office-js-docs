@@ -16,10 +16,6 @@ namespace Excel {
     dataValidation: DataValidation;
   }
 
-  // export interface RangeReference {
-  //   address: string;
-  // }
-
   error: DataValidationError;
   export class DataValidationError {
     constructor(
