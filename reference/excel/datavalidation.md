@@ -44,26 +44,19 @@ namespace Excel {
   export class DataValidation {
     status: 'none' | 'same' | 'multiple';
 
-    setRule(
-      type: 'comparison' | 'list' | 'formula',
-      data: string | [string | number | boolean] | Range | ComparisonData,
-      ignoreBlank?: boolean = true
-    ) {
-      // setRule(type: 'comparison', data: {
-      //   type: 'between' | 'notBetween' | 'equalTo' | 'notEqualTo' | 'greaterThan' | 'lessThan' | 'greaterThanOrEqualTo' | 'lessThanOrEqualTo',
-      //   param1: number | string | Date | Range
-      //   param2: number | string | Date | Range
-      // });
-      // setRule(type: 'list', data: string | [string | number | boolean] | Range);
-      // setRule(type: 'formula', data: string);
-    }
+    constructor(
+      public type: 'comparison' | 'list' | 'formula'，
+      public param1: string | [string | number | boolean] | Range | ComparisonData,
+      public param2?: string | [string | number | boolean] | Range | ComparisonData,
+      public ignoreBlank?: boolean = true
+    ) { }
 
     getDataValidationOfSameType(): Range[] {
 
     }
 
     getInvalidDataValidation(): Range[] {
-      
+
     }
 
     clearDataValidation(): void {
@@ -75,15 +68,16 @@ namespace Excel {
 
 // Range demo
 let range: Excel.Range;
-range.dataValidation.setRule('comparison', { type: 'greaterThan', param1: 2 });
+
+range.dataValidation = new DataValidation('comparison', { type: 'greaterThan', param1: 2 });
 
 const comparisonData: ComparisonData = { type: 'between', param1: 2, param1: 5 };
-range.dataValidation.setRule('comparison', comparisonData);
+range.dataValidation = new DataValidation('comparison', comparisonData);
 
-range.dataValidation.setRule('comparison', { ...comparisonData, param2: 10 });
+range.dataValidation = new DataValidation('comparison', { ...comparisonData, param2: 10 });
 
 if (range.status === 'none' || 'same') {
-  range.dataValidation.setRule('list', ['yes', 'no', 'maybe']);
+  range.dataValidation = new DataValidation('list', ['yes', 'no', 'maybe']);
 }
 
 range.dataValidation.error = new DataValidationError();
