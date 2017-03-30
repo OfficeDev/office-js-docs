@@ -5,7 +5,7 @@ namespace Excel {
     }
  
     export class DataValidation {
-        type: { get: '' /*empty*/, 'comparison', 'list', 'formula', null /*inconsistent*/ }
+        type: { get: '' /*empty*/, 'comparison', 'list', 'formula', null /*inconsistent*/ }
  
         rule?: DataValidationRule
         input?: DataValidationInput;
@@ -18,7 +18,7 @@ namespace Excel {
     export interface DataValidationRule {
         comparison?: {
             type: 'double' | 'textLength' | 'date' | 'wholeNumber' /* | ... */,
-            operator: 'between' | 'greaterThan' | 'equalTo' /* | ... */,
+            operator: 'between'|'notBetween'|'equalTo'|'notEqualTo'|'greaterThan'|'lessThan' |'greaterThanOrEqualTo' |'lessThanOrEqualTo',
             formula1: number | string | Date | RangeReference | Range,
             formula2?: number | string | Date | RangeReference | Range
         },
