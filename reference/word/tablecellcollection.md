@@ -22,7 +22,6 @@ None
 |:---------------|:--------|:----------|:----|
 |[getFirst()](#getfirst)|[TableCell](tablecell.md)|Gets the first table cell in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getFirstOrNullObject()](#getfirstornullobject)|[TableCell](tablecell.md)|Gets the first table cell in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getItem(index: number)](#getitemindex-number)|[TableCell](tablecell.md)|Gets a table cell object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
@@ -52,22 +51,6 @@ tableCellCollectionObject.getFirstOrNullObject();
 
 #### Parameters
 None
-
-#### Returns
-[TableCell](tablecell.md)
-
-### getItem(index: number)
-Gets a table cell object by its index in the collection.
-
-#### Syntax
-```js
-tableCellCollectionObject.getItem(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a table cell object.|
 
 #### Returns
 [TableCell](tablecell.md)

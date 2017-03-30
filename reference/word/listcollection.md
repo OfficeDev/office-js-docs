@@ -24,7 +24,6 @@ None
 |[getByIdOrNullObject(id: number)](#getbyidornullobjectid-number)|[List](list.md)|Gets a list by its identifier. Returns a null object if there isn't a list with the identifier in this collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getFirst()](#getfirst)|[List](list.md)|Gets the first list in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getFirstOrNullObject()](#getfirstornullobject)|[List](list.md)|Gets the first list in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getItem(index: number)](#getitemindex-number)|[List](list.md)|Gets a list object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
@@ -86,22 +85,6 @@ listCollectionObject.getFirstOrNullObject();
 
 #### Parameters
 None
-
-#### Returns
-[List](list.md)
-
-### getItem(index: number)
-Gets a list object by its index in the collection.
-
-#### Syntax
-```js
-listCollectionObject.getItem(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a list object.|
 
 #### Returns
 [List](list.md)

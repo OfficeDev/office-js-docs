@@ -22,7 +22,6 @@ None
 |:---------------|:--------|:----------|:----|
 |[getFirst()](#getfirst)|[Table](table.md)|Gets the first table in this collection. Throws if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getFirstOrNullObject()](#getfirstornullobject)|[Table](table.md)|Gets the first table in this collection. Returns a null object if this collection is empty.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getItem(index: number)](#getitemindex-number)|[Table](table.md)|Gets a table object by its index in the collection.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
@@ -52,22 +51,6 @@ tableCollectionObject.getFirstOrNullObject();
 
 #### Parameters
 None
-
-#### Returns
-[Table](table.md)
-
-### getItem(index: number)
-Gets a table object by its index in the collection.
-
-#### Syntax
-```js
-tableCollectionObject.getItem(index);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|index|number|A number that identifies the index location of a table object.|
 
 #### Returns
 [Table](table.md)
