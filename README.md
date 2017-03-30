@@ -6,6 +6,30 @@ Below links describes the new set of Excel JavaScript APIs that are being planne
 
 _**Note**: below listed features are still under design and review phase and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
+## Upcoming Excel 1.7 Release Features
+Introduces [Data validation](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/datavalidation.md).
+
+
+## Upcoming Excel 1.6 Release Features
+
+### Conditional formatting
+
+Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/conditionalformat.md) of a range. Allows follwoing types of conditional formatting:
+
+* Color scale
+* Data bar
+* Icon set
+* Custom
+
+In addiiton:
+* Returns the range the conditonal format is applied to.
+* Removal of conditional formatting.
+* Provides priority and stopifTrue capability
+* Get collection of all conditional formatting on a given range.
+* Clears all conditional formats active on the current specified range.
+
+For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
+
 ## Upcoming Excel 1.5 Release Features
 
 ### Custom XML Part
