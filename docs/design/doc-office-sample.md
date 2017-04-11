@@ -10,34 +10,34 @@ While buttons can technically be used to navigate a user to another part of the 
   
 #### Task Pane Example
 
-![alt text](../../images/exampleButtonEdit@430.png)
+![Sample image displaying a primary and secondary button with the context of an Task Pane in an Office app.](../../images/exampleButtonEdit@430.png)
 
 ## Best Practices
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
 
-![alt text](../../images/do-01@350.png)
-![alt text](../../images/dont-01@350.png)
+![Do alt text for screen reader.](../../images/do-01@350.png)
+![Don't alt text for screen reader.](../../images/dont-01@350.png)
 
-![alt text](../../images/do-02@350.png)
-![alt text](../../images/dont-02@350.png)
+![More Do alt text for screen reader.](../../images/do-02@350.png)
+![More Don't alt text for screen reader.](../../images/dont-02@350.png)
 
 
 
 ## Variants
 
 #### Default Button
-![alt text](../../images/default.png)
+![Default Button Image.](../../images/default.png)
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 #### Primary Button
-![alt text](../../images/primary.png)
+![Primary Button Image.](../../images/primary.png)
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 #### Compound Button
-![alt text](../../images/compound.png)
+![Compound Button Image.](../../images/compound.png)
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
