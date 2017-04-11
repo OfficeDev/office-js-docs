@@ -36,7 +36,18 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
+<<<<<<< HEAD
 #### Compound Button
 ![alt text](../../images/compound.png)
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+=======
+<table>
+    <tr>
+        <th>Button Like Anchor</th>
+    </tr>
+    <tr>
+        <td><img src="../../images/anchor.png"></td>
+    </tr>
+</table>
+>>>>>>> 17d80e7a45e63881632d57f42dcf4dab6fd2a472
