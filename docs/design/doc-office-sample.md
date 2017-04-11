@@ -16,111 +16,27 @@ While buttons can technically be used to navigate a user to another part of the 
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
 
-##### Style 1
+![alt text](../../images/do-01@350.png)
+![alt text](../../images/dont-01@350.png)
 
-![alt text](../../images/doDont1@700.png)
+![alt text](../../images/do-02@350.png)
+![alt text](../../images/dont-02@350.png)
 
-##### Style 2
 
-<table>
-    <tr>
-        <th>Do</th>
-        <th>Don't</th>
-    </tr>
-    <tr>
-        <td><img src="../../images/do1@320.png"></td>
-        <td><img src="../../images/dont1@320.png"></td>
-    </tr>
-</table>
-
-**DO** Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
-
-**DON’T** Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
-
-##### Style 3
-
-<table>
-    <tr>
-        <th>Do</th>
-        <th>Don't</th>
-    </tr>
-    <tr>
-        <td><img src="../../images/do1@320.png"></td>
-        <td><img src="../../images/dont1@320.png"></td>
-    </tr>
-    <tr>
-        <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</td>
-        <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</td>
-    </tr>
-</table>
 
 ## Variants
 
-##### Style 1
+#### Default Button
+![alt text](../../images/default.png)
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
-![alt text](../../images/variants.png)
+#### Primary Button
+![alt text](../../images/primary.png)
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
-##### Style 2
-
-<table>
-    <tr>
-        <th><h3>Default Button</h3></th>
-    </tr>
-    <tr>
-        <td><img src="../../images/default.png"></td>
-    </tr>
-</table>
-
-<table>
-    <tr>
-        <th><h4>Primary Button</h4></th>
-    </tr>
-    <tr>
-        <td><img src="../../images/primary.png"></td>
-    </tr>
-</table>
-
-<table>
-    <tr>
-        <th><h5>Compound Button</h5></th>
-    </tr>
-    <tr>
-        <td><img src="../../images/compound.png"></td>
-    </tr>
-</table>
-
-<table>
-    <tr>
-        <th>Hero Button</th>
-    </tr>
-    <tr>
-        <td><img src="../../images/hero.png"></td>
-    </tr>
-</table>
-
-<table>
-    <tr>
-        <th>Command Button</th>
-    </tr>
-    <tr>
-        <td><img src="../../images/command.png"></td>
-    </tr>
-</table>
-
-<table>
-    <tr>
-        <th>Icon Button</th>
-    </tr>
-    <tr>
-        <td><img src="../../images/icon.png"></td>
-    </tr>
-</table>
-
-<table>
-    <tr>
-        <th>Button Like Anchor</th>
-    </tr>
-    <tr>
-        <td><img src="../../images/anchor.png"></td>
-    </tr>
-</table>
+#### Compound Button
+![alt text](../../images/compound.png)
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
