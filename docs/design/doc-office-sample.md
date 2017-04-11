@@ -40,3 +40,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 ![alt text](../../images/compound.png)
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 * Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+## Additional Resources
+* [Office UI Fabric Button](https://dev.office.com/fabric#/components/button)
+* [UX Pattern Sample](https://office.visualstudio.com/DefaultCollection/OC/_git/GettingStarted-FabricReact)
+* [GitHub Development Resources](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
