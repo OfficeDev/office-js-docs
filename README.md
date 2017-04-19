@@ -50,7 +50,7 @@ For API details, please refer to the Excel API [open specification](https://gith
 
 ### Others
 * `range.getSurroundingRegion()` Returns a Range object that represents the surrounding region for this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
-* `getNextColumn()` and `getPreviousColumn()`, `getLast() on table column.
+* `getNextColumn()` and `getPreviousColumn()`, `getLast()` on table column.
 * `getActiveWorksheet()` on the workbook.
 * `getRange(address: string)` off of workbook.
 * `getBoundingRange(ranges: [])` Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between "B2:C5" and "D10:E15" is "B2:E15".
