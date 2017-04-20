@@ -1,4 +1,4 @@
-# getAccessTokenAsync method
+ # getAccessTokenAsync method
 Requests an authentication Token for the user currently signed into Office.
 
  **Important:** This API currently works only in Excel, Outlook, PowerPoint, Word, and OneNote in [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview).
@@ -35,8 +35,9 @@ To detect this API at runtime, use the following code.
 getAccessTokenAsync([Options,] callback);
 ```
 
-##Examples
+## Examples
 
+```js
 	Office.context.auth.getAccessTokenAsync(function(result) {
 	    if (result.status === "succeeded") {
 		var token = result.value.accessToken;
@@ -45,7 +46,7 @@ getAccessTokenAsync([Options,] callback);
 		console.log("Error obtaining token", result.error);
 	    }
 	});
-
+```
 
 ## Parameters
 
