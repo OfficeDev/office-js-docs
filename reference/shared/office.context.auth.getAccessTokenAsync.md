@@ -67,11 +67,11 @@ The following actions are available during authentication.
 ### callback method
 When the function you passed to the  _callback_ parameter executes, it receives an [AsyncResult](../../reference/shared/asyncresult.md) object that you can access from the callback function's only parameter.
 
-In the callback function passed to the  **getAccessTokenAsync** method, you can use the properties of the **AsyncResult** object to access the [add-in identity objects](#Identity-Objects).
+In the callback function passed to the  **getAccessTokenAsync** method, you can use the properties of the **AsyncResult** object to access the access token.
 
 ## Remarks
 
-This API requires a single sign-on configuration that bridges the add-in to an Azure application. Office users sign-in with Organizational Accounts and Microsoft Accounts. Microsoft Azure returns Tokens intended for both user account types to access resources in the Microsoft Graph.
+This API requires a single sign-on configuration that bridges the add-in to an Azure application. Office users sign-in with Organizational Accounts and Microsoft Accounts. Microsoft Azure returns tokens intended for both user account types to access resources in the Microsoft Graph.
 
 ## Support details
 
@@ -79,14 +79,3 @@ A capital Y in the following matrix indicates that this method is supported in t
 
 For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
 
-
-
-## Identity Objects
-getAccessTokenAsync returns an array of objects via the AsyncResult.value with the following properties:
-
-|**Property**|**Use to**|
-|:-----|:-----|
-|directoryType|(string) Describes whether the attached Office account is an Organizational Account or a Microsoft Account.|
-|accessToken|(string) The Access Token, issued to your Add-in's Web service, returned from Azure on the user's behalf.|
-
-There will be an Identity Object per account connected to the user's current Office profile.
