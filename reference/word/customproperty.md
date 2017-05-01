@@ -10,7 +10,7 @@ Represents a custom property.
 |:---------------|:--------|:----------|:----|
 |key|string|Gets the key of the custom property. Read only. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[type](enums.md)|string|Gets the value type of the custom property. Read only. Read-only. Possible values are: String, Number, Date, Boolean.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|value|object|Gets or sets the value of the custom property.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|value|object|Gets or sets the value of the custom property. Note that even though Word Online and the docx file format allow these properties to be arbitrarily long, the desktop version of Word will truncate string values to 255 16-bit chars (possibly creating invalid unicode by breaking up a surrogate pair).|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
