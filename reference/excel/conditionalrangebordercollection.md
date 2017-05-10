@@ -39,7 +39,7 @@ conditionalRangeBorderCollectionObject.getItem(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|string|Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight|
 
 #### Returns
@@ -55,7 +55,7 @@ conditionalRangeBorderCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns

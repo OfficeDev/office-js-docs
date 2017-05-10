@@ -39,7 +39,7 @@ worksheetCollectionObject.add(name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Optional. The name of the worksheet to be added. If specified, name should be unqiue. If not specified, Excel determines the name of the new worksheet.|
 
 #### Returns
@@ -106,8 +106,8 @@ worksheetCollectionObject.getCount(visibleOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|visibleOnly|bool|Optional. Returns only visible worksheets if set to true. |
+|:---------------|:--------|:----------|
+|visibleOnly|bool|Optional. Considers only the visible cells.|
 
 #### Returns
 int
@@ -122,7 +122,7 @@ worksheetCollectionObject.getFirst(visibleOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
@@ -138,7 +138,7 @@ worksheetCollectionObject.getItem(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|The Name or ID of the worksheet.|
 
 #### Returns
@@ -154,7 +154,7 @@ worksheetCollectionObject.getItemOrNullObject(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|The Name or ID of the worksheet.|
 
 #### Returns
@@ -170,7 +170,7 @@ worksheetCollectionObject.getLast(visibleOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns

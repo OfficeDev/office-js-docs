@@ -34,7 +34,7 @@ conditionalFormatCollectionObject.add(type);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |type|string|The type of conditional format being added.  Possible values are: Custom, DataBar, ColorScale, IconSet|
 
 #### Returns
@@ -138,7 +138,7 @@ conditionalFormatCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index of the conditional formats to be retrieved.|
 
 #### Returns

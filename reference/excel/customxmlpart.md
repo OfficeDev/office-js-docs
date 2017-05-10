@@ -20,15 +20,15 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|Deletes the custom XML part.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[deleteAttribute(xpath: string, namespaceMappings: object, name: string)](#deleteattributexpath-string-namespacemappings-object-name-string)|void|Deletes an attribute with the given name from the element identified by xpath.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
-|[deleteElement(xpath: string, namespaceMappings: object)](#deleteelementxpath-string-namespacemappings-object)|void|Deletes the element identified by xpath.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|[deleteAttribute(xpath: string, namespaceMappings: object, name: string)](#deleteattributexpath-string-namespacemappings-object-name-string)|void|Deletes an attribute with the given name from the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[deleteElement(xpath: string, namespaceMappings: object)](#deleteelementxpath-string-namespacemappings-object)|void|Deletes the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |[getXml()](#getxml)|string|Gets the custom XML part's full XML content.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[insertAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](#insertattributexpath-string-namespacemappings-object-name-string-value-string)|void|Inserts an attribute with the given name and value to the element identified by xpath.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
-|[insertElement(xpath: string, xml: string, namespaceMappings: object, index: number)](#insertelementxpath-string-xml-string-namespacemappings-object-index-number)|void|Inserts the given XML under the parent element identified by xpath at child position index.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
-|[query(xpath: string, namespaceMappings: object)](#queryxpath-string-namespacemappings-object)|[string[]](string[].md)|Queries the XML content.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|[insertAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](#insertattributexpath-string-namespacemappings-object-name-string-value-string)|void|Inserts an attribute with the given name and value to the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[insertElement(xpath: string, xml: string, namespaceMappings: object, index: number)](#insertelementxpath-string-xml-string-namespacemappings-object-index-number)|void|Inserts the given XML under the parent element identified by xpath at child position index.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[query(xpath: string, namespaceMappings: object)](#queryxpath-string-namespacemappings-object)|[string[]](string[].md)|Queries the XML content.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |[setXml(xml: string)](#setxmlxml-string)|void|Sets the custom XML part's full XML content.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[updateAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](#updateattributexpath-string-namespacemappings-object-name-string-value-string)|void|Updates the value of an attribute with the given name of the element identified by xpath.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
-|[updateElement(xpath: string, xml: string, namespaceMappings: object)](#updateelementxpath-string-xml-string-namespacemappings-object)|void|Updates the XML of the element identified by xpath.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|[updateAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](#updateattributexpath-string-namespacemappings-object-name-string-value-string)|void|Updates the value of an attribute with the given name of the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[updateElement(xpath: string, xml: string, namespaceMappings: object)](#updateelementxpath-string-xml-string-namespacemappings-object)|void|Updates the XML of the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -57,7 +57,7 @@ customXmlPartObject.deleteAttribute(xpath, namespaceMappings, name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xpath|string|Absolute path to the element in XPath notation.|
 |namespaceMappings|object|An object whose properties represent namespace aliases and the values are the actual namespace URIs.|
 |name|string|Name of the attribute.|
@@ -75,7 +75,7 @@ customXmlPartObject.deleteElement(xpath, namespaceMappings);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xpath|string|Absolute path to the element in XPath notation.|
 |namespaceMappings|object|An object whose properties represent namespace aliases and the values are the actual namespace URIs.|
 
@@ -106,7 +106,7 @@ customXmlPartObject.insertAttribute(xpath, namespaceMappings, name, value);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xpath|string|Absolute path to the element in XPath notation.|
 |namespaceMappings|object|An object whose properties represent namespace aliases and the values are the actual namespace URIs.|
 |name|string|Name of the attribute.|
@@ -125,7 +125,7 @@ customXmlPartObject.insertElement(xpath, xml, namespaceMappings, index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xpath|string|Absolute path to the parent element in XPath notation.|
 |xml|string|XML content to be inserted.|
 |namespaceMappings|object|An object whose properties represent namespace aliases and the values are the actual namespace URIs.|
@@ -144,7 +144,7 @@ customXmlPartObject.query(xpath, namespaceMappings);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xpath|string|An XPath query.|
 |namespaceMappings|object|An object whose properties represent namespace aliases and the values are the actual namespace URIs.|
 
@@ -161,7 +161,7 @@ customXmlPartObject.setXml(xml);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xml|string|XML content for the part.|
 
 #### Returns
@@ -177,7 +177,7 @@ customXmlPartObject.updateAttribute(xpath, namespaceMappings, name, value);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xpath|string|Absolute path to the element in XPath notation.|
 |namespaceMappings|object|An object whose properties represent namespace aliases and the values are the actual namespace URIs.|
 |name|string|Name of the attribute.|
@@ -196,7 +196,7 @@ customXmlPartObject.updateElement(xpath, xml, namespaceMappings);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xpath|string|Absolute path to the element in XPath notation.|
 |xml|string|New XML content to be stored.|
 |namespaceMappings|object|An object whose properties represent namespace aliases and the values are the actual namespace URIs.|
