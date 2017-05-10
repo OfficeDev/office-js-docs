@@ -51,7 +51,7 @@ customXmlPartScopedCollectionObject.getItem(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|ID of the object to be retrieved.|
 
 #### Returns
@@ -67,7 +67,7 @@ customXmlPartScopedCollectionObject.getItemOrNullObject(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|ID of the object to be retrieved.|
 
 #### Returns

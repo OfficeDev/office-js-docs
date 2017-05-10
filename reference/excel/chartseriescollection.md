@@ -20,9 +20,9 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[getCount()](#getcount)|int|Returns the number of series in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getFirst()](#getfirst)|[ChartSeries](chartseries.md)|Gets the first series in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[ChartSeries](chartseries.md)|Gets the first series in the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getLast()](#getlast)|[ChartSeries](chartseries.md)|Gets the last series in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLast()](#getlast)|[ChartSeries](chartseries.md)|Gets the last series in the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -65,7 +65,7 @@ chartSeriesCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns

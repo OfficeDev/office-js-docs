@@ -6,9 +6,12 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|gridlines|bool|Gets or sets the worksheet's gridlines flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|headings|bool|Gets or sets the worksheet's headings flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The display name of the worksheet.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|int|The zero-based position of the worksheet within the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|tabColor|string|Gets or sets the worksheet tab color.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |visibility|string|The Visibility of the worksheet. Possible values are: Visible, Hidden, VeryHidden.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
@@ -27,6 +30,7 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[activate()](#activate)|void|Activate the worksheet in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[calculate(markAllDirty: bool)](#calculatemarkalldirty-bool)|void|Calculates all cells on a worksheet.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete()](#delete)|void|Deletes the worksheet from the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getNext(visibleOnly: bool)](#getnextvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
@@ -34,7 +38,8 @@ _See property access [examples.](#property-access-examples)_
 |[getPrevious(visibleOnly: bool)](#getpreviousvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getPreviousOrNullObject(visibleOnly: bool)](#getpreviousornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|[Range](range.md)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -70,6 +75,22 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### calculate(markAllDirty: bool)
+Calculates all cells on a worksheet.
+
+#### Syntax
+```js
+worksheetObject.calculate(markAllDirty);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|markAllDirty|bool|Boolean to mark as dirty.|
+
+#### Returns
+void
 
 ### delete()
 Deletes the worksheet from the workbook.
@@ -112,7 +133,7 @@ worksheetObject.getCell(row, column);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|The row number of the cell to be retrieved. Zero-indexed.|
 |column|number|the column number of the cell to be retrieved. Zero-indexed.|
 
@@ -149,7 +170,7 @@ worksheetObject.getNext(visibleOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
@@ -165,7 +186,7 @@ worksheetObject.getNextOrNullObject(visibleOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
@@ -181,7 +202,7 @@ worksheetObject.getPrevious(visibleOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
@@ -197,7 +218,7 @@ worksheetObject.getPreviousOrNullObject(visibleOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
@@ -213,7 +234,7 @@ worksheetObject.getRange(address);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |address|string|Optional. The address or the name of the range. If not specified, the entire worksheet range is returned.|
 
 #### Returns
@@ -260,7 +281,26 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getUsedRange(valuesOnly: [ApiSet(Version)
+### getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)
+Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.
+
+#### Syntax
+```js
+worksheetObject.getRangeByIndexes(startRow, startColumn, rowCount, columnCount);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|startRow|number|Start row (zero-indexed).|
+|startColumn|number|Start column (zero-indexed).|
+|rowCount|number|Number of rows to include in the range.|
+|columnCount|number|Number of columns to include in the range.|
+
+#### Returns
+[Range](range.md)
+
+### getUsedRange(valuesOnly: bool)
 The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).
 
 #### Syntax
@@ -270,8 +310,8 @@ worksheetObject.getUsedRange(valuesOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells (ignoring formatting).|
+|:---------------|:--------|:----------|
+|valuesOnly|bool|Optional. Considers only cells with values as used cells (ignoring formatting).|
 
 #### Returns
 [Range](range.md)
@@ -306,7 +346,7 @@ worksheetObject.getUsedRangeOrNullObject(valuesOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|bool|Optional. Considers only cells with values as used cells.|
 
 #### Returns

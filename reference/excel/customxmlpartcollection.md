@@ -37,7 +37,7 @@ customXmlPartCollectionObject.add(xml);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |xml|string|XML content. Must be a valid XML fragment.|
 
 #### Returns
@@ -53,7 +53,7 @@ customXmlPartCollectionObject.getByNamespace(namespaceUri);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |namespaceUri|string||
 
 #### Returns
@@ -83,7 +83,7 @@ customXmlPartCollectionObject.getItem(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|ID of the object to be retrieved.|
 
 #### Returns
@@ -99,7 +99,7 @@ customXmlPartCollectionObject.getItemOrNullObject(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|ID of the object to be retrieved.|
 
 #### Returns

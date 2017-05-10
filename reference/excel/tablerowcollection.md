@@ -19,14 +19,14 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds one or more rows to the table. The return object will be the top of the newly added row(s).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(index: number, values: object)](#addindex-number-values-object)|[TableRow](tablerow.md)|Adds one or more rows to the table. The return object will be the top of the newly added row(s).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Gets the number of rows in the table.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
-### add(index: number, values: (boolean or string or number)[][])
+### add(index: number, values: object)
 Adds one or more rows to the table. The return object will be the top of the newly added row(s).
 
 #### Syntax
@@ -36,9 +36,9 @@ tableRowCollectionObject.add(index, values);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Optional. Specifies the relative position of the new row. If null or -1, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
-|values|(boolean or string or number)[][]|Optional. A 2-dimensional array of unformatted values of the table row.|
+|values|object|Optional. A 2-dimensional array of unformatted values of the table row.|
 
 #### Returns
 [TableRow](tablerow.md)
@@ -86,7 +86,7 @@ tableRowCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
