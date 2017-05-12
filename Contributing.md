@@ -1,7 +1,6 @@
 # Contribute to this documentation
 
-Thank you for your interest in our documentation!
-
+Thank you for your interest in our documentation! We also appreciate your personal contribution so before you get started sign in or sign up that way your work and add-in is directly linked and credited to your account. 
 * [Ways to contribute](#ways-to-contribute)
 * [Contribute using GitHub](#contribute-using-github)
 * [Contribute using Git](#contribute-using-git)
