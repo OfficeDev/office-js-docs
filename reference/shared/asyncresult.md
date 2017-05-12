@@ -7,23 +7,64 @@ An object which encapsulates the result of an asynchronous request, including st
 |**Hosts:**|Access, Excel, Outlook, PowerPoint, Project, Word|
 |**Last changed in**|1.1|
 
+**Syntax**
+
 ```
 AsyncResult
 ```
 
-
 ## Members
-
 
 **Properties**
 
+|**Name**|**Syntax**|**Return Value**|**Description**|
+|:-----|:-----|:-----|:-----|
+|**asyncContext**|var myContext = asynchResult.asyncContext;|The user-defined item(1).|Gets the user-defined item passed to the optional  _asyncContext_ parameter of the invoked method in the same state as it was passed in.|
+|**error**|var errorObj = asyncResult.error;|An [Error](../../reference/shared/error.md) object.|Gets an  **Error** object that provides a description of the error, if any error occurred.|
+|**status**|var myStatus = asyncResult.status;|An [AsyncResultStatus](../../reference/shared/asyncresultstatus-enumeration.md) value.|Gets the status of the asynchronous operation.|
+|**value**|var dataValue = asyncResult.value;|The value of the request when the asynchronous call was made(2).|Gets the payload or content of this asynchronous operation, if any.|
 
-|**Name**|**Description**|
-|:-----|:-----|
-|**[asyncContext](../../reference/shared/asyncresult.asynccontext.md)**|Gets the user-defined item passed to the optional  _asyncContext_ parameter of the invoked method in the same state as it was passed in.|
-|**[error](../../reference/shared/asyncresult.error.md)**|Gets an  **Error** object that provides a description of the error, if any error occurred.|
-|**[status](../../reference/shared/asyncresult.status.md)**|Gets the status of the asynchronous operation.|
-|**[value](../../reference/shared/asyncresult.value.md)**|Gets the payload or content of this asynchronous operation, if any.|
+(1) A User-defined item can be of any JavaScript type: **String, Number, Boolean, Object, Array, Null,** or **Undefined**) passed to the optional asyncContext parameter of the invoked method. Returns **Undefined**, if you didn't pass anything to the asyncContext parameter.
+
+(2) What the value property returns for a particular "Async" method varies depending on the purpose and context of that method. To determine what is returned by the value property for an "Async" method, refer to the "Callback value" section of the method's topic.
+
+### Examples
+
+_asyncContext property_
+
+```js
+function getDataWithContext() {
+    var format = "Your data: ";
+    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, { asyncContext: format }, showDataWithContext);
+}
+
+ function showDataWithContext(asyncResult) {
+    write(asyncResult.asyncContext + asyncResult.value);
+}
+// Function that writes to a div with id='message' on the page.
+function write(message){
+    document.getElementById('message').innerText += message; 
+}
+```
+
+_error, status, and value properties_
+
+```js
+function getData() {
+    Office.context.document.getSelectedDataAsync(Office.CoercionType.Table, function(asyncResult) {
+        if (asyncResult.status == Office.AsyncResultStatus.Failed) {
+            write(asyncResult.error.message);
+        }
+        else {
+            write(asyncResult.value);
+        }
+    });
+}
+// Function that writes to a div with id='message' on the page.
+function write(message){
+    document.getElementById('message').innerText += message; 
+}
+```
 
 ## Remarks
 
@@ -59,8 +100,6 @@ The anonymous function passed as the  _callback_ argument ( `function (result){.
 Note that other lines of code in the function use the  _result_ parameter of the callback function to access the **status** and **error** properties of the **AsyncResult** object.
 
 The  **AsyncResult** object is available from the function passed as the argument to the _callback_ parameter of the following methods:
-
-
 
 |**Parent Object**|**Method**|
 |:-----|:-----|
@@ -106,7 +145,7 @@ A capital Y in the following matrix indicates that this method is supported in t
 
 For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
 
-
+_error, status, and value properties_
 
 | |**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|**OWA for Devices**|**Outlook for Mac**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
@@ -115,6 +154,17 @@ For more information about Office host application and server requirements, see 
 |**Outlook**|Y|Y||Y|Y|
 |**PowerPoint**|Y|Y|Y|||
 |**Project**|Y|||||
+|**Word**|Y|Y|Y|||
+
+_asyncContext property_
+
+||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|**OWA for Devices**|**Outlook for Mac**|
+|:-----|:-----|:-----|:-----|:-----|:-----|
+|**Access**|Y|||||
+|**Excel**|Y|Y|Y|||
+|**Outlook**|Y|Y||Y|Y|
+|**PowerPoint**|Y|Y|Y|||
+|**Project**||||||
 |**Word**|Y|Y|Y|||
 
 |||
