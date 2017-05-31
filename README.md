@@ -16,6 +16,7 @@ _**Note**: below listed features are still under design and review phase and hen
 * Worksheet headings
 * New range functions
 * Freeze rows/columns.
+* More Chart APIs
 
 _Details of the specific APIs are listed below. Please let us know what you think!_
 
@@ -56,6 +57,37 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[worksheet](reference/excel/worksheet.md)|_Property_ > headings|Gets or sets the worksheet's headings flag.|1.7|
 |[worksheet](reference/excel/worksheet.md)|_Property_ > tabColor|Gets or sets the worksheet tab color.|1.7|
 |[worksheet](reference/excel/worksheet.md)|_Method_ > [getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](reference/excel/worksheet.md#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|1.7|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > baseUnit|Represents the baseUnit of chart Axis.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > categoryNames|Represents the category names of chart Axis.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > categoryType|Represents the category type of chart Axis.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > customDisplayUnit|Represents the custom value of axis display unit.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > displayUnit|Represents the axis display unit of chart Axis. Read-only.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > majorUnitScale|Returns or sets the major unit scale value for the category axis when the categoryType property is set to dateAxis.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > minorUnitScale|Returns or sets the minor unit scale value for the category axis when the categoryType property is set to dateAxis.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > showDisplayUnitLabel|Represents if show displayUnitLabel.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > type|Represents the axis type. Read-only.|1.9|
+|[chartborder](reference/excel/chartborder.md)|_Method_ > [clear()](reference/excel/chartborder.md#clear)|Clear the border color of a chart element.|1.9|
+|[chartborder](reference/excel/chartborder.md)|_Method_ > [setSolidColor(color: string)](reference/excel/chartborder.md#setsolidcolorcolor-string)|Sets the border formatting of a chart element to a uniform color.|1.9|
+|[chartformatstring](reference/excel/chartformatstring.md)|_Relationship_ > [ChartFont](reference/excel/chartfont.md)|Represents the font properties of chartFormatString object. Read-only.|1.9|
+|[chartpointformat](reference/excel/chartpointformat.md)|_Relationship_ > [ChartBorder](reference/excel/chartborder.md)|Represents the border format of a chart point, which includes border formating information. Read-only.|1.9|
+|[chartseries](reference/excel/chartseries.md)|_Method_ > [delete()](reference/excel/chartseries.md#delete)|Deletes the chart series.|1.9|
+|[chartseries](reference/excel/chartseries.md)|_Method_ > [setBubbleSizes(sourceData: Range)](reference/excel/chartseries.md#setbubblesizessourcedata-range)|Set bubble sizes for a chart series. Only works for bubble charts.|1.9|
+|[chartseries](reference/excel/chartseries.md)|_Method_ > [setValues(sourceData: Range)](reference/excel/chartseries.md#setvaluessourcedata-range)|Set values for a chart series. For scatter chart, it means Y axis values.|1.9|
+|[chartseries](reference/excel/chartseries.md)|_Method_ > [setXAxisValues(sourceData: Range)](reference/excel/tablecolumncollection.md#setxaxisvaluessourcedata-range)|Set values of X axis for a chart series. Only works for scatter charts.|1.9|
+|[chartseries](reference/excel/chartseries.md)|_Relationship_ > [ChartTrendlineCollection](reference/excel/charttrendlinecollection.md)|Represents a collection of Trendlines in the series. Read-only.|1.9|
+|[chartseriescollection](reference/excel/chartseriescollection.md)|_Method_ > [add(name: string, index: number)](reference/excel/chartseries.md#addname-string-index-number)|Add a new series to the collection.|1.9|
+|[chartseriesformat](reference/excel/chartseriesformat.md)|_Relationship_ > [ChartBorder](reference/excel/chartborder.md)|Represents the border format of a chart series, which includes border formating information. Read-only.|1.9|
+|[charttitle](reference/excel/charttitle.md)|_Method_ > [getSubstring(start: number, length: number)](reference/excel/chartseries.md#getsubstringstart-number-length-number)|Get the characters of a chart title. Line break '\n' also counts one charater.|1.9|
+|[charttitle](reference/excel/charttitle.md)|_Property_ > horizontalAlignment|Represents the horizontal alignment for chart title.|1.9|
+|[charttrendline](reference/excel/charttrendline.md)|_Property_ > movingAverage|Represents the period of a chart trendline, only for trendline with MovingAverage type.|1.9|
+|[charttrendline](reference/excel/charttrendline.md)|_Property_ > polynomialOrder|Represents the order of a chart trendline, only for trendline with Polynomial type.|1.9|
+|[charttrendline](reference/excel/charttrendline.md)|_Property_ > type|Represents the type of a chart trendline. Possible values are: Linear, Expontential, Logarithmic, MovingAverage, Polynomial, Power.|1.9|
+|[charttrendline](reference/excel/charttrendline.md)|_Relationship_ > [ChartTrendlineFormat](reference/excel/chartTrendlineFormat.md)|Represents the formatting of a chart trendline. Read-only.|1.9|
+|[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [add(type: string)](reference/excel/chartseries.md#addtype-string)|Adds a new trendline to trendline collection.|1.9|
+|[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getCount](reference/excel/chartseries.md#getcount)|Returns the number of trendlines in the collection.|1.9|
+|[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Property_ > items|A collection of chartTrendline objects. Read-only.|1.9|
+|[charttrendlineformat](reference/excel/charttrendlineformat.md)|_Relationship_ > [ChartLineFormat](reference/excel/chartlineformat.md)|Represents chart line formatting. Read-only.|1.9|
+
 
 ## Give feedback
 
