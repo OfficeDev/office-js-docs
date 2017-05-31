@@ -82,9 +82,9 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[charttrendline](reference/excel/charttrendline.md)|_Property_ > movingAverage|Represents the period of a chart trendline, only for trendline with MovingAverage type.|1.9|
 |[charttrendline](reference/excel/charttrendline.md)|_Property_ > polynomialOrder|Represents the order of a chart trendline, only for trendline with Polynomial type.|1.9|
 |[charttrendline](reference/excel/charttrendline.md)|_Property_ > type|Represents the type of a chart trendline. Possible values are: Linear, Expontential, Logarithmic, MovingAverage, Polynomial, Power.|1.9|
-|[charttrendline](reference/excel/charttrendline.md)|_Relationship_ > [ChartTrendlineFormat](reference/excel/charttrendlineformat.md)|Represents the formatting of a chart trendline. Read-only.|1.9|
-|[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [add(type: string)](reference/excel/chartseries.md#addtype-string)|Adds a new trendline to trendline collection.|1.9|
-|[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getCount](reference/excel/chartseries.md#getcount)|Returns the number of trendlines in the collection.|1.9|
+|[charttrendline](reference/excel/charttrendline.md)|_Relationship_ > [ChartTrendlineFormat](reference/excel/charttrendline.md)|Represents the formatting of a chart trendline. Read-only.|1.9|
+|[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [add(type: string)](reference/excel/chartseriescollection.md#addtype-string)|Adds a new trendline to trendline collection.|1.9|
+|[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getCount](reference/excel/charttrendlinecollection.md#getcount)|Returns the number of trendlines in the collection.|1.9|
 |[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Property_ > items|A collection of chartTrendline objects. Read-only.|1.9|
 |[charttrendlineformat](reference/excel/charttrendlineformat.md)|_Relationship_ > [ChartLineFormat](reference/excel/chartlineformat.md)|Represents chart line formatting. Read-only.|1.9|
 
