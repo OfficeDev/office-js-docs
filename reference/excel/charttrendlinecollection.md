@@ -20,6 +20,7 @@ None
 |:---------------|:--------|:----------|:----|
 |[add(type: string)](#addtype-string)|[ChartTrendline](charttrendline.md)|Adds a new trendline to trendline collection.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Returns the number of trendlines in the collection.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(index: int)](#getitemindex-int)|[ChartTrendline](charttrendline.md)|Get trendline object by index, which is the insertion order in items array.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -53,3 +54,20 @@ None
 
 #### Returns
 int
+
+### getItem(index: int)
+Get trendline object by index, which is the insertion order in items array.
+
+#### Syntax
+```js
+chartTrendlineCollectionObject.getItem(index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|index|int|Represents the insertion order in items array.|
+
+#### Returns
+[ChartTrendline](charttrendline.md)
+
