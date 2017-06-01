@@ -85,6 +85,7 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[charttrendline](reference/excel/charttrendline.md)|_Relationship_ > [ChartTrendlineFormat](reference/excel/charttrendline.md)|Represents the formatting of a chart trendline. Read-only.|1.9|
 |[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [add(type: string)](reference/excel/charttrendlinecollection.md#addtype-string)|Adds a new trendline to trendline collection.|1.9|
 |[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getCount](reference/excel/charttrendlinecollection.md#getcount)|Returns the number of trendlines in the collection.|1.9|
+|[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getItem(index: int)](reference/excel/charttrendlinecollection.md#getitemindex-int)|Get trendline object by index, which is the insertion order in items array.|1.9|
 |[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Property_ > items|A collection of chartTrendline objects. Read-only.|1.9|
 |[charttrendlineformat](reference/excel/charttrendlineformat.md)|_Relationship_ > [ChartLineFormat](reference/excel/chartlineformat.md)|Represents chart line formatting. Read-only.|1.9|
 
