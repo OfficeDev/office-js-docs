@@ -16,7 +16,11 @@ _**Note**: below listed features are still under design and review phase and hen
 * Worksheet headings
 * New range functions
 * Freeze rows/columns.
-* More Chart APIs
+* ChartTrendline
+* Set Format to Chart Point(s), Subtitle 
+* Catagory Axis
+* Display Unit 
+* ChartSeries Add/Delete/Modification
 
 _Details of the specific APIs are listed below. Please let us know what you think!_
 
