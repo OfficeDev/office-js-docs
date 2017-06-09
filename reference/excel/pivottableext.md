@@ -25,7 +25,7 @@ Represents a PivotTable report on a worksheet.
 |errorString|string|Returns or sets a String value that represents the string displayed in cells that contain errors when the DisplayErrorString property is True.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |fieldListSortAscending|bool|Controls the sort order of fields in the PivotTable Field List. When this property is set toTrue, the fields are sorted in ascending order. When it is set to False, the fields are sorted in data source order.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |grandTotalName|string|Returns or sets the text string label that is displayed in the grand total column or row heading in the specified PivotTable report. The default value is the string `Grand Total`.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|hasAutoFormat|bool|True if the PivotTable report is automatically formatted when it╬ô├ç├ûs refreshed or when fields are moved.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|hasAutoFormat|bool|True if the PivotTable report is automatically formatted when itrefreshed or when fields are moved.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |hidden|bool|Checks whether the PivotTable exists at the worksheet level. Boolean. Read-only.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |nullString|string|Returns or sets the string displayed in cells that contain null values when theDisplayNullString property is True. The default value is an empty string.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |preserveFormatting|bool|True if formatting is preserved when the report is refreshed or recalculated by operations such as pivoting, sorting, or changing page field items.For query tables, this property is True if any formatting common to the first five rows of data are applied to new rows of data in the query table. Unused cells aren╬ô├ç├ût formatted. The property isFalse if the last AutoFormat applied to the query table is applied to new rows of data. The default value is True.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -43,7 +43,7 @@ Represents a PivotTable report on a worksheet.
 |showTableStyleRowHeaders|bool|The ShowTableStyleRowHeaders property is set to True if the row headers should be displayed in the PivotTable.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |showTableStyleRowStripes|bool|The ShowTableStyleRowStripes property displays banded rows in which even rows are formatted differently from odd rows. This makes PivotTables easier to read.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |showValuesRow|bool|Returns or sets whether the values row is displayed.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|smallGrid|bool|True if Microsoft Excel uses a grid that╬ô├ç├ûs two cells wide and two cells deep for a newly created PivotTable report. False if Excel uses a blank stencil outline.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|smallGrid|bool|True if Microsoft Excel uses a grid thattwo cells wide and two cells deep for a newly created PivotTable report. False if Excel uses a blank stencil outline.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |sortUsingCustomLists|bool|The SortUsingCustomLists property controls whether custom lists are used for sorting items of fields, both initially when the PivotField is initialized and the PivotItems are ordered by their captions; and later when the user applies a sort.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |subtotalHiddenPageItems|bool|True if hidden page field items in the PivotTable report are included in row and column subtotals, block totals, and grand totals. The default value is False.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |summary|string|Returns or sets the description associated with the alternative text string for the specified PivotTable.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -79,7 +79,7 @@ _See property access [examples.](#property-access-examples)_
 |[getRowField(index: number)](#getrowfieldindex-number)|[PivotField](pivotfield.md)|Returns an object that represents either a single field in a PivotTable report (a PivotField object) or a collection of all the fields (a PivotFields object) that are currently showing as row fields.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowRange()](#getrowrange)|[Range](range.md)|Returns a Range object that represents the range including the row area on the PivotTable report.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[listFormulas()](#listformulas)|void|Creates a list of calculated PivotTable items and fields on a separate worksheet.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[refreshTable()](#refreshtable)|[bool?](bool?.md)|Refreshes the PivotTable report from the source data. Returns True if it╬ô├ç├ûs successful.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[refreshTable()](#refreshtable)|[bool?](bool?.md)|Refreshes the PivotTable report from the source data. Returns True if itsuccessful.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[update()](#update)|void|Updates the PivotTable report.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -255,7 +255,7 @@ None
 void
 
 ### refreshTable()
-Refreshes the PivotTable report from the source data. Returns True if it╬ô├ç├ûs successful.
+Refreshes the PivotTable report from the source data. Returns True if itsuccessful.
 
 #### Syntax
 ```js

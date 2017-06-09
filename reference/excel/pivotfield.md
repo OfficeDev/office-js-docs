@@ -22,7 +22,7 @@ Represents a field in a PivotTable report.
 |orientation|string|Returns or sets a value that represents the location of the field in the specified PivotTable report.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|int|Returns or sets a value that represents the position of the field (first, second, third, and so on) among all the fields in its orientation (Rows, Columns, Pages, Data).|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |showDetail|bool|Gets or sets whether the specified PivotField is showing detail.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|sourceName|string|Returns a string value that represents the specified object╬ô├ç├ûs name as it appears in the original source data for the specified PivotTable report. Read-only.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|sourceName|string|Returns a string value that represents the specified objectname as it appears in the original source data for the specified PivotTable report. Read-only.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

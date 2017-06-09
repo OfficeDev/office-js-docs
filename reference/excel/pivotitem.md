@@ -12,7 +12,7 @@ Represents an item in a PivotTable field.
 |position|int|Returns or sets a Long value that represents the position of the item in its field, if the item is currently showing.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |recordCount|int|Returns the number of records in the PivotTable cache or the number of cache records that contain the specified item. Read-only.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |showDetail|bool|True if the outline is expanded for the specified range (so that the detail of the column or row is visible). The specified range must be a single summary column or row in an outline. For the PivotItem object (or the Range object if the range is in a PivotTable report), this property is set to True if the item is showing detail.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|sourceName|string|Returns a value that represents the specified object╬ô├ç├ûs name, as it appears in the original source data, for the specified PivotTable report. Read-only.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|sourceName|string|Returns a value that represents the specified objectname, as it appears in the original source data, for the specified PivotTable report. Read-only.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|Returns or sets a Boolean value that determines whether the object is visible.|[Pivot1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_

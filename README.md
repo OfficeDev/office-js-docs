@@ -8,7 +8,8 @@ _**Note**: below listed features are still under design and review phase and hen
 
 ## Upcoming Excel 1.7+ Release Features
 
-* [Data validation](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/datavalidation.md).
+* Pivot table add/modify APIs (See the bottom table)
+* Chart API additions
 * Workbook name
 * Gridlines
 * Tab color
@@ -21,6 +22,7 @@ _**Note**: below listed features are still under design and review phase and hen
 * Catagory Axis
 * Display Unit 
 * ChartSeries Add/Delete/Modification
+* Data validation (API to be updated..)
 
 _Details of the specific APIs are listed below. Please let us know what you think!_
 

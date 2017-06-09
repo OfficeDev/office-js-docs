@@ -1,4 +1,4 @@
-# Chart Object (JavaScript API for Excel)
+pi# Chart Object (JavaScript API for Excel)
 
 Represents a chart object in a workbook.
 
