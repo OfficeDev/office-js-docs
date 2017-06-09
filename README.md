@@ -8,7 +8,7 @@ _**Note**: below listed features are still under design and review phase and hen
 
 ## Upcoming Excel 1.7+ Release Features
 
-* Pivot table add/modify APIs (See the bottom table)
+* Pivot table add/modify APIs (See the [bottom table](#upcoming-pivot-table-apis))
 * Chart API additions
 * Workbook name
 * Gridlines
