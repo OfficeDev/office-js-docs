@@ -95,6 +95,8 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[charttrendlinecollection](reference/excel/charttrendlinecollection.md)|_Property_ > items|A collection of chartTrendline objects. Read-only.|1.9|
 |[charttrendlineformat](reference/excel/charttrendlineformat.md)|_Relationship_ > [ChartLineFormat](reference/excel/chartlineformat.md)|Represents chart line formatting. Read-only.|1.9|
 
+## Upcoming Pivot Table APIs
+
 
 |Object| What is new| Description |Requirement set|
 |:----|:----|:----|:----|
