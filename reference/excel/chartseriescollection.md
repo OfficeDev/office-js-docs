@@ -22,7 +22,7 @@ None
 |[add(name: string, index: number)](#addname-string-index-number)|[ChartSeries](chartseries.md)|Add a new series to the collection.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Returns the number of series in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getFirst()](#getfirst)|[ChartSeries](chartseries.md)|Gets the first series in the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection.c|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLast()](#getlast)|[ChartSeries](chartseries.md)|Gets the last series in the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -59,6 +59,20 @@ None
 #### Returns
 int
 
+### getFirst()
+Gets the first series in the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.getFirst();
+```
+
+#### Parameters
+None
+
+#### Returns
+[ChartSeries](chartseries.md)
+
 ### getItemAt(index: number)
 Retrieves a series based on its position in the collection.c
 
@@ -74,30 +88,6 @@ chartSeriesCollectionObject.getItemAt(index);
 
 #### Returns
 [ChartSeries](chartseries.md)
-
-### getFirst()
-Gets the first series in the collection.
-#### Syntax
-```js
-chartSeriesCollectionObject.getFirst();
-```
-#### Returns
-[ChartSeries](chartseries.md)
-
-### getLast()
-Gets the last series in the collection.
-
-#### Syntax
-```js
-chartSeriesCollectionObject.getLast();
-```
-
-#### Parameters
-None
-
-#### Returns
-[ChartSeries](chartseries.md)
-
 
 #### Examples
 
@@ -118,6 +108,20 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### getLast()
+Gets the last series in the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.getLast();
+```
+
+#### Parameters
+None
+
+#### Returns
+[ChartSeries](chartseries.md)
 ### Property access examples
 Getting the names of series in the series collection.
 
@@ -155,5 +159,4 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-
 
