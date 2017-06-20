@@ -69,7 +69,7 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[chartaxis](reference/excel/chartaxis.md)|_Property_ > minorTimeUnitScale|Returns or sets the minor unit scale value for the category axis when the CategoryType property is set to TimeScale.|1.9|
 |[chartaxis](reference/excel/chartaxis.md)|_Property_ > showDisplayUnitLabel|Represents if show displayUnitLabel.|1.9|
 |[chartaxis](reference/excel/chartaxis.md)|_Property_ > type|Represents the axis type. Read-only.|1.9|
-|[chartaxis](reference/excel/chartaxis.md)|_Method_> [ setCategoryNames(catagoryNames:string[])](reference/excel/chartborder.md#setcategorynames-string)|Sets all the category names for the specified axis.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Method_> [ setCategoryNames(sourceData:Range or string[])](reference/excel/chartborder.md#setcategorynames-rangeorstring)|Sets all the category names for the specified axis.|1.9|
 |[chartborder](reference/excel/chartborder.md)|_Method_ > [clear()](reference/excel/chartborder.md#clear)|Clear the border color of a chart element.|1.9|
 |[chartborder](reference/excel/chartborder.md)|_Method_ > [setSolidColor(color: string)](reference/excel/chartborder.md#setsolidcolorcolor-string)|Sets the border formatting of a chart element to a uniform color.|1.9|
 |[chartformatstring](reference/excel/chartformatstring.md)|_Relationship_ > [ChartFont](reference/excel/chartfont.md)|Represents the font properties of chartFormatString object. Read-only.|1.9|
