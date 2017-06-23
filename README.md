@@ -6,7 +6,7 @@ Below links describes the new set of Excel JavaScript APIs that are being planne
 
 _**Note**: below listed features are still under design and review phase and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
-## Upcoming Excel 1.7+ Release Features
+## Upcoming Excel 1.7 Release Features
 
 * Pivot table add/modify APIs (See the [bottom table](#upcoming-pivot-table-apis))
 * Chart API additions
@@ -17,12 +17,19 @@ _**Note**: below listed features are still under design and review phase and hen
 * Worksheet headings
 * New range functions
 * Freeze rows/columns.
+
+## Upcoming Excel 1.9 Release Features
 * ChartTrendline
 * Set Format to Chart Point(s), Subtitle 
 * Catagory Axis
 * Display Unit 
 * ChartSeries Add/Delete/Modification
 * Data validation (API to be updated..)
+
+## Upcoming Excel Pivot11.1 Release Features
+
+* Pivot table add/modify APIs (See the [bottom table](#upcoming-pivot-table-apis))
+
 
 _Details of the specific APIs are listed below. Please let us know what you think!_
 
