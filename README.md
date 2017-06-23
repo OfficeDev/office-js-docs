@@ -29,7 +29,7 @@ _**Note**: below listed features are still under design and review phase and hen
 * ChartSeries Add/Delete/Modification
 * Data validation (API to be updated..)
 
-## Upcoming Excel Pivot11.1 Release Features
+## Upcoming Excel Pivot1.1 Release Features
 
 * Pivot table add/modify APIs (See the [bottom table](#upcoming-pivot-table-apis))
 
