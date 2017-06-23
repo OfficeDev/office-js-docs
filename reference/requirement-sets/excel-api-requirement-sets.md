@@ -12,6 +12,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 |:-----|-----|:-----|:-----|:-----|:-----|
 | Pivot1.1 **Beta**  | Coming soon| Coming soon |  Coming soon| April 2017 | Coming soon|
 | ExcelApi 1.7 **Beta**  | Version 1704 (Build 8201.2001) or later| Coming soon |  Coming soon| April 2017 | Coming soon|
+| ExcelApi 1.8 **Beta**  | Version 1704 (Build 8201.2001) or later| Coming soon |  Coming soon| April 2017 | Coming soon|
 | ExcelApi 1.6  | Version 1704 (Build 8201.2001) or later| Coming soon |  Coming soon| April 2017 | Coming soon|
 | ExcelApi 1.5  | Version 1703 (Build 8067.2070) or later| Coming soon |  Coming soon| March 2017 | Coming soon|
 | ExcelApi 1.4 | Version 1701 (Build 7870.2024) or later| Coming soon |  Coming soon| January 2017 | Coming soon|
