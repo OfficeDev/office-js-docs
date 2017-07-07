@@ -21,6 +21,51 @@ _**Note**: below listed features are still under design and review phase and hen
 * New range functions
 * Freeze rows/columns.
 
+## Upcoming Excel 1.8 Event Release Features
+
+Below is the early thought of Event included in Excel JavaScript APIs. Further details about event argument design and sample code will be posted later. 
+
+1.	Data change event for Worksheet, Table with co-auth support
+
+    This type of event is triggered when there is data change happened, for example, cells value change on the grid.
+
+    |Object|Event| Description |
+    |:----|:----|:----|
+    | Worksheet    | onDataChannged | Occurs when data changed on specific worksheet |
+    | Table        | onDataChannged | Occurs when data changed on specific table |
+    | TableCollection      | onDataChannged | Occurs when data changed on any table in a workbook, or a worksheet |
+
+2.	Selection change event for Worksheet, and Table.
+
+    This type of event is triggered when user changes the selection, or extend the selected area.
+
+    |Object|Event| Description |
+    |:----|:----|:----|
+    |Worksheet| onSelectionChanged | Occurs when selection changed on specific worksheet |
+    |Table| onSelectionChanged | Occurs when selection changed on specific table |
+
+
+3.	Activate and Deactivate events for Worksheet.
+
+    This type of event is triggered when worksheet is activated, for example, user switches the worksheet.
+
+    |Object|Event| Description |
+    |:----|:----|:----|
+    |WorksheetCollection| onActivated | Occurs when any worksheet in the workbook is activated |
+    |Worksheet| onActivated | Occurs when the worksheet is activated |
+    |WorksheetCollection| onDeactivated | Occurs when any worksheet in the workbook is deactivated |
+    |Worksheet| onDeactivated | Occurs when the worksheet is deactivated |
+
+
+4.	Add event for Worksheet with co-auth support.
+
+    This type of event is triggered when a new worksheet is added to workbook.
+
+    |Object|Event| Description |
+    |:----|:----|:----|
+    |WorksheetCollection| onAdded | Occurs when a new worksheet is added to workbook |
+
+
 ## Upcoming Excel 1.9 Release Features
 * ChartTrendline
 * Set Format to Chart Point(s), Subtitle 
