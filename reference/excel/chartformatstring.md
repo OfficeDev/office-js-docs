@@ -1,6 +1,6 @@
 # ChartFormatString Object (JavaScript API for Excel)
 
-Represents the substring in chart related objects that contains text, like ChartTitle object, ChartAxisTitle object, etc.
+Represents the substring in chart related objects that contains text, for example, ChartTitle object, ChartAxisTitle object.
 
 ## Properties
 
