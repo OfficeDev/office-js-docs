@@ -49,7 +49,7 @@ chartAxisObject.setCategoryNames(sourceData);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|sourceData|Range or string()|The Range object corresponding to the source data, or string array|
+|sourceData|Range or string()|The Range object that corresponds to the source data, or string array|
 
 #### Returns
 void
