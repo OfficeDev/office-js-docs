@@ -35,7 +35,7 @@ chartTrendlineCollectionObject.add(type);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|type|string|Optional. TrendlineType.  Possible values are: Linear, Expontential, Logarithmic, MovingAvg, Polynomial, Power|
+|type|string|Optional. TrendlineType.  Possible values are: Linear, Expontential, Logarithmic, MovingAvg, Polynomial, Power.|
 
 #### Returns
 [ChartTrendline](charttrendline.md)
