@@ -21,18 +21,18 @@ _**Note**: below listed features are still under design and review phase and hen
 * New range functions
 * Freeze rows/columns.
 
-## Upcoming Excel 1.8 Event  Features
+## Upcoming Excel 1.8 Event Features
 
 This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future.
 
-1.	Data change event for Worksheet, Table with coauthoring support
+1.	Data change event for Worksheet, Table with coauthoring support.
 
     This type of event is triggered when a data change happens; for example, when cell values change in the grid.
 
     |Object|Event| Description |
     |:----|:----|:----|
     |Worksheet | onDataChannged | Occurs when data changed on a specific worksheet. |
-    |Table  | onDataChannged | Occurs when data changed on specific table.  |
+    |Table  | onDataChannged | Occurs when data changed on a specific table.  |
     |TableCollection      | onDataChannged | Occurs when data changed on any table in a workbook, or a worksheet.     |
 
 2.	Selection change event for Worksheet, and Table.
@@ -59,11 +59,11 @@ This section describes our early thoughts about events in the Excel JavaScript A
 
 4.	Add event for Worksheet with coauthoring support.
 
-    This type of event is triggered when a new worksheet is added to workbook.
+    This type of event is triggered when a new worksheet is added to a workbook.
 
     |Object|Event| Description |
     |:----|:----|:----|
-    |WorksheetCollection| onAdded | Occurs when a new worksheet is added to workbook. |
+    |WorksheetCollection| onAdded | Occurs when a new worksheet is added to a workbook. |
 
 
 ## Upcoming Excel 1.9 Release Features
