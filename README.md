@@ -73,15 +73,15 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[worksheet](reference/excel/worksheet.md)|_Property_ > headings|Gets or sets the worksheet's headings flag.|1.7|
 |[worksheet](reference/excel/worksheet.md)|_Property_ > tabColor|Gets or sets the worksheet tab color.|1.7|
 |[worksheet](reference/excel/worksheet.md)|_Method_ > [getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](reference/excel/worksheet.md#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|1.7|
-|[chartaxis](reference/excel/chartaxis.md)|_Property_ > baseUnit|Represents the baseUnit of chart Axis.|1.9|
-|[chartaxis](reference/excel/chartaxis.md)|_Property_ > categoryNames|Represents the category names of chart Axis.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > baseTimeUnit|Returns or sets the base unit for the specified category axis.|1.9|
 |[chartaxis](reference/excel/chartaxis.md)|_Property_ > categoryType|Represents the category type of chart Axis.|1.9|
 |[chartaxis](reference/excel/chartaxis.md)|_Property_ > customDisplayUnit|Represents the custom value of axis display unit.|1.9|
 |[chartaxis](reference/excel/chartaxis.md)|_Property_ > displayUnit|Represents the axis display unit of chart Axis. Read-only.|1.9|
-|[chartaxis](reference/excel/chartaxis.md)|_Property_ > majorUnitScale|Returns or sets the major unit scale value for the category axis when the categoryType property is set to dateAxis.|1.9|
-|[chartaxis](reference/excel/chartaxis.md)|_Property_ > minorUnitScale|Returns or sets the minor unit scale value for the category axis when the categoryType property is set to dateAxis.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > majorTimeUnitScale|Returns or sets the major unit scale value for the category axis when the CategoryType property is set to TimeScale.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Property_ > minorTimeUnitScale|Returns or sets the minor unit scale value for the category axis when the CategoryType property is set to TimeScale.|1.9|
 |[chartaxis](reference/excel/chartaxis.md)|_Property_ > showDisplayUnitLabel|Represents if show displayUnitLabel.|1.9|
 |[chartaxis](reference/excel/chartaxis.md)|_Property_ > type|Represents the axis type. Read-only.|1.9|
+|[chartaxis](reference/excel/chartaxis.md)|_Method_> [ setCategoryNames(sourceData:Range or string[])](reference/excel/chartaxis.md#setcategorynamessourcedata-rangeorstring[])|Sets all the category names for the specified axis.|1.9|
 |[chartborder](reference/excel/chartborder.md)|_Method_ > [clear()](reference/excel/chartborder.md#clear)|Clear the border color of a chart element.|1.9|
 |[chartborder](reference/excel/chartborder.md)|_Method_ > [setSolidColor(color: string)](reference/excel/chartborder.md#setsolidcolorcolor-string)|Sets the border formatting of a chart element to a uniform color.|1.9|
 |[chartformatstring](reference/excel/chartformatstring.md)|_Relationship_ > [ChartFont](reference/excel/chartfont.md)|Represents the font properties of chartFormatString object. Read-only.|1.9|
