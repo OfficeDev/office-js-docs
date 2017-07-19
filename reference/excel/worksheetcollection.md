@@ -26,6 +26,13 @@ None
 |[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID. If the worksheet does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLast(visibleOnly: bool)](#getlastvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the last worksheet in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 
+## Events
+| Event		  | Argument Type of Event handler |Description| Req. Set|
+|:---------------|:----------|:----|:----|
+|[onActivated](#onactivated)|[WorksheetActivatedEvent](worksheetactivatedevent.md)|Occurs when any worksheet in the workbook is activated.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[onAdded](#onDataChanged)|[WorksheetAddedEvent](worksheetaddedevent.md)|Occurs when a new worksheet is added to the workbook.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[onDeactivated](#ondeactivated)|[WorksheetDeactivatedEvent](worksheetdeactivatedevent.md)|Occurs when any worksheet in the workbook is deactivated.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+
 ## Method Details
 
 
@@ -193,4 +200,107 @@ Excel.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
+```
+## Event Details
+
+### onActivated
+Occurs when any worksheet in the workbook is activated.
+
+#### Syntax
+```js
+worksheets.onActivated.add(onWorksheetActived);
+```
+
+#### Example
+```js
+Excel.run(function (ctx) {  
+    ctx.workbook.worksheets.onActivated.add(onWorksheetActived); 
+    return ctx.sync().then(function() { 
+        console.log("add event succeed."); 
+    }); 
+}).catch(function(error) { 
+    console.log("Error: " + error); 
+    if (error instanceof OfficeExtension.Error){ 
+         console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
+    } 
+}); 
+
+function onWorksheetActived(event){ 
+    return Excel.run(event, function(context){
+        var worksheet = event.worksheet; 
+        worksheet.load("name");
+        return context.sync().then(function(){
+            console.log("Activated Worksheet is: " + worksheet.name);
+        });
+    });   
+}
+
+```
+
+### onAdded
+Occurs when a new worksheet is added to the workbook.
+
+#### Syntax
+```js
+worksheets.onAdded.add(onWorksheetAdded);
+```
+
+#### Example
+```js
+Excel.run(function (ctx) {  
+    var worksheet = ctx.workbook.worksheets.onAdded.add(onWorksheetAdded); 
+    return ctx.sync().then(function() { 
+        console.log("add event succeed."); 
+    }); 
+}).catch(function(error) { 
+    console.log("Error: " + error); 
+    if (error instanceof OfficeExtension.Error){ 
+         console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
+    } 
+}); 
+
+function onWorksheetAdded(event){ 
+    return Excel.run(event, function(context){
+        var worksheet = event.worksheet; 
+        worksheet.load("name");
+        return context.sync().then(function(){
+            console.log("Added Worksheet is: " + worksheet.name);
+        });
+    });   
+}
+```
+
+### onDeactivated
+Occurs when any worksheet in the workbook is deactivated.
+
+#### Syntax
+```js
+worksheets.onDeactivated.add(onWorksheetDeactivated);
+```
+
+#### Example
+```js
+Excel.run(function (ctx) {  
+    var worksheet = ctx.workbook.worksheets.getFirst(true); 
+    worksheet.onDeactivated.add(onWorksheetDeactived); 
+    return ctx.sync().then(function() { 
+        console.log("add event succeed."); 
+    }); 
+}).catch(function(error) { 
+    console.log("Error: " + error); 
+    if (error instanceof OfficeExtension.Error){ 
+         console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
+    } 
+}); 
+
+function onWorksheetDeactived(event){ 
+    return Excel.run(event, function(context){
+        var worksheet = event.worksheet; 
+        worksheet.load("name");
+        return context.sync().then(function(){
+            console.log("Deactivated Worksheet is: " + worksheet.name);
+        });
+    });   
+}
+
 ```
