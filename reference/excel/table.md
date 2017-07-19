@@ -333,7 +333,7 @@ Occurs when data changed on a specific table.
 
 #### Syntax
 ```js
-table.onDataChanged.add(onTableDataChanged)
+table.onDataChanged.add(onTableDataChanged);
 ```
 #### Example
 ```js
@@ -401,7 +401,7 @@ Occurs when selection changed on a specific table.
 
 #### Syntax
 ```js
-table.onSelectionChanged.add(onSelectionChanged)
+table.onSelectionChanged.add(onSelectionChanged);
 ```
 
 #### Example
