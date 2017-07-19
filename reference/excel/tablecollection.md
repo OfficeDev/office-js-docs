@@ -25,6 +25,13 @@ None
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemOrNullObject(key: number or string)](#getitemornullobjectkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID. If the table does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
+
+## Events
+
+| Event		 | Argument Type of Event handler |Description| Req. Set|
+|:---------------|:----------|:----|:----|
+|[onDataChanged](#ondatachanged)|[TableDataChangedEvent](tabledatachangedevent.md)|Occurs when data changed on any table in a workbook, or a worksheet.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+
 ## Method Details
 
 
@@ -214,4 +221,72 @@ Excel.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
+```
+
+## Event Details
+
+### onDataChanged
+Occurs when data changed on any table in a workbook, or a worksheet.
+
+#### Syntax
+```js
+tables.onDataChanged.add(onTablesDataChanged);
+```
+#### Example
+```js
+Excel.run(function (ctx) {
+    ctx.workbook.tables.onDataChanged.add(onTablesDataChanged);
+
+    return ctx.sync().then(function () {
+        console.log("add event succeed.");
+    });
+}).catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+
+function onTablesDataChanged(event) {
+    return Excel.run(event, function (context) {
+        var table = event.table;
+        var range = event.range;
+        var source = event.source;
+        var changeType = event.changeType;
+        var columns = table.columns;
+        var rows = talbe.rows;
+        var worksheet = table.worksheet;
+
+        //Load table related properties
+        table.load("name");
+        columns.load("count");
+        rows.load("count");
+        worksheet.load("name");
+        range.load("address, cellCount");
+
+        return context.sync().then(function () {
+            // Get the table that has data change
+            var columnCount = columns.count;
+            var rowCount = rows.count;
+            console.log("Data Changed in worksheet " + worksheet.name + "Table name is " +                table.name + "Total column number of table is" + columnCount + "Total row number of table is" + rowCount);
+            // Get the changed range
+            console.log(".Changed area address is " + range.address +
+                "cell count in the range is" + range.cellCount);
+            //Get the event source, data change comes from local or remote.
+            console.log("Data Change comes from" + source);
+            
+            //get the new inserted Row.
+            else if (changeType == "RowInsert") {
+                console.log("Row inserted on row" + range.address);
+            }
+            //else if ... //For RowDelete, ColumnInsert, ColumnDelete, same as above.
+
+            // Other changes happened
+            else {
+                console.log("Other changes happened");
+            }
+        });
+    });
+}
+
 ```
