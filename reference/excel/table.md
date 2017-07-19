@@ -42,10 +42,10 @@ _See property access [examples.](#property-access-examples)_
 
 ## Events
 
-| Event		  |Description| Req. Set|
-|:---------------|:----------|:----|
-|[onDataChanged](#ondatachanged)|Occurs when data changed on a specific table.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[onSelectionChanged](#onselectionchanged)|Occurs when the selection changed on a specific table.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+| Event		  | Argument Type of Event handler |Description| Req. Set|
+|:---------------|:----------|:----|:----|
+|[onDataChanged](#onDataChanged)|[TableDataChangedEvent](tabledatachangedevent.md)|Occurs when data changed on a specific table.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[onSelectionChanged](#onSelectionChanged)|[TableSelectionChangedEvent](tableselectionchangedevent.md)|Occurs when the selection changed on a specific table.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
