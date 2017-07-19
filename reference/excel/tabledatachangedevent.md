@@ -16,7 +16,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|range|[Range](range.md)|Gets the range that represents the changed area of the table on a specific worksheet.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |table|[Table](table.md)|Gets the table in which the data changed.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
