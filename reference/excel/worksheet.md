@@ -42,6 +42,15 @@ _See property access [examples.](#property-access-examples)_
 |[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
+## Events
+| Event		  | Argument Type of Event handler |Description| Req. Set|
+|:---------------|:----------|:----|:----|
+|[onActivated](#onactivated)|[WorksheetActivatedEvent](worksheetactivatedevent.md)|Occurs when the worksheet is activated.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[onDataChanged](#onDataChanged)|[WorksheetDataChangedEvent](worksheetdatachangedevent.md)|Occurs when data changed on a specific worksheet.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[onDeactivated](#ondeactivated)|[WorksheetDeactivatedEvent](worksheetdeactivatedevent.md)|Occurs when the worksheet is deactivated.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[onSelectionChanged](#onSelectionChanged)|[WorksheetSelectionChangedEvent](worksheetselectionchangedevent.md)|Occurs when selection changed on a specific worksheet.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+
+
 ## Method Details
 
 
@@ -385,4 +394,172 @@ Excel.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
+```
+
+## Event Details
+
+### onActivated
+Occurs when the worksheet is activated.
+
+#### Syntax
+```js
+worksheet.onActivated.add(onWorksheetActived);
+```
+
+#### Example
+```js
+Excel.run(function (ctx) {  
+    var worksheet = ctx.workbook.worksheets.getFirst(true); 
+    worksheet.onActivated.add(onWorksheetActived); 
+    return ctx.sync().then(function() { 
+        console.log("add event succeed."); 
+    }); 
+}).catch(function(error) { 
+    console.log("Error: " + error); 
+    if (error instanceof OfficeExtension.Error){ 
+         console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
+    } 
+}); 
+
+function onWorksheetActived(event){ 
+    return Excel.run(event, function(context){
+        var worksheet = event.worksheet; 
+        worksheet.load("name");
+        return context.sync().then(function(){
+            console.log("Activated Worksheet is: " + worksheet.name);
+        });
+    });   
+}
+```
+
+
+### onDataChanged
+Occurs when data changed on a specific worksheet.
+
+#### Syntax
+```js
+worksheet.onDataChanged.add(onWorksheetDataChanged);
+```
+
+#### Example
+```js
+Excel.run(function (ctx) {
+    var worksheet = ctx.workbook.worksheets.getFirst(true); 
+    worksheet.onDataChanged.add(onWorksheetDataChanged);
+    return ctx.sync().then(function () {
+        console.log("add event succeed.");
+    });
+}).catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+
+function onWorksheetDataChanged(event) {
+    return Excel.run(event, function (context) {
+        var worksheet = event.worksheet;
+        var range = event.range;
+        var source = event.source;
+        var changeType = event.changeType;
+
+        worksheet.load("name");
+        range.load("address, cellCount");
+
+        return context.sync().then(function () {
+            // Get the changed range
+            console.log("Data Changed in worksheet " + worksheet.name + ".Changed area address is " + range.address + "cell count in the range is" + range.cellCount);
+            //Get the event source, data change comes from local or remote.
+            console.log("Data Change comes from" + source);
+            
+            //get the new inserted Row.
+            else if (changeType == "RowInsert") {
+                console.log("Row inserted on row" + range.address);
+            }
+            //else if ... //For RowDelete, ColumnInsert, ColumnDelete, same as above.
+
+            // Other changes happened
+            else {
+                console.log("Other changes happened");
+            }
+        });
+    });
+}
+
+```
+
+### onDeactivated
+Occurs when the worksheet is deactivated.
+
+#### Syntax
+```js
+worksheet.onDeactivated.add(onWorksheetDeactivated);
+```
+
+#### Example
+```js
+Excel.run(function (ctx) {  
+    var worksheet = ctx.workbook.worksheets.getFirst(true); 
+    worksheet.onDeactivated.add(onWorksheetDeactived); 
+    return ctx.sync().then(function() { 
+        console.log("add event succeed."); 
+    }); 
+}).catch(function(error) { 
+    console.log("Error: " + error); 
+    if (error instanceof OfficeExtension.Error){ 
+         console.log("Debug info: " + JSON.stringify(error.debugInfo)); 
+    } 
+}); 
+
+function onWorksheetDeactived(event){ 
+    return Excel.run(event, function(context){
+        var worksheet = event.worksheet; 
+        worksheet.load("name");
+        return context.sync().then(function(){
+            console.log("Deactivated Worksheet is: " + worksheet.name);
+        });
+    });   
+}
+
+```
+
+### onSelectionChanged
+Occurs when selection changed on a specific worksheet.
+
+#### Syntax
+```js
+worksheet.onSelectionChanged.add(onWorksheetSelectionChanged);
+```
+
+#### Example
+```js
+Excel.run(function (ctx) {
+    var worksheet = ctx.workbook.worksheets.getFirst(true); 
+    worksheet.onSelectionChanged.add(onWorksheetSelectionChanged); 
+    return ctx.sync().then(function () {
+        console.log("add event succeed.");
+    });
+}).catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+});
+
+function onWorksheetSelectionChanged(event) {
+    return Excel.run(event, function (context) {
+        var worksheet = event.worksheet;
+        var range = event.range;
+
+        worksheet.load("name");
+        range.load("address, cellCount");
+
+        return context.sync().then(function () {
+            // Get the changed range
+            console.log("Selection Changed in worksheet " + worksheet.name + ".Changed area address is " + range.address + "cell count in the range is" + range.cellCount);
+
+        });
+    });
+}
+
 ```
