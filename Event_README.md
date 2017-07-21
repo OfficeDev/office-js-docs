@@ -16,7 +16,7 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[Worksheet](reference/excel/worksheet.md)|_Event_ > [onDataChanged](reference/excel/worksheet.md#ondatachanged)|Occurs when data changed on a specific worksheet.|1.8|
 |[Worksheet](reference/excel/worksheet.md)|_Event_ > [onDeactivated](reference/excel/worksheet.md#ondeactivated)|Occurs when the worksheet is deactivated.|1.8|
 |[Worksheet](reference/excel/worksheet.md)|_Event_ > [onSelectionChanged](reference/excel/worksheet.md#onselectionchanged)|Occurs when the selection changed on a specific worksheet.|1.8|
-|[WorksheetCollection](reference/excel/worksheetcollection.md)|_Event_ > [onActived](reference/excel/worksheetcollection.md#onactivated)|Occurs when any worksheet in the workbook is activated.|1.8|
+|[WorksheetCollection](reference/excel/worksheetcollection.md)|_Event_ > [onActivated](reference/excel/worksheetcollection.md#onactivated)|Occurs when any worksheet in the workbook is activated.|1.8|
 |[WorksheetCollection](reference/excel/worksheetcollection.md)|_Event_ > [onAdded](reference/excel/worksheetcollection.md#onadded)|Occurs when a new worksheet is added to the workbook.|1.8|
 |[WorksheetCollection](reference/excel/worksheetcollection.md)|_Event_ > [onDeactivated](reference/excel/worksheetcollection.md#ondeactivated)|Occurs when any worksheet in the workbook is deactivated.|1.8|
 
