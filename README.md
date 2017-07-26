@@ -31,9 +31,9 @@ This section describes our early thoughts about events in the Excel JavaScript A
 
     |Object|Event| Description |
     |:----|:----|:----|
-    |Worksheet | onDataChannged | Occurs when data changed on a specific worksheet. |
-    |Table  | onDataChannged | Occurs when data changed on a specific table.  |
-    |TableCollection      | onDataChannged | Occurs when data changed on any table in a workbook, or a worksheet.     |
+    |Worksheet | onDataChanged | Occurs when data changed on a specific worksheet. |
+    |Table  | onDataChanged | Occurs when data changed on a specific table.  |
+    |TableCollection      | onDataChanged | Occurs when data changed on any table in a workbook, or a worksheet.     |
 
 2.	Selection change event for Worksheet, and Table.
 
