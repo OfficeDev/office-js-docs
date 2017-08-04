@@ -23,7 +23,7 @@ _**Note**: below listed features are still under design and review phase and hen
 
 ## Upcoming Excel 1.8 Event Features
 
-This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. Please see details in [Introduction to Excel 1.8 Event Features]((Event_README.md))
+This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. Please see details in [Introduction to Excel 1.8 Event Features](Event_README.md)
 
 1.	Data change event for Worksheet, Table with coauthoring support.
 
