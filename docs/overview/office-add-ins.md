@@ -32,7 +32,7 @@ An Office Add-in can do almost anything a webpage can do inside the browser, suc
 - Run server-side code or logic, if the page is implemented using a server-side scripting language such as ASP or PHP.
     
 
-In addition, Office Add-ins can interact with the Office application and an add-in user's content through a [JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md) that the Office Add-ins infrastructure provides. 
+More importantly, Office Add-ins can interact with Office applications and content through **Office.js, a [JavaScript API](../../docs/develop/understanding-the-javascript-api-for-office.md)** that the Office Add-ins infrastructure provides. 
 
 
 
