@@ -6,6 +6,7 @@ Represents a chart title object of a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: Center, Left, Right, Justify, Distributed.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |overlay|bool|Boolean value representing if the chart title will overlay the chart or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |text|string|Represents the title text of a chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|A boolean value the represents the visibility of a chart title object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -18,11 +19,30 @@ _See property access [examples.](#property-access-examples)_
 |format|[ChartTitleFormat](charttitleformat.md)|Represents the formatting of a chart title, which includes fill and font formatting. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
-None
 
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[getSubstring(start: number, length: number)](#getsubstringstart-number-start-number)|[ChartFormatString](chartformatstring.md)|Get the characters of a chart title. Line break '\n' also counts one charater.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### getSubstring(start: number, length: number)
+Get the characters of a chart title. Line break '\n' also counts one charater.
+
+#### Syntax
+```js
+chartTitleObject.getSubstring(start, length);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|start|number|The start index of the sub string|
+|length|number|The length of the sub string|
+
+#### Returns
+[ChartFormatString](chartformatstring.md)
 ### Property access examples
 
 Get the `text` of Chart Title from Chart1.

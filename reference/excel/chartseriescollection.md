@@ -19,13 +19,31 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[add(name: string, index: number)](#addname-string-index-number)|[ChartSeries](chartseries.md)|Add a new series to the collection.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Returns the number of series in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getFirst()](#getfirst)|[ChartSeries](chartseries.md)|Gets the first series in the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLast()](#getlast)|[ChartSeries](chartseries.md)|Gets the last series in the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### add(name: string, index: number)
+Add a new series to the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.add(name, index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|name|string|Optional. Name of the series.|
+|index|number|Optional. Index value of the series to be added. Zero-indexed.|
+
+#### Returns
+[ChartSeries](chartseries.md)
 
 ### getCount()
 Returns the number of series in the collection.
@@ -56,7 +74,7 @@ None
 [ChartSeries](chartseries.md)
 
 ### getItemAt(index: number)
-Retrieves a series based on its position in the collection
+Retrieves a series based on its position in the collection.c
 
 #### Syntax
 ```js
