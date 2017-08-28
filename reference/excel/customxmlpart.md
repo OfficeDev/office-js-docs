@@ -20,15 +20,15 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|Deletes the custom XML part.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[deleteAttribute(xpath: string, namespaceMappings: object, name: string)](#deleteattributexpath-string-namespacemappings-object-name-string)|void|Deletes an attribute with the given name from the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[deleteElement(xpath: string, namespaceMappings: object)](#deleteelementxpath-string-namespacemappings-object)|void|Deletes the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[deleteAttribute(xpath: string, namespaceMappings: object, name: string)](#deleteattributexpath-string-namespacemappings-object-name-string)|void|Deletes an attribute with the given name from the element identified by xpath.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
+|[deleteElement(xpath: string, namespaceMappings: object)](#deleteelementxpath-string-namespacemappings-object)|void|Deletes the element identified by xpath.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
 |[getXml()](#getxml)|string|Gets the custom XML part's full XML content.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[insertAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](#insertattributexpath-string-namespacemappings-object-name-string-value-string)|void|Inserts an attribute with the given name and value to the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[insertElement(xpath: string, xml: string, namespaceMappings: object, index: number)](#insertelementxpath-string-xml-string-namespacemappings-object-index-number)|void|Inserts the given XML under the parent element identified by xpath at child position index.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[query(xpath: string, namespaceMappings: object)](#queryxpath-string-namespacemappings-object)|[string[]](string[].md)|Queries the XML content.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[insertAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](#insertattributexpath-string-namespacemappings-object-name-string-value-string)|void|Inserts an attribute with the given name and value to the element identified by xpath.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
+|[insertElement(xpath: string, xml: string, namespaceMappings: object, index: number)](#insertelementxpath-string-xml-string-namespacemappings-object-index-number)|void|Inserts the given XML under the parent element identified by xpath at child position index.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
+|[query(xpath: string, namespaceMappings: object)](#queryxpath-string-namespacemappings-object)|[string[]](string[].md)|Queries the XML content.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
 |[setXml(xml: string)](#setxmlxml-string)|void|Sets the custom XML part's full XML content.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[updateAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](#updateattributexpath-string-namespacemappings-object-name-string-value-string)|void|Updates the value of an attribute with the given name of the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[updateElement(xpath: string, xml: string, namespaceMappings: object)](#updateelementxpath-string-xml-string-namespacemappings-object)|void|Updates the XML of the element identified by xpath.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[updateAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](#updateattributexpath-string-namespacemappings-object-name-string-value-string)|void|Updates the value of an attribute with the given name of the element identified by xpath.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
+|[updateElement(xpath: string, xml: string, namespaceMappings: object)](#updateelementxpath-string-xml-string-namespacemappings-object)|void|Updates the XML of the element identified by xpath.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

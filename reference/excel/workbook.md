@@ -6,7 +6,7 @@ Workbook is the top level object which contains related workbook objects such as
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|name|string|Gets the workbook name. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Gets the workbook name. Read-only.|[SM](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
@@ -15,22 +15,39 @@ Workbook is the top level object which contains related workbook objects such as
 |bindings|[BindingCollection](bindingcollection.md)|Represents a collection of bindings that are part of the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |customXmlParts|[CustomXmlPartCollection](customxmlpartcollection.md)|Represents the collection of custom XML parts contained by this workbook. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |functions|[Functions](functions.md)|Represents Excel application instance that contains this workbook. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|internalTest|[InternalTest](internaltest.md)|For internal use only. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Represents a collection of PivotTables associated with the workbook. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|properties|[DocumentProperties](documentproperties.md)|Gets the workbook properties. Read-only.|[1.7DPGA](../requirement-sets/excel-api-requirement-sets.md)|
 |settings|[SettingCollection](settingcollection.md)|Represents a collection of Settings associated with the workbook. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|styles|[StyleCollection](stylecollection.md)|Represents a collection of styles associated with the workbook. Read-only.|[ApiSet.InProgressFeatures.Style](../requirement-sets/excel-api-requirement-sets.md)|
 |tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|test|[Test](test.md)|For internal use only. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getActiveCell()](#getactivecell)|[Range](range.md)|Gets the currently active cell from the workbook.|[SM](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.7WR](../requirement-sets/excel-api-requirement-sets.md)|
 |[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### getActiveCell()
+Gets the currently active cell from the workbook.
+
+#### Syntax
+```js
+workbookObject.getActiveCell();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Range](range.md)
 
 ### getRange(address: string)
 Gets the range object specified by the address or name.

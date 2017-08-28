@@ -19,18 +19,18 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: object, name: string)](#addindex-number-values-object-name-string)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(index: number, values: (boolean or string or number)[][], name: string)](#addindex-number-values-boolean-or-string-or-number-name-string)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Gets the number of columns in the table.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getFirst()](#getfirst)|[TableColumn](tablecolumn.md)|Gets the first column in the table.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(key: object)](#getitemkey-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[TableColumn](tablecolumn.md)|Gets the first column in the table.|[1.7GG](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(key: object)](#getitemornullobjectkey-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getLast()](#getlast)|[TableColumn](tablecolumn.md)|Gets the last column in the table.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: number or string)](#getitemornullobjectkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLast()](#getlast)|[TableColumn](tablecolumn.md)|Gets the last column in the table.|[1.7GG](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
-### add(index: number, values: object, name: string)
+### add(index: number, values: (boolean or string or number)[][], name: string)
 Adds a new column to the table.
 
 #### Syntax
@@ -42,7 +42,7 @@ tableColumnCollectionObject.add(index, values, name);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Specifies the relative position of the new column. If null or -1, the addition happens at the end. Columns with a higher index will be shifted to the side. Zero-indexed.|
-|values|object|Optional. A 2-dimensional array of unformatted values of the table column.|
+|values|(boolean or string or number)[][]|Optional. A 2-dimensional array of unformatted values of the table column.|
 |name|string|Optional. Specifies the name of the new column. If null, the default name will be used.|
 
 #### Returns
@@ -96,7 +96,7 @@ None
 #### Returns
 [TableColumn](tablecolumn.md)
 
-### getItem(key: object)
+### getItem(key: number or string)
 Gets a column object by Name or ID.
 
 #### Syntax
@@ -107,7 +107,7 @@ tableColumnCollectionObject.getItem(key);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|object| Column Name or ID.|
+|key|number or string| Column Name or ID.|
 
 #### Returns
 [TableColumn](tablecolumn.md)
@@ -178,7 +178,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getItemOrNullObject(key: object)
+### getItemOrNullObject(key: number or string)
 Gets a column object by Name or ID. If the column does not exist, will return a null object.
 
 #### Syntax
@@ -189,7 +189,7 @@ tableColumnCollectionObject.getItemOrNullObject(key);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|object| Column Name or ID.|
+|key|number or string| Column Name or ID.|
 
 #### Returns
 [TableColumn](tablecolumn.md)

@@ -1,81 +1,42 @@
-```ts
-namespace Excel {
-    export class Range {
-        dataValidation: DataValidation;
-    }
- 
-    export class DataValidation {
-        type: { get: '' /* empty */, 'comparison', 'list', 'formula', null /* inconsistent */ }
- 
-        rule?: DataValidationRule
-        input?: DataValidationInput;
-        error?: DataValidationError;
-        ignoreBlanks?: boolean;
- 
-        clear() { }
-    }
- 
-    export interface DataValidationRule {
-        comparison?: {
-            type: 'double' | 'textLength' | 'date' | 'wholeNumber' /* | ... */,
-            operator: 'between'|'notBetween'|'equalTo'|'notEqualTo'|'greaterThan'|'lessThan' |'greaterThanOrEqualTo' |'lessThanOrEqualTo',
-            formula1: number | string | Date | RangeReference | Range,
-            formula2?: number | string | Date | RangeReference | Range
-        },
-        list?: {
-            source: string | RangeReference | Range | [string | number | boolean],
-            isDropdown?: boolean /* default = true */
-        },
-        custom?: {
-            formula: string;
-        }
-    }
- 
-    export interface DataValidationError {
-        style: 'stop' | 'warning' | 'information';
-        title: string;
-        message: string;
-        show: boolean;
-    }
- 
-    export interface DataValidationInput {
-        show: boolean;
-        title: string;
-        message: string;
-    }
- 
-    export interface RangeReference {
-        address: string
-    }
-}
- 
-//////////////////////////
-/////// EXAMPLES /////////
-//////////////////////////
- 
-var range: Excel.Range;
- 
-// Set a new validation:
-range.dataValidation.clear();
-range.dataValidation.rule = {
-    comparison: {
-        type: 'wholeNumber',
-        operator: "between",
-        formula1: 5,
-        formula2: 10
-    }
-};
-range.dataValidation.error = {
-    show: true,
-    style: 'stop',
-    title: "do it",
-    message: "Please select something"
-}
- 
-// On a different range:
-range.dataValidation.rule = {
-    list: {
-        source: ['yes', 'no', 'maybe']
-    }
-}
+# DataValidation Object (JavaScript API for Excel)
+
+Represents the data validation applied to the current range.
+
+## Properties
+
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|ignoreBlanks|bool|Ignore blanks: no data validation will be performed on blank cells, it defaults to true.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Type of the data validation, see Excel.DataValidationType for details. Read-only.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
+
+_See property access [examples.](#property-access-examples)_
+
+## Relationships
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|errorAlert|[DataValidationErrorAlert](datavalidationerroralert.md)|Error alert when user enters invalid data.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
+|prompt|[DataValidationPrompt](datavalidationprompt.md)|Prompt when users select a cell.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
+|rule|[DataValidationRule](datavalidationrule.md)|Data Validation rule that contains different type of data validation criteria.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
+
+## Methods
+
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[clear()](#clear)|void|Clears the data validation from the current range.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
+
+## Method Details
+
+
+### clear()
+Clears the data validation from the current range.
+
+#### Syntax
+```js
+dataValidationObject.clear();
 ```
+
+#### Parameters
+None
+
+#### Returns
+void
