@@ -10,18 +10,8 @@ _**Note**: below listed features are still under design and review phase and hen
 
 > For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entries not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-## Upcoming Excel 1.7 Release Features
 
-* Chart API additions
-* Workbook name
-* Gridlines
-* Tab color
-* Text orientation
-* Worksheet headings
-* New range functions
-* Freeze rows/columns.
-
-## Upcoming Excel 1.8 Event Features
+## Upcoming Excel Event Features (v1.8)
 
 This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. Please see details in [Introduction to Excel 1.8 Event Features](Event_README.md)
 
@@ -38,7 +28,7 @@ This section describes our early thoughts about events in the Excel JavaScript A
     This type of event is triggered when a new worksheet is added to a workbook.
 
 
-## Key upcoming features
+## Key upcoming features (v1.7)
 
 |Object| What is new| Description |Requirement set|
 |:----|:----|:----|:----|
