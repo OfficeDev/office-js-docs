@@ -10,16 +10,21 @@ _**Note**: below listed features are still under design and review phase and hen
 
 > For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entries not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-## Upcoming Excel 1.7 Release Features
+## Upcoming Excel Features
 
 * Chart API additions
+* Data validation 
+* Document properties
+* Styles
+* Hyperlinks
 * Workbook name
 * Gridlines
 * Tab color
 * Text orientation
 * Worksheet headings
 * New range functions
-* Freeze rows/columns.
+* Freeze rows/columns
+* More events
 
 ## Upcoming Excel 1.8 Event Features
 
