@@ -113,16 +113,6 @@ This section describes our early thoughts about events in the Excel JavaScript A
 |[tableColumn](reference/excel/tablecolumn.md)|_Method_ > [getPreviousColumnOrNullObject()](reference/excel/tablecolumn.md#getpreviouscolumnornullobject)|Gets the table column that precedes this one. If there are no previous table columns, this method will return a null objet.|1.7GPGN|
 |[tableColumnCollection](reference/excel/tablecolumncollection.md)|_Method_ > [getFirst()](reference/excel/tablecolumncollection.md#getfirst)|Gets the first column in the table.|1.7GG|
 |[tableColumnCollection](reference/excel/tablecolumncollection.md)|_Method_ > [getLast()](reference/excel/tablecolumncollection.md#getlast)|Gets the last column in the table.|1.7GG|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Property_ > context|Gets the context object that facilitates requests to the Excel application.|1.7E|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Relationship_ > changeType|Gets the change type that represents how the DataChanged event is triggered.|1.7E|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Relationship_ > range|Gets the range that represents the changed area of a table on a specific worksheet.|1.7E|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Relationship_ > source|Gets the source of the event.|1.7E|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Relationship_ > table|Gets the table in which the data changed.|1.7E|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Relationship_ > type|Gets the type of the event.|1.7E|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Property_ > context|Gets the context object that facilitates requests to the Excel application.|1.7E|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Relationship_ > range|Gets the range that represents the selected area of the table on a specific worksheet.|1.7E|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Relationship_ > table|Gets the table in which the selection changed.|1.7E|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Relationship_ > type|Gets the type of the event.|1.7E|
 |[workbook](reference/excel/workbook.md)|_Property_ > name|Gets the workbook name. Read-only.|SM|
 |[workbook](reference/excel/workbook.md)|_Relationship_ > properties|Gets the workbook properties. Read-only.|1.7DPGA|
 |[workbook](reference/excel/workbook.md)|_Relationship_ > styles|Represents a collection of styles associated with the workbook. Read-only.|1.7S|
@@ -134,21 +124,6 @@ This section describes our early thoughts about events in the Excel JavaScript A
 |[worksheet](reference/excel/worksheet.md)|_Relationship_ > freezePanes|Gets an object that can be used to manipulate frozen panes on the worksheet Read-only.|SM|
 |[worksheet](reference/excel/worksheet.md)|_Relationship_ > pageLayout|Gets the PageLayout object of the worksheet. Read-only.|SM|
 |[worksheet](reference/excel/worksheet.md)|_Method_ > [getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](reference/excel/worksheet.md#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|SM|
-|[worksheetActivatedEvent](reference/excel/worksheetactivatedevent.md)|_Property_ > context|Gets the context object that facilitates requests to the Excel application.|1.7E|
-|[worksheetActivatedEvent](reference/excel/worksheetactivatedevent.md)|_Relationship_ > type|Gets the type of the event.|1.7E|
-|[worksheetActivatedEvent](reference/excel/worksheetactivatedevent.md)|_Relationship_ > worksheet|Gets the worksheet that is activated.|1.7E|
-|[worksheetAddedEvent](reference/excel/worksheetaddedevent.md)|_Property_ > context|Gets the context object that facilitates requests to the Excel application.|1.7E|
-|[worksheetAddedEvent](reference/excel/worksheetaddedevent.md)|_Relationship_ > source|Gets the source of the event.|1.7E|
-|[worksheetAddedEvent](reference/excel/worksheetaddedevent.md)|_Relationship_ > type|Gets the type of the event.|1.7E|
-|[worksheetAddedEvent](reference/excel/worksheetaddedevent.md)|_Relationship_ > worksheet|Gets the worksheet that is added to the workbook.|1.7E|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Property_ > context|Gets the context object that facilitates requests to the Excel application.|1.7E|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Relationship_ > changeType|Gets the change type that represents how the DataChanged event is triggered.|1.7E|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Relationship_ > range|Gets the range that represents the changed area of a specific worksheet.|1.7E|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Relationship_ > source|Gets the source of the event.|1.7E|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Relationship_ > type|Gets the type of the event.|1.7E|
-|[worksheetDeactivatedEvent](reference/excel/worksheetdeactivatedevent.md)|_Property_ > context|Gets the context object that facilitates requests to the Excel application.|1.7E|
-|[worksheetDeactivatedEvent](reference/excel/worksheetdeactivatedevent.md)|_Relationship_ > type|Gets the type of the event.|1.7E|
-|[worksheetDeactivatedEvent](reference/excel/worksheetdeactivatedevent.md)|_Relationship_ > worksheet|Gets the worksheet that is deactivated.|1.7E|
 |[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [freezeAt(frozenRange: object)](reference/excel/worksheetfreezepanes.md#freezeatfrozenrange-object)|Sets the frozen cells in the active worksheet view.|SM|
 |[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [freezeColumns(count: number)](reference/excel/worksheetfreezepanes.md#freezecolumnscount-number)|Freeze the first column(s) of the worksheet in place.|SM|
 |[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [freezeRows(count: number)](reference/excel/worksheetfreezepanes.md#freezerowscount-number)|Freeze the top row(s) of the worksheet in place.|SM|
