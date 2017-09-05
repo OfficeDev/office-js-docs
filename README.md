@@ -12,19 +12,30 @@ _**Note**: below listed features are still under design and review phase and hen
 
 ## Upcoming Excel Features
 
-* Chart API additions
-* Data validation 
-* Document properties
-* Styles
-* Hyperlinks
-* Workbook name
-* Gridlines
-* Tab color
-* Text orientation
-* Worksheet headings
-* New range functions
-* Freeze rows/columns
-* More events
+* __Chart API additions__: Ease of Series collection traversing, add/remove chart series, set chart series values, read/set the base unit for the specified category axis, category type of chart Axis, display unit and custom display unit of axis, major and minortime unit scale, axis type, clear the border color of a chart element, sets the border formatting of a chart element to a uniform color, chart font, chart point border, add and manage trendline, chart title string, chart line formatting, etc.
+
+* __Data validation__: Setup data validation rules (drop down buttons) based on pre-defined list, formulas, date, time or custom values, manage input and error message. 
+
+* __Document properties__: Access built-in properties, create and manage custom document properties. 
+* __Styles__: Create custom styles, apply custom and built style.
+
+* __Hyperlinks__: Add and remove hyperlinks on range. 
+
+* __Workbook name__: Access workbook name.
+
+* __Gridlines__: Turn gridlines on/off. 
+
+* __Tab color__: Set tab color. 
+
+* __Text orientation__: Range text orientation. 
+
+* __Worksheet headings__: Add worksheet headings. 
+
+* __New range functions__: New additional range handling functions 
+
+* __Freeze rows/columns__: Freezing rows and columns. 
+
+* __More events__: See here for details - [Introduction to Excel 1.8 Event Features](Event_README.md)
 
 ## Upcoming Excel 1.8 Event Features
 
