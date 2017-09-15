@@ -68,12 +68,11 @@ To publish an add-in via centralized deployment:
 5.	Choose **Next**.
 6.	If you're adding an add-in from the Office Store, select the add-in. The add-in is now enabled. 
 7.	Choose **Edit** to assign the add-in to users. 
-8.	Search for the people or groups to whom you want to deploy the add-in and choose **Add** next to their name.
-Note: For Single Sign-In
-Add-Ins the users and groups assigned will also be shared with Add-Ins that share the same Azure App ID. Any changes to user assignments will also apply to those Add-Ins. The related Add-Ins will be shown on this page
-9.  For Single Sign-In Add-Ins only: This page will display the list of Graph scopes that the Add-In requires
-in order to function correctly.
-10.	Choose **Save**, review the add-in settings, and then choose **Close**. Note: When the Administrator clicks Save Consent is written for all users 
+8.	Search for the people or groups to whom you want to deploy the add-in, and choose **Add** next to their name.
+    >**Note:** For single sign-on (SSO) add-ins, the users and groups assigned will also be shared with add-ins that share the same Azure App ID. Any changes to user assignments will also apply to those add-ins. The related add-ins will be shown on this page.
+9.  For SSO add-ins only: This page will display the list of Microsoft Graph permissions that the add-in requires.
+10.	Choose **Save**, review the add-in settings, and then choose **Close**. 
+    >**Note:** When an administrator chooses **Save**, consent is given for all users. 
 
 
 If the add-in supports add-in commands, the commands will appear on the Office application ribbon for all users to whom the add-in is deployed. 
