@@ -2,24 +2,24 @@
 
 _Applies to: Excel 2016, Excel Online, Excel for iOS, Excel for Mac_
 
-This page describes the new set of Excel JavaScript APIs that are being planned for the next releases. It consists of combination of APIs that are in `beta` stage and the ones that are in design phase. Please review and provide your feedback. One of the best ways of providing your input is by opening new issue in GitHub using the links available below.
+This page describes the new set of Excel JavaScript APIs that are planned for future releases. It consists of APIs that are in `beta` stage and others that are still in the design phase. Please review and provide your feedback. One of the best ways you can provide input is to open a new issue in GitHub using the links available below.
 
-_**Note**: below listed features are still under design and review phase and hence not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
+_**Note**: The following features are still under design and review phase and not yet available as part of the product. The final design is subject to change. Once the feature is made available, the final specification will be published as part of the master repository._
 
 > **Note**: Any API that is listed as **beta** is not ready for production usage. They are made available so that developers can try them out in test and development environments. They are not meant to be used against production/business critical documents. 
 
-> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entries not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+> For the requirement sets that are marked as *Beta*, use the specified (or later) version of Office and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entries not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
-## Upcoming Excel Features
+## Future Excel features
 
 * __Chart API additions__: Ease of Series collection traversing, add/remove chart series, set chart series values, read/set the base unit for the specified category axis, category type of chart Axis, display unit and custom display unit of axis, major and minortime unit scale, axis type, clear the border color of a chart element, sets the border formatting of a chart element to a uniform color, chart font, chart point border, add and manage trendline, chart title string, chart line formatting, etc.
 
-* __Data validation__: Setup data validation rules (drop down buttons) based on pre-defined list, formulas, date, time or custom values, manage input and error message. 
+* __Data validation__: Setup data validation rules (drop-down buttons) based on pre-defined list, formulas, date, time or custom values, manage input and error messages. 
 
 * __Document properties__: Access built-in properties, create and manage custom document properties. 
 * __Styles__: Create custom styles, apply custom and built style.
 
-* __Hyperlinks__: Add and remove hyperlinks on range. 
+* __Hyperlinks__: Add and remove hyperlinks on a range. 
 
 * __Workbook name__: Access workbook name.
 
@@ -31,15 +31,15 @@ _**Note**: below listed features are still under design and review phase and hen
 
 * __Worksheet headings__: Add worksheet headings. 
 
-* __New range functions__: New additional range handling functions 
+* __New range functions__: New additional range handling functions. 
 
 * __Freeze rows/columns__: Freezing rows and columns. 
 
-* __More events__: See here for details - [Introduction to Excel 1.8 Event Features](Event_README.md)
+* __More events__: For details, see [Introduction to Excel 1.8 event features](Event_README.md)
 
-## Upcoming Excel 1.8 Event Features
+## Upcoming Excel 1.8 event features
 
-This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. Please see details in [Introduction to Excel 1.8 Event Features](Event_README.md)
+This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. For details, see [Introduction to Excel 1.8 Event Features](Event_README.md).
 
 1.	Data change event for Worksheet, Table with coauthoring support.
     This type of event is triggered when a data change happens; for example, when cell values change in the grid.
@@ -63,12 +63,12 @@ This section describes our early thoughts about events in the Excel JavaScript A
 |[basicDataValidation](reference/excel/basicdatavalidation.md)|_Property_ > operator|The operator to use for validating the data.|1.7D|
 |[customDataValidation](reference/excel/customdatavalidation.md)|_Property_ > formula|Custom data validation formula, it is to create special rules, such as preventing duplicates, or limiting the total in a range of cells.|1.7D|
 |[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [deleteAttribute(xpath: string, namespaceMappings: object, name: string)](reference/excel/customxmlpart.md#deleteattributexpath-string-namespacemappings-object-name-string)|Deletes an attribute with the given name from the element identified by xpath.|1.7TBD|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [deleteElement(xpath: string, namespaceMappings: object)](reference/excel/customxmlpart.md#deleteelementxpath-string-namespacemappings-object)|Deletes the element identified by xpath.|1.7TBD|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [insertAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](reference/excel/customxmlpart.md#insertattributexpath-string-namespacemappings-object-name-string-value-string)|Inserts an attribute with the given name and value to the element identified by xpath.|1.7TBD|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [insertElement(xpath: string, xml: string, namespaceMappings: object, index: number)](reference/excel/customxmlpart.md#insertelementxpath-string-xml-string-namespacemappings-object-index-number)|Inserts the given XML under the parent element identified by xpath at child position index.|1.7TBD|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [deleteElement(xpath: string, namespaceMappings: object)](reference/excel/customxmlpart.md#deleteelementxpath-string-namespacemappings-object)|Deletes the element identified by XPath.|1.7TBD|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [insertAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](reference/excel/customxmlpart.md#insertattributexpath-string-namespacemappings-object-name-string-value-string)|Inserts an attribute with the given name and value to the element identified by XPath.|1.7TBD|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [insertElement(xpath: string, xml: string, namespaceMappings: object, index: number)](reference/excel/customxmlpart.md#insertelementxpath-string-xml-string-namespacemappings-object-index-number)|Inserts the given XML under the parent element identified by XPath at child position index.|1.7TBD|
 |[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [query(xpath: string, namespaceMappings: object)](reference/excel/customxmlpart.md#queryxpath-string-namespacemappings-object)|Queries the XML content.|1.7TBD|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [updateAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](reference/excel/customxmlpart.md#updateattributexpath-string-namespacemappings-object-name-string-value-string)|Updates the value of an attribute with the given name of the element identified by xpath.|1.7TBD|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [updateElement(xpath: string, xml: string, namespaceMappings: object)](reference/excel/customxmlpart.md#updateelementxpath-string-xml-string-namespacemappings-object)|Updates the XML of the element identified by xpath.|1.7TBD|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [updateAttribute(xpath: string, namespaceMappings: object, name: string, value: string)](reference/excel/customxmlpart.md#updateattributexpath-string-namespacemappings-object-name-string-value-string)|Updates the value of an attribute with the given name of the element identified by XPath.|1.7TBD|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [updateElement(xpath: string, xml: string, namespaceMappings: object)](reference/excel/customxmlpart.md#updateelementxpath-string-xml-string-namespacemappings-object)|Updates the XML of the element identified by XPath.|1.7TBD|
 |[dataValidation](reference/excel/datavalidation.md)|_Property_ > ignoreBlanks|Ignore blanks: no data validation will be performed on blank cells, it defaults to true.|1.7D|
 |[dataValidation](reference/excel/datavalidation.md)|_Property_ > type|Type of the data validation, see Excel.DataValidationType for details. Read-only.|1.7D|
 |[dataValidation](reference/excel/datavalidation.md)|_Relationship_ > errorAlert|Error alert when user enters invalid data.|1.7D|
@@ -129,8 +129,8 @@ This section describes our early thoughts about events in the Excel JavaScript A
 |[workbook](reference/excel/workbook.md)|_Relationship_ > styles|Represents a collection of styles associated with the workbook. Read-only.|1.7S|
 |[workbook](reference/excel/workbook.md)|_Method_ > [getActiveCell()](reference/excel/workbook.md#getactivecell)|Gets the currently active cell from the workbook.|SM|
 |[workbook](reference/excel/workbook.md)|_Method_ > [getRange(address: string)](reference/excel/workbook.md#getrangeaddress-string)|Gets the range object specified by the address or name.|1.7WR|
-|[worksheet](reference/excel/worksheet.md)|_Property_ > gridlines|Gets or sets the worksheet's gridlines flag.|SM|
-|[worksheet](reference/excel/worksheet.md)|_Property_ > headings|Gets or sets the worksheet's headings flag.|SM|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > gridlines|Gets or sets the worksheet gridlines flag.|SM|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > headings|Gets or sets the worksheet headings flag.|SM|
 |[worksheet](reference/excel/worksheet.md)|_Property_ > tabColor|Gets or sets the worksheet tab color.|SM|
 |[worksheet](reference/excel/worksheet.md)|_Relationship_ > freezePanes|Gets an object that can be used to manipulate frozen panes on the worksheet Read-only.|SM|
 |[worksheet](reference/excel/worksheet.md)|_Relationship_ > pageLayout|Gets the PageLayout object of the worksheet. Read-only.|SM|
@@ -168,7 +168,7 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[chartborder](reference/excel/chartborder.md)|_Method_ > [clear()](reference/excel/chartborder.md#clear)|Clear the border color of a chart element.|1.9|
 |[chartborder](reference/excel/chartborder.md)|_Method_ > [setSolidColor(color: string)](reference/excel/chartborder.md#setsolidcolorcolor-string)|Sets the border formatting of a chart element to a uniform color.|1.9|
 |[chartformatstring](reference/excel/chartformatstring.md)|_Relationship_ > [ChartFont](reference/excel/chartfont.md)|Represents the font properties of chartFormatString object. Read-only.|1.9|
-|[chartpointformat](reference/excel/chartpointformat.md)|_Relationship_ > [ChartBorder](reference/excel/chartborder.md)|Represents the border format of a chart point, which includes border formating information. Read-only.|1.9|
+|[chartpointformat](reference/excel/chartpointformat.md)|_Relationship_ > [ChartBorder](reference/excel/chartborder.md)|Represents the border format of a chart point, including border formating information. Read-only.|1.9|
 |[chartseries](reference/excel/chartseries.md)|_Method_ > [delete()](reference/excel/chartseries.md#delete)|Deletes the chart series.|1.9|
 |[chartseries](reference/excel/chartseries.md)|_Method_ > [setBubbleSizes(sourceData: Range)](reference/excel/chartseries.md#setbubblesizessourcedata-range)|Set bubble sizes for a chart series. Only works for bubble charts.|1.9|
 |[chartseries](reference/excel/chartseries.md)|_Method_ > [setValues(sourceData: Range)](reference/excel/chartseries.md#setvaluessourcedata-range)|Set values for a chart series. For scatter chart, it means Y axis values.|1.9|
@@ -189,8 +189,8 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[charttrendlineformat](reference/excel/charttrendlineformat.md)|_Relationship_ > [ChartLineFormat](reference/excel/chartlineformat.md)|Represents chart line formatting. Read-only.|1.9|
 
 
-## Give feedback
+## Give us feedback!
 
-We need it, you want to give it. Feedback is much easier to give now that we're on GitHub. Check out the docs and let us know your feedback by submitting [issues](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
+We need it, you want to give it. Feedback is much easier to give now that we're on GitHub. Check out the docs and let us know your thoughts by submitting [issues](https://github.com/OfficeDev/office-js-docs/issues) directly in this repository.
 
 For API support, you can post questions to the community on [StackOverflow](http://stackoverflow.com/questions/tagged/office-js) and tag them with [office-js].
