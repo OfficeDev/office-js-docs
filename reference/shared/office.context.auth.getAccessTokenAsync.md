@@ -5,12 +5,12 @@ Requests an authentication Token for the user currently signed into Office.
 
 ## Requirements
 
-This method is available in the SingleSignOn [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md). To specify the SingleSignOn requirement set, use the following in your manifest.
+This method is available in the IdentityAPI [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md). To specify the IdentityAPI requirement set, use the following in your manifest.
 
 ```xml
  <Requirements> 
    <Sets DefaultMinVersion="1.1"> 
-     <Set Name="SingleSignOn"/> 
+     <Set Name="IdentityAPI"/> 
    </Sets> 
  </Requirements> 
 
@@ -19,7 +19,7 @@ This method is available in the SingleSignOn [requirement set](../../docs/overvi
 To detect this API at runtime, use the following code.
 
 ```js
- if (Office.context.requirements.isSetSupported('SingleSignOn', 1.1)) 
+ if (Office.context.requirements.isSetSupported('IdentityAPI', 1.1)) 
  	{  
     	 // Request an SSO Token 
  	} 
