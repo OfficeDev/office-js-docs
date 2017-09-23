@@ -60,6 +60,7 @@ The following actions are available during authentication.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
+|**authChallenge**|string|Optional. Prompts the user to sign in with additional authentication requirements.|
 |**forceConsent**|bool|Optional. Causes Office to display the add-in consent experience. Useful if the add-in's Azure permissions have changed or if the user's consent has been revoked.|
 |**forceAddAccount**|bool|Optional. Prompts the user to add (or to switch if already added) his or her Office account.|
 |**asyncContext**|any|Optional. A user-defined item of any type that is returned in the AsyncResult object without being altered.|
@@ -74,8 +75,6 @@ In the callback function passed to the  **getAccessTokenAsync** method, you can 
 This API requires a single sign-on configuration that bridges the add-in to an Azure application. Office users sign-in with Organizational Accounts and Microsoft Accounts. Microsoft Azure returns tokens intended for both user account types to access resources in the Microsoft Graph.
 
 ## Support details
-
-A capital Y in the following matrix indicates that this method is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this method.
 
 For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
 
