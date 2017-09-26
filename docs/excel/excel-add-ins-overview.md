@@ -54,7 +54,7 @@ In addition to interacting with the content in the workbook, Excel add-ins can a
 
 ![Add-in dialog box](../../images/Excel_add-in_dialog_choose-number.png)
 
-**Embedded web-based object**
+**Content add-in**
 
 ![Content add-in](../../images/Excel_add-in_content_map.png)
 
