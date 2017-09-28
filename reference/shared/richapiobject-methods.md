@@ -21,7 +21,7 @@ object.load(param);
 |:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
-##### Returns
+#### Returns
 void
 
 #### Examples
