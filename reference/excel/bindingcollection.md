@@ -1,4 +1,4 @@
-# BindingCollection object (JavaScript API for Excel)
+# BindingCollection Object (JavaScript API for Excel)
 
 Represents the collection of all the binding objects that are part of the workbook.
 
@@ -22,10 +22,10 @@ None
 |[add(range: Range or string, bindingType: string, id: string)](#addrange-range-or-string-bindingtype-string-id-string)|[Binding](binding.md)|Add a new binding to a particular Range.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[addFromNamedItem(name: string, bindingType: string, id: string)](#addfromnameditemname-string-bindingtype-string-id-string)|[Binding](binding.md)|Add a new binding based on a named item in the workbook.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[addFromSelection(bindingType: string, id: string)](#addfromselectionbindingtype-string-id-string)|[Binding](binding.md)|Add a new binding based on the current selection.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of bindings in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(id: string)](#getitemornullid-string)|[Binding](binding.md)|Gets a binding object by ID. If the binding object does not exist, the return object's isNull property will be true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(id: string)](#getitemornullobjectid-string)|[Binding](binding.md)|Gets a binding object by ID. If the binding object does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -40,7 +40,7 @@ bindingCollectionObject.add(range, bindingType, id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |range|Range or string|Range to bind the binding to. May be an Excel Range object, or a string. If string, must contain the full address, including the sheet name|
 |bindingType|string|Type of binding.  Possible values are: Range, Table, Text|
 |id|string|Name of binding.|
@@ -58,7 +58,7 @@ bindingCollectionObject.addFromNamedItem(name, bindingType, id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Name from which to create binding.|
 |bindingType|string|Type of binding.  Possible values are: Range, Table, Text|
 |id|string|Name of binding.|
@@ -76,12 +76,26 @@ bindingCollectionObject.addFromSelection(bindingType, id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |bindingType|string|Type of binding.  Possible values are: Range, Table, Text|
 |id|string|Name of binding.|
 
 #### Returns
 [Binding](binding.md)
+
+### getCount()
+Gets the number of bindings in the collection.
+
+#### Syntax
+```js
+bindingCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
 
 ### getItem(id: string)
 Gets a binding object by ID.
@@ -93,7 +107,7 @@ bindingCollectionObject.getItem(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|Id of the binding object to be retrieved.|
 
 #### Returns
@@ -173,7 +187,7 @@ bindingCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -197,37 +211,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemOrNull(id: string)
-Gets a binding object by ID. If the binding object does not exist, the return object's isNull property will be true.
+### getItemOrNullObject(id: string)
+Gets a binding object by ID. If the binding object does not exist, will return a null object.
 
 #### Syntax
 ```js
-bindingCollectionObject.getItemOrNull(id);
+bindingCollectionObject.getItemOrNullObject(id);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|Id of the binding object to be retrieved.|
 
 #### Returns
 [Binding](binding.md)
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 ### Property access examples
 
 ```js

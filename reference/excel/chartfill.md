@@ -1,4 +1,4 @@
-# ChartFill object (JavaScript API for Excel)
+# ChartFill Object (JavaScript API for Excel)
 
 Represents the fill formatting for a chart element.
 
@@ -63,7 +63,7 @@ chartFillObject.setSolidColor(color);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
 
 #### Returns

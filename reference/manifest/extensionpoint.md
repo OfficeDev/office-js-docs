@@ -1,6 +1,6 @@
 # ExtensionPoint element
 
- Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [DesktopFormFactor](./desktopformfactor.md) or [MobileFormFactor](./mobileformfactor.md). 
+ Defines where an add-in exposes functionality in the Office UI. The **ExtensionPoint** element is a child element of [AllFormFactors](./allformfactors.md), [DesktopFormFactor](./desktopformfactor.md) or [MobileFormFactor](./mobileformfactor.md). 
 
 ## Attributes
 
@@ -8,6 +8,22 @@
 |:-----|:-----|:-----|
 |  **xsi:type**  |  Yes  | The type of extension point being defined.|
 
+# Extension points for Excel only
+- **CustomFunctions** - a custom function written in JavaScript for Excel.
+
+The following examples show how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.
+
+```XML
+<ExtensionPoint xsi:type="CustomFunctions">
+	<Script>
+		<SourceLocation resid="scriptURL" />
+                 <!-- The Script element is not used in the Developer Preview. -->
+	</Script>
+	<Page>
+		<SourceLocation resid="pageURL"/>
+	</Page>
+</ExtensionPoint>
+```
 
 ## Extension points for Word, Excel, PowerPoint, and OneNote add-in commands
 
@@ -64,7 +80,9 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 |**Label**|Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **ShortStrings** element, which is a child element of the **Resources** element.|
 |**Icon**|Required. Specifies the group's icon to be used on small form factor devices, or when too many buttons are displayed. The  **resid** attribute must be set to the value of the **id** attribute of an **Image** element. The **Image** element is a child element of the **Images** element, which is a child element of the **Resources** element. The **size** attribute gives the size, in pixels, of the image. Three image sizes are required: 16, 32, and 80. Five optional sizes are also supported: 20, 24, 40, 48, and 64.|
 |**Tooltip**|Optional. The tooltip of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element. The **String** element is a child element of the **LongStrings** element, which is a child element of the **Resources** element.|
-|**Control**|Each group requires at least one control. A  **Control** element can be either a **Button** or a **Menu**. Use  **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported.See the [Button controls](#button-controls) and [Menu controls](#menu-controls) sections for more information.<br/>**Note**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.
+|**Control**|Each group requires at least one control. A  **Control** element can be either a **Button** or a **Menu**. Use  **Menu** to specify a drop-down list of button controls. Currently, only buttons and menus are supported. See the [Button controls](#button-controls) and [Menu controls](#menu-controls) sections for more information.<br/>**Note**  To make troubleshooting easier, we recommend that a  **Control** element and the related **Resources** child elements be added one at a time.|
+|**Script**|Links to the JavaScript file with the custom function definition and registration code. This element is not used in the Developer Preview. Instead, the HTML page is responsible for loading all JavaScript files.|
+|**Page**|Links to the HTML page for your custom functions.|
 
 ## Extension points for Outlook add-in commands
 
@@ -74,6 +92,8 @@ The following examples show how to use the  **ExtensionPoint** element with **Pr
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (Can only be used in the [DesktopFormFactor](./desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
+- [Events](#events)
+- [DetectedEntity](#detectedentity)
 
 ### MessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view. In Outlook desktop, this appears in the ribbon.
@@ -202,34 +222,82 @@ This extension point puts buttons on the ribbon for the module extension.
 ### MobileMessageReadCommandSurface
 This extension point puts buttons in the command surface for the mail read view in the mobile form factor.
 
-> **Note:** This element type is only supported in Outlook for iOS.
 
 **Child elements**
 
 |  Element |  Description  |
 |:-----|:-----|
 |  [Group](./group.md) |  Adds a group of buttons to the command surface.  |
-|  [Control](./control.md) |  Adds a single of button to the command surface.  |
 
-**ExtensionPoint** elements of this type can only have one child element, either a **Group** element or a **Control** element.
+**ExtensionPoint** elements of this type can only have one child element: a **Group** element.
 
 **Control** elements contained in this extension point must have the **xsi:type** attribute set to `MobileButton`.
 
-#### Group example
+#### Example
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
   <Group id="mobileGroupID">
     <Label resid="residAppName"/>
-    <!-- one or more Control elements -->
+      <Control id="mobileButton1" xsi:type="MobileButton">
+        <!-- Control definition -->
+      </Control>
   </Group>
 </ExtensionPoint>
 ```
 
-#### Control example
+### Events
+This extension point adds an event handler for a specified event.
+
+> **Note:** This element type is only supported by Outlook on the web in Office 365.
+
+|  Element |  Description  |
+|:-----|:-----|
+|  [Event](./event.md) |  Specifies the event and event handler function.  |
+
+#### ItemSend event example
 ```xml
-<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-  <Control id="mobileButton1" xsi:type="MobileButton">
-    <!-- Control definition -->
-  </Control>
-</ExtensionPoint>
+<ExtensionPoint xsi:type="Events"> 
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+</ExtensionPoint> 
+```
+
+### DetectedEntity
+This extension point adds a contextual add-in activation on a specified entity type.
+
+The containing [VersionOverrides](./versionoverrides.md) element must have an `xsi:type` attribute value of `VersionOverridesV1_1`.
+
+> **Note:** This element type is only supported by Outlook on the web in Office 365.
+
+|  Element |  Description  |
+|:-----|:-----|
+|  [Label](#label) |  Specifies the label for the add-in in the contextual window.  |
+|  [SourceLocation](./sourcelocation.md) |  Specifies the URL for the contextual window.  |
+|  [Rule](./rule.md) |  Specifies the rule or rules that determine when an add-in activates.  |
+
+#### Label
+
+Required. The label of the group. The  **resid** attribute must be set to the value of the **id** attribute of a **String** element in the [ShortStrings](./resources.md#shortstrings) element in the [Resources](./resources.md) element.
+
+#### Highlight requirements
+
+The only way a user can activate a contextual add-in is to interact with a highlighted entity. Developers can control which entities are highlighted by using the `Highlight` attribute of the `Rule` element for `ItemHasKnownEntity` and `ItemHasRegularExpressionMatch` rule types.
+
+However, there are some limitations to be aware of. These limitations are in place to ensure that there will always be a highlighted entity in applicable messages or appointments to give the user a way to activate the add-in.
+
+- The `EmailAddress` and `Url` entity types cannot be highlighted, and therefore cannot be used to activate an add-in.
+- If using a single rule, `Highlight` MUST be set to `all`.
+- If using a `RuleCollection` rule type with `Mode="AND"` to combine multiple rules, at least one of the rules MUST have `Highlight` set to `all`.
+- If using a `RuleCollection` rule type with `Mode="OR"` to combine multiple rules, all of the rules MUST have `Highlight` set to `all`.
+
+#### DetectedEntity event example
+```xml
+<ExtensionPoint xsi:type="DetectedEntity">
+  <Label resid="residLabelName"/>
+  <SourceLocation resid="residDetectedEntityURL" />
+  <Rule xsi:type="RuleCollection" Mode="And">
+    <Rule xsi:type="ItemIs" ItemType="Message" />
+    <Rule xsi:type="ItemHasKnownEntity" EntityType="MeetingSuggestion" Highlight="all" />
+    <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" Highlight="none" />
+  </Rule>
+</ExtensionPoint> 
 ```

@@ -1,4 +1,4 @@
-# Range object (JavaScript API for Excel)
+# Range Object (JavaScript API for Excel)
 
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
@@ -29,6 +29,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|conditionalFormats|[ConditionalFormatCollection](conditionalformatcollection.md)|Collection of ConditionalFormats that intersect the range. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |sort|[RangeSort](rangesort.md)|Represents the range sort of the current range. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -37,35 +38,50 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[calculate()](#calculate)|void|Calculates a range of cells on a worksheet.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets a certain number of columns to the right of the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets a certain number of columns to the left of the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets a certain number of columns to the right of the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets a certain number of columns to the left of the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range (for example, if the current range represents cells "B4:E11", it's `getEntireColumn` is a range that represents columns "B:E").|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range (for example, if the current range represents cells "B4:E11", it's `GetEntireRow` is a range that represents rows "4:11").|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getIntersectionOrNull(anotherRange: Range or string)](#getintersectionornullanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getIntersectionOrNullObject(anotherRange: Range or string)](#getintersectionornullobjectanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastCell()](#getlastcell)|[Range](range.md)|Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastColumn()](#getlastcolumn)|[Range](range.md)|Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an error will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|Gets a certain number of rows above the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Gets a certain number of rows below the current Range object.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly)](#getusedrangevaluesonly)|[Range](range.md)|Returns the used range of the given range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|Gets a certain number of rows above the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Gets a certain number of rows below the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|Returns the used range of the given range object. If there are no used cells within the range, this function will throw an ItemNotFound error.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|Returns the used range of the given range object. If there are no used cells within the range, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Represents the visible rows of the current range.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[merge(across: bool)](#mergeacross-bool)|void|Merge the range cells into one region in the worksheet.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[select()](#select)|void|Selects the specified range in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### calculate()
+Calculates a range of cells on a worksheet.
+
+#### Syntax
+```js
+rangeObject.calculate();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
 
 ### clear(applyTo: string)
 Clear range values, format, fill, border, etc.
@@ -77,7 +93,7 @@ rangeObject.clear(applyTo);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |applyTo|string|Optional. Determines the type of clear action. Possible values are: `All` Default-option,`Formats` ,`Contents` |
 
 #### Returns
@@ -113,7 +129,7 @@ rangeObject.delete(shift);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |shift|string|Specifies which way to shift the cells.  Possible values are: Up, Left|
 
 #### Returns
@@ -147,7 +163,7 @@ rangeObject.getBoundingRect(anotherRange);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or address or range name.|
 
 #### Returns
@@ -185,7 +201,7 @@ rangeObject.getCell(row, column);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Row number of the cell to be retrieved. Zero-indexed.|
 |column|number|Column number of the cell to be retrieved. Zero-indexed.|
 
@@ -224,7 +240,7 @@ rangeObject.getColumn(column);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |column|number|Column number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -261,7 +277,7 @@ rangeObject.getColumnsAfter(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Optional. The number of columns to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
 
 #### Returns
@@ -277,14 +293,14 @@ rangeObject.getColumnsBefore(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Optional. The number of columns to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
 
 #### Returns
 [Range](range.md)
 
 ### getEntireColumn()
-Gets an object that represents the entire column of the range.
+Gets an object that represents the entire column of the range (for example, if the current range represents cells "B4:E11", it's `getEntireColumn` is a range that represents columns "B:E").
 
 #### Syntax
 ```js
@@ -321,7 +337,7 @@ Excel.run(function (ctx) {
 ```
 
 ### getEntireRow()
-Gets an object that represents the entire row of the range.
+Gets an object that represents the entire row of the range (for example, if the current range represents cells "B4:E11", it's `GetEntireRow` is a range that represents rows "4:11").
 
 #### Syntax
 ```js
@@ -366,7 +382,7 @@ rangeObject.getIntersection(anotherRange);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
 
 #### Returns
@@ -393,17 +409,17 @@ Excel.run(function (ctx) {
 ```
 
 
-### getIntersectionOrNull(anotherRange: Range or string)
+### getIntersectionOrNullObject(anotherRange: Range or string)
 Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.
 
 #### Syntax
 ```js
-rangeObject.getIntersectionOrNull(anotherRange);
+rangeObject.getIntersectionOrNullObject(anotherRange);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
 
 #### Returns
@@ -516,7 +532,7 @@ Excel.run(function (ctx) {
 
 
 ### getOffsetRange(rowOffset: number, columnOffset: number)
-Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.
+Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an error will be thrown.
 
 #### Syntax
 ```js
@@ -525,7 +541,7 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |rowOffset|number|The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
 |columnOffset|number|The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
 
@@ -541,7 +557,7 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
 	range.load('address');
 	return ctx.sync().then(function() {
-		console.log(range.address); // prints Sheet1!H3:K5
+		console.log(range.address); // prints Sheet1!H3:J5
 	});
 }).catch(function(error) {
 		console.log("Error: " + error);
@@ -562,7 +578,7 @@ rangeObject.getResizedRange(deltaRows, deltaColumns);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |deltaRows|number|The number of rows by which to expand the bottom-right corner, relative to the current range. Use a positive number to expand the range, or a negative number to decrease it.|
 |deltaColumns|number|The number of columnsby which to expand the bottom-right corner, relative to the current range. Use a positive number to expand the range, or a negative number to decrease it.|
 
@@ -579,7 +595,7 @@ rangeObject.getRow(row);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Row number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -616,7 +632,7 @@ rangeObject.getRowsAbove(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Optional. The number of rows to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
 
 #### Returns
@@ -632,14 +648,14 @@ rangeObject.getRowsBelow(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Optional. The number of rows to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
 
 #### Returns
 [Range](range.md)
 
-### getUsedRange(valuesOnly)
-Returns the used range of the given range object.
+### getUsedRange(valuesOnly: bool)
+Returns the used range of the given range object. If there are no used cells within the range, this function will throw an ItemNotFound error.
 
 #### Syntax
 ```js
@@ -648,8 +664,8 @@ rangeObject.getUsedRange(valuesOnly);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells.|
+|:---------------|:--------|:----------|
+|valuesOnly|bool|Optional. Considers only cells with values as used cells.|
 
 #### Returns
 [Range](range.md)
@@ -676,6 +692,22 @@ Excel.run(function (ctx) {
 ```
 
 
+### getUsedRangeOrNullObject(valuesOnly: bool)
+Returns the used range of the given range object. If there are no used cells within the range, this function will return a null object.
+
+#### Syntax
+```js
+rangeObject.getUsedRangeOrNullObject(valuesOnly);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|valuesOnly|bool|Optional. Considers only cells with values as used cells.|
+
+#### Returns
+[Range](range.md)
+
 ### getVisibleView()
 Represents the visible rows of the current range.
 
@@ -700,7 +732,7 @@ rangeObject.insert(shift);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |shift|string|Specifies which way to shift the cells.  Possible values are: Down, Right|
 
 #### Returns
@@ -726,22 +758,6 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
-
 ### merge(across: bool)
 Merge the range cells into one region in the worksheet.
 
@@ -752,7 +768,7 @@ rangeObject.merge(across);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |across|bool|Optional. Set true to merge cells in each row of the specified range as separate merged cells. The default value is false.|
 
 #### Returns

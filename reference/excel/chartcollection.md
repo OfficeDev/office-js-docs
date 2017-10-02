@@ -1,4 +1,4 @@
-# ChartCollection object (JavaScript API for Excel)
+# ChartCollection Object (JavaScript API for Excel)
 
 A collection of all the chart objects on a worksheet.
 
@@ -19,16 +19,16 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Creates a new chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(type: string, sourceData: object, seriesBy: string)](#addtype-string-sourcedata-object-seriesby-string)|[Chart](chart.md)|Creates a new chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Returns the number of charts in the worksheet.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
-### add(type: string, sourceData: Range, seriesBy: string)
+### add(type: string, sourceData: object, seriesBy: string)
 Creates a new chart.
 
 #### Syntax
@@ -38,86 +38,15 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|type|string|Represents the type of a chart.  See below for possible chart types.|
-|sourceData|Range|The Range object corresponding to the source data.|
+|:---------------|:--------|:----------|
+|type|string|Represents the type of a chart.  Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
+|sourceData|object|The Range object corresponding to the source data.|
 |seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart.  Possible values are: Auto, Columns, Rows|
 
-**Below are the valid chart types:**
+The following are the valid chart types:
 
-`ColumnClustered`, 
-`ColumnStacked`, 
-`ColumnStacked100`, 
-`_3DColumnClustered`, 
-`_3DColumnStacked`, 
-`_3DColumnStacked100`, 
-`BarClustered`, 
-`BarStacked`, 
-`BarStacked100`, 
-`_3DBarClustered`, 
-`_3DBarStacked`, 
-`_3DBarStacked100`, 
-`LineStacked`, 
-`LineStacked100`, 
-`LineMarkers`, 
-`LineMarkersStacked`, 
-`LineMarkersStacked100`, 
-`PieOfPie`, 
-`PieExploded`, 
-`_3DPieExploded`, 
-`BarOfPie`, 
-`XYScatterSmooth`, 
-`XYScatterSmoothNoMarkers`, 
-`XYScatterLines`, 
-`XYScatterLinesNoMarkers`, 
-`AreaStacked`, 
-`AreaStacked100`, 
-`_3DAreaStacked`, 
-`_3DAreaStacked100`, 
-`DoughnutExploded`, 
-`RadarMarkers`, 
-`RadarFilled`, 
-`Surface`, 
-`SurfaceWireframe`, 
-`SurfaceTopView`, 
-`SurfaceTopViewWireframe`, 
-`Bubble`, 
-`Bubble3DEffect`, 
-`StockHLC`, 
-`StockOHLC`, 
-`StockVHLC`, 
-`StockVOHLC`, 
-`CylinderColClustered`, 
-`CylinderColStacked`, 
-`CylinderColStacked100`, 
-`CylinderBarClustered`, 
-`CylinderBarStacked`, 
-`CylinderBarStacked100`, 
-`CylinderCol`, 
-`ConeColClustered`, 
-`ConeColStacked`, 
-`ConeColStacked100`, 
-`ConeBarClustered`, 
-`ConeBarStacked`, 
-`ConeBarStacked100`, 
-`ConeCol`, 
-`PyramidColClustered`, 
-`PyramidColStacked`, 
-`PyramidColStacked100`, 
-`PyramidBarClustered`, 
-`PyramidBarStacked`, 
-`PyramidBarStacked100`, 
-`PyramidCol`, 
-`_3DColumn`, 
-`Line`, 
-`_3DLine`, 
-`_3DPie`, 
-`Pie`, 
-`XYScatter`, 
-`_3DArea`, 
-`Area`, 
-`Doughnut`, 
-`Radar`
+`ColumnClustered `, `ColumnStacked `, `ColumnStacked100 `, `_3DColumnClustered `, `_3DColumnStacked `, `_3DColumnStacked100 `, `BarClustered `, `BarStacked `, `BarStacked100 `, `_3DBarClustered `, `_3DBarStacked `, `_3DBarStacked100 `, `LineStacked `, `LineStacked100 `, `LineMarkers `, `LineMarkersStacked `, `LineMarkersStacked100 `, `PieOfPie `, `PieExploded `, `_3DPieExploded `, `BarOfPie `, `XYScatterSmooth `, `XYScatterSmoothNoMarkers `, `XYScatterLines `, `XYScatterLinesNoMarkers `, `AreaStacked `, `AreaStacked100 `, `_3DAreaStacked `, `_3DAreaStacked100 `, `DoughnutExploded `, `RadarMarkers `, `RadarFilled `, `Surface `, `SurfaceWireframe `, `SurfaceTopView `, `SurfaceTopViewWireframe `, `Bubble `, `Bubble3DEffect `, `StockHLC `, `StockOHLC `, `StockVHLC `, `StockVOHLC `, `CylinderColClustered `, `CylinderColStacked `, `CylinderColStacked100 `, `CylinderBarClustered `, `CylinderBarStacked `, `CylinderBarStacked100 `, `CylinderCol `, `ConeColClustered `, `ConeColStacked `, `ConeColStacked100 `, `ConeBarClustered `, `ConeBarStacked `, `ConeBarStacked100 `, `ConeCol `, `PyramidColClustered `, `PyramidColStacked `, `PyramidColStacked100 `, `PyramidBarClustered `, `PyramidBarStacked `, `PyramidBarStacked100 `, `PyramidCol `, `_3DColumn `, `Line `, `_3DLine `, `_3DPie `, `Pie `, `XYScatter `, `_3DArea `, `Area `, `Doughnut `, `Radar `,
+
 
 
 #### Returns
@@ -145,6 +74,20 @@ Excel.run(function (ctx) {
 ```
 
 
+### getCount()
+Returns the number of charts in the worksheet.
+
+#### Syntax
+```js
+chartCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
+
 ### getItem(name: string)
 Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.
 
@@ -155,7 +98,7 @@ chartCollectionObject.getItem(name);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Name of the chart to be retrieved.|
 
 #### Returns
@@ -226,7 +169,7 @@ chartCollectionObject.getItemAt(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
@@ -250,37 +193,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemOrNull(name: string)
+### getItemOrNullObject(name: string)
 Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.
 
 #### Syntax
 ```js
-chartCollectionObject.getItemOrNull(name);
+chartCollectionObject.getItemOrNullObject(name);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Name of the chart to be retrieved.|
 
 #### Returns
 [Chart](chart.md)
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
-
-#### Returns
-void
 ### Property access examples
 
 ```js

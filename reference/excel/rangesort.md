@@ -1,4 +1,4 @@
-# RangeSort object (JavaScript API for Excel)
+# RangeSort Object (JavaScript API for Excel)
 
 Manages sorting operations on Range objects.
 
@@ -29,7 +29,7 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |fields|SortField[]|The list of conditions to sort on.|
 |matchCase|bool|Optional. Whether to have the casing impact string ordering.|
 |hasHeaders|bool|Optional. Whether the range has a header.|

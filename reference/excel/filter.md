@@ -1,4 +1,4 @@
-# Filter object (JavaScript API for Excel)
+# Filter Object (JavaScript API for Excel)
 
 Manages the filtering of a table's column.
 
@@ -25,9 +25,8 @@ None
 |[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Apply a "Icon" filter to the column for the given icon.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyTopItemsFilter(count: number)](#applytopitemsfiltercount-number)|void|Apply a "Top Item" filter to the column for the given number of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Apply a "Top Percent" filter to the column for the given percentage of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Apply a "Values" filter to the column for the given values.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyValuesFilter(values: object[])](#applyvaluesfiltervalues-object)|void|Apply a "Values" filter to the column for the given values.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|Clear the filter on the given column.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -42,7 +41,7 @@ filterObject.apply(criteria);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |criteria|FilterCriteria|The criteria to apply.|
 
 #### Returns
@@ -58,7 +57,7 @@ filterObject.applyBottomItemsFilter(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|The number of elements from the bottom to show.|
 
 #### Returns
@@ -74,7 +73,7 @@ filterObject.applyBottomPercentFilter(percent);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |percent|number|The percentage of elements from the bottom to show.|
 
 #### Returns
@@ -90,7 +89,7 @@ filterObject.applyCellColorFilter(color);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |color|string|The background color of the cells to show.|
 
 #### Returns
@@ -106,7 +105,7 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |criteria1|string|The first criteria string.|
 |criteria2|string|Optional. The second criteria string.|
 |oper|string|Optional. The operator that describes how the two criteria are joined.  Possible values are: And, Or|
@@ -124,7 +123,7 @@ filterObject.applyDynamicFilter(criteria);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |criteria|string|The dynamic criteria to apply.  Possible values are: Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate, Yesterday|
 
 #### Returns
@@ -140,7 +139,7 @@ filterObject.applyFontColorFilter(color);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |color|string|The font color of the cells to show.|
 
 #### Returns
@@ -156,7 +155,7 @@ filterObject.applyIconFilter(icon);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |icon|Icon|The icons of the cells to show.|
 
 #### Returns
@@ -172,7 +171,7 @@ filterObject.applyTopItemsFilter(count);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|The number of elements from the top to show.|
 
 #### Returns
@@ -188,13 +187,13 @@ filterObject.applyTopPercentFilter(percent);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |percent|number|The percentage of elements from the top to show.|
 
 #### Returns
 void
 
-### applyValuesFilter(values: ()[])
+### applyValuesFilter(values: object[])
 Apply a "Values" filter to the column for the given values.
 
 #### Syntax
@@ -204,8 +203,8 @@ filterObject.applyValuesFilter(values);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|values|()[]|The list of values to show.|
+|:---------------|:--------|:----------|
+|values|object[]|The list of values to show.|
 
 #### Returns
 void
@@ -220,22 +219,6 @@ filterObject.clear();
 
 #### Parameters
 None
-
-#### Returns
-void
-
-### load(param: object)
-Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
-
-#### Syntax
-```js
-object.load(param);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
 void
