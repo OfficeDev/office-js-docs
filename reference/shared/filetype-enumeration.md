@@ -1,4 +1,4 @@
-Y
+
 # FileType enumeration
 Specifies the format in which to return the document.
 
@@ -41,7 +41,7 @@ For more information about Office host application and server requirements, see 
 |**Word**|Y|Y|Y|
 |**Excel**|Y|Y|Y|
 
-Note: FileType.Text is only supported in Word, FileType.Pdf is only supported in Word and PowerPoint.
+**Note:** FileType.Text is only supported in Word, FileType.Pdf is only supported in Word for Windows, Word for Mac, Word Online, and PowerPoint.
 
 |||
 |:-----|:-----|
