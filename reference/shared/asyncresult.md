@@ -120,7 +120,7 @@ The  **AsyncResult** object is available from the function passed as the argumen
 [addAsync]: customxmlparts.addasync.md
 [addNamespaceAsync]: customxmlprefixmappings.addnamespaceasync.md
 [deleteAllDataValuesAsync]: binding.tablebinding.deletealldatavaluesasync.md
-[displayDialogAsync]: office.ui.displaydialogasync.md
+[displayDialogAsync]: officeui.displaydialogasync.md
 [deleteAsync]: customxmlpart.deleteasync.md
 [getActiveViewAsync]: document.getactiveviewasync.md
 [getAccessTokenAsync]: office.context.auth.getAccessTokenAsync.md
