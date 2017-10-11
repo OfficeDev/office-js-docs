@@ -109,10 +109,10 @@ This section describes our early thoughts about events in the Excel JavaScript A
 |[documentProperties](reference/excel/documentproperties.md)|_Relationship_ > custom|Gets the collection of custom properties of the workbook. Read only. Read-only.|1.7|
 |[listDataValidation](reference/excel/listdatavalidation.md)|_Property_ > inCellDropDown|Displays the list in cell drop down or not, it defaults to true.|1.7|
 |[listDataValidation](reference/excel/listdatavalidation.md)|_Property_ > source|Source of the list for data validation|1.7|
-|[namedItem](reference/excel/nameditem.md)|_Property_ > formula|Gets or sets the formula of the named item.  Formula always starts with a '=' sign.|ApiSet.InProgressFeatures.ArrayValues|
-|[namedItem](reference/excel/nameditem.md)|_Relationship_ > arrayValues|Returns an object containing values and types of the named item. Read-only.|ApiSet.InProgressFeatures.ArrayValues|
-|[namedItemArrayValues](reference/excel/nameditemarrayvalues.md)|_Property_ > types|Represents the types for each item in the named item array Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|ApiSet.InProgressFeatures.ArrayValues|
-|[namedItemArrayValues](reference/excel/nameditemarrayvalues.md)|_Property_ > values|Represents the values of each item in the named item array. Read-only.|ApiSet.InProgressFeatures.ArrayValues|
+|[namedItem](reference/excel/nameditem.md)|_Property_ > formula|Gets or sets the formula of the named item.  Formula always starts with a '=' sign.|TBD|
+|[namedItem](reference/excel/nameditem.md)|_Relationship_ > arrayValues|Returns an object containing values and types of the named item. Read-only.|TBD|
+|[namedItemArrayValues](reference/excel/nameditemarrayvalues.md)|_Property_ > types|Represents the types for each item in the named item array Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|TBD|
+|[namedItemArrayValues](reference/excel/nameditemarrayvalues.md)|_Property_ > values|Represents the values of each item in the named item array. Read-only.|TBD|
 |[pivotTable](reference/excel/pivottable.md)|_Property_ > columnGrandTotals|True if the PivotTable report shows grand totals for columns.|TBD|
 |[pivotTable](reference/excel/pivottable.md)|_Property_ > rowGrandTotals|True if the PivotTable report shows grand totals for rows.|TBD|
 |[pivotTable](reference/excel/pivottable.md)|_Method_ > [rowAxisLayout(RowLayout: string)](reference/excel/pivottable.md#rowaxislayoutrowlayout-string)|This method is used for simultaneously setting layout options for all existing PivotFields.|TBD|
@@ -176,7 +176,7 @@ This section describes our early thoughts about events in the Excel JavaScript A
 |[workbook](reference/excel/workbook.md)|_Relationship_ > properties|Gets the workbook properties. Read-only.|1.7|
 |[workbook](reference/excel/workbook.md)|_Relationship_ > styles|Represents a collection of styles associated with the workbook. Read-only.|1.7|
 |[workbook](reference/excel/workbook.md)|_Method_ > [getActiveCell()](reference/excel/workbook.md#getactivecell)|Gets the currently active cell from the workbook.|1.7|
-|[workbook](reference/excel/workbook.md)|_Method_ > [getRange(address: string)](reference/excel/workbook.md#getrangeaddress-string)|Gets the range object specified by the address or name.|ApiSet.InProgressFeatures.WorkbookRange|
+|[workbook](reference/excel/workbook.md)|_Method_ > [getRange(address: string)](reference/excel/workbook.md#getrangeaddress-string)|Gets the range object specified by the address or name.|TBD|
 |[worksheet](reference/excel/worksheet.md)|_Property_ > gridlines|Gets or sets the worksheet's gridlines flag.|1.7|
 |[worksheet](reference/excel/worksheet.md)|_Property_ > headings|Gets or sets the worksheet's headings flag.|1.7|
 |[worksheet](reference/excel/worksheet.md)|_Property_ > standardHeight|Returns the standard (default) height of all the rows in the worksheet, in points. Read-only.|1.7|
