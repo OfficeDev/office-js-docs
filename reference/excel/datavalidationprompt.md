@@ -6,9 +6,9 @@ Represents the user prompt properties for the data validation.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|message|string|Represents the message of the prompt.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
-|showPrompt|bool|It determines showing the prompt or not when user selects a cell with the data validation.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
-|title|string|Represents the title for the prompt.|[1.7D](../requirement-sets/excel-api-requirement-sets.md)|
+|message|string|Represents the message of the prompt.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|showPrompt|bool|It determines showing the prompt or not when user selects a cell with the data validation.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|title|string|Represents the title for the prompt.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
