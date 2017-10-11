@@ -6,12 +6,14 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|gridlines|bool|Gets or sets the worksheet's gridlines flag.|[SM](../requirement-sets/excel-api-requirement-sets.md)|
-|headings|bool|Gets or sets the worksheet's headings flag.|[SM](../requirement-sets/excel-api-requirement-sets.md)|
+|gridlines|bool|Gets or sets the worksheet's gridlines flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|headings|bool|Gets or sets the worksheet's headings flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The display name of the worksheet.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|int|The zero-based position of the worksheet within the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|tabColor|string|Gets or sets the worksheet tab color.|[SM](../requirement-sets/excel-api-requirement-sets.md)|
+|standardHeight|double|Returns the standard (default) height of all the rows in the worksheet, in points. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|standardWidth|double|Returns or sets the standard (default) width of all the columns in the worksheet. Readwrite.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|tabColor|string|Gets or sets the worksheet tab color.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |visibility|string|The Visibility of the worksheet. Possible values are: Visible, Hidden, VeryHidden.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
@@ -20,9 +22,9 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |charts|[ChartCollection](chartcollection.md)|Returns collection of charts that are part of the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|freezePanes|[WorksheetFreezePanes](worksheetfreezepanes.md)|Gets an object that can be used to manipulate frozen panes on the worksheet Read-only.|[SM](../requirement-sets/excel-api-requirement-sets.md)|
+|freezePanes|[WorksheetFreezePanes](worksheetfreezepanes.md)|Gets an object that can be used to manipulate frozen panes on the worksheet Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |names|[NamedItemCollection](nameditemcollection.md)|Collection of names scoped to the current worksheet. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|pageLayout|[PageLayout](pagelayout.md)|Gets the PageLayout object of the worksheet. Read-only.|[SM](../requirement-sets/excel-api-requirement-sets.md)|
+|pageLayout|[PageLayout](pagelayout.md)|Gets the PageLayout object of the worksheet. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Collection of PivotTables that are part of the worksheet. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |protection|[WorksheetProtection](worksheetprotection.md)|Returns sheet protection object for a worksheet. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |tables|[TableCollection](tablecollection.md)|Collection of tables that are part of the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -40,7 +42,7 @@ _See property access [examples.](#property-access-examples)_
 |[getPrevious(visibleOnly: bool)](#getpreviousvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getPreviousOrNullObject(visibleOnly: bool)](#getpreviousornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|[Range](range.md)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|[SM](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|[Range](range.md)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -89,7 +91,7 @@ worksheetObject.calculate(markAllDirty);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|markAllDirty|bool|TODO: Need to add description.|
+|markAllDirty|bool|Mark as dirty to calculate on next re-calc.|
 
 #### Returns
 void

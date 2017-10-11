@@ -6,6 +6,7 @@ An object encapsulating a conditional format's range, format, rule, and other pr
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|id|string|The Priority of the Conditional Format within the current ConditionalFormatCollection. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |priority|int|The priority (or index) within the conditional format collection that this conditional format currently exists in. Changing this also|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |stopIfTrue|bool|If the conditions of this conditional format are met, no lower-priority formats shall take effect on that cell.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |type|string|A type of conditional format. Only one can be set at a time. Read-Only. Read-only. Possible values are: Custom, DataBar, ColorScale, IconSet.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|

@@ -19,6 +19,7 @@ None
 |[add(type: string)](#addtype-string)|[ConditionalFormat](conditionalformat.md)|Adds a new conditional format to the collection at the firsttop priority.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[clearAll()](#clearall)|void|Clears all conditional formats active on the current specified range.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Returns the number of conditional formats in the workbook. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(id: string)](#getitemid-string)|[ConditionalFormat](conditionalformat.md)|Returns a conditional format for the given ID.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ConditionalFormat](conditionalformat.md)|Returns a conditional format at the given index.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -128,6 +129,42 @@ Excel.run(function (ctx) {
     }
 });
 ```
+### getItem(id: string)
+Returns a conditional format for the given ID.
+
+#### Syntax
+```js
+conditionalFormatCollectionObject.getItem(id);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|id|string|The id of the conditional format.|
+
+#### Returns
+[ConditionalFormat](conditionalformat.md)
+
+#### Examples
+```js
+Excel.run(function (ctx) {
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:C3";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    var conditionalFormats = range.conditionalFormats;
+    var conditionalFormat = conditionalFormats.getItemAt(3);
+    return ctx.sync().then(function () {
+        console.log("Conditional Format at Item 3 Loaded");
+    });
+}).catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+    });
+```
+
+
 ### getItemAt(index: number)
 Returns a conditional format at the given index.
 
