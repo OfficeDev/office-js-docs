@@ -1,6 +1,6 @@
 # Troubleshooting and error-handling single sign-on for Office Add-ins
 
-This article provides some guidance about how to troubleshoot problems with single sign-on (SSO) in Office Web Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
+This article provides some guidance about how to troubleshoot problems with single sign-on (SSO) in Office  Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
 
 ## Debugging tools
 
@@ -42,7 +42,7 @@ Invalid Resource. The add-in manifest hasn’t been configured correctly. Update
 
 ### 13005
 
-Invalid Grant. Most likely, this means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](../../docs/develop/sso-in-office-add-ins.md#create-the-service-application) and [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS). This also may happen if the user has not granted your service application permissions to his or her `profile`.
+Invalid Grant. This usually means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](../../docs/develop/sso-in-office-add-ins.md#create-the-service-application) and [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS). This also may happen if the user has not granted your service application permissions to his or her `profile`.
 
 ### 13006
 
@@ -77,7 +77,7 @@ If AAD has no record that consent (to the Microsoft Graph resource) was granted 
 
 ### Invalid or missing scope (permission) errors
 
-- Your server-side code should send a `403 Forbidden` response to the client which should present a friendly message to the user and possibly also log the error to the console or record it in a log.
+- Your server-side code should send a `403 Forbidden` response to the client which should present a friendly message to the user. If possible, log the error to the console or record it in a log.
 - Be sure your add-in manifest [Scopes](../../reference/manifest/scopes.md)  section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-aspnet.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (ASP.NET) or [Register the add-in with Azure AD v2.0 endpoint](../../docs/develop/create-sso-office-add-ins-nodejs.md#register-the-add-in-with-azure-ad-v2-0-endpoint) (Node JS), and [Configure the add-in](../../docs/develop/create-sso-office-add-ins-aspnet.md#configure-the-add-in) (ASP.NET) or [Configure the add-in](../../docs/develop/create-sso-office-add-ins-nodejs.md#configure-the-add-in) (Node JS).
 
 ### Expired or invalid token errors when calling Microsoft Graph
@@ -88,7 +88,7 @@ But if you get an expired token or invalid token error, your code must tell the 
 
 ### Invalid token error when calling Microsoft Graph
 
-Handle this error the same as an expired token error. See above.
+Handle this error the same as an expired token error. See previous section.
 
 ### Invalid audience error
 
