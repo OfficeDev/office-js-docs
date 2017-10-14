@@ -24,7 +24,7 @@ The best way to find out if an online service supports the Implicit flow is to c
 
 - [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
 
-For more information about other libraries that support the Implicit flow, see the **Libraries** section later in this article.
+For information about other libraries that support the Implicit flow, see the **Libraries** section later in this article.
 
 ## Using the Authorization Code flow in Office Add-ins
 
