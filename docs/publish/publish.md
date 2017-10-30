@@ -10,7 +10,7 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |[Office Store](https://dev.office.com/officestore/docs/submit-to-the-office-store)|To distribute your add-in publicly to users.|
 |[Exchange server](#outlook-add-in-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 
->**Note:** If you plan to publish your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
+>**Note:** If you plan to submit your add-in to the Office Store, make sure that you conform to the [Office Store validation policies](https://msdn.microsoft.com/en-us/library/jj220035.aspx). For example, to pass validation, your add-in must work across all platforms that support the methods that you define (for more information, see [section 4.12](https://dev.office.com/officestore/docs/validation-policies#4-apps-and-add-ins-behave-predictably) and the [Office Add-in host and availability page](https://dev.office.com/add-in-availability)).
 
 ## Deployment options by Office host
 
