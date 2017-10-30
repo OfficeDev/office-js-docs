@@ -79,7 +79,7 @@ To publish an add-in to an add-in catalog, complete the following steps.
 
 ## End user experience with the add-in catalog
 
-After an add-in has been published to the add-in catalog, end users can access the add-in catalog by completing the following steps:
+End users can access the add-in catalog in an Office application by completing the following steps:
 
 1. In the Office application, go to  **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
     
