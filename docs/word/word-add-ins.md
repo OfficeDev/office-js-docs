@@ -189,6 +189,10 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 ![Picture of the Word application with the boilerplate add-in loaded.](../../images/boilerplateAddin.png)
 
+## Next steps
+
+Congratulations, you've successfully created a Word add-in using jQuery! Next, learn more about the [core concepts](word-add-ins-programming-overview.md) of building Word add-ins.
+
 ## Additional resources
 
 * [Word add-ins overview](word-add-ins-programming-overview.md)
