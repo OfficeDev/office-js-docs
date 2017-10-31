@@ -2,7 +2,7 @@
 
 _Applies to: Word 2016, Word for iPad, Word for Mac_
 
-A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API, which is part of the Office Add-ins programming model for extending Office applications. In this add-in programming model, you can use the platform and language of your choice to create a web application that hosts your extension to Word and then use the add-in's [manifest](../../docs/overview/add-in-manifests.md) to define its settings and capabilities.
+A Word add-in runs inside Word and can interact with the contents of the document using the Word JavaScript API, which is part of the Office Add-ins programming model for extending Office applications. In this add-in programming model, you can use the platform and language of your choice to create the web application that hosts your extension to Word and then use the add-in's [manifest](../../docs/overview/add-in-manifests.md) to define its settings and capabilities.
 
 In this article, you'll walk through the process of building a Word add-in by using jQuery and the Word JavaScript API. 
 
@@ -12,7 +12,7 @@ In this article, you'll walk through the process of building a Word add-in by us
 
 1. Create a folder on your local drive and name it **BoilerplateAddin**. This is where you'll create the files for your app.
 
-2. In your app folder, create a file named **home.html** to specify the HTML that will be rendered in the add-ins task pane. This add-in will display three buttons and when any of the buttons are chosen, boilerplate text will be added to the document. Add the following code to **home.html** and save the file.
+2. In your app folder, create a file named **home.html** to specify the HTML that will be rendered in the add-in's task pane. This add-in will display three buttons and when any of the buttons are chosen, boilerplate text will be added to the document. Add the following code to **home.html** and save the file.
 
     ```html
     <!DOCTYPE html>
