@@ -7,10 +7,10 @@ Represents a chart object in a workbook.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |height|double|Represents the height, in points, of the chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|id|string|The unique id of chart. Read-only.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|id|string|The unique id of chart. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |left|double|The distance, in points, from the left side of the chart to the worksheet origin.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Represents the name of a chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|showAllFieldButtons|bool|Returns or sets whether to display all field buttons on a PivotChart. Readwrite|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|showAllFieldButtons|bool|Returns or sets whether to display all field buttons on a PivotChart. Readwrite|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |top|double|Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |width|double|Represents the width, in points, of the chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 

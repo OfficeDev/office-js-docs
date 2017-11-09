@@ -6,7 +6,7 @@ Represents the legendEntry in legendEntryCollection.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|visible|bool|Represents the visible of a chart legend entry.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|visible|bool|Represents the visible of a chart legend entry.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

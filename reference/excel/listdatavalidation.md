@@ -6,8 +6,8 @@ Represents the List data validation criteria.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|inCellDropDown|bool|Displays the list in cell drop down or not, it defaults to true.|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
-|source|object|Source of the list for data validation|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
+|inCellDropDown|bool|Displays the list in cell drop down or not, it defaults to true.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|source|object|Source of the list for data validation|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

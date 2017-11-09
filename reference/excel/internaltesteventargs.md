@@ -6,14 +6,14 @@ Represents a collection of all the styles.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|prop1|int|Gets a style by name.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|prop1|int|Gets a style by name.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|worksheet|[Worksheet](worksheet.md)|Gets a style by name.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheet|[Worksheet](worksheet.md)|Gets a style by name.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None

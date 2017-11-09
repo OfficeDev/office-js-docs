@@ -6,7 +6,7 @@ Represents a collection of all the styles.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Style[]](style.md)|A collection of style objects. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Style[]](style.md)|A collection of style objects. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,8 +18,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(name: string)](#addname-string)|void|Adds a new style to the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(name: string)](#getitemname-string)|[Style](style.md)|Gets a style by name.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(name: string)](#addname-string)|void|Adds a new style to the collection.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[Style](style.md)|Gets a style by name.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

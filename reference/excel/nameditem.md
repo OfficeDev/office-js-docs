@@ -7,7 +7,7 @@ Represents a defined name for a range of cells or value. Names can be primitive 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |comment|string|Represents the comment associated with this name.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|formula|object|Gets or sets the formula of the named item.  Formula always starts with a '=' sign.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|formula|object|Gets or sets the formula of the named item.  Formula always starts with a '=' sign.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The name of the object. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |scope|string|Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only. Possible values are: Worksheet, Workbook.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |type|string|Indicates the type of the value returned by the name's formula. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -19,7 +19,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|arrayValues|[NamedItemArrayValues](nameditemarrayvalues.md)|Returns an object containing values and types of the named item. Read-only.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|arrayValues|[NamedItemArrayValues](nameditemarrayvalues.md)|Returns an object containing values and types of the named item. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheet|[Worksheet](worksheet.md)|Returns the worksheet on which the named item is scoped to. Throws an error if the items is scoped to the workbook instead. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheetOrNullObject|[Worksheet](worksheet.md)|Returns the worksheet on which the named item is scoped to. Returns a null object if the item is scoped to the workbook instead. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 

@@ -6,7 +6,7 @@ Represents a collection of Chart Trendlines.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[ChartTrendline[]](charttrendline.md)|A collection of chartTrendline objects. Read-only.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartTrendline[]](charttrendline.md)|A collection of chartTrendline objects. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,9 +18,9 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(type: string)](#addtype-string)|[ChartTrendline](charttrendline.md)|Adds a new trendline to trendline collection.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Returns the number of trendlines in the collection.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(index: number)](#getitemindex-number)|[ChartTrendline](charttrendline.md)|Get trendline object by index, which is the insertion order in items array.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(type: string)](#addtype-string)|[ChartTrendline](charttrendline.md)|Adds a new trendline to trendline collection.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Returns the number of trendlines in the collection.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[ChartTrendline](charttrendline.md)|Get trendline object by index, which is the insertion order in items array.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

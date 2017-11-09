@@ -6,7 +6,7 @@ Represents the Custom data validation criteria.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|formula|object|Custom data validation formula, it is to create special rules, such as preventing duplicates, or limiting the total in a range of cells.|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
+|formula|object|Custom data validation formula, it is to create special rules, such as preventing duplicates, or limiting the total in a range of cells.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

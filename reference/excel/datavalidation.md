@@ -6,23 +6,23 @@ Represents the data validation applied to the current range.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|ignoreBlanks|bool|Ignore blanks: no data validation will be performed on blank cells, it defaults to true.|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
-|type|string|Type of the data validation, see Excel.DataValidationType for details. Read-only. Possible values are: Invalid, None, WholeNumber, Decimal, List, Date, Time, TextLength, Inconsistent, MixedCriteria.|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
+|ignoreBlanks|bool|Ignore blanks: no data validation will be performed on blank cells, it defaults to true.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Type of the data validation, see Excel.DataValidationType for details. Read-only. Possible values are: Invalid, None, WholeNumber, Decimal, List, Date, Time, TextLength, Inconsistent, MixedCriteria.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|errorAlert|[DataValidationErrorAlert](datavalidationerroralert.md)|Error alert when user enters invalid data.|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
-|prompt|[DataValidationPrompt](datavalidationprompt.md)|Prompt when users select a cell.|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
-|rule|[DataValidationRule](datavalidationrule.md)|Data Validation rule that contains different type of data validation criteria.|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
+|errorAlert|[DataValidationErrorAlert](datavalidationerroralert.md)|Error alert when user enters invalid data.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|prompt|[DataValidationPrompt](datavalidationprompt.md)|Prompt when users select a cell.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|rule|[DataValidationRule](datavalidationrule.md)|Data Validation rule that contains different type of data validation criteria.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clears the data validation from the current range.|[ApiSet.InProgressFeatures.DataValidation](../requirement-sets/excel-api-requirement-sets.md)|
+|[clear()](#clear)|void|Clears the data validation from the current range.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
