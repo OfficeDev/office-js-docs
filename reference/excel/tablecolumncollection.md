@@ -21,11 +21,11 @@ None
 |:---------------|:--------|:----------|:----|
 |[add(index: number, values: (boolean or string or number)[][], name: string)](#addindex-number-values-boolean-or-string-or-number-name-string)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Gets the number of columns in the table.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getFirst()](#getfirst)|[TableColumn](tablecolumn.md)|Gets the first column in the table.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[TableColumn](tablecolumn.md)|Gets the first column in the table.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemOrNullObject(key: number or string)](#getitemornullobjectkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID. If the column does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getLast()](#getlast)|[TableColumn](tablecolumn.md)|Gets the last column in the table.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLast()](#getlast)|[TableColumn](tablecolumn.md)|Gets the last column in the table.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

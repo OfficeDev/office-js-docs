@@ -17,7 +17,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(type: string, group: string)](#getitemtype-string-group-string)|[ChartAxis](chartaxis.md)|Returns the specific axis identified by type and group.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(type: string, group: string)](#getitemtype-string-group-string)|[ChartAxis](chartaxis.md)|Returns the specific axis identified by type and group.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

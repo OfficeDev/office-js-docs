@@ -11,7 +11,7 @@ Represents a point of a series in a chart.
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|dataLabel|[ChartDataLabel](chartdatalabel.md)|Returns the data label of a chart point. Read-only.|[TBD](../requirement-sets/excel-api-requirement-sets.md)|
+|dataLabel|[ChartDataLabel](chartdatalabel.md)|Returns the data label of a chart point. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
