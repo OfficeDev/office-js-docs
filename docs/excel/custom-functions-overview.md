@@ -19,7 +19,7 @@ Custom functions are now available in preview. Follow these steps to try them:
 1.  Join the [Office Insider](https://products.office.com/en-us/office-insider) program to install the version of Excel 2016 that's required for custom functions on your computer.
 2.  Clone the [Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions) repo and follow the instructions in *README.md* to start the add-in in Excel.
 3.  Type `=CONTOSO.ADD42(1,2)` into any cell, and press **Enter** to run the custom function.
-4.  If you have questions, ask them on Stack Overflow with the [custom-functions-excel](https://stackoverflow.com/questions/tagged/custom-functions-excel) tag.
+4.  If you have questions, ask them on Stack Overflow with the [office-js](https://stackoverflow.com/questions/tagged/office-js) tag.
 
 See the Known Issues section at the end of this article, which includes current limitations of custom functions and will be updated over time.
 
