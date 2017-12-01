@@ -10,6 +10,8 @@ The name of a setting is a String, while the value can be a String, Number, Bool
 
 The `RoamingSettings` object is accessible via the [`roamingSettings`](Office.context.md#roamingsettings-roamingsettings) property in the `Office.context` namespace.
 
+> **Important:** The `RoamingSettings` object is initialized from the persisted storage only when the add-in is first loaded. For task panes, this means that it is only initialized when the task pane first opens. If the task pane navigates to another page or reloads the current page, the in-memory object is reset to its initial values, even if your add-in has persisted changes. The persisted changes will not be available until the task pane is closed and reopened.
+
 ##### Requirements
 
 |Requirement| Value|
@@ -80,7 +82,9 @@ Removes the specified setting.
 
 Saves the settings.
 
-Any settings previously saved by an add-in are loaded when it is initialized, so during the lifetime of the session you can just use the [`set`](RoamingSettings.md#set) and [`get`](RoamingSettings.md#get) methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the `saveAsync` method.
+Any settings previously saved by an add-in are loaded when it is initialized, so during the
+
+> **Important:** The  lifetime of the session you can just use the [`set`](RoamingSettings.md#set) and [`get`](RoamingSettings.md#get) methods to work with the in-memory copy of the settings property bag. When you want to persist the settings so that they are available the next time the add-in is used, use the `saveAsync` method.
 
 ##### Parameters:
 
