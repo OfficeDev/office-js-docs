@@ -1,6 +1,6 @@
-## Introduction to Excel 1.8 Event Features
+## Introduction to ExcelEvent Features
 
-This page describes the Excel Event APIs that are planned for the next release (requirement set 1.8). 
+This page describes the Excel Event APIs that are available as part of beta version. 
 
 _**Note**: The features listed are still in the design and review phase and are not yet available as part of the product. The final design is subject to change. When the feature is made available, the final specification will be published as part of the master repository._
 
