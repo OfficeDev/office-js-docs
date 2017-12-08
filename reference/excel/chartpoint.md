@@ -6,6 +6,11 @@ Represents a point of a series in a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|hasDataLabel|bool|Represents whether a data point has datalabel. Not applicable for surface charts.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|markerBackgroundColor|string|HTML color code representation of the marker background color of data point. E.g. #FF0000 represents Red.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|markerForegroundColor|string|HTML color code representation of the marker foreground color of data point. E.g. #FF0000 represents Red.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|markerSize|int|Represents marker size of data point.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|markerStyle|string|Represents marker style of a chart data point. Possible values are: Automatic, None, Square, Diamond, Triangle, X, Star, Dot, Dash, Circle, Plus, Picture.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |value|object|Returns the value of a chart point. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships

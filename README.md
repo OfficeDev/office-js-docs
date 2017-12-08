@@ -200,35 +200,52 @@ This section describes our early thoughts about events in the Excel JavaScript A
 
 _Details of the specific APIs are listed below. Please let us know what you think!_
 
-|Object| What is new| Description |Requirement set|
+|Object| What is new| Description|Feedback|
 |:----|:----|:----|:----|
+|[chart](reference/excel/chart.md)|_Property_ > chartType|Represents the type of the chart. Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc..|Beta|
 |[chart](reference/excel/chart.md)|_Property_ > id|The unique id of chart. Read-only.|Beta|
-|[chart](reference/excel/chart.md)|_Property_ > showAllFieldButtons|Returns or sets whether to display all field buttons on a PivotChart. Readwrite|Beta|
+|[chart](reference/excel/chart.md)|_Property_ > showAllFieldButtons|Represents whether to display all field buttons on a PivotChart.|Beta|
+|[chartAreaFormat](reference/excel/chartareaformat.md)|_Relationship_ > border|Represents the border format of chart area, which includes color, linestyle and weight. Read-only.|Beta|
 |[chartAxes](reference/excel/chartaxes.md)|_Method_ > [getItem(type: string, group: string)](reference/excel/chartaxes.md#getitemtype-string-group-string)|Returns the specific axis identified by type and group.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > axisBetweenCategories|Represents whether value axis crosses the category axis between categories.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > axisGroup|Represents the group for the specified axis. Read-only. Possible values are: Primary, Secondary.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > baseTimeUnit|Returns or sets the base unit for the specified category axis. Possible values are: Days, Months, Years.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > categoryType|Returns or sets the category axis type. Possible values are: Automatic, TextAxis, DateAxis.|Beta|
-|[chartAxis](reference/excel/chartaxis.md)|_Property_ > crosses|Represents the specified axis where the other axis crosses. Possible values are: Automatic, Maximum, Minimum, Custom.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > crossesAt|Represents the specified axis where the other axis crosses at. Read Only. Set to this property should use SetCrossesAt(double) method. Read-only.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > customDisplayUnit|Represents the custom axis display unit value. Read Only. To set this property, please use the SetCustomDisplayUnit(double) method. Read-only.|Beta|
-|[chartAxis](reference/excel/chartaxis.md)|_Property_ > displayUnit|Represents the axis display unit. Possible values are: None, Hundreds, Thousands, TenThousands, HundredThousands, Millions, TenMillions, HundredMillions, Billions, Trillions, Custom.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > displayUnit|Represents the axis display unit. Possible values are: None, Hundreds, Thousands, TenThousands, HundredThousands, Millions, TenMillions, HundredMillons, Billions, Trillions, Custom.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > height|Represents the height, in points, of the chart axis. Null if the axis's not visible. Read-only.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > left|Represents the distance, in points, from the left edge of the axis to the left of chart area. Null if the axis's not visible. Read-only.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > logBase|Represents the base of the logarithm when using logarithmic scales.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > majorTimeUnitScale|Returns or sets the major unit scale value for the category axis when the CategoryType property is set to TimeScale. Possible values are: Days, Months, Years.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > minorTimeUnitScale|Returns or sets the minor unit scale value for the category axis when the CategoryType property is set to TimeScale. Possible values are: Days, Months, Years.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > reversePlotOrder|Represents whether Microsoft Excel plots data points from last to first.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > scaleType|Represents the value axis scale type. Possible values are: Linear, Logarithmic.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > showDisplayUnitLabel|Represents whether the axis display unit label is visible.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > tickLabelSpacing|Represents the number of categories or series between tick-mark labels. Can be a value from 1 through 31999 or an empty string for automatic setting. The returned value is always a number.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > tickMarkSpacing|Represents the number of categories or series between tick marks.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > top|Represents the distance, in points, from the top edge of the axis to the top of chart area. Null if the axis's not visible. Read-only.|Beta|
-|[chartAxis](reference/excel/chartaxis.md)|_Property_ > type|Represents the axis type. Read-only. Possible values are: Invalid, Category, Value, Series.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > type|Represents the axis type. Read-only. Possible values are: Invalid, Category, Value, SeriesAxis.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > visible|A boolean value represents the visibility of the axis.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Property_ > width|Represents the width, in points, of the chart axis. Null if the axis's not visible. Read-only.|Beta|
-|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > baseTimeUnit|Returns or sets the base unit for the specified category axis.|Beta|
-|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > majorTimeUnitScale|Returns or sets the major unit scale value for the category axis when the CategoryType property is set to TimeScale.|Beta|
-|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > minorTimeUnitScale|Returns or sets the minor unit scale value for the category axis when the CategoryType property is set to TimeScale.|Beta|
-|[chartAxis](reference/excel/chartaxis.md)|_Method_ > [setCategoryNames(sourceData: object)](reference/excel/chartaxis.md#setcategorynamessourcedata-object)|Sets all the category names for the specified axis.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > crosses|Represents the specified axis where the other axis crosses.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > majorTickMark|Represents the type of major tick mark for the specified axis.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > minorTickMark|Represents the type of minor tick mark for the specified axis.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > tickLabelPosition|Represents the position of tick-mark labels on the specified axis.|Beta|
+|[chartAxis](reference/excel/chartaxis.md)|_Method_ > [setCategoryNames(sourceData: Range)](reference/excel/chartaxis.md#setcategorynamessourcedata-range)|Sets all the category names for the specified axis.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Method_ > [setCrossesAt(value: double)](reference/excel/chartaxis.md#setcrossesatvalue-double)|Set the specified axis where the other axis crosses at.|Beta|
 |[chartAxis](reference/excel/chartaxis.md)|_Method_ > [setCustomDisplayUnit(value: double)](reference/excel/chartaxis.md#setcustomdisplayunitvalue-double)|Sets the axis display unit to a custom value.|Beta|
+|[chartBorder](reference/excel/chartborder.md)|_Property_ > color|HTML color code representing the color of borders in the chart.|Beta|
+|[chartBorder](reference/excel/chartborder.md)|_Property_ > weight|Represents weight of the border, in points.|Beta|
+|[chartBorder](reference/excel/chartborder.md)|_Relationship_ > lineStyle|Represents the line style of the border.|Beta|
 |[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > position|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|Beta|
-|[chartFormatString](reference/excel/chartformatstring.md)|_Relationship_ > font|Represents the font attributes, such as font name, font size, color, etc. of chart characters object. Read-only.|Beta|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > separator|String representing the separator used for the data label on a chart.|Beta|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showBubbleSize|Boolean value representing if the data label bubble size is visible or not.|Beta|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showCategoryName|Boolean value representing if the data label category name is visible or not.|Beta|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showLegendKey|Boolean value representing if the data label legend key is visible or not.|Beta|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showPercentage|Boolean value representing if the data label percentage is visible or not.|Beta|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showSeriesName|Boolean value representing if the data label series name is visible or not.|Beta|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showValue|Boolean value representing if the data label value is visible or not.|Beta|
 |[chartLegend](reference/excel/chartlegend.md)|_Property_ > height|Represents the height of the legend on the chart.|Beta|
 |[chartLegend](reference/excel/chartlegend.md)|_Property_ > left|Represents the left of a chart legend.|Beta|
 |[chartLegend](reference/excel/chartlegend.md)|_Property_ > showShadow|Represents if the legend has shadow on the chart.|Beta|
@@ -239,16 +256,26 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[chartLegendEntryCollection](reference/excel/chartlegendentrycollection.md)|_Property_ > items|A collection of chartLegendEntry objects. Read-only.|Beta|
 |[chartLegendEntryCollection](reference/excel/chartlegendentrycollection.md)|_Method_ > [getCount()](reference/excel/chartlegendentrycollection.md#getcount)|Returns the number of legendEntry in the collection.|Beta|
 |[chartLegendEntryCollection](reference/excel/chartlegendentrycollection.md)|_Method_ > [getItemAt(index: number)](reference/excel/chartlegendentrycollection.md#getitematindex-number)|Returns a legendEntry at the given index.|Beta|
+|[chartLineFormat](reference/excel/chartlineformat.md)|_Property_ > weight|Represents weight of the line, in points.|Beta|
+|[chartLineFormat](reference/excel/chartlineformat.md)|_Relationship_ > lineStyle|Represents the line style.|Beta|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > hasDataLabel|Represents whether a data point has datalabel. Not applicable for surface charts.|Beta|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > markerBackgroundColor|HTML color code representation of the marker background color of data point. E.g. #FF0000 represents Red.|Beta|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > markerForegroundColor|HTML color code representation of the marker foreground color of data point. E.g. #FF0000 represents Red.|Beta|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > markerSize|Represents marker size of data point.|Beta|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > markerStyle|Represents marker style of a chart data point. Possible values are: Automatic, None, Square, Diamond, Triangle, X, Star, Dot, Dash, Circle, Plus, Picture.|Beta|
 |[chartPoint](reference/excel/chartpoint.md)|_Relationship_ > dataLabel|Returns the data label of a chart point. Read-only.|Beta|
+|[chartPointFormat](reference/excel/chartpointformat.md)|_Relationship_ > border|Represents the border format of a chart data point, which includes color, style and weight information. Read-only.|Beta|
 |[chartPointsCollection](reference/excel/chartpointscollection.md)|_Method_ > [getFirst()](reference/excel/chartpointscollection.md#getfirst)|Gets the first point in the series.|Beta|
 |[chartPointsCollection](reference/excel/chartpointscollection.md)|_Method_ > [getLast()](reference/excel/chartpointscollection.md#getlast)|Gets the last point in the series.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > chartType|Represents the chart type of a series. Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc..|Beta|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > doughnutHoleSize|Represents the doughnut hole size of a chart series.  Only valid on doughnut and doughnutExploded charts.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > filtered|Boolean value representing if the series is filtered or not. Not applicable for surface charts.|Beta|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > gapWidth|Represents the gap width of a chart series.  Only valid on bar and column charts, as well as|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > hasDataLabels|Boolean value representing if the series has data labels or not.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > markerBackgroundColor|Represents markers background color of a chart series.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > markerForegroundColor|Represents markers foreground color of a chart series.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > markerSize|Represents marker size of a chart series.|Beta|
-|[chartSeries](reference/excel/chartseries.md)|_Property_ > markerStyle|Represents marker style of a chart series. Possible values are: Invalid, Automatic, None, Square, Diamond, Triangle, X, Star, Dot, Dash, Circle, Plus, Picture.|Beta|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > markerStyle|Represents marker style of a chart series. Possible values are: Automatic, None, Square, Diamond, Triangle, X, Star, Dot, Dash, Circle, Plus, Picture.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > plotOrder|Represents the plot order of a chart series within the chart group.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > showShadow|Boolean value representing if the series has shadow or not.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Property_ > smooth|Boolean value representing if the series is smooth or not. Only for line and scatter charts.|Beta|
@@ -258,26 +285,26 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[chartSeries](reference/excel/chartseries.md)|_Method_ > [setValues(sourceData: Range)](reference/excel/chartseries.md#setvaluessourcedata-range)|Set values for a chart series. For scatter chart, it means Y axis values.|Beta|
 |[chartSeries](reference/excel/chartseries.md)|_Method_ > [setXAxisValues(sourceData: Range)](reference/excel/chartseries.md#setxaxisvaluessourcedata-range)|Set values of X axis for a chart series. Only works for scatter charts.|Beta|
 |[chartSeriesCollection](reference/excel/chartseriescollection.md)|_Method_ > [add(name: string, index: number)](reference/excel/chartseriescollection.md#addname-string-index-number)|Add a new series to the collection.|Beta|
-|[chartSeriesCollection](reference/excel/chartseriescollection.md)|_Method_ > [getFirst()](reference/excel/chartseriescollection.md#getfirst)|Gets the first series in the collection.|Beta|
-|[chartSeriesCollection](reference/excel/chartseriescollection.md)|_Method_ > [getLast()](reference/excel/chartseriescollection.md#getlast)|Gets the last series in the collection.|Beta|
 |[chartTitle](reference/excel/charttitle.md)|_Property_ > height|Returns the height, in points, of the chart title. Read-only. Null if chart title's not visible. Read-only.|Beta|
-|[chartTitle](reference/excel/charttitle.md)|_Property_ > horizontalAlignment|Represents the horizontal alignment for chart title. Possible values are: Center, Left, Justify, Distributed, Right.|Beta|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > horizontalAlignment|Represents the horizontal alignment for chart title. Possible values are: Center, Left, Right, Justify, Distributed.|Beta|
 |[chartTitle](reference/excel/charttitle.md)|_Property_ > left|Represents the distance, in points, from the left edge of chart title to the left edge of chart area. Null if chart title's not visible.|Beta|
-|[chartTitle](reference/excel/charttitle.md)|_Property_ > position|Represents the position of chart title. Possible values are: Top, Automatic, Bottom, Right, Left.|Beta|
 |[chartTitle](reference/excel/charttitle.md)|_Property_ > showShadow|Represents a boolean value that determines if the chart title has a shadow.|Beta|
 |[chartTitle](reference/excel/charttitle.md)|_Property_ > textOrientation|Represents the text orientation of chart title. The value should be an integer either from -90 to 90, or 180 for vertically-oriented text.|Beta|
 |[chartTitle](reference/excel/charttitle.md)|_Property_ > top|Represents the distance, in points, from the top edge of chart title to the top of chart area. Null if chart title's not visible.|Beta|
 |[chartTitle](reference/excel/charttitle.md)|_Property_ > verticalAlignment|Represents the vertical alignment of chart title. Possible values are: Center, Bottom, Top, Justify, Distributed.|Beta|
 |[chartTitle](reference/excel/charttitle.md)|_Property_ > width|Returns the width, in points, of the chart title. Read-only. Null if chart title's not visible. Read-only.|Beta|
-|[chartTitle](reference/excel/charttitle.md)|_Method_ > [getSubstring(start: number, length: number)](reference/excel/charttitle.md#getsubstringstart-number-length-number)|Get the substring of a chart title. Line break '\n' also counts one charater.|Beta|
+|[chartTitle](reference/excel/charttitle.md)|_Relationship_ > position|Represents the position of chart title.|Beta|
 |[chartTitle](reference/excel/charttitle.md)|_Method_ > [setFormula(formula: string)](reference/excel/charttitle.md#setformulaformula-string)|Sets a string value that represents the formula of chart title using A1-style notation.|Beta|
+|[chartTitleFormat](reference/excel/charttitleformat.md)|_Relationship_ > border|Represents the border format of chart title, which includes color, linestyle and weight. Read-only.|Beta|
 |[chartTrendline](reference/excel/charttrendline.md)|_Property_ > backward|Represents the number of periods that the trendline extends backward.|Beta|
 |[chartTrendline](reference/excel/charttrendline.md)|_Property_ > displayEquation|True if the equation for the trendline is displayed on the chart.|Beta|
 |[chartTrendline](reference/excel/charttrendline.md)|_Property_ > displayRSquared|True if the R-squared for the trendline is displayed on the chart.|Beta|
 |[chartTrendline](reference/excel/charttrendline.md)|_Property_ > forward|Represents the number of periods that the trendline extends forward.|Beta|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > intercept|Represents the intercept value of the trendline. Can be set to a numeric value or an empty string (for automatic values). The returned value is always a number.|Beta|
 |[chartTrendline](reference/excel/charttrendline.md)|_Property_ > movingAveragePeriod|Represents the period of a chart trendline, only for trendline with MovingAverage type.|Beta|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > name|Represents the name of the trendline. Can be set to a string value, or can be set to null value represents automatic values. The returned value is always a string|Beta|
 |[chartTrendline](reference/excel/charttrendline.md)|_Property_ > polynomialOrder|Represents the order of a chart trendline, only for trendline with Polynomial type.|Beta|
-|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > type|Represents the type of a chart trendline. Possible values are: Linear, Exponential, Logarithmic, MovingAverage, Polynomial, Power.|Beta|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > type|Represents the type of a chart trendline. Possible values are: Linear, Expontential, Logarithmic, MovingAvg, Polynomial, Power.|Beta|
 |[chartTrendline](reference/excel/charttrendline.md)|_Relationship_ > format|Represents the formatting of a chart trendline. Read-only.|Beta|
 |[chartTrendline](reference/excel/charttrendline.md)|_Method_ > [delete()](reference/excel/charttrendline.md#delete)|Delete the trendline object.|Beta|
 |[chartTrendlineCollection](reference/excel/charttrendlinecollection.md)|_Property_ > items|A collection of chartTrendline objects. Read-only.|Beta|
