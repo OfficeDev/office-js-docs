@@ -37,9 +37,3 @@ The Word JavaScript API 1.4 update contains important additions, including:
 
 ## Host, platform information and diagnostic information 
 See planned [additions to the Office.Context object](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec). These updates provide add-in runtime environment information and diagnostics information. 
-
-## Single sign-on capability 
-Explore initial design for enabling single sign-on in Office Add-ins.
-
-**See the [Single Sign On spec](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec) to learn more and provide your feedback.**
-

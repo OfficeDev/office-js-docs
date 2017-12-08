@@ -7,7 +7,7 @@ Gets the id of the control that triggered calling this function.
 
 |||
 |:-----|:-----|
-|**Hosts:**Outlook|**Add-in type:** Outlook|
+|**Hosts:** Outlook|**Add-in type:** Outlook|
 |**Available in [requirement sets](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Mailbox|
 |**Last changed in Mailbox**|1.3|
 |**Applicable Outlook modes**|Read and Compose|
