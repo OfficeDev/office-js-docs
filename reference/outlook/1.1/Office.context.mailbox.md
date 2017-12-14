@@ -307,7 +307,11 @@ function cb(asyncResult) {
 
 Makes an asynchronous request to an Exchange Web Services (EWS) service on the Exchange server that hosts the user’s mailbox.
 
-> **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
+> **Note:** This method is not supported in the following scenarios.
+> - In Outlook for iOS or Outlook for Android
+> - When the add-in is loaded in a Gmail mailbox
+> 
+> In these cases, add-ins should [use REST APIs](https://docs.microsoft.com/outlook/add-ins/use-rest-api) to access the user's mailbox instead.
 
 The `makeEwsRequestAsync` method sends an EWS request on behalf of the add-in to Exchange.
 
