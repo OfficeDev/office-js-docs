@@ -42,7 +42,7 @@ Gets the account type of the user associated with the mailbox. The possible valu
 ##### Example
 
 ```
-console.log(Office.context.mailbox.userProfile.accontType);
+console.log(Office.context.mailbox.userProfile.accountType);
 ```
 
 ####  displayName :String
