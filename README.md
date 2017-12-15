@@ -1,6 +1,10 @@
 # Office JavaScript APIs
-Welcome to the Office JavaScript API documentation. Here you can find everything you need to know about Office add-ins.  For the best experience, we recommend you view this content on the [Office Developer Center](https://dev.office.com/docs/add-ins/overview/office-add-ins).
 
+Welcome to the Office JavaScript API Reference documentation. In this repository, you can find the documentation source files for Office JavaScript API Reference. For the best experience, we recommend you view this content on [Office Developer Center](https://dev.office.com/reference/add-ins/javascript-api-for-office).
+
+Additionally, the branches within this repository contain [Open Specifications](https://dev.office.com/reference/add-ins/openspec) for host-specific JavaScript APIs such as the Excel JavaScript API and Word JavaScript API. 
+
+> **Note**: You can find the documentation source files for Office JavaScript API concepts, quickstarts, tutorials, and how-to guides in the [office-js-docs-pr](https://github.com/OfficeDev/office-js-docs-pr) repository.
 
 ## Give us your feedback
 
