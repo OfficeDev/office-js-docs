@@ -6,16 +6,8 @@ Provides information about the worksheet that raised the Added event.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|source|string|Gets the source of the event. Possible values are: Local, Remote.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|type|string|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|worksheetId|string|Gets the id of the worksheet that is added to the workbook.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|Type|string|Gets the type of the event. Possible values include: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|Source|string|Get the source of the event. Possible values include: Local, Remote.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|WorksheetId|string|Gets the id of the worksheet that is added to the workbook.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
-
-## Relationships
-None
-
-
-## Methods
-None
-
