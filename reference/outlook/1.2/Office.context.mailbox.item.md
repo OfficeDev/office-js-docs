@@ -76,7 +76,7 @@ if (_Item.attachments.length > 0) {
 
 ####  bcc :[Recipients](Recipients.md)
 
-Gets or sets the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
+Gets an object that provides methods to get or update the recipients on the Bcc (blind carbon copy) line of a message. Compose mode only.
 
 ##### Type:
 
@@ -94,6 +94,7 @@ Gets or sets the recipients on the Bcc (blind carbon copy) line of a message. Co
 
 ```JavaScript
 Office.context.mailbox.item.bcc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
+Office.context.mailbox.item.bcc.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.bcc.getAsync(callback);
 
 function callback(asyncResult) {
@@ -118,7 +119,7 @@ Gets an object that provides methods for manipulating the body of an item.
 |Applicable Outlook mode| Compose or read|
 ####  cc :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
-Gets or sets the Cc (carbon copy) recipients of a message.
+Provides access to the Cc (carbon copy) recipients of a message. The type of object and level of access depends on the mode of the current item.
 
 ##### Read mode
 
@@ -126,7 +127,7 @@ The `cc` property returns an array that contains an `EmailAddressDetails` object
 
 ##### Compose mode
 
-The `cc` property returns a `Recipients` object that provides methods for manipulating the recipients on the **Cc** line of the message.
+The `cc` property returns a `Recipients` object that provides methods to get or update the recipients on the **Cc** line of the message.
 
 ##### Type:
 
@@ -144,6 +145,7 @@ The `cc` property returns a `Recipients` object that provides methods for manipu
 
 ```JavaScript
 Office.context.mailbox.item.cc.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
+Office.context.mailbox.item.cc.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.cc.getAsync(callback);
 
 function callback(asyncResult) {
@@ -459,7 +461,7 @@ var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 
 ####  optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
-Gets or sets a list of email addresses for optional attendees.
+Provides access to the optional attendees of an event. The type of object and level of access depends on the mode of the current item.
 
 ##### Read mode
 
@@ -467,7 +469,7 @@ The `optionalAttendees` property returns an array that contains an `EmailAddress
 
 ##### Compose mode
 
-The `optionalAttendees` property returns a `Recipients` object that provides methods to get and set the optional attendees for a meeting.
+The `optionalAttendees` property returns a `Recipients` object that provides methods to get or update the optional attendees for a meeting.
 
 ##### Type:
 
@@ -485,6 +487,7 @@ The `optionalAttendees` property returns a `Recipients` object that provides met
 
 ```JavaScript
 Office.context.mailbox.item.optionalAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
+Office.context.mailbox.item.optionalAttendees.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.optionalAttendees.getAsync(callback);
 
 function callback(asyncResult) {
@@ -517,7 +520,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 ####  requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
-Gets or sets a list of email addresses for required attendees.
+Provides access to the required attendees of an event. The type of object and level of access depends on the mode of the current item.
 
 ##### Read mode
 
@@ -525,7 +528,7 @@ The `requiredAttendees` property returns an array that contains an `EmailAddress
 
 ##### Compose mode
 
-The `requiredAttendees` property returns a `Recipients` object that provides methods to get and set the required attendees for a meeting.
+The `requiredAttendees` property returns a `Recipients` object that provides methods to get or update the required attendees for a meeting.
 
 ##### Type:
 
@@ -543,6 +546,7 @@ The `requiredAttendees` property returns a `Recipients` object that provides met
 
 ```JavaScript
 Office.context.mailbox.item.requiredAttendees.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
+Office.context.mailbox.item.requiredAttendees.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.requiredAttendees.getAsync(callback);
 
 function callback(asyncResult) {
@@ -680,9 +684,10 @@ function callback(asyncResult) {
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
+
 ####  to :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
-Gets or sets the recipients of an email message.
+Provides access to the recipients on the **To** line of a message. The type of object and level of access depends on the mode of the current item.
 
 ##### Read mode
 
@@ -690,7 +695,7 @@ The `to` property returns an array that contains an `EmailAddressDetails` object
 
 ##### Compose mode
 
-The `to` property returns a `Recipients` object that provides methods for manipulating the recipients on the **To** line of the message.
+The `to` property returns a `Recipients` object that provides methods to get or update the recipients on the **To** line of the message.
 
 ##### Type:
 
@@ -708,6 +713,7 @@ The `to` property returns a `Recipients` object that provides methods for manipu
 
 ```JavaScript
 Office.context.mailbox.item.to.setAsync( ['alice@contoso.com', 'bob@contoso.com'] );
+Office.context.mailbox.item.to.addAsync( ['jason@contoso.com'] );
 Office.context.mailbox.item.to.getAsync(callback);
 
 function callback(asyncResult) {

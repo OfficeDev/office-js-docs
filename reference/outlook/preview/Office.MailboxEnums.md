@@ -29,6 +29,7 @@ AttachmentType
 |---|---|---|---|
 |`File`| String|`file`|The attachment is a file.|
 |`Item`| String|`item`|The attachment is an Exchange item.|
+|`Cloud`| String|`cloud`|The attachment is stored in a cloud location, such as OneDrive. The `id` property of the attachment contains a URL to the file.|
 
 ##### Requirements
 
