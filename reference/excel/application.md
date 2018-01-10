@@ -19,7 +19,7 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[suspendApiCalculationUntilNextSync()](#suspendapicalculationuntilnextsync)|void|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[suspendApiCalculationUntilNextSync()](#suspendapicalculationuntilnextsync)|void|NOTE: Though this API is part of 1.6 requirement set, is only available in Win32 and Online. Mac and iOS support is coming soon. Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
