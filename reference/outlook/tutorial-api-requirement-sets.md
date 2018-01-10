@@ -42,7 +42,7 @@ The following clients support Outlook add-ins.
 
 | Client | Supported API requirement sets |
 | --- | --- |
-| Outlook 2016 (Click-to-Run) for Windows | 1.1, 1.2, 1.3, 1.4, 1.5 |
+| Outlook 2016 (Click-to-Run) for Windows | 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 |
 | Outlook 2016 (MSI) for Windows | 1.1, 1.2, 1.3, 1.4 |
 | Outlook 2016 for Mac | 1.1, 1.2, 1.3, 1.4, 1.5 |
 | Outlook 2013 for Windows | 1.1, 1.2, 1.3 |

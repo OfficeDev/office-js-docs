@@ -24,6 +24,6 @@ Requirement set 1.1 includes all of the features of Requirement set 1.0. It adde
 
 ## Additional resources
 
-- [Outlook add-ins](../../../docs/outlook/outlook-add-ins.md)
-- [Outlook add-in code samples](https://developer.microsoft.com/en-us/outlook/code-samples)
-- [Get started](https://docs.microsoft.com/en-us/outlook/add-ins/addin-tutorial)
+- [Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)
+- [Outlook add-in code samples](https://developer.microsoft.com/en-us/outlook/gallery/?filterBy=Outlook,Samples,Office add-ins)
+- [Get started](https://docs.microsoft.com/en-us/outlook/add-ins/quick-start)
