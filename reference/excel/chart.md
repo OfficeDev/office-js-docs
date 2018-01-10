@@ -6,11 +6,12 @@ Represents a chart object in a workbook.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|chartType|string|Represents the type of the chart. Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc..|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |height|double|Represents the height, in points, of the chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |id|string|The unique id of chart. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |left|double|The distance, in points, from the left side of the chart to the worksheet origin.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Represents the name of a chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|showAllFieldButtons|bool|Returns or sets whether to display all field buttons on a PivotChart. Readwrite|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|showAllFieldButtons|bool|Represents whether to display all field buttons on a PivotChart.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |top|double|Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |width|double|Represents the width, in points, of the chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -33,8 +34,8 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|Deletes the chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Resets the source data for the chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[setData(sourceData: object, seriesBy: string)](#setdatasourcedata-object-seriesby-string)|void|Resets the source data for the chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[setPosition(startCell: object, endCell: object)](#setpositionstartcell-object-endcell-object)|void|Positions the chart relative to cells on the worksheet.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -103,7 +104,7 @@ Excel.run(function (ctx) {
 
 
 
-### setData(sourceData: Range, seriesBy: string)
+### setData(sourceData: object, seriesBy: string)
 Resets the source data for the chart.
 
 #### Syntax
@@ -114,8 +115,8 @@ chartObject.setData(sourceData, seriesBy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|sourceData|Range|The Range object corresponding to the source data.|
-|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Scalar, Matrix|
+|sourceData|object|The Range object corresponding to the source data.|
+|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
 
 #### Returns
 void
@@ -139,7 +140,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### setPosition(startCell: Range or string, endCell: Range or string)
+### setPosition(startCell: object, endCell: object)
 Positions the chart relative to cells on the worksheet.
 
 #### Syntax
@@ -150,8 +151,8 @@ chartObject.setPosition(startCell, endCell);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|startCell|Range or string|The start cell. This is where the chart will be moved to. The start cell is the top-left or top-right cell, depending on the user's right-to-left display settings.|
-|endCell|Range or string|Optional. (Optional) The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.|
+|startCell|object|The start cell. This is where the chart will be moved to. The start cell is the top-left or top-right cell, depending on the user's right-to-left display settings.|
+|endCell|object|Optional. (Optional) The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.|
 
 #### Returns
 void

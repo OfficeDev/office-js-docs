@@ -33,7 +33,7 @@ chartAxesObject.getItem(type, group);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|type|string|Specifies the axis type.  Possible values are: Invalid, Category, Value, Series|
+|type|string|Specifies the axis type.  Possible values are: Invalid, Category, Value, SeriesAxis|
 |group|string|Optional. Specifies the axis group.  Possible values are: Primary, Secondary|
 
 #### Returns
