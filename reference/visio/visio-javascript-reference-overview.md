@@ -131,6 +131,8 @@ function initEmbeddedFrame() {
 	// APIs are enabled for EmbedView action only.   
 	url = url.replace("action=view","action=embedview");
 	url = url.replace("action=interactivepreview","action=embedview");
+	url = url.replace("action=default","action=embedview");
+	url = url.replace("action=edit","action=embedview");
   
        var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
        return session.init().then(function () {
