@@ -19,7 +19,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(address: object, hasHeaders: bool)](#addaddress-object-hasheaders-bool)|[Table](table.md)|Create a new table. The range object or source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md) (the first parameter must be a string)<br/>[1.3](../requirement-sets/excel-api-requirement-sets.md) (the first parameter can be a Range object or a string) |
+|[add(address: object, hasHeaders: bool)](#addaddress-object-hasheaders-bool)|[Table](table.md)|Create a new table. The range object or source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md) (the first parameter must be a string)<br/><br/>[1.3](../requirement-sets/excel-api-requirement-sets.md) (the first parameter can be a Range object or a string) |
 |[getCount()](#getcount)|int|Gets the number of tables in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
