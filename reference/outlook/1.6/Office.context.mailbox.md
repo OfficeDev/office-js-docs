@@ -410,7 +410,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| preview |
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.6 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 

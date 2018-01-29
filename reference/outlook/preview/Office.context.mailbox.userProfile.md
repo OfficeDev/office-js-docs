@@ -35,7 +35,7 @@ Gets the account type of the user associated with the mailbox. The possible valu
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| preview|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.6 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 

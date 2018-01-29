@@ -1461,7 +1461,7 @@ Gets the entities found in a highlighted match a user has selected. Highlighted 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| Preview |
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.6 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 
@@ -1513,7 +1513,7 @@ If you specify an `ItemHasRegularExpressionMatch` rule on the body property of a
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| Preview |
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.6 |
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Read|
 
