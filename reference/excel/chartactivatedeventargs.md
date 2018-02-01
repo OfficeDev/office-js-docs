@@ -1,4 +1,4 @@
-# ChartActivatedEvent Object (JavaScript API for Excel)
+# ChartActivatedEventArgs Object (JavaScript API for Excel)
 
 Provides information about the worksheet that raised the Added event.
 

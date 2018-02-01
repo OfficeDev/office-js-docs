@@ -1,4 +1,4 @@
-# WorksheetDeactivatedEvent Object (JavaScript API for Excel)
+# WorksheetDeactivatedEventArgs Object (JavaScript API for Excel)
 
 Provides information about the worksheet that raised the Deactivated event.
 

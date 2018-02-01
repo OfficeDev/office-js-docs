@@ -1,4 +1,4 @@
-# WorsheetCalculatedEvent Object (JavaScript API for Excel)
+# WorsheetCalculatedEventArgs Object (JavaScript API for Excel)
 
 Provides information about the worksheet that raised the Added event.
 

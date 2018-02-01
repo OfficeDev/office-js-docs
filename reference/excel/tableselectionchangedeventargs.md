@@ -1,4 +1,4 @@
-# TableSelectionChangedEvent Object (JavaScript API for Excel)
+# TableSelectionChangedEventArgs Object (JavaScript API for Excel)
 
 Provides information about the table that raised the SelectionChanged event.
 
@@ -6,7 +6,7 @@ Provides information about the table that raised the SelectionChanged event.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|type|string|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Gets the type of the event. Possible values are: WorksheetChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableChanged, TableSelectionChanged, WorksheetDeleted.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |IsInsideTable|string|Indicates if the selection is inside a table, address will be useless if IsInsideTable is false.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheetId|string|Gets the id of the worksheet in which the selection changed.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |tableId|string|Gets the id of the table in which the selection changed.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|

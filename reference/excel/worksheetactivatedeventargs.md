@@ -1,4 +1,4 @@
-# WorksheetActivatedEvent Object (JavaScript API for Excel)
+# WorksheetActivatedEventArgs Object (JavaScript API for Excel)
 
 Provides information about the worksheet that raised the Activated event.
 

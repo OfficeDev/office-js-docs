@@ -1,4 +1,4 @@
-WorksheetDataChangedEvent,
+WorksheetChangedEvent,
 WorksheetActivatedEvent,
 WorksheetDeactivatedEvent,
 WorksheetAddedEvent,
@@ -12,4 +12,4 @@ ChartDeactivatedEvent,
 ChartDeletedEvent,
 
 TableSelectionChangedEvent,
-TableDataChangedEvent,
+TableChangedEvent,
