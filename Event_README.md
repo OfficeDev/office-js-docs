@@ -59,12 +59,12 @@ Excel.run(function (ctx) {
     }
 });
 
-function onWorksheetDataChanged(event) {
-    return Excel.run(event, function (context) {
-        var worksheet = event.worksheet;
-        var range = event.range;
-        var source = event.source;
-        var changeType = event.changeType;
+function onWorksheetDataChanged(eventargs) {
+    return Excel.run(eventargs, function (context) {
+        var worksheet = eventargs.worksheet;
+        var range = eventargs.range;
+        var source = eventargs.source;
+        var changeType = eventargs.changeType;
 
         worksheet.load("name");
         range.load("address, cellCount");
