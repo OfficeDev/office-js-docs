@@ -11,7 +11,3 @@ Provides information about the worksheet that raised the DataChanged event.
 |Source|string|Gets the source of the event. Possible values are: Local, Remote.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |WorksheetId|string|Gets the id of the worksheet in which the data changed.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 |Address|string|Gets the range address that represents the changed area of a specific worksheet.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-
-_See property access [examples.](#property-access-examples)_
-
-

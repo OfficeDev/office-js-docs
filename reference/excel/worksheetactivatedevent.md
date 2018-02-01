@@ -10,4 +10,3 @@ Provides information about the worksheet that raised the Activated event.
 |Type|string|Gets the type of the event. Possible values include: Local, Remote.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 
-_See property access [examples.](#property-access-examples)_
