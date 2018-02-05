@@ -34,11 +34,11 @@ shapeViewObject.addOverlay(OverlayType, Content, HorizontalAlignment, VerticalAl
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
-|OverlayType|OverlayType|An Overlay Type -Text, Image.|
+|:---------------|:--------|:----------|
+|OverlayType|OverlayType| 1 - Text Overlay, 2 - Image Overlay|
 |Content|string|Content of Overlay.|
-|HorizontalAlignment|HorizontalAlignment|Horizontal Alignment of Overlay - Left, Center, Right|
-|VerticalAlignment|VerticalAlignment|Vertical Alignment of Overlay - Top, Middle, Bottom|
+|HorizontalAlignment|HorizontalAlignment| 0 - Left of the shape, 1 - Center of the shape, 2 - Right of the shape|
+|VerticalAlignment|VerticalAlignment| 0 - Top of the shape, 1 - Middle of the shape, 2 - Bottom of the shape|
 |Width|number|Overlay Width.|
 |Height|number|Overlay Height.|
 
@@ -55,7 +55,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
@@ -71,7 +71,7 @@ shapeViewObject.removeOverlay(OverlayId);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |OverlayId|number|An Overlay Id. Removes the specific overlay id from the shape.|
 
 #### Returns
