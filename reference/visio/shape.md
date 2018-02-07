@@ -10,7 +10,7 @@ Represents the Shape class.
 |:---------------|:--------|:----------|
 |id|int|Shape's Identifier. Read-only.|
 |name|string|Shape's name. Read-only.|
-|select|bool|Returns true, if shape is selected. User can set true to select the shape explicitly.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-select)|
+|select|bool|Returns true, if shape is selected. User can set true to select the shape explicitly.|
 |text|string|Shape's Text. Read-only.|
 
 _See property access [examples.](#property-access-examples)_

@@ -781,7 +781,7 @@ rangeObject.search(searchText, searchOptions);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |searchText|string|Required. The search text.|
-|searchOptions|ParamTypeStrings.SearchOptions|Optional. Optional. Options for the search.|
+|searchOptions|ParamTypeStrings.SearchOptions|Optional. Options for the search.|
 
 #### Returns
 [RangeCollection](rangecollection.md)
@@ -798,7 +798,7 @@ rangeObject.select(selectionMode);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|selectionMode|string|Optional. Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
+|selectionMode|string|Optional. The selection mode can be 'Select', 'Start' or 'End'. 'Select' is the default.  Possible values are: Select, Start, End|
 
 #### Returns
 void
@@ -845,9 +845,9 @@ rangeObject.split(delimiters, multiParagraphs, trimDelimiters, trimSpacing);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |delimiters|string[]|Required. The delimiters as an array of strings.|
-|multiParagraphs|bool|Optional. Optional. Indicates whether a returned child range can cover multiple paragraphs. Default is false which indicates that the paragraph boundaries are also used as delimiters.|
-|trimDelimiters|bool|Optional. Optional. Indicates whether to trim delimiters from the ranges in the range collection. Default is false which indicates that the delimiters are included in the ranges returned in the range collection.|
-|trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
+|multiParagraphs|bool|Optional. Indicates whether a returned child range can cover multiple paragraphs. Default is false which indicates that the paragraph boundaries are also used as delimiters.|
+|trimDelimiters|bool|Optional. Indicates whether to trim delimiters from the ranges in the range collection. Default is false which indicates that the delimiters are included in the ranges returned in the range collection.|
+|trimSpacing|bool|Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
 
 #### Returns
 [RangeCollection](rangecollection.md)
