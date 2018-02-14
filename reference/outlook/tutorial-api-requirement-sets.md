@@ -9,7 +9,7 @@ For example, the following manifest snippet indicates a minimum requirement set 
 ```xml
 <Requirements>
   <Sets>
-    <Set Name="MailBox" MinVersion="1.1" />
+    <Set Name="Mailbox" MinVersion="1.1" />
   </Sets>
 </Requirements>
 ```
