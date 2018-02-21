@@ -1,4 +1,4 @@
-# ChartAddedEvent Object (JavaScript API for Excel)
+# ChartAddedEventArgs Object (JavaScript API for Excel)
 
 Provides information about the worksheet that raised the Added event.
 
@@ -11,4 +11,3 @@ Provides information about the worksheet that raised the Added event.
 |WorksheetId|string|Gets the id of the chart that is added to the worksheet.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |ChartId|string|Gets the id of the chart that is added to the worksheet.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
-_See property access [examples.](#property-access-examples)_

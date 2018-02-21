@@ -1,4 +1,4 @@
-# WorksheetDeactivatedEvent Object (JavaScript API for Excel)
+# WorksheetDeactivatedEventArgs Object (JavaScript API for Excel)
 
 Provides information about the worksheet that raised the Deactivated event.
 
@@ -10,4 +10,3 @@ Provides information about the worksheet that raised the Deactivated event.
 |Type|string|Gets the type of the event. Possible values include: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged
 .|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
-_See property access [examples.](#property-access-examples)_
