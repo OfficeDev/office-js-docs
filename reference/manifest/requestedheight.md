@@ -1,8 +1,8 @@
 
 # RequestedHeight element
-Specifies the initial height of a content add-in in pixels, which can be between 32 and 1000.
+Specifies the initial height (in pixels) of a content add-in or mail add-in. 
 
- **Add-in type:** Content
+**Add-in type:** Content, Mail
 
 
 ## Syntax:
@@ -15,6 +15,6 @@ Specifies the initial height of a content add-in in pixels, which can be between
 
 ## Contained in:
 
-- [DefaultSettings](defaultsettings.md) (Content add-ins)
-- [DesktopSettings](desktopsettings.md) and [TabletSettings](../../reference/manifest/tabletsettings.md) (Mail add-ins)
-- [ExtensionPoint](extensionpoint.md) (Contextual mail add-ins)
+- [DefaultSettings](defaultsettings.md) (Content add-ins) with a value that can be between 32 and 1000
+- [DesktopSettings](desktopsettings.md) and [TabletSettings](../../reference/manifest/tabletsettings.md) (Mail add-ins) with a value that can be between 32 and 450
+- [ExtensionPoint](extensionpoint.md) (Contextual mail add-ins) with a value that can be between 140 and 450 for the **DetectedEntity** extension point and between 32 and 450 for the **CustomPane** extension point

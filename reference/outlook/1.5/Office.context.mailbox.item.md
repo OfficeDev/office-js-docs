@@ -35,7 +35,6 @@ The `item` namespace is used to access the currently selected message, meeting r
 | [optionalAttendees](#optionalattendees-arrayemailaddressdetailsrecipients) | Member |
 | [organizer](#organizer-emailaddressdetails) | Member |
 | [requiredAttendees](#requiredattendees-arrayemailaddressdetailsrecipients) | Member |
-| [resources](#resources-emailaddressdetails) | Member |
 | [sender](#sender-emailaddressdetails) | Member |
 | [start](#start-datetime) | Member |
 | [subject](#subject-stringsubject) | Member |
@@ -612,23 +611,6 @@ function callback(asyncResult) {
 }
 ```
 
-#### resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
-
-Gets the resources required for an appointment. Read mode only.
-
-> **Note:** This member is not supported in Outlook for iOS or Outlook for Android.
-
-##### Type:
-
-*   [EmailAddressDetails](simple-types.md#emailaddressdetails)
-
-##### Requirements
-
-|Requirement| Value|
-|---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
 #### sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Gets the email address of the sender of an email message. Read mode only.
@@ -1260,7 +1242,7 @@ Returns well-known entities in the selected item that pass the named filter defi
 
 > **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
-The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](https://msdn.microsoft.com/en-us/library/office/fp161166.aspx) rule element in the manifest XML file with the specified `FilterName` element value.
+The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](https://msdn.microsoft.com/library/office/fp161166.aspx) rule element in the manifest XML file with the specified `FilterName` element value.
 
 ##### Parameters:
 

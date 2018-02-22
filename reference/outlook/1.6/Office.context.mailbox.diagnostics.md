@@ -1,3 +1,5 @@
+
+
 # diagnostics
 
 ### [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). diagnostics
@@ -12,21 +14,13 @@ Provides diagnostic information to an Outlook add-in.
 |[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Applicable Outlook mode| Compose or read|
 
-##### Members and methods
-
-| Member | Type |
-|--------|------|
-| [hostName](#hostname-string) | Member |
-| [hostVersion](#hostversion-string) | Member |
-| [OWAView](#owaview-string) | Member |
-
 ### Members
 
 ####  hostName :String
 
 Gets a string that represents the name of the host application.
 
-A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.
+A string that can be one of the following values: `Outlook`, `Mac Outlook`, `OutlookIOS`, or `OutlookWebApp`.
 
 ##### Type:
 
