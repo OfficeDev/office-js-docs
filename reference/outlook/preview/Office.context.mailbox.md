@@ -30,7 +30,7 @@ Gets the URL of the Exchange Web Services (EWS) endpoint for this email account.
 
 > **Note:** This member is not supported in Outlook for iOS or Outlook for Android.
 
-The `ewsUrl` value can be used by a remote service to make EWS calls to the user's mailbox. For example, you can create a remote service to [get attachments from the selected item](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx).
+The `ewsUrl` value can be used by a remote service to make EWS calls to the user's mailbox. For example, you can create a remote service to [get attachments from the selected item](https://msdn.microsoft.com/library/office/dn148008.aspx).
 
 Your app must have the **ReadItem** permission specified in its manifest to call the `ewsUrl` member in read mode.
 
@@ -52,7 +52,7 @@ In compose mode you must call the [`saveAsync`](Office.context.mailbox.item#save
 
 Gets the URL of the REST endpoint for this email account.
 
-The `restUrl` value can be used to make [REST API](https://docs.microsoft.com/en-us/outlook/rest/) calls to the user's mailbox.
+The `restUrl` value can be used to make [REST API](https://docs.microsoft.com/outlook/rest/) calls to the user's mailbox.
 
 Your app must have the **ReadItem** permission specified in its manifest to call the `restUrl` member in read mode.
 
@@ -494,7 +494,7 @@ Gets a string that contains a token used to get an attachment or item from an Ex
 
 The `getCallbackTokenAsync` method makes an asynchronous call to get an opaque token from the Exchange Server that hosts the user's mailbox. The lifetime of the callback token is 5 minutes.
 
-You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](https://msdn.microsoft.com/en-us/library/office/aa494316.aspx) or [GetItem](https://msdn.microsoft.com/en-us/library/office/aa565934.aspx) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx).
+You can pass the token and an attachment identifier or item identifier to a third-party system. The third-party system uses the token as a bearer authorization token to call the Exchange Web Services (EWS) [GetAttachment](https://msdn.microsoft.com/library/office/aa494316.aspx) or [GetItem](https://msdn.microsoft.com/library/office/aa565934.aspx) operation to return an attachment or item. For example, you can create a remote service to [get attachments from the selected item](https://msdn.microsoft.com/library/office/dn148008.aspx).
 
 Your app must have the **ReadItem** permission specified in its manifest to call the `getCallbackTokenAsync` method in read mode.
 
@@ -531,7 +531,7 @@ function cb(asyncResult) {
 
 Gets a token identifying the user and the Office Add-in.
 
-The `getUserIdentityTokenAsync` method returns a token that you can use to identify and [authenticate the add-in and user with a third-party system](https://msdn.microsoft.com/EN-US/library/office/fp179828.aspx).
+The `getUserIdentityTokenAsync` method returns a token that you can use to identify and [authenticate the add-in and user with a third-party system](https://msdn.microsoft.com/library/office/fp179828.aspx).
 
 ##### Parameters:
 

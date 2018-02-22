@@ -1160,7 +1160,7 @@ Returns well-known entities in the selected item that pass the named filter defi
 
 > **Note:** This method is not supported in Outlook for iOS or Outlook for Android.
 
-The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](https://msdn.microsoft.com/en-us/library/office/fp161166.aspx) rule element in the manifest XML file with the specified `FilterName` element value.
+The `getFilteredEntitiesByName` method returns the entities that match the regular expression defined in the [ItemHasKnownEntity](https://msdn.microsoft.com/library/office/fp161166.aspx) rule element in the manifest XML file with the specified `FilterName` element value.
 
 ##### Parameters:
 

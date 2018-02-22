@@ -24,6 +24,6 @@ Requirement set 1.5 includes all of the features of [Requirement set 1.4](../1.4
 
 ## Additional resources
 
-- [Outlook add-ins](https://docs.microsoft.com/en-us/outlook/add-ins/)
-- [Outlook add-in code samples](https://developer.microsoft.com/en-us/outlook/gallery/?filterBy=Outlook,Samples,Office add-ins)
-- [Get started](https://docs.microsoft.com/en-us/outlook/add-ins/quick-start)
+- [Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/)
+- [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Office add-ins)
+- [Get started](https://docs.microsoft.com/outlook/add-ins/quick-start)
