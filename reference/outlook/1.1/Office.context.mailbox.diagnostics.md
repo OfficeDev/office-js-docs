@@ -20,7 +20,7 @@ Provides diagnostic information to an Outlook add-in.
 
 Gets a string that represents the name of the host application.
 
-A string that can be one of the following values: `Outlook`, `Mac Outlook`, `OutlookIOS`, or `OutlookWebApp`.
+A string that can be one of the following values: `Outlook`, `OutlookIOS`, or `OutlookWebApp`.
 
 ##### Type:
 

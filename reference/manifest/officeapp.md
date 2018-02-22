@@ -33,7 +33,7 @@ The root element in the manifest of an Office Add-in.
 |[Version](../../reference/manifest/version.md)|x|x|x|
 |[ProviderName](../../reference/manifest/providername.md)|x|x|x|
 |[DefaultLocale](../../reference/manifest/defaultlocale.md)|x|x|x|
-|[DefaultSettings](../../reference/manifest/defaultsettings.md)|x|x|x|
+|[DefaultSettings](../../reference/manifest/defaultsettings.md)|x||x|
 |[DisplayName](../../reference/manifest/displayname.md)|x|x|x|
 |[Description](../../reference/manifest/description.md)|x|x|x|
 |[FormSettings](../../reference/manifest/formsettings.md)||x||
