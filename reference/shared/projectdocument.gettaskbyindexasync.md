@@ -76,7 +76,7 @@ The example assumes that your add-in has a reference to the jQuery library and t
 ```js
 (function () {
     "use strict";
-    var taskGuids = [];
+    var taskGuids = ;
 
     // The initialize function must be run each time a new page is loaded.
     Office.initialize = function (reason) {

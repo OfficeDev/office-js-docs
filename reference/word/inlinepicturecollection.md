@@ -8,7 +8,7 @@ Contains a collection of [inlinePicture](inlinePicture.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|items|[InlinePicture](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None

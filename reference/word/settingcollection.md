@@ -8,7 +8,7 @@ Contains the collection of [setting](setting.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Setting[]](setting.md)|A collection of setting objects. Read-only.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|items|[Setting](setting.md)|A collection of setting objects. Read-only.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None

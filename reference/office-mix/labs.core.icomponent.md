@@ -16,4 +16,4 @@ interface IComponent extends Core.ILabObject, Core.IUserData
 |||
 |:-----|:-----|
 | `name: string`|Name of the component.|
-| `values: {[type:string]: Core.IValue[]}`|The value property map associated with the component.|
+| `values: {[type:string]: Core.IValue}`|The value property map associated with the component.|

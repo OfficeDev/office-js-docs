@@ -7,7 +7,7 @@ Represents a collection of all the columns that are part of the table.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of columns in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[TableColumn](tablecolumn.md)|A collection of tableColumn objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

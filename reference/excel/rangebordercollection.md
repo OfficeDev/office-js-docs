@@ -7,7 +7,7 @@ Represents the border objects that make up the range border.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Number of border objects in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[RangeBorder[]](rangeborder.md)|A collection of rangeBorder objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[RangeBorder](rangeborder.md)|A collection of rangeBorder objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

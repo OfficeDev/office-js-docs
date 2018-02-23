@@ -7,7 +7,7 @@ A collection of all the chart points within a series inside a chart.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of chart points in the series. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[ChartPoint[]](chartpoint.md)|A collection of chartPoints objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartPoint](chartpoint.md)|A collection of chartPoints objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

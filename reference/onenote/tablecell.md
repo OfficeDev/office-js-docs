@@ -31,7 +31,7 @@ _See [property access examples](#property-access-examples)_.
 |[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the table cell.|
 |[appendImage(base64EncodedImage: string, width: double, height: double)](#appendimagebase64encodedimage-string-width-double-height-double)|[Image](image.md)|Adds the specified image to the table cell.|
 |[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Adds the specified text to the table cell.|
-|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the table cell.|
+|[appendTable(rowCount: number, columnCount: number, values: string)](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the table cell.|
 |[clear()](#clear)|void|Clears the contents of the cell.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
@@ -174,7 +174,7 @@ OneNote.run(function(ctx) {
 
 <br/>
 
-### appendTable(rowCount: number, columnCount: number, values: string[][])
+### appendTable(rowCount: number, columnCount: number, values: string)
 
 Adds a table with the specified number of rows and columns to the table cell.
 
@@ -190,7 +190,7 @@ tableCellObject.appendTable(rowCount, columnCount, values);
 |:---------------|:--------|:----------|
 |rowCount|number|Required. The number of rows in the table.|
 |columnCount|number|Required. The number of columns in the table.|
-|values|string[][]|Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string|Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 

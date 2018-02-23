@@ -31,7 +31,7 @@ Creates a new dynamic component instance using the [Labs.Components.IDynamicComp
 
 ### getComponents
 
- `public function getComponents(callback: Labs.Core.ILabCallback<Labs.ComponentInstanceBase[]>): void`
+ `public function getComponents(callback: Labs.Core.ILabCallback<Labs.ComponentInstanceBase>): void`
 
 Retrieves all of the components created by this dynamic component.
 

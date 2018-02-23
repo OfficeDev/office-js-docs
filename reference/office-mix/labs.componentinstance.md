@@ -42,7 +42,7 @@ Creates a new attempt in the context of a component.
 
 ### getAttempts
 
- `public function getAttempts(callback: Labs.Core.ILabCallback<T[]>): void`
+ `public function getAttempts(callback: Labs.Core.ILabCallback<T>): void`
 
 Retrieves all attempts associated with the given component.
 

@@ -6,7 +6,7 @@ A scoped collection of custom XML parts.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[CustomXmlPartScoped[]](customxmlpartscoped.md)|A collection of customXmlPartScoped objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[CustomXmlPartScoped](customxmlpartscoped.md)|A collection of customXmlPartScoped objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

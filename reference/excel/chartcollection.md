@@ -7,7 +7,7 @@ A collection of all the chart objects on a worksheet.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of charts in the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Chart](chart.md)|A collection of chart objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

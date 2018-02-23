@@ -6,7 +6,7 @@ A collection of custom XML parts.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[CustomXmlPart[]](customxmlpart.md)|A collection of customXmlPart objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[CustomXmlPart](customxmlpart.md)|A collection of customXmlPart objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

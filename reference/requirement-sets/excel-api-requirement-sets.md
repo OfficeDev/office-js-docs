@@ -100,7 +100,7 @@ For API details, please refer to the Excel API [open specification](https://gith
 * `getNextColumn()` and `getPreviousColumn()`, `getLast() on table column.
 * `getActiveWorksheet()` on the workbook.
 * `getRange(address: string)` off of workbook.
-* `getBoundingRange(ranges: [])` Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between "B2:C5" and "D10:E15" is "B2:E15".
+* `getBoundingRange(ranges: )` Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between "B2:C5" and "D10:E15" is "B2:E15".
 * `getCount()` on various collections such as named item, worksheet, table, etc. to get number of items in a collection. `workbook.worksheets.getCount()`
 * `getFirst()` and `getLast()` and get last on various collection such as tworksheet, able column, chart points, range view collection.
 * `getNext()` and `getPrevious()` on worksheet, table column collection.
@@ -167,7 +167,7 @@ APIs include `getItem()` to get setting entry via the key, `add()` to add the sp
 |[setting](../excel/setting.md)|_Property_ > value|Represents the value stored for this setting.|1.4|
 |[setting](../excel/setting.md)|_Method_ > [delete()](../excel/setting.md#delete)|Deletes the setting.|1.4|
 |[settingCollection](../excel/settingcollection.md)|_Property_ > items|A collection of setting objects. Read-only.|1.4|
-|[settingCollection](../excel/settingcollection.md)|_Method_ > [add(key: string, value: (any)[])](../excel/settingcollection.md#addkey-string-value-any)|Sets or adds the specified setting to the workbook.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Method_ > [add(key: string, value: (any))](../excel/settingcollection.md#addkey-string-value-any)|Sets or adds the specified setting to the workbook.|1.4|
 |[settingCollection](../excel/settingcollection.md)|_Method_ > [getCount()](../excel/settingcollection.md#getcount)|Gets the number of Settings in the collection.|1.4|
 |[settingCollection](../excel/settingcollection.md)|_Method_ > [getItem(key: string)](../excel/settingcollection.md#getitemkey-string)|Gets a Setting entry via the key.|1.4|
 |[settingCollection](../excel/settingcollection.md)|_Method_ > [getItemOrNullObject(key: string)](../excel/settingcollection.md#getitemornullobjectkey-string)|Gets a Setting entry via the key. If the Setting does not exist, will return a null object.|1.4|
@@ -257,7 +257,7 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[filter](../excel/filter.md)|_Method_ > [applyIconFilter(icon: Icon)](../excel/filter.md#applyiconfiltericon-icon)|Apply a "Icon" filter to the column for the given icon.|1.2|
 |[filter](../excel/filter.md)|_Method_ > [applyTopItemsFilter(count: number)](../excel/filter.md#applytopitemsfiltercount-number)|Apply a "Top Item" filter to the column for the given number of elements.|1.2|
 |[filter](../excel/filter.md)|_Method_ > [applyTopPercentFilter(percent: number)](../excel/filter.md#applytoppercentfilterpercent-number)|Apply a "Top Percent" filter to the column for the given percentage of elements.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyValuesFilter(values: ()[])](../excel/filter.md#applyvaluesfiltervalues-)|Apply a "Values" filter to the column for the given values.|1.2|
+|[filter](../excel/filter.md)|_Method_ > [applyValuesFilter(values: ())](../excel/filter.md#applyvaluesfiltervalues-)|Apply a "Values" filter to the column for the given values.|1.2|
 |[filter](../excel/filter.md)|_Method_ > [clear()](../excel/filter.md#clear)|Clear the filter on the given column.|1.2|
 |[filterCriteria](../excel/filtercriteria.md)|_Property_ > color|The HTML color string used to filter cells. Used with "cellColor" and "fontColor" filtering.|1.2|
 |[filterCriteria](../excel/filtercriteria.md)|_Property_ > criterion1|The first criterion used to filter data. Used as an operator in the case of "custom" filtering.|1.2|
@@ -286,7 +286,7 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[rangeFormat](../excel/rangeformat.md)|_Method_ > [autofitColumns()](../excel/rangeformat.md#autofitcolumns)|Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.|1.2|
 |[rangeFormat](../excel/rangeformat.md)|_Method_ > [autofitRows()](../excel/rangeformat.md#autofitrows)|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|1.2|
 |[rangeReference](../excel/rangereference.md)|_Property_ > address|Represents the visible rows of the current range.|1.2|
-|[rangeSort](../excel/rangesort.md)|_Method_ > [apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](../excel/rangesort.md#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|Perform a sort operation.|1.2|
+|[rangeSort](../excel/rangesort.md)|_Method_ > [apply(fields: SortField, matchCase: bool, hasHeaders: bool, orientation: string, method: string)](../excel/rangesort.md#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|Perform a sort operation.|1.2|
 |[sortField](../excel/sortfield.md)|_Property_ > ascending|Represents whether the sorting is done in an ascending fashion.|1.2|
 |[sortField](../excel/sortfield.md)|_Property_ > color|Represents the color that is the target of the condition if the sorting is on font or cell color.|1.2|
 |[sortField](../excel/sortfield.md)|_Property_ > dataOption|Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.|1.2|
@@ -302,7 +302,7 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 |[tableSort](../excel/tablesort.md)|_Property_ > matchCase|Represents whether the casing impacted the last sort of the table. Read-only.|1.2|
 |[tableSort](../excel/tablesort.md)|_Property_ > method|Represents Chinese character ordering method last used to sort the table. Read-only. Possible values are: PinYin, StrokeCount.|1.2|
 |[tableSort](../excel/tablesort.md)|_Relationship_ > fields|Represents the current conditions used to last sort the table. Read-only.|1.2|
-|[tableSort](../excel/tablesort.md)|_Method_ > [apply(fields: SortField[], matchCase: bool, method: string)](../excel/tablesort.md#applyfields-sortfield-matchcase-bool-method-string)|Perform a sort operation.|1.2|
+|[tableSort](../excel/tablesort.md)|_Method_ > [apply(fields: SortField, matchCase: bool, method: string)](../excel/tablesort.md#applyfields-sortfield-matchcase-bool-method-string)|Perform a sort operation.|1.2|
 |[tableSort](../excel/tablesort.md)|_Method_ > [clear()](../excel/tablesort.md#clear)|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|1.2|
 |[tableSort](../excel/tablesort.md)|_Method_ > [reapply()](../excel/tablesort.md#reapply)|Reapplies the current sorting parameters to the table.|1.2|
 |[workbook](../excel/workbook.md)|_Relationship_ > functions|Represents Excel application instance that contains this workbook. Read-only.|1.2|

@@ -11,7 +11,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of table rows in this collection. Read-only.|
-|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|
+|items|[TableRow](tablerow.md)|A collection of tableRow objects. Read-only.|
 
 _See [property access examples](#property-access-examples)_.
 

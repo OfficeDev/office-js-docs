@@ -8,7 +8,7 @@ Contains the collection of the document's Table objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Table[]](table.md)|A collection of table objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|items|[Table](table.md)|A collection of table objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

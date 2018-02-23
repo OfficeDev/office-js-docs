@@ -38,7 +38,7 @@ _See [property access examples](#property-access-examples)_.
 |[insertHtmlAsSibling(insertLocation: string, html: string)](#inserthtmlassiblinginsertlocation-string-html-string)|void|Inserts the specified HTML content.|
 |[insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)](#insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double)|[Image](image.md)|Inserts the image at the specified insert location.|
 |[insertRichTextAsSibling(insertLocation: string, paragraphText: string)](#insertrichtextassiblinginsertlocation-string-paragraphtext-string)|[RichText](richtext.md)|Inserts the paragraph text at the specified insert location.|
-|[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns before or after the current paragraph.|
+|[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string)](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns before or after the current paragraph.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
 ## Method details
@@ -283,7 +283,7 @@ OneNote.run(function (context) {
 
 <br/>
 
-### insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
+### insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string)
 
 Adds a table with the specified number of rows and columns before or after the current paragraph.
 
@@ -300,7 +300,7 @@ paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, valu
 |insertLocation|string|The location of the table relative to the current Paragraph. Possible values are Before, After.|
 |rowCount|number|The number of rows in the table.|
 |columnCount|number|The number of columns in the table.|
-|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 

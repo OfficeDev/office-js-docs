@@ -30,7 +30,7 @@ _See property access [examples.](#property-access-examples)_
 |[setLevelAlignment(level: number, alignment: string)](#setlevelalignmentlevel-number-alignment-string)|void|Sets the alignment of the bullet, number or picture at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelBullet(level: number, listBullet: string, charCode: number, fontName: string)](#setlevelbulletlevel-number-listbullet-string-charcode-number-fontname-string)|void|Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelIndents(level: number, textIndent: float, textIndent: float)](#setlevelindentslevel-number-textindent-float-textindent-float)|void|Sets the two indents of the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[setLevelNumbering(level: number, listNumbering: string, formatString: object[])](#setlevelnumberinglevel-number-listnumbering-string-formatstring-object)|void|Sets the numbering format at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[setLevelNumbering(level: number, listNumbering: string, formatString: object)](#setlevelnumberinglevel-number-listnumbering-string-formatstring-object)|void|Sets the numbering format at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelStartingNumber(level: number, startingNumber: number)](#setlevelstartingnumberlevel-number-startingnumber-number)|void|Sets the starting number at the specified level in the list. Default value is 1.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
@@ -155,7 +155,7 @@ listObject.setLevelIndents(level, textIndent, textIndent);
 #### Returns
 void
 
-### setLevelNumbering(level: number, listNumbering: string, formatString: object[])
+### setLevelNumbering(level: number, listNumbering: string, formatString: object)
 Sets the numbering format at the specified level in the list.
 
 #### Syntax
@@ -168,7 +168,7 @@ listObject.setLevelNumbering(level, listNumbering, formatString);
 |:---------------|:--------|:----------|
 |level|number|Required. The level in the list.|
 |listNumbering|string|Required. The ordinal format.  Possible values are: None, Arabic, UpperRoman, LowerRoman, UpperLetter, LowerLetter|
-|formatString|object[]|Optional. Optional. The numbering string format defined as an array of strings and/or integers. Each integer is a level of number type that is higher than or equal to this level. For example, an array of ["(", level - 1, ".", level, ")"] can define the format of "(2.c)", where 2 is the parent's item number and c is this level's item number.|
+|formatString|object|Optional. Optional. The numbering string format defined as an array of strings and/or integers. Each integer is a level of number type that is higher than or equal to this level. For example, an array of ["(", level - 1, ".", level, ")"] can define the format of "(2.c)", where 2 is the parent's item number and c is this level's item number.|
 
 #### Returns
 void

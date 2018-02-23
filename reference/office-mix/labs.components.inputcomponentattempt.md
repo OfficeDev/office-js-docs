@@ -17,7 +17,7 @@ class InputComponentAttempt extends Components.ComponentAttempt
 
 ### constructor
 
- `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
+ `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance})`
 
 Creates a new instance of the  **InputComponentAttempt** class.
 
@@ -46,7 +46,7 @@ Iterates over the retrieved actions for the specified attempt and populates the 
 
 ### getSubmissions
 
- `public function getSubmissions(): Components.InputComponentSubmission[]`
+ `public function getSubmissions(): Components.InputComponentSubmission`
 
 Retrieves all of the submissions that have previously been submitted for the specified attempt.
 

@@ -11,7 +11,7 @@ _Applies to: Word 2016, Word for iPad, Word for Mac, Word Online_
 |debugInfo|string|Gets a value that indicates what happened when the error occurred. This value is only intended for use during development / debugging.  |
 |message |string| Gets a localized human readable string that corresponds to the error code.|
 |name |string| Gets a value that is always "OfficeExtension.Error". |
-|traceMessages |string[]| Gets an array of values that correspond to the instrumention messages set with context.trace(); |
+|traceMessages |string| Gets an array of values that correspond to the instrumention messages set with context.trace(); |
 
 _See property access [examples.](#property-access-examples)_
 

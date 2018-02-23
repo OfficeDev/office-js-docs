@@ -6,7 +6,7 @@ Represents a collection of all the conditional formats that are overlap the rang
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[ConditionalFormat[]](conditionalformat.md)|A collection of conditionalFormat objects. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ConditionalFormat](conditionalformat.md)|A collection of conditionalFormat objects. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 None

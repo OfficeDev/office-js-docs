@@ -8,7 +8,7 @@ Provides information about the shape collection that raised the SelectionChanged
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|shapeNames|string[]|Gets the array of shape names that raised the SelectionChanged event.|
+|shapeNames|string|Gets the array of shape names that raised the SelectionChanged event.|
 |pageName|string|Gets the name of the page which has the ShapeCollection object that raised the SelectionChanged event.|
 
 _See property access [examples.](#property-access-examples)_

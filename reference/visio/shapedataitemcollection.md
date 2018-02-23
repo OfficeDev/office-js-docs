@@ -8,7 +8,7 @@ Represents the ShapeDataItemCollection for a given Shape.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|items|[ShapeDataItem[]](shapedataitem.md)|A collection of shapeDataItem objects. Read-only.|
+|items|[ShapeDataItem](shapedataitem.md)|A collection of shapeDataItem objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 

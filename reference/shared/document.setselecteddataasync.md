@@ -28,8 +28,8 @@ Office.context.document.setSelectedDataAsync(data [, options], callback(asyncRes
 ```js
 {
     coercionType: '',
-    tableOptions: [],
-    cellFormat: [],
+    tableOptions: ,
+    cellFormat: ,
     imageLeft: 0,
     imageTop: 0,
     imageWidth: 0,

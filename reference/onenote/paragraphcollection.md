@@ -11,7 +11,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of paragraphs on the page. Read-only.|
-|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|
+|items|[Paragraph](paragraph.md)|A collection of paragraph objects. Read-only.|
 
 _See [property access examples](#property-access-examples)_.
 
@@ -172,9 +172,9 @@ OneNote.run(function (context) {
     var pageContents = context.application.getActivePage().contents;
 
     // Get the first PageContent on the page, and then get its outline's paragraphs.
-    var outlinePageContents = [];
-    var paragraphs = [];
-	var richTextParagraphs = [];
+    var outlinePageContents = ;
+    var paragraphs = ;
+	var richTextParagraphs = ;
     // Queue a command to load the id and type of each page content in the outline.
     pageContents.load("id,type");
 

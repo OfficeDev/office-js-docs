@@ -11,7 +11,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of notebooks in the collection. Read-only.|
-|items|[Notebook[]](notebook.md)|A collection of notebook objects. Read-only.|
+|items|[Notebook](notebook.md)|A collection of notebook objects. Read-only.|
 
 _See [property access examples](#property-access-examples)_.
 

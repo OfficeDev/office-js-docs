@@ -17,7 +17,7 @@ class ChoiceComponentAttempt extends Components.ComponentAttempt
 
 ### constructor
 
- `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
+ `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance})`
 
 Creates a new instance of the  **ChoiceComponentAttempt** class.
 
@@ -45,7 +45,7 @@ Indicates that the lab has timed out.
 
 ### getSubmissions
 
- `public function getSubmissions(): Components.ChoiceComponentSubmission[]`
+ `public function getSubmissions(): Components.ChoiceComponentSubmission`
 
 Retrieves all submissions that have been previously submitted for a given attempt.
 
