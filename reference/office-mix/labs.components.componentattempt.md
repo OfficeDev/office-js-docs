@@ -20,7 +20,7 @@ class ComponentAttempt
 | `public var _labs: Labs.LabsInternal`|The lab ([Labs.LabsInternal](http://msdn.microsoft.com/library/599fb2c4-bb16-4422-84ad-10ed85a14018.aspx)) object that is used to interact with the underlying [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md).|
 | `public var _resumed: boolean`|**True** if the lab has resumed progress on a given attempt.|
 | `public var _state: Labs.ProblemState`|Current state of the attempt as provided by the enum [Labs.ProblemState](../../reference/office-mix/labs.problemstate.md).|
-| `public var _values: { [type:string]: Labs.ValueHolder<any>[]}`|Values associated with the attempt, if any, as contained in the [Labs.ValueHolder](../../reference/office-mix/labs.valueholder.md)object.|
+| `public var _values: { [type:string]: Labs.ValueHolder<any>}`|Values associated with the attempt, if any, as contained in the [Labs.ValueHolder](../../reference/office-mix/labs.valueholder.md)object.|
 
 ## Methods
 
@@ -29,7 +29,7 @@ class ComponentAttempt
 
 ### constructor
 
- `(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
+ `(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance})`
 
 Creates a new instance of the ComponentAttempt class and provides input parameter values.
 
@@ -90,7 +90,7 @@ None.
 
 ### getValues
 
- `public function getValues(key: string): Labs.ValueHolder<any>[]`
+ `public function getValues(key: string): Labs.ValueHolder<any>`
 
 Retrieves values associated with the attempt
 

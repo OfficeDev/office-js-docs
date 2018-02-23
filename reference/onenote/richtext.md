@@ -84,9 +84,9 @@ OneNote.run(function (context) {
 	var pageContents = context.application.getActivePage().contents;
 
 	// Get the first PageContent on the page, and then get its outline's paragraphs.
-	var outlinePageContents = [];
-	var paragraphs = [];
-	var richTextParagraphs = [];
+	var outlinePageContents = ;
+	var paragraphs = ;
+	var richTextParagraphs = ;
 	// Queue a command to load the id and type of each page content in the outline.
 	pageContents.load("id,type");
 

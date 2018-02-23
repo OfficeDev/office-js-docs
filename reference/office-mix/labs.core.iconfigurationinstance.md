@@ -16,6 +16,6 @@ interface IConfigurationInstance extends Core.IUserData
 |||
 |:-----|:-----|
 | `appVersion: Core.IVersion`|Version of the lab associated with this configuration.|
-| `components: Core.IComponentInstance[]`|Components associated with the lab.|
+| `components: Core.IComponentInstance`|Components associated with the lab.|
 | `name: string`|Name of the lab.|
 | `timeline: Core.ITimelineConfiguration`|Timeline configuration for the lab.|

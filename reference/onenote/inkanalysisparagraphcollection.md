@@ -10,7 +10,7 @@ Represents a collection of InkAnalysisParagraph objects.
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
 |count|int|Returns the number of InkAnalysisParagraphs in the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisParagraphCollection-count)|
-|items|[InkAnalysisParagraph[]](inkanalysisparagraph.md)|A collection of inkAnalysisParagraph objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisParagraphCollection-items)|
+|items|[InkAnalysisParagraph](inkanalysisparagraph.md)|A collection of inkAnalysisParagraph objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisParagraphCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

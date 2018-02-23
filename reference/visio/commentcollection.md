@@ -8,7 +8,7 @@ Represents the CommentCollection for a given Shape.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|items|[Comment[]](comment.md)|A collection of comment objects. Read-only.|
+|items|[Comment](comment.md)|A collection of comment objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 

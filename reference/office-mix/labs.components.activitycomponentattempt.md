@@ -17,7 +17,7 @@ class Permissions
 
 ### constructor
 
- `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
+ `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance})`
 
 Creates a new instance of the  **ActivityComponentAttempt** class.
 

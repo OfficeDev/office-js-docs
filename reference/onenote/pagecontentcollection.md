@@ -11,7 +11,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 | Property	 | Type	   |Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of page contents in the collection. Read-only.|
-|items|[PageContent[]](pagecontent.md)|A collection of pageContent objects. Read-only.|
+|items|[PageContent](pagecontent.md)|A collection of pageContent objects. Read-only.|
 
 _See [property access examples](#property-access-examples)_.
 
@@ -160,7 +160,7 @@ OneNote.run(function (context) {
    var page = context.application.getActivePage();
    var pageContents = page.contents;
    pageContents.load('type');
-   var outlines = [];
+   var outlines = ;
    return context.sync()
 	   .then(function () {	  
 			  $.each(pageContents.items, function (index, pageContent) {

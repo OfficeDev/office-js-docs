@@ -7,7 +7,7 @@ Represents a collection of all the tables that are part of the workbook or works
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of tables in the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[Table[]](table.md)|A collection of table objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Table](table.md)|A collection of table objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

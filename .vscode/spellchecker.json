@@ -12,7 +12,7 @@
         "latex",
         "plaintext"
     ],
-    "ignoreRegExp": [],
-    "ignoreFileExtensions": [],
+    "ignoreRegExp": ,
+    "ignoreFileExtensions": ,
     "checkInterval": 5000
 }

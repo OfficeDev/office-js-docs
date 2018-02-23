@@ -10,7 +10,7 @@ Represents a collection of InkAnalysisLine objects.
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
 |count|int|Returns the number of InkAnalysisLines in the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisLineCollection-count)|
-|items|[InkAnalysisLine[]](inkanalysisline.md)|A collection of inkAnalysisLine objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisLineCollection-items)|
+|items|[InkAnalysisLine](inkanalysisline.md)|A collection of inkAnalysisLine objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisLineCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

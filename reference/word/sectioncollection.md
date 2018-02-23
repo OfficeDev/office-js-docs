@@ -8,7 +8,7 @@ Contains the collection of the document's [section](section.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Section[]](section.md)|A collection of section objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|items|[Section](section.md)|A collection of section objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None

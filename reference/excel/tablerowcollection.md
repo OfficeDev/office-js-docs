@@ -7,7 +7,7 @@ Represents a collection of all the rows that are part of the table.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of rows in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[TableRow](tablerow.md)|A collection of tableRow objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

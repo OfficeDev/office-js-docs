@@ -16,4 +16,4 @@ interface IUserInfo
 |||
 |:-----|:-----|
 | `id: string`|Unique identifier for the lab user.|
-| `permissions: string[]`|The set of permission that control the user's access to the lab.|
+| `permissions: string`|The set of permission that control the user's access to the lab.|

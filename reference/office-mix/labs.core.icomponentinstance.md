@@ -17,7 +17,7 @@ interface IComponentInstance extends Core.ILabObject, Core.IUserData
 |:-----|:-----|
 | `componentId: string`|The ID of the component this instance is associated with.|
 | `name: string`|Name of the component.|
-| `values: {[type:string]: Core.IValueInstance[]}`|The value property map associated with the component.|
+| `values: {[type:string]: Core.IValueInstance}`|The value property map associated with the component.|
 
 ## Remarks
 

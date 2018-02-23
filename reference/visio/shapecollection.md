@@ -8,7 +8,7 @@ Represents the Shape Collection.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|items|[Shape[]](shape.md)|A collection of shape objects. Read-only.|
+|items|[Shape](shape.md)|A collection of shape objects. Read-only.|
 
 ## Relationships
 None

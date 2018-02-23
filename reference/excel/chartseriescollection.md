@@ -7,7 +7,7 @@ Represents a collection of chart series.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of series in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[ChartSeries[]](chartseries.md)|A collection of chartSeries objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartSeries](chartseries.md)|A collection of chartSeries objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

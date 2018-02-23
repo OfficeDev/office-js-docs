@@ -11,7 +11,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of sections in the collection. Read-only.|
-|items|[Section[]](section.md)|A collection of section objects. Read-only.|
+|items|[Section](section.md)|A collection of section objects. Read-only.|
 
 _See [property access examples](#property-access-examples)_.
 
