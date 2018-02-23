@@ -24,6 +24,7 @@ The following Boolean properties are used to change the behavior of a custom fun
 |:---------------|:--------|
 | batch	| Sets the custom function to run in batch mode. The custom function takes an array, where each array element is an array of parameters. The default option is false when the batch option is not specified. |
 | stream | Sets the custom function to run in streamed mode. The default option is false when the stream option is not specified. |
+| cancelable | Enables cancellation of the custom function. The default option is false when the cancelable option is not specified. |
 
 #### Example
 ```js
@@ -49,6 +50,6 @@ Excel.Script.customFunctions["CONTOSO"]["ADD42"] = {
             valueDimensionality: Excel.CustomFunctionDimensionality.scalar,
         }
     ],
-    options:{ batch: false, stream: false }
+    options:{ batch: false, stream: false, cancelable: false}
 };
 ```
