@@ -28,18 +28,18 @@ _See [property access examples](#property-access-examples)_.
 
 | Method		   | Return Type	|Description| 
 |:---------------|:--------|:----------|
-|[appendColumn(values: string[])](#appendcolumnvalues-string)|void|Adds a column to the end of the table. Values, if specified, are set in the new column. Otherwise, the column is empty.|
-|[appendRow(values: string[])](#appendrowvalues-string)|[TableRow](tablerow.md)|Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise, the row is empty.|
+|[appendColumn(values: string)](#appendcolumnvalues-string)|void|Adds a column to the end of the table. Values, if specified, are set in the new column. Otherwise, the column is empty.|
+|[appendRow(values: string)](#appendrowvalues-string)|[TableRow](tablerow.md)|Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise, the row is empty.|
 |[clear()](#clear)|void|Clears the contents of the table.|
 |[getCell(rowIndex: number, cellIndex: number)](#getcellrowindex-number-cellindex-number)|[TableCell](tablecell.md)|Gets the table cell at a specified row and column.|
-|[insertColumn(index: number, values: string[])](#insertcolumnindex-number-values-string)|void|Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise, the column is empty.|
-|[insertRow(index: number, values: string[])](#insertrowindex-number-values-string)|[TableRow](tablerow.md)|Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise, the row is empty.|
+|[insertColumn(index: number, values: string)](#insertcolumnindex-number-values-string)|void|Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise, the column is empty.|
+|[insertRow(index: number, values: string)](#insertrowindex-number-values-string)|[TableRow](tablerow.md)|Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise, the row is empty.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 |[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|Sets the shading color of all cells in the table.|
 
 ## Method details
 
-### appendColumn(values: string[])
+### appendColumn(values: string)
 
 Adds a column to the end of the table. Values, if specified, are set in the new column. Otherwise, the column is empty.
 
@@ -53,7 +53,7 @@ tableObject.appendColumn(values);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|values|string[]|Optional. Strings to insert in the new column, specified as an array. Must not have more values than rows in the table.|
+|values|string|Optional. Strings to insert in the new column, specified as an array. Must not have more values than rows in the table.|
 
 #### Returns
 
@@ -94,7 +94,7 @@ OneNote.run(function(ctx) {
 
 <br/>
 
-### appendRow(values: string[])
+### appendRow(values: string)
 
 Adds a row to the end of the table. Values, if specified, are set in the new row. Otherwise, the row is empty.
 
@@ -108,7 +108,7 @@ tableObject.appendRow(values);
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|values|string[]|Optional. Strings to insert in the new row, specified as an array. Must not have more values than columns in the table.|
+|values|string|Optional. Strings to insert in the new row, specified as an array. Must not have more values than columns in the table.|
 
 #### Returns
 
@@ -226,7 +226,7 @@ OneNote.run(function(ctx) {
 
 <br/>
 
-### insertColumn(index: number, values: string[])
+### insertColumn(index: number, values: string)
 
 Inserts a column at the given index in the table. Values, if specified, are set in the new column. Otherwise, the column is empty.
 
@@ -241,7 +241,7 @@ tableObject.insertColumn(index, values);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index where the column will be inserted in the table.|
-|values|string[]|Optional. Strings to insert in the new column, specified as an array. Must not have more values than rows in the table.|
+|values|string|Optional. Strings to insert in the new column, specified as an array. Must not have more values than rows in the table.|
 
 #### Returns
 
@@ -282,7 +282,7 @@ OneNote.run(function(ctx) {
 
 <br/>
 
-### insertRow(index: number, values: string[])
+### insertRow(index: number, values: string)
 
 Inserts a row at the given index in the table. Values, if specified, are set in the new row. Otherwise, the row is empty.
 
@@ -297,7 +297,7 @@ tableObject.insertRow(index, values);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index where the row will be inserted in the table.|
-|values|string[]|Optional. Strings to insert in the new row, specified as an array. Must not have more values than columns in the table.|
+|values|string|Optional. Strings to insert in the new row, specified as an array. Must not have more values than columns in the table.|
 
 #### Returns
 

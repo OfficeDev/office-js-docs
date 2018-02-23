@@ -28,7 +28,7 @@ _See [property access examples](#property-access-examples)_.
 | Method		   | Return Type	|Description| 
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Clears the contents of the row.|
-|[insertRowAsSibling(insertLocation: string, values: string[])](#insertrowassiblinginsertlocation-string-values-string)|[TableRow](tablerow.md)|Inserts a row before or after the current row.|
+|[insertRowAsSibling(insertLocation: string, values: string)](#insertrowassiblinginsertlocation-string-values-string)|[TableRow](tablerow.md)|Inserts a row before or after the current row.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 |[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|Sets the shading color of all cells in the row.|
 
@@ -54,7 +54,7 @@ Void
 
 <br/>
 
-### insertRowAsSibling(insertLocation: string, values: string[])
+### insertRowAsSibling(insertLocation: string, values: string)
 
 Inserts a row before or after the current row.
 
@@ -69,7 +69,7 @@ tableRowObject.insertRowAsSibling(insertLocation, values);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |insertLocation|string|Where the new rows should be inserted relative to the current row. Possible values are Before, After.|
-|values|string[]|Optional. Strings to insert in the new row, specified as an array. Must not have more cells than in the current row.|
+|values|string|Optional. Strings to insert in the new row, specified as an array. Must not have more cells than in the current row.|
 
 #### Returns
 

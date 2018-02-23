@@ -8,7 +8,7 @@ Represents a collection of Page objects that are part of the document.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|items|[Page[]](page.md)|A collection of page objects. Read-only.|
+|items|[Page](page.md)|A collection of page objects. Read-only.|
 
 ## Relationships
 None

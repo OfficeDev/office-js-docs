@@ -79,7 +79,7 @@ function getDocumentAsCompressed() {
             // result.value will return a valid File Object.
             var myFile = result.value;
             var sliceCount = myFile.sliceCount;
-            var slicesReceived = 0, gotAllSlices = true, docdataSlices = [];
+            var slicesReceived = 0, gotAllSlices = true, docdataSlices = ;
             app.showNotification("File size:" + myFile.size + " #Slices: " + sliceCount);
 
             // Get the file slices.
@@ -120,7 +120,7 @@ function getSliceAsync(file, nextSlice, sliceCount, gotAllSlices, docdataSlices,
 }
 
 function onGotAllSlices(docdataSlices) {
-    var docdata = [];
+    var docdata = ;
     for (var i = 0; i < docdataSlices.length; i++) {
         docdata = docdata.concat(docdataSlices[i]);
     }

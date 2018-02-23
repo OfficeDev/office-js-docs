@@ -12,17 +12,17 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |columnCount|int|Represents the total number of columns in the range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |columnHidden|bool|Represents if all columns of the current range are hidden.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|formulas|object[][]|Represents the formula in A1-style notation.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|formulasR1C1|object[][]|Represents the formula in R1C1-style notation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|formulas|object|Represents the formula in A1-style notation.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|formulasLocal|object|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|formulasR1C1|object|Represents the formula in R1C1-style notation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |hidden|bool|Represents if all cells of the current range are hidden. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|numberFormat|object[][]|Represents Excel's number format code for the given cell.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|numberFormat|object|Represents Excel's number format code for the given cell.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |rowCount|int|Returns the total number of rows in the range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |rowHidden|bool|Represents if all rows of the current range are hidden.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|text|object|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

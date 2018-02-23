@@ -15,7 +15,7 @@ var myRows = tableBindingObj.rows;
 
 ## Return Value
 
-Returns an array of arrays that contains the data in the table. Returns an empty  **array** `[]`, if there are no rows.
+Returns an array of arrays that contains the data in the table. Returns an empty  **array** ``, if there are no rows.
 
 
 ## Remarks

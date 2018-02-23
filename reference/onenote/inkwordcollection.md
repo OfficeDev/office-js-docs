@@ -10,7 +10,7 @@ Represents a collection of InkWord objects.
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
 |count|int|Returns the number of InkWords in the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkWordCollection-count)|
-|items|[InkWord[]](inkword.md)|A collection of inkWord objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkWordCollection-items)|
+|items|[InkWord](inkword.md)|A collection of inkWord objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkWordCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

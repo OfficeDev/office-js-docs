@@ -11,7 +11,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of section groups in the collection. Read-only.|
-|items|[SectionGroup[]](sectiongroup.md)|A collection of sectionGroup objects. Read-only.|
+|items|[SectionGroup](sectiongroup.md)|A collection of sectionGroup objects. Read-only.|
 
 _See [property access examples](#property-access-examples)_.
 

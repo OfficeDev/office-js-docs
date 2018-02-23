@@ -15,7 +15,7 @@ interface ILabHost
 
 ### getSupportedVersions
 
- `getSupportedVersions(): Core.ILabHostVersionInfo[]`
+ `getSupportedVersions(): Core.ILabHostVersionInfo`
 
 Retrieves the versions supported by the lab host.
 
@@ -26,7 +26,7 @@ None.
 
 ### connect
 
- `connect(versions: Core.ILabHostVersionInfo[], callback: Core.ILabCallback<Core.IConnectionResponse>)`
+ `connect(versions: Core.ILabHostVersionInfo, callback: Core.ILabCallback<Core.IConnectionResponse>)`
 
 Initializes a connection with the host.
 
@@ -194,7 +194,7 @@ Takes an action that has already been completed.
 
 ### getActions
 
- `getActions(type: string, options: Core.IGetActionOptions, callback: Core.ILabCallback<Core.IAction[]>)`
+ `getActions(type: string, options: Core.IGetActionOptions, callback: Core.ILabCallback<Core.IAction>)`
 
 Takes an attempt at an action.
 

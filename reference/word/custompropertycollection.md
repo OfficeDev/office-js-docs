@@ -8,7 +8,7 @@ Contains the collection of [customProperty](customProperty.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[CustomProperty[]](customproperty.md)|A collection of customProperty objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|items|[CustomProperty](customproperty.md)|A collection of customProperty objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None

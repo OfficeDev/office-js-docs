@@ -26,7 +26,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 |[appendHtml(html: string)](#appendhtmlhtml-string)|void|Adds the specified HTML to the bottom of the Outline.|
 |[appendImage(base64EncodedImage: string, width: double, height: double)](#appendimagebase64encodedimage-string-width-double-height-double)|[Image](image.md)|Adds the specified image to the bottom of the Outline.|
 |[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Adds the specified text to the bottom of the Outline.|
-|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the bottom of the outline.|
+|[appendTable(rowCount: number, columnCount: number, values: string)](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Adds a table with the specified number of rows and columns to the bottom of the outline.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in the JavaScript layer with property and object values specified in the parameter.|
 
 ## Method details
@@ -137,7 +137,7 @@ outlineObject.appendRichText(paragraphText);
 
 <br/>
 
-### appendTable(rowCount: number, columnCount: number, values: string[][])
+### appendTable(rowCount: number, columnCount: number, values: string)
 
 Adds a table with the specified number of rows and columns to the bottom of the outline.
 
@@ -153,7 +153,7 @@ outlineObject.appendTable(rowCount, columnCount, values);
 |:---------------|:--------|:----------|
 |rowCount|number|Required. The number of rows in the table.|
 |columnCount|number|Required. The number of columns in the table.|
-|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 

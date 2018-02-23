@@ -10,7 +10,7 @@ Represents a collection of InkAnalysisWord objects.
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
 |count|int|Returns the number of InkAnalysisWords in the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisWordCollection-count)|
-|items|[InkAnalysisWord[]](inkanalysisword.md)|A collection of inkAnalysisWord objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisWordCollection-items)|
+|items|[InkAnalysisWord](inkanalysisword.md)|A collection of inkAnalysisWord objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisWordCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

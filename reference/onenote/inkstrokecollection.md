@@ -10,7 +10,7 @@ Represents a collection of InkStroke objects.
 | Property	   | Type	|Description|Feedback|
 |:---------------|:--------|:----------|:-------|
 |count|int|Returns the number of InkStrokes in the page. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkStrokeCollection-count)|
-|items|[InkStroke[]](inkstroke.md)|A collection of inkStroke objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkStrokeCollection-items)|
+|items|[InkStroke](inkstroke.md)|A collection of inkStroke objects. Read-only.|[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkStrokeCollection-items)|
 
 _See property access [examples.](#property-access-examples)_
 

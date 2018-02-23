@@ -16,7 +16,7 @@ class LabInstance
 |||
 |:-----|:-----|
 | `public var data: any`|Container variable for holding user data.|
-| `public var components: Labs.ComponentInstanceBase[]`|Components that make up the lab instance.|
+| `public var components: Labs.ComponentInstanceBase`|Components that make up the lab instance.|
 
 ## Methods
 

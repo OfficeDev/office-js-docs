@@ -11,7 +11,7 @@ To provide feedback on this API, you can [file an issue in GitHub](https://githu
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of pages in the collection. Read-only.|
-|items|[Page[]](page.md)|A collection of page objects. Read-only.|
+|items|[Page](page.md)|A collection of page objects. Read-only.|
 
 _See [property access examples](#property-access-examples)_.
 

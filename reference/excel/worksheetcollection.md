@@ -6,7 +6,7 @@ Represents a collection of worksheet objects that are part of the workbook.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Worksheet[]](worksheet.md)|A collection of worksheet objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Worksheet](worksheet.md)|A collection of worksheet objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

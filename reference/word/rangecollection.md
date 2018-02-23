@@ -8,7 +8,7 @@ Contains a collection of [range](range.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Range[]](range.md)|A collection of range objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|items|[Range](range.md)|A collection of range objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

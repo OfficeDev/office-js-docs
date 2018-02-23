@@ -15,7 +15,7 @@ interface IChoiceComponentInstance extends Labs.Core.IComponentInstance
 
 |Name|Description|
 |:-----|:-----|
-| `choices: Components.IChoice[]`|An array representing the list of choices associated with the problem.|
+| `choices: Components.IChoice`|An array representing the list of choices associated with the problem.|
 | `timeLimit: number`|Time limit for completing the problem.|
 | `maxAttempts: number`|Maximum number of attempts allowed for the problem.|
 | `maxScore: number`|The maximum score for the problem.|

@@ -8,7 +8,7 @@ Contains the collection of the document's TableCell objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[TableCell[]](tablecell.md)|A collection of tableCell objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|items|[TableCell](tablecell.md)|A collection of tableCell objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

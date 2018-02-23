@@ -8,7 +8,7 @@ Represents the Hyperlink Collection.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|items|[Hyperlink[]](hyperlink.md)|A collection of hyperlink objects. Read-only.|
+|items|[Hyperlink](hyperlink.md)|A collection of hyperlink objects. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
