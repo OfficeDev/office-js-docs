@@ -68,24 +68,39 @@
 		</Item>
 	</Item>
 	<Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Provides an overview of the Word Javascript API.">
+		<Item text="Application" url="word/application" SEODescription="Represents the application object." />	
 		<Item text="Body" url="word/body" SEODescription="Represents the body of a document or a section." />
 		<Item text="BreakType" url="word/breaktype" FriendlyUrl="word/referencebreaktype" Scope="word" SEODescription="Specifies the form of a break." />
 		<Item text="ContentControl" url="word/contentcontrol" FriendlyUrl="word/referencecontentcontrol" Scope="word" SEODescription="Represents a content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content." />
 		<Item text="ContentControlCollection" url="word/contentcontrolcollection" FriendlyUrl="word/referencecontentcontrolcollection" Scope="word" SEODescription="Contains a collection of ContentControl objects. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content." />
+		<Item text="CustomProperty" url="word/customproperty" FriendlyUrl="word/referencecustomproperty" Scope="word" SEODescription="Represents a custom property." />
+		<Item text="CustomPropertyCollection" url="word/custompropertycollection" FriendlyUrl="word/referencecustompropertycollection" Scope="word" SEODescription="Contains the collection of customProperty objects." />
 		<Item text="Document" url="word/document" FriendlyUrl="word/referencedocument" Scope="word" SEODescription="Contains one or more sections, content controls, and the body that contains the contents of the document." />
+		<Item text="DocumentProperties" url="word/documentproperties" FriendlyUrl="word/referencedocumentproperties" Scope="word" SEODescription="Contains the collection document properties." />
+		<Item text="Enums" url="word/enums" SEODescription="Contains the list of document enumerations." />
 		<Item text="Error" url="word/error" FriendlyUrl="word/referenceerror" Scope="word" SEODescription="Represents errors that occur when you use the Word JavaScript API." />
 		<Item text="Font" url="word/font" FriendlyUrl="word/referencefont" Scope="word" SEODescription="Represents a font." />
 		<Item text="InlinePicture" url="word/inlinepicture" FriendlyUrl="word/referenceinlinepicture" Scope="word" SEODescription="Represents an inline picture." />
 		<Item text="InlinePictureCollection" url="word/inlinepicturecollection" FriendlyUrl="word/referenceinlinepicturecollection" Scope="word" SEODescription="Contains a collection of inlinePicture objects." />
+		<Item text="ListItem" url="word/listitem" SEODescription="Represents the paragraph list item format." />
 		<Item text="LoadOption" url="word/loadoption" SEODescription="Specifies paging information and the properties to load when context.sync() is called." />
 		<Item text="Paragraph" url="word/paragraph" FriendlyUrl="word/referenceparagraph" Scope="word" SEODescription="Represents a single paragraph in a selection, range, content control, or document body." />
 		<Item text="ParagraphCollection" url="word/paragraphcollection" FriendlyUrl="word/referenceparagraphcollection" Scope="word" SEODescription="Contains a collection of paragraph objects." />
 		<Item text="Range" url="word/range" SEODescription="Represents a contiguous area in a document." />
+		<Item text="RangeCollection" url="word/rangecollection" SEODescription="RContains a collection of range objects." />		
 		<Item text="RequestContext" url="word/requestcontext" SEODescription="Facilitates requests to the Word application from the Word add-in since the two applications run in different processes." />
 		<Item text="SearchOptions" url="word/searchoptions" FriendlyUrl="word/referencesearchoptions" Scope="word" SEODescription="Specifies the options to be included in a search operation." />
-		<Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="Contains a collection of range objects as a result of a search operation." />
 		<Item text="Section" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="Represents a section in a Word document." />
 		<Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="Contains the collection of the document's section objects." />
+		<Item text="Setting" url="word/setting" SEODescription="Represents the application object." />	
+		<Item text="SettingCollection" url="word/settingcollection" SEODescription="Represents the application object." />	
+		<Item text="Table" url="word/table" SEODescription="Represents a table in a Word document." />	
+		<Item text="TableBorder" url="word/tableborder" SEODescription="Specifies the border style." />
+		<Item text="TableCell" url="word/tablecell" SEODescription="Represents a table cell in a Word document." />	
+		<Item text="TableCellCollection" url="word/tablecellcollection" SEODescription="Contains the collection of the document's TableCell objects." />	
+		<Item text="TableCollection" url="word/tablecollection" SEODescription="Contains the collection of the document's Table objects." />	
+		<Item text="TableRow" url="word/tablerow" SEODescription="Represents a row in a Word document." />	
+		<Item text="TableRowCollection" url="word/tablerowcollection" SEODescription="Contains the collection of the document's TableRow objects." />	
 		<Item text="Word JavaScript API requirement sets" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Find information about the Word requirement sets, the Office host applications that support that requirement set, and the build or version numbers for those applications." />
 	</Item>
 	<Item text="Excel" url="excel/excel-add-ins-reference-overview" Scope="excel" SEODescription="Provides an overview of the Excel Javascript API.">
