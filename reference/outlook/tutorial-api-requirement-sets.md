@@ -45,11 +45,11 @@ The following clients support Outlook add-ins.
 | Outlook 2016 (Click-to-Run) for Windows | 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 |
 | Outlook 2016 (MSI) for Windows | 1.1, 1.2, 1.3, 1.4 |
 | Outlook 2016 for Mac | 1.1, 1.2, 1.3, 1.4, 1.5 |
-| Outlook 2013 for Windows | 1.1, 1.2, 1.3 |
-| Outlook for iPhone | 1.4, 1.5 |
-| Outlook for Android | 1.4 |
+| Outlook 2013 for Windows | 1.1, 1.2, 1.3, 1.4 |
+| Outlook for iPhone | 1.1, 1.2, 1.3, 1.4, 1.5 |
+| Outlook for Android | 1.1, 1.2, 1.3, 1.4 |
 | Outlook on the web (Office 365 and Outlook.com) | 1.1, 1.2, 1.3, 1.4, 1.5 |
 | Outlook Web App (Exchange 2013 On-Premise) | 1.1 |
 | Outlook Web App (Exchange 2016 On-Premise) | 1.1, 1.2. 1.3 |
 
-> **Note** Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349)
+> **Note** Support for 1.3 in Outlook 2013 was added as part of the [December 8, 2015, update for Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). Support for 1.4 in Outlook 2013 was added as part of the [September 13, 2016, update for Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280).
