@@ -8,40 +8,35 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 
 |Object| What is new| Description |Requirement set|
 |:----|:----|:----|:----|
-|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Property_ > actionType|Gets the top border Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|Beta|
-|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Property_ > message|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|Beta|
-|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Property_ > messageType|Gets the top border Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|Beta|
-|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Property_ > targetId|Gets the top border Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|Beta|
-|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Relationship_ > controlId|Gets the top border Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|Beta|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Property_ > address|Gets the address that represents the changed area of a table on a specific worksheet.|Beta|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Property_ > changeType|Gets the change type that represents how the DataChanged event is triggered. Possible values are: Others, RangeEdited, RowInserted, RowDeleted, ColumnInserted, ColumnDeleted, CellInserted, CellDeleted.|Beta|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|Beta|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Property_ > tableId|Gets the id of the table in which the data changed.|Beta|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
-|[tableDataChangedEvent](reference/excel/tabledatachangedevent.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the data changed.|Beta|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Property_ > address|Gets the range address that represents the selected area of the table on a specific worksheet.|Beta|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Property_ > tableId|Gets the id of the table in which the selection changed.|Beta|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the selection changed.|Beta|
-|[tableSelectionChangedEvent](reference/excel/tableselectionchangedevent.md)|_Property_ > IsInsideTable|Indicates if the selection is inside a table, address will be useless if IsInsideTable is false. |Beta|
-|[worksheetActivatedEvent](reference/excel/worksheetactivatedevent.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
-|[worksheetActivatedEvent](reference/excel/worksheetactivatedevent.md)|_Property_ > worksheetId|Gets the id of the worksheet that is activated.|Beta|
-|[worksheetAddedEvent](reference/excel/worksheetaddedevent.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|Beta|
-|[worksheetAddedEvent](reference/excel/worksheetaddedevent.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
-|[worksheetAddedEvent](reference/excel/worksheetaddedevent.md)|_Property_ > worksheetId|Gets the id of the worksheet that is added to the workbook.|Beta|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Property_ > address|Gets the range address that represents the changed area of a specific worksheet.|Beta|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Property_ > changeType|Gets the change type that represents how the DataChanged event is triggered. Possible values are: Others, RangeEdited, RowInserted, RowDeleted, ColumnInserted, ColumnDeleted, CellInserted, CellDeleted.|Beta|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|Beta|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
-|[worksheetDataChangedEvent](reference/excel/worksheetdatachangedevent.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the data changed.|Beta|
-|[worksheetDeactivatedEvent](reference/excel/worksheetdeactivatedevent.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
-|[worksheetDeactivatedEvent](reference/excel/worksheetdeactivatedevent.md)|_Property_ > worksheetId|Gets the id of the worksheet that is deactivated.|Beta|
-|[worksheetDeletedEvent](reference/excel/worksheetdeletedevent.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|Beta|
-|[worksheetDeletedEvent](reference/excel/worksheetdeletedevent.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
-|[worksheetDeletedEvent](reference/excel/worksheetdeletedevent.md)|_Property_ > worksheetId|Gets the id of the worksheet that is added to the workbook.|Beta|
-|[worksheetSelectionChangedEvent](reference/excel/worksheetselectionchangedevent.md)|_Property_ > address|Gets the range address that represents the selected area of a specific worksheet.|Beta|
-|[worksheetSelectionChangedEvent](reference/excel/worksheetselectionchangedevent.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
-|[worksheetSelectionChangedEvent](reference/excel/worksheetselectionchangedevent.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the selection changed.|Beta|
+|[WorksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > address|Gets the range address that represents the changed area of a specific worksheet.|Beta|
+|[WorksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > changeType|Gets the change type that represents how the DataChanged event is triggered. Possible values are: Others, RangeEdited, RowInserted, RowDeleted, ColumnInserted, ColumnDeleted, CellInserted, CellDeleted.|Beta|
+|[WorksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|Beta|
+|[WorksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
+|[WorksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the data changed.|Beta|
+|[WorksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
+|[TableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > type |Gets the type of the event. Possible values are: WorksheetChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
+|[TableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > changeType |Gets the change type that represents how the DataChanged event is triggered. Possible values are: Others, RangeEdited, RowInserted, RowDeleted, ColumnInserted, ColumnDeleted, CellInserted, CellDeleted.|Beta|
+|[TableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > source |Gets the source of the event. Possible values are: Local, Remote.|Beta|
+|[TableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the data changed.|Beta|
+|[TableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > tableId |Gets the id of the table in which the data changed.|Beta|
+|[TableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > address |Gets the address that represents the changed area of a table on a specific worksheet.|Beta|
+|[WorksheetSelectionChangedEventArgs](reference/excel/worksheetselectionchangedeventargs.md)|_Property_ > address|Gets the range address that represents the selected area of a specific worksheet.|Beta|
+|[WorksheetSelectionChangedEventArgs](reference/excel/worksheetselectionchangedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
+|[WorksheetSelectionChangedEventArgs](reference/excel/worksheetselectionchangedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the selection changed.|Beta|
+|[TableSelectionChangedEventArgs](reference/excel/TableSelectionChangedEventArgs.md)|_Property_ > type |Gets the type of the event. Possible values are: WorksheetChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
+|[TableSelectionChangedEventArgs](reference/excel/TableSelectionChangedEventArgs.md)|_Property_ > IsInsideTable |Indicates if the selection is inside a table, address will be useless if IsInsideTable is false.|Beta|
+|[TableSelectionChangedEventArgs](reference/excel/TableSelectionChangedEventArgs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the selection changed.|Beta|
+|[TableSelectionChangedEventArgs](reference/excel/TableSelectionChangedEventArgs.md)|_Property_ > tableId |Gets the id of the table in which the selection changed.|Beta|
+|[TableSelectionChangedEventArgs](reference/excel/TableSelectionChangedEventArgs.md)|_Property_ > address |Gets the address that represents the changed area of a table on a specific worksheet.|Beta|
+[WorksheetAddedEventArgs](reference/excel/WorksheetAddedEventArgs.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|Beta|
+|[WorksheetAddedEventArgs](reference/excel/WorksheetAddedEventArgs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|Beta|
+|[worksheetAddedEvent](reference/excel/WorksheetAddedEventArgs.md)|_Property_ > worksheetId|Gets the id of the worksheet that is added to the workbook.|Beta|
+|[WorksheetActivatedEventArgs](reference/excel/worksheetactivatedeventargs.md)|_Property_ > WorksheetId|Gets the id of the worksheet that is activated.|Beta|
+|[WorksheetActivatedEventArgs](reference/excel/worksheetactivatedeventargs.md)|_Property_ > Type|Gets the type of the event. Possible values include: WorksheetChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableChanged, TableSelectionChanged.|Beta|
+|[WorksheetDeactivatedEventArgs](reference/excel/worksheetdeactivatedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet that is deactivated.|Beta|
+|[WorksheetDeactivatedEventArgs](reference/excel/worksheetdeactivatedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values include: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged.|Beta|
+
+
 
 ### Examples
 
