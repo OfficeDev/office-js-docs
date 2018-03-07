@@ -7,7 +7,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 The initial release of add-in commands doesn't have a corresponding requirement set (that is, there isn't an AddinCommands 1.0 requirement set). The following table lists the Office host applications that support the initial release version, and the build versions or number for those applications.  
 
-| Release   |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  
+| Release   |  Office 2013 for Windows | Office 365 for Windows\*   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  
 |:-----|-----|:-----|:-----|:-----|:-----|
 | Add-in commands (initial release, no requirement set) | Not applicable | Version 1603 (Build 6769.0000) or later | N/A | 15.33 or later| January 2016 | |
 
@@ -15,7 +15,7 @@ The add-in commands 1.1 requirement set introduces the ability to [autoopen a ta
 
 The following table lists the add-in commands 1.1 requirement set, the Office host applications that support that requirement set, and the build or version numbers for the Office application. 
 
-|  Requirement set  |  Office 2013 for Windows | Office 2016 for Windows\*   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  |  
+|  Requirement set  |  Office 2013 for Windows | Office 365 for Windows\*   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  
 |:-----|-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.1  | N/A | Version 1705 (Build 8121.1000) or later | N/A | 15.34 or later| May 2017 | |
 
@@ -34,5 +34,6 @@ For information about common API requirement sets, see [Office common API requir
 
 ## Additional resources
 
+- [Office versions and requirement sets](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
