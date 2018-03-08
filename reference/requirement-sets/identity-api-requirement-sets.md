@@ -4,7 +4,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Office Add-ins run across multiple versions of Office. The following table lists the Identity API requirement sets, the Office host applications that support that requirement set, and the build or version numbers for the Office application.
 
-|  Requirement set  | Office 2013 for Windows | Office 2016 for Windows   |  Office 2016 for iPad  |  Office 2016 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
+|  Requirement set  | Office 2013 for Windows | Office 365 for Windows   |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  | SharePoint Online | OneDrive.com |Outlook.com & Exchange Online|
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | IdentityAPI 1.1  | N/A | Preview**&#42;** | Coming soon | Preview**&#42;**| Available | Available| Coming soon | Coming soon |
 
@@ -25,5 +25,6 @@ The Single Sign On IdentityAPI 1.1 is the first version of the API. For details 
 
 ## See also
 
+- [Office versions and requirement sets](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)

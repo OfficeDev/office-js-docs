@@ -45,5 +45,6 @@ The following code example shows an add-in that loads in all Office host applica
 
 ## Additional resources
 
+- [Office versions and requirement sets](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Office Add-ins XML manifest](../../docs/overview/add-in-manifests.md)
