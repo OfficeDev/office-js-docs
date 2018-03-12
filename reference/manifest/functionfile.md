@@ -22,7 +22,7 @@ The JavaScript in the HTML file indicated by the  **FunctionFile** element must 
 The following is an example of an HTML file defining a **trackMessage** function.
 
 ```js
-Office.intialize = function () {
+Office.initialize = function () {
     doAuth();
 }
 
