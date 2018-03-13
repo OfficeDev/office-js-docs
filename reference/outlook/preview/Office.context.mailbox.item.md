@@ -1236,7 +1236,7 @@ Gets initialization data passed when the add-in is [activated by an actionable m
 |---|---|---|---|
 |`options`| Object| &lt;optional&gt;|An object literal that contains one or more of the following properties.|
 | `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
-|`callback`| function| &lt;optional&gt;| When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>On success, the intialization data is provided in the `asyncResult.value` property as a string.<br/>If there is no initialization context, the `asyncResult` object will contain an `Error` object with its `code` property set to `9020` and its `name` property set to `GenericResponseError`. |
+|`callback`| function| &lt;optional&gt;| When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object. <br/>On success, the initialization data is provided in the `asyncResult.value` property as a string.<br/>If there is no initialization context, the `asyncResult` object will contain an `Error` object with its `code` property set to `9020` and its `name` property set to `GenericResponseError`. |
 
 ##### Requirements
 
@@ -1249,7 +1249,7 @@ Gets initialization data passed when the add-in is [activated by an actionable m
 ##### Example
 
 ```
-// Get the intialization context (if present)
+// Get the initialization context (if present)
 Office.context.mailbox.item.getInitializationContextAsync(
   function(asyncResult) {
     if (asyncResult.status == Office.AsyncResultStatus.Succeeded) {
