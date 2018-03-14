@@ -80,7 +80,7 @@ With the new chart APIs, you can create additional chart types, add a data serie
 Excel events APIs provide a variety of event handlers that allow your add-in to automatically run a designated function when a specific event occurs.  You can design that function to perform whatever actions your scenario requires. For a list of events that are currently available, see [Work with Events using the Excel JavaScript API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-events).
 
 
-## Perform data Validation
+## Perform data validation
 
 The new data validation APIs enable setting up new range data validation rules on ranges based on pre-defined list, formulas, date, time or custom values, manage input and error messages.
 
