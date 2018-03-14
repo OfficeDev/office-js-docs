@@ -27,36 +27,6 @@ To find out more about versions, build numbers, and Office Online Server, see:
 - [Where you can find the version and build number for an Office 365 client application](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
 - [Office Online Server overview](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
-## Runtime requirement support check
-
-During the runtime, add-ins can check if a particular host supports an API requirement set by doing the following-check: 
-
-```js
-if (Office.context.requirements.isSetSupported('ExcelApi', 1.3) === true) {
-  /// perform actions
-}
-else {
-  /// provide alternate flow/logic
-}
-```
-
-## Manifest based requirement support check
-
-Use the Requirements element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the Requirements element, the add-in won't run in that host or platform, and won't display in My Add-ins. Instead, we recommend that you make your add-in available on all platforms of an Office host, such as Excel for Windows, Excel Online, and Excel for iPad. To make your add-in available on all Office hosts and platforms, use runtime checks instead of the Requirements element.
-
-The following code example shows an add-in that loads in all Office host applications that support ExcelApi requirement set, version 1.3.
-
-```xml
-<Requirements>
-   <Sets DefaultMinVersion="1.3">
-      <Set Name="ExcelApi" MinVersion="1.3"/>
-   </Sets>
-</Requirements>
-```
-
-## Office common API requirement sets
-For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
-
 ## Upcoming Excel JavaScript API 1.7 release features
 
 The Excel JavaScript API requirement set 1.7 features include APIs for charts, events, data validation, worksheets, ranges, document properties, named items, protection options and styles.
@@ -79,11 +49,6 @@ With the new chart APIs, you can create additional chart types, add a data serie
 
 Excel events APIs provide a variety of event handlers that allow your add-in to automatically run a designated function when a specific event occurs.  You can design that function to perform whatever actions your scenario requires. For a list of events that are currently available, see [Work with Events using the Excel JavaScript API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-events).
 
-
-## Perform data validation
-
-The new data validation APIs enable setting up new range data validation rules on ranges based on pre-defined list, formulas, date, time or custom values, manage input and error messages.
-
 ## Customize the appearance of worksheets and ranges
 
 The new APIs, you can customize the appearance of worksheets in multiple ways:
@@ -105,6 +70,7 @@ You can customize the appearance of ranges in multiple ways:
 Using the document properties APIs, you can access built-in document properties and also create and manage custom document properties to store state of the workbook and drive workflow and business logic.
 
 ## Copy worksheets
+
 Using the worksheet copy APIs, you can copy the data and format of from one worksheet to a new worksheet within the same workbook and reduce the amount of data transfer needed.
 
 ## Handle ranges with ease
