@@ -11,6 +11,7 @@ Represents the Hyperlink.
 |address|string|Gets the address of the Hyperlink object. Read-only.|
 |description|string|Gets the description of a hyperlink. Read-only.|
 |subAddress|string|Gets the sub-address of the Hyperlink object. Read-only.|
+|extraInfo|string|Gets the extra URL request information used to resolve the hyperlink's URL. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -37,7 +38,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
@@ -53,6 +54,7 @@ Visio.run(function (ctx) {
 		console.log(hyperlink.description);
 		console.log(hyperlink.address);
 		console.log(hyperlink.subAddress);
+		console.log(hyperlink.extraInfo);
  	});
 }).catch(function(error) {
 		console.log("Error: " + error);

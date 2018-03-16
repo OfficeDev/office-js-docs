@@ -133,7 +133,8 @@ Visio.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
-```### Property access examples
+```
+### Property access examples
 ```js
 Visio.run(function (ctx) { 
 	var pages = ctx.document.pages;
@@ -149,7 +150,6 @@ Visio.run(function (ctx) {
 });
 ```
 
-### Property access examples
 ```js
 Visio.run(function (ctx) { 
 	var documentView = ctx.document.view;
@@ -163,7 +163,6 @@ Visio.run(function (ctx) {
 });
 ```
 
-### Property access examples
 ```js
 Visio.run(function (ctx) { 
 	var application = ctx.document.application;
@@ -176,4 +175,3 @@ Visio.run(function (ctx) {
 		}
 });
 ```
-
