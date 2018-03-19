@@ -1,14 +1,14 @@
 
 
 # event.completed
-The callback that the add-in invokes to let Outlook know that the operation is done.
+The callback that the add-in invokes to let Office know that the operation is done.
 
 ****
 
 |||
 |:-----|:-----|
-|**Hosts:**Outlook|**Add-in type:** Outlook|
-|**Available in [requirement sets](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Mailbox|
+|**Hosts:** Excel, Outlook, PowerPoint, Word|**Add-in type:** Content, task pane, Outlook|
+|**Available in [requirement sets](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Mailbox, (Also available in the Shared Office JavaScript API outside of any requirement set.)|
 |**Last changed in Mailbox**|1.3|
 |**Applicable Outlook modes**|Read and Compose|
 
@@ -23,9 +23,30 @@ event.completed();
 
 None
 
-
 ## Support details
 
+A capital Y in the following matrix indicates that this method is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this method.
+
+For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
+
+||**Office for Windows desktop**|**Office Online (in browser)**|**Office for iPad**|
+|:-----|:-----|:-----|:-----|
+|**Excel**|Y|Y|Y|
+|**Outlook**|See **Outlook support deails** below. |||
+|**PowerPoint**|Y|Y|Y|
+|**Word**|Y|Y|Y|
+
+|||
+|:-----|:-----|
+|**Available in requirement sets**|Mailbox, (Also available in the Shared Office JavaScript API outside of any requirement set.)|
+|**Minimum permission level**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Add-in types**|Content, task pane, Outlook|
+|**Library**|Office.js|
+|**Namespace**|Office|
+
+
+
+## Outlook support details
 
 A capital Y in the following table indicates that this property is supported in the corresponding Outlook host application. An empty cell indicates that the Outlook host application doesn't support this property.
 
@@ -33,9 +54,7 @@ For more information about Office host application and server requirements, see 
 
  **Important:** Add-in commands and the APIs associated with them currently work only in Outlook in [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) on Windows desktop.
 
-
 **Supported hosts, by platform**
-
 
 | |**Office for Windows desktop**|**Office Online(in browser)**|**OWA for Devices**|
 |:-----|:-----|:-----|:-----|
@@ -46,14 +65,14 @@ For more information about Office host application and server requirements, see 
 |**Available in requirement sets**|Mailbox|
 |**Minimum permission level**|[ReadWriteItem](../../docs/outlook/understanding-outlook-add-in-permissions.md)|
 |**Add-in types**|Outlook|
+|**Last changed in Mailbox**|1.3|
+|**Applicable Outlook modes**|Read and Compose|
 |**Library**|Office.js|
 |**Namespace**|Office|
 
 ## Support history
 
 
-
-
 |**Version**|**Changes**|
 |:-----|:-----|
-|1.3|Introduced|
+|Mailbox 1.3|Introduced|
