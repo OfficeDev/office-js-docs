@@ -120,6 +120,7 @@ document.write("<input type='button' value='SelectedShapeText' onclick='getSelec
 document.write("<textarea id='ResultOutput' style='width:350px;height:60px'> </textarea>");
 document.write("<div id='iframeHost' />");
 
+let session; // Global variable to store the session and pass it afterwards in Visio.run()
 var textArea;
 // Loads the Visio application and Initializes communication between devloper frame and Visio online frame
 function initEmbeddedFrame() {
@@ -134,17 +135,16 @@ function initEmbeddedFrame() {
 	url = url.replace("action=default","action=embedview");
 	url = url.replace("action=edit","action=embedview");
   
-       var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+       session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
        return session.init().then(function () {
 	    // Initilization is successful 
 	    textArea.value  = "Initilization is successful";
-	    OfficeExtension.ClientRequestContext._overrideSession = session;
 	});
      }
 
 // Code for getting selected Shape Text using the shapes collection object
 function getSelectedShapeText() {
-    Visio.run(function (ctx) { 	
+    Visio.run(session, function (ctx) { 	
 	   var page = ctx.document.getActivePage();
  	   var shapes = page.shapes;
    	   shapes.load();
