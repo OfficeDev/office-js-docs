@@ -2,11 +2,11 @@
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number for those applications.
+Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
-> **Note**: Any API that is listed as **beta** is not ready for production usage. They are made available so that developers can try them out in test and development environments. They are not meant to be used against production/business critical documents. 
-
-> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+> [!NOTE]
+> Any API that is listed as **beta** is not ready for end-user production. We make them available for developers to try them out in test and development environments. They are not meant to be used against production/business critical documents. 
+> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 
 |  Requirement set  |  Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
@@ -18,46 +18,324 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 | ExcelApi1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
 | ExcelApi1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
 
-> **\*Note**: The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
+> [!NOTE]
+> The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
 
-To find out more about versions, build numbers, and Office Online Server, see:
+For more information about versions, build numbers, and Office Online Server, see:
 
 - [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [What version of Office am I using?](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
 - [Where you can find the version and build number for an Office 365 client application](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
 - [Office Online Server overview](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
-## Runtime requirement support check
+## Upcoming Excel JavaScript API 1.7 release features
 
-During the runtime, add-ins can check if a particular host supports an API requirement set by doing the following-check: 
+The Excel JavaScript API requirement set 1.7 features include APIs for charts, events, data validation, worksheets, ranges, document properties, named items, protection options and styles.
 
-```js
-if (Office.context.requirements.isSetSupported('ExcelApi', 1.3) === true) {
-  /// perform actions
-}
-else {
-  /// provide alternate flow/logic
-}
-```
+> [!NOTE]
+> For API reference documentation and details, see [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
 
-## Manifest based requirement support check
+## Customize charts
 
-Use the Requirements element in the add-in manifest to specify critical requirement sets or API members that your add-in must use. If the Office host or platform doesn't support the requirement sets or API members specified in the Requirements element, the add-in won't run in that host or platform, and won't display in My Add-ins. Instead, we recommend that you make your add-in available on all platforms of an Office host, such as Excel for Windows, Excel Online, and Excel for iPad. To make your add-in available on all Office hosts and platforms, use runtime checks instead of the Requirements element.
+With the new chart APIs, you can create additional chart types, add a data series to a chart, set the chart title, add an axis title, add display unit, add a trendline with moving average, change a trendline to linear, and more. The following are some examples:
 
-The following code example shows an add-in that loads in all Office host applications that support ExcelApi requirement set, version 1.3.
+* Chart axis - get, set, format and remove axis unit, label and title in a chart.
+* Chart series - add, set, and delete a series in a chart.  Change series markers, plot orders and sizing.
+* Chart trendlines - add, get, and format trendlines in a chart.
+* Chart legend - format the legend font in a chart.
+* Chart point - set chart point color.
+* Chart title substring -  get and set title substring for a chart.
+* Chart type - option to create more chart types.
 
-```xml
-<Requirements>
-   <Sets DefaultMinVersion="1.3">
-      <Set Name="ExcelApi" MinVersion="1.3"/>
-   </Sets>
-</Requirements>
-```
+## Events
 
-## Office common API requirement sets
-For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
+Excel events APIs provide a variety of event handlers that allow your add-in to automatically run a designated function when a specific event occurs. You can design that function to perform whatever actions your scenario requires. For a list of events that are currently available, see [Work with Events using the Excel JavaScript API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-events).
 
-## Upcoming Excel 1.6 release features
+## Customize the appearance of worksheets and ranges
+
+Using the new APIs, you can customize the appearance of worksheets in multiple ways:
+
+* Freeze panes to keep specific rows or columns visible when you scroll in the worksheet. For example, if the first row in your worksheet contains headers, you might freeze that row so that the column headers will remain visible as you scroll down the worksheet.
+* Set the visibility of gridlines in a worksheet.
+* Modify the worksheet tab color.
+* Add worksheet headings.
+
+
+You can customize the appearance of ranges in multiple ways:
+
+* Set the cell style for a range to ensure sure that all cells in the range have consistent formatting. A cell style is a defined set of formatting characteristics, such as fonts and font sizes, number formats, cell borders, and cell shading. Use any of Excel's built-in cell styles or create your own custom cell style.
+* Set the text orientation for a range.
+* Add or modify a hyperlink on a range that links to another location in the workbook or to an external location.
+
+## Manage document properties
+
+Using the document properties APIs, you can access built-in document properties and also create and manage custom document properties to store state of the workbook and drive workflow and business logic.
+
+## Copy worksheets
+
+Using the worksheet copy APIs, you can copy the data and format from one worksheet to a new worksheet within the same workbook and reduce the amount of data transfer needed.
+
+## Handle ranges with ease
+
+Using the various range APIs, you can do things such as get the surrounding region, get a resized range, and more. These APIs should make tasks like range manipulation and addressing much more efficient.
+
+In addiiton:
+
+* Workbook and worksheet protection options - use these APIs to protect data in a worksheet and the workbook structure.
+* Update a named item - use this API to update a named item.
+* Get active cell  - use this API to get the active cell of a workbook.
+
+|Object| What is new| Description|Requirement set|
+|:----|:----|:----|:----|
+|[chart](reference/excel/chart.md)|_Property_ > chartType|Represents the type of the chart. Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc..|1.7|
+|[chart](reference/excel/chart.md)|_Property_ > id|The unique id of chart. Read-only.|1.7|
+|[chart](reference/excel/chart.md)|_Property_ > showAllFieldButtons|Represents whether to display all field buttons on a PivotChart.|1.7|
+|[chartAreaFormat](reference/excel/chartareaformat.md)|_Relationship_ > border|Represents the border format of chart area, which includes color, linestyle and weight. Read-only.|1.7|
+|[chartAxes](reference/excel/chartaxes.md)|_Method_ > [getItem(type: string, group: string)]((reference/excel/chartaxes.md#getitemtype-string-group-string)|Returns the specific axis identified by type and group.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > axisBetweenCategories|Represents whether value axis crosses the category axis between categories.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > axisGroup|Represents the group for the specified axis. Read-only. Possible values are: Primary, Secondary.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > categoryType|Returns or sets the category axis type. Possible values are: Automatic, TextAxis, DateAxis.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > crosses|Represents the specified axis where the other axis crosses. Possible values are: Automatic, Maximum, Minimum, Custom.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > crossesAt|Represents the specified axis where the other axis crosses at. Read Only. Set to this property should use SetCrossesAt(double) method. Read-only.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > customDisplayUnit|Represents the custom axis display unit value. Read Only. To set this property, please use the SetCustomDisplayUnit(double) method. Read-only.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > displayUnit|Represents the axis display unit. Possible values are: None, Hundreds, Thousands, TenThousands, HundredThousands, Millions, TenMillions, HundredMillions, Billions, Trillions, Custom.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > height|Represents the height, in points, of the chart axis. Null if the axis's not visible. Read-only.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > left|Represents the distance, in points, from the left edge of the axis to the left of chart area. Null if the axis's not visible. Read-only.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > logBase|Represents the base of the logarithm when using logarithmic scales.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > reversePlotOrder|Represents whether Microsoft Excel plots data points from last to first.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > scaleType|Represents the value axis scale type. Possible values are: Linear, Logarithmic.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > showDisplayUnitLabel|Represents whether the axis display unit label is visible.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > tickLabelSpacing|Represents the number of categories or series between tick-mark labels. Can be a value from 1 through 31999 or an empty string for automatic setting. The returned value is always a number.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > tickMarkSpacing|Represents the number of categories or series between tick marks.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > top|Represents the distance, in points, from the top edge of the axis to the top of chart area. Null if the axis's not visible. Read-only.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > type|Represents the axis type. Read-only. Possible values are: Invalid, Category, Value, Series.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > visible|A boolean value represents the visibility of the axis.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Property_ > width|Represents the width, in points, of the chart axis. Null if the axis's not visible. Read-only.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > baseTimeUnit|Returns or sets the base unit for the specified category axis.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > majorTickMark|Represents the type of major tick mark for the specified axis.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > majorTimeUnitScale|Returns or sets the major unit scale value for the category axis when the CategoryType property is set to TimeScale.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > minorTickMark|Represents the type of minor tick mark for the specified axis.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > minorTimeUnitScale|Returns or sets the minor unit scale value for the category axis when the CategoryType property is set to TimeScale.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Relationship_ > tickLabelPosition|Represents the position of tick-mark labels on the specified axis.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Method_ > [setCategoryNames(sourceData: Range)]((reference/excel/chartaxis.md#setcategorynamessourcedata-range)|Sets all the category names for the specified axis.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Method_ > [setCrossesAt(value: double)]((reference/excel/chartaxis.md#setcrossesatvalue-double)|Set the specified axis where the other axis crosses at.|1.7|
+|[chartAxis](reference/excel/chartaxis.md)|_Method_ > [setCustomDisplayUnit(value: double)]((reference/excel/chartaxis.md#setcustomdisplayunitvalue-double)|Sets the axis display unit to a custom value.|1.7|
+|[chartBorder](reference/excel/chartborder.md)|_Property_ > color|HTML color code representing the color of borders in the chart.|1.7|
+|[chartBorder](reference/excel/chartborder.md)|_Property_ > weight|Represents weight of the border, in points.|1.7|
+|[chartBorder](reference/excel/chartborder.md)|_Relationship_ > lineStyle|Represents the line style of the border.|1.7|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > position|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|1.7|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > separator|String representing the separator used for the data label on a chart.|1.7|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showBubbleSize|Boolean value representing if the data label bubble size is visible or not.|1.7|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showCategoryName|Boolean value representing if the data label category name is visible or not.|1.7|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showLegendKey|Boolean value representing if the data label legend key is visible or not.|1.7|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showPercentage|Boolean value representing if the data label percentage is visible or not.|1.7|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showSeriesName|Boolean value representing if the data label series name is visible or not.|1.7|
+|[chartDataLabel](reference/excel/chartdatalabel.md)|_Property_ > showValue|Boolean value representing if the data label value is visible or not.|1.7|
+|[chartLegend](reference/excel/chartlegend.md)|_Property_ > height|Represents the height of the legend on the chart.|1.7|
+|[chartLegend](reference/excel/chartlegend.md)|_Property_ > left|Represents the left of a chart legend.|1.7|
+|[chartLegend](reference/excel/chartlegend.md)|_Property_ > showShadow|Represents if the legend has shadow on the chart.|1.7|
+|[chartLegend](reference/excel/chartlegend.md)|_Property_ > top|Represents the top of a chart legend.|1.7|
+|[chartLegend](reference/excel/chartlegend.md)|_Property_ > width|Represents the width of the legend on the chart.|1.7|
+|[chartLegend](reference/excel/chartlegend.md)|_Relationship_ > legendEntries|Represents a collection of legendEntries in the legend. Read-only.|1.7|
+|[chartLegendEntry](reference/excel/chartlegendentry.md)|_Property_ > visible|Represents the visible of a chart legend entry.|1.7|
+|[chartLegendEntryCollection](reference/excel/chartlegendentrycollection.md)|_Property_ > items|A collection of chartLegendEntry objects. Read-only.|1.7|
+|[chartLegendEntryCollection](reference/excel/chartlegendentrycollection.md)|_Method_ > [getCount()]((reference/excel/chartlegendentrycollection.md#getcount)|Returns the number of legendEntry in the collection.|1.7|
+|[chartLegendEntryCollection](reference/excel/chartlegendentrycollection.md)|_Method_ > [getItemAt(index: number)]((reference/excel/chartlegendentrycollection.md#getitematindex-number)|Returns a legendEntry at the given index.|1.7|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > hasDataLabel|Represents whether a data point has datalabel. Not applicable for surface charts.|1.7|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > markerBackgroundColor|HTML color code representation of the marker background color of data point. E.g. #FF0000 represents Red.|1.7|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > markerForegroundColor|HTML color code representation of the marker foreground color of data point. E.g. #FF0000 represents Red.|1.7|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > markerSize|Represents marker size of data point.|1.7|
+|[chartPoint](reference/excel/chartpoint.md)|_Property_ > markerStyle|Represents marker style of a chart data point. Possible values are: Invalid, Automatic, None, Square, Diamond, Triangle, X, Star, Dot, Dash, Circle, Plus, Picture.|1.7|
+|[chartPoint](reference/excel/chartpoint.md)|_Relationship_ > dataLabel|Returns the data label of a chart point. Read-only.|1.7|
+|[chartPointFormat](reference/excel/chartpointformat.md)|_Relationship_ > border|Represents the border format of a chart data point, which includes color, style and weight information. Read-only.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > chartType|Represents the chart type of a series. Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc..|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > doughnutHoleSize|Represents the doughnut hole size of a chart series.  Only valid on doughnut and doughnutExploded charts.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > filtered|Boolean value representing if the series is filtered or not. Not applicable for surface charts.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > gapWidth|Represents the gap width of a chart series.  Only valid on bar and column charts, as well as|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > hasDataLabels|Boolean value representing if the series has data labels or not.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > markerBackgroundColor|Represents markers background color of a chart series.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > markerForegroundColor|Represents markers foreground color of a chart series.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > markerSize|Represents marker size of a chart series.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > markerStyle|Represents marker style of a chart series. Possible values are: Invalid, Automatic, None, Square, Diamond, Triangle, X, Star, Dot, Dash, Circle, Plus, Picture.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > plotOrder|Represents the plot order of a chart series within the chart group.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > showShadow|Boolean value representing if the series has shadow or not.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Property_ > smooth|Boolean value representing if the series is smooth or not. Only for line and scatter charts.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Relationship_ > dataLabels|Represents a collection of all dataLabels in the series. Read-only.|ApiSet.InProgressFeatures.ChartingAPI|
+|[chartSeries](reference/excel/chartseries.md)|_Relationship_ > trendlines|Represents a collection of trendlines in the series. Read-only.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Method_ > [delete()]((reference/excel/chartseries.md#delete)|Deletes the chart series.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Method_ > [setBubbleSizes(sourceData: Range)]((reference/excel/chartseries.md#setbubblesizessourcedata-range)|Set bubble sizes for a chart series. Only works for bubble charts.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Method_ > [setValues(sourceData: Range)]((reference/excel/chartseries.md#setvaluessourcedata-range)|Set values for a chart series. For scatter chart, it means Y axis values.|1.7|
+|[chartSeries](reference/excel/chartseries.md)|_Method_ > [setXAxisValues(sourceData: Range)]((reference/excel/chartseries.md#setxaxisvaluessourcedata-range)|Set values of X axis for a chart series. Only works for scatter charts.|1.7|
+|[chartSeriesCollection](reference/excel/chartseriescollection.md)|_Method_ > [add(name: string, index: number)]((reference/excel/chartseriescollection.md#addname-string-index-number)|Add a new series to the collection.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > height|Returns the height, in points, of the chart title. Read-only. Null if chart title's not visible. Read-only.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > horizontalAlignment|Represents the horizontal alignment for chart title. Possible values are: Center, Left, Justify, Distributed, Right.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > left|Represents the distance, in points, from the left edge of chart title to the left edge of chart area. Null if chart title's not visible.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > position|Represents the position of chart title. Possible values are: Top, Automatic, Bottom, Right, Left.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > showShadow|Represents a boolean value that determines if the chart title has a shadow.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > textOrientation|Represents the text orientation of chart title. The value should be an integer either from -90 to 90, or 180 for vertically-oriented text.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > top|Represents the distance, in points, from the top edge of chart title to the top of chart area. Null if chart title's not visible.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > verticalAlignment|Represents the vertical alignment of chart title. Possible values are: Center, Bottom, Top, Justify, Distributed.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Property_ > width|Returns the width, in points, of the chart title. Read-only. Null if chart title's not visible. Read-only.|1.7|
+|[chartTitle](reference/excel/charttitle.md)|_Method_ > [setFormula(formula: string)]((reference/excel/charttitle.md#setformulaformula-string)|Sets a string value that represents the formula of chart title using A1-style notation.|1.7|
+|[chartTitleFormat](reference/excel/charttitleformat.md)|_Relationship_ > border|Represents the border format of chart title, which includes color, linestyle and weight. Read-only.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > backward|Represents the number of periods that the trendline extends backward.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > displayEquation|True if the equation for the trendline is displayed on the chart.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > displayRSquared|True if the R-squared for the trendline is displayed on the chart.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > forward|Represents the number of periods that the trendline extends forward.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > intercept|Represents the intercept value of the trendline. Can be set to a numeric value or an empty string (for automatic values). The returned value is always a number.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > movingAveragePeriod|Represents the period of a chart trendline, only for trendline with MovingAverage type.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > name|Represents the name of the trendline. Can be set to a string value, or can be set to null value represents automatic values. The returned value is always a string|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > polynomialOrder|Represents the order of a chart trendline, only for trendline with Polynomial type.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Property_ > type|Represents the type of a chart trendline. Possible values are: Linear, Exponential, Logarithmic, MovingAverage, Polynomial, Power.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Relationship_ > format|Represents the formatting of a chart trendline. Read-only.|1.7|
+|[chartTrendline](reference/excel/charttrendline.md)|_Method_ > [delete()]((reference/excel/charttrendline.md#delete)|Delete the trendline object.|1.7|
+|[chartTrendlineCollection](reference/excel/charttrendlinecollection.md)|_Property_ > items|A collection of chartTrendline objects. Read-only.|1.7|
+|[chartTrendlineCollection](reference/excel/charttrendlinecollection.md)|_Method_ > [add(type: string)]((reference/excel/charttrendlinecollection.md#addtype-string)|Adds a new trendline to trendline collection.|1.7|
+|[chartTrendlineCollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getCount()]((reference/excel/charttrendlinecollection.md#getcount)|Returns the number of trendlines in the collection.|1.7|
+|[chartTrendlineCollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getItem(index: number)]((reference/excel/charttrendlinecollection.md#getitemindex-number)|Get trendline object by index, which is the insertion order in items array.|1.7|
+|[chartTrendlineFormat](reference/excel/charttrendlineformat.md)|_Relationship_ > line|Represents chart line formatting. Read-only.|1.7|
+|[customFunctionPostProcessAction](reference/excel/customfunctionpostprocessaction.md)|_Property_ > actionType|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[customFunctionPostProcessAction](reference/excel/customfunctionpostprocessaction.md)|_Property_ > operationType|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[customProperty](reference/excel/customproperty.md)|_Property_ > key|Gets the key of the custom property. Read only. Read-only.|1.7|
+|[customProperty](reference/excel/customproperty.md)|_Property_ > type|Gets the value type of the custom property. Read only. Read-only. Possible values are: Number, Boolean, Date, String, Float.|1.7|
+|[customProperty](reference/excel/customproperty.md)|_Property_ > value|Gets or sets the value of the custom property.|1.7|
+|[customProperty](reference/excel/customproperty.md)|_Method_ > [delete()]((reference/excel/customproperty.md#delete)|Deletes the custom property.|1.7|
+|[customPropertyCollection](reference/excel/custompropertycollection.md)|_Property_ > items|A collection of customProperty objects. Read-only.|1.7|
+|[customPropertyCollection](reference/excel/custompropertycollection.md)|_Method_ > [add(key: string, value: object)]((reference/excel/custompropertycollection.md#addkey-string-value-object)|Creates a new or sets an existing custom property.|1.7|
+|[customPropertyCollection](reference/excel/custompropertycollection.md)|_Method_ > [deleteAll()]((reference/excel/custompropertycollection.md#deleteall)|Deletes all custom properties in this collection.|1.7|
+|[customPropertyCollection](reference/excel/custompropertycollection.md)|_Method_ > [getCount()]((reference/excel/custompropertycollection.md#getcount)|Gets the count of custom properties.|1.7|
+|[customPropertyCollection](reference/excel/custompropertycollection.md)|_Method_ > [getItem(key: string)]((reference/excel/custompropertycollection.md#getitemkey-string)|Gets a custom property object by its key, which is case-insensitive. Throws if the custom property does not exist.|1.7|
+|[customPropertyCollection](reference/excel/custompropertycollection.md)|_Method_ > [getItemOrNullObject(key: string)]((reference/excel/custompropertycollection.md#getitemornullobjectkey-string)|Gets a custom property object by its key, which is case-insensitive. Returns a null object if the custom property does not exist.|1.7|
+|[dataConnectionCollection](reference/excel/dataconnectioncollection.md)|_Property_ > items|A collection of dataConnection objects. Read-only.|1.7|
+|[dataConnectionCollection](reference/excel/dataconnectioncollection.md)|_Method_ > [refreshAll()]((reference/excel/dataconnectioncollection.md#refreshall)|Refreshes all the Data Connections in the collection.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > author|Gets or sets the author of the workbook.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > category|Gets or sets the category of the workbook.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > comments|Gets or sets the comments of the workbook.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > company|Gets or sets the company of the workbook.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > keywords|Gets or sets the keywords of the workbook.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > lastAuthor|Gets the last author of the workbook. Read only. Read-only.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > manager|Gets or sets the manager of the workbook.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > revisionNumber|Gets the revision number of the workbook. Read only.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > subject|Gets or sets the subject of the workbook.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Property_ > title|Gets or sets the title of the workbook.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Relationship_ > creationDate|Gets the creation date of the workbook. Read only. Read-only.|1.7|
+|[documentProperties](reference/excel/documentproperties.md)|_Relationship_ > custom|Gets the collection of custom properties of the workbook. Read only. Read-only.|1.7|
+|[listDataValidation](reference/excel/listdatavalidation.md)|_Property_ > source|Source of the list for data validation|1.8|
+|[namedItem](reference/excel/nameditem.md)|_Property_ > formula|Gets or sets the formula of the named item.  Formula always starts with a '=' sign.|1.7|
+|[namedItem](reference/excel/nameditem.md)|_Relationship_ > arrayValues|Returns an object containing values and types of the named item. Read-only.|1.7|
+|[namedItemArrayValues](reference/excel/nameditemarrayvalues.md)|_Property_ > types|Represents the types for each item in the named item array Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|1.7|
+|[namedItemArrayValues](reference/excel/nameditemarrayvalues.md)|_Property_ > values|Represents the values of each item in the named item array. Read-only.|1.7|
+|[range](reference/excel/range.md)|_Property_ > isEntireColumn|Represents if the current range is an entire column. Read-only.|1.7|
+|[range](reference/excel/range.md)|_Property_ > isEntireRow|Represents if the current range is an entire row. Read-only.|1.7|
+|[range](reference/excel/range.md)|_Property_ > numberFormatLocal|Represents Excel's number format code for the given range as a string in the language of the user.|1.7|
+|[range](reference/excel/range.md)|_Property_ > style|Represents the style of the current range. This return either null or a string.|1.7|
+|[range](reference/excel/range.md)|_Method_ > [getAbsoluteResizedRange(numRows: number, numColumns: number)]((reference/excel/range.md#getabsoluteresizedrangenumrows-number-numcolumns-number)|Gets a Range object with the same top-left cell as the current Range object, but with the specified numbers of rows and columns.|1.7|
+|[range](reference/excel/range.md)|_Method_ > [getImage()]((reference/excel/range.md#getimage)|Renders the range as a base64-encoded image.|1.7|
+|[range](reference/excel/range.md)|_Method_ > [getSurroundingRegion()]((reference/excel/range.md#getsurroundingregion)|Returns a Range object that represents the surrounding region for the top-left cell in this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.|1.7|
+|[range](reference/excel/range.md)|_Method_ > [showCard()]((reference/excel/range.md#showcard)|Displays the card for an active cell if it has rich value content.|1.7|
+|[rangeFormat](reference/excel/rangeformat.md)|_Property_ > textOrientation|Gets or sets the text orientation of all the cells within the range.|1.7|
+|[rangeFormat](reference/excel/rangeformat.md)|_Property_ > useStandardHeight|Determines if the row height of the Range object equals the standard height of the sheet.|1.7|
+|[rangeFormat](reference/excel/rangeformat.md)|_Property_ > useStandardWidth|Determines if the columnwidth of the Range object equals the standard width of the sheet.|1.7|
+|[rangeHyperlink](reference/excel/rangehyperlink.md)|_Property_ > address|Represents the url target for the hyperlink.|1.7|
+|[rangeHyperlink](reference/excel/rangehyperlink.md)|_Property_ > documentReference|Represents the document reference target for the hyperlink.|1.7|
+|[rangeHyperlink](reference/excel/rangehyperlink.md)|_Property_ > screenTip|Represents the string displayed when hovering over the hyperlink.|1.7|
+|[rangeHyperlink](reference/excel/rangehyperlink.md)|_Property_ > textToDisplay|Represents the string that is displayed in the top left most cell in the range.|1.7|
+|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Property_ > actionType|Gets the top border Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Property_ > message|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|1.7|
+|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Property_ > messageType|Gets the top border Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Property_ > targetId|Gets the top border Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[registerEventPostProcessAction](reference/excel/registereventpostprocessaction.md)|_Relationship_ > controlId|Gets the top border Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[showCardPostProcessAction](reference/excel/showcardpostprocessaction.md)|_Property_ > actionType|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[showCardPostProcessAction](reference/excel/showcardpostprocessaction.md)|_Property_ > column|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[showCardPostProcessAction](reference/excel/showcardpostprocessaction.md)|_Property_ > row|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|1.7|
+|[style](reference/excel/style.md)|_Property_ > addIndent|Indicates if text is automatically indented when the text alignment in a cell is set to equal distribution.|1.7|
+|[style](reference/excel/style.md)|_Property_ > autoIndent|Indicates if text is automatically indented when the text alignment in a cell is set to equal distribution.|1.7|
+|[style](reference/excel/style.md)|_Property_ > builtIn|Indicates if the style is a built-in style. Read-only.|1.7|
+|[style](reference/excel/style.md)|_Property_ > formulaHidden|Indicates if the formula will be hidden when the worksheet is protected.|1.7|
+|[style](reference/excel/style.md)|_Property_ > horizontalAlignment|Represents the horizontal alignment for the style. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|1.7|
+|[style](reference/excel/style.md)|_Property_ > includeAlignment|Indicates if the style includes the AutoIndent, HorizontalAlignment, VerticalAlignment, WrapText, IndentLevel, and TextOrientation properties.|1.7|
+|[style](reference/excel/style.md)|_Property_ > includeBorder|Indicates if the style includes the Color, ColorIndex, LineStyle, and Weight border properties.|1.7|
+|[style](reference/excel/style.md)|_Property_ > includeFont|Indicates if the style includes the Background, Bold, Color, ColorIndex, FontStyle, Italic, Name, Size, Strikethrough, Subscript, Superscript, and Underline font properties.|1.7|
+|[style](reference/excel/style.md)|_Property_ > includeNumber|Indicates if the style includes the NumberFormat property.|1.7|
+|[style](reference/excel/style.md)|_Property_ > includePatterns|Indicates if the style includes the Color, ColorIndex, InvertIfNegative, Pattern, PatternColor, and PatternColorIndex interior properties.|1.7|
+|[style](reference/excel/style.md)|_Property_ > includeProtection|Indicates if the style includes the FormulaHidden and Locked protection properties.|1.7|
+|[style](reference/excel/style.md)|_Property_ > indentLevel|An integer from 0 to 250 that indicates the indent level for the style.|1.7|
+|[style](reference/excel/style.md)|_Property_ > locked|Indicates if the object is locked when the worksheet is protected.|1.7|
+|[style](reference/excel/style.md)|_Property_ > name|The name of the style. Read-only.|1.7|
+|[style](reference/excel/style.md)|_Property_ > numberFormat|The format code of the number format for the style.|1.7|
+|[style](reference/excel/style.md)|_Property_ > numberFormatLocal|The localized format code of the number format for the style.|1.7|
+|[style](reference/excel/style.md)|_Property_ > orientation|The text orientation for the style.|1.7|
+|[style](reference/excel/style.md)|_Property_ > readingOrder|The reading order for the style. Possible values are: Context, LeftToRight, RightToLeft.|1.7|
+|[style](reference/excel/style.md)|_Property_ > shrinkToFit|Indicates if text automatically shrinks to fit in the available column width.|1.7|
+|[style](reference/excel/style.md)|_Property_ > textOrientation|The text orientation for the style.|1.7|
+|[style](reference/excel/style.md)|_Property_ > verticalAlignment|Represents the vertical alignment for the style. Possible values are: Top, Center, Bottom, Justify, Distributed.|1.7|
+|[style](reference/excel/style.md)|_Property_ > wrapText|Indicates if Microsoft Excel wraps the text in the object.|1.7|
+|[style](reference/excel/style.md)|_Relationship_ > borders|A Border collection of four Border objects that represent the style of the four borders. Read-only.|1.7|
+|[style](reference/excel/style.md)|_Relationship_ > fill|The Fill of the style. Read-only.|1.7|
+|[style](reference/excel/style.md)|_Relationship_ > font|A Font object that represents the font of the style. Read-only.|1.7|
+|[style](reference/excel/style.md)|_Method_ > [delete()]((reference/excel/style.md#delete)|Deletes this style.|1.7|
+|[styleCollection](reference/excel/stylecollection.md)|_Property_ > items|A collection of style objects. Read-only.|1.7|
+|[styleCollection](reference/excel/stylecollection.md)|_Method_ > [add(name: string)]((reference/excel/stylecollection.md#addname-string)|Adds a new style to the collection.|1.7|
+|[styleCollection](reference/excel/stylecollection.md)|_Method_ > [getItem(name: string)]((reference/excel/stylecollection.md#getitemname-string)|Gets a style by name.|1.7|
+|[tableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > address|Gets the address that represents the changed area of a table on a specific worksheet.|1.7|
+|[tableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > changeType|Gets the change type that represents how the Changed event is triggered. Possible values are: Others, RangeEdited, RowInserted, RowDeleted, ColumnInserted, ColumnDeleted, CellInserted, CellDeleted.|1.7|
+|[tableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|1.7|
+|[tableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > tableId|Gets the id of the table in which the data changed.|1.7|
+|[tableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|1.7|
+|[tableChangedEventArgs](reference/excel/tablechangedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the data changed.|1.7|
+|[tableSelectionChangedEventArgs](reference/excel/tableselectionchangedeventargs.md)|_Property_ > address|Gets the range address that represents the selected area of the table on a specific worksheet.|1.7|
+|[tableSelectionChangedEventArgs](reference/excel/tableselectionchangedeventargs.md)|_Property_ > isInsideTable|Indicates if the selection is inside a table, address will be useless if IsInsideTable is false.|1.7|
+|[tableSelectionChangedEventArgs](reference/excel/tableselectionchangedeventargs.md)|_Property_ > tableId|Gets the id of the table in which the selection changed.|1.7|
+|[tableSelectionChangedEventArgs](reference/excel/tableselectionchangedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|1.7|
+|[tableSelectionChangedEventArgs](reference/excel/tableselectionchangedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the selection changed.|1.7|
+|[workbook](reference/excel/workbook.md)|_Property_ > name|Gets the workbook name. Read-only.|1.7|
+|[workbook](reference/excel/workbook.md)|_Relationship_ > dataConnections|Refreshes all data connections in the workbook. Read-only.|1.7|
+|[workbook](reference/excel/workbook.md)|_Relationship_ > properties|Gets the workbook properties. Read-only.|1.7|
+|[workbook](reference/excel/workbook.md)|_Relationship_ > protection|Returns workbook protection object for a workbook. Read-only.|1.7|
+|[workbook](reference/excel/workbook.md)|_Relationship_ > styles|Represents a collection of styles associated with the workbook. Read-only.|1.7|
+|[workbook](reference/excel/workbook.md)|_Method_ > [getActiveCell()]((reference/excel/workbook.md#getactivecell)|Gets the currently active cell from the workbook.|1.7|
+|[workbookProtection](reference/excel/workbookprotection.md)|_Property_ > protected|Indicates if the workbook is protected. Read-Only. Read-only.|1.7|
+|[workbookProtection](reference/excel/workbookprotection.md)|_Method_ > [protect(password: string)]((reference/excel/workbookprotection.md#protectpassword-string)|Protects a workbook. Fails if the workbook has been protected.|1.7|
+|[workbookProtection](reference/excel/workbookprotection.md)|_Method_ > [unprotect(password: string)]((reference/excel/workbookprotection.md#unprotectpassword-string)|Unprotects a workbook.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > gridlines|Gets or sets the worksheet's gridlines flag.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > headings|Gets or sets the worksheet's headings flag.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > showGridlines|Gets or sets the worksheet's gridlines flag.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > showHeadings|Gets or sets the worksheet's headings flag.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > standardHeight|Returns the standard (default) height of all the rows in the worksheet, in points. Read-only.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > standardWidth|Returns or sets the standard (default) width of all the columns in the worksheet.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Property_ > tabColor|Gets or sets the worksheet tab color.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Relationship_ > freezePanes|Gets an object that can be used to manipulate frozen panes on the worksheet Read-only.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Method_ > [copy(positionType: WorksheetPositionType, relativeTo: Worksheet)]((reference/excel/worksheet.md#copypositiontype-worksheetpositiontype-relativeto-worksheet)|Copy a worksheet and place it at the specified position. Return the copied worksheet.|1.7|
+|[worksheet](reference/excel/worksheet.md)|_Method_ > [getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)]((reference/excel/worksheet.md#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|1.7|
+|[worksheetActivatedEventArgs](reference/excel/worksheetactivatedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|1.7|
+|[worksheetActivatedEventArgs](reference/excel/worksheetactivatedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet that is activated.|1.7|
+|[worksheetAddedEventArgs](reference/excel/worksheetaddedeventargs.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|1.7|
+|[worksheetAddedEventArgs](reference/excel/worksheetaddedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|1.7|
+|[worksheetAddedEventArgs](reference/excel/worksheetaddedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet that is added to the workbook.|1.7|
+|[worksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > address|Gets the range address that represents the changed area of a specific worksheet.|1.7|
+|[worksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > changeType|Gets the change type that represents how the Changed event is triggered. Possible values are: Others, RangeEdited, RowInserted, RowDeleted, ColumnInserted, ColumnDeleted, CellInserted, CellDeleted.|1.7|
+|[worksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|1.7|
+|[worksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|1.7|
+|[worksheetChangedEventArgs](reference/excel/worksheetchangedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the data changed.|1.7|
+|[worksheetDeactivatedEventArgs](reference/excel/worksheetdeactivatedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|1.7|
+|[worksheetDeactivatedEventArgs](reference/excel/worksheetdeactivatedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet that is deactivated.|1.7|
+|[worksheetDeletedEventArgs](reference/excel/worksheetdeletedeventargs.md)|_Property_ > source|Gets the source of the event. Possible values are: Local, Remote.|1.7|
+|[worksheetDeletedEventArgs](reference/excel/worksheetdeletedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|1.7|
+|[worksheetDeletedEventArgs](reference/excel/worksheetdeletedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet that is deleted from the workbook.|1.7|
+|[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [freezeAt(frozenRange: Range or string)]((reference/excel/worksheetfreezepanes.md#freezeatfrozenrange-range-or-string)|Sets the frozen cells in the active worksheet view.|1.7|
+|[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [freezeColumns(count: number)]((reference/excel/worksheetfreezepanes.md#freezecolumnscount-number)|Freeze the first column(s) of the worksheet in place.|1.7|
+|[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [freezeRows(count: number)]((reference/excel/worksheetfreezepanes.md#freezerowscount-number)|Freeze the top row(s) of the worksheet in place.|1.7|
+|[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [getLocation()]((reference/excel/worksheetfreezepanes.md#getlocation)|Gets a range that describes the frozen cells in the active worksheet view.|1.7|
+|[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [getLocationOrNullObject()]((reference/excel/worksheetfreezepanes.md#getlocationornullobject)|Gets a range that describes the frozen cells in the active worksheet view.|1.7|
+|[worksheetFreezePanes](reference/excel/worksheetfreezepanes.md)|_Method_ > [unfreeze()]((reference/excel/worksheetfreezepanes.md#unfreeze)|Removes all frozen panes in the worksheet.|1.7|
+|[worksheetProtectionOptions](reference/excel/worksheetprotectionoptions.md)|_Property_ > allowEditObjects|Represents the worksheet protection option of allowing editing objects.|1.7|
+|[worksheetProtectionOptions](reference/excel/worksheetprotectionoptions.md)|_Property_ > allowEditScenarios|Represents the worksheet protection option of allowing editing scenarios.|1.7|
+|[worksheetProtectionOptions](reference/excel/worksheetprotectionoptions.md)|_Relationship_ > selectionMode|Represents the worksheet protection option of selection mode.|1.7|
+|[worksheetSelectionChangedEventArgs](reference/excel/worksheetselectionchangedeventargs.md)|_Property_ > address|Gets the range address that represents the selected area of a specific worksheet.|1.7|
+|[worksheetSelectionChangedEventArgs](reference/excel/worksheetselectionchangedeventargs.md)|_Property_ > type|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|1.7|
+|[worksheetSelectionChangedEventArgs](reference/excel/worksheetselectionchangedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the selection changed.|1.7|
+
+## What's new in Excel JavaScript API 1.6 
 
 ### Conditional formatting
 
@@ -77,7 +355,122 @@ In addiiton:
 
 For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
 
-## Upcoming Excel 1.5 release features
+|Object| What is new| Description|Requirement set|
+|:----|:----|:----|:----|
+|[application](reference/excel/application.md)|_Method_ > [suspendApiCalculationUntilNextSync()]((reference/excel/application.md#suspendapicalculationuntilnextsync)|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|1.6|
+|[cellValueConditionalFormat](reference/excel/cellvalueconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[cellValueConditionalFormat](reference/excel/cellvalueconditionalformat.md)|_Relationship_ > rule|Represents the Rule object on this conditional format.|1.6|
+|[colorScaleConditionalFormat](reference/excel/colorscaleconditionalformat.md)|_Property_ > threeColorScale|If true the color scale will have three points (minimum, midpoint, maximum), otherwise it will have two (minimum, maximum). Read-only.|1.6|
+|[colorScaleConditionalFormat](reference/excel/colorscaleconditionalformat.md)|_Relationship_ > criteria|The criteria of the color scale. Midpoint is optional when using a two point color scale.|1.6|
+|[conditionalCellValueRule](reference/excel/conditionalcellvaluerule.md)|_Property_ > formula1|The formula, if required, to evaluate the conditional format rule on.|1.6|
+|[conditionalCellValueRule](reference/excel/conditionalcellvaluerule.md)|_Property_ > formula2|The formula, if required, to evaluate the conditional format rule on.|1.6|
+|[conditionalCellValueRule](reference/excel/conditionalcellvaluerule.md)|_Property_ > operator|The operator of the text conditional format. Possible values are: Invalid, Between, NotBetween, EqualTo, NotEqualTo, GreaterThan, LessThan, GreaterThanOrEqual, LessThanOrEqual.|1.6|
+|[conditionalColorScaleCriteria](reference/excel/conditionalcolorscalecriteria.md)|_Relationship_ > maximum|The maximum point Color Scale Criterion.|1.6|
+|[conditionalColorScaleCriteria](reference/excel/conditionalcolorscalecriteria.md)|_Relationship_ > midpoint|The midpoint Color Scale Criterion if the color scale is a 3-color scale.|1.6|
+|[conditionalColorScaleCriteria](reference/excel/conditionalcolorscalecriteria.md)|_Relationship_ > minimum|The minimum point Color Scale Criterion.|1.6|
+|[conditionalColorScaleCriterion](reference/excel/conditionalcolorscalecriterion.md)|_Property_ > color|HTML color code representation of the color scale color. E.g. #FF0000 represents Red.|1.6|
+|[conditionalColorScaleCriterion](reference/excel/conditionalcolorscalecriterion.md)|_Property_ > formula|A number, a formula, or null (if Type is LowestValue).|1.6|
+|[conditionalColorScaleCriterion](reference/excel/conditionalcolorscalecriterion.md)|_Property_ > type|What the icon conditional formula should be based on. Possible values are: Invalid, LowestValue, HighestValue, Number, Percent, Formula, Percentile.|1.6|
+|[conditionalDataBarNegativeFormat](reference/excel/conditionaldatabarnegativeformat.md)|_Property_ > borderColor|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalDataBarNegativeFormat](reference/excel/conditionaldatabarnegativeformat.md)|_Property_ > fillColor|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalDataBarNegativeFormat](reference/excel/conditionaldatabarnegativeformat.md)|_Property_ > matchPositiveBorderColor|Boolean representation of whether or not the negative DataBar has the same border color as the positive DataBar.|1.6|
+|[conditionalDataBarNegativeFormat](reference/excel/conditionaldatabarnegativeformat.md)|_Property_ > matchPositiveFillColor|Boolean representation of whether or not the negative DataBar has the same fill color as the positive DataBar.|1.6|
+|[conditionalDataBarPositiveFormat](reference/excel/conditionaldatabarpositiveformat.md)|_Property_ > borderColor|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalDataBarPositiveFormat](reference/excel/conditionaldatabarpositiveformat.md)|_Property_ > fillColor|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalDataBarPositiveFormat](reference/excel/conditionaldatabarpositiveformat.md)|_Property_ > gradientFill|Boolean representation of whether or not the DataBar has a gradient.|1.6|
+|[conditionalDataBarRule](reference/excel/conditionaldatabarrule.md)|_Property_ > formula|The formula, if required, to evaluate the databar rule on.|1.6|
+|[conditionalDataBarRule](reference/excel/conditionaldatabarrule.md)|_Property_ > type|The type of rule for the databar. Possible values are: LowestValue, HighestValue, Number, Percent, Formula, Percentile, Automatic.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Property_ > id|The Priority of the Conditional Format within the current ConditionalFormatCollection. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Property_ > priority|The priority (or index) within the conditional format collection that this conditional format currently exists in. Changing this also|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Property_ > stopIfTrue|If the conditions of this conditional format are met, no lower-priority formats shall take effect on that cell.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Property_ > type|A type of conditional format. Only one can be set at a time. Read-Only. Read-only. Possible values are: Custom, DataBar, ColorScale, IconSet.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > cellValue|Returns the cell value conditional format properties if the current conditional format is a CellValue type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > cellValueOrNullObject|Returns the cell value conditional format properties if the current conditional format is a CellValue type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > colorScale|Returns the ColorScale conditional format properties if the current conditional format is an ColorScale type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > colorScaleOrNullObject|Returns the ColorScale conditional format properties if the current conditional format is an ColorScale type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > custom|Returns the custom conditional format properties if the current conditional format is a custom type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > customOrNullObject|Returns the custom conditional format properties if the current conditional format is a custom type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > dataBar|Returns the data bar properties if the current conditional format is a data bar. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > dataBarOrNullObject|Returns the data bar properties if the current conditional format is a data bar. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > iconSet|Returns the IconSet conditional format properties if the current conditional format is an IconSet type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > iconSetOrNullObject|Returns the IconSet conditional format properties if the current conditional format is an IconSet type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > preset|Returns the preset criteria conditional format such as above averagebelow averageunique valuescontains blanknonblankerrornoerror properties. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > presetOrNullObject|Returns the preset criteria conditional format such as above averagebelow averageunique valuescontains blanknonblankerrornoerror properties. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > textComparison|Returns the specific text conditional format properties if the current conditional format is a text type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > textComparisonOrNullObject|Returns the specific text conditional format properties if the current conditional format is a text type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > topBottom|Returns the TopBottom conditional format properties if the current conditional format is an TopBottom type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > topBottomOrNullObject|Returns the TopBottom conditional format properties if the current conditional format is an TopBottom type. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Method_ > [delete()]((reference/excel/conditionalformat.md#delete)|Deletes this conditional format.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Method_ > [getRange()]((reference/excel/conditionalformat.md#getrange)|Returns the range the conditonal format is applied to or a null object if the range is discontiguous. Read-only.|1.6|
+|[conditionalFormat](reference/excel/conditionalformat.md)|_Method_ > [getRangeOrNullObject()]((reference/excel/conditionalformat.md#getrangeornullobject)|Returns the range the conditonal format is applied to or a null object if the range is discontiguous. Read-only.|1.6|
+|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Property_ > items|A collection of conditionalFormat objects. Read-only.|1.6|
+|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [add(type: string)]((reference/excel/conditionalformatcollection.md#addtype-string)|Adds a new conditional format to the collection at the firsttop priority.|1.6|
+|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [clearAll()]((reference/excel/conditionalformatcollection.md#clearall)|Clears all conditional formats active on the current specified range.|1.6|
+|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [getCount()]((reference/excel/conditionalformatcollection.md#getcount)|Returns the number of conditional formats in the workbook. Read-only.|1.6|
+|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [getItem(id: string)]((reference/excel/conditionalformatcollection.md#getitemid-string)|Returns a conditional format for the given ID.|1.6|
+|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [getItemAt(index: number)]((reference/excel/conditionalformatcollection.md#getitematindex-number)|Returns a conditional format at the given index.|1.6|
+|[conditionalFormatRule](reference/excel/conditionalformatrule.md)|_Property_ > formula|The formula, if required, to evaluate the conditional format rule on.|1.6|
+|[conditionalFormatRule](reference/excel/conditionalformatrule.md)|_Property_ > formulaLocal|The formula, if required, to evaluate the conditional format rule on in the user's language.|1.6|
+|[conditionalFormatRule](reference/excel/conditionalformatrule.md)|_Property_ > formulaR1C1|The formula, if required, to evaluate the conditional format rule on in R1C1-style notation.|1.6|
+|[conditionalIconCriterion](reference/excel/conditionaliconcriterion.md)|_Property_ > formula|A number or a formula depending on the type.|1.6|
+|[conditionalIconCriterion](reference/excel/conditionaliconcriterion.md)|_Property_ > operator|GreaterThan or GreaterThanOrEqual for each of the rule type for the Icon conditional format. Possible values are: Invalid, GreaterThan, GreaterThanOrEqual.|1.6|
+|[conditionalIconCriterion](reference/excel/conditionaliconcriterion.md)|_Relationship_ > customIcon|The custom icon for the current criterion if different from the default IconSet, else null will be returned.|1.6|
+|[conditionalIconCriterion](reference/excel/conditionaliconcriterion.md)|_Relationship_ > type|What the icon conditional formula should be based on.|1.6|
+|[conditionalPresetCriteriaRule](reference/excel/conditionalpresetcriteriarule.md)|_Property_ > criterion|The criterion of the conditional format. Possible values are: Invalid, Blanks, NonBlanks, Errors, NonErrors, Yesterday, Today, Tomorrow, LastSevenDays, LastWeek, ThisWeek, NextWeek, LastMonth, ThisMonth, NextMonth, AboveAverage, BelowAverage, EqualOrAboveAverage, EqualOrBelowAverage, OneStdDevAboveAverage, OneStdDevBelowAverage, TwoStdDevAboveAverage, TwoStdDevBelowAverage, ThreeStdDevAboveAverage, ThreeStdDevBelowAverage, UniqueValues, DuplicateValues.|1.6|
+|[conditionalRangeBorder](reference/excel/conditionalrangeborder.md)|_Property_ > color|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalRangeBorder](reference/excel/conditionalrangeborder.md)|_Property_ > id|Represents border identifier. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight.|1.6|
+|[conditionalRangeBorder](reference/excel/conditionalrangeborder.md)|_Property_ > sideIndex|Constant value that indicates the specific side of the border. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight.|1.6|
+|[conditionalRangeBorder](reference/excel/conditionalrangeborder.md)|_Property_ > style|One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|1.6|
+|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Property_ > count|Number of border objects in the collection. Read-only.|1.6|
+|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Property_ > items|A collection of conditionalRangeBorder objects. Read-only.|1.6|
+|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Relationship_ > bottom|Gets the top border Read-only.|1.6|
+|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Relationship_ > left|Gets the top border Read-only.|1.6|
+|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Relationship_ > right|Gets the top border Read-only.|1.6|
+|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Relationship_ > top|Gets the top border Read-only.|1.6|
+|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Method_ > [getItem(index: string)]((reference/excel/conditionalrangebordercollection.md#getitemindex-string)|Gets a border object using its name|1.6|
+|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Method_ > [getItemAt(index: number)]((reference/excel/conditionalrangebordercollection.md#getitematindex-number)|Gets a border object using its index|1.6|
+|[conditionalRangeFill](reference/excel/conditionalrangefill.md)|_Property_ > color|HTML color code representing the color of the fill, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalRangeFill](reference/excel/conditionalrangefill.md)|_Method_ > [clear()]((reference/excel/conditionalrangefill.md#clear)|Resets the fill.|1.6|
+|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > bold|Represents the bold status of font.|1.6|
+|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > color|HTML color code representation of the text color. E.g. #FF0000 represents Red.|1.6|
+|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > italic|Represents the italic status of the font.|1.6|
+|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > strikethrough|Represents the strikethrough status of the font.|1.6|
+|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > underline|Type of underline applied to the font. Possible values are: None, Single, Double.|1.6|
+|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Method_ > [clear()]((reference/excel/conditionalrangefont.md#clear)|Resets the font formats.|1.6|
+|[conditionalRangeFormat](reference/excel/conditionalrangeformat.md)|_Property_ > numberFormat|Represents Excel's number format code for the given range. Cleared if null is passed in.|1.6|
+|[conditionalRangeFormat](reference/excel/conditionalrangeformat.md)|_Relationship_ > borders|Collection of border objects that apply to the overall conditional format range. Read-only.|1.6|
+|[conditionalRangeFormat](reference/excel/conditionalrangeformat.md)|_Relationship_ > fill|Returns the fill object defined on the overall conditional format range. Read-only.|1.6|
+|[conditionalRangeFormat](reference/excel/conditionalrangeformat.md)|_Relationship_ > font|Returns the font object defined on the overall conditional format range. Read-only.|1.6|
+|[conditionalTextComparisonRule](reference/excel/conditionaltextcomparisonrule.md)|_Property_ > operator|The operator of the text conditional format. Possible values are: Invalid, Contains, NotContains, BeginsWith, EndsWith.|1.6|
+|[conditionalTextComparisonRule](reference/excel/conditionaltextcomparisonrule.md)|_Property_ > text|The Text value of conditional format.|1.6|
+|[conditionalTopBottomRule](reference/excel/conditionaltopbottomrule.md)|_Property_ > rank|The rank between 1 and 1000 for numeric ranks or 1 and 100 for percent ranks.|1.6|
+|[conditionalTopBottomRule](reference/excel/conditionaltopbottomrule.md)|_Property_ > type|Format values based on the top or bottom rank. Possible values are: Invalid, TopItems, TopPercent, BottomItems, BottomPercent.|1.6|
+|[customConditionalFormat](reference/excel/customconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[customConditionalFormat](reference/excel/customconditionalformat.md)|_Relationship_ > rule|Represents the Rule object on this conditional format. Read-only.|1.6|
+|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Property_ > axisColor|HTML color code representing the color of the Axis line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Property_ > axisFormat|Representation of how the axis is determined for an Excel data bar. Possible values are: Automatic, None, CellMidPoint.|1.6|
+|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Property_ > barDirection|Represents the direction that the data bar graphic should be based on. Possible values are: Context, LeftToRight, RightToLeft.|1.6|
+|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Property_ > showDataBarOnly|If true, hides the values from the cells where the data bar is applied.|1.6|
+|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Relationship_ > lowerBoundRule|The rule for what consistutes the lower bound (and how to calculate it, if applicable) for a data bar.|1.6|
+|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Relationship_ > negativeFormat|Representation of all values to the left of the axis in an Excel data bar. Read-only.|1.6|
+|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Relationship_ > positiveFormat|Representation of all values to the right of the axis in an Excel data bar. Read-only.|1.6|
+|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Relationship_ > upperBoundRule|The rule for what constitutes the upper bound (and how to calculate it, if applicable) for a data bar.|1.6|
+|[iconSetConditionalFormat](reference/excel/iconsetconditionalformat.md)|_Property_ > reverseIconOrder|If true, reverses the icon orders for the IconSet. Note that this cannot be set if custom icons are used.|1.6|
+|[iconSetConditionalFormat](reference/excel/iconsetconditionalformat.md)|_Property_ > showIconOnly|If true, hides the values and only shows icons.|1.6|
+|[iconSetConditionalFormat](reference/excel/iconsetconditionalformat.md)|_Property_ > style|If set, displays the IconSet option for the conditional format. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.|1.6|
+|[iconSetConditionalFormat](reference/excel/iconsetconditionalformat.md)|_Relationship_ > criteria|An array of Criteria and IconSets for the rules and potential custom icons for conditional icons. Note that for the first criterion only the custom icon can be modified, while type, formula and operator will be ignored when set.|1.6|
+|[presetCriteriaConditionalFormat](reference/excel/presetcriteriaconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[presetCriteriaConditionalFormat](reference/excel/presetcriteriaconditionalformat.md)|_Relationship_ > rule|The rule of the conditional format.|1.6|
+|[range](reference/excel/range.md)|_Relationship_ > conditionalFormats|Collection of ConditionalFormats that intersect the range. Read-only.|1.6|
+|[range](reference/excel/range.md)|_Method_ > [calculate()]((reference/excel/range.md#calculate)|Calculates a range of cells on a worksheet.|1.6|
+|[textConditionalFormat](reference/excel/textconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[textConditionalFormat](reference/excel/textconditionalformat.md)|_Relationship_ > rule|The rule of the conditional format.|1.6|
+|[topBottomConditionalFormat](reference/excel/topbottomconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[topBottomConditionalFormat](reference/excel/topbottomconditionalformat.md)|_Relationship_ > rule|The criteria of the TopBottom conditional format.|1.6|
+|[workbook](reference/excel/workbook.md)|_Relationship_ > internalTest|For internal use only. Read-only.|1.6|
+|[worksheet](reference/excel/worksheet.md)|_Method_ > [calculate(markAllDirty: bool)]((reference/excel/worksheet.md#calculatemarkalldirty-bool)|Calculates all cells on a worksheet.|1.6|
+
+##  What's new in Excel JavaScript API 1.5
 
 ### Custom XML part
 
@@ -107,6 +500,34 @@ For API details, please refer to the Excel API [open specification](https://gith
 * `getRangeR1C1()` Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.
 
 For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
+
+|Object| What is new| Description|Requirement set|
+|:----|:----|:----|:----|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Property_ > id|The custom XML part's ID. Read-only.|1.5|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Property_ > namespaceUri|The custom XML part's namespace URI. Read-only.|1.5|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [delete()]((reference/excel/customxmlpart.md#delete)|Deletes the custom XML part.|1.5|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [getXml()]((reference/excel/customxmlpart.md#getxml)|Gets the custom XML part's full XML content.|1.5|
+|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [setXml(xml: string)]((reference/excel/customxmlpart.md#setxmlxml-string)|Sets the custom XML part's full XML content.|1.5|
+|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Property_ > items|A collection of customXmlPart objects. Read-only.|1.5|
+|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [add(xml: string)]((reference/excel/customxmlpartcollection.md#addxml-string)|Adds a new custom XML part to the workbook.|1.5|
+|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [getByNamespace(namespaceUri: string)]((reference/excel/customxmlpartcollection.md#getbynamespacenamespaceuri-string)|Gets a new scoped collection of custom XML parts whose namespaces match the given namespace.|1.5|
+|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [getCount()]((reference/excel/customxmlpartcollection.md#getcount)|Gets the number of CustomXml parts in the collection.|1.5|
+|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [getItem(id: string)]((reference/excel/customxmlpartcollection.md#getitemid-string)|Gets a custom XML part based on its ID.|1.5|
+|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [getItemOrNullObject(id: string)]((reference/excel/customxmlpartcollection.md#getitemornullobjectid-string)|Gets a custom XML part based on its ID.|1.5|
+|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Property_ > items|A collection of customXmlPartScoped objects. Read-only.|1.5|
+|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getCount()]((reference/excel/customxmlpartscopedcollection.md#getcount)|Gets the number of CustomXML parts in this collection.|1.5|
+|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getItem(id: string)]((reference/excel/customxmlpartscopedcollection.md#getitemid-string)|Gets a custom XML part based on its ID.|1.5|
+|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getItemOrNullObject(id: string)]((reference/excel/customxmlpartscopedcollection.md#getitemornullobjectid-string)|Gets a custom XML part based on its ID.|1.5|
+|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getOnlyItem()]((reference/excel/customxmlpartscopedcollection.md#getonlyitem)|If the collection contains exactly one item, this method returns it.|1.5|
+|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getOnlyItemOrNullObject()]((reference/excel/customxmlpartscopedcollection.md#getonlyitemornullobject)|If the collection contains exactly one item, this method returns it.|1.5|
+|[workbook](reference/excel/workbook.md)|_Relationship_ > customXmlParts|Represents the collection of custom XML parts contained by this workbook. Read-only.|1.5|
+|[worksheet](reference/excel/worksheet.md)|_Method_ > [getNext(visibleOnly: bool)]((reference/excel/worksheet.md#getnextvisibleonly-bool)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|1.5|
+|[worksheet](reference/excel/worksheet.md)|_Method_ > [getNextOrNullObject(visibleOnly: bool)]((reference/excel/worksheet.md#getnextornullobjectvisibleonly-bool)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.|1.5|
+|[worksheet](reference/excel/worksheet.md)|_Method_ > [getPrevious(visibleOnly: bool)]((reference/excel/worksheet.md#getpreviousvisibleonly-bool)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|1.5|
+|[worksheet](reference/excel/worksheet.md)|_Method_ > [getPreviousOrNullObject(visibleOnly: bool)]((reference/excel/worksheet.md#getpreviousornullobjectvisibleonly-bool)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|1.5|
+|[worksheetCollection](reference/excel/worksheetcollection.md)|_Method_ > [getFirst(visibleOnly: bool)]((reference/excel/worksheetcollection.md#getfirstvisibleonly-bool)|Gets the first worksheet in the collection.|1.5|
+|[worksheetCollection](reference/excel/worksheetcollection.md)|_Method_ > [getLast(visibleOnly: bool)]((reference/excel/worksheetcollection.md#getlastvisibleonly-bool)|Gets the last worksheet in the collection.|1.5|
+
 
 ## What's new in Excel JavaScript API 1.4
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
@@ -326,7 +747,7 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 ## Excel JavaScript API 1.1
 Excel JavaScript API 1.1 is the first version of the API. For details about the API,  see the Excel JavaScript API reference topics.  
 
-## Additional resources
+### See also
 
 - [Office versions and requirement sets](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
