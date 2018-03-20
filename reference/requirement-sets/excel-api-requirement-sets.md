@@ -2,11 +2,11 @@
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office host supports APIs that an add-in needs. For more information, see [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support that requirement set, and the build versions or number for those applications.
+Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
-> **Note**: Any API that is listed as **beta** is not ready for production usage. They are made available so that developers can try them out in test and development environments. They are not meant to be used against production/business critical documents. 
-
-> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+> [!NOTE]
+> Any API that is listed as **beta** is not ready for end-user production. We make them available for developers to try them out in test and development environments. They are not meant to be used against production/business critical documents. 
+> For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 
 |  Requirement set  |  Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
@@ -18,9 +18,10 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 | ExcelApi1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
 | ExcelApi1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
 
-> **\*Note**: The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
+> [!NOTE]
+> The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
 
-To find out more about versions, build numbers, and Office Online Server, see:
+For more information about versions, build numbers, and Office Online Server, see:
 
 - [Version and build numbers of update channel releases for Office 365 clients](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [What version of Office am I using?](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
@@ -31,7 +32,8 @@ To find out more about versions, build numbers, and Office Online Server, see:
 
 The Excel JavaScript API requirement set 1.7 features include APIs for charts, events, data validation, worksheets, ranges, document properties, named items, protection options and styles.
 
-> **Note**: For API reference documentation and details, see [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
+> [!NOTE]
+> For API reference documentation and details, see [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
 
 ## Customize charts
 
@@ -47,15 +49,15 @@ With the new chart APIs, you can create additional chart types, add a data serie
 
 ## Events
 
-Excel events APIs provide a variety of event handlers that allow your add-in to automatically run a designated function when a specific event occurs.  You can design that function to perform whatever actions your scenario requires. For a list of events that are currently available, see [Work with Events using the Excel JavaScript API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-events).
+Excel events APIs provide a variety of event handlers that allow your add-in to automatically run a designated function when a specific event occurs. You can design that function to perform whatever actions your scenario requires. For a list of events that are currently available, see [Work with Events using the Excel JavaScript API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-events).
 
 ## Customize the appearance of worksheets and ranges
 
-The new APIs, you can customize the appearance of worksheets in multiple ways:
+Using the new APIs, you can customize the appearance of worksheets in multiple ways:
 
 * Freeze panes to keep specific rows or columns visible when you scroll in the worksheet. For example, if the first row in your worksheet contains headers, you might freeze that row so that the column headers will remain visible as you scroll down the worksheet.
 * Set the visibility of gridlines in a worksheet.
-* Modify worksheet tab color.
+* Modify the worksheet tab color.
 * Add worksheet headings.
 
 
@@ -71,7 +73,7 @@ Using the document properties APIs, you can access built-in document properties 
 
 ## Copy worksheets
 
-Using the worksheet copy APIs, you can copy the data and format of from one worksheet to a new worksheet within the same workbook and reduce the amount of data transfer needed.
+Using the worksheet copy APIs, you can copy the data and format from one worksheet to a new worksheet within the same workbook and reduce the amount of data transfer needed.
 
 ## Handle ranges with ease
 
@@ -745,7 +747,7 @@ The following are the new additions to the Excel JavaScript APIs in requirement 
 ## Excel JavaScript API 1.1
 Excel JavaScript API 1.1 is the first version of the API. For details about the API,  see the Excel JavaScript API reference topics.  
 
-## Additional resources
+### See also
 
 - [Office versions and requirement sets](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)
