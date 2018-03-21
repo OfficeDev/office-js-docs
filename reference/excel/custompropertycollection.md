@@ -6,7 +6,7 @@ Contains the collection of customProperty objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[CustomProperty[]](customproperty.md)|A collection of customProperty objects. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[CustomProperty[]](customproperty.md)|A collection of customProperty objects. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,11 +18,11 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(key: string, value: object)](#addkey-string-value-object)|[CustomProperty](customproperty.md)|Creates a new or sets an existing custom property.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[deleteAll()](#deleteall)|void|Deletes all custom properties in this collection.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Gets the count of custom properties.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(key: string)](#getitemkey-string)|[CustomProperty](customproperty.md)|Gets a custom property object by its key, which is case-insensitive. Throws if the custom property does not exist.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[CustomProperty](customproperty.md)|Gets a custom property object by its key, which is case-insensitive. Returns a null object if the custom property does not exist.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(key: string, value: object)](#addkey-string-value-object)|[CustomProperty](customproperty.md)|Creates a new or sets an existing custom property.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[deleteAll()](#deleteall)|void|Deletes all custom properties in this collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the count of custom properties.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: string)](#getitemkey-string)|[CustomProperty](customproperty.md)|Gets a custom property object by its key, which is case-insensitive. Throws if the custom property does not exist.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[CustomProperty](customproperty.md)|Gets a custom property object by its key, which is case-insensitive. Returns a null object if the custom property does not exist.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

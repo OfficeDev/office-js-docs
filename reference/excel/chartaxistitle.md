@@ -17,11 +17,29 @@ _See property access [examples.](#property-access-examples)_
 |format|[ChartAxisTitleFormat](chartaxistitleformat.md)|Represents the formatting of chart axis title. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
-None
 
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[setFormula(formula: string)](#setformulaformula-string)|void|A string value that represents the formula of chart axis title using A1-style notation.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### setFormula(formula: string)
+A string value that represents the formula of chart axis title using A1-style notation.
+
+#### Syntax
+```js
+chartAxisTitleObject.setFormula(formula);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|formula|string| a string that present the formula to set |
+
+#### Returns
+void
 ### Property access examples
 Get the `text` of Chart Axis Title from the value axis of Chart1.
 

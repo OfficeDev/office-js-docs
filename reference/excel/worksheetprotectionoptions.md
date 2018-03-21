@@ -9,8 +9,8 @@ Represents the options in sheet protection.
 |allowAutoFilter|bool|Represents the worksheet protection option of allowing using auto filter feature.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |allowDeleteColumns|bool|Represents the worksheet protection option of allowing deleting columns.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |allowDeleteRows|bool|Represents the worksheet protection option of allowing deleting rows.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|allowEditObjects|bool|Represents the worksheet protection option of allowing editing objects.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|allowEditScenarios|bool|Represents the worksheet protection option of allowing editing scenarios.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|allowEditObjects|bool|Represents the worksheet protection option of allowing editing objects.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|allowEditScenarios|bool|Represents the worksheet protection option of allowing editing scenarios.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |allowFormatCells|bool|Represents the worksheet protection option of allowing formatting cells.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |allowFormatColumns|bool|Represents the worksheet protection option of allowing formatting columns.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |allowFormatRows|bool|Represents the worksheet protection option of allowing formatting rows.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
@@ -19,13 +19,13 @@ Represents the options in sheet protection.
 |allowInsertRows|bool|Represents the worksheet protection option of allowing inserting rows.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |allowPivotTables|bool|Represents the worksheet protection option of allowing using PivotTable feature.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |allowSort|bool|Represents the worksheet protection option of allowing using sort feature.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|selectionMode|string|Represents the worksheet protection option of selection mode. Possible values are: Normal, Unlocked, None.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|selectionMode|[ProtectionSelectionMode](protectionselectionmode.md)|Represents the worksheet protection option of selection mode.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None

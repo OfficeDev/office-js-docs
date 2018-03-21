@@ -21,9 +21,9 @@ None
 |:---------------|:--------|:----------|:----|
 |[add(address: object, hasHeaders: bool)](#addaddress-object-hasheaders-bool)|[Table](table.md)|Create a new table. The range object or source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Gets the number of tables in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: string)](#getitemkey-string)|[Table](table.md)|Gets a table by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(key: number or string)](#getitemornullobjectkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID. If the table does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[Table](table.md)|Gets a table by Name or ID. If the table does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -76,7 +76,7 @@ None
 #### Returns
 int
 
-### getItem(key: number or string)
+### getItem(key: string)
 Gets a table by Name or ID.
 
 #### Syntax
@@ -87,7 +87,7 @@ tableCollectionObject.getItem(key);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|number or string|Name or ID of the table to be retrieved.|
+|key|string|Name or ID of the table to be retrieved.|
 
 #### Returns
 [Table](table.md)
@@ -163,7 +163,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemOrNullObject(key: number or string)
+### getItemOrNullObject(key: string)
 Gets a table by Name or ID. If the table does not exist, will return a null object.
 
 #### Syntax
@@ -174,7 +174,7 @@ tableCollectionObject.getItemOrNullObject(key);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|number or string|Name or ID of the table to be retrieved.|
+|key|string|Name or ID of the table to be retrieved.|
 
 #### Returns
 [Table](table.md)

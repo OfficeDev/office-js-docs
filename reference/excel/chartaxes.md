@@ -17,7 +17,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(type: string, group: string)](#getitemtype-string-group-string)|[ChartAxis](chartaxis.md)|Returns the specific axis identified by type and group.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(type: string, group: string)](#getitemtype-string-group-string)|[ChartAxis](chartaxis.md)|Returns the specific axis identified by type and group.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -33,7 +33,7 @@ chartAxesObject.getItem(type, group);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|type|string|Specifies the axis type.  Possible values are: Invalid, Category, Value, SeriesAxis|
+|type|string|Specifies the axis type.  Possible values are: Invalid, Category, Value, Series|
 |group|string|Optional. Specifies the axis group.  Possible values are: Primary, Secondary|
 
 #### Returns

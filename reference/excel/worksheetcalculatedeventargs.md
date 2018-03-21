@@ -1,11 +1,20 @@
-# WorsheetCalculatedEventArgs Object (JavaScript API for Excel)
+# WorksheetCalculatedEventArgs Object (JavaScript API for Excel)
 
-Provides information about the worksheet that raised the Added event.
+Provides information about the worksheet that raised the Calculated event.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|Type|string|Get the type of the event. See Excel.Event.Type for details.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|WorksheetId|string|Gets the id of the worksheet that is calculated.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheetId|string|Gets the id of the worksheet that is calculated.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+
+_See property access [examples.](#property-access-examples)_
+
+## Relationships
+None
+
+
+## Methods
+None
 
