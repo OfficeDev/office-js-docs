@@ -107,7 +107,7 @@ worksheetCollectionObject.getCount(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. Count only visible worksheets.|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 int

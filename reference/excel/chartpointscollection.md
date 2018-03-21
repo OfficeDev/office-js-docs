@@ -20,9 +20,9 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[getCount()](#getcount)|int|Returns the number of chart points in the series.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getFirst()](#getfirst)|[ChartPoint](chartpoint.md)|Gets the first point in the series.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[ChartPoint](chartpoint.md)|Gets the first point in the series.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getLast()](#getlast)|[ChartPoint](chartpoint.md)|Gets the last point in the series.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLast()](#getlast)|[ChartPoint](chartpoint.md)|Gets the last point in the series.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

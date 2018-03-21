@@ -6,7 +6,7 @@ Represents the Excel application that manages the workbook.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|calculationMode|string|Returns the calculation mode used in the workbook. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,6 +19,7 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[createWorkbook(base64File: string)](#createworkbookbase64file-string)|[WorkbookCreated](workbookcreated.md)|Creates a new hidden workbook by using an optional base64 encoded .xlsx file.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |[suspendApiCalculationUntilNextSync()](#suspendapicalculationuntilnextsync)|void|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -52,6 +53,22 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
+### createWorkbook(base64File: string)
+Creates a new hidden workbook by using an optional base64 encoded .xlsx file.
+
+#### Syntax
+```js
+applicationObject.createWorkbook(base64File);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|base64File|string|Optional. Optional. The base64 encoded .xlsx file. The default value is null.|
+
+#### Returns
+[WorkbookCreated](workbookcreated.md)
 
 ### suspendApiCalculationUntilNextSync()
 Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.

@@ -6,7 +6,7 @@ Represents a collection of Chart Trendlines.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[ChartTrendline[]](charttrendline.md)|A collection of chartTrendline objects. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartTrendline[]](charttrendline.md)|A collection of chartTrendline objects. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,9 +18,9 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(type: string)](#addtype-string)|[ChartTrendline](charttrendline.md)|Adds a new trendline to trendline collection.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Returns the number of trendlines in the collection.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(index: number)](#getitemindex-number)|[ChartTrendline](charttrendline.md)|Get trendline object by index, which is the insertion order in items array.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(type: string)](#addtype-string)|[ChartTrendline](charttrendline.md)|Adds a new trendline to trendline collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Returns the number of trendlines in the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[ChartTrendline](charttrendline.md)|Get trendline object by index, which is the insertion order in items array.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -36,7 +36,7 @@ chartTrendlineCollectionObject.add(type);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|type|string|Optional. Specifies the trendline type. The default value is "Linear".  Possible values are: Linear, Expontential, Logarithmic, MovingAvg, Polynomial, Power|
+|type|string|Optional. Specifies the trendline type. The default value is "Linear".  Possible values are: Linear, Exponential, Logarithmic, MovingAverage, Polynomial, Power|
 
 #### Returns
 [ChartTrendline](charttrendline.md)

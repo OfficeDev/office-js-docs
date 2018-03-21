@@ -6,7 +6,16 @@ Provides information about the worksheet that raised the Deleted event.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|Type|string|Gets the type of the event. Possible values are: WorksheetChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableChanged, TableSelectionChanged.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|Source|string|Gets the source of the event. Possible values are: Local, Remote.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|WorksheetId|string|Gets the id of the worksheet that is added to the workbook.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|source|string|Gets the source of the event. Possible values are: Local, Remote.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheetId|string|Gets the id of the worksheet that is deleted from the workbook.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+
+_See property access [examples.](#property-access-examples)_
+
+## Relationships
+None
+
+
+## Methods
+None
 

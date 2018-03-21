@@ -6,7 +6,15 @@ Provides information about the worksheet that raised the Activated event.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|WorksheetId|string|Gets the id of the worksheet that is activated.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|Type|string|Gets the type of the event. Possible values include: Local, Remote.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheetId|string|Gets the id of the worksheet that is activated.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
+_See property access [examples.](#property-access-examples)_
+
+## Relationships
+None
+
+
+## Methods
+None
 

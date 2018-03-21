@@ -6,7 +6,7 @@ Represents a collection of legendEntries.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[ChartLegendEntry[]](chartlegendentry.md)|A collection of chartLegendEntry objects. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartLegendEntry[]](chartlegendentry.md)|A collection of chartLegendEntry objects. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,8 +18,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getCount()](#getcount)|int|Returns the number of legendEntry in the collection.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartLegendEntry](chartlegendentry.md)|Returns a legendEntry at the given index.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Returns the number of legendEntry in the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartLegendEntry](chartlegendentry.md)|Returns a legendEntry at the given index.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

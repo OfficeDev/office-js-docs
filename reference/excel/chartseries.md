@@ -6,37 +6,40 @@ Represents a series in a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|chartType|string|Represents the chart type of a series. Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc..|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|doughnutHoleSize|double|Represents the doughnut hole size of a chart series.  Only valid on doughnut and doughnutExploded charts.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|filtered|bool|Boolean value representing if the series is filtered or not. Not applicable for surface charts.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|gapWidth|double|Represents the gap width of a chart series.  Only valid on bar and column charts, as well as|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|hasDataLabels|bool|Boolean value representing if the series has data labels or not.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|markerBackgroundColor|string|Represents markers background color of a chart series.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|markerForegroundColor|string|Represents markers foreground color of a chart series.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|markerSize|int|Represents marker size of a chart series.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|markerStyle|string|Represents marker style of a chart series. Possible values are: Automatic, None, Square, Diamond, Triangle, X, Star, Dot, Dash, Circle, Plus, Picture.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|chartType|string|Represents the chart type of a series. Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc..|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|doughnutHoleSize|double|Represents the doughnut hole size of a chart series.  Only valid on doughnut and doughnutExploded charts.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|filtered|bool|Boolean value representing if the series is filtered or not. Not applicable for surface charts.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|gapWidth|double|Represents the gap width of a chart series.  Only valid on bar and column charts, as well as|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|hasDataLabels|bool|Boolean value representing if the series has data labels or not.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|markerBackgroundColor|string|Represents markers background color of a chart series.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|markerForegroundColor|string|Represents markers foreground color of a chart series.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|markerSize|int|Represents marker size of a chart series.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|markerStyle|string|Represents marker style of a chart series. Possible values are: Invalid, Automatic, None, Square, Diamond, Triangle, X, Star, Dot, Dash, Circle, Plus, Picture.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Represents the name of a series in a chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|plotOrder|int|Represents the plot order of a chart series within the chart group.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|showShadow|bool|Boolean value representing if the series has shadow or not.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|smooth|bool|Boolean value representing if the series is smooth or not. Only for line and scatter charts.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|plotOrder|int|Represents the plot order of a chart series within the chart group.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|showShadow|bool|Boolean value representing if the series has shadow or not.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|smooth|bool|Boolean value representing if the series is smooth or not. Only for line and scatter charts.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|dataLabels|[ChartDataLabels](chartdatalabels.md)|Represents a collection of all dataLabels in the series. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |format|[ChartSeriesFormat](chartseriesformat.md)|Represents the formatting of a chart series, which includes fill and line formatting. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |points|[ChartPointsCollection](chartpointscollection.md)|Represents a collection of all points in the series. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|trendlines|[ChartTrendlineCollection](charttrendlinecollection.md)|Represents a collection of trendlines in the series. Read-only.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|trendlines|[ChartTrendlineCollection](charttrendlinecollection.md)|Represents a collection of trendlines in the series. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|xErrorBars|[ChartErrorBars](charterrorbars.md)|Represents the error bar object for a chart series. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|yErrorBars|[ChartErrorBars](charterrorbars.md)|Represents the error bar object for a chart series. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes the chart series.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[setBubbleSizes(sourceData: Range)](#setbubblesizessourcedata-range)|void|Set bubble sizes for a chart series. Only works for bubble charts.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[setValues(sourceData: Range)](#setvaluessourcedata-range)|void|Set values for a chart series. For scatter chart, it means Y axis values.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[setXAxisValues(sourceData: Range)](#setxaxisvaluessourcedata-range)|void|Set values of X axis for a chart series. Only works for scatter charts.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[delete()](#delete)|void|Deletes the chart series.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[setBubbleSizes(sourceData: Range)](#setbubblesizessourcedata-range)|void|Set bubble sizes for a chart series. Only works for bubble charts.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[setValues(sourceData: Range)](#setvaluessourcedata-range)|void|Set values for a chart series. For scatter chart, it means Y axis values.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|[setXAxisValues(sourceData: Range)](#setxaxisvaluessourcedata-range)|void|Set values of X axis for a chart series. Only works for scatter charts.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
