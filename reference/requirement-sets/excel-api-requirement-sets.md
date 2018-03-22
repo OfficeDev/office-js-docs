@@ -358,118 +358,118 @@ For API details, please refer to the Excel API [open specification](https://gith
 
 |Object| What is new| Description|Requirement set|
 |:----|:----|:----|:----|
-|[application](reference/excel/application.md)|_Method_ > [suspendApiCalculationUntilNextSync()]((reference/excel/application.md#suspendapicalculationuntilnextsync)|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|1.6|
-|[cellValueConditionalFormat](reference/excel/cellvalueconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
-|[cellValueConditionalFormat](reference/excel/cellvalueconditionalformat.md)|_Relationship_ > rule|Represents the Rule object on this conditional format.|1.6|
-|[colorScaleConditionalFormat](reference/excel/colorscaleconditionalformat.md)|_Property_ > threeColorScale|If true the color scale will have three points (minimum, midpoint, maximum), otherwise it will have two (minimum, maximum). Read-only.|1.6|
-|[colorScaleConditionalFormat](reference/excel/colorscaleconditionalformat.md)|_Relationship_ > criteria|The criteria of the color scale. Midpoint is optional when using a two point color scale.|1.6|
-|[conditionalCellValueRule](reference/excel/conditionalcellvaluerule.md)|_Property_ > formula1|The formula, if required, to evaluate the conditional format rule on.|1.6|
-|[conditionalCellValueRule](reference/excel/conditionalcellvaluerule.md)|_Property_ > formula2|The formula, if required, to evaluate the conditional format rule on.|1.6|
-|[conditionalCellValueRule](reference/excel/conditionalcellvaluerule.md)|_Property_ > operator|The operator of the text conditional format. Possible values are: Invalid, Between, NotBetween, EqualTo, NotEqualTo, GreaterThan, LessThan, GreaterThanOrEqual, LessThanOrEqual.|1.6|
-|[conditionalColorScaleCriteria](reference/excel/conditionalcolorscalecriteria.md)|_Relationship_ > maximum|The maximum point Color Scale Criterion.|1.6|
-|[conditionalColorScaleCriteria](reference/excel/conditionalcolorscalecriteria.md)|_Relationship_ > midpoint|The midpoint Color Scale Criterion if the color scale is a 3-color scale.|1.6|
-|[conditionalColorScaleCriteria](reference/excel/conditionalcolorscalecriteria.md)|_Relationship_ > minimum|The minimum point Color Scale Criterion.|1.6|
-|[conditionalColorScaleCriterion](reference/excel/conditionalcolorscalecriterion.md)|_Property_ > color|HTML color code representation of the color scale color. E.g. #FF0000 represents Red.|1.6|
-|[conditionalColorScaleCriterion](reference/excel/conditionalcolorscalecriterion.md)|_Property_ > formula|A number, a formula, or null (if Type is LowestValue).|1.6|
-|[conditionalColorScaleCriterion](reference/excel/conditionalcolorscalecriterion.md)|_Property_ > type|What the icon conditional formula should be based on. Possible values are: Invalid, LowestValue, HighestValue, Number, Percent, Formula, Percentile.|1.6|
-|[conditionalDataBarNegativeFormat](reference/excel/conditionaldatabarnegativeformat.md)|_Property_ > borderColor|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
-|[conditionalDataBarNegativeFormat](reference/excel/conditionaldatabarnegativeformat.md)|_Property_ > fillColor|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
-|[conditionalDataBarNegativeFormat](reference/excel/conditionaldatabarnegativeformat.md)|_Property_ > matchPositiveBorderColor|Boolean representation of whether or not the negative DataBar has the same border color as the positive DataBar.|1.6|
-|[conditionalDataBarNegativeFormat](reference/excel/conditionaldatabarnegativeformat.md)|_Property_ > matchPositiveFillColor|Boolean representation of whether or not the negative DataBar has the same fill color as the positive DataBar.|1.6|
-|[conditionalDataBarPositiveFormat](reference/excel/conditionaldatabarpositiveformat.md)|_Property_ > borderColor|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
-|[conditionalDataBarPositiveFormat](reference/excel/conditionaldatabarpositiveformat.md)|_Property_ > fillColor|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
-|[conditionalDataBarPositiveFormat](reference/excel/conditionaldatabarpositiveformat.md)|_Property_ > gradientFill|Boolean representation of whether or not the DataBar has a gradient.|1.6|
-|[conditionalDataBarRule](reference/excel/conditionaldatabarrule.md)|_Property_ > formula|The formula, if required, to evaluate the databar rule on.|1.6|
-|[conditionalDataBarRule](reference/excel/conditionaldatabarrule.md)|_Property_ > type|The type of rule for the databar. Possible values are: LowestValue, HighestValue, Number, Percent, Formula, Percentile, Automatic.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Property_ > id|The Priority of the Conditional Format within the current ConditionalFormatCollection. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Property_ > priority|The priority (or index) within the conditional format collection that this conditional format currently exists in. Changing this also|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Property_ > stopIfTrue|If the conditions of this conditional format are met, no lower-priority formats shall take effect on that cell.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Property_ > type|A type of conditional format. Only one can be set at a time. Read-Only. Read-only. Possible values are: Custom, DataBar, ColorScale, IconSet.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > cellValue|Returns the cell value conditional format properties if the current conditional format is a CellValue type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > cellValueOrNullObject|Returns the cell value conditional format properties if the current conditional format is a CellValue type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > colorScale|Returns the ColorScale conditional format properties if the current conditional format is an ColorScale type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > colorScaleOrNullObject|Returns the ColorScale conditional format properties if the current conditional format is an ColorScale type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > custom|Returns the custom conditional format properties if the current conditional format is a custom type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > customOrNullObject|Returns the custom conditional format properties if the current conditional format is a custom type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > dataBar|Returns the data bar properties if the current conditional format is a data bar. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > dataBarOrNullObject|Returns the data bar properties if the current conditional format is a data bar. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > iconSet|Returns the IconSet conditional format properties if the current conditional format is an IconSet type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > iconSetOrNullObject|Returns the IconSet conditional format properties if the current conditional format is an IconSet type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > preset|Returns the preset criteria conditional format such as above averagebelow averageunique valuescontains blanknonblankerrornoerror properties. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > presetOrNullObject|Returns the preset criteria conditional format such as above averagebelow averageunique valuescontains blanknonblankerrornoerror properties. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > textComparison|Returns the specific text conditional format properties if the current conditional format is a text type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > textComparisonOrNullObject|Returns the specific text conditional format properties if the current conditional format is a text type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > topBottom|Returns the TopBottom conditional format properties if the current conditional format is an TopBottom type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Relationship_ > topBottomOrNullObject|Returns the TopBottom conditional format properties if the current conditional format is an TopBottom type. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Method_ > [delete()]((reference/excel/conditionalformat.md#delete)|Deletes this conditional format.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Method_ > [getRange()]((reference/excel/conditionalformat.md#getrange)|Returns the range the conditonal format is applied to or a null object if the range is discontiguous. Read-only.|1.6|
-|[conditionalFormat](reference/excel/conditionalformat.md)|_Method_ > [getRangeOrNullObject()]((reference/excel/conditionalformat.md#getrangeornullobject)|Returns the range the conditonal format is applied to or a null object if the range is discontiguous. Read-only.|1.6|
-|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Property_ > items|A collection of conditionalFormat objects. Read-only.|1.6|
-|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [add(type: string)]((reference/excel/conditionalformatcollection.md#addtype-string)|Adds a new conditional format to the collection at the firsttop priority.|1.6|
-|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [clearAll()]((reference/excel/conditionalformatcollection.md#clearall)|Clears all conditional formats active on the current specified range.|1.6|
-|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [getCount()]((reference/excel/conditionalformatcollection.md#getcount)|Returns the number of conditional formats in the workbook. Read-only.|1.6|
-|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [getItem(id: string)]((reference/excel/conditionalformatcollection.md#getitemid-string)|Returns a conditional format for the given ID.|1.6|
-|[conditionalFormatCollection](reference/excel/conditionalformatcollection.md)|_Method_ > [getItemAt(index: number)]((reference/excel/conditionalformatcollection.md#getitematindex-number)|Returns a conditional format at the given index.|1.6|
-|[conditionalFormatRule](reference/excel/conditionalformatrule.md)|_Property_ > formula|The formula, if required, to evaluate the conditional format rule on.|1.6|
-|[conditionalFormatRule](reference/excel/conditionalformatrule.md)|_Property_ > formulaLocal|The formula, if required, to evaluate the conditional format rule on in the user's language.|1.6|
-|[conditionalFormatRule](reference/excel/conditionalformatrule.md)|_Property_ > formulaR1C1|The formula, if required, to evaluate the conditional format rule on in R1C1-style notation.|1.6|
-|[conditionalIconCriterion](reference/excel/conditionaliconcriterion.md)|_Property_ > formula|A number or a formula depending on the type.|1.6|
-|[conditionalIconCriterion](reference/excel/conditionaliconcriterion.md)|_Property_ > operator|GreaterThan or GreaterThanOrEqual for each of the rule type for the Icon conditional format. Possible values are: Invalid, GreaterThan, GreaterThanOrEqual.|1.6|
-|[conditionalIconCriterion](reference/excel/conditionaliconcriterion.md)|_Relationship_ > customIcon|The custom icon for the current criterion if different from the default IconSet, else null will be returned.|1.6|
-|[conditionalIconCriterion](reference/excel/conditionaliconcriterion.md)|_Relationship_ > type|What the icon conditional formula should be based on.|1.6|
-|[conditionalPresetCriteriaRule](reference/excel/conditionalpresetcriteriarule.md)|_Property_ > criterion|The criterion of the conditional format. Possible values are: Invalid, Blanks, NonBlanks, Errors, NonErrors, Yesterday, Today, Tomorrow, LastSevenDays, LastWeek, ThisWeek, NextWeek, LastMonth, ThisMonth, NextMonth, AboveAverage, BelowAverage, EqualOrAboveAverage, EqualOrBelowAverage, OneStdDevAboveAverage, OneStdDevBelowAverage, TwoStdDevAboveAverage, TwoStdDevBelowAverage, ThreeStdDevAboveAverage, ThreeStdDevBelowAverage, UniqueValues, DuplicateValues.|1.6|
-|[conditionalRangeBorder](reference/excel/conditionalrangeborder.md)|_Property_ > color|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
-|[conditionalRangeBorder](reference/excel/conditionalrangeborder.md)|_Property_ > id|Represents border identifier. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight.|1.6|
-|[conditionalRangeBorder](reference/excel/conditionalrangeborder.md)|_Property_ > sideIndex|Constant value that indicates the specific side of the border. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight.|1.6|
-|[conditionalRangeBorder](reference/excel/conditionalrangeborder.md)|_Property_ > style|One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|1.6|
-|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Property_ > count|Number of border objects in the collection. Read-only.|1.6|
-|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Property_ > items|A collection of conditionalRangeBorder objects. Read-only.|1.6|
-|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Relationship_ > bottom|Gets the top border Read-only.|1.6|
-|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Relationship_ > left|Gets the top border Read-only.|1.6|
-|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Relationship_ > right|Gets the top border Read-only.|1.6|
-|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Relationship_ > top|Gets the top border Read-only.|1.6|
-|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Method_ > [getItem(index: string)]((reference/excel/conditionalrangebordercollection.md#getitemindex-string)|Gets a border object using its name|1.6|
-|[conditionalRangeBorderCollection](reference/excel/conditionalrangebordercollection.md)|_Method_ > [getItemAt(index: number)]((reference/excel/conditionalrangebordercollection.md#getitematindex-number)|Gets a border object using its index|1.6|
-|[conditionalRangeFill](reference/excel/conditionalrangefill.md)|_Property_ > color|HTML color code representing the color of the fill, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
-|[conditionalRangeFill](reference/excel/conditionalrangefill.md)|_Method_ > [clear()]((reference/excel/conditionalrangefill.md#clear)|Resets the fill.|1.6|
-|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > bold|Represents the bold status of font.|1.6|
-|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > color|HTML color code representation of the text color. E.g. #FF0000 represents Red.|1.6|
-|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > italic|Represents the italic status of the font.|1.6|
-|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > strikethrough|Represents the strikethrough status of the font.|1.6|
-|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Property_ > underline|Type of underline applied to the font. Possible values are: None, Single, Double.|1.6|
-|[conditionalRangeFont](reference/excel/conditionalrangefont.md)|_Method_ > [clear()]((reference/excel/conditionalrangefont.md#clear)|Resets the font formats.|1.6|
-|[conditionalRangeFormat](reference/excel/conditionalrangeformat.md)|_Property_ > numberFormat|Represents Excel's number format code for the given range. Cleared if null is passed in.|1.6|
-|[conditionalRangeFormat](reference/excel/conditionalrangeformat.md)|_Relationship_ > borders|Collection of border objects that apply to the overall conditional format range. Read-only.|1.6|
-|[conditionalRangeFormat](reference/excel/conditionalrangeformat.md)|_Relationship_ > fill|Returns the fill object defined on the overall conditional format range. Read-only.|1.6|
-|[conditionalRangeFormat](reference/excel/conditionalrangeformat.md)|_Relationship_ > font|Returns the font object defined on the overall conditional format range. Read-only.|1.6|
-|[conditionalTextComparisonRule](reference/excel/conditionaltextcomparisonrule.md)|_Property_ > operator|The operator of the text conditional format. Possible values are: Invalid, Contains, NotContains, BeginsWith, EndsWith.|1.6|
-|[conditionalTextComparisonRule](reference/excel/conditionaltextcomparisonrule.md)|_Property_ > text|The Text value of conditional format.|1.6|
-|[conditionalTopBottomRule](reference/excel/conditionaltopbottomrule.md)|_Property_ > rank|The rank between 1 and 1000 for numeric ranks or 1 and 100 for percent ranks.|1.6|
-|[conditionalTopBottomRule](reference/excel/conditionaltopbottomrule.md)|_Property_ > type|Format values based on the top or bottom rank. Possible values are: Invalid, TopItems, TopPercent, BottomItems, BottomPercent.|1.6|
-|[customConditionalFormat](reference/excel/customconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
-|[customConditionalFormat](reference/excel/customconditionalformat.md)|_Relationship_ > rule|Represents the Rule object on this conditional format. Read-only.|1.6|
-|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Property_ > axisColor|HTML color code representing the color of the Axis line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
-|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Property_ > axisFormat|Representation of how the axis is determined for an Excel data bar. Possible values are: Automatic, None, CellMidPoint.|1.6|
-|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Property_ > barDirection|Represents the direction that the data bar graphic should be based on. Possible values are: Context, LeftToRight, RightToLeft.|1.6|
-|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Property_ > showDataBarOnly|If true, hides the values from the cells where the data bar is applied.|1.6|
-|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Relationship_ > lowerBoundRule|The rule for what consistutes the lower bound (and how to calculate it, if applicable) for a data bar.|1.6|
-|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Relationship_ > negativeFormat|Representation of all values to the left of the axis in an Excel data bar. Read-only.|1.6|
-|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Relationship_ > positiveFormat|Representation of all values to the right of the axis in an Excel data bar. Read-only.|1.6|
-|[dataBarConditionalFormat](reference/excel/databarconditionalformat.md)|_Relationship_ > upperBoundRule|The rule for what constitutes the upper bound (and how to calculate it, if applicable) for a data bar.|1.6|
-|[iconSetConditionalFormat](reference/excel/iconsetconditionalformat.md)|_Property_ > reverseIconOrder|If true, reverses the icon orders for the IconSet. Note that this cannot be set if custom icons are used.|1.6|
-|[iconSetConditionalFormat](reference/excel/iconsetconditionalformat.md)|_Property_ > showIconOnly|If true, hides the values and only shows icons.|1.6|
-|[iconSetConditionalFormat](reference/excel/iconsetconditionalformat.md)|_Property_ > style|If set, displays the IconSet option for the conditional format. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.|1.6|
-|[iconSetConditionalFormat](reference/excel/iconsetconditionalformat.md)|_Relationship_ > criteria|An array of Criteria and IconSets for the rules and potential custom icons for conditional icons. Note that for the first criterion only the custom icon can be modified, while type, formula and operator will be ignored when set.|1.6|
-|[presetCriteriaConditionalFormat](reference/excel/presetcriteriaconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
-|[presetCriteriaConditionalFormat](reference/excel/presetcriteriaconditionalformat.md)|_Relationship_ > rule|The rule of the conditional format.|1.6|
-|[range](reference/excel/range.md)|_Relationship_ > conditionalFormats|Collection of ConditionalFormats that intersect the range. Read-only.|1.6|
-|[range](reference/excel/range.md)|_Method_ > [calculate()]((reference/excel/range.md#calculate)|Calculates a range of cells on a worksheet.|1.6|
-|[textConditionalFormat](reference/excel/textconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
-|[textConditionalFormat](reference/excel/textconditionalformat.md)|_Relationship_ > rule|The rule of the conditional format.|1.6|
-|[topBottomConditionalFormat](reference/excel/topbottomconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
-|[topBottomConditionalFormat](reference/excel/topbottomconditionalformat.md)|_Relationship_ > rule|The criteria of the TopBottom conditional format.|1.6|
-|[workbook](reference/excel/workbook.md)|_Relationship_ > internalTest|For internal use only. Read-only.|1.6|
-|[worksheet](reference/excel/worksheet.md)|_Method_ > [calculate(markAllDirty: bool)]((reference/excel/worksheet.md#calculatemarkalldirty-bool)|Calculates all cells on a worksheet.|1.6|
+|[application](../excel/application.md)|_Method_ > [suspendApiCalculationUntilNextSync()](../excel/application.md#suspendapicalculationuntilnextsync)|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|1.6|
+|[cellValueConditionalFormat](../excel/cellvalueconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[cellValueConditionalFormat](../excel/cellvalueconditionalformat.md)|_Relationship_ > rule|Represents the Rule object on this conditional format.|1.6|
+|[colorScaleConditionalFormat](../excel/colorscaleconditionalformat.md)|_Property_ > threeColorScale|If true the color scale will have three points (minimum, midpoint, maximum), otherwise it will have two (minimum, maximum). Read-only.|1.6|
+|[colorScaleConditionalFormat](../excel/colorscaleconditionalformat.md)|_Relationship_ > criteria|The criteria of the color scale. Midpoint is optional when using a two point color scale.|1.6|
+|[conditionalCellValueRule](../excel/conditionalcellvaluerule.md)|_Property_ > formula1|The formula, if required, to evaluate the conditional format rule on.|1.6|
+|[conditionalCellValueRule](../excel/conditionalcellvaluerule.md)|_Property_ > formula2|The formula, if required, to evaluate the conditional format rule on.|1.6|
+|[conditionalCellValueRule](../excel/conditionalcellvaluerule.md)|_Property_ > operator|The operator of the text conditional format. Possible values are: Invalid, Between, NotBetween, EqualTo, NotEqualTo, GreaterThan, LessThan, GreaterThanOrEqual, LessThanOrEqual.|1.6|
+|[conditionalColorScaleCriteria](../excel/conditionalcolorscalecriteria.md)|_Relationship_ > maximum|The maximum point Color Scale Criterion.|1.6|
+|[conditionalColorScaleCriteria](../excel/conditionalcolorscalecriteria.md)|_Relationship_ > midpoint|The midpoint Color Scale Criterion if the color scale is a 3-color scale.|1.6|
+|[conditionalColorScaleCriteria](../excel/conditionalcolorscalecriteria.md)|_Relationship_ > minimum|The minimum point Color Scale Criterion.|1.6|
+|[conditionalColorScaleCriterion](../excel/conditionalcolorscalecriterion.md)|_Property_ > color|HTML color code representation of the color scale color. E.g. #FF0000 represents Red.|1.6|
+|[conditionalColorScaleCriterion](../excel/conditionalcolorscalecriterion.md)|_Property_ > formula|A number, a formula, or null (if Type is LowestValue).|1.6|
+|[conditionalColorScaleCriterion](../excel/conditionalcolorscalecriterion.md)|_Property_ > type|What the icon conditional formula should be based on. Possible values are: Invalid, LowestValue, HighestValue, Number, Percent, Formula, Percentile.|1.6|
+|[conditionalDataBarNegativeFormat](../excel/conditionaldatabarnegativeformat.md)|_Property_ > borderColor|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalDataBarNegativeFormat](../excel/conditionaldatabarnegativeformat.md)|_Property_ > fillColor|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalDataBarNegativeFormat](../excel/conditionaldatabarnegativeformat.md)|_Property_ > matchPositiveBorderColor|Boolean representation of whether or not the negative DataBar has the same border color as the positive DataBar.|1.6|
+|[conditionalDataBarNegativeFormat](../excel/conditionaldatabarnegativeformat.md)|_Property_ > matchPositiveFillColor|Boolean representation of whether or not the negative DataBar has the same fill color as the positive DataBar.|1.6|
+|[conditionalDataBarPositiveFormat](../excel/conditionaldatabarpositiveformat.md)|_Property_ > borderColor|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalDataBarPositiveFormat](../excel/conditionaldatabarpositiveformat.md)|_Property_ > fillColor|HTML color code representing the fill color, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalDataBarPositiveFormat](../excel/conditionaldatabarpositiveformat.md)|_Property_ > gradientFill|Boolean representation of whether or not the DataBar has a gradient.|1.6|
+|[conditionalDataBarRule](../excel/conditionaldatabarrule.md)|_Property_ > formula|The formula, if required, to evaluate the databar rule on.|1.6|
+|[conditionalDataBarRule](../excel/conditionaldatabarrule.md)|_Property_ > type|The type of rule for the databar. Possible values are: LowestValue, HighestValue, Number, Percent, Formula, Percentile, Automatic.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Property_ > id|The Priority of the Conditional Format within the current ConditionalFormatCollection. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Property_ > priority|The priority (or index) within the conditional format collection that this conditional format currently exists in. Changing this also|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Property_ > stopIfTrue|If the conditions of this conditional format are met, no lower-priority formats shall take effect on that cell.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Property_ > type|A type of conditional format. Only one can be set at a time. Read-Only. Read-only. Possible values are: Custom, DataBar, ColorScale, IconSet.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > cellValue|Returns the cell value conditional format properties if the current conditional format is a CellValue type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > cellValueOrNullObject|Returns the cell value conditional format properties if the current conditional format is a CellValue type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > colorScale|Returns the ColorScale conditional format properties if the current conditional format is an ColorScale type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > colorScaleOrNullObject|Returns the ColorScale conditional format properties if the current conditional format is an ColorScale type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > custom|Returns the custom conditional format properties if the current conditional format is a custom type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > customOrNullObject|Returns the custom conditional format properties if the current conditional format is a custom type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > dataBar|Returns the data bar properties if the current conditional format is a data bar. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > dataBarOrNullObject|Returns the data bar properties if the current conditional format is a data bar. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > iconSet|Returns the IconSet conditional format properties if the current conditional format is an IconSet type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > iconSetOrNullObject|Returns the IconSet conditional format properties if the current conditional format is an IconSet type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > preset|Returns the preset criteria conditional format such as above averagebelow averageunique valuescontains blanknonblankerrornoerror properties. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > presetOrNullObject|Returns the preset criteria conditional format such as above averagebelow averageunique valuescontains blanknonblankerrornoerror properties. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > textComparison|Returns the specific text conditional format properties if the current conditional format is a text type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > textComparisonOrNullObject|Returns the specific text conditional format properties if the current conditional format is a text type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > topBottom|Returns the TopBottom conditional format properties if the current conditional format is an TopBottom type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Relationship_ > topBottomOrNullObject|Returns the TopBottom conditional format properties if the current conditional format is an TopBottom type. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Method_ > [delete()](../excel/conditionalformat.md#delete)|Deletes this conditional format.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Method_ > [getRange()](../excel/conditionalformat.md#getrange)|Returns the range the conditonal format is applied to or a null object if the range is discontiguous. Read-only.|1.6|
+|[conditionalFormat](../excel/conditionalformat.md)|_Method_ > [getRangeOrNullObject()](../excel/conditionalformat.md#getrangeornullobject)|Returns the range the conditonal format is applied to or a null object if the range is discontiguous. Read-only.|1.6|
+|[conditionalFormatCollection](../excel/conditionalformatcollection.md)|_Property_ > items|A collection of conditionalFormat objects. Read-only.|1.6|
+|[conditionalFormatCollection](../excel/conditionalformatcollection.md)|_Method_ > [add(type: string)](../excel/conditionalformatcollection.md#addtype-string)|Adds a new conditional format to the collection at the firsttop priority.|1.6|
+|[conditionalFormatCollection](../excel/conditionalformatcollection.md)|_Method_ > [clearAll()](../excel/conditionalformatcollection.md#clearall)|Clears all conditional formats active on the current specified range.|1.6|
+|[conditionalFormatCollection](../excel/conditionalformatcollection.md)|_Method_ > [getCount()](../excel/conditionalformatcollection.md#getcount)|Returns the number of conditional formats in the workbook. Read-only.|1.6|
+|[conditionalFormatCollection](../excel/conditionalformatcollection.md)|_Method_ > [getItem(id: string)](../excel/conditionalformatcollection.md#getitemid-string)|Returns a conditional format for the given ID.|1.6|
+|[conditionalFormatCollection](../excel/conditionalformatcollection.md)|_Method_ > [getItemAt(index: number)](../excel/conditionalformatcollection.md#getitematindex-number)|Returns a conditional format at the given index.|1.6|
+|[conditionalFormatRule](../excel/conditionalformatrule.md)|_Property_ > formula|The formula, if required, to evaluate the conditional format rule on.|1.6|
+|[conditionalFormatRule](../excel/conditionalformatrule.md)|_Property_ > formulaLocal|The formula, if required, to evaluate the conditional format rule on in the user's language.|1.6|
+|[conditionalFormatRule](../excel/conditionalformatrule.md)|_Property_ > formulaR1C1|The formula, if required, to evaluate the conditional format rule on in R1C1-style notation.|1.6|
+|[conditionalIconCriterion](../excel/conditionaliconcriterion.md)|_Property_ > formula|A number or a formula depending on the type.|1.6|
+|[conditionalIconCriterion](../excel/conditionaliconcriterion.md)|_Property_ > operator|GreaterThan or GreaterThanOrEqual for each of the rule type for the Icon conditional format. Possible values are: Invalid, GreaterThan, GreaterThanOrEqual.|1.6|
+|[conditionalIconCriterion](../excel/conditionaliconcriterion.md)|_Relationship_ > customIcon|The custom icon for the current criterion if different from the default IconSet, else null will be returned.|1.6|
+|[conditionalIconCriterion](../excel/conditionaliconcriterion.md)|_Relationship_ > type|What the icon conditional formula should be based on.|1.6|
+|[conditionalPresetCriteriaRule](../excel/conditionalpresetcriteriarule.md)|_Property_ > criterion|The criterion of the conditional format. Possible values are: Invalid, Blanks, NonBlanks, Errors, NonErrors, Yesterday, Today, Tomorrow, LastSevenDays, LastWeek, ThisWeek, NextWeek, LastMonth, ThisMonth, NextMonth, AboveAverage, BelowAverage, EqualOrAboveAverage, EqualOrBelowAverage, OneStdDevAboveAverage, OneStdDevBelowAverage, TwoStdDevAboveAverage, TwoStdDevBelowAverage, ThreeStdDevAboveAverage, ThreeStdDevBelowAverage, UniqueValues, DuplicateValues.|1.6|
+|[conditionalRangeBorder](../excel/conditionalrangeborder.md)|_Property_ > color|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalRangeBorder](../excel/conditionalrangeborder.md)|_Property_ > id|Represents border identifier. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight.|1.6|
+|[conditionalRangeBorder](../excel/conditionalrangeborder.md)|_Property_ > sideIndex|Constant value that indicates the specific side of the border. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight.|1.6|
+|[conditionalRangeBorder](../excel/conditionalrangeborder.md)|_Property_ > style|One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|1.6|
+|[conditionalRangeBorderCollection](../excel/conditionalrangebordercollection.md)|_Property_ > count|Number of border objects in the collection. Read-only.|1.6|
+|[conditionalRangeBorderCollection](../excel/conditionalrangebordercollection.md)|_Property_ > items|A collection of conditionalRangeBorder objects. Read-only.|1.6|
+|[conditionalRangeBorderCollection](../excel/conditionalrangebordercollection.md)|_Relationship_ > bottom|Gets the top border Read-only.|1.6|
+|[conditionalRangeBorderCollection](../excel/conditionalrangebordercollection.md)|_Relationship_ > left|Gets the top border Read-only.|1.6|
+|[conditionalRangeBorderCollection](../excel/conditionalrangebordercollection.md)|_Relationship_ > right|Gets the top border Read-only.|1.6|
+|[conditionalRangeBorderCollection](../excel/conditionalrangebordercollection.md)|_Relationship_ > top|Gets the top border Read-only.|1.6|
+|[conditionalRangeBorderCollection](../excel/conditionalrangebordercollection.md)|_Method_ > [getItem(index: string)](../excel/conditionalrangebordercollection.md#getitemindex-string)|Gets a border object using its name|1.6|
+|[conditionalRangeBorderCollection](../excel/conditionalrangebordercollection.md)|_Method_ > [getItemAt(index: number)](../excel/conditionalrangebordercollection.md#getitematindex-number)|Gets a border object using its index|1.6|
+|[conditionalRangeFill](../excel/conditionalrangefill.md)|_Property_ > color|HTML color code representing the color of the fill, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[conditionalRangeFill](../excel/conditionalrangefill.md)|_Method_ > [clear()](../excel/conditionalrangefill.md#clear)|Resets the fill.|1.6|
+|[conditionalRangeFont](../excel/conditionalrangefont.md)|_Property_ > bold|Represents the bold status of font.|1.6|
+|[conditionalRangeFont](../excel/conditionalrangefont.md)|_Property_ > color|HTML color code representation of the text color. E.g. #FF0000 represents Red.|1.6|
+|[conditionalRangeFont](../excel/conditionalrangefont.md)|_Property_ > italic|Represents the italic status of the font.|1.6|
+|[conditionalRangeFont](../excel/conditionalrangefont.md)|_Property_ > strikethrough|Represents the strikethrough status of the font.|1.6|
+|[conditionalRangeFont](../excel/conditionalrangefont.md)|_Property_ > underline|Type of underline applied to the font. Possible values are: None, Single, Double.|1.6|
+|[conditionalRangeFont](../excel/conditionalrangefont.md)|_Method_ > [clear()](../excel/conditionalrangefont.md#clear)|Resets the font formats.|1.6|
+|[conditionalRangeFormat](../excel/conditionalrangeformat.md)|_Property_ > numberFormat|Represents Excel's number format code for the given range. Cleared if null is passed in.|1.6|
+|[conditionalRangeFormat](../excel/conditionalrangeformat.md)|_Relationship_ > borders|Collection of border objects that apply to the overall conditional format range. Read-only.|1.6|
+|[conditionalRangeFormat](../excel/conditionalrangeformat.md)|_Relationship_ > fill|Returns the fill object defined on the overall conditional format range. Read-only.|1.6|
+|[conditionalRangeFormat](../excel/conditionalrangeformat.md)|_Relationship_ > font|Returns the font object defined on the overall conditional format range. Read-only.|1.6|
+|[conditionalTextComparisonRule](../excel/conditionaltextcomparisonrule.md)|_Property_ > operator|The operator of the text conditional format. Possible values are: Invalid, Contains, NotContains, BeginsWith, EndsWith.|1.6|
+|[conditionalTextComparisonRule](../excel/conditionaltextcomparisonrule.md)|_Property_ > text|The Text value of conditional format.|1.6|
+|[conditionalTopBottomRule](../excel/conditionaltopbottomrule.md)|_Property_ > rank|The rank between 1 and 1000 for numeric ranks or 1 and 100 for percent ranks.|1.6|
+|[conditionalTopBottomRule](../excel/conditionaltopbottomrule.md)|_Property_ > type|Format values based on the top or bottom rank. Possible values are: Invalid, TopItems, TopPercent, BottomItems, BottomPercent.|1.6|
+|[customConditionalFormat](../excel/customconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[customConditionalFormat](../excel/customconditionalformat.md)|_Relationship_ > rule|Represents the Rule object on this conditional format. Read-only.|1.6|
+|[dataBarConditionalFormat](../excel/databarconditionalformat.md)|_Property_ > axisColor|HTML color code representing the color of the Axis line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|1.6|
+|[dataBarConditionalFormat](../excel/databarconditionalformat.md)|_Property_ > axisFormat|Representation of how the axis is determined for an Excel data bar. Possible values are: Automatic, None, CellMidPoint.|1.6|
+|[dataBarConditionalFormat](../excel/databarconditionalformat.md)|_Property_ > barDirection|Represents the direction that the data bar graphic should be based on. Possible values are: Context, LeftToRight, RightToLeft.|1.6|
+|[dataBarConditionalFormat](../excel/databarconditionalformat.md)|_Property_ > showDataBarOnly|If true, hides the values from the cells where the data bar is applied.|1.6|
+|[dataBarConditionalFormat](../excel/databarconditionalformat.md)|_Relationship_ > lowerBoundRule|The rule for what consistutes the lower bound (and how to calculate it, if applicable) for a data bar.|1.6|
+|[dataBarConditionalFormat](../excel/databarconditionalformat.md)|_Relationship_ > negativeFormat|Representation of all values to the left of the axis in an Excel data bar. Read-only.|1.6|
+|[dataBarConditionalFormat](../excel/databarconditionalformat.md)|_Relationship_ > positiveFormat|Representation of all values to the right of the axis in an Excel data bar. Read-only.|1.6|
+|[dataBarConditionalFormat](../excel/databarconditionalformat.md)|_Relationship_ > upperBoundRule|The rule for what constitutes the upper bound (and how to calculate it, if applicable) for a data bar.|1.6|
+|[iconSetConditionalFormat](../excel/iconsetconditionalformat.md)|_Property_ > reverseIconOrder|If true, reverses the icon orders for the IconSet. Note that this cannot be set if custom icons are used.|1.6|
+|[iconSetConditionalFormat](../excel/iconsetconditionalformat.md)|_Property_ > showIconOnly|If true, hides the values and only shows icons.|1.6|
+|[iconSetConditionalFormat](../excel/iconsetconditionalformat.md)|_Property_ > style|If set, displays the IconSet option for the conditional format. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.|1.6|
+|[iconSetConditionalFormat](../excel/iconsetconditionalformat.md)|_Relationship_ > criteria|An array of Criteria and IconSets for the rules and potential custom icons for conditional icons. Note that for the first criterion only the custom icon can be modified, while type, formula and operator will be ignored when set.|1.6|
+|[presetCriteriaConditionalFormat](../excel/presetcriteriaconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[presetCriteriaConditionalFormat](../excel/presetcriteriaconditionalformat.md)|_Relationship_ > rule|The rule of the conditional format.|1.6|
+|[range](../excel/range.md)|_Relationship_ > conditionalFormats|Collection of ConditionalFormats that intersect the range. Read-only.|1.6|
+|[range](../excel/range.md)|_Method_ > [calculate()](../excel/range.md#calculate)|Calculates a range of cells on a worksheet.|1.6|
+|[textConditionalFormat](../excel/textconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[textConditionalFormat](../excel/textconditionalformat.md)|_Relationship_ > rule|The rule of the conditional format.|1.6|
+|[topBottomConditionalFormat](../excel/topbottomconditionalformat.md)|_Relationship_ > format|Returns a format object, encapsulating the conditional formats font, fill, borders, and other properties. Read-only.|1.6|
+|[topBottomConditionalFormat](../excel/topbottomconditionalformat.md)|_Relationship_ > rule|The criteria of the TopBottom conditional format.|1.6|
+|[workbook](../excel/workbook.md)|_Relationship_ > internalTest|For internal use only. Read-only.|1.6|
+|[worksheet](../excel/worksheet.md)|_Method_ > [calculate(markAllDirty: bool)](../excel/worksheet.md#calculatemarkalldirty-bool)|Calculates all cells on a worksheet.|1.6|
 
 ##  What's new in Excel JavaScript API 1.5
 
