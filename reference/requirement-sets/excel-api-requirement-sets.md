@@ -504,31 +504,30 @@ For API details, please refer to the Excel API [open specification](https://gith
 
 |Object| What is new| Description|Requirement set|
 |:----|:----|:----|:----|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Property_ > id|The custom XML part's ID. Read-only.|1.5|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Property_ > namespaceUri|The custom XML part's namespace URI. Read-only.|1.5|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [delete()]((reference/excel/customxmlpart.md#delete)|Deletes the custom XML part.|1.5|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [getXml()]((reference/excel/customxmlpart.md#getxml)|Gets the custom XML part's full XML content.|1.5|
-|[customXmlPart](reference/excel/customxmlpart.md)|_Method_ > [setXml(xml: string)]((reference/excel/customxmlpart.md#setxmlxml-string)|Sets the custom XML part's full XML content.|1.5|
-|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Property_ > items|A collection of customXmlPart objects. Read-only.|1.5|
-|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [add(xml: string)]((reference/excel/customxmlpartcollection.md#addxml-string)|Adds a new custom XML part to the workbook.|1.5|
-|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [getByNamespace(namespaceUri: string)]((reference/excel/customxmlpartcollection.md#getbynamespacenamespaceuri-string)|Gets a new scoped collection of custom XML parts whose namespaces match the given namespace.|1.5|
-|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [getCount()]((reference/excel/customxmlpartcollection.md#getcount)|Gets the number of CustomXml parts in the collection.|1.5|
-|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [getItem(id: string)]((reference/excel/customxmlpartcollection.md#getitemid-string)|Gets a custom XML part based on its ID.|1.5|
-|[customXmlPartCollection](reference/excel/customxmlpartcollection.md)|_Method_ > [getItemOrNullObject(id: string)]((reference/excel/customxmlpartcollection.md#getitemornullobjectid-string)|Gets a custom XML part based on its ID.|1.5|
-|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Property_ > items|A collection of customXmlPartScoped objects. Read-only.|1.5|
-|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getCount()]((reference/excel/customxmlpartscopedcollection.md#getcount)|Gets the number of CustomXML parts in this collection.|1.5|
-|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getItem(id: string)]((reference/excel/customxmlpartscopedcollection.md#getitemid-string)|Gets a custom XML part based on its ID.|1.5|
-|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getItemOrNullObject(id: string)]((reference/excel/customxmlpartscopedcollection.md#getitemornullobjectid-string)|Gets a custom XML part based on its ID.|1.5|
-|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getOnlyItem()]((reference/excel/customxmlpartscopedcollection.md#getonlyitem)|If the collection contains exactly one item, this method returns it.|1.5|
-|[customXmlPartScopedCollection](reference/excel/customxmlpartscopedcollection.md)|_Method_ > [getOnlyItemOrNullObject()]((reference/excel/customxmlpartscopedcollection.md#getonlyitemornullobject)|If the collection contains exactly one item, this method returns it.|1.5|
-|[workbook](reference/excel/workbook.md)|_Relationship_ > customXmlParts|Represents the collection of custom XML parts contained by this workbook. Read-only.|1.5|
-|[worksheet](reference/excel/worksheet.md)|_Method_ > [getNext(visibleOnly: bool)]((reference/excel/worksheet.md#getnextvisibleonly-bool)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|1.5|
-|[worksheet](reference/excel/worksheet.md)|_Method_ > [getNextOrNullObject(visibleOnly: bool)]((reference/excel/worksheet.md#getnextornullobjectvisibleonly-bool)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.|1.5|
-|[worksheet](reference/excel/worksheet.md)|_Method_ > [getPrevious(visibleOnly: bool)]((reference/excel/worksheet.md#getpreviousvisibleonly-bool)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|1.5|
-|[worksheet](reference/excel/worksheet.md)|_Method_ > [getPreviousOrNullObject(visibleOnly: bool)]((reference/excel/worksheet.md#getpreviousornullobjectvisibleonly-bool)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|1.5|
-|[worksheetCollection](reference/excel/worksheetcollection.md)|_Method_ > [getFirst(visibleOnly: bool)]((reference/excel/worksheetcollection.md#getfirstvisibleonly-bool)|Gets the first worksheet in the collection.|1.5|
-|[worksheetCollection](reference/excel/worksheetcollection.md)|_Method_ > [getLast(visibleOnly: bool)]((reference/excel/worksheetcollection.md#getlastvisibleonly-bool)|Gets the last worksheet in the collection.|1.5|
-
+|[customXmlPart](../excel/customxmlpart.md)|_Property_ > id|The custom XML part's ID. Read-only.|1.5|
+|[customXmlPart](../excel/customxmlpart.md)|_Property_ > namespaceUri|The custom XML part's namespace URI. Read-only.|1.5|
+|[customXmlPart](../excel/customxmlpart.md)|_Method_ > [delete()](../excel/customxmlpart.md#delete)|Deletes the custom XML part.|1.5|
+|[customXmlPart](../excel/customxmlpart.md)|_Method_ > [getXml()](../excel/customxmlpart.md#getxml)|Gets the custom XML part's full XML content.|1.5|
+|[customXmlPart](../excel/customxmlpart.md)|_Method_ > [setXml(xml: string)](../excel/customxmlpart.md#setxmlxml-string)|Sets the custom XML part's full XML content.|1.5|
+|[customXmlPartCollection](../excel/customxmlpartcollection.md)|_Property_ > items|A collection of customXmlPart objects. Read-only.|1.5|
+|[customXmlPartCollection](../excel/customxmlpartcollection.md)|_Method_ > [add(xml: string)](../excel/customxmlpartcollection.md#addxml-string)|Adds a new custom XML part to the workbook.|1.5|
+|[customXmlPartCollection](../excel/customxmlpartcollection.md)|_Method_ > [getByNamespace(namespaceUri: string)](../excel/customxmlpartcollection.md#getbynamespacenamespaceuri-string)|Gets a new scoped collection of custom XML parts whose namespaces match the given namespace.|1.5|
+|[customXmlPartCollection](../excel/customxmlpartcollection.md)|_Method_ > [getCount()](../excel/customxmlpartcollection.md#getcount)|Gets the number of CustomXml parts in the collection.|1.5|
+|[customXmlPartCollection](../excel/customxmlpartcollection.md)|_Method_ > [getItem(id: string)](../excel/customxmlpartcollection.md#getitemid-string)|Gets a custom XML part based on its ID.|1.5|
+|[customXmlPartCollection](../excel/customxmlpartcollection.md)|_Method_ > [getItemOrNullObject(id: string)](../excel/customxmlpartcollection.md#getitemornullobjectid-string)|Gets a custom XML part based on its ID.|1.5|
+|[customXmlPartScopedCollection](../excel/customxmlpartscopedcollection.md)|_Property_ > items|A collection of customXmlPartScoped objects. Read-only.|1.5|
+|[customXmlPartScopedCollection](../excel/customxmlpartscopedcollection.md)|_Method_ > [getCount()](../excel/customxmlpartscopedcollection.md#getcount)|Gets the number of CustomXML parts in this collection.|1.5|
+|[customXmlPartScopedCollection](../excel/customxmlpartscopedcollection.md)|_Method_ > [getItem(id: string)](../excel/customxmlpartscopedcollection.md#getitemid-string)|Gets a custom XML part based on its ID.|1.5|
+|[customXmlPartScopedCollection](../excel/customxmlpartscopedcollection.md)|_Method_ > [getItemOrNullObject(id: string)](../excel/customxmlpartscopedcollection.md#getitemornullobjectid-string)|Gets a custom XML part based on its ID.|1.5|
+|[customXmlPartScopedCollection](../excel/customxmlpartscopedcollection.md)|_Method_ > [getOnlyItem()](../excel/customxmlpartscopedcollection.md#getonlyitem)|If the collection contains exactly one item, this method returns it.|1.5|
+|[customXmlPartScopedCollection](../excel/customxmlpartscopedcollection.md)|_Method_ > [getOnlyItemOrNullObject()](../excel/customxmlpartscopedcollection.md#getonlyitemornullobject)|If the collection contains exactly one item, this method returns it.|1.5|
+|[workbook](../excel/workbook.md)|_Relationship_ > customXmlParts|Represents the collection of custom XML parts contained by this workbook. Read-only.|1.5|
+|[worksheet](../excel/worksheet.md)|_Method_ > [getNext(visibleOnly: bool)](../excel/worksheet.md#getnextvisibleonly-bool)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|1.5|
+|[worksheet](../excel/worksheet.md)|_Method_ > [getNextOrNullObject(visibleOnly: bool)](../excel/worksheet.md#getnextornullobjectvisibleonly-bool)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.|1.5|
+|[worksheet](../excel/worksheet.md)|_Method_ > [getPrevious(visibleOnly: bool)](../excel/worksheet.md#getpreviousvisibleonly-bool)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|1.5|
+|[worksheet](../excel/worksheet.md)|_Method_ > [getPreviousOrNullObject(visibleOnly: bool)](../excel/worksheet.md#getpreviousornullobjectvisibleonly-bool)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|1.5|
+|[worksheetCollection](../excel/worksheetcollection.md)|_Method_ > [getFirst(visibleOnly: bool)](../excel/worksheetcollection.md#getfirstvisibleonly-bool)|Gets the first worksheet in the collection.|1.5|
+|[worksheetCollection](../excel/worksheetcollection.md)|_Method_ > [getLast(visibleOnly: bool)](../excel/worksheetcollection.md#getlastvisibleonly-bool)|Gets the last worksheet in the collection.|1.5|
 
 ## What's new in Excel JavaScript API 1.4
 The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
