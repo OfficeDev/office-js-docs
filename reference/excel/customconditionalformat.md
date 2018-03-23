@@ -15,3 +15,23 @@ None
 ## Methods
 None
 
+## Examples
+```js
+Excel.run(function (ctx) {
+    var sheet = ctx.workbook.worksheets.getActiveWorksheet();
+    var range = sheet.getRange("A1:A5");
+    range.values = [[1], [20], [""], [5], ["test"]];
+    var cf = range.conditionalFormats.add(Excel.ConditionalFormatType.custom);
+    var cfCustom = cf.customOrNullObject;
+    cfCustom.rule.formula = "=ISBLANK(A1)";
+    cfCustom.format.fill.color = "#00FF00";
+    return ctx.sync().then(function () {
+        console.log("Added new custom conditional format highlighting all blank cells.");
+    });
+}).catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
+    });
+```
