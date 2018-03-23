@@ -4,8 +4,7 @@ Requirement sets are named groups of API members. Office Add-ins use requirement
 
 Excel add-ins run across multiple versions of Office, including Office 2016 for Windows, Office for iPad, Office for Mac, and Office Online. The following table lists the Excel requirement sets, the Office host applications that support each requirement set, and the build versions or number for those applications.
 
-> [!NOTE]
-> Any API that is listed as **beta** is not ready for end-user production. We make them available for developers to try them out in test and development environments. They are not meant to be used against production/business critical documents.
+> **Note**  Any API that is listed as **beta** is not ready for end-user production. We make them available for developers to try them out in test and development environments. They are not meant to be used against production/business critical documents.
 > For the requirement sets that are marked as *Beta*, use the specified (or later) version of the Office software and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entires not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
 
 |  Requirement set  |  Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
@@ -18,8 +17,7 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 | ExcelApi1.2  | Version 1601 (Build 6741.2088) or later | 1.21 or later | 15.22 or later| January 2016 ||
 | ExcelApi1.1  | Version 1509 (Build 4266.1001) or later | 1.19 or later | 15.20 or later| January 2016 ||
 
-> [!NOTE]
-> The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
+> **Note** The build number for Office 2016 installed via MSI is 16.0.4266.1001. This version only contains the ExcelApi 1.1 requirement set.
 
 For more information about versions, build numbers, and Office Online Server, see:
 
@@ -32,8 +30,7 @@ For more information about versions, build numbers, and Office Online Server, se
 
 The Excel JavaScript API requirement set 1.7 features include APIs for charts, events, data validation, worksheets, ranges, document properties, named items, protection options and styles.
 
-> [!NOTE]
-> For API reference documentation and details, see [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
+> **Note** For API reference documentation and details, see [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
 
 ## Customize charts
 
