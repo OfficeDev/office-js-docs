@@ -32,7 +32,7 @@ The Excel JavaScript API requirement set 1.7 features include APIs for charts, e
 
 > **Note** For API reference documentation and details, see [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
 
-## Customize charts
+### Customize charts
 
 With the new chart APIs, you can create additional chart types, add a data series to a chart, set the chart title, add an axis title, add display unit, add a trendline with moving average, change a trendline to linear, and more. The following are some examples:
 
@@ -44,11 +44,11 @@ With the new chart APIs, you can create additional chart types, add a data serie
 * Chart title substring -  get and set title substring for a chart.
 * Chart type - option to create more chart types.
 
-## Events
+### Events
 
 Excel events APIs provide a variety of event handlers that allow your add-in to automatically run a designated function when a specific event occurs. You can design that function to perform whatever actions your scenario requires. For a list of events that are currently available, see [Work with Events using the Excel JavaScript API](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-events).
 
-## Customize the appearance of worksheets and ranges
+### Customize the appearance of worksheets and ranges
 
 Using the new APIs, you can customize the appearance of worksheets in multiple ways:
 
@@ -64,15 +64,15 @@ You can customize the appearance of ranges in multiple ways:
 * Set the text orientation for a range.
 * Add or modify a hyperlink on a range that links to another location in the workbook or to an external location.
 
-## Manage document properties
+### Manage document properties
 
 Using the document properties APIs, you can access built-in document properties and also create and manage custom document properties to store state of the workbook and drive workflow and business logic.
 
-## Copy worksheets
+### Copy worksheets
 
 Using the worksheet copy APIs, you can copy the data and format from one worksheet to a new worksheet within the same workbook and reduce the amount of data transfer needed.
 
-## Handle ranges with ease
+### Handle ranges with ease
 
 Using the various range APIs, you can do things such as get the surrounding region, get a resized range, and more. These APIs should make tasks like range manipulation and addressing much more efficient.
 
