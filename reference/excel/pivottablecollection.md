@@ -6,7 +6,7 @@ Represents a collection of all the PivotTables that are part of the workbook or 
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[PivotTable](pivottable.md)|A collection of pivotTable objects. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[PivotTable[]](pivottable.md)|A collection of pivotTable objects. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

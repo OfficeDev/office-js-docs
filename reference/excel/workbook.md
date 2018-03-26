@@ -4,30 +4,51 @@ Workbook is the top level object which contains related workbook objects such as
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|name|string|Gets the workbook name. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|application|[Application](application.md)|Represents Excel application instance that contains this workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|application|[Application](application.md)|Represents the Excel application instance that contains this workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |bindings|[BindingCollection](bindingcollection.md)|Represents a collection of bindings that are part of the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|customFunctions | [CustomFunctionCollection](customfunctioncollection.md) | Represents a collection of custom functions associated with Excel | N/A |
 |customXmlParts|[CustomXmlPartCollection](customxmlpartcollection.md)|Represents the collection of custom XML parts contained by this workbook. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|functions|[Functions](functions.md)|Represents Excel application instance that contains this workbook. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|dataConnections|[DataConnectionCollection](dataconnectioncollection.md)|Refreshes all data connections in the workbook. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|functions|[Functions](functions.md)|Represents a collection of worksheet functions that can be used for computation. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|internalTest|[InternalTest](internaltest.md)|For internal use only. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Represents a collection of PivotTables associated with the workbook. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|properties|[DocumentProperties](documentproperties.md)|Gets the workbook properties. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|protection|[WorkbookProtection](workbookprotection.md)|Returns workbook protection object for a workbook. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |settings|[SettingCollection](settingcollection.md)|Represents a collection of Settings associated with the workbook. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|styles|[StyleCollection](stylecollection.md)|Represents a collection of styles associated with the workbook. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|test|[Test](test.md)|For internal use only. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[getActiveCell()](#getactivecell)|[Range](range.md)|Gets the currently active cell from the workbook.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
+
+
+### getActiveCell()
+Gets the currently active cell from the workbook.
+
+#### Syntax
+```js
+workbookObject.getActiveCell();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Range](range.md)
 
 
 ### getSelectedRange()

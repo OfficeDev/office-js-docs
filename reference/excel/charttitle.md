@@ -6,9 +6,18 @@ Represents a chart title object of a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|height|double|Returns the height, in points, of the chart title. Read-only. Null if chart title's not visible. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|horizontalAlignment|string|Represents the horizontal alignment for chart title. Possible values are: Center, Left, Justify, Distributed, Right.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|left|double|Represents the distance, in points, from the left edge of chart title to the left edge of chart area. Null if chart title's not visible.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |overlay|bool|Boolean value representing if the chart title will overlay the chart or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|position|string|Represents the position of chart title. Possible values are: Top, Automatic, Bottom, Right, Left.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|showShadow|bool|Represents a boolean value that determines if the chart title has a shadow.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |text|string|Represents the title text of a chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|textOrientation|int|Represents the text orientation of chart title. The value should be an integer either from -90 to 90, or 180 for vertically-oriented text.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|top|double|Represents the distance, in points, from the top edge of chart title to the top of chart area. Null if chart title's not visible.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|verticalAlignment|string|Represents the vertical alignment of chart title. Possible values are: Center, Bottom, Top, Justify, Distributed.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|A boolean value the represents the visibility of a chart title object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|width|double|Returns the width, in points, of the chart title. Read-only. Null if chart title's not visible. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,11 +27,29 @@ _See property access [examples.](#property-access-examples)_
 |format|[ChartTitleFormat](charttitleformat.md)|Represents the formatting of a chart title, which includes fill and font formatting. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
-None
 
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|[setFormula(formula: string)](#setformulaformula-string)|void|Sets a string value that represents the formula of chart title using A1-style notation.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### setFormula(formula: string)
+Sets a string value that represents the formula of chart title using A1-style notation.
+
+#### Syntax
+```js
+chartTitleObject.setFormula(formula);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|formula|string| a string that present the formula to set |
+
+#### Returns
+void
 ### Property access examples
 
 Get the `text` of Chart Title from Chart1.

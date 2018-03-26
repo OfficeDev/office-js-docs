@@ -17,24 +17,25 @@ Represents the protection of a sheet object.
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[protect(options: WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoptions)|void|Protects a worksheet. Fails if the worksheet has been protected.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[unprotect()](#unprotect)|void|Unprotects a worksheet.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[protect(options: WorksheetProtectionOptions, password: string)](#protectoptions-worksheetprotectionoptions-password-string)|void|Protects a worksheet. Fails if the worksheet has already been protected.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[unprotect(password: string)](#unprotectpassword-string)|void|Unprotects a worksheet.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
-### protect(options: WorksheetProtectionOptions)
-Protects a worksheet. Fails if the worksheet has been protected.
+### protect(options: WorksheetProtectionOptions, password: string)
+Protects a worksheet. Fails if the worksheet has already been protected.
 
 #### Syntax
 ```js
-worksheetProtectionObject.protect(options);
+worksheetProtectionObject.protect(options, password);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |options|WorksheetProtectionOptions|Optional. sheet protection options.|
+|password|string|Optional. sheet protection password.|
 
 #### Returns
 void
@@ -54,16 +55,18 @@ Excel.run(function (ctx) {
 });
 
 ```
-### unprotect()
+### unprotect(password: string)
 Unprotects a worksheet.
 
 #### Syntax
 ```js
-worksheetProtectionObject.unprotect();
+worksheetProtectionObject.unprotect(password);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|password|string|Optional. sheet protection password.|
 
 #### Returns
 void

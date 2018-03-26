@@ -7,12 +7,14 @@ Enapsulates the formatting options for line elements.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |color|string|HTML color code representing the color of lines in the chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|weight|int|Represents weight of the line, in points.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|lineStyle|string|Represents the line style.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 

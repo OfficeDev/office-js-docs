@@ -6,12 +6,20 @@ Represents a collection of worksheet objects that are part of the workbook.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Worksheet](worksheet.md)|A collection of worksheet objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Worksheet[]](worksheet.md)|A collection of worksheet objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
+
+## Events
+
+| Event		   | Description	|Event Argument| Req. Set |
+|:---------------|:--------|:----------|:----|
+|onAdded| A worksheet has been added to the collection. |[WorksheetAddedEventArgs](worksheetaddedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|onActivated| A worksheet in the collection has been activated. |[WorksheetActivatedEventArgs](worksheetactivatedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|onDeactivated| A worksheet in the collection has been deactivated. |[WorksheetDeactivatedEventArgs](worksheetdeactivatedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 
 ## Methods
@@ -107,7 +115,7 @@ worksheetCollectionObject.getCount(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. Considers only the visible cells.|
+|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 int
@@ -175,6 +183,8 @@ worksheetCollectionObject.getLast(visibleOnly);
 
 #### Returns
 [Worksheet](worksheet.md)
+
+
 ### Property access examples
 ```js
 Excel.run(function (ctx) { 

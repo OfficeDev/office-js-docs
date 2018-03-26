@@ -6,7 +6,7 @@ Represents the Excel application that manages the workbook.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|calculationMode|string|Returns the calculation mode used in the workbook. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,7 +19,7 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[suspendApiCalculationUntilNextSync()](#suspendapicalculationuntilnextsync)|void|NOTE: Though this API is part of 1.6 requirement set, is only available in Win32 and Online. Mac and iOS support is coming soon. Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[suspendApiCalculationUntilNextSync()](#suspendapicalculationuntilnextsync)|void|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -54,7 +54,7 @@ Excel.run(function (ctx) {
 ```
 
 ### suspendApiCalculationUntilNextSync()
-Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.
+NOTE: Though this API is part of 1.6 requirement set, is only available in Win32 and Online. Mac and iOS support is coming soon. Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.
 
 #### Syntax
 ```js

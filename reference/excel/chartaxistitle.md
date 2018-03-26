@@ -16,11 +16,6 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |format|[ChartAxisTitleFormat](chartaxistitleformat.md)|Represents the formatting of chart axis title. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
-## Methods
-None
-
-
-## Method Details
 
 ### Property access examples
 Get the `text` of Chart Axis Title from the value axis of Chart1.

@@ -7,7 +7,7 @@ Represents a collection of chart series.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of series in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[ChartSeries](chartseries.md)|A collection of chartSeries objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartSeries[]](chartseries.md)|A collection of chartSeries objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,11 +19,29 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[add(name: string, index: number)](#addname-string-index-number)|[ChartSeries](chartseries.md)|Add a new series to the collection.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Returns the number of series in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### add(name: string, index: number)
+Add a new series to the collection.
+
+#### Syntax
+```js
+chartSeriesCollectionObject.add(name, index);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|name|string|Optional. Name of the series.|
+|index|number|Optional. Index value of the series to be added. Zero-indexed.|
+
+#### Returns
+[ChartSeries](chartseries.md)
 
 ### getCount()
 Returns the number of series in the collection.
@@ -40,7 +58,7 @@ None
 int
 
 ### getItemAt(index: number)
-Retrieves a series based on its position in the collection
+Retrieves a series based on its position in the collection.
 
 #### Syntax
 ```js
@@ -73,6 +91,8 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
+
 
 ### Property access examples
 Getting the names of series in the series collection.

@@ -7,23 +7,29 @@ Represents a collection of all the tables that are part of the workbook or works
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of tables in the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[Table](table.md)|A collection of table objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Table[]](table.md)|A collection of table objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
 
+## Events
+
+| Event		   | Description	|Event Argument| Req. Set |
+|:---------------|:--------|:----------|:----|
+|onChanged| Data in cells in some table in the collection has changed. |[TableChangedEventArgs](tablechangedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(address: object, hasHeaders: bool)](#addaddress-object-hasheaders-bool)|[Table](table.md)|Create a new table. The range object or source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md) (the first parameter must be a string)<br/><br/>[1.3](../requirement-sets/excel-api-requirement-sets.md) (the first parameter can be a Range object or a string) |
+|[add(address: object, hasHeaders: bool)](#addaddress-object-hasheaders-bool)|[Table](table.md)|Create a new table. The range object or source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Gets the number of tables in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: string)](#getitemkey-string)|[Table](table.md)|Gets a table by Name or ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(key: number or string)](#getitemornullobjectkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID. If the table does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[Table](table.md)|Gets a table by Name or ID. If the table does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -39,7 +45,7 @@ tableCollectionObject.add(address, hasHeaders);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|address|object|A Range object, or a string address or name of the range representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.<br/><br/>**Note**: Prior to [API Requirement Set](../requirement-sets/excel-api-requirement-sets.md) 1.3, this parameter must be a string. Beginning with API Requirement Set 1.3, this parameter may be a Range object or a string.|
+|address|object|A Range object, or a string address or name of the range representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.**Note**: Prior to [API Requirement Set](../requirement-sets/excel-api-requirement-sets.md) 1.3, this parameter must be a string. Beginning with API Requirement Set 1.3, this parameter may be a Range object or a string.|
 |hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
 
 #### Returns
@@ -76,7 +82,7 @@ None
 #### Returns
 int
 
-### getItem(key: number or string)
+### getItem(key: string)
 Gets a table by Name or ID.
 
 #### Syntax
@@ -87,7 +93,7 @@ tableCollectionObject.getItem(key);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|number or string|Name or ID of the table to be retrieved.|
+|key|string|Name or ID of the table to be retrieved.|
 
 #### Returns
 [Table](table.md)
@@ -163,7 +169,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemOrNullObject(key: number or string)
+### getItemOrNullObject(key: string)
 Gets a table by Name or ID. If the table does not exist, will return a null object.
 
 #### Syntax
@@ -174,7 +180,7 @@ tableCollectionObject.getItemOrNullObject(key);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|key|number or string|Name or ID of the table to be retrieved.|
+|key|string|Name or ID of the table to be retrieved.|
 
 #### Returns
 [Table](table.md)
@@ -215,3 +221,4 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+

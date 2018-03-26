@@ -7,7 +7,7 @@ Represents the collection of all the binding objects that are part of the workbo
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of bindings in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[Binding](binding.md)|A collection of binding objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Binding[]](binding.md)|A collection of binding objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
