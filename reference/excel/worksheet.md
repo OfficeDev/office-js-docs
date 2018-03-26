@@ -54,7 +54,7 @@ _See property access [examples.](#property-access-examples)_
 |[getPreviousOrNullObject(visibleOnly: bool)](#getpreviousornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|[Range](range.md)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: bool|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -102,7 +102,7 @@ worksheetObject.calculate(markAllDirty);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|markAllDirty|bool|markAllDirty|
+|markAllDirty|bool|true to mark all as dirty|
 
 #### Returns
 void
@@ -332,7 +332,7 @@ worksheetObject.getRangeByIndexes(startRow, startColumn, rowCount, columnCount);
 #### Returns
 [Range](range.md)
 
-### getUsedRange(valuesOnly: [ApiSet(Version)
+### getUsedRange(valuesOnly: bool)
 The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).
 
 #### Syntax
@@ -343,7 +343,7 @@ worksheetObject.getUsedRange(valuesOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells (ignoring formatting).|
+|valuesOnly|bool|Considers only cells with values as used cells (ignoring formatting).|
 
 #### Returns
 [Range](range.md)
