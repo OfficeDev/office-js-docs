@@ -6,7 +6,7 @@ A collection of custom XML parts.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[CustomXmlPart](customxmlpart.md)|A collection of customXmlPart objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[CustomXmlPart[]](customxmlpart.md)|A collection of customXmlPart objects. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -54,7 +54,7 @@ customXmlPartCollectionObject.getByNamespace(namespaceUri);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|namespaceUri|string||
+|namespaceUri|string|This must be a fully qualified schema URI; for example, "http://schemas.contoso.com/review/1.0"|
 
 #### Returns
 [CustomXmlPartScopedCollection](customxmlpartscopedcollection.md)

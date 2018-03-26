@@ -9,6 +9,9 @@ A format object encapsulating the range's font, fill, borders, alignment, and ot
 |columnWidth|double|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |rowHeight|double|Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|textOrientation|int|Gets or sets the text orientation of all the cells within the range.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|useStandardHeight|bool|Determines if the row height of the Range object equals the standard height of the sheet.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|useStandardWidth|bool|Determines if the columnwidth of the Range object equals the standard width of the sheet.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |verticalAlignment|string|Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |wrapText|bool|Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 

@@ -18,14 +18,14 @@ Manages sorting operations on Table objects.
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[apply(fields: SortField, matchCase: bool, method: string)](#applyfields-sortfield-matchcase-bool-method-string)|void|Perform a sort operation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[apply(fields: SortField[], matchCase: bool, method: string)](#applyfields-sortfield-matchcase-bool-method-string)|void|Perform a sort operation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[reapply()](#reapply)|void|Reapplies the current sorting parameters to the table.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
-### apply(fields: SortField, matchCase: bool, method: string)
+### apply(fields: SortField[], matchCase: bool, method: string)
 Perform a sort operation.
 
 #### Syntax
@@ -36,7 +36,7 @@ tableSortObject.apply(fields, matchCase, method);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|fields|SortField|The list of conditions to sort on.|
+|fields|SortField[]|The list of conditions to sort on.|
 |matchCase|bool|Optional. Whether to have the casing impact string ordering.|
 |method|string|Optional. The ordering method used for Chinese characters.  Possible values are: PinYin, StrokeCount|
 
