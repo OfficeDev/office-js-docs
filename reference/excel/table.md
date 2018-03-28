@@ -8,7 +8,7 @@ Represents an Excel table.
 |:---------------|:--------|:----------|:----|
 |highlightFirstColumn|bool|Indicates whether the first column contains special formatting.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |highlightLastColumn|bool|Indicates whether the last column contains special formatting.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|id|int|Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|id|string|Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Name of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |showBandedColumns|bool|Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |showBandedRows|bool|Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
@@ -26,6 +26,13 @@ _See property access [examples.](#property-access-examples)_
 |rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |sort|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current table. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+
+## Events
+
+| Event		   | Description	|Event Argument| Req. Set |
+|:---------------|:--------|:----------|:----|
+|onChanged| Data in cells has changed. |[TableChangedEventArgs](tablechangedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|onSelectionChanged| The active or selected cell is changed. |[TableSelectionChangedEventArgs](tableselectionchangedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
@@ -318,3 +325,4 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+

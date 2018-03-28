@@ -24,7 +24,6 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
-
 ### refresh()
 Refreshes the PivotTable.
 
@@ -38,3 +37,4 @@ None
 
 #### Returns
 void
+

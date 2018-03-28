@@ -6,7 +6,7 @@ A collection of all the nameditem objects that are part of the workbook or works
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[NamedItem](nameditem.md)|A collection of namedItem objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

@@ -7,7 +7,7 @@ A collection of all the chart points within a series inside a chart.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Returns the number of chart points in the series. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|items|[ChartPoint](chartpoint.md)|A collection of chartPoints objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[ChartPoint[]](chartpoint.md)|A collection of chartPoints objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -38,6 +38,7 @@ None
 
 #### Returns
 int
+
 
 ### getItemAt(index: number)
 Retrieve a point based on its position within the series.
@@ -71,7 +72,9 @@ Excel.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
-```### Property access examples
+```
+
+### Property access examples
 
 Get the names of points in the points collection
 
