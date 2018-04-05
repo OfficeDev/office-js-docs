@@ -17,10 +17,10 @@ None
 
 | Event		   | Description	|Event Argument| Req. Set |
 |:---------------|:--------|:----------|:----|
-|onAdded| A worksheet has been added to the collection. |[WorksheetAddedEventArgs](worksheetaddedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |onActivated| A worksheet in the collection has been activated. |[WorksheetActivatedEventArgs](worksheetactivatedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|onAdded| A worksheet has been added to the collection. |[WorksheetAddedEventArgs](worksheetaddedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |onDeactivated| A worksheet in the collection has been deactivated. |[WorksheetDeactivatedEventArgs](worksheetdeactivatedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-
+|onDeleted| A worksheet has been deleted from the collection. |[WorksheetDeletedEventArgs](worksheetdeletedeventargs.md)|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 

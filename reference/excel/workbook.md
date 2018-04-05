@@ -26,6 +26,12 @@ Workbook is the top level object which contains related workbook objects such as
 |tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
+## Events
+
+| Event		   | Description	|Event Argument| Req. Set |
+|:---------------|:--------|:----------|:----|
+|onSelectionChanged| The active or selected cell is changed. |[SelectionChangedEventArgs](selectionchangedeventargs.md)|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
