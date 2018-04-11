@@ -10,28 +10,8 @@ Join us in reviewing our design for new Excel JavaScript APIs.
 
 **See the [Excel JavaScript open specification page](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) to learn more and provide your feedback.**
 
-## New Word JavaScript APIs (1.3)
+## New Word JavaScript APIs
 
-Using the Word JavaScript API 1.3, you’ll be able to: 
+Join us in reviewing our design for new Word JavaScript APIs. 
 
-* Create and access list objects
-* Create and access table objects
-* Have more options for accessing and comparing range objects
-* Document properties
-
-These changes have been implemented across nearly all Word JavaScript API objects. This functionality is now or will soon be available in preview for Word 2016 on the desktop for both Windows and Mac, and on the iPad. Update your clients to the latest monthly build and start implementing these great features!
-
-**See the [Word JS API 1.3 open design page](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) to learn more and provide your feedback.**
-
-## New Word JavaScript APIs (1.4)
-
-The Word JavaScript API 1.4 update contains important additions, including:
-
-* Create and alter documents in memory
-* Settings API using promise based synatx
-* Custom XML document using promise based syntax
-* Insert bookmark 
-* Table merge cells
-* Table row merge and column split
-
-**See the [Word JS API 1.4 open design page](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) to learn more and provide your feedback.**
+**See the [Word JavaScript open specification page](https://github.com/OfficeDev/office-js-docs/tree/WordJs_OpenSpec) to learn more and provide your feedback.**
