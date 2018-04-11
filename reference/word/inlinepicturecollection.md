@@ -8,7 +8,7 @@ Contains a collection of [inlinePicture](inlinePicture.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[InlinePicture](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|items|[InlinePicture[]](inlinepicture.md)|A collection of inlinePicture objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -64,7 +64,7 @@ inlinePictureCollectionObject.getItem(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|A number that identifies the index location of an inline picture object.|
 
 #### Returns
@@ -80,7 +80,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns

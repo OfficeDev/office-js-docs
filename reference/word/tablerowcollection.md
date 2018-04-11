@@ -8,7 +8,7 @@ Contains the collection of the document's TableRow objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[TableRow](tablerow.md)|A collection of tableRow objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -66,7 +66,7 @@ tableRowCollectionObject.getItem(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|A number that identifies the index location of a table row object.|
 
 #### Returns
@@ -82,7 +82,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns

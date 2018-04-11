@@ -36,10 +36,11 @@ _See property access [examples.](#property-access-examples)_
 |[getCellPadding(cellPaddingLocation: CellPaddingLocation)](#getcellpaddingcellpaddinglocation-cellpaddinglocation)|[float?](float?.md)|Gets cell padding in points.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getNext()](#getnext)|[TableCell](tablecell.md)|Gets the next cell. Throws if this cell is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getNextOrNullObject()](#getnextornullobject)|[TableCell](tablecell.md)|Gets the next cell. Returns a null object if this cell is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[insertColumns(insertLocation: string, columnCount: number, values: string)](#insertcolumnsinsertlocation-string-columncount-number-values-string)|void|Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[insertRows(insertLocation: string, rowCount: number, values: string)](#insertrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[insertColumns(insertLocation: string, columnCount: number, values: string[][])](#insertcolumnsinsertlocation-string-columncount-number-values-string)|void|Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[insertRows(insertLocation: string, rowCount: number, values: string[][])](#insertrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[split(rowCount: number, columnCount: number)](#splitrowcount-number-columncount-number)|void|Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -82,7 +83,7 @@ tableCellObject.getBorder(borderLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |borderLocation|string|Required. The border location.  Possible values are: Top, Left, Bottom, Right, InsideHorizontal, InsideVertical, Inside, Outside, All|
 
 #### Returns
@@ -98,7 +99,7 @@ tableCellObject.getCellPadding(cellPaddingLocation);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |cellPaddingLocation|CellPaddingLocation|Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.|
 
 #### Returns
@@ -132,7 +133,7 @@ None
 #### Returns
 [TableCell](tablecell.md)
 
-### insertColumns(insertLocation: string, columnCount: number, values: string)
+### insertColumns(insertLocation: string, columnCount: number, values: string[][])
 Adds columns to the left or right of the cell, using the cell's column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -142,15 +143,15 @@ tableCellObject.insertColumns(insertLocation, columnCount, values);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |insertLocation|string|Required. It can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |columnCount|number|Required. Number of columns to add|
-|values|string|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 void
 
-### insertRows(insertLocation: string, rowCount: number, values: string)
+### insertRows(insertLocation: string, rowCount: number, values: string[][])
 Inserts rows above or below the cell, using the cell's row as a template. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -160,10 +161,10 @@ tableCellObject.insertRows(insertLocation, rowCount, values);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |insertLocation|string|Required. It can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |rowCount|number|Required. Number of rows to add.|
-|values|string|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 [TableRowCollection](tablerowcollection.md)
@@ -178,7 +179,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
@@ -194,9 +195,26 @@ tableCellObject.setCellPadding(cellPaddingLocation, cellPadding);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |cellPaddingLocation|CellPaddingLocation|Required. The cell padding location can be 'Top', 'Left', 'Bottom' or 'Right'.|
 |cellPadding|float|Required. The cell padding.|
+
+#### Returns
+void
+
+### split(rowCount: number, columnCount: number)
+Adds columns to the left or right of the cell, using the existing column as a template. The string values, if specified, are set in the newly inserted rows.
+
+#### Syntax
+```js
+tableCellObject.split(rowCount, columnCount);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|:---|
+|rowCount|number|Required. The number of rows to split into. Must be a divisor of the number of underlying rows.|
+|columnCount|number|Required. The number of columns to split into.|
 
 #### Returns
 void

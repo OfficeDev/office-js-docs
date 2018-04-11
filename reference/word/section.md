@@ -6,7 +6,10 @@ Represents a section in a Word document.
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|headerFooterEvenPageDifferent|bool|Gets or sets a value that indicates whether even-numbered pages have a different header and footer from odd-numbered pages in the section.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|headerFooterFirstPageDifferent|bool|Gets or sets a value that indicates whether the first page has a different header and footer from the other pages in the section.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
@@ -36,7 +39,7 @@ sectionObject.getFooter(type);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |type|string|Required. The type of footer to return. This value can be: 'primary', 'firstPage' or 'evenPages'. Possible values are: `Primary` Returns the header or footer on all pages of a section, with the first page or odd pages excluded if they are different.,`FirstPage` Returns the header or footer on the first page of a section.,`EvenPages` Returns all headers or footers on even-numbered pages of a section.|
 
 #### Returns
@@ -93,7 +96,7 @@ sectionObject.getHeader(type);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |type|string|Required. The type of header to return. This value can be: 'primary', 'firstPage' or 'evenPages'. Possible values are: `Primary` Returns the header or footer on all pages of a section, with the first page or odd pages excluded if they are different.,`FirstPage` Returns the header or footer on the first page of a section.,`EvenPages` Returns all headers or footers on even-numbered pages of a section.|
 
 #### Returns
@@ -178,7 +181,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns

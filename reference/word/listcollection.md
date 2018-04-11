@@ -8,7 +8,7 @@ Contains a collection of [list](list.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[List](list.md)|A collection of list objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|items|[List[]](list.md)|A collection of list objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -40,7 +40,7 @@ listCollectionObject.getById(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |id|number|Required. A list identifier.|
 
 #### Returns
@@ -56,7 +56,7 @@ listCollectionObject.getByIdOrNullObject(id);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |id|number|Required. A list identifier.|
 
 #### Returns
@@ -100,7 +100,7 @@ listCollectionObject.getItem(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|A number that identifies the index location of a list object.|
 
 #### Returns
@@ -116,7 +116,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns

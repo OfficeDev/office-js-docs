@@ -15,7 +15,7 @@ Represents document properties.
 |company|string|Gets or sets the company of the document.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |format|string|Gets or sets the format of the document.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |keywords|string|Gets or sets the keywords of the document.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|lastAuthor|string|Gets the last author of the document. Read only. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|lastAuthor|string|Gets or sets the last author of the document.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |manager|string|Gets or sets the manager of the document.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |revisionNumber|string|Gets the revision number of the document. Read only. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |security|int|Gets the security of the document. Read only. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
@@ -52,7 +52,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns

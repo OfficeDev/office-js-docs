@@ -8,7 +8,7 @@ Contains a collection of [paragraph](paragraph.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Paragraph](paragraph.md)|A collection of paragraph objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -66,7 +66,7 @@ paragraphCollectionObject.getItem(index);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|A number that identifies the index location of a paragraph object.|
 
 #### Returns
@@ -110,7 +110,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
