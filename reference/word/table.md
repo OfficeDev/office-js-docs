@@ -46,8 +46,8 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[addColumns(insertLocation: string, columnCount: number, values: string)](#addcolumnsinsertlocation-string-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[addRows(insertLocation: string, rowCount: number, values: string)](#addrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[addColumns(insertLocation: string, columnCount: number, values: string[][])](#addcolumnsinsertlocation-string-columncount-number-values-string)|void|Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[addRows(insertLocation: string, rowCount: number, values: string[][])](#addrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[autoFitWindow()](#autofitwindow)|void|Autofits the table columns to the width of the window.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[clear()](#clear)|void|Clears the contents of the table.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[delete()](#delete)|void|Deletes the entire table.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
@@ -67,8 +67,9 @@ _See property access [examples.](#property-access-examples)_
 |[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the range that contains this table, or the range at the start or end of the table.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Inserts a content control on the table.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string)](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](#mergecellstoprow-number-firstcell-number-bottomrow-number-lastcell-number)|[TableCell](tablecell.md)|Merges the cells bounded inclusively by a first and last cell.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the table, or the position at the start or end of the table, and navigates the Word UI to it.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
@@ -76,7 +77,7 @@ _See property access [examples.](#property-access-examples)_
 ## Method Details
 
 
-### addColumns(insertLocation: string, columnCount: number, values: string)
+### addColumns(insertLocation: string, columnCount: number, values: string[][])
 Adds columns to the start or end of the table, using the first or last existing column as a template. This is applicable to uniform tables. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -89,12 +90,12 @@ tableObject.addColumns(insertLocation, columnCount, values);
 |:---------------|:--------|:----------|
 |insertLocation|string|Required. It can be 'Start' or 'End', corresponding to the appropriate side of the table. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |columnCount|number|Required. Number of columns to add.|
-|values|string|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 void
 
-### addRows(insertLocation: string, rowCount: number, values: string)
+### addRows(insertLocation: string, rowCount: number, values: string[][])
 Adds rows to the start or end of the table, using the first or last existing row as a template. The string values, if specified, are set in the newly inserted rows.
 
 #### Syntax
@@ -107,7 +108,7 @@ tableObject.addRows(insertLocation, rowCount, values);
 |:---------------|:--------|:----------|
 |insertLocation|string|Required. It can be 'Start' or 'End'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |rowCount|number|Required. Number of rows to add.|
-|values|string|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 [TableRowCollection](tablerowcollection.md)
@@ -399,7 +400,7 @@ tableObject.insertParagraph(paragraphText, insertLocation);
 #### Returns
 [Paragraph](paragraph.md)
 
-### insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string)
+### insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])
 Inserts a table with the specified number of rows and columns. The insertLocation value can be 'Before' or 'After'.
 
 #### Syntax
@@ -413,7 +414,7 @@ tableObject.insertTable(rowCount, columnCount, insertLocation, values);
 |rowCount|number|Required. The number of rows in the table.|
 |columnCount|number|Required. The number of columns in the table.|
 |insertLocation|string|Required. The value can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
-|values|string|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 [Table](table.md)
@@ -433,6 +434,25 @@ object.load(param);
 
 #### Returns
 void
+
+### mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)
+Merges the cells bounded inclusively by a first and last cell.
+
+#### Syntax
+```js
+tableObject.mergeCells(topRow, firstCell, bottomRow, lastCell);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|topRow|number|Required. The row of the first cell|
+|firstCell|number|Required. The index of the first cell in its row|
+|bottomRow|number|Required. The row of the last cell|
+|lastCell|number|Required. The index of the last cell in its row|
+
+#### Returns
+[TableCell](tablecell.md)
 
 ### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Performs a search with the specified searchOptions on the scope of the table object. The search results are a collection of range objects.

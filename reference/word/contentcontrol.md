@@ -51,19 +51,19 @@ _See property access [examples.](#property-access-examples)_
 |[getHtml()](#gethtml)|string|Gets the HTML representation of the content control object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[getOoxml()](#getooxml)|string|Gets the Office Open XML (OOXML) representation of the content control object.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[getRange(rangeLocation: string)](#getrangerangelocation-string)|[Range](range.md)|Gets the whole content control, or the starting or ending point of the content control, as a range.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getTextRanges(endingMarks: string, trimSpacing: bool)](#gettextrangesendingmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the content control by using punctuation marks andor other ending marks.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[getTextRanges(endingMarks: string[], trimSpacing: bool)](#gettextrangesendingmarks-string-trimspacing-bool)|[RangeCollection](rangecollection.md)|Gets the text ranges in the content control by using punctuation marks andor other ending marks.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[insertBreak(breakType: string, insertLocation: string)](#insertbreakbreaktype-string-insertlocation-string)|void|Inserts a break at the specified location in the main document. The insertLocation value can be 'Start', 'End', 'Before' or 'After'. This method cannot be used with 'RichTextTable', 'RichTextTableRow' and 'RichTextTableCell' content controls.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[insertFileFromBase64(base64File: string, insertLocation: string)](#insertfilefrombase64base64file-string-insertlocation-string)|[Range](range.md)|Inserts a document into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[insertHtml(html: string, insertLocation: string)](#inserthtmlhtml-string-insertlocation-string)|[Range](range.md)|Inserts HTML into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: string)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-string)|[InlinePicture](inlinepicture.md)|Inserts an inline picture into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.2](../requirement-sets/word-api-requirement-sets.md)|
 |[insertOoxml(ooxml: string, insertLocation: string)](#insertooxmlooxml-string-insertlocation-string)|[Range](range.md)|Inserts OOXML into the content control at the specified location.  The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string)](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])](#inserttablerowcount-number-columncount-number-insertlocation-string-values-string)|[Table](table.md)|Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[insertText(text: string, insertLocation: string)](#inserttexttext-string-insertlocation-string)|[Range](range.md)|Inserts text into the content control at the specified location. The insertLocation value can be 'Replace', 'Start' or 'End'.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the content control object. The search results are a collection of range objects.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the content control. This causes Word to scroll to the selection.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[split(delimiters: string, multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the content control into child ranges by using delimiters.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)](#splitdelimiters-string-multiparagraphs-bool-trimdelimiters-bool-trimspacing-bool)|[RangeCollection](rangecollection.md)|Splits the content control into child ranges by using delimiters.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -305,7 +305,7 @@ contentControlObject.getRange(rangeLocation);
 #### Returns
 [Range](range.md)
 
-### getTextRanges(endingMarks: string, trimSpacing: bool)
+### getTextRanges(endingMarks: string[], trimSpacing: bool)
 Gets the text ranges in the content control by using punctuation marks andor other ending marks.
 
 #### Syntax
@@ -316,7 +316,7 @@ contentControlObject.getTextRanges(endingMarks, trimSpacing);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|endingMarks|string|Required. The punctuation marks and/or other ending marks as an array of strings.|
+|endingMarks|string[]|Required. The punctuation marks and/or other ending marks as an array of strings.|
 |trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|
 
 #### Returns
@@ -588,7 +588,7 @@ Word.run(function (context) {
 ```
 
 
-### insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string)
+### insertTable(rowCount: number, columnCount: number, insertLocation: string, values: string[][])
 Inserts a table with the specified number of rows and columns into, or next to, a content control. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.
 
 #### Syntax
@@ -602,7 +602,7 @@ contentControlObject.insertTable(rowCount, columnCount, insertLocation, values);
 |rowCount|number|Required. The number of rows in the table.|
 |columnCount|number|Required. The number of columns in the table.|
 |insertLocation|string|Required. The value can be 'Start', 'End', 'Before' or 'After'. 'Before' and 'After' cannot be used with 'RichTextTable', 'RichTextTableRow' and 'RichTextTableCell' content controls. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
-|values|string|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
+|values|string[][]|Optional. Optional 2D array. Cells are filled if the corresponding strings are specified in the array.|
 
 #### Returns
 [Table](table.md)
@@ -790,7 +790,7 @@ contentControlObject.select(selectionMode);
 #### Returns
 void
 
-### split(delimiters: string, multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)
+### split(delimiters: string[], multiParagraphs: bool, trimDelimiters: bool, trimSpacing: bool)
 Splits the content control into child ranges by using delimiters.
 
 #### Syntax
@@ -801,7 +801,7 @@ contentControlObject.split(delimiters, multiParagraphs, trimDelimiters, trimSpac
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|delimiters|string|Required. The delimiters as an array of strings.|
+|delimiters|string[]|Required. The delimiters as an array of strings.|
 |multiParagraphs|bool|Optional. Optional. Indicates whether a returned child range can cover multiple paragraphs. Default is false which indicates that the paragraph boundaries are also used as delimiters.|
 |trimDelimiters|bool|Optional. Optional. Indicates whether to trim delimiters from the ranges in the range collection. Default is false which indicates that the delimiters are included in the ranges returned in the range collection.|
 |trimSpacing|bool|Optional. Optional. Indicates whether to trim spacing characters (spaces, tabs, column breaks and paragraph end marks) from the start and end of the ranges returned in the range collection. Default is false which indicates that spacing characters at the start and end of the ranges are included in the range collection.|

@@ -6,7 +6,10 @@ Represents a section in a Word document.
 
 ## Properties
 
-None
+| Property	   | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|headerFooterEvenPageDifferent|bool|Gets or sets a value that indicates whether even-numbered pages have a different header and footer from odd-numbered pages in the section.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
+|headerFooterFirstPageDifferent|bool|Gets or sets a value that indicates whether the first page has a different header and footer from the other pages in the section.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|

@@ -8,7 +8,7 @@ Contains the collection of the document's TableRow objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[TableRow](tablerow.md)|A collection of tableRow objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|items|[TableRow[]](tablerow.md)|A collection of tableRow objects. Read-only.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

@@ -36,8 +36,9 @@ _See property access [examples.](#property-access-examples)_
 |[getCellPadding(cellPaddingLocation: CellPaddingLocation)](#getcellpaddingcellpaddinglocation-cellpaddinglocation)|[float?](float?.md)|Gets cell padding in points.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getNext()](#getnext)|[TableRow](tablerow.md)|Gets the next row. Throws if this row is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[getNextOrNullObject()](#getnextornullobject)|[TableRow](tablerow.md)|Gets the next row. Returns a null object if this row is the last one.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[insertRows(insertLocation: string, rowCount: number, values: string)](#insertrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[insertRows(insertLocation: string, rowCount: number, values: string[][])](#insertrowsinsertlocation-string-rowcount-number-values-string)|[TableRowCollection](tablerowcollection.md)|Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|[merge()](#merge)|[TableCell](tablecell.md)|Merges the row into one cell.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[RangeCollection](rangecollection.md)|Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[select(selectionMode: string)](#selectselectionmode-string)|void|Selects the row and navigates the Word UI to it.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setCellPadding(cellPaddingLocation: CellPaddingLocation, cellPadding: float)](#setcellpaddingcellpaddinglocation-cellpaddinglocation-cellpadding-float)|void|Sets cell padding in points.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
@@ -133,7 +134,7 @@ None
 #### Returns
 [TableRow](tablerow.md)
 
-### insertRows(insertLocation: string, rowCount: number, values: string)
+### insertRows(insertLocation: string, rowCount: number, values: string[][])
 Inserts rows using this row as a template. If values are specified, inserts the values into the new rows.
 
 #### Syntax
@@ -146,7 +147,7 @@ tableRowObject.insertRows(insertLocation, rowCount, values);
 |:---------------|:--------|:----------|
 |insertLocation|string|Required. Where the new rows should be inserted, relative to the current row. It can be 'Before' or 'After'. Possible values are: `Before` Add content before the contents of the calling object.,`After` Add content after the contents of the calling object.,`Start` Prepend content to the contents of the calling object.,`End` Append content to the contents of the calling object.,`Replace` Replace the contents of the current object.|
 |rowCount|number|Required. Number of rows to add|
-|values|string|Optional. Optional. Strings to insert in the new rows, specified as a 2D array. The number of cells in each row must not exceed the number of cells in the existing row.|
+|values|string[][]|Optional. Optional. Strings to insert in the new rows, specified as a 2D array. The number of cells in each row must not exceed the number of cells in the existing row.|
 
 #### Returns
 [TableRowCollection](tablerowcollection.md)
@@ -166,6 +167,20 @@ object.load(param);
 
 #### Returns
 void
+
+### merge()
+Merges the row into one cell.
+
+#### Syntax
+```js
+tableRowObject.merge();
+```
+
+#### Parameters
+None
+
+#### Returns
+[TableCell](tablecell.md)
 
 ### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Performs a search with the specified searchOptions on the scope of the row. The search results are a collection of range objects.

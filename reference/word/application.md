@@ -2,7 +2,7 @@
 
 _Word 2016, Word for iPad, Word for Mac, Word Online_
 
-Represents the application object.
+The Application object.
 
 ## Properties
 
@@ -16,7 +16,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[createDocument(base64File: string)](#createdocumentbase64file-string)|[Document](document.md)|Creates a new document by using a base64 encoded .docx file.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
+|[createDocument(base64File: string)](#createdocumentbase64file-string)|[Document](document.md)|Creates a new document by using a base64 encoded .docx file.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -26,7 +26,7 @@ Creates a new document by using a base64 encoded .docx file.
 
 #### Syntax
 ```js
-context.applicationObject.createDocument(base64File);
+applicationObject.createDocument(base64File);
 ```
 
 #### Parameters

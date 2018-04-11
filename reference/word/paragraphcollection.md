@@ -8,7 +8,7 @@ Contains a collection of [paragraph](paragraph.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Paragraph](paragraph.md)|A collection of paragraph objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
+|items|[Paragraph[]](paragraph.md)|A collection of paragraph objects. Read-only.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None
