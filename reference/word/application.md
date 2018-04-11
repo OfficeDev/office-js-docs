@@ -31,7 +31,7 @@ applicationObject.createDocument(base64File);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |base64File|string|Optional. Optional. The base64 encoded .docx file. The default value is null.|
 
 #### Returns

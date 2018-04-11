@@ -149,7 +149,7 @@ settingCollectionObject.getItem(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|The key that identifies the setting object.|
 
 #### Returns
@@ -240,7 +240,7 @@ settingCollectionObject.getItemOrNullObject(key);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|Required. The key that identifies the setting object.|
 
 #### Returns
@@ -256,7 +256,7 @@ object.load(param);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
 
 #### Returns
@@ -272,7 +272,7 @@ settingCollectionObject.set(key, value);
 
 #### Parameters
 | Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |key|string|Required. The setting's key, which is case-sensitive.|
 |value|object|Required. The setting's value.|
 
