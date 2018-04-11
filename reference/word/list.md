@@ -23,18 +23,18 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getLevelFont(level: number)](#getlevelfontlevel-number)|[Font](font.md)|Gets the font of the bullet, number or picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|[getLevelFont(level: number)](#getlevelfontlevel-number)|[Font](font.md)|Gets the font of the bullet, number or picture at the specified level in the list.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 |[getLevelParagraphs(level: number)](#getlevelparagraphslevel-number)|[ParagraphCollection](paragraphcollection.md)|Gets the paragraphs that occur at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[getLevelPicture(level: number)](#getlevelpicturelevel-number)|string|Gets the base64 encoded string representation of the picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|[getLevelPicture(level: number)](#getlevelpicturelevel-number)|string|Gets the base64 encoded string representation of the picture at the specified level in the list.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 |[getLevelString(level: number)](#getlevelstringlevel-number)|string|Gets the bullet, number or picture at the specified level as a string.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[insertParagraph(paragraphText: string, insertLocation: string)](#insertparagraphparagraphtext-string-insertlocation-string)|[Paragraph](paragraph.md)|Inserts a paragraph at the specified location. The insertLocation value can be 'Start', 'End', 'Before' or 'After'.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[resetLevelFont(level: number, resetFontName: bool)](#resetlevelfontlevel-number-resetfontname-bool)|void|Resets the font of the bullet, number or picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|[resetLevelFont(level: number, resetFontName: bool)](#resetlevelfontlevel-number-resetfontname-bool)|void|Resets the font of the bullet, number or picture at the specified level in the list.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelAlignment(level: number, alignment: string)](#setlevelalignmentlevel-number-alignment-string)|void|Sets the alignment of the bullet, number or picture at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelBullet(level: number, listBullet: string, charCode: number, fontName: string)](#setlevelbulletlevel-number-listbullet-string-charcode-number-fontname-string)|void|Sets the bullet format at the specified level in the list. If the bullet is 'Custom', the charCode is required.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelIndents(level: number, textIndent: float, textIndent: float)](#setlevelindentslevel-number-textindent-float-textindent-float)|void|Sets the two indents of the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelNumbering(level: number, listNumbering: string, formatString: object[])](#setlevelnumberinglevel-number-listnumbering-string-formatstring-object)|void|Sets the numbering format at the specified level in the list.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
-|[setLevelPicture(level: number, base64EncodedImage: string)](#setlevelpicturelevel-number-base64encodedimage-string)|void|Sets the picture at the specified level in the list.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|[setLevelPicture(level: number, base64EncodedImage: string)](#setlevelpicturelevel-number-base64encodedimage-string)|void|Sets the picture at the specified level in the list.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 |[setLevelStartingNumber(level: number, startingNumber: number)](#setlevelstartingnumberlevel-number-startingnumber-number)|void|Sets the starting number at the specified level in the list. Default value is 1.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details

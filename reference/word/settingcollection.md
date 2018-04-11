@@ -8,7 +8,7 @@ Contains the collection of [setting](setting.md) objects.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Setting[]](setting.md)|A collection of setting objects. Read-only.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|items|[Setting[]](setting.md)|A collection of setting objects. Read-only.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -18,12 +18,12 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[deleteAll()](#deleteall)|void|Deletes all settings in this add-in.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Gets the count of settings.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
-|[getItem(key: string)](#getitemkey-string)|[Setting](setting.md)|Gets a setting object by its key, which is case-sensitive. Throws if the setting does not exist.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
-|[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[Setting](setting.md)|Gets a setting object by its key, which is case-sensitive. Returns a null object if the setting does not exist.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|[deleteAll()](#deleteall)|void|Deletes all settings in this add-in.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the count of settings.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
+|[getItem(key: string)](#getitemkey-string)|[Setting](setting.md)|Gets a setting object by its key, which is case-sensitive. Throws if the setting does not exist.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
+|[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[Setting](setting.md)|Gets a setting object by its key, which is case-sensitive. Returns a null object if the setting does not exist.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|[1.1](../requirement-sets/word-api-requirement-sets.md)|
-|[set(key: string, value: object)](#setkey-string-value-object)|[Setting](setting.md)|Creates or sets a setting.|[1.4](../requirement-sets/word-api-requirement-sets.md)|
+|[set(key: string, value: object)](#setkey-string-value-object)|[Setting](setting.md)|Creates or sets a setting.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
