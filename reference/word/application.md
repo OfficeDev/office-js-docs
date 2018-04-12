@@ -16,7 +16,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[createDocument(base64File: string)](#createdocumentbase64file-string)|[Document](document.md)|Creates a new document by using a base64 encoded .docx file.|[Beta](../requirement-sets/word-api-requirement-sets.md)|
+|[createDocument(base64File: string)](#createdocumentbase64file-string)|[Document](document.md)|Creates a new document by using a base64 encoded .docx file.|[1.3](../requirement-sets/word-api-requirement-sets.md)|
 
 ## Method Details
 
