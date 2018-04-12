@@ -17,7 +17,6 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 
 |Object| What is new| Description|Req. Set|
 |:----|:----|:----|:----|
-|[application](reference/word/application.md)|_Method_ > [createDocument(base64File: string)](reference/word/application.md#createdocumentbase64file-string)|Creates a new document by using a base64 encoded .docx file.|Beta|
 |[document](reference/word/document.md)|_Property_ > settings|Gets the add-in's settings in the current document. Read-only.|Beta|
 |[document](reference/word/document.md)|_Method_ > [deleteBookmark(name: string)](reference/word/document.md#deletebookmarkname-string)|Deletes a bookmark, if exists, from the document.|Beta|
 |[document](reference/word/document.md)|_Method_ > [getBookmarkRange(name: string)](reference/word/document.md#getbookmarkrangename-string)|Gets a bookmark's range. Throws if the bookmark does not exist.|Beta|
