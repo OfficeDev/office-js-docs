@@ -105,8 +105,7 @@ Errors are returned using an error object that consists of a code and a message.
 
 ## Get started
 
-You can use the example in this section to get started. This example shows you how to display the shape text of the selected shape.
-To begin, create a page in SharePoint Online or edit an existing page. Add a script editor webpart on the page, and copy and paste the following code. After that, all you need is to add the URL of a Visio diagram that is stored in SharePoint Online.
+You can use the example in this section to get started. This example shows you how to programmatically display the shape text of the selected shape in a Visio diagram. To begin, create a classic page in SharePoint Online or edit an existing page. Add a script editor webpart on the page and copy-paste the following code.
 
 ```js
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
@@ -169,6 +168,10 @@ function getSelectedShapeText() {
 }
 </script>
 ```
+After that, all you need is the URL of a Visio diagram that you want to work with. Just upload the Visio diagram to SharePoint Online and open it in Visio Online. From there, open the Embed dialog and use the Embed URL in the above example.
+
+![Copy Visio file URL from Embed dialog](../../images/Visio-embed-url.png)
+If you are using Visio Online in Edit mode, open the Embed dialog by clicking on File > Share > Embed. If you are using Visio Online in View mode, open the Embed dialog by clicking on '...' and then 'Embed'. 
 
 ## Open API specifications
 
