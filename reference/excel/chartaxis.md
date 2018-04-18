@@ -6,11 +6,8 @@ Represents a single axis in a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|axisBetweenCategories|bool|Represents whether value axis crosses the category axis between categories.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |axisGroup|string|Represents the group for the specified axis. Read-only. Possible values are: Primary, Secondary.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |categoryType|string|Returns or sets the category axis type. Possible values are: Automatic, TextAxis, DateAxis.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|crosses|string|Represents the specified axis where the other axis crosses. Possible values are: Automatic, Maximum, Minimum, Custom.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|crossesAt|double|Represents the specified axis where the other axis crosses at. Read Only. Set to this property should use SetCrossesAt(double) method. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |customDisplayUnit|double|Represents the custom axis display unit value. Read Only. To set this property, please use the SetCustomDisplayUnit(double) method. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |displayUnit|string|Represents the axis display unit. Possible values are: None, Hundreds, Thousands, TenThousands, HundredThousands, Millions, TenMillions, HundredMillions, Billions, Trillions, Custom.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |height|double|Represents the height, in points, of the chart axis. Null if the axis's not visible. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
@@ -51,7 +48,6 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[setCategoryNames(sourceData: Range)](#setcategorynamessourcedata-range)|void|Sets all the category names for the specified axis.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[setCrossesAt(value: double)](#setcrossesatvalue-double)|void|Set the specified axis where the other axis crosses at.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[setCustomDisplayUnit(value: double)](#setcustomdisplayunitvalue-double)|void|Sets the axis display unit to a custom value.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
@@ -69,22 +65,6 @@ chartAxisObject.setCategoryNames(sourceData);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |sourceData|Range|The Range object corresponding to the source data.|
-
-#### Returns
-void
-
-### setCrossesAt(value: double)
-Set the specified axis where the other axis crosses at.
-
-#### Syntax
-```js
-chartAxisObject.setCrossesAt(value);
-```
-
-#### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|value|double|Custom value of the crosses at|
 
 #### Returns
 void

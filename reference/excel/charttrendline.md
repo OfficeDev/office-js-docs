@@ -6,10 +6,6 @@ This object represents the attributes for a chart trendline object.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|backward|double|Represents the number of periods that the trendline extends backward.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|displayEquation|bool|True if the equation for the trendline is displayed on the chart.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|displayRSquared|bool|True if the R-squared for the trendline is displayed on the chart.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|forward|double|Represents the number of periods that the trendline extends forward.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |intercept|object|Represents the intercept value of the trendline. Can be set to a numeric value or an empty string (for automatic values). The returned value is always a number.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |movingAveragePeriod|int|Represents the period of a chart trendline, only for trendline with MovingAverage type.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Represents the name of the trendline. Can be set to a string value, or can be set to null value represents automatic values. The returned value is always a string|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
