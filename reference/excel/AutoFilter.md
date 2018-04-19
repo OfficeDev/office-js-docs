@@ -8,7 +8,7 @@ Note When using AutoFilter with dates, the format should be consistent with Engl
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-| filters |Filter[]|A collection of filter objects.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+| filters |FilterCollection[]|A collection of filter objects.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 | range | Range[]| Range object that represents the range to which the specified AutoFilter applies. |[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 | filterMode | bool| Returns True if the worksheet is in the AutoFilter filter mode. Read-only |[Beta](../requirement-sets/excel-api-requirement-sets.md)|
 | sort | RangeSort[]| Gets the sort column or columns, and sort order for the AutoFilter on the range. |[Beta](../requirement-sets/excel-api-requirement-sets.md)|
@@ -18,4 +18,4 @@ Note When using AutoFilter with dates, the format should be consistent with Engl
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |applyFilter()|void|Applies the Autofilter object.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|showAllData()|void|Displays all the data returned by the AutoFilter object..|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|showgitAllData()|void|Displays all the data returned by the AutoFilter object..|[beta](../requirement-sets/excel-api-requirement-sets.md)|
