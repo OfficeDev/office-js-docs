@@ -2,7 +2,7 @@
 AutoFilter Object
 Represents an AutoFilter on a worksheet or table
 
-Note When using AutoFilter with dates, the format should be consistent with English date separators ("/") instead of local settings ("."). A valid date would be "2/2/2007", whereas "2.2.2007" is invalid.
+> **Note:** When using AutoFilter with dates, the format should be consistent with English date separators ("/") instead of local settings ("."). A valid date would be "2/2/2007", whereas "2.2.2007" is invalid.
 
 ## Properties
 
