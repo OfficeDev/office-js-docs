@@ -1,6 +1,6 @@
 # Event API
 
-##Upcoming new Events
+## Upcoming new Events
 
 | Object | Event | Description | Event Argument |
 | --- | --- | --- | --- |
@@ -17,9 +17,7 @@
 | TableCollection | onAdded | Occurs when a table is added on worksheet. | [TableCollectiAddedEventArgs]()|
 | TableCollection | onDeleted | Occurs when a table is deleted on worksheet. | [TableCollectiDeletedEventArgs]()|
 
-
-
-##Change log
+## Change log
 
 | Object | Content| Type | Description | 
 | --- | --- | --- |  --- |
