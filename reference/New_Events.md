@@ -3,7 +3,7 @@
 ## Upcoming new Events
 
 | Object | Event | Description | Event Argument |
-| --- | --- | --- | --- |
+|:----|:----|:----|:---|
 | Chart | onActivated | Occurs when the chart has become activated. | [ChartActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartactivatedeventargs.md) |
 | Chart | onDeactivated | Occurs when the chart has become deactivated. | [ChartDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeactivatedeventargs.md) |
 | ChartCollection | onActivated | Occurs when any chart has become activated. | [ChartActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartactivatedeventargs.md) |
@@ -20,6 +20,6 @@
 ## Change log
 
 | Object | Content| Type | Description | 
-| --- | --- | --- |  --- |
+|:----|:----|:----|:---|
 | [worksheetchangedeventargs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetchangedeventargs.md) | getRange() | New Method | Return the range object that is associated with the address when the event occurs.|
 | context.runtime | enableEvents() |  New Method | Turn JavaScript events on and off for the current taskpane or content add-in. |
