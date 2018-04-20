@@ -395,6 +395,7 @@
 		<Item text="CommentCollection" url="visio/commentcollection" />
 		<Item text="DataRefreshCompleteEventArgs" url="visio/datarefreshcompleteeventargs" />
 		<Item text="Document" url="visio/document" />
+		<Item text="DocumentLoadCompleteEventArgs" url="visio/documentloadcompleteeventargs">
 		<Item text="DocumentView" url="visio/documentview" />
 		<Item text="Highlight" url="visio/highlight" />
 		<Item text="Hyperlink" url="visio/hyperlink" /> 
