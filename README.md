@@ -35,11 +35,11 @@ _**Note**: The following features are still under design and review phase and no
 
 * __Freeze rows/columns__: Freezing rows and columns. 
 
-* __More events__: For details, see [Introduction to Excel event features](Event_README.md)
+* __More events__: For details, see [Event API](reference/new-events.md)
 
 ## Upcoming Excel event features
 
-This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. For details, see [Introduction to Excel Event Features](Event_README.md).
+This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. For details, see [Event API](reference/new-events.md).
 
 1.	Data change event for Worksheet, Table with coauthoring support.
     This type of event is triggered when a data change happens; for example, when cell values change in the grid.
@@ -312,8 +312,6 @@ _Details of the specific APIs are listed below. Please let us know what you thin
 |[chartTrendlineCollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getCount()](reference/excel/charttrendlinecollection.md#getcount)|Returns the number of trendlines in the collection.|Beta|
 |[chartTrendlineCollection](reference/excel/charttrendlinecollection.md)|_Method_ > [getItem(index: number)](reference/excel/charttrendlinecollection.md#getitemindex-number)|Get trendline object by index, which is the insertion order in items array.|Beta|
 |[chartTrendlineFormat](reference/excel/charttrendlineformat.md)|_Relationship_ > line|Represents chart line formatting. Read-only.|Beta|
-
-
 
 
 ## Give us feedback!
