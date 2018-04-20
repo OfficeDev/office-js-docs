@@ -35,11 +35,11 @@ _**Note**: The following features are still under design and review phase and no
 
 * __Freeze rows/columns__: Freezing rows and columns. 
 
-* __More events__: For details, see [Event API](reference/New_Events.md)
+* __More events__: For details, see [Event API](reference/new-events.md)
 
 ## Upcoming Excel event features
 
-This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. For details, see [Event API](reference/New_Events.md).
+This section describes our early thoughts about events in the Excel JavaScript API. We'll add more details about event argument design and code examples in the future. For details, see [Event API](reference/new-events.md).
 
 1.	Data change event for Worksheet, Table with coauthoring support.
     This type of event is triggered when a data change happens; for example, when cell values change in the grid.
