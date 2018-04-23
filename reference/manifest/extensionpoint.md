@@ -8,22 +8,10 @@
 |:-----|:-----|:-----|
 |  **xsi:type**  |  Yes  | The type of extension point being defined.|
 
-# Extension points for Excel only
+## Extension points for Excel only
 - **CustomFunctions** - a custom function written in JavaScript for Excel.
 
-The following examples show how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.
-
-```XML
-<ExtensionPoint xsi:type="CustomFunctions">
-	<Script>
-		<SourceLocation resid="scriptURL" />
-                 <!-- The Script element is not used in the Developer Preview. -->
-	</Script>
-	<Page>
-		<SourceLocation resid="pageURL"/>
-	</Page>
-</ExtensionPoint>
-```
+[This XML code sample](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.xml) shows how to use the **ExtensionPoint** element with the **CustomFunctions** attribute value, and the child elements to be used.
 
 ## Extension points for Word, Excel, PowerPoint, and OneNote add-in commands
 
