@@ -20,21 +20,39 @@ The EmbeddedSession object initializes communication between the developer frame
 ```js
        var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
        session.init().then(function () {	 
-              OfficeExtension.ClientRequestContext._overrideSession = session;
+               window.console.log("Session successfully initialized");
 	   });
 ```
 
+## Visio.run(session, function(ctx) { batch })
+
+**Visio.run()** executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and **sync()** methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in **Visio.run()** is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
+The run method takes in sesison and RequestContext object and returns a promise (typically, just the result of **ctx.sync()**). It is possible to run the batch operation outside of the **Visio.run()**. However, in such a scenario, any page object references needs to be manually tracked and managed. 
+
 ## RequestContext
 
-The RequestContext object facilitates requests to the Visio application. Because the developer frame and the Visio Online application run in two different iframes, request context is required to get access to Visio and related objects such as pages and shapes, from the developer frame. The following example shows how to create a request context.
+The RequestContext object facilitates requests to the Visio application. Because the developer frame and the Visio Online application run in two different iframes, the RequestContext object (ctx in below example) is required to get access to Visio and related objects such as pages and shapes, from the developer frame. 
 
 ```js
-var ctx = new Visio.RequestContext();
+    function hideToolbars()
+    {
+    Visio.run(session, function(ctx){
+            var app = ctx.document.application;
+            app.showToolbars = false;            
+            return ctx.sync().then(function ()
+            {
+                window.console.log("Toolbars Hidden");
+            });      
+         }).catch(function(error)
+        {
+            window.console.log("Error: " + error);            
+        });
+    };
 ```
 
 ## Proxy objects
 
-The Visio JavaScript objects declared and used in an add-in are proxy objects for the real objects in a Visio document. All actions taken on proxy objects are not realized in Visio, and the state of the Visio document is not realized in the proxy objects until the document state has been synchronized. The document state is synchronized when ```context.sync()``` is run.
+The Visio JavaScript objects declared and used in an add-in are proxy objects for the real objects in a Visio document. All actions taken on proxy objects are not realized in Visio, and the state of the Visio document is not realized in the proxy objects until the document state has been synchronized. The document state is synchronized when ```ctx.sync()``` is run.
 
 For example, the local JavaScript object getActivePage is declared to reference the selected page. This can be used to queue the setting of its properties and invoking methods. The actions on such objects are not realized until the sync() method is run.
 
@@ -44,12 +62,7 @@ var activePage = ctx.document.getActivePage();
 
 ## sync()
 
-The **sync()** method, available on the request context, synchronizes the state between JavaScript proxy objects and real objects in Visio by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code. This method returns a promise, which is resolved when synchronization is complete. 
-
-## Visio.run(function(context) { batch })
-
-**Visio.run()** executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and **sync()** methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in **Visio.run()** is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
-The run method takes in RequestContext and returns a promise (typically, just the result of **ctx.sync()**). It is possible to run the batch operation outside of the **Visio.run()**. However, in such a scenario, any page object references needs to be manually tracked and managed. 
+The **sync()** method synchronizes the state between JavaScript proxy objects and real objects in Visio by executing instructions queued on the context and retrieving properties of loaded Office objects for use in your code. This method returns a promise, which is resolved when synchronization is complete. 
 
 ## load()
 
@@ -71,22 +84,22 @@ The **Visio.run()** method contains a batch of instructions. As part of this bat
 All these commands are queued and run when **ctx.sync()** is called. The **sync()** method returns a promise that can be used to chain it with other operations.
 
 ```js
-Visio.run(function (ctx) {
-   var page = ctx.document.getActivePage();
-   var shapes = page.shapes;
-   shapes.load();
-   return ctx.sync().then(function () {
-        for(var i=0; i<shapes.items.length;i++)
- {
-            var shape = shapes.items[i];
-     console.log("Shape Text: " + shape.text );
- }
+Visio.run(session, function (ctx) {
+   var page = ctx.document.getActivePage();
+   var shapes = page.shapes;
+   shapes.load();
+   return ctx.sync().then(function () {
+        for(var i=0; i<shapes.items.length;i++)
+ {
+            var shape = shapes.items[i];
+     window.console.log("Shape Text: " + shape.text );
+ }
 });
 }).catch(function(error) {
-  richApiLog("Error: " + error);
-  if (error instanceof OfficeExtension.Error) {
-       console.log ("Debug info: " + JSON.stringify(error.debugInfo));
-  }
+  window.console.log("Error: " + error);
+  if (error instanceof OfficeExtension.Error) {
+       window.console.log ("Debug info: " + JSON.stringify(error.debugInfo));
+  }
 });
 ```
 
@@ -168,7 +181,6 @@ function getSelectedShapeText() {
 }
 </script>
 ```
-
 After that, all you need is the URL of a Visio diagram that you want to work with. Just upload the Visio diagram to SharePoint Online and open it in Visio Online. From there, open the Embed dialog and use the Embed URL in the above example.
 
 ![Copy Visio file URL from Embed dialog](../../images/Visio-embed-url.png)
