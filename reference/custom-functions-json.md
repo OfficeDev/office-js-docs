@@ -14,7 +14,7 @@ The metadata is a JSON object that contains a single `functions` property whose 
 |  `helpUrl`  |  string  |   No  |  URL where your users can get help about the function. (It is displayed in a taskpane.) For example, "http://contoso.com/help/convertcelsiustofahrenheit.html"  |
 |  `name`  |  string  |  Yes  |  The name of the function as it will appear (prepended with a namespace) in the Excel UI when a user is selecting a function. It should be the same as the function's name where it is defined in the JavaScript. |
 |  `options`  |  object  |  No  |  Configure how Excel processes the function. See [options object](#options-object) for details. |
-|  `parameters`  |  array  |  No  |  Metadata about the parameters to the function. See [parameters array](#parameters-array)  for details. |
+|  `parameters`  |  array  |  Yes  |  Metadata about the parameters to the function. See [parameters array](#parameters-array)  for details. |
 |  `result`  |  object  |  Yes  |  Metadata about the value returned by the function. See [result object](#result-object) for details. |
 
 ## Options object
