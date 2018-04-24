@@ -39,7 +39,7 @@ The RequestContext object facilitates requests to the Visio application. Because
     Visio.run(session, function(context){
             var app = context.document.application;
             app.showToolbars = false;            
-            return ctx.sync().then(function ()
+            return context.sync().then(function ()
             {
                 window.console.log("Toolbars Hidden");
             });      
@@ -52,12 +52,12 @@ The RequestContext object facilitates requests to the Visio application. Because
 
 ## Proxy objects
 
-The Visio JavaScript objects declared and used in an add-in are proxy objects for the real objects in a Visio document. All actions taken on proxy objects are not realized in Visio, and the state of the Visio document is not realized in the proxy objects until the document state has been synchronized. The document state is synchronized when ```ctx.sync()``` is run.
+The Visio JavaScript objects declared and used in an add-in are proxy objects for the real objects in a Visio document. All actions taken on proxy objects are not realized in Visio, and the state of the Visio document is not realized in the proxy objects until the document state has been synchronized. The document state is synchronized when ```context.sync()``` is run.
 
 For example, the local JavaScript object getActivePage is declared to reference the selected page. This can be used to queue the setting of its properties and invoking methods. The actions on such objects are not realized until the sync() method is run.
 
 ```js
-var activePage = ctx.document.getActivePage();
+var activePage = context.document.getActivePage();
 ```
 
 ## sync()
@@ -81,14 +81,14 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 
 The following example shows you how to print shape text value from an array shapes object. 
 The **Visio.run()** method contains a batch of instructions. As part of this batch, a proxy object is created that references shapes on the active document.
-All these commands are queued and run when **ctx.sync()** is called. The **sync()** method returns a promise that can be used to chain it with other operations.
+All these commands are queued and run when **context.sync()** is called. The **sync()** method returns a promise that can be used to chain it with other operations.
 
 ```js
-Visio.run(session, function (ctx) {
-   var page = ctx.document.getActivePage();
+Visio.run(session, function (context) {
+   var page = context.document.getActivePage();
    var shapes = page.shapes;
    shapes.load();
-   return ctx.sync().then(function () {
+   return context.sync().then(function () {
         for(var i=0; i<shapes.items.length;i++)
  {
             var shape = shapes.items[i];
@@ -156,11 +156,11 @@ function initEmbeddedFrame() {
 
 // Code for getting selected Shape Text using the shapes collection object
 function getSelectedShapeText() {
-    Visio.run(session, function (ctx) { 	
-	   var page = ctx.document.getActivePage();
+    Visio.run(session, function (context) { 	
+	   var page = context.document.getActivePage();
  	   var shapes = page.shapes;
    	   shapes.load();
-           return ctx.sync().then(function () {
+           return context.sync().then(function () {
      		   textArea.value = "Please select a Shape in the Diagram";
      		   for(var i=0; i<shapes.items.length;i++)
 		    {
