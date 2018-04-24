@@ -4,22 +4,22 @@ When you include [custom functions](https://docs.microsoft.com/en-us/office/dev/
 
 A complete sample JSON file is available [here](https://github.com/saunders77/dogfoodcf/blob/master/customfunctions.json).
 
-## The functions array
+## Functions array
 
-The metadata is a JSON object that contains a single `functions` property whose value is an array of objects. Each of these objects represents one custom function. Here are its properties:
+The metadata is a JSON object that contains a single `functions` property whose value is an array of objects. Each of these objects represents one custom function. The following table contains its properties:
 
 |  Property  |  Data Type  |  Required?  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  No  |  A description of the function that appears in the Excel UI. For example, "Converts a Celsius value to Fahrenheit". |
 |  `helpUrl`  |  string  |   No  |  URL where your users can get help about the function. (It is displayed in a taskpane.) For example, "http://contoso.com/help/convertcelsiustofahrenheit.html"  |
 |  `name`  |  string  |  Yes  |  The name of the function as it will appear (prepended with a namespace) in the Excel UI when a user is selecting a function. It should be the same as the function's name where it is defined in the JavaScript. |
-|  `options`  |  object  |  No  |  Configure how Excel processes the function. See below for details. |
-|  `parameters`  |  array  |  No  |  Metadata about the parameters to the function. See below for details. |
-|  `result`  |  object  |  Yes  |  Metadata about the value returned by the function. See below for details. |
+|  `options`  |  object  |  No  |  Configure how Excel processes the function. See [options object](#options-object) for details. |
+|  `parameters`  |  array  |  No  |  Metadata about the parameters to the function. See [parameters array](#parameters-array)  for details. |
+|  `result`  |  object  |  Yes  |  Metadata about the value returned by the function. See [result object](#result-object) for details. |
 
-## The options object
+## Options object
 
-The `options` object configures how Excel processes the function. Here are its properties:
+The `options` object configures how Excel processes the function. The following table contains its properties:
 
 |  Property  |  Data Type  |  Required?  |  Description  |
 |:-----|:-----|:-----|:-----|
@@ -28,9 +28,9 @@ The `options` object configures how Excel processes the function. Here are its p
 |  `sync`  |  boolean  |  No, default is `false`  |  If `true`, the function runs synchronously and it must return a value. If `false`, the function runs asynchronously and it must return a `OfficeExtension.Promise` object. Note, `sync`  may not be `true` if either `cancelable` or `stream` are `true`.  |
 |  `volatile`  |  boolean  |  No, default is `false`.  |  If `true`, the function re-executes each time calculation runs in the workbook. |
 
-## The parameters array
+## Parameters array
 
-The `parameters` property is an array of objects. Each of these objects represents a parameter. Here are its properties:
+The `parameters` property is an array of objects. Each of these objects represents a parameter. The following table contains its properties:
 
 |  Property  |  Data Type  |  Required?  |  Description  |
 |:-----|:-----|:-----|:-----|
@@ -39,9 +39,9 @@ The `parameters` property is an array of objects. Each of these objects represen
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's IntelliSense.  |
 |  `type`  |  string  |  Yes  |  The data type of the parameter. Must be "boolean", "number", or "string".  |
 
-## The result object
+## Result object
 
-The `results` property provides metadata about the value returned from the function. Here are its properties:
+The `results` property provides metadata about the value returned from the function. The following table contains its properties:
 
 |  Property  |  Data Type  |  Required?  |  Description  |
 |:-----|:-----|:-----|:-----|
@@ -50,7 +50,7 @@ The `results` property provides metadata about the value returned from the funct
 
 ## Example
 
-The following is an example of a metadata file for custom functions.
+The following JSON code is an example of a metadata file for custom functions.
 
 ```json
 {
@@ -173,3 +173,7 @@ The following is an example of a metadata file for custom functions.
 }
 
 ```
+
+## See also
+[Custom functions](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-overview.md)<br>
+[Guidelines and examples of array formulas](https://support.office.com/en-us/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)
