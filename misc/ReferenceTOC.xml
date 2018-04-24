@@ -205,7 +205,7 @@
 		<Item text="worksheetprotectionoptions" url="excel/worksheetprotectionoptions" SEODescription="Represents the options in sheet protection." />
 		<Item text="Excel JavaScript API requirement sets" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Find information about the Excel requirement sets, the Office host applications that support each requirement set, and the build or version numbers for those applications." />
 	</Item>
-	<Item text="Excel Custom Functions Registration JSON" url="custom-functions-json" Scope="excel" SEODescription="Provides reference for Excel custom functions registration metadata.">
+	<Item text="Excel Custom Functions Registration JSON" url="custom-functions-json" Scope="excel" SEODescription="Provides reference for Excel custom functions registration metadata." />
 	<Item text="Outlook" url="outlook" Scope="outlook">
 		<Item text="Understanding API requirement sets" url="outlook/tutorial-api-requirement-sets" Scope="outlook" SEODescription="API Requirement Sets for Outlook" />
 		<Item text="Preview Requirement Set" url="outlook/preview/index" Scope="outlook" Version="Preview">
