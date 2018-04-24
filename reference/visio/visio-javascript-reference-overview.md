@@ -24,20 +24,20 @@ The EmbeddedSession object initializes communication between the developer frame
 	   });
 ```
 
-## Visio.run(session, function(ctx) { batch })
+## Visio.run(session, function(context) { batch })
 
 **Visio.run()** executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and **sync()** methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in **Visio.run()** is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
-The run method takes in sesison and RequestContext object and returns a promise (typically, just the result of **ctx.sync()**). It is possible to run the batch operation outside of the **Visio.run()**. However, in such a scenario, any page object references needs to be manually tracked and managed. 
+The run method takes in sesison and RequestContext object and returns a promise (typically, just the result of **context.sync()**). It is possible to run the batch operation outside of the **Visio.run()**. However, in such a scenario, any page object references needs to be manually tracked and managed. 
 
 ## RequestContext
 
-The RequestContext object facilitates requests to the Visio application. Because the developer frame and the Visio Online application run in two different iframes, the RequestContext object (ctx in below example) is required to get access to Visio and related objects such as pages and shapes, from the developer frame. 
+The RequestContext object facilitates requests to the Visio application. Because the developer frame and the Visio Online application run in two different iframes, the RequestContext object (context in below example) is required to get access to Visio and related objects such as pages and shapes, from the developer frame. 
 
 ```js
     function hideToolbars()
     {
-    Visio.run(session, function(ctx){
-            var app = ctx.document.application;
+    Visio.run(session, function(context){
+            var app = context.document.application;
             app.showToolbars = false;            
             return ctx.sync().then(function ()
             {
