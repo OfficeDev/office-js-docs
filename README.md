@@ -12,7 +12,7 @@ _**Note**: The following features are still under design and review phase and no
 
 ## New APIs in Beta
 
-* __Events__: Support events of Chart Object. For details, see [New Event API features](/reference/new-events.md)
+* __Events__: Support events of Chart Object. For details, see [New Event API features](../reference/new-events.md)
 
 * __Charts__: Get Chart ID and type, more properies, formats and position for Axis, control the styles and behaviors of Chart with advanced properties, control the styles and formats for DataLabel, customerize Ero bars and Legned, set the TrendlineLabel formats and positions, set the plot area of Charts etc.
 
@@ -27,7 +27,6 @@ _**Note**: The following features are still under design and review phase and no
 * __AutoFilter__: Create and apply an AutoFilter to a range in worksheet.
 
 * __Print layout and page setup__: Control the print style of worksheet, setup the page size and layout.
-
 
 ## Give us feedback!
 

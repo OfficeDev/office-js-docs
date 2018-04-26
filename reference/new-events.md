@@ -1,5 +1,6 @@
 # Event API
 
+
 ## New Events in Beta
 
 | Object | Event | Description | Event Argument |
@@ -26,5 +27,5 @@
 
 | Object | Content| Type | Description | 
 |:----|:----|:----|:---|
-| worksheetchangedeventargs | getRange() | New Method | Return the range object that is associated with the address when the event occurs.|
+| [worksheetchangedeventargs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetchangedeventargs.md) | getRange() | New Method | Return the range object that is associated with the address when the event occurs.|
 | context.runtime | enableEvents() |  New Method | Turn JavaScript events on and off for the current taskpane or content add-in. |
