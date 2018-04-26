@@ -33,8 +33,8 @@ chartAxesObject.getItem(type, group);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|type|string|Specifies the axis type.  Possible values are: Invalid, Category, Value, Series|
-|group|string|Optional. Specifies the axis group.  Possible values are: Primary, Secondary|
+|type|string|Specifies the axis type.|
+|group|string|Optional. Specifies the axis group.|
 
 #### Returns
 [ChartAxis](chartaxis.md)
