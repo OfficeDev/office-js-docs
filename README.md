@@ -14,7 +14,7 @@ _**Note**: The following features are still under design and review phase and no
 
 * __Events__: Support events of Chart Object. For details, see [New Event API features](/reference/new-events.md) for details.
 
-* __Charts__: Get Chart ID and type, more properies, formats and position for Axis, control the styles and behaviors of Chart with advanced properties, control the styles and formats for DataLabel, customerize Ero bars and Legned, set the TrendlineLabel formats and positions, set the plot area of Charts etc.
+* __Charts__: Get Chart ID and type, more properies, formats and position for Axis, control the styles and behaviors of Chart with advanced properties, control the styles and formats for DataLabel, customerize Ero bars and Legned, set the TrendlineLabel formats and positions, set the plot area of Charts etc. For details, see [New Chart API features](/reference/new-charts.md) for details.
 
 * __Calculate__: Set the calculation to Auto/Manual temporarily.
 
