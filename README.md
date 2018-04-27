@@ -12,11 +12,24 @@ _**Note**: The following features are still under design and review phase and no
 
 ## New APIs in Beta
 
-* __Events__: Support events of Chart Object. For details, see [New Event API features](/reference/new-events.md)
+<<<<<<< HEAD
+* __Events__: Support events of Chart Object. For details, see [New Event API features](/reference/new-events.md) for details.
+=======
+* __Events__: Support events of Chart Object. For details, see [New Event API features](../reference/new-events.md)
+>>>>>>> a2192254d69b920cc92d28a4bd4509674c060290
 
 * __Charts__: Get Chart ID and type, more properies, formats and position for Axis, control the styles and behaviors of Chart with advanced properties, control the styles and formats for DataLabel, customerize Ero bars and Legned, set the TrendlineLabel formats and positions, set the plot area of Charts etc.
 
 * __Calculate__: Set the calculation to Auto/Manual temporarily.
+
+* __Data Validation__: Basic functions of data validation APIs to apply customized validation. See [New Data Validation API features](/reference/new-datavalidation.md) for details.
+
+* __Workbook__: Access the readonly and save status of workbook.
+
+|Object| What is new| Description |
+|:----|:----|:----|
+|[workbook](reference/excel/workbook.md)|_Property_ > readOnly|True if the workbook is open in Read-only mode. Read-only.
+|[workbook](reference/excel/workbook.md)|_Property_ > saved|True if no changes have been made to the specified workbook since it was last saved.
 
 ## Upcoming APIs to be previewed
 
