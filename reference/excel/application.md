@@ -54,7 +54,7 @@ Excel.run(function (ctx) {
 ```
 
 ### suspendApiCalculationUntilNextSync()
-NOTE: Though this API is part of 1.6 requirement set, is only available in Win32 and Online. Mac and iOS support is coming soon. Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.
+Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.
 
 #### Syntax
 ```js
