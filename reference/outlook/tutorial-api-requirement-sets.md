@@ -47,8 +47,8 @@ The following clients support Outlook add-ins.
 | Outlook 2016 for Mac | 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 |
 | Outlook 2013 for Windows | 1.1, 1.2, 1.3, 1.4 |
 | Outlook for iPhone | 1.1, 1.2, 1.3, 1.4, 1.5 |
-| Outlook for Android | 1.1, 1.2, 1.3, 1.4 |
-| Outlook on the web (Office 365 and Outlook.com) | 1.1, 1.2, 1.3, 1.4, 1.5 |
+| Outlook for Android | 1.1, 1.2, 1.3, 1.4, 1.5 |
+| Outlook on the web (Office 365 and Outlook.com) | 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 |
 | Outlook Web App (Exchange 2013 On-Premise) | 1.1 |
 | Outlook Web App (Exchange 2016 On-Premise) | 1.1, 1.2. 1.3 |
 
