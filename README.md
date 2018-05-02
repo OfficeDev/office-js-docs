@@ -16,7 +16,7 @@ _**Note**: The following features are still under design and review phase and no
 
 * __Charts__: Get Chart ID and type, more properies, formats and position for Axis, control the styles and behaviors of Chart with advanced properties, control the styles and formats for DataLabel, customerize Ero bars and Legned, set the TrendlineLabel formats and positions, set the plot area of Charts etc. For details, see [New Chart API features](/reference/new-charts.md) for details.
 
-* __Calculate__: Set the calculation mode to Auto/Manual temporarily.
+* __Calculate__: Set the calculation mode to Auto/Manual. It's a run-time only property and won't be persisted.
 
 * __Data Validation__: Basic functions of data validation APIs to apply customized validation. See [New Data Validation API features](/reference/new-datavalidation.md) for details.
 

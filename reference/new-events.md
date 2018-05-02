@@ -10,7 +10,7 @@
 | ChartCollection | onActivated | Occurs when any chart has become activated. | [ChartActivatedEventArgs](/reference/excel/chartactivatedeventargs.md) |
 | ChartCollection | onDeactivated | Occurs when any chart has become deactivated | [ChartDeactivatedEventArgs](/reference/excel/chartdeactivatedeventargs.md) |
 | ChartCollection | onAdded | Occurs when a chart has been added. | [ChartAddedEventArgs](/reference/excel/chartaddedeventargs.md) |
-| ChartCollection | onDeleted | Occurs when a worksheet has been deleted from the workbook. | [ChartDeletedEvent](/reference/excel/chartdeletedeventargs.md) |
+| ChartCollection | onDeleted | Occurs when a worksheet has been deleted. | [ChartDeletedEventArgs](/reference/excel/chartdeletedeventargs.md) |
 | Worksheet | onCalculated | Occurs when the workbook has finished calculation. | [WorsheetCalculatedEventArgs](/reference/excel/worksheetcalculatedeventargs.md) |
  WorksheetCollection | onCalculated | Occurs when all the worksheets of the workbook have finished calculation. | [WorsheetCalculatedEventArgs](/reference/excel/worksheetcalculatedeventargs.md) |
 
@@ -18,14 +18,14 @@
 
 | Object | Event | Description | Event Argument |
 |:----|:----|:----|:---|
-| WorksheetCollection | onChanged | Occurs when cells in any worksheet are changed. Chart sheet isn’t included. | [WorksheetChangedEventAargs](/reference/excel/worksheetchangedeventargs.md)|
+| WorksheetCollection | onChanged | Occurs when cells in any worksheet are changed. Chart sheet isn’t included. | [WorksheetChangedEventArgs](/reference/excel/worksheetchangedeventargs.md)|
 | WorksheetCollection | onSelectionChanged | Occurs when the selection changes on any worksheet. Chart sheet isn’t included. | [WorsheetCalculatedEventArgs](/reference/excel/worksheetselectionchangedeventargs.md)|
-| TableCollection | onAdded | Occurs when a table is added on worksheet. | TableCollectiAddedEventArgs|
-| TableCollection | onDeleted | Occurs when a table is deleted on worksheet. | TableCollectiDeletedEventArgs|
+| TableCollection | onAdded | Occurs when a table is added. | [TableCollectionAddedEventArgs](/reference/excel/TableCollectionAddedEventArgs.md)|
+| TableCollection | onDeleted | Occurs when a table is deleted. | [TableCollectionDeletedEventArgs](/reference/excel/TableCollectionDeletedEventArgs.md)|
 
 ## Change log
 
-| Object | Content| Type | Description | 
+| Object | Content| Change Type | Description | 
 |:----|:----|:----|:---|
-| [worksheetchangedeventargs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetchangedeventargs.md) | getRange() | New Method | Return the range object that is associated with the address when the event occurs.|
-| context.runtime | enableEvents() |  New Method | Turn JavaScript events on and off for the current taskpane or content add-in. |
+| [WorksheetChangedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetchangedeventargs.md) | getRange() getRangeOrNullObject()| New Method | Eventargs.address may become out of date.(e.g. insert a row before where the change happened) A temparory dynamic range object is created in the background which will be kept up to 10 sec. This mehod returns a persisted copy of this dynamic range object.|
+| context.runtime | enableEvents() disableEvents() |  New Method | Turn JavaScript events on and off for the current taskpane or content add-in. Do sync() before calling other APIs to make it effect|
