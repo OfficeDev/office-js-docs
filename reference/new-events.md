@@ -20,12 +20,12 @@
 |:----|:----|:----|:---|
 | WorksheetCollection | onChanged | Occurs when cells in any worksheet are changed. Chart sheet isn’t included. | [WorksheetChangedEventArgs](/reference/excel/worksheetchangedeventargs.md)|
 | WorksheetCollection | onSelectionChanged | Occurs when the selection changes on any worksheet. Chart sheet isn’t included. | [WorsheetCalculatedEventArgs](/reference/excel/worksheetselectionchangedeventargs.md)|
-| TableCollection | onAdded | Occurs when a table is added. | [TableCollectionAddedEventArgs](/reference/excel/TableCollectionAddedEventArgs.md)|
-| TableCollection | onDeleted | Occurs when a table is deleted. | [TableCollectionDeletedEventArgs](/reference/excel/TableCollectionDeletedEventArgs.md)|
+| TableCollection | onAdded | Occurs when a table is added. | TableCollectionAddedEventArgs|
+| TableCollection | onDeleted | Occurs when a table is deleted. | TableCollectionDeletedEventArgs|
 
 ## Change log
 
 | Object | Content| Change Type | Description | 
 |:----|:----|:----|:---|
-| [WorksheetChangedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetchangedeventargs.md) | getRange() getRangeOrNullObject()| New Method | Eventargs.address may become out of date.(e.g. insert a row before where the change happened) A temparory dynamic range object is created in the background which will be kept up to 10 sec. This mehod returns a persisted copy of this dynamic range object.|
-| context.runtime | enableEvents() disableEvents() |  New Method | Turn JavaScript events on and off for the current taskpane or content add-in. Do sync() before calling other APIs to make it effect|
+| [WorksheetChangedEventArgs](/reference/excel/worksheetchangedeventargs.md) | getRange() getRangeOrNullObject()| New Method | Eventargs.address may become out of date.(e.g. insert a row before where the change happened) A temparory dynamic range object is created in the background which will be kept up to 10 sec. This mehod returns a persisted copy of this dynamic range object.|
+| [Runtime](/reference/excel/runtime.md) | enableEvents |  New Property | Turn JavaScript events on and off for the current taskpane or content add-in. Do sync() before calling other APIs to make it effect. |
