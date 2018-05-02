@@ -14,10 +14,25 @@ Provides information about the worksheet that raised the Changed event.
 
 _See property access [examples.](#property-access-examples)_
 
-## Relationships
-None
-
 
 ## Methods
-None
+| Method		   | Return Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|getRange() gerRangeOrNullObject()|range|Eventargs.address may become out of date.(e.g. insert a row before where the change happened) A temparory dynamic range object is created in the background which will be kept up to 10 sec. This mehod returns a persisted copy of this dynamic range object.|[Beta](../requirement-sets/excel-api-requirement-sets.md)|
+
+## Method Examples
+
+
+### getRange() Examples
+```js
+function onWorksheetChanged(eventArgs) {
+    return Excel.run(async function (context) {
+        var range = eventArgs.getRange(context);
+        range.load("address");
+        await context.sync();
+        
+        console.log("Address:" + range.address)
+    });
+}
+```
 
