@@ -5,7 +5,7 @@ Sets or updates formatting on specified items and data in the bound table.
 |||
 |:-----|:-----|
 |**Hosts:**|Excel|
-|**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Not in a set|
+|**Available in [Requirement set](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)**|Not in a set|
 |**Added in**|1.1|
 
 ```
@@ -20,7 +20,7 @@ bindingObj.setFormatsAsync(cellFormat [,options] , callback);
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
 | _cellFormat_|**array**|An array that contains one or more JavaScript objects that specify which cells to target and the formatting to apply to them. Required.||
-| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
+| _options_|**object**|Specifies any of the following [optional parameters](https://docs.microsoft.com/office/dev/add-ins/develop/asynchronous-programming-in-office-add-ins#passing-optional-parameters-to-asynchronous-methods)||
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
 
@@ -102,7 +102,7 @@ You can specify number formats by specifying the number formatting "code" string
 format: {numberFormat:"0.00%"}
 ```
 
-For more detail, see how to [create a custom number format](http://office.microsoft.com/en-us/excel-help/create-or-delete-a-custom-number-format-HA102749035.aspx?CTT=1#BM1).
+For more detail, see how to [create a custom number format](https://support.office.com/article/create-or-delete-a-custom-number-format-78f2a361-936b-4c03-8772-09fab54be7f4).
 
 
 
@@ -133,7 +133,7 @@ Office.select("bindings#myBinding).setFormatsAsync(
     function (asyncResult){});
 ```
 
-To set formatting on tables when writing data, use the  _tableOptions_ and _cellFormat_ optional parameters of the [Document.setSelectedDataAsync](http://msdn.microsoft.com/library/4c1e13e9-b61a-47df-836c-3ca9aba4ca1c%28Office.15%29.aspx) or [TableBinding.setDataAsync](http://msdn.microsoft.com/library/5b6ecf6f-c57f-4c0d-9605-59daee8fde13%28Office.15%29.aspx) methods.
+To set formatting on tables when writing data, use the  _tableOptions_ and _cellFormat_ optional parameters of the [Document.setSelectedDataAsync](https://docs.microsoft.com/office/dev/add-ins/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet#write-data-to-the-selection) or [TableBinding.setDataAsync](../../reference/shared/binding.setdataasync.md) methods.
 
 Setting formatting with the optional parameters of the  **Document.setSelectedDataAsync** and **TableBinding.setDataAsync** methods only works to set formatting when writing data the first time. To make formatting changes after writing data, use the following methods:
 
@@ -159,7 +159,7 @@ Office.select("bindings#myBinding).setFormatsAsync(
 
 ```
 
-For more details and examples, see [How to format tables in add-ins for Excel](../../docs/excel/format-tables-in-add-ins-for-excel.md).
+For more details and examples, see [How to format tables in add-ins for Excel](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-tables#format-a-table).
 
 
 ## Support details
@@ -167,7 +167,7 @@ For more details and examples, see [How to format tables in add-ins for Excel](.
 
 A capital Y in the following matrix indicates that this method is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this method.
 
-For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
+For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
 
 
 **Supported hosts, by platform**
@@ -180,7 +180,7 @@ For more information about Office host application and server requirements, see 
 |||
 |:-----|:-----|
 |**Available in requirement sets**|Not in a set.|
-|**Minimum permission level**|[WriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Minimum permission level**|[WriteDocument](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)|
 |**Add-in types**|Content, task pane|
 |**Library**|Office.js|
 |**Namespace**|Office|

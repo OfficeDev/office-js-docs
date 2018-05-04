@@ -511,7 +511,7 @@ Word.run(function (context) {
 ```
 
 *Additional information*
-Read [Create better add-ins for Word with Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) for guidance on working with OOXML.
+Read [Create better add-ins for Word with Office Open XML](https://docs.microsoft.com/office/dev/add-ins/word/create-better-add-ins-for-word-with-office-open-xml) for guidance on working with OOXML.
 
 
 ### insertOoxml(ooxml: string, insertLocation: string)

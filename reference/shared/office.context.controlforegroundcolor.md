@@ -2,14 +2,15 @@
 # officeTheme.controlForegroundColor property
 Gets the Office theme control foreground color.
 
- **Important:** This API currently works only in Excel, Outlook, PowerPoint, and Word in [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) on Windows desktop.
+ **Important:** This API currently works only in Excel, Outlook, PowerPoint, and Word in [Office 2016 Preview](https://products.office.com/office-2016-preview) on Windows desktop.
 
 
 
 |||
 |:-----|:-----|
 |**Hosts:**|Excel, Outlook, PowerPoint, Word|
-|**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Not in a set|
+|**Minimum permission level**|[Restricted](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)|
+|**Available in [Requirement set](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)**|Not in a set|
 |**Added in**|1.3|
 
 ```js
@@ -32,7 +33,7 @@ The colors returned correspond to the values of the Office theme selected by the
 
 A capital Y in the following matrix indicates that this method is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this method.
 
-For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
+For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
 
 
 **Supported hosts, by platform**
@@ -49,7 +50,7 @@ For more information about Office host application and server requirements, see 
 
 |||
 |:-----|:-----|
-|**Minimum permission level**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Minimum permission level**|[Restricted](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)|
 |**Add-in types**|Content, task pane, Outlook|
 |**Library**|Office.js|
 |**Namespace**|Office|
