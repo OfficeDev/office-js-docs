@@ -534,6 +534,26 @@ var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 ```
 
+#### (nullable) recurrence :[Recurrence](recurrence.md)
+
+Gets or sets the recurrence pattern of an appointment. Read and compose modes for appointment items. Read mode for meeting request items.
+
+The `recurrence` property returns a [recurrence](recurrence.md) object for recurring appointments or meetings requests if an item is a series or an occurrence in a series. `null` is returned for single appointments and meeting requests of single appointments. `undefined` is returned for messages that are not meeting requests.
+
+> Note: Meeting requests have an `itemClass` value of IPM.Schedule.Meeting.Request.
+
+> Note: if the recurrence object is `null`, this indicates that the object is a single appointment or a meeting request of a single appointment and NOT a part of a series.
+
+##### Type:
+
+* [Recurrence](recurrence.md)
+
+| Requirement | Value |
+|---|---|
+| [Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md) | Preview |
+| [Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md) | ReadItem |
+| Applicable Outlook mode | Compose or read |
+
 ####  requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 Provides access to the required attendees of an event. The type of object and level of access depends on the mode of the current item.
@@ -595,6 +615,34 @@ The [`from`](Office.context.mailbox.item.md#from-emailaddressdetails) and `sende
 ```
 var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
+```
+
+#### (nullable) seriesId :String
+
+Gets the id of the series that an occurrence belongs to.
+
+In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to. However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.
+
+> **Note:** The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier. The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](Office.context.mailbox.md). For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api).
+
+The `seriesId` property returns `null` for items that do not have parent items such as single appointments, series items, or meeting requests and returns `undefined` for any other items that are not meeting requests.
+
+##### Type:
+
+* String
+
+##### Requirements
+
+| Requirement | Value |
+|---|---|
+| [Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md) | Preview |
+| [Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md) | ReadItem |
+| Applicable Outlook mode| Compose or read |
+
+##### Example
+
+```
+// TODO: insert example here
 ```
 
 ####  start :Date|[Time](Time.md)

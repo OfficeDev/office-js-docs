@@ -137,6 +137,54 @@ RecipientType
 |---|---|
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.1|
 |Applicable Outlook mode| Compose or read|
+
+#### RecurrenceTimeZone :[RecurrenceTimeZone enum](recurrencetimezone.md)
+
+RecurrenceTimeZone
+
+##### Type:
+
+* [RecurrenceTimeZone enum](recurrencetimezone.md)
+
+##### Properties:
+
+| Name | Type | Value | Description |
+|---|---|---|---|
+|`Name`| String or Microsoft.Office.WebExtension.MailboxEnums.RecurrenceTimeZone |`name`|The Windows time zone as a string (e.g. "Pacific Standard Time") or Microsoft.Office.WebExtension.MailboxEnums.RecurrenceTimeZone.|
+|`Offset`|Integer|`offset`|The number of minutes difference between the local time zone and UTC at the date that the meeting series began.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| Preview |
+|Applicable Outlook mode| Compose or read |
+
+#### RecurrenceType :daily|weekday|monthly|weekly|yearly
+
+RecurrenceType
+
+##### Type:
+
+* daily|weekday|monthly|weekly|yearly
+
+##### Properties:
+
+| Name | Type | Value | Description |
+|---|---|---|---|
+|`Daily`| String |`daily`|The recipient is not one of the other recipient types.|
+|`Weekday`| String |`weekday`|The recipient is a distribution list containing a list of email addresses.|
+|`Weekly`| String |`weekly`|The recipient is an SMTP email address that is on the Exchange server.|
+|`Monthly`| String |`monthly`|The recipient is an SMTP email address that is not on the Exchange server.|
+|`Yearly`| String |`yearly`|The recipient is an SMTP email address that is not on the Exchange server.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| Preview |
+|Applicable Outlook mode| Compose or read |
+
 #### ResponseType :String
 
 Specifies the type of response to a meeting invitation.
