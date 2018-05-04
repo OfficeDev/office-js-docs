@@ -1,13 +1,13 @@
 # auth.getAccessTokenAsync method
 Requests an authentication Token for the user currently signed into Office.
 
-> **Important:** This API currently works only in Excel, Outlook, PowerPoint, Word, and OneNote in [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview).
+> **Important:** This API currently works only in Excel, Outlook, PowerPoint, Word, and OneNote in [Office 2016 Preview](https://products.office.com/office-2016-preview).
 > 
 > In Outlook, this API is not supported if the add-in is loaded in an Outlook.com or Gmail mailbox.
 
 ## Requirements
 
-This method is available in the IdentityAPI [requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md). To specify the IdentityAPI requirement set, use the following in your manifest.
+This method is available in the IdentityAPI [requirement set](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements). To specify the IdentityAPI requirement set, use the following in your manifest.
 
 ```xml
  <Requirements> 
@@ -78,5 +78,5 @@ This API requires a single sign-on configuration that bridges the add-in to an A
 
 ## Support details
 
-For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
+For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
 

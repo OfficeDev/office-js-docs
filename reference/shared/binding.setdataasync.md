@@ -5,7 +5,7 @@ Writes data to the bound section of the document represented by the specified bi
 |||
 |:-----|:-----|
 |**Hosts:**|Access, Excel, Word|
-|**Available in [Requirement sets](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBindings, TableBindings, TextBindings|
+|**Available in [Requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)**|MatrixBindings, TableBindings, TextBindings|
 |**Last changed in TableBindings**|1.1|
 
 ```js
@@ -19,15 +19,15 @@ bindingObj.setDataAsync(data [, options] ,callback);
 
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
-| _data_|<table><tr><td><b>string</b></td><td>Excel, Excel Online, Word, and Word Online only</td></tr><tr><td><b>array</b> (array of arrays – "matrix")</td><td>Excel and Word only</td></tr><tr><td><a href="https://msdn.microsoft.com/en-us/library/office/fp161002"><b>TableData</b></a></td><td>Access, Excel, and Word only</td></tr><tr><td><b>HTML</b></td><td>Word and Word Online only</td></tr><tr><td><b>Office Open XML</b></td><td>Word only</td></tr></table>|The data to be set in the current selection. Required.|**Changed in:** 1.1.Support for content add-ins for Access requires  **TableBinding** requirement set 1.1 or later.|
-| _options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)||
+| _data_|<table><tr><td><b>string</b></td><td>Excel, Excel Online, Word, and Word Online only</td></tr><tr><td><b>array</b> (array of arrays – "matrix")</td><td>Excel and Word only</td></tr><tr><td><a href="https://dev.office.com/reference/add-ins/shared/tabledata"><b>TableData</b></a></td><td>Access, Excel, and Word only</td></tr><tr><td><b>HTML</b></td><td>Word and Word Online only</td></tr><tr><td><b>Office Open XML</b></td><td>Word only</td></tr></table>|The data to be set in the current selection. Required.|**Changed in:** 1.1.Support for content add-ins for Access requires  **TableBinding** requirement set 1.1 or later.|
+| _options_|**object**|Specifies any of the following [optional parameters](https://docs.microsoft.com/office/dev/add-ins/develop/asynchronous-programming-in-office-add-ins#passing-optional-parameters-to-asynchronous-methods)||
 | _coercionType_|**[CoercionType](../../reference/shared/coerciontype-enumeration.md)**|Specifies how to coerce the data being set. ||
 | _columns_|**array of strings**| Specifies the column names.|**Added in:** v1.1.Only for table bindings in content add-ins for Access.|
 | _rows_|**Office.TableRange.ThisRow**|Specifies the pre-defined string "thisRow" to set data in the currently selected row. |**Added in:** v1.1.Only for table bindings in content add-ins for Access.|
 | _startColumn_|**number**|Specifies the zero-based starting column for a subset of the data. |Only for table or matrix bindings. If omitted, data is set starting in the first column.|
 | _startRow_|**number**|Specifies the zero-based starting row for a subset of the data in the binding. |Only for table or matrix bindings. If omitted, data is set starting in the first row.|
-| _tableOptions_|**object**|For the inserted table, a list of key-value pairs that specify [table formatting options](../../docs/excel/format-tables-in-add-ins-for-excel.md), such as header row, total row, and banded rows. |**Added in:** v1.1. **Supported in:** Excel.|
-| _cellFormat_|**object**|For the inserted table, a list of key-value pairs that specify a range of columns, rows, or cells and the [cell formatting](../../docs/excel/format-tables-in-add-ins-for-excel.md) to apply to that range.|**Added in** v1.1. **Supported in:** Excel, Excel Online.|
+| _tableOptions_|**object**|For the inserted table, a list of key-value pairs that specify [table formatting options](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-tables#format-a-table), such as header row, total row, and banded rows. |**Added in:** v1.1. **Supported in:** Excel.|
+| _cellFormat_|**object**|For the inserted table, a list of key-value pairs that specify a range of columns, rows, or cells and the [cell formatting](https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-tables#format-a-table) to apply to that range.|**Added in** v1.1. **Supported in:** Excel, Excel Online.|
 | _asyncContext_|**array**,  **boolean**,  **null**,  **number**,  **object**, **string**, or  **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 | _callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type  **AsyncResult**.||
 
@@ -200,7 +200,7 @@ function updateTableData() {
 
 A capital Y in the following matrix indicates that this method is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this method.
 
-For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
+For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
 
 
 **Supported hosts, by platform**
@@ -215,7 +215,7 @@ For more information about Office host application and server requirements, see 
 |||
 |:-----|:-----|
 |**Available in requirement sets**|MatrixBindings, TableBindings, TextBindings|
-|**Minimum permission level**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Minimum permission level**|[ReadWriteDocument](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)|
 |**Add-in types**|Content, task pane|
 |**Library**|Office.js|
 |**Namespace**|Office|
@@ -227,7 +227,7 @@ For more information about Office host application and server requirements, see 
 |**Version**|**Changes**|
 |:-----|:-----|
 |1.1|Added support for Excel and Word in Office for iPad.|
-|1.1|<ul><li>In add-ins for Access, added support for writing table data.</li><li>In add-ins for Excel, added support for <a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">setting formatting when writing data to a table binding</a> using the <span class="parameter" sdata="paramReference">tableOptions</span> and <span class="parameter" sdata="paramReference">cellFormat</span> optional parameters.</li></ul>|
+|1.1|<ul><li>In add-ins for Access, added support for writing table data.</li><li>In add-ins for Excel, added support for <a href="https://docs.microsoft.com/office/dev/add-ins/excel/excel-add-ins-tables#format-a-table" target="_blank">setting formatting when writing data to a table binding</a> using the <span class="parameter" sdata="paramReference">tableOptions</span> and <span class="parameter" sdata="paramReference">cellFormat</span> optional parameters.</li></ul>|
 |1.0|Introduced|
 
 ## See also
@@ -237,4 +237,4 @@ For more information about Office host application and server requirements, see 
 #### Other resources
 
 
-[Bind to regions in a document or spreadsheet](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)
+[Bind to regions in a document or spreadsheet](https://docs.microsoft.com/office/dev/add-ins/develop/bind-to-regions-in-a-document-or-spreadsheet)

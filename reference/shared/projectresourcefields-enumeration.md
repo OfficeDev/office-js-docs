@@ -427,7 +427,7 @@ The  **ProjectResourceFields** enumeration contains the following members.
 
 
 A  **ProjectResourceFields** constant can be used as a parameter of the [getResourceFieldAsync method](../../reference/shared/projectdocument.getresourcefieldasync.md).<br/><br/>
-For more information about working with fields in Project, see [Available fields reference](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1). In Project Help, search for  _Available fields_.
+For more information about working with fields in Project, see [Available fields reference](https://support.office.com/article/Available-fields-reference-615a4563-1cc3-40f4-b66f-1b17e793a460). In Project Help, search for  _Available fields_.
 
 
 ## Support details
@@ -435,7 +435,7 @@ For more information about working with fields in Project, see [Available fields
 
 A capital Y in the following matrix indicates that this enumeration is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this enumeration.
 
-For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
+For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
 
 
 **Supported hosts, by platform**
@@ -466,4 +466,4 @@ For more information about Office host application and server requirements, see 
 
 [getResourceFieldAsync method](../../reference/shared/projectdocument.getresourcefieldasync.md)
 
-[Available fields reference](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1)
+[Available fields reference](https://support.office.com/article/Available-fields-reference-615a4563-1cc3-40f4-b66f-1b17e793a460)

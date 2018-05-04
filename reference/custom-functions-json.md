@@ -1,6 +1,6 @@
 # Custom function metadata
 
-When you include [custom functions](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-overview.md) in an Excel add-in, you must host a JSON file that contains metadata about the functions (in addition to hosting a JavaScript file with the functions and a UI-less HTML file to serve as the parent of the JavaScript file). This article describes the format of the JSON file with examples.
+When you include [custom functions](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-overview) in an Excel add-in, you must host a JSON file that contains metadata about the functions (in addition to hosting a JavaScript file with the functions and a UI-less HTML file to serve as the parent of the JavaScript file). This article describes the format of the JSON file with examples.
 
 A complete sample JSON file is available [here](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/customfunctions.json).
 
@@ -174,5 +174,5 @@ The following JSON code is an example of a metadata file for custom functions.
 ```
 
 ## See also
-[Custom functions](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/custom-functions-overview.md)<br>
-[Guidelines and examples of array formulas](https://support.office.com/en-us/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)
+[Custom functions](https://docs.microsoft.com/office/dev/add-ins/excel/custom-functions-overview)<br>
+[Guidelines and examples of array formulas](https://support.office.com/article/Guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)
