@@ -6,7 +6,7 @@ Asynchronously removes an event handler for the task selection changed event in 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
+|**Available in [Requirement set](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)**|Selection|
 |**Added in**|1.0|
 
 ```js
@@ -18,7 +18,7 @@ Office.context.document.removeHandlerAsync(eventType[, options][, callback]);
 |**Name**|**Type**|**Description**|**Support notes**|
 |:-----|:-----|:-----|:-----|
 |_eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|The type of event to remove, as an [EventType](../../reference/shared/eventtype-enumeration.md) constant or its corresponding text value. Required. See [eventType value](#eventtype-value). ||
-|_options_|**object**|Specifies any of the following [optional parameters](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods).||
+|_options_|**object**|Specifies any of the following [optional parameters](https://docs.microsoft.com/office/dev/add-ins/develop/asynchronous-programming-in-office-add-ins#passing-optional-parameters-to-asynchronous-methods).||
 |_asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string**, or **undefined**|A user-defined item of any type that is returned in the  **AsyncResult** object without being altered.||
 |_callback_|**object**|A function that is invoked when the callback returns, whose only parameter is of type **AsyncResult**.||
 
@@ -28,9 +28,9 @@ The following table shows valid eventType arguments for a [ProjectDocument](../.
 
 |**Enumeration**|**Text value**|
 |:-----|:-----|
-|[Office.EventType.ResourceSelectionChanged](https://msdn.microsoft.com/en-us/library/office/fp179836.aspx)|resourceSelectionChanged|
-|[Office.EventType.TaskSelectionChanged](https://msdn.microsoft.com/en-us/library/office/fp179816.aspx)|taskSelectionChanged|
-|[Office.EventType.ViewSelectionChanged](https://msdn.microsoft.com/en-us/library/office/fp179839.aspx)|viewSelectionChanged|
+|[Office.EventType.ResourceSelectionChanged](../../reference/shared/projectdocument.resourceselectionchanged.event.md)|resourceSelectionChanged|
+|[Office.EventType.TaskSelectionChanged](../../reference/shared/projectdocument.taskselectionchanged.event.md)|taskSelectionChanged|
+|[Office.EventType.ViewSelectionChanged](../../reference/shared/projectdocument.viewselectionchanged.event.md)|viewSelectionChanged|
 
 
 ## Callback value
@@ -121,7 +121,7 @@ The example assumes that your add-in has a reference to the jQuery library and t
 
 A capital Y in the following matrix indicates that this method is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this method.
 
-For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).
+For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
 
 
 ||**Office for Windows desktop**|**Office Online (in browser)**|
@@ -131,7 +131,7 @@ For more information about Office host application and server requirements, see 
 |||
 |:-----|:-----|
 |**Available in requirement sets**|Selection|
-|**Minimum permission level**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Minimum permission level**|[ReadWriteDocument](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)|
 |**Add-in types**|Task pane|
 |**Library**|Office.js|
 |**Namespace**|Office|

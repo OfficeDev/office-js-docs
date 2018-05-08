@@ -2,13 +2,13 @@
 # Context.officeTheme property
 Provides access to the properties for Office theme colors.
 
- **Important:** This API currently works only in Excel, PowerPoint, and Word in [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) on Windows desktop.
+ **Important:** This API currently works only in Excel, PowerPoint, and Word in [Office 2016 Preview](https://products.office.com/office-2016-preview) on Windows desktop.
 
 
 |||
 |:-----|:-----|
 |**Hosts:**|Excel, PowerPoint, Word|
-|**Available in [Requirement set](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Not in a set|
+|**Available in [Requirement set](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)**|Not in a set|
 |**Added in**|1.3|
 
 
@@ -59,7 +59,7 @@ function applyOfficeTheme(){
 
 |||
 |:-----|:-----|
-|**Minimum permission level**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Minimum permission level**|[Restricted](https://docs.microsoft.com/office/dev/add-ins/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins)|
 |**Add-in types**|Content, task pane|
 |**Library**|Office.js|
 |**Namespace**|Office|

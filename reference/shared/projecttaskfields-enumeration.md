@@ -591,14 +591,14 @@ The  **ProjectTaskFields** enumeration contains the following members.
 
 
 A  **ProjectTaskFields** constant can be used as a parameter of the **[getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)** method.<br/><br/>
-For more information about working with fields in Project, see the [Available fields reference](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1). In Project Help, search for  _Available fields_.
+For more information about working with fields in Project, see the [Available fields reference](https://support.office.com/article/Available-fields-reference-615a4563-1cc3-40f4-b66f-1b17e793a460). In Project Help, search for  _Available fields_.
 
 
 ## Support details
 
 
 A capital Y in the following matrix indicates that this enumeration is supported in the corresponding Office host application. An empty cell indicates that the Office host application doesn't support this enumeration.<br/><br/>
-For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](../../docs/overview/requirements-for-running-office-add-ins.md).<br/><br/>
+For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).<br/><br/>
 
 **Supported hosts, by platform**
 
@@ -627,4 +627,4 @@ For more information about Office host application and server requirements, see 
 
 [getTaskFieldAsync method](../../reference/shared/projectdocument.gettaskfieldasync.md)
 
-[Available fields reference](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1)
+[Available fields reference](https://support.office.com/article/Available-fields-reference-615a4563-1cc3-40f4-b66f-1b17e793a460)
