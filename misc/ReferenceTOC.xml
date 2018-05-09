@@ -183,7 +183,7 @@
 		<Item text="RangeView" url="excel/rangeview" SEODescription="RangeView represents a set of visible cells of the parent range." />
 		<Item text="RangeViewCollection" url="excel/rangeviewcollection" SEODescription="Represents a collection of RangeView objects." />
 		<Item text="Script.CustomFunction" url="excel/scriptcustomfunctions" SEODescription="Use the Script.CustomFunctions object to define metadata about a custom function before registration." />
-		<Item text="SelectionChangedEventArgs" url="excel/selectionchangedeventargs" SEODescription="" />
+		<Item text="SelectionChangedEventArgs" url="excel/selectionchangedeventargs" SEODescription="Provides information about the binding that raised the SelectionChanged event." />
 		<Item text="Setting" url="excel/setting" SEODescription="Setting represents a key-value pair of a setting persisted to the document." />
 		<Item text="SettingCollection" url="excel/settingcollection" SEODescription="Represents a collection of worksheet objects that are part of the workbook." />
 		<Item text="SettingsChangedEventArgs" url="excel/settingschangedeventargs" SEODescription="Provides information about the document that raised the SelectionChanged event." />
@@ -194,15 +194,22 @@
 		<Item text="TableColumnCollection" url="excel/tablecolumncollection" SEODescription="Represents a collection of all the columns that are part of the table." />
 		<Item text="TableRow" url="excel/tablerow" SEODescription="Represents a row in a table." />
 		<Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="Represents a collection of all the rows that are part of the table." />
+		<Item text="TableSelectionChangedEventArgs" url="excel/tableselectionchangedeventargs" SEODescription="Provides information about the binding that raised the TableSelectionChanged event." />
 		<Item text="TableSort" url="excel/tablesort" SEODescription="Manages sorting operations on Table objects." />
 		<Item text="TextConditionalFormat" url="excel/textconditionalformat" SEODescription="Represents a specific text conditional format." />
 		<Item text="TopBottomConditionalFormat" url="excel/topbottomconditionalformat" SEODescription="Represents a TopBottom conditional format." />
 		<Item text="Workbook" url="excel/workbook" SEODescription="Contains related workbook objects such as worksheets, tables, ranges, etc." />
 		<Item text="Worksheet" url="excel/worksheet" SEODescription="Represents a grid of cells that contain data, tables, and charts." />
+		<Item text="WorksheetActivatedEventArgs" url="excel/worksheetactivatedeventargs" SEODescription="Provides information about the binding that raised the WorksheetActivated event." />
+		<Item text="WorksheetAddedEventArgs" url="excel/worksheetaddedeventargs" SEODescription="Provides information about the binding that raised the WorksheetAdded event." />
+		<Item text="WorksheetChangedEventArgs" url="excel/worksheetchangedeventargs" SEODescription="Provides information about the binding that raised the WorksheetChanged event." />
 		<Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="Represents a collection of worksheet objects that are part of the workbook." />
+		<Item text="WorksheetDeactivatedEventArgs" url="excel/worksheetdeactivatedeventargs" SEODescription="Provides information about the binding that raised the WorksheetDeactivated event." />
+		<Item text="WorksheetDeletedEventArgs" url="excel/worksheetdeletedeventargs" SEODescription="Provides information about the binding that raised the WorksheetDeleted event." />
 		<Item text="WorksheetFunctions" url="excel/functions" SEODescription="Used as a container for Excel worksheet functions that can be called through JavaScript or REST." />
 		<Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="Represents the protection of a sheet object." />
-		<Item text="worksheetprotectionoptions" url="excel/worksheetprotectionoptions" SEODescription="Represents the options in sheet protection." />
+		<Item text="WorksheetProtectionOptions" url="excel/worksheetprotectionoptions" SEODescription="Represents the options in sheet protection." />
+		<Item text="WorksheetSelectionChangedEventArgs" url="excel/worksheetselectionchangedeventargs" SEODescription="Provides information about the binding that raised the WorksheetSelectionChanged event." />
 		<Item text="Excel JavaScript API requirement sets" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Find information about the Excel requirement sets, the Office host applications that support each requirement set, and the build or version numbers for those applications." />
 	</Item>
 	<Item text="Excel Custom Functions Registration JSON" url="custom-functions-json" Scope="excel" SEODescription="Provides reference for Excel custom functions registration metadata." />

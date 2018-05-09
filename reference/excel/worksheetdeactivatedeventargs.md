@@ -6,7 +6,7 @@ Provides information about the worksheet that raised the Deactivated event.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|type|string|Gets the type of the event. Possible values are: WorksheetDataChanged, WorksheetSelectionChanged, WorksheetAdded, WorksheetActivated, WorksheetDeactivated, TableDataChanged, TableSelectionChanged, WorksheetDeleted.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Gets the type of the event. Value is `WorksheetDeactivated`, read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheetId|string|Gets the id of the worksheet that is deactivated.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
