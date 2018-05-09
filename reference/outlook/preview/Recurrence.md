@@ -14,34 +14,6 @@ The `recurrence` object provides methods to get and set the recurrence pattern o
 
 ### Members
 
-#### seriesTime :Object
-
-This object represents the startTime, endTime, startDate, and endDate of the series. **This is not in UTC time.** It is set in the time zone specified by the recurrenceTimeZone value or defaulted to the item's time zone.
-
-##### Type:
-
-* Object
-
-|Requirement|Value|
-|---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|Preview|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|Applicable Outlook mode|Compose or read|
-
-#### recurrenceType :[Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)
-
-This is one of the following: daily, weekday, weekly, monthly, yearly.
-
-##### Type:
-
-* [Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)
-
-|Requirement|Value|
-|---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|Preview|
-|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|Applicable Outlook mode|Compose or read|
-
 #### recurrenceProperties :Object
 
 This is one of the following: interval, dayOfMonth, dayOfWeek, days, weekNumber, month, firstDayOfWeek
@@ -63,6 +35,34 @@ Gets or sets the time zone of the recurrence.
 ##### Type:
 
 * [RecurrenceTimeZone](simple-types.md#recurrencetimezone)
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Compose or read|
+
+#### recurrenceType :[Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)
+
+This is one of the following: daily, weekday, weekly, monthly, yearly.
+
+##### Type:
+
+* [Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Compose or read|
+
+#### seriesTime :[seriesTime](seriestime.md)
+
+This object represents the startTime, endTime, startDate, and endDate of the series. **This is not in UTC time.** It is set in the time zone specified by the recurrenceTimeZone value or defaulted to the item's time zone.
+
+##### Type:
+
+* [seriesTime](seriestime.md)
 
 |Requirement|Value|
 |---|---|
