@@ -16,11 +16,25 @@ The `recurrence` object provides methods to get and set the recurrence pattern o
 
 #### recurrenceProperties :Object
 
-This is one of the following: interval, dayOfMonth, dayOfWeek, days, weekNumber, month, firstDayOfWeek
+Gets or sets the properties of the recurrence.
 
 ##### Type:
 
-* interval|dayOfMonth|dayOfWeek|days|weekNumber|month|firstDayOfWeek
+* Object
+
+##### Properties:
+
+|Name|Type|Description|
+|---|---|---|
+|`interval`|Integer|Represents the period between recurrences of the same meeting or appointment series.|
+|`dayOfMonth`|Integer|Represents the day of the month.|
+|`dayOfWeek`|[Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the day of the week or type of day, for example, weekend day vs weekday.|
+|`days`|Array of [Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the set of days for this recurrence. Valid values are: `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, and `Sun`.|
+|`weekNumber`|[Office.MailboxEnums.WeekNumber](Office.MailboxEnums.md#weeknumber-string)|Represents the number of the week in the selected month e.g. `first` for first week of the month.|
+|`month`|[Office.MailboxEnums.Month](Office.MailboxEnums.md#month-string)|Represent the month.|
+|`firstDayOfWeek`|[Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the first day of the week you choose otherwise the default is the value in the current user's settings. Valid values are: `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, and `Sun`.|
+
+##### Requirements
 
 |Requirement|Value|
 |---|---|
@@ -36,6 +50,8 @@ Gets or sets the time zone of the recurrence.
 
 * [RecurrenceTimeZone](simple-types.md#recurrencetimezone)
 
+##### Requirements
+
 |Requirement|Value|
 |---|---|
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|Preview|
@@ -44,11 +60,13 @@ Gets or sets the time zone of the recurrence.
 
 #### recurrenceType :[Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)
 
-This is one of the following: daily, weekday, weekly, monthly, yearly.
+Gets or set the type of the recurrence.
 
 ##### Type:
 
 * [Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)
+
+##### Requirements
 
 |Requirement|Value|
 |---|---|
@@ -58,11 +76,13 @@ This is one of the following: daily, weekday, weekly, monthly, yearly.
 
 #### seriesTime :[seriesTime](seriestime.md)
 
-This object represents the startTime, endTime, startDate, and endDate of the series. **This is not in UTC time.** It is set in the time zone specified by the recurrenceTimeZone value or defaulted to the item's time zone.
+This object enables you to manage the start and end dates and times of the series and of each recurrence. **This is not in UTC time.** It is set in the time zone specified by the [recurrenceTimeZone](#recurrencetimezone-recurrencetimezone) value or defaulted to the item's time zone.
 
 ##### Type:
 
 * [seriesTime](seriestime.md)
+
+##### Requirements
 
 |Requirement|Value|
 |---|---|
@@ -149,7 +169,7 @@ The following example sets the recurrence pattern of an appointment series.
 ```js
 var seriesTime= new seriesTime();
 st.setStartDate(2017, 12, 1);   //required
-st.setEndDate(2017, 12, 24);   //optional (if not ever set = null). Also can call st.setEndDate(null);
+st.setEndDate(2017, 12, 24);   //optional (if not ever set, equals null). Also can call st.setEndDate(null);
 st.setStartTime(13, 30);       //required
 st.setDuration(120);           //required
 

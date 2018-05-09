@@ -33,7 +33,7 @@ An array of `AttachmentDetail` objects is returned as the `attachments` property
 
 |Name| Type| Description|
 |---|---|---|
-|`attachmentType`| [Office.MailboxEnums.AttachmentType](Office.MailboxEnums.md#attachmenttype-string)|Gets a value that indicates the type of an attachment.|
+|`attachmentType`|[Office.MailboxEnums.AttachmentType](Office.MailboxEnums.md#attachmenttype-string)|Gets a value that indicates the type of an attachment.|
 |`contentType`| String|Gets the MIME content type of the attachment.|
 |`id`| String|Gets the Exchange attachment ID of the attachment.|
 |`isInline`| Boolean|Gets a value that indicates whether the attachment should be displayed in the body of the item.|
