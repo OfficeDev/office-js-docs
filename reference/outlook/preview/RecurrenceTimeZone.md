@@ -1,3 +1,7 @@
+# RecurrenceTimeZone
+
+### [Office.MailboxEnums](office.mailboxenums.md). RecurrenceTimeZone
+
 #### RecurrenceTimeZone :String
 
 Specifies the time zone applied to the recurrence.
