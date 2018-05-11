@@ -9,7 +9,8 @@ Excel add-ins run across multiple versions of Office, including Office 2016 for 
 
 |  Requirement set  |  Office 365 for Windows\*  |  Office 365 for iPad  |  Office 365 for Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| ExcelApi1.7 **Beta** | Version 1805 (Build 9226.2114) or later| Coming soon |  Coming soon| April 2018 | Coming soon |
+| Beta  | Please [visit our beta program page](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec)!   |
+| ExcelApi1.7  | Version 1801 (Build 9001.2171) or later| 2.9 or later | 16.9 or later | April 2018 | Coming soon |
 | ExcelApi1.6  | Version 1704 (Build 8201.2001) or later| 2.2 or later |15.36 or later| April 2017 | Coming soon|
 | ExcelApi1.5  | Version 1703 (Build 8067.2070) or later| 2.2 or later |15.36 or later| March 2017 | Coming soon|
 | ExcelApi1.4 | Version 1701 (Build 7870.2024) or later| 2.2 or later |15.36 or later| January 2017 | Coming soon|
@@ -26,11 +27,11 @@ For more information about versions, build numbers, and Office Online Server, se
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-## Upcoming Excel JavaScript API 1.7 release features
+##  Excel JavaScript API 1.7 GA
 
 The Excel JavaScript API requirement set 1.7 features include APIs for charts, events, data validation, worksheets, ranges, document properties, named items, protection options and styles.
 
-> **Note** For API reference documentation and details, see [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
+ 
 
 ### Customize charts
 
