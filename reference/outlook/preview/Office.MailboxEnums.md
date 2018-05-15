@@ -53,13 +53,13 @@ Days
 
 |Name|Type|Value|Description|
 |---|---|---|---|
-|`Mon`|String|`mon`|Monday.|
-|`Tue`|String|`tue`|Tuesday.|
-|`Wed`|String|`wed`|Wednesday.|
-|`Thu`|String|`thu`|Thursday.|
-|`Fri`|String|`fri`|Friday.|
-|`Sat`|String|`sat`|Saturday.|
-|`Sun`|String|`sun`|Sunday.|
+|`Mon`|String|`mon`|Monday|
+|`Tue`|String|`tue`|Tuesday|
+|`Wed`|String|`wed`|Wednesday|
+|`Thu`|String|`thu`|Thursday|
+|`Fri`|String|`fri`|Friday|
+|`Sat`|String|`sat`|Saturday|
+|`Sun`|String|`sun`|Sunday|
 |`Weekday`|String|`weekday`|Week day (excludes weekend days): `Mon`, `Tue`, `Wed`, `Thu`, and `Fri`.|
 |`WeekendDay`|String|`weekendDay`|Weekend day: `Sat` and `Sun`.|
 |`Day`|String|`day`|Day of week.|
@@ -167,18 +167,18 @@ Month
 
 |Name|Type|Value|Description|
 |---|---|---|---|
-|`Jan`|String|`jan`|January or 1st month of the year.|
-|`Feb`|String|`feb`|February or 2nd month of the year.|
-|`Mar`|String|`mar`|March or 3rd month of the year.|
-|`Apr`|String|`apr`|April or 4th month of the year.|
-|`May`|String|`may`|May or 5th month of the year.|
-|`Jun`|String|`jun`|June or 6th month of the year.|
-|`Jul`|String|`jul`|July or 7th month of the year.|
-|`Aug`|String|`aug`|August or 8th month of the year.|
-|`Sep`|String|`sep`|September or 9th month of the year.|
-|`Oct`|String|`oct`|October or 10th month of the year.|
-|`Nov`|String|`nov`|November or 11th month of the year.|
-|`Dec`|String|`dec`|December or 12th month of the year.|
+|`Jan`|String|`jan`|January|
+|`Feb`|String|`feb`|February|
+|`Mar`|String|`mar`|March|
+|`Apr`|String|`apr`|April|
+|`May`|String|`may`|May|
+|`Jun`|String|`jun`|June|
+|`Jul`|String|`jul`|July|
+|`Aug`|String|`aug`|August|
+|`Sep`|String|`sep`|September|
+|`Oct`|String|`oct`|October|
+|`Nov`|String|`nov`|November|
+|`Dec`|String|`dec`|December|
 
 ##### Requirements
 

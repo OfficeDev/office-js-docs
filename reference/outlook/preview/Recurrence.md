@@ -50,6 +50,14 @@ Gets or sets the time zone of the recurrence.
 
 Gets or set the type of the recurrence.
 
+|[Recurrence type](Office.MailboxEnums.md#recurrencetype-string)|Applicable [recurrence properties](simple-types.md#recurrenceproperties)|Description|
+|---|---|---|
+|`daily`|-`interval`|An appointment occurs every **2** *{`interval`}* days.|
+|`weekday`||An appointment occurs every weekday.|
+|`monthly`|-`interval`<br>-`dayOfMonth`<br>-`dayOfWeek`<br>-`weekNumber`|An appointment occurs on day **5** *{`dayOfMonth`}* every **4** *{`interval`}* months.<br>An appointment occurs on the **third** *{`weekNumber`}* **thu** *{`dayOfWeek`}* every **2** *{`interval`}* months.|
+|`weekly`|-`interval`<br>-`days`<br>-`firstDayOfWeek` (optional)|An appointment occurs on **tue** and **thu** *{`days`}* every **2** *{`interval`}* weeks.|
+|`yearly`|-`interval`<br>-`dayOfMonth`<br>-`dayOfWeek`<br>-`weekNumber`<br>-`month`|An appointment occurs on day **7** *{`dayOfMonth`}* of **sep** *{`month`}* every **4** *{`interval`}* years.<br>An appointment occurs on the **first** *{`weekNumber`}* **Thu** *{`dayOfWeek`}* of **sep** *{`month`}* every **2** *{`interval`}* years.|
+
 ##### Type:
 
 * [Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)

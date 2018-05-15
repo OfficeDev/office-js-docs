@@ -284,7 +284,7 @@ Gets or sets the properties of the recurrence.
 |`days`|Array of [Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the set of days for this recurrence. Valid values are: `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, and `Sun`.|
 |`weekNumber`|[Office.MailboxEnums.WeekNumber](Office.MailboxEnums.md#weeknumber-string)|Represents the number of the week in the selected month e.g. `first` for first week of the month.|
 |`month`|[Office.MailboxEnums.Month](Office.MailboxEnums.md#month-string)|Represent the month.|
-|`firstDayOfWeek`|[Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the first day of the week you choose otherwise the default is the value in the current user's settings. Valid values are: `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, and `Sun`.|
+|`firstDayOfWeek`|[Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents your chosen first day of the week otherwise the default is the value in the current user's settings. Valid values are: `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, and `Sun`.|
 
 ##### Requirements
 
