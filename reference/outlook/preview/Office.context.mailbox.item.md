@@ -849,6 +849,49 @@ Office.context.mailbox.item.addFileAttachmentAsync
 );
 ```
 
+####  addHandlerAsync(eventType, handler, [options], [callback])
+
+Adds an event handler for a supported event.
+
+Currently the only supported event type is `Office.EventType.RecurrencePatternChanged`, which is invoked when the user changes the recurrence pattern of a series.
+
+##### Parameters:
+
+| Name | Type | Attributes | Description |
+|---|---|---|---|
+| `eventType` | [Office.EventType](Office.md#EventType) || The event that should invoke the handler. |
+| `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`. |
+| `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
+| `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
+| `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| Preview |
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem |
+|Applicable Outlook mode| Compose or read |
+
+##### Example
+
+```
+Office.initialize = function (reason) {
+  $(document).ready(function () {
+    Office.context.mailbox.item.addHandlerAsync(Office.EventType.RecurrencePatternChanged, loadNewItem, function (result) {
+      if (result.status === Office.AsyncResultStatus.Failed) {
+        // Handle error
+      }
+    });
+  });
+};
+
+function loadNewItem(eventArgs) {
+  // Load the properties of the newly selected item
+  loadProps(Office.context.mailbox.item);
+};
+```
+
 ####  addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 Adds an Exchange item, such as a message, as an attachment to the message or appointment.
@@ -1655,6 +1698,49 @@ Office.context.mailbox.item.removeAttachmentAsync(
     console.log(asyncResult.status);
   }
 );
+```
+
+####  removeHandlerAsync(eventType, handler, [options], [callback])
+
+Removes an event handler for a supported event.
+
+Currently the only supported event type is `Office.EventType.RecurrencePatternChanged`, which is invoked when the user changes the recurrence pattern of a series.
+
+##### Parameters:
+
+| Name | Type | Attributes | Description |
+|---|---|---|---|
+| `eventType` | [Office.EventType](Office.md#EventType) || The event that should invoke the handler. |
+| `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `removeHandlerAsync`. |
+| `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
+| `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
+| `callback` | function| &lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| Preview |
+|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem |
+|Applicable Outlook mode| Compose or read |
+
+##### Example
+
+```
+Office.initialize = function (reason) {
+  $(document).ready(function () {
+    Office.context.mailbox.item.removeHandlerAsync(Office.EventType.RecurrencePatternChanged, loadNewItem, function (result) {
+      if (result.status === Office.AsyncResultStatus.Failed) {
+        // Handle error
+      }
+    });
+  });
+};
+
+function loadNewItem(eventArgs) {
+  // Load the properties of the newly selected item
+  loadProps(Office.context.mailbox.item);
+};
 ```
 
 ####  saveAsync([options], callback)
