@@ -12,6 +12,17 @@ The `recurrence` object provides methods to get and set the recurrence pattern o
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |Applicable Outlook mode|Compose or read|
 
+##### States
+
+|State|Editable?|Viewable?|
+|---|---|---|
+|Appointment Organizer - Compose Series|Yes (`setAsync`)|Yes (`getAsync`)|
+|Appointment Organizer - Compose Instance|No (`setAsync` returns error)|Yes (`getAsync`)|
+|Appointment Attendee - Read Series|No (`setAsync` not available)|Yes (`item.recurrence`)|
+|Appointment Attendee - Read Instance|No (`setAsync` not available)|Yes (`item.recurrence`)|
+|Meeting Request - Read Series|No (`setAsync` not available)|Yes (`item.recurrence`)|
+|Meeting Request - Read Instance|No (`setAsync` not available)|Yes (`item.recurrence`)|
+
 ### Members
 
 #### recurrenceProperties :[RecurrenceProperties](simple-types.md#recurrenceproperties)
@@ -163,20 +174,28 @@ Sets the recurrence pattern of an appointment.
 The following example sets the recurrence pattern of an appointment series.
 
 ```js
-var seriesTime= new seriesTime();
-st.setStartDate(2017, 12, 1);   //required
-st.setEndDate(2017, 12, 24);   //optional (if not ever set, equals null). Also can call st.setEndDate(null);
-st.setStartTime(13, 30);       //required
-st.setDuration(120);           //required
+var seriesTimeObject = new seriesTime(); 
+seriesTimeObject.setStartDate(2017,11,2);  
+seriesTimeObject.setEndDate(2017,12,2); 
+seriesTimeObject.setStartTime(10,30); 
+SeriesTimeObject.setDuration(30);
 
-Office.context.mailbox.item.recurrence.setAsync(
-	{	
-		seriesTime,             //required
-        recurrenceType,         //required
-		recurrenceProperties,   //required
-		recurrenceTimeZone      //optional
-	}
-	options,					//optional 
-	callback					//optional
-);
+var pattern = {"seriesTime": seriesTimeObject, "type": "Weekly", "properties": {"interval": ", "days": ["Tue", "Thu"], "firstDayOfWeek": "Sun"}, "recurrenceTimeZone": {"name": "Pacific Standard Time"}}; 
+
+Office.context.mailbox.item.recurrence.setAsync(pattern, options, callback);
+ 
+//Result: This created a recurring event from November 2, 2017 to December 2, 2017 at 10:30 A.M. to 11 A.M. PST every Tuesday and Thursday.
 ```
+
+### Errors
+
+|Error|Error message|Description|
+|---|---|---|
+|Sys.ArgumentTypeException|Object of type {the type of the incorrect parameter} cannot be converted to type '{the type of the correct parameter}'. Parameter name: {parameter name}<br><br>Example: Object of type 'String' cannot be converted to type 'Date'. Parameter name: startDate|This occurs when the wrong argument type is given. For example, a string is given instead of a datetime object.|
+|Invalid Value|The end date cannot be before the start date.|When the user specifies an end date that is before the start date.|
+|Permission Denied|A recurrence pattern cannot be set at an instance level.|When an add-in calls recurrence.setAsync on an instance item.|
+|Sys.ArgumentException|Value does not fall within the expected range. Parameter name: {parameter name}.<br><br>Example: Value does not fall within the expected range. Parameter name: dayOfWeek|When the add-in uses an incorrect value as a parameter for an enum like dayOfWeek, weekNumber, type, days, or month.|
+|Invalid Value|The recurrence pattern is invalid. Double check that the specified recurrence properties aligns with the recurrence type.|When the add-in uses an incorrect recurrence pattern. For example, they use Daily but specify Weekday or the user specifies Monthly then uses dayOfMonth and dayOfWeek.|
+|Missing Parameter|The recurrence object could not be created because some parameter values are missing.|When the add-in tries to set the recurrence pattern but does not include necessary parameters. For example, the recurrence type is daily but the Interval parameter is missing.|
+|Invalid Value|The specified time zone is not supported.|When the add-in tries to set the time zone of a recurrence pattern but enters a string that does not match one of the supported time zones.|
+|Invalid Value|The recurrence pattern was set by the user using an alternate calendar that is not supported.|When the user uses an alternate calendar to set recurrence such as a lunar calendar.|

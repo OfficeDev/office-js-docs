@@ -224,6 +224,7 @@
 				<Item text="Location" url="outlook/preview/Location" Scope="outlook" Version="Preview" SEODescription="Provides methods to get and set the location of a meeting in an Outlook add-in." />
 				<Item text="NotificationMessages" url="outlook/preview/NotificationMessages" Scope="outlook" Version="Preview" SEODescription="The NotificationMessages object is returned as the notificationMessages property of an item." />
 				<Item text="Recipients" url="outlook/preview/Recipients" Scope="outlook" Version="Preview" SEODescription="Information about the recipients of the mail." />
+				<Item text="Recurrence" url="outlook/preview/Recurrence" Scope="outlook" Version="Preview" SEODescription="Information about the recurrence object for an item." />
 				<Item text="RoamingSettings" url="outlook/preview/RoamingSettings" Scope="outlook" Version="Preview" SEODescription="The settings created by using the methods of the RoamingSettings object are saved per add-in and per user." />
 				<Item text="Subject" url="outlook/preview/Subject" Scope="outlook" Version="Preview" SEODescription="Provides methods to get and set the subject of an appointment or message in an Outlook add-in." />
 				<Item text="Time" url="outlook/preview/Time" Scope="outlook" Version="Preview" SEODescription="The Time object is returned as the start or end property of an appointment in compose mode." />
