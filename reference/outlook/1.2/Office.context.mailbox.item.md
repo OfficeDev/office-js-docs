@@ -38,6 +38,8 @@ Office.initialize = function () {
 
 Gets an array of attachments for the item. Read mode only.
 
+> **Note:** Certain attachments are blocked by Outlook due to potential security issues. For more information, see [Blocked attachments in Outlook](https://support.office.com/article/Blocked-attachments-in-Outlook-434752E1-02D3-4E90-9124-8B81E49A8519).
+
 ##### Type:
 
 *   Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
