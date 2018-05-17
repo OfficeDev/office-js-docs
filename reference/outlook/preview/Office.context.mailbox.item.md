@@ -268,17 +268,37 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-#### from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### from :[EmailAddressDetails](simple-types.md#emailaddressdetails)|[From](From.md)
 
-Gets the email address of the sender of a message. Read mode only.
+Gets the email address of the sender of a message.
 
 The `from` and [`sender`](Office.context.mailbox.item.md#sender-emailaddressdetails) properties represent the same person unless the message is sent by a delegate. In that case, the `from` property represents the delegator, and the sender property represents the delegate.
 
 > **Note:** The `recipientType` property of the `EmailAddressDetails` object in the `from` property is `undefined`.
 
+##### Read mode
+
+The `from` property returns an `EmailAddressDetails` object.
+
+```
+var subject = Office.context.mailbox.item.from;
+```
+
+##### Compose mode
+
+The `from` property returns a `From` object that provides a method to get the from value.
+
+```
+Office.context.mailbox.item.from.getAsync(callback);
+
+function callback(asyncResult) {
+  var from = asyncResult.value;
+}
+```
+
 ##### Type:
 
-*   [EmailAddressDetails](simple-types.md#emailaddressdetails)
+*   [EmailAddressDetails](simple-types.md#emailaddressdetails) | [From](From.md)
 
 ##### Requirements
 
@@ -286,7 +306,8 @@ The `from` and [`sender`](Office.context.mailbox.item.md#sender-emailaddressdeta
 |---|---|
 |[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
-|Applicable Outlook mode|Read|
+|Applicable Outlook mode|Compose or read|
+
 #### internetMessageId :String
 
 Gets the Internet message identifier for an email message. Read mode only.
