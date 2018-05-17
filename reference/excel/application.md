@@ -35,7 +35,7 @@ applicationObject.calculate(calculationType);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate` Default-option. Performs normal calculation by calculating all the formulas in the workbook,`Full` Forces a full calculation of the data,`FullRebuild`  Forces a full calculation of the data and rebuilds the dependencies.|
+|calculationType|string|Specifies the calculation type to use. Possible values are: `Recalculate`, which performs normal calculation by calculating all the formulas in the workbook; `Full`, which forces a full calculation of the data; and `FullRebuild`, which forces a full calculation of the data and rebuilds the dependencies.|
 
 #### Returns
 void
