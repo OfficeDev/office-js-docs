@@ -11,7 +11,6 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The display name of the worksheet.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|int|The zero-based position of the worksheet within the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|showGridlines|bool|Gets or sets the worksheet's gridlines flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |showHeadings|bool|Gets or sets the worksheet's headings flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |standardHeight|double|Returns the standard (default) height of all the rows in the worksheet, in points. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |standardWidth|double|Returns or sets the standard (default) width of all the columns in the worksheet.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
