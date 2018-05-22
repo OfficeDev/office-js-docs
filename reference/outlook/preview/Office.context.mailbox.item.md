@@ -664,7 +664,8 @@ The `seriesId` property returns `null` for items that do not have parent items s
 ##### Example
 
 ```
-// TODO: insert example here
+var seriesId = Office.context.mailbox.item.seriesId; 
+var isSeries = (seriesId == null);
 ```
 
 ####  start :Date|[Time](Time.md)

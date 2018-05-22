@@ -2,7 +2,7 @@
 
 # SeriesTime
 
-The `seriesTime` object provides methods to get and set the dates and times of meetings or appointments in a series and the start and end of the series.
+The `seriesTime` object provides methods to get and set the dates and times of appointments in a recurring series and to get the dates and times of meetings in a recurring series.
 
 ##### Requirements
 
@@ -16,11 +16,11 @@ The `seriesTime` object provides methods to get and set the dates and times of m
 
 #### getDuration() → {Integer}
 
-Gets the duration of a recurrence pattern in minutes.
+Gets the duration in minutes of a usual instance in a recurring meeting/appointment series.
 
 ##### Examples
 
-This example gets the end date of a recurrence.
+This example gets the duration of a usual instance in a recurring meeting/appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -46,7 +46,7 @@ Gets the end date of a recurrence pattern in the following [ISO 8601](https://ww
 
 ##### Examples
 
-This example gets the end date of a recurrence.
+This example gets the end date of a recurring meeting/appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -67,12 +67,12 @@ function callback(asyncResult){
 
 #### getEndTime() → {String}
 
-Gets the start time of the meeting/appointment of a recurrence pattern in whichever time zone that the user/add-in set the recurrence pattern in the following ISO 8601 format:
+Gets the end time of a usual meeting/appointment instance of a recurrence pattern in whichever time zone that the user/add-in set the recurrence pattern using the following ISO 8601 format:
 "THH:mm:ss:mmm"
 
 ##### Examples
 
-This example gets the end time of a recurrence.
+This example gets the end time of a usual instance in a recurring meeting/appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -98,7 +98,7 @@ Gets the start date of a recurrence pattern in the following [ISO 8601](https://
 
 ##### Examples
 
-This example gets the start date of a recurrence.
+This example gets the start date of a recurring meeting/appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -119,12 +119,12 @@ function callback(asyncResult){
 
 #### getStartTime() → {String}
 
-Gets the start time of the meeting/appointment of a recurrence pattern in whichever time zone that the user/add-in set the recurrence pattern in the following ISO 8601 format:
+Gets the start time of a usual meeting/appointment instance of a recurrence pattern in whichever time zone that the user/add-in set the recurrence pattern using the following ISO 8601 format:
 "THH:mm:ss:mmm"
 
 ##### Examples
 
-This example gets the start time of a recurrence.
+This example gets the start time of a usual instance in a recurring meeting/appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -143,15 +143,15 @@ function callback(asyncResult){
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |Applicable Outlook mode|Compose or read|
 
-#### setDuration(int minutes)
+#### setDuration(minutes)
 
-Sets the duration of a meeting/appointment of a recurrence pattern. This should also change the end time of the recurrence pattern.
+Sets the duration of all appointments in a recurrence pattern. This will also change the end time of the recurrence pattern.
 
 ##### Parameters:
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`minutes`|Integer||The length of the meeting or appointment in minutes.|
+|`minutes`|Integer||The length of the appointment in minutes.|
 
 ##### Requirements
 
@@ -163,24 +163,24 @@ Sets the duration of a meeting/appointment of a recurrence pattern. This should 
 
 ##### Examples
 
-This example sets the duration of a recurrence to 2 hours.
+This example sets the duration of each appointment in a recurring series to 2 hours.
 
 ```js
 var seriesTimeObject = new seriesTime()
 seriesTimeObject.setDuration(120);
 ```
 
-#### setEndDate(int year, int month, int day)
+#### setEndDate(year, month, day)
 
-Sets the end date of a recurrence pattern.
+Sets the end date of a recurring appointment series.
 
 ##### Parameters:
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`year`|Integer||The year portion of the send date.|
-|`month`|Integer||The month portion of the end date. Valid range is 0-11 where 0 represents the 1st month and 11 represents the 12th month.|
-|`day`|Integer||The day portion of the end date.|
+|`year`|Integer||The year value of the end date.|
+|`month`|Integer||The month value of the end date. Valid range is 0-11 where 0 represents the 1st month and 11 represents the 12th month.|
+|`day`|Integer||The day value of the end date.|
 
 ##### Requirements
 
@@ -192,7 +192,7 @@ Sets the end date of a recurrence pattern.
 
 ##### Examples
 
-This example sets the end date of a recurrence to November 2, 2017.
+This example sets the end date of a recurring appointment series to November 2, 2017.
 
 ```js
 var seriesTimeObject = new seriesTime()
@@ -203,17 +203,17 @@ seriesTimeObject.setEndDate(2017, 10, 2);
 
 |Error code|Description|
 |------------|-------------|
-|`Invalid date format`||
+|`Invalid date format`|The date is not in an acceptable format.|
 
-#### setEndDate(String date)
+#### setEndDate(date)
 
-Sets the end date of a recurrence pattern.
+Sets the end date of a recurring appointment series.
 
 ##### Parameters:
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`date`|String||End date of the recurrence represented in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) date standard, that is, "YYYY-MM-DD".|
+|`date`|String||End date of the recurring appointment series represented in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) date standard, that is, "YYYY-MM-DD".|
 
 ##### Requirements
 
@@ -225,7 +225,7 @@ Sets the end date of a recurrence pattern.
 
 ##### Examples
 
-This example sets the end date of a recurrence to November 2, 2017.
+This example sets the end date of a recurring appointment series to November 2, 2017.
 
 ```js
 var seriesTimeObject = new seriesTime()
@@ -236,18 +236,18 @@ seriesTimeObject.setEndDate("2017-11-02");
 
 |Error code|Description|
 |------------|-------------|
-|`Invalid date format`|The date is is not in an acceptable format.|
+|`Invalid date format`|The date is not in an acceptable format.|
 
-#### setStartTime(int hours, int minutes)
+#### setStartTime(hours, minutes)
 
-Sets the start time of the meeting/appointment of a recurrence pattern in whichever time zone the recurrence pattern is set. Default zone is the item's time zone.
+Sets the start time of all instances of a recurring appointment series in whichever time zone the recurrence pattern is set (the item's time zone is used by default).
 
 ##### Parameters:
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`hours`|Integer||The `hour` portion of the start time. Valid range: 0-24.|
-|`minutes`|Integer||The `minute` portion of the start time. Valid range: 0-59.|
+|`hours`|Integer||The `hour` value of the start time. Valid range: 0-24.|
+|`minutes`|Integer||The `minute` value of the start time. Valid range: 0-59.|
 
 ##### Requirements
 
@@ -259,14 +259,14 @@ Sets the start time of the meeting/appointment of a recurrence pattern in whiche
 
 ##### Examples
 
-This example sets the start time of a recurrence to 1:30 pm.
+This example sets the start time of each instance of a recurring appointment series to 1:30 PM.
 
 ```js
 var seriesTimeObject = new seriesTime()
 seriesTimeObject.setStartTime(13, 30);
 ```
 
-This example sets the start time of a recurrence to 11:30 am.
+This example sets the start time of each instance of a recurring appointment series to 11:30 AM.
 
 ```js
 var seriesTimeObject = new seriesTime()
@@ -277,17 +277,17 @@ seriesTimeObject.setStartTime(11, 30);
 
 |Error code|Description|
 |------------|-------------|
-|`Invalid time format`|The time is is not in an acceptable format.|
+|`Invalid time format`|The time is not in an acceptable format.|
 
-#### setStartTime(String time)
+#### setStartTime(time)
 
-Sets the start time of the meeting/appointment of a recurrence pattern in whichever time zone the recurrence pattern is set in. Default value is the item's time zone.
+Sets the start time of all instances of a recurring appointment series in whichever time zone the recurrence pattern is set (the item's time zone is used by default).
 
 ##### Parameters:
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`time`|String||Start time of the recurrence represented in standard datetime string format, that is, "THH:mm:ss:mmm".|
+|`time`|String||Start time of all instances represented by standard datetime string format, that is, "THH:mm:ss:mmm".|
 
 ##### Requirements
 
@@ -299,7 +299,7 @@ Sets the start time of the meeting/appointment of a recurrence pattern in whiche
 
 ##### Examples
 
-This example sets the start time of a recurrence to 11:30 pm.
+This example sets the start time of all instances of a recurring appointment series to 11:30 PM.
 
 ```js
 var seriesTimeObject = new seriesTime()
@@ -310,19 +310,19 @@ seriesTimeObject.setStartTime("T23:30:00");
 
 |Error code|Description|
 |------------|-------------|
-|`Invalid time format`|The time is is not in an acceptable format.|
+|`Invalid time format`|The time is not in an acceptable format.|
 
-#### setStartDate(int year, int month, int day)
+#### setStartDate(year, month, day)
 
-Sets the start date of a recurrence pattern.
+Sets the start date of a recurring appointment series.
 
 ##### Parameters:
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`year`|Integer||The year portion of the start date.|
-|`month`|Integer||The month portion of the start date. Valid range is 0-11 where 0 represents the 1st month and 11 represents the 12th month.|
-|`day`|Integer||The day portion of the start date.|
+|`year`|Integer||The year value of the start date.|
+|`month`|Integer||The month value of the start date. Valid range is 0-11 where 0 represents the 1st month and 11 represents the 12th month.|
+|`day`|Integer||The day value of the start date.|
 
 ##### Requirements
 
@@ -334,7 +334,7 @@ Sets the start date of a recurrence pattern.
 
 ##### Examples
 
-This example sets the start date of a recurrence to November 2, 2017.
+This example sets the start date of a recurring appointment series to November 2, 2017.
 
 ```js
 var seriesTimeObject = new seriesTime()
@@ -347,15 +347,15 @@ seriesTimeObject.setStartDate(2017, 10, 2);
 |------------|-------------|
 |`Invalid date format`|The date is not in an acceptable format.|
 
-#### setStartDate(String date)
+#### setStartDate(date)
 
-Sets the start date of a recurrence pattern.
+Sets the start date of a recurring appointment series.
 
 ##### Parameters:
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`date`|String||Start date of the recurrence in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) date standard, that is, "YYYY-MM-DD".|
+|`date`|String||Start date of the recurring appointment series in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) date standard, that is, "YYYY-MM-DD".|
 
 ##### Requirements
 
@@ -367,7 +367,7 @@ Sets the start date of a recurrence pattern.
 
 ##### Examples
 
-This example sets the start date of a recurrence to November 2, 2017.
+This example sets the start date of a recurring appointment series to November 2, 2017.
 
 ```js
 var seriesTimeObject = new seriesTime()
@@ -378,14 +378,4 @@ seriesTimeObject.setStartDate("2017-11-02");
 
 |Error code|Description|
 |------------|-------------|
-|`Invalid date format`|The date is is not in an acceptable format.|
-
-### Errors
-
-|Error|Error message|Description|
-|---|---|---|
-|Sys.ArgumentException|Value does not fall within the expected range. Parameter name: {Parameter Name}.|**Methods**: setStartDate, setEndDate<br>The month is not a value in the range of 0-11 or the day is not a valid date (for example, Oct. 32 or Sept. 31). **Note**: A date in the past is okay.|
-|Sys.ArgumentException|Value does not fall within the expected range. Parameter name: {Parameter Name}.|**Methods**: setStartTime<br>The hours are not in the range 0-24 or the minute values are not in the range 0-59.|
-|Invalid Value|The end date cannot be before the start date.|When the user specifies an end date that is before the start date.|
-|Missing Parameter|The seriesTime object could not be created because at least one required parameter value is missing.|The seriesTime object needs to have all of the following to be created: a start time, a duration, a start date, and an end date. If it does not have one of these values, this error will occur.|
-|Missing Parameter|Missing parameter: {Parameter name}|For any of the setter methods, when a required parameter is missing from the method call.|
+|`Invalid date format`|The date is not in an acceptable format.|

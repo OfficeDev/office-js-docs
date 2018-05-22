@@ -337,7 +337,7 @@ WeekNumber
 |`Second`|String|`second`|Second week of the month.|
 |`Third`|String|`third`|Third week of the month.|
 |`Fourth`|String|`fourth`|Fourth week of the month.|
-|`Fifth`|String|`fifth`|Fifth week of the month.|
+|`Last`|String|`last`|Last week of the month.|
 
 ##### Requirements
 

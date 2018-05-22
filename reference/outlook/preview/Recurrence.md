@@ -27,7 +27,7 @@ The `recurrence` object provides methods to get and set the recurrence pattern o
 
 #### recurrenceProperties :[RecurrenceProperties](simple-types.md#recurrenceproperties)
 
-Gets or sets the properties of the recurrence.
+Gets or sets the properties of the recurring appointment series. Gets the properties of the recurring meeting series.
 
 ##### Type:
 
@@ -43,7 +43,7 @@ Gets or sets the properties of the recurrence.
 
 #### recurrenceTimeZone :[RecurrenceTimeZone](simple-types.md#recurrencetimezone)
 
-Gets or sets the time zone of the recurrence.
+Gets or sets the time zone of the recurring appointment series. Gets the time zone of the recurring meeting series.
 
 ##### Type:
 
@@ -59,15 +59,15 @@ Gets or sets the time zone of the recurrence.
 
 #### recurrenceType :[Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)
 
-Gets or set the type of the recurrence.
+Gets or sets the type of the recurring appointment series. Gets the type of the recurring meeting series.
 
 |[Recurrence type](Office.MailboxEnums.md#recurrencetype-string)|Applicable [recurrence properties](simple-types.md#recurrenceproperties)|Description|
 |---|---|---|
 |`daily`|-`interval`|An appointment occurs every **2** *{`interval`}* days.|
 |`weekday`||An appointment occurs every weekday.|
-|`monthly`|-`interval`<br>-`dayOfMonth`<br>-`dayOfWeek`<br>-`weekNumber`|An appointment occurs on day **5** *{`dayOfMonth`}* every **4** *{`interval`}* months.<br>An appointment occurs on the **third** *{`weekNumber`}* **thu** *{`dayOfWeek`}* every **2** *{`interval`}* months.|
-|`weekly`|-`interval`<br>-`days`<br>-`firstDayOfWeek` (optional)|An appointment occurs on **tue** and **thu** *{`days`}* every **2** *{`interval`}* weeks.|
-|`yearly`|-`interval`<br>-`dayOfMonth`<br>-`dayOfWeek`<br>-`weekNumber`<br>-`month`|An appointment occurs on day **7** *{`dayOfMonth`}* of **sep** *{`month`}* every **4** *{`interval`}* years.<br>An appointment occurs on the **first** *{`weekNumber`}* **Thu** *{`dayOfWeek`}* of **sep** *{`month`}* every **2** *{`interval`}* years.|
+|`monthly`|-`interval`<br>-`dayOfMonth`<br>-`dayOfWeek`<br>-`weekNumber`|An appointment occurs on day **5** *{`dayOfMonth`}* every **4** *{`interval`}* months.<br>An appointment occurs on the **Third** *{`weekNumber`}* **Thu** *{`dayOfWeek`}* every **2** *{`interval`}* months.|
+|`weekly`|-`interval`<br>-`days`<br>-`firstDayOfWeek` (optional)|An appointment occurs on **Tue** and **Thu** *{`days`}* every **2** *{`interval`}* weeks.|
+|`yearly`|-`interval`<br>-`dayOfMonth`<br>-`dayOfWeek`<br>-`weekNumber`<br>-`month`|An appointment occurs on day **7** *{`dayOfMonth`}* of **Sep** *{`month`}* every **4** *{`interval`}* years.<br>An appointment occurs on the **First** *{`weekNumber`}* **Thu** *{`dayOfWeek`}* of **Sep** *{`month`}* every **2** *{`interval`}* years.|
 
 ##### Type:
 
@@ -83,7 +83,7 @@ Gets or set the type of the recurrence.
 
 #### seriesTime :[seriesTime](seriestime.md)
 
-This object enables you to manage the start and end dates and times of the series and of each recurrence. **This is not in UTC time.** It is set in the time zone specified by the [recurrenceTimeZone](#recurrencetimezone-recurrencetimezone) value or defaulted to the item's time zone.
+This object enables you to manage the start and end dates of the recurring appointment series and the usual start and end times of instances but for the recurring meeting series you can only get these dates and times. **This object is not in UTC time.** Instead, it is set in the time zone specified by the [recurrenceTimeZone](#recurrencetimezone-recurrencetimezone) value or defaulted to the item's time zone.
 
 ##### Type:
 
@@ -101,9 +101,9 @@ This object enables you to manage the start and end dates and times of the serie
 
 #### getAsync([options], [callback])
 
-Returns the current recurrence object.
+Returns the current recurrence object of a meeting/appointment series.
 
-This method returns the entire recurrence object.
+This method returns the entire recurrence object for the meeting/appointment series.
 
 ##### Parameters:
 
@@ -142,7 +142,7 @@ Recurrence = {"recurrenceType": "weekly","recurrenceProperties": {"interval": 2,
 
 ####  setAsync(recurrencePattern, [options], [callback])
 
-Sets the recurrence pattern of an appointment.
+Sets the recurrence pattern of an appointment series.
 
 ##### Parameters:
 
@@ -157,7 +157,7 @@ Sets the recurrence pattern of an appointment.
 
 |Error code|Description|
 |------------|-------------|
-|`InvalidEndTime`|The appointment end time is before the appointment start time.|
+|`InvalidEndTime`|The appointment end time is before its start time.|
 
 ##### Requirements
 
@@ -167,7 +167,7 @@ Sets the recurrence pattern of an appointment.
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadWriteItem|
 |Applicable Outlook mode|Compose|
 
-> Note: `setAsync` should only be available for series items and not occurrence items.
+> Note: `setAsync` should only be available for series items and not instance items.
 
 ##### Examples
 
@@ -186,16 +186,3 @@ Office.context.mailbox.item.recurrence.setAsync(pattern, options, callback);
  
 //Result: This created a recurring event from November 2, 2017 to December 2, 2017 at 10:30 A.M. to 11 A.M. PST every Tuesday and Thursday.
 ```
-
-### Errors
-
-|Error|Error message|Description|
-|---|---|---|
-|Sys.ArgumentTypeException|Object of type {the type of the incorrect parameter} cannot be converted to type '{the type of the correct parameter}'. Parameter name: {parameter name}<br><br>Example: Object of type 'String' cannot be converted to type 'Date'. Parameter name: startDate|This occurs when the wrong argument type is given. For example, a string is given instead of a datetime object.|
-|Invalid Value|The end date cannot be before the start date.|When the user specifies an end date that is before the start date.|
-|Permission Denied|A recurrence pattern cannot be set at an instance level.|When an add-in calls recurrence.setAsync on an instance item.|
-|Sys.ArgumentException|Value does not fall within the expected range. Parameter name: {parameter name}.<br><br>Example: Value does not fall within the expected range. Parameter name: dayOfWeek|When the add-in uses an incorrect value as a parameter for an enum like dayOfWeek, weekNumber, type, days, or month.|
-|Invalid Value|The recurrence pattern is invalid. Double check that the specified recurrence properties aligns with the recurrence type.|When the add-in uses an incorrect recurrence pattern. For example, they use Daily but specify Weekday or the user specifies Monthly then uses dayOfMonth and dayOfWeek.|
-|Missing Parameter|The recurrence object could not be created because some parameter values are missing.|When the add-in tries to set the recurrence pattern but does not include necessary parameters. For example, the recurrence type is daily but the Interval parameter is missing.|
-|Invalid Value|The specified time zone is not supported.|When the add-in tries to set the time zone of a recurrence pattern but enters a string that does not match one of the supported time zones.|
-|Invalid Value|The recurrence pattern was set by the user using an alternate calendar that is not supported.|When the user uses an alternate calendar to set recurrence such as a lunar calendar.|
