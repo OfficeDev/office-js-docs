@@ -558,13 +558,13 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 #### (nullable) recurrence :[Recurrence](recurrence.md)
 
-Gets or sets the recurrence pattern of an appointment. Read and compose modes for appointment items. Read mode for meeting request items.
+Gets or sets the recurrence pattern of an appointment. Gets the recurrence pattern of a meeting request. Read and compose modes for appointment items. Read mode for meeting request items.
 
 The `recurrence` property returns a [recurrence](recurrence.md) object for recurring appointments or meetings requests if an item is a series or an occurrence in a series. `null` is returned for single appointments and meeting requests of single appointments. `undefined` is returned for messages that are not meeting requests.
 
 > Note: Meeting requests have an `itemClass` value of IPM.Schedule.Meeting.Request.
 
-> Note: if the recurrence object is `null`, this indicates that the object is a single appointment or a meeting request of a single appointment and NOT a part of a series.
+> Note: If the recurrence object is `null`, this indicates that the object is a single appointment or a meeting request of a single appointment and NOT a part of a series.
 
 ##### Type:
 
