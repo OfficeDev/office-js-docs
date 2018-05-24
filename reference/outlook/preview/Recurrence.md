@@ -81,13 +81,13 @@ Gets or sets the type of the recurring appointment series.
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |Applicable Outlook mode|Compose or read|
 
-#### seriesTime :[seriesTime](seriestime.md)
+#### seriesTime :[seriesTime](SeriesTime.md)
 
 This object enables you to manage the start and end dates of the recurring appointment series and the usual start and end times of instances. **This object is not in UTC time.** Instead, it is set in the time zone specified by the [recurrenceTimeZone](#recurrencetimezone-recurrencetimezone) value or defaulted to the item's time zone.
 
 ##### Type:
 
-* [seriesTime](seriestime.md)
+* [seriesTime](SeriesTime.md)
 
 ##### Requirements
 
@@ -148,7 +148,7 @@ Sets the recurrence pattern of an appointment series.
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`recurrencePattern`|[Recurrence](recurrence.md)||A recurrence object.|
+|`recurrencePattern`|[Recurrence](Recurrence.md)||A recurrence object.|
 |`options`|Object|&lt;optional&gt;|An object literal that contains one or more of the following properties.|
 |`options.asyncContext`|Object|&lt;optional&gt;|Developers can provide any object they wish to access in the callback method.|
 |`callback`|function|&lt;optional&gt;|When the method completes, the function passed in the `callback` parameter is called with a single parameter, `asyncResult`, which is an [`AsyncResult`](simple-types.md#asyncresult) object.|
