@@ -19,8 +19,10 @@ An object which encapsulates the result of an asynchronous request, including st
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|Applicable Outlook mode| Compose or read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|Applicable Outlook mode|Compose or read|
+
+
 #### AttachmentDetails
 
 Represents an attachment on an item from the server. Read mode only.
@@ -31,7 +33,7 @@ An array of `AttachmentDetail` objects is returned as the `attachments` property
 
 |Name| Type| Description|
 |---|---|---|
-|`attachmentType`| [Office.MailboxEnums.AttachmentType](Office.MailboxEnums.md#attachmenttype-string)|Gets a value that indicates the type of an attachment.|
+|`attachmentType`|[Office.MailboxEnums.AttachmentType](Office.MailboxEnums.md#attachmenttype-string)|Gets a value that indicates the type of an attachment.|
 |`contentType`| String|Gets the MIME content type of the attachment.|
 |`id`| String|Gets the Exchange attachment ID of the attachment.|
 |`isInline`| Boolean|Gets a value that indicates whether the attachment should be displayed in the body of the item.|
@@ -42,9 +44,11 @@ An array of `AttachmentDetail` objects is returned as the `attachments` property
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Read|
+
+
 #### Contact
 
 Represents a contact stored on the server. Read mode only.
@@ -66,9 +70,11 @@ The list of contacts associated with an email message or appointment is returned
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|Restricted|
+|Applicable Outlook mode|Read|
+
+
 ####  EmailAddressDetails
 
 Provides the email properties of the sender or specified recipients of an email message or appointment.
@@ -90,9 +96,11 @@ Provides the email properties of the sender or specified recipients of an email 
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Compose or read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Compose or read|
+
+
 #### EmailUser
 
 Represents an email account on an Exchange Server.
@@ -108,9 +116,10 @@ Represents an email account on an Exchange Server.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Read|
+
 
 #### Entities
 
@@ -144,9 +153,11 @@ When the property arrays are returned by the `getEntitiesByType` method, only th
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Read|
+
+
 #### LocalClientTime
 
 Represents a date and time in the local client's time zone. Read mode only.
@@ -168,9 +179,11 @@ Represents a date and time in the local client's time zone. Read mode only.
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Read|
+
+
 #### MeetingSuggestion
 
 Represents a suggested meeting found in an item. Read mode only.
@@ -194,9 +207,11 @@ The `start` and `end` values are string representations of a Date object that co
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Read|
+
+
 ####  NotificationMessageDetails
 
 An array of `NotificationMessageDetails` objects are returned by the [`NotificationMessages.getAllAsync`](NotificationMessages.md#getallasyncoptions-callback) method.
@@ -219,9 +234,11 @@ An array of `NotificationMessageDetails` objects are returned by the [`Notificat
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.3|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Compose or read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.3|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Compose or read|
+
+
 #### PhoneNumber
 
 Represents a phone number identified in an item. Read mode only.
@@ -244,9 +261,66 @@ An array of `PhoneNumber` objects containing the phone numbers found in an email
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Read|
+
+
+#### RecurrenceProperties
+
+Gets or sets the properties of the recurrence.
+
+##### Type:
+
+* Object
+
+##### Properties:
+
+|Name|Type|Description|
+|---|---|---|
+|`interval`|Integer|Represents the period between instances of the same recurring series.|
+|`dayOfMonth`|Integer|Represents the day of the month.|
+|`dayOfWeek`|[Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the day of the week or type of day, for example, weekend day vs weekday.|
+|`days`|Array of [Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the set of days for this recurrence. Valid values are: `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, and `Sun`.|
+|`weekNumber`|[Office.MailboxEnums.WeekNumber](Office.MailboxEnums.md#weeknumber-string)|Represents the number of the week in the selected month e.g. `first` for first week of the month.|
+|`month`|[Office.MailboxEnums.Month](Office.MailboxEnums.md#month-string)|Represents the month.|
+|`firstDayOfWeek`|[Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents your chosen first day of the week otherwise the default is the value in the current user's settings. Valid values are: `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, and `Sun`.|
+
+##### Requirements
+
+|Requirement|Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Compose or read|
+
+
+#### RecurrenceTimeZone
+
+Represents the time zone applied to the recurrence.
+
+> **Note:** If you include the offset but it is not valid given the name, then the offset is ignored.
+
+Type:
+
+* Object
+
+##### Properties:
+
+|Name|Type|Attributes|Description|
+|---|---|---|---|
+|`name`|[Office.MailboxEnums.RecurrenceTimeZone](Office.MailboxEnums.md#recurrencetimezone-string)||Represents the Windows time zone. For example: "Pacific Standard Time" or Microsoft.Office.WebExtension.MailboxEnums.RecurrenceTimeZone.|
+|`offset`|Number|&lt;optional&gt;|Integer value representing the number of minutes difference between the local time zone and UTC.|
+
+##### Requirements
+
+|Requirement| Value|
+|---|---|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|Preview|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Compose or read|
+
+
 #### TaskSuggestion
 
 Represents a suggested task identified in an item. Read mode only.
@@ -264,6 +338,6 @@ The list of tasks suggested in an email message is returned in the `taskSuggesti
 
 |Requirement| Value|
 |---|---|
-|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)| 1.0|
-|[Minimum permission level](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
-|Applicable Outlook mode| Read|
+|[Minimum mailbox requirement set version](../tutorial-api-requirement-sets.md)|1.0|
+|[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
+|Applicable Outlook mode|Read|
