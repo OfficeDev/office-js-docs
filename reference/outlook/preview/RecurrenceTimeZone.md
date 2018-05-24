@@ -1,6 +1,6 @@
 # RecurrenceTimeZone
 
-### [Office.MailboxEnums](office.mailboxenums.md). RecurrenceTimeZone
+### [Office.MailboxEnums](Office.MailboxEnums.md). RecurrenceTimeZone
 
 #### RecurrenceTimeZone :String
 

@@ -227,7 +227,7 @@ RecurrenceTimeZone
 
 ##### Properties:
 
-For the full list of properties, please see [RecurrenceTimeZone enum](recurrencetimezone.md).
+For the full list of properties, please see [RecurrenceTimeZone enum](RecurrenceTimeZone.md).
 
 ##### Requirements
 
