@@ -77,9 +77,10 @@ Specifies the event associated with an event handler.
 
 ##### Properties:
 
-| Name | Type | Description |
+| Name | Type | Description | Minimum requirement set |
 |---|---|---|
-|`ItemChanged`| String | The selected item has changed. |
+|`ItemChanged`| String | The selected item has changed. | 1.5 |
+|`RecurrencePatternChanged`| String | The recurrence pattern of the selected series has changed. | Preview |
 
 ##### Requirements
 
