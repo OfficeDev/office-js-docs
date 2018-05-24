@@ -2,7 +2,7 @@
 
 # SeriesTime
 
-The `seriesTime` object provides methods to get and set the dates and times of appointments in a recurring series and to get the dates and times of meeting requests in a recurring series.
+The `seriesTime` object provides methods to get and set the dates and times of appointments in a recurring series and get the dates and times of meeting requests in a recurring series.
 
 ##### Requirements
 
@@ -16,11 +16,11 @@ The `seriesTime` object provides methods to get and set the dates and times of a
 
 #### getDuration() → {Integer}
 
-Gets the duration in minutes of a usual instance in a recurring appointment or meeting request series.
+Gets the duration in minutes of a usual instance in a recurring appointment series.
 
 ##### Examples
 
-This example gets the duration of a usual instance in a recurring appointment or meeting request series.
+This example gets the duration of a usual instance in a recurring appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -46,7 +46,7 @@ Gets the end date of a recurrence pattern in the following [ISO 8601](https://ww
 
 ##### Examples
 
-This example gets the end date of a recurring appointment or meeting request series.
+This example gets the end date of a recurring appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -72,7 +72,7 @@ Gets the end time of a usual appointment or meeting request instance of a recurr
 
 ##### Examples
 
-This example gets the end time of a usual instance in a recurring appointment or meeting request series.
+This example gets the end time of a usual instance in a recurring appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -98,7 +98,7 @@ Gets the start date of a recurrence pattern in the following [ISO 8601](https://
 
 ##### Examples
 
-This example gets the start date of a recurring appointment or meeting request series.
+This example gets the start date of a recurring appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -119,12 +119,12 @@ function callback(asyncResult){
 
 #### getStartTime() → {String}
 
-Gets the start time of a usual appointment or meeting request instance of a recurrence pattern in whichever time zone that the user/add-in set the recurrence pattern using the following ISO 8601 format:
+Gets the start time of a usual appointment instance of a recurrence pattern in whichever time zone that the user/add-in set the recurrence pattern using the following ISO 8601 format:
 "THH:mm:ss:mmm"
 
 ##### Examples
 
-This example gets the start time of a usual instance in a recurring appointment or meeting request series.
+This example gets the start time of a usual instance in a recurring appointment series.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
