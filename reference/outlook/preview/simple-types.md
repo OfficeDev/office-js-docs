@@ -278,7 +278,7 @@ Gets or sets the properties of the recurrence.
 
 |Name|Type|Description|
 |---|---|---|
-|`interval`|Integer|Represents the period between recurrences of the same meeting or appointment series.|
+|`interval`|Integer|Represents the period between instances of the same recurring series.|
 |`dayOfMonth`|Integer|Represents the day of the month.|
 |`dayOfWeek`|[Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the day of the week or type of day, for example, weekend day vs weekday.|
 |`days`|Array of [Office.MailboxEnums.Days](Office.MailboxEnums.md#days-string)|Represents the set of days for this recurrence. Valid values are: `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, and `Sun`.|

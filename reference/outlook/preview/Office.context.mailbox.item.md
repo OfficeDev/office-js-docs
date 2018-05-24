@@ -560,7 +560,7 @@ var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 
 Gets or sets the recurrence pattern of an appointment. Gets the recurrence pattern of a meeting request. Read and compose modes for appointment items. Read mode for meeting request items.
 
-The `recurrence` property returns a [recurrence](recurrence.md) object for recurring appointments or meetings requests if an item is a series or an occurrence in a series. `null` is returned for single appointments and meeting requests of single appointments. `undefined` is returned for messages that are not meeting requests.
+The `recurrence` property returns a [recurrence](recurrence.md) object for recurring appointments or meetings requests if an item is a series or an instance in a series. `null` is returned for single appointments and meeting requests of single appointments. `undefined` is returned for messages that are not meeting requests.
 
 > Note: Meeting requests have an `itemClass` value of IPM.Schedule.Meeting.Request.
 
@@ -641,7 +641,7 @@ var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 
 #### (nullable) seriesId :String
 
-Gets the id of the series that an occurrence belongs to.
+Gets the id of the series that an instance belongs to.
 
 In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to. However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.
 

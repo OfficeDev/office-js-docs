@@ -2,7 +2,7 @@
 
 # Recurrence
 
-The `recurrence` object provides methods to get and set the recurrence pattern of appointments but only to get the recurrence pattern of meeting requests. It will have a dictionary with the following keys: `seriesTime`, `recurrenceType`, `recurrenceProperties`, and `recurrenceTimeZone` (optional).
+The `recurrence` object provides methods to get and set the recurrence pattern of appointments but only get the recurrence pattern of meeting requests. It will have a dictionary with the following keys: `seriesTime`, `recurrenceType`, `recurrenceProperties`, and `recurrenceTimeZone` (optional).
 
 ##### Requirements
 
@@ -27,7 +27,7 @@ The `recurrence` object provides methods to get and set the recurrence pattern o
 
 #### recurrenceProperties :[RecurrenceProperties](simple-types.md#recurrenceproperties)
 
-Gets or sets the properties of the recurring appointment series. Gets the properties of the recurring meeting series.
+Gets or sets the properties of the recurring appointment series.
 
 ##### Type:
 
@@ -43,7 +43,7 @@ Gets or sets the properties of the recurring appointment series. Gets the proper
 
 #### recurrenceTimeZone :[RecurrenceTimeZone](simple-types.md#recurrencetimezone)
 
-Gets or sets the time zone of the recurring appointment series. Gets the time zone of the recurring meeting series.
+Gets or sets the time zone of the recurring appointment series
 
 ##### Type:
 
@@ -59,7 +59,7 @@ Gets or sets the time zone of the recurring appointment series. Gets the time zo
 
 #### recurrenceType :[Office.MailboxEnums.RecurrenceType](Office.MailboxEnums.md#recurrencetype-string)
 
-Gets or sets the type of the recurring appointment series. Gets the type of the recurring meeting series.
+Gets or sets the type of the recurring appointment series.
 
 |[Recurrence type](Office.MailboxEnums.md#recurrencetype-string)|Applicable [recurrence properties](simple-types.md#recurrenceproperties)|Description|
 |---|---|---|
@@ -83,7 +83,7 @@ Gets or sets the type of the recurring appointment series. Gets the type of the 
 
 #### seriesTime :[seriesTime](seriestime.md)
 
-This object enables you to manage the start and end dates of the recurring appointment series and the usual start and end times of instances but for the recurring meeting series you can only get these dates and times. **This object is not in UTC time.** Instead, it is set in the time zone specified by the [recurrenceTimeZone](#recurrencetimezone-recurrencetimezone) value or defaulted to the item's time zone.
+This object enables you to manage the start and end dates of the recurring appointment series and the usual start and end times of instances. **This object is not in UTC time.** Instead, it is set in the time zone specified by the [recurrenceTimeZone](#recurrencetimezone-recurrencetimezone) value or defaulted to the item's time zone.
 
 ##### Type:
 
@@ -101,9 +101,9 @@ This object enables you to manage the start and end dates of the recurring appoi
 
 #### getAsync([options], [callback])
 
-Returns the current recurrence object of a meeting/appointment series.
+Returns the current recurrence object of an appointment series.
 
-This method returns the entire recurrence object for the meeting/appointment series.
+This method returns the entire recurrence object for the appointment series.
 
 ##### Parameters:
 
