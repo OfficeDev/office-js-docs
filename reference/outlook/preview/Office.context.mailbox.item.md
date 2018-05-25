@@ -647,7 +647,7 @@ Gets the id of the series that an instance belongs to.
 
 In OWA and Outlook, the `seriesId` returns the Exchange Web Services (EWS) ID of the parent (series) item that this item belongs to. However, in iOS and Android, the `seriesId` returns the REST ID of the parent item.
 
-> **Note:** The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier. The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](Office.context.mailbox.md). For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api).
+> **Note:** The identifier returned by the `seriesId` property is the same as the Exchange Web Services item identifier. The `seriesId` property is not identical to the Outlook IDs used by the Outlook REST API. Before making REST API calls using this value, it should be converted using [Office.context.mailbox.convertToRestId](Office.context.mailbox.md#converttorestiditemid-restversion--string). For more details, see [Use the Outlook REST APIs from an Outlook add-in](https://docs.microsoft.com/outlook/add-ins/use-rest-api).
 
 The `seriesId` property returns `null` for items that do not have parent items such as single appointments, series items, or meeting requests and returns `undefined` for any other items that are not meeting requests.
 
@@ -883,7 +883,7 @@ Currently the only supported event type is `Office.EventType.RecurrencePatternCh
 
 | Name | Type | Attributes | Description |
 |---|---|---|---|
-| `eventType` | [Office.EventType](Office.md#EventType) || The event that should invoke the handler. |
+| `eventType` | [Office.EventType](Office.md#eventtype-string) || The event that should invoke the handler. |
 | `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `addHandlerAsync`. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
 | `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
@@ -1734,7 +1734,7 @@ Currently the only supported event type is `Office.EventType.RecurrencePatternCh
 
 | Name | Type | Attributes | Description |
 |---|---|---|---|
-| `eventType` | [Office.EventType](Office.md#EventType) || The event that should invoke the handler. |
+| `eventType` | [Office.EventType](Office.md#eventtype-string) || The event that should invoke the handler. |
 | `handler` | Function || The function to handle the event. The function must accept a single parameter, which is an object literal. The `type` property on the parameter will match the `eventType` parameter passed to `removeHandlerAsync`. |
 | `options` | Object | &lt;optional&gt; | An object literal that contains one or more of the following properties. |
 | `options.asyncContext` | Object | &lt;optional&gt; | Developers can provide any object they wish to access in the callback method. |
