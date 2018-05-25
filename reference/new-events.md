@@ -14,7 +14,7 @@
 | Worksheet | onCalculated | Occurs when the workbook has finished calculation. | [WorsheetCalculatedEventArgs](/reference/excel/worksheetcalculatedeventargs.md) |
  WorksheetCollection | onCalculated | Occurs when all the worksheets of the workbook have finished calculation. | [WorsheetCalculatedEventArgs](/reference/excel/worksheetcalculatedeventargs.md) |
 
-## Upcoming Events to be preivewed
+## Upcoming Events to be previewed
 
 | Object | Event | Description | Event Argument |
 |:----|:----|:----|:---|
