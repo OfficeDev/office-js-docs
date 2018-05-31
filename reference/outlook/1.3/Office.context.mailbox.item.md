@@ -1260,7 +1260,7 @@ var fruits = allMatches.fruits;
 var veges = allMatches.veggies;
 ```
 
-#### getRegExMatchesByName(name) → (nullable) {Array.<(String)>}
+#### getRegExMatchesByName(name) → (nullable) {Array.< String >}
 
 Returns string values in the selected item that match the named regular expression defined in the manifest XML file.
 
@@ -1292,7 +1292,7 @@ An array that contains the strings that match the regular expression defined in 
 
 <dt>Type</dt>
 
-<dd>Array.<(String)></dd>
+<dd>Array.< String ></dd>
 
 </dl>
 
