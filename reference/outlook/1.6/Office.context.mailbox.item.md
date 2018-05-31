@@ -1365,7 +1365,7 @@ An array that contains the strings that match the regular expression defined in 
 
 <dt>Type</dt>
 
-<dd>Array.< String ></dd>
+<dd>Array.&ltString&gt</dd>
 
 </dl>
 
