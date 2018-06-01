@@ -246,8 +246,8 @@ Sets the start time of all instances of a recurring appointment series in whiche
 
 |Name|Type|Attributes|Description|
 |---|---|---|---|
-|`hours`|Integer||The `hour` value of the start time. Valid range: 0-24.|
-|`minutes`|Integer||The `minute` value of the start time. Valid range: 0-59.|
+|`hours`|Integer||The hour value of the start time. Valid range: 0-24.|
+|`minutes`|Integer||The minute value of the start time. Valid range: 0-59.|
 
 ##### Requirements
 
