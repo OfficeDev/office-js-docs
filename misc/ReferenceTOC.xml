@@ -627,8 +627,8 @@
 			<Item text="addHandlerAsync" url="shared/settings.addhandlerasync" FriendlyUrl="reference/common/settingssettings.addhandlerasync" Scope="excel" SEODescription="Adds an event handler for the settingsChanged event." />
 			<Item text="get" url="shared/settings.get" FriendlyUrl="reference/common/settingssettings.get"   SEODescription="Retrieves the specified setting." />
 			<Item text="refreshAsync" url="shared/settings.refreshasync" FriendlyUrl="reference/common/settingssettings.refreshasync"   SEODescription="Reads all settings persisted in the document and refreshes the add-in's copy of those settings held in memory." />
-			<Item text="removeHandlerAsync" url="shared/settings.remove" FriendlyUrl="reference/common/settingssettings.remove"   SEODescription="Removes an event handler for the settingsChanged event." />
-			<Item text="remove" url="shared/settings.removehandlerasync" FriendlyUrl="reference/common/settingssettings.removehandlerasync" SEODescription="Removes the specified setting." />
+			<Item text="removeHandlerAsync" url="shared/settings.removehandlerasync" FriendlyUrl="reference/common/settingssettings.removehandlerasync"   SEODescription="Removes an event handler for the settingsChanged event." />
+			<Item text="remove" url="shared/settings.remove" FriendlyUrl="reference/common/settingssettings.remove" SEODescription="Removes the specified setting." />
 			<Item text="saveAsync" url="shared/settings.saveasync" FriendlyUrl="reference/common/settingssettings.saveasync"   />
 			<Item text="set" url="shared/settings.set" FriendlyUrl="reference/common/settingssettings.set"   SEODescription="Sets or creates the settings." />
 			<Item text="settingsChanged event" url="shared/settings.settingschangedevent" FriendlyUrl="reference/common/settings/settingschanged-eventsettings.settingschangedevent" SEODescription="Occurs when a setting is changed." />
