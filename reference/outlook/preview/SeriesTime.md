@@ -2,7 +2,7 @@
 
 # SeriesTime
 
-The `seriesTime` object provides methods to get and set the dates and times of appointments in a recurring series and get the dates and times of meeting requests in a recurring series.
+The `SeriesTime` object provides methods to get and set the dates and times of appointments in a recurring series and get the dates and times of meeting requests in a recurring series.
 
 ##### Requirements
 
@@ -166,7 +166,7 @@ Sets the duration of all appointments in a recurrence pattern. This will also ch
 This example sets the duration of each appointment in a recurring series to 2 hours.
 
 ```js
-var seriesTimeObject = new seriesTime()
+var seriesTimeObject = new SeriesTime()
 seriesTimeObject.setDuration(120);
 ```
 
@@ -195,7 +195,7 @@ Sets the end date of a recurring appointment series.
 This example sets the end date of a recurring appointment series to November 2, 2017.
 
 ```js
-var seriesTimeObject = new seriesTime()
+var seriesTimeObject = new SeriesTime()
 seriesTimeObject.setEndDate(2017, 10, 2);
 ```
 
@@ -228,7 +228,7 @@ Sets the end date of a recurring appointment series.
 This example sets the end date of a recurring appointment series to November 2, 2017.
 
 ```js
-var seriesTimeObject = new seriesTime()
+var seriesTimeObject = new SeriesTime()
 seriesTimeObject.setEndDate("2017-11-02");
 ```
 
@@ -262,14 +262,14 @@ Sets the start time of all instances of a recurring appointment series in whiche
 This example sets the start time of each instance of a recurring appointment series to 1:30 PM.
 
 ```js
-var seriesTimeObject = new seriesTime()
+var seriesTimeObject = new SeriesTime()
 seriesTimeObject.setStartTime(13, 30);
 ```
 
 This example sets the start time of each instance of a recurring appointment series to 11:30 AM.
 
 ```js
-var seriesTimeObject = new seriesTime()
+var seriesTimeObject = new SeriesTime()
 seriesTimeObject.setStartTime(11, 30);
 ```
 
@@ -302,7 +302,7 @@ Sets the start time of all instances of a recurring appointment series in whiche
 This example sets the start time of all instances of a recurring appointment series to 11:30 PM.
 
 ```js
-var seriesTimeObject = new seriesTime()
+var seriesTimeObject = new SeriesTime()
 seriesTimeObject.setStartTime("T23:30:00");
 ```
 
@@ -337,7 +337,7 @@ Sets the start date of a recurring appointment series.
 This example sets the start date of a recurring appointment series to November 2, 2017.
 
 ```js
-var seriesTimeObject = new seriesTime()
+var seriesTimeObject = new SeriesTime()
 seriesTimeObject.setStartDate(2017, 10, 2);
 ```
 
@@ -370,7 +370,7 @@ Sets the start date of a recurring appointment series.
 This example sets the start date of a recurring appointment series to November 2, 2017.
 
 ```js
-var seriesTimeObject = new seriesTime()
+var seriesTimeObject = new SeriesTime()
 seriesTimeObject.setStartDate("2017-11-02");
 ```
 
