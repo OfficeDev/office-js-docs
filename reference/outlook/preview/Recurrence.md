@@ -81,13 +81,13 @@ Gets or sets the type of the recurring appointment series.
 |[Minimum permission level](https://docs.microsoft.com/outlook/add-ins/understanding-outlook-add-in-permissions)|ReadItem|
 |Applicable Outlook mode|Compose or read|
 
-#### seriesTime :[seriesTime](SeriesTime.md)
+#### seriesTime :[SeriesTime](SeriesTime.md)
 
 This object enables you to manage the start and end dates of the recurring appointment series and the usual start and end times of instances. **This object is not in UTC time.** Instead, it is set in the time zone specified by the [recurrenceTimeZone](#recurrencetimezone-recurrencetimezone) value or defaulted to the item's time zone.
 
 ##### Type:
 
-* [seriesTime](SeriesTime.md)
+* [SeriesTime](SeriesTime.md)
 
 ##### Requirements
 
@@ -174,7 +174,7 @@ Sets the recurrence pattern of an appointment series.
 The following example sets the recurrence pattern of an appointment series.
 
 ```js
-var seriesTimeObject = new seriesTime(); 
+var seriesTimeObject = new SeriesTime(); 
 seriesTimeObject.setStartDate(2017,11,2);  
 seriesTimeObject.setEndDate(2017,12,2); 
 seriesTimeObject.setStartTime(10,30); 

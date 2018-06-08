@@ -212,7 +212,6 @@
 		<Item text="WorksheetSelectionChangedEventArgs" url="excel/worksheetselectionchangedeventargs" SEODescription="Provides information about the binding that raised the WorksheetSelectionChanged event." />
 		<Item text="Excel JavaScript API requirement sets" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Find information about the Excel requirement sets, the Office host applications that support each requirement set, and the build or version numbers for those applications." />
 	</Item>
-	<Item text="Excel Custom Functions Registration JSON" url="custom-functions-json" Scope="excel" SEODescription="Provides reference for Excel custom functions registration metadata." />
 	<Item text="Outlook" url="outlook" Scope="outlook">
 		<Item text="Understanding API requirement sets" url="outlook/tutorial-api-requirement-sets" Scope="outlook" SEODescription="API Requirement Sets for Outlook" />
 		<Item text="Preview Requirement Set" url="outlook/preview/index" Scope="outlook" Version="Preview">
@@ -635,8 +634,8 @@
 			<Item text="addHandlerAsync" url="shared/settings.addhandlerasync" FriendlyUrl="reference/common/settingssettings.addhandlerasync" Scope="excel" SEODescription="Adds an event handler for the settingsChanged event." />
 			<Item text="get" url="shared/settings.get" FriendlyUrl="reference/common/settingssettings.get"   SEODescription="Retrieves the specified setting." />
 			<Item text="refreshAsync" url="shared/settings.refreshasync" FriendlyUrl="reference/common/settingssettings.refreshasync"   SEODescription="Reads all settings persisted in the document and refreshes the add-in's copy of those settings held in memory." />
-			<Item text="removeHandlerAsync" url="shared/settings.remove" FriendlyUrl="reference/common/settingssettings.remove"   SEODescription="Removes an event handler for the settingsChanged event." />
-			<Item text="remove" url="shared/settings.removehandlerasync" FriendlyUrl="reference/common/settingssettings.removehandlerasync" SEODescription="Removes the specified setting." />
+			<Item text="removeHandlerAsync" url="shared/settings.removehandlerasync" FriendlyUrl="reference/common/settingssettings.removehandlerasync"   SEODescription="Removes an event handler for the settingsChanged event." />
+			<Item text="remove" url="shared/settings.remove" FriendlyUrl="reference/common/settingssettings.remove" SEODescription="Removes the specified setting." />
 			<Item text="saveAsync" url="shared/settings.saveasync" FriendlyUrl="reference/common/settingssettings.saveasync"   />
 			<Item text="set" url="shared/settings.set" FriendlyUrl="reference/common/settingssettings.set"   SEODescription="Sets or creates the settings." />
 			<Item text="settingsChanged event" url="shared/settings.settingschangedevent" FriendlyUrl="reference/common/settings/settingschanged-eventsettings.settingschangedevent" SEODescription="Occurs when a setting is changed." />

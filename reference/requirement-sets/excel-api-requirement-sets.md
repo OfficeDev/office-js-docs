@@ -27,7 +27,7 @@ For more information about versions, build numbers, and Office Online Server, se
 - [Where you can find the version and build number for an Office 365 client application](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
 - [Office Online Server overview](https://docs.microsoft.com/officeonlineserver/office-online-server-overview)
 
-##  Excel JavaScript API 1.7 GA
+##  What's new in Excel JavaScript API 1.7
 
 The Excel JavaScript API requirement set 1.7 features include APIs for charts, events, data validation, worksheets, ranges, document properties, named items, protection options and styles.
 
