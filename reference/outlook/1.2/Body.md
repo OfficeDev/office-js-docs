@@ -40,7 +40,7 @@ The content type is returned as one of the [CoercionType](Office.md#coerciontype
 
 Adds the specified content to the beginning of the item body.
 
-The `prependAsync` method inserts the specified string at the beginning of the item body. After insertion, the cursor is returned to it's original place, relative to the inserted content.
+The `prependAsync` method inserts the specified string at the beginning of the item body. After insertion, the cursor is returned to its original place, relative to the inserted content.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 

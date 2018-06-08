@@ -86,7 +86,7 @@ Gets a value that indicates whether the content is in HTML or text format.
 
 Adds the specified content to the beginning of the item body.
 
-The `prependAsync` method inserts the specified string at the beginning of the item body. After insertion, the cursor is returned to it's original place, relative to the inserted content.
+The `prependAsync` method inserts the specified string at the beginning of the item body. After insertion, the cursor is returned to its original place, relative to the inserted content.
 
 When including links in HTML markup, you can disable online link preview by setting the `id` attribute on the anchor (`<a>`) to `LPNoLP`. For example:
 
