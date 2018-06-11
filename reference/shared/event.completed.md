@@ -1,6 +1,7 @@
 
 
 # event.completed
+
 The callback that the add-in invokes to let Office know that the operation is done.
 
 ****
@@ -52,7 +53,6 @@ A capital Y in the following table indicates that this property is supported in 
 
 For more information about Office host application and server requirements, see [Requirements for running Office Add-ins](https://docs.microsoft.com/office/dev/add-ins/concepts/requirements-for-running-office-add-ins).
 
- **Important:** Add-in commands and the APIs associated with them currently work only in Outlook in [Office 2016 Preview](https://products.office.com/office-2016-preview) on Windows desktop.
 
 **Supported hosts, by platform**
 

@@ -2,7 +2,7 @@
 # officeTheme.bodyForegroundColor property
 Gets the Office theme body foreground color.
 
- **Important:** This API currently works only in Excel, Outlook, PowerPoint, and Word in [Office 2016 Preview](https://products.office.com/office-2016-preview) on Windows desktop.
+
 
 
 |||

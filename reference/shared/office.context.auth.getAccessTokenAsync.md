@@ -1,9 +1,7 @@
 # auth.getAccessTokenAsync method
 Requests an authentication Token for the user currently signed into Office.
 
-> **Important:** This API currently works only in Excel, Outlook, PowerPoint, Word, and OneNote in [Office 2016 Preview](https://products.office.com/office-2016-preview).
-> 
-> In Outlook, this API is not supported if the add-in is loaded in an Outlook.com or Gmail mailbox.
+> **Important:** In Outlook, this API is not supported if the add-in is loaded in an Outlook.com or Gmail mailbox.
 
 ## Requirements
 
