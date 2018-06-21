@@ -603,7 +603,7 @@ bodyObject.search(searchText, searchOptions);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|searchText|string|Required. The search text.|
+|searchText|string|Required. The search text. Can be a maximum of 255 characters.|
 |searchOptions|[SearchOptions]|Optional. Options for the search.|
 
 #### Returns
