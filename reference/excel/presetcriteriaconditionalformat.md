@@ -1,6 +1,6 @@
 # PresetCriteriaConditionalFormat Object (JavaScript API for Excel)
 
-Represents the the preset criteria conditional format such as above averagebelow averageunique valuescontains blanknonblankerrornoerror.
+Represents the the preset criteria conditional format such as above average, below average, unique values, contains blank, nonblank, error, and noerror.
 
 ## Properties
 

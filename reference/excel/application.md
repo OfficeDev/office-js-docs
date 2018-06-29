@@ -6,21 +6,25 @@ Represents the Excel application that manages the workbook.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|calculationMode|string|Returns the calculation mode used in the workbook. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|calculationEngineVersion|int|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|[ApiSet.InProgressFeatures.CalcWave2](../requirement-sets/excel-api-requirement-sets.md)|
+|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|calculationState|string|Returns a CalculationState that indicates the calculation state of the application. Read-only.|[ApiSet.InProgressFeatures.CalcWave2](../requirement-sets/excel-api-requirement-sets.md)|
+|iterativeCalculation|[IterativeCalculation](iterativecalculation.md)|Returns the Iterative Calculation settings. Read-only.|[ApiSet.InProgressFeatures.IterativeCalculation](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[createWorkbook(base64File: string)](#createworkbookbase64file-string)|[WorkbookCreated](workbookcreated.md)|Creates a new hidden workbook by using an optional base64 encoded .xlsx file.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[createWorkbook(base64File: string)](#createworkbookbase64file-string)|[WorkbookCreated](workbookcreated.md)|Creates a new hidden workbook by using an optional base64 encoded .xlsx file.|[ApiSet.InProgressFeatures.CreateWorkbook](../requirement-sets/excel-api-requirement-sets.md)|
 |[suspendApiCalculationUntilNextSync()](#suspendapicalculationuntilnextsync)|void|Suspends calculation until the next "context.sync()" is called. Once set, it is the developer's responsibility to re-calc the workbook, to ensure that any dependencies are propagated.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[suspendScreenUpdatingUntilNextSync()](#suspendscreenupdatinguntilnextsync)|void|Suspends sceen updating until the next "context.sync()" is called.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -76,6 +80,20 @@ Suspends calculation until the next "context.sync()" is called. Once set, it is 
 #### Syntax
 ```js
 applicationObject.suspendApiCalculationUntilNextSync();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
+### suspendScreenUpdatingUntilNextSync()
+Suspends sceen updating until the next "context.sync()" is called.
+
+#### Syntax
+```js
+applicationObject.suspendScreenUpdatingUntilNextSync();
 ```
 
 #### Parameters

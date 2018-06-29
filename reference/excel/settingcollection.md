@@ -1,6 +1,6 @@
 # SettingCollection Object (JavaScript API for Excel)
 
-Represents a collection of worksheet objects that are part of the workbook.
+Represents a collection of key-value pair setting objects that are part of the workbook. The scope is limited to per file and add-in (task-pane or content) combination.
 
 ## Properties
 

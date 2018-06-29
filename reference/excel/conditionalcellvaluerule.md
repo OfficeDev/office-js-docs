@@ -1,6 +1,6 @@
 # ConditionalCellValueRule Object (JavaScript API for Excel)
 
-Represents a Cell Value Conditional Format Rule
+Represents a cell value conditional format rule.
 
 ## Properties
 

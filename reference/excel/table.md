@@ -33,6 +33,7 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[clearFilters()](#clearfilters)|void|Clears all the filters currently applied on the table.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[clearStyle()](#clearstyle)|void|Changes the table to use the default table style.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |[convertToRange()](#converttorange)|[Range](range.md)|Converts the table into a normal range of cells. All data is preserved.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete()](#delete)|void|Deletes the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -50,6 +51,20 @@ Clears all the filters currently applied on the table.
 #### Syntax
 ```js
 tableObject.clearFilters();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
+### clearStyle()
+Changes the table to use the default table style.
+
+#### Syntax
+```js
+tableObject.clearStyle();
 ```
 
 #### Parameters

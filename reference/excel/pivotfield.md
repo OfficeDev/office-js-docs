@@ -6,35 +6,39 @@ Represents the Excel PivotField.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|id|string|Id of the PivotField. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|name|string|Name of the PivotField.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|id|string|Id of the PivotField. Read-only.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Name of the PivotField.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|showAllItems|bool|Determines whether to show all items of the PivotField.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[PivotItemCollection](pivotitemcollection.md)|Returns the PivotFields associated with the PivotField. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[PivotItemCollection](pivotitemcollection.md)|Returns the PivotFields associated with the PivotField. Read-only.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|subtotals|[Subtotals](subtotals.md)|Subtotals of the PivotField.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getRange()](#getrange)|[Range](range.md)|Gets the parent range associated with the PivotField.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[sortByLabels(ascending: bool)](#sortbylabelsascending-bool)|void|Sorts the PivotField. If a DataPivotHierarchy is specified, then sort will be applied based on it, if not sort will be based on the PivotField itself.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
-### getRange()
-Gets the parent range associated with the PivotField.
+### sortByLabels(ascending: bool)
+Sorts the PivotField. If a DataPivotHierarchy is specified, then sort will be applied based on it, if not sort will be based on the PivotField itself.
 
 #### Syntax
 ```js
-pivotFieldObject.getRange();
+pivotFieldObject.sortByLabels(ascending);
 ```
 
 #### Parameters
-None
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|ascending|bool|Represents whether the sorting is done in an ascending or descending order.|
 
 #### Returns
-[Range](range.md)
+void

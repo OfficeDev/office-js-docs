@@ -1,6 +1,6 @@
 # Binding Object (JavaScript API for Excel)
 
-Represents an Office.js binding that is defined in the workbook.
+Represents an object containing values and types of a named item.
 
 ## Properties
 

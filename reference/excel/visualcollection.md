@@ -6,7 +6,7 @@ A collection of all the visuals on a worksheet.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Visual[]](visual.md)|A collection of visual objects. Read-only.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Visual[]](visual.md)|A collection of visual objects. Read-only.|[ApiSet.InProgressFeatures.BiplatVisual](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,10 +18,13 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(visualDefinitionGuid : string, dataSourceType: string, dataSourceContent: string)](#addvisualdefinitionguid--string-datasourcetype-string-datasourcecontent-string)|[Visual](visual.md)|Creates a new visual.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getDefinitions()](#getdefinitions)|[VisualDefinition[]](visualdefinition[].md)|Gets all visual definitions.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(id: string)](#getitemid-string)|[Visual](visual.md)|Get item.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getPreview(visualDefinitionGuid : string, width : number, height : number, dpi : number)](#getpreviewvisualdefinitionguid--string-width--number-height--number-dpi--number)|[System.IO.Stream](system.io.stream.md)|Get the preview of a visual.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(visualDefinitionGuid : string, dataSourceType: string, dataSourceContent: string)](#addvisualdefinitionguid--string-datasourcetype-string-datasourcecontent-string)|[Visual](visual.md)|Creates a new visual.|[ApiSet.InProgressFeatures.BiplatVisual](../requirement-sets/excel-api-requirement-sets.md)|
+|[bootstrapAgaveVisual()](#bootstrapagavevisual)|void|Creates a new agave visual from the calling content add-in|[ApiSet.InProgressFeatures.BiplatVisual](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Returns the number of visuals in the worksheet.|[ApiSet.InProgressFeatures.BiplatVisual](../requirement-sets/excel-api-requirement-sets.md)|
+|[getDefinitions()](#getdefinitions)|[VisualDefinition[]](visualdefinition[].md)|Gets all visual definitions.|[ApiSet.InProgressFeatures.BiplatVisual](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(id: string)](#getitemid-string)|[Visual](visual.md)|Gets a visual by key.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[getPreview(visualDefinitionGuid : string, width : number, height : number, dpi : number)](#getpreviewvisualdefinitionguid--string-width--number-height--number-dpi--number)|[System.IO.Stream](system.io.stream.md)|Get the preview of a visual.|[ApiSet.InProgressFeatures.BiplatVisual](../requirement-sets/excel-api-requirement-sets.md)|
+|[getSelectedOrNullObject()](#getselectedornullobject)|[Visual](visual.md)|Gets the selected Visual if and only if one Visual is selected.|[ApiSet.InProgressFeatures.BiplatVisual](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -44,6 +47,34 @@ visualCollectionObject.add(visualDefinitionGuid , dataSourceType, dataSourceCont
 #### Returns
 [Visual](visual.md)
 
+### bootstrapAgaveVisual()
+Creates a new agave visual from the calling content add-in
+
+#### Syntax
+```js
+visualCollectionObject.bootstrapAgaveVisual();
+```
+
+#### Parameters
+None
+
+#### Returns
+void
+
+### getCount()
+Returns the number of visuals in the worksheet.
+
+#### Syntax
+```js
+visualCollectionObject.getCount();
+```
+
+#### Parameters
+None
+
+#### Returns
+int
+
 ### getDefinitions()
 Gets all visual definitions.
 
@@ -59,7 +90,7 @@ None
 [VisualDefinition[]](visualdefinition[].md)
 
 ### getItem(id: string)
-Get item.
+Gets a visual by key.
 
 #### Syntax
 ```js
@@ -69,7 +100,7 @@ visualCollectionObject.getItem(id);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|string|ID.|
+|id|string|Key.|
 
 #### Returns
 [Visual](visual.md)
@@ -92,3 +123,17 @@ visualCollectionObject.getPreview(visualDefinitionGuid , width , height , dpi );
 
 #### Returns
 [System.IO.Stream](system.io.stream.md)
+
+### getSelectedOrNullObject()
+Gets the selected Visual if and only if one Visual is selected.
+
+#### Syntax
+```js
+visualCollectionObject.getSelectedOrNullObject();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Visual](visual.md)

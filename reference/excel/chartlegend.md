@@ -6,14 +6,14 @@ Represents the legend in a chart.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|height|double|Represents the height of the legend on the chart.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|left|double|Represents the left of a chart legend.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|height|double|Represents the height, in points, of the legend on the chart. Null if legend is not visible.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|left|double|Represents the left, in points, of a chart legend. Null if legend is not visible.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|string|Represents the position of the legend on the chart. Possible values are: Top, Bottom, Left, Right, Corner, Custom.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|showShadow|bool|Represents if the legend has shadow on the chart.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|showShadow|bool|Represents if the legend has a shadow on the chart.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |top|double|Represents the top of a chart legend.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|A boolean value the represents the visibility of a ChartLegend object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|width|double|Represents the width of the legend on the chart.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|width|double|Represents the width, in points, of the legend on the chart. Null if legend is not visible.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

@@ -34,7 +34,7 @@ chartAxesObject.getItem(type, group);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |type|string|Specifies the axis type.|
-|group|string|Optional. Specifies the axis group.|
+|group|string|Optional. Optional. Specifies the axis group.|
 
 #### Returns
 [ChartAxis](chartaxis.md)

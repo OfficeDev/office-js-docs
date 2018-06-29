@@ -19,14 +19,14 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### getItem(index: string)
-Gets a border object using its name
+Gets a border object using its name.
 
 #### Syntax
 ```js
@@ -86,7 +86,7 @@ Excel.run(function (ctx) {
 
 
 ### getItemAt(index: number)
-Gets a border object using its index
+Gets a border object using its index.
 
 #### Syntax
 ```js
