@@ -22,7 +22,7 @@ JavaScript functions that are in the Labs module.
 |[Labs.getTimeline](../../reference/office-mix/labs.gettimeline.md)|Retrieves a [Labs.Timeline](../../reference/office-mix/labs.timeline.md) object that you can use to control the host's player control.|
 |[Labs.registerDeserializer](../../reference/office-mix/labs.registerdeserializer.md)|Deserializes a specified JSON object into an object.|
 
-## Additional resources
+## See also
 
 
 

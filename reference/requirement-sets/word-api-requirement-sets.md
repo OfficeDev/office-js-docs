@@ -280,7 +280,7 @@ The following are the new additions to the Word JavaScript APIs in requirement s
 ## Word JavaScript API 1.1
 Word JavaScript API 1.1 is the first version of the API. For details about the API,  see the [Word JavaScript API](../word/word-add-ins-reference-overview.md) reference topics. 
 
-## Additional resources
+## See also
 
 - [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)

@@ -30,7 +30,7 @@ To find out more about versions, build numbers, and Office Online Server, see:
 
 For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
 
-## Additional resources
+## See also
 
 - [Office versions and requirement sets](https://docs.microsoft.com/office/dev/add-ins/develop/office-versions-and-requirement-sets)
 - [Specify Office hosts and API requirements](https://docs.microsoft.com/office/dev/add-ins/develop/specify-office-hosts-and-api-requirements)

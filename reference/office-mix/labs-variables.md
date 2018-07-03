@@ -12,7 +12,7 @@ Variables in the LabsJS object model function either as constants, or as placeho
 |:-----|:-----|
 |[Labs.DefaultHostBuilder](../../reference/office-mix/labs.defaulthostbuilder.md)|Use this object to construct a default [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md) instance.|
 
-## Additional resources
+## See also
 
 
 

@@ -18,7 +18,7 @@ Specifies the name of this dictionary.
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Additional resources
+## See also
 
 
 

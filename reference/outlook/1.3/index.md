@@ -30,7 +30,7 @@ Requirement set 1.3 includes all of the features of [Requirement set 1.2](../1.2
 - Added [NotificationMessages](https://dev.office.com/reference/add-ins/outlook/1.3/NotificationMessages?product=outlook&version=v1.3) object: Provides methods for accessing notification messages in an Outlook add-in.
 - Added [NotificationMessageDetails](https://dev.office.com/reference/add-ins/outlook/1.3/simple-types?product=outlook&version=v1.3#notificationmessagedetails) type: Returned by the `NotificationMessages.getAllAsync` method.
 
-## Additional resources
+## See also
 
 - [Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)
