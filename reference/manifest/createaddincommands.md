@@ -469,9 +469,9 @@ In Excel and Word, you can add your add-in commands on the ribbon by using the d
 
 |**Office host application**|**Tab values**|
 |:-----|:-----|
-|Excel  <br/> |**TabHome**         **TabInsert**         **TabPageLayoutExcel**         **TabFormulas**         **TabData**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabBackgroundRemoval** <br/> |
-|Word  <br/> |**TabHome**         **TabInsert**         **TabWordDesign**         **TabPageLayoutWord**         **TabReferences**         **TabMailings**         **TabReviewWord**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabBlogPost**         **TabBlogInsert**         **TabPrintPreview**         **TabOutlining**         **TabConflicts**         **TabBackgroundRemoval**         **TabBroadcastPresentation** <br/> |
-|PowerPoint  <br/> |**TabHome**         **TabInsert**         **TabDesign**         **TabTransitions**         **TabAnimations**         **TabSlideShow**         **TabReview**         **TabView**         **TabDeveloper**         **TabAddIns**         **TabPrintPreview**         **TabMerge**         **TabGrayscale**         **TabBlackAndWhite**         **TabBroadcastPresentation**         **TabSlideMaster**         **TabHandoutMaster**         **TabNotesMaster**         **TabBackgroundRemoval**         **TabSlideMasterHome**          <br/> |
+|Excel  <br/> |**TabHome**<br/>**TabInsert**<br/>**TabPageLayoutExcel**<br/>**TabFormulas**<br/>**TabData**<br/>**TabReview**<br/>**TabView**<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabPrintPreview**<br/>**TabBackgroundRemoval** <br/> |
+|Word  <br/> |**TabHome**<br/>**TabInsert**<br/>**TabWordDesign**<br/>**TabPageLayoutWord**<br/>**TabReferences**<br/>**TabMailings**<br/>**TabReviewWord**<br/>**TabView**<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabBlogPost**<br/>**TabBlogInsert**<br/> **TabPrintPreview**<br/>**TabOutlining**<br/>**TabConflicts**<br/>**TabBackgroundRemoval**<br/>**TabBroadcastPresentation** <br/> |
+|PowerPoint  <br/> |**TabHome**<br/>**TabInsert**<br/>**TabDesign**<br/>**TabTransitions**<br/>**TabAnimations**<br/>**TabSlideShow**<br/>**TabReview**<br/>**TabView**<br/>**TabDeveloper**<br/>**TabAddIns**<br/>**TabPrintPreview**<br/>**TabMerge**<br/>**TabGrayscale**<br/>**TabBlackAndWhite**<br/>**TabBroadcastPresentation**<br/>**TabSlideMaster**<br/>**TabHandoutMaster**<br/>**TabNotesMaster**<br/>**TabBackgroundRemoval**<br/>**TabSlideMasterHome**<br/> |
    
 <a name="bk_addresources"> </a>
 
