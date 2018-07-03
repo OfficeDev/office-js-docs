@@ -23,7 +23,7 @@ Add-in commands provide an easy way to customize the default Office UI with spec
   
 This article describes how to edit your manifest to define add-in commands. The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article:
   
-![Overview of add-in commands elements in the manifest](images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+![Overview of add-in commands elements in the manifest](../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
   
     
 ## Step 1: Start from a sample
