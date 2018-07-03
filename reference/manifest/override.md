@@ -38,7 +38,7 @@ Provides a way to specify the value of a setting for an additional locale.
 |Locale|string|required|Specifies the culture name of the locale for this override in the BCP 47 language tag format, such as  `"en-US"`.|
 |Value|string|required|Specifies value of the setting expressed for the specified locale.|
 
-## Additional resources
+## See also
 
 
 

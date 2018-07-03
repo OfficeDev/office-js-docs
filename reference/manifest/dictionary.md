@@ -32,7 +32,7 @@ Defines settings for a task pane add-in that implements additional dictionary su
 |[DictionaryName](../../reference/manifest/dictionaryname.md)|
 |[DictionaryHomePage](../../reference/manifest/dictionaryhomepage.md)|
 
-## Additional resources
+## See also
 
 
 

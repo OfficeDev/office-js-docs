@@ -23,7 +23,7 @@ Required. The URL to a page where the user can learn more about your add-in. The
 
 > **NOTE:** **LearnMoreUrl** does not currently render in Word, Excel, or PowerPoint clients. We recommend that you add this URL for all clients so that the URL will render when it becomes available. 
 
-## Additional resources
+## See also
 The following code samples use the **GetStarted** element:
 
 * [Excel Web Add-in for Manipulating Table and Chart Formatting](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)

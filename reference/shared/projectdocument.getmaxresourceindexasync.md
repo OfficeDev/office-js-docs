@@ -1,7 +1,8 @@
 
 # ProjectDocument.getMaxResourceIndexAsync method (JavaScript API for Office v1.1)
 Asynchronously gets the maximum index of the collection of resources in the current project.
- **Important:** This API works only in Project 2016 on Windows desktop.
+
+**Important:** This API works only in Project 2016 on Windows desktop.
 
 |||
 |:-----|:-----|

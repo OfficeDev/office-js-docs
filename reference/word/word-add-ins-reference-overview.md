@@ -114,7 +114,7 @@ The following example shows how the command queue works. When **context.sync()**
 
 As we design and develop new APIs for Word add-ins, we'll make them available for your feedback on our [Open API specifications](../../reference/openspec.md) page. Find out what new features are in the pipeline for the Word JavaScript APIs, and provide your input on our design specifications.
 
-## Additional resources
+## See also
 
 * [Word add-ins overview](../../docs/word/word-add-ins-programming-overview.md )
 * [Office Add-ins platform overview](../../docs/overview/office-add-ins.md)

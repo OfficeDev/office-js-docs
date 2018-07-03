@@ -40,7 +40,7 @@ To view all API members including those that are unchanged from previous updates
 |[FileType](../reference/shared/filetype-enumeration.md)|Updated to specify output in PDF format.|1.1|
 |[GoToType](../reference/shared/gototype-enumeration.md)|Added to specify the place or object in the document to go to.|1.1|
 
-## Additional resources
+## See also
 
 
 - [Office Add-ins API and schema references](../reference/reference.md)

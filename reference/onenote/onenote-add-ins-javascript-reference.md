@@ -46,7 +46,7 @@ The following links show the high level OneNote objects available in the API. Ea
 
   - [TableCellCollection](tablecellcollection.md): A collection of TableCell objects in a TableRow.
 		
-## Additional resources
+## See also
 
 - [OneNote JavaScript API programming overview](../../docs/onenote/onenote-add-ins-programming-overview.md)
 - [Build your first OneNote add-in](../../docs/onenote/onenote-add-ins-getting-started.md)

@@ -32,7 +32,7 @@
 
 -->
 
-## Additional resources
+## See also
 
 - [Office Add-ins platform overview](../../docs/overview/office-add-ins.md)
 - *Link to product conceptual node*
