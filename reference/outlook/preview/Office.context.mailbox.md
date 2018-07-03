@@ -572,7 +572,7 @@ Makes an asynchronous request to an Exchange Web Services (EWS) service on the E
 > 
 > In these cases, add-ins should [use REST APIs](https://docs.microsoft.com/outlook/add-ins/use-rest-api) to access the user's mailbox instead.
 
-The `makeEwsRequestAsync` method sends an EWS request on behalf of the add-in to Exchange.
+The `makeEwsRequestAsync` method sends an EWS request on behalf of the add-in to Exchange. See [Call web services from an Outlook Add-in](https://docs.microsoft.com/outlook/add-ins/web-services#ews-operations-that-add-ins-support) for a list of the supported EWS operations.
 
 You cannot request Folder Associated Items with the `makeEwsRequestAsync` method.
 
@@ -584,7 +584,8 @@ The XML request must specify UTF-8 encoding.
 
 Your add-in must have the **ReadWriteMailbox** permission to use the `makeEwsRequestAsync` method. For information about using the **ReadWriteMailbox** permission and the EWS operations that you can call with the `makeEwsRequestAsync` method, see [Specify permissions for mail add-in access to the user's mailbox](../../../docs/outlook/understanding-outlook-add-in-permissions.md).
 
-**NOTE**: The server administrator must set `OAuthAuthentication` to true on the Client Access Server EWS directory to enable the `makeEwsRequestAsync` method to make EWS requests.
+> **Note:**
+> The server administrator must set `OAuthAuthentication` to true on the Client Access Server EWS directory to enable the `makeEwsRequestAsync` method to make EWS requests.
 
 #### Version differences
 
