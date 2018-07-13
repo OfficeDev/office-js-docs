@@ -20,7 +20,7 @@ Defines the regional language or languages supported by this dictionary.
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Additional resources
+## See also
 
 
 

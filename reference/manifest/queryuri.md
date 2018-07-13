@@ -18,7 +18,7 @@ Specifies the URL of the endpoint for the dictionary query service.
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Additional resources
+## See also
 
 
 

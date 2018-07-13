@@ -22,7 +22,7 @@ Requirement set 1.1 includes all of the features of Requirement set 1.0. It adde
 - Added [Office.context.mailbox.item.bcc](https://dev.office.com/reference/add-ins/outlook/1.1/Office.context.mailbox.item?product=outlook&version=v1.1#bcc-recipients): Gets or sets the recipients on the Bcc (blind carbon copy) line of a message.
 - Added [Office.MailboxEnums.RecipientType](https://dev.office.com/reference/add-ins/outlook/1.1/Office.MailboxEnums?product=outlook&version=v1.1#recipienttype-string): Specifies the type of recipient for an appointment.
 
-## Additional resources
+## See also
 
 - [Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)

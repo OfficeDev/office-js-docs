@@ -27,7 +27,7 @@ The following features are in preview.
 - [Office.MailboxEnums.RecurrenceType](https://dev.office.com/reference/add-ins/outlook/preview/Office.MailboxEnums?product=outlook&version=preview#recurrencetype-string) - Added a new enum that specifies the type of recurrence. 
 - [Office.MailboxEnums.WeekNumber](https://dev.office.com/reference/add-ins/outlook/preview/Office.MailboxEnums?product=outlook&version=preview#weeknumber-string) - Added a new enum that specifies the week of the month.
 
-## Additional resources
+## See also
 
 - [Outlook add-ins](https://docs.microsoft.com/outlook/add-ins/)
 - [Outlook add-in code samples](https://developer.microsoft.com/outlook/gallery/?filterBy=Outlook,Samples,Add-ins)

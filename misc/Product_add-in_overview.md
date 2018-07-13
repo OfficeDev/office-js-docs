@@ -31,7 +31,7 @@
 
 -->
 
-## Additional resources
+## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - *Link to product reference node*
