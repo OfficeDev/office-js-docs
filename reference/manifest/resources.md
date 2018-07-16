@@ -13,7 +13,7 @@ Each resource can have one or more **Override** child elements to define a diffe
 |  **ShortStrings** |  string  |  The text for **Label** and **Title** elements. Each **String** contains a maximum of 125 characters.|
 |  **LongStrings**  |  string  | The text for **Description** attributes. Each **String** contains a maximum of 250 characters.|
 
->**Note**  You must use Secure Sockets Layer (SSL) for all URLs in the  **Image** and **Url** elements.
+> **Note**  You must use Secure Sockets Layer (SSL) for all URLs in the  **Image** and **Url** elements.
 
 ### Images
 Each icon must have three  **Images** elements, one for each of the three mandatory sizes:
@@ -30,7 +30,7 @@ The following additional sizes are also supported, but not required:
 - 48x48
 - 64x64
 
-> **Important:** Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.    
+> **Important**  Outlook requires the ability to cache image resources for performance purposes. For this reason, the server hosting an image resource must not add any CACHE-CONTROL directives to the response header. This will result in Outlook automatically substituting a generic or default image.    
 
 
 ## Resources examples 
@@ -66,7 +66,6 @@ The following additional sizes are also supported, but not required:
     </Resources>
 ```
 
-
 ```xml
 <Resources>
   <bt:Images>
@@ -93,4 +92,3 @@ The following additional sizes are also supported, but not required:
   </bt:LongStrings>
 </Resources>
 ```
-
