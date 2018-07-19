@@ -10,7 +10,7 @@
 | ChartCollection | onActivated | Occurs when any chart has become activated. | [ChartActivatedEventArgs](/reference/excel/chartactivatedeventargs.md) |
 | ChartCollection | onDeactivated | Occurs when any chart has become deactivated | [ChartDeactivatedEventArgs](/reference/excel/chartdeactivatedeventargs.md) |
 | ChartCollection | onAdded | Occurs when a chart has been added. | [ChartAddedEventArgs](/reference/excel/chartaddedeventargs.md) |
-| ChartCollection | onDeleted | Occurs when a worksheet has been deleted. | [ChartDeletedEventArgs](/reference/excel/chartdeletedeventargs.md) |
+| ChartCollection | onDeleted | Occurs when a chart has been deleted. | [ChartDeletedEventArgs](/reference/excel/chartdeletedeventargs.md) |
 | Worksheet | onCalculated | Occurs when the workbook has finished calculation. | [WorsheetCalculatedEventArgs](/reference/excel/worksheetcalculatedeventargs.md) |
  WorksheetCollection | onCalculated | Occurs when all the worksheets of the workbook have finished calculation. | [WorsheetCalculatedEventArgs](/reference/excel/worksheetcalculatedeventargs.md) |
 
