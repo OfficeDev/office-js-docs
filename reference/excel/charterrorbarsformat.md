@@ -9,7 +9,7 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|line|[ChartLineFormat](chartlineformat.md)|Represents chart line formatting. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|line|[ChartLineFormat](chartlineformat.md)|Represents chart line formatting. Read-only.|[ApiSet.InProgressFeatures.ChartingAPIWave2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None

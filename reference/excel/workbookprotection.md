@@ -6,7 +6,7 @@ Represents the protection of a workbook object.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|protected|bool|Indicates if the workbook is protected. Read-Only. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|protected|bool|Indicates if the workbook is protected. Read-Only. Read-only.|[ApiSet.InProgressFeatures.TemporaryMovedTo18](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

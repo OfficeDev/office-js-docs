@@ -54,7 +54,7 @@ customXmlPartCollectionObject.getByNamespace(namespaceUri);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|namespaceUri|string||
+|namespaceUri|string|This must be a fully qualified schema URI; for example, "http://schemas.contoso.com/review/1.0".|
 
 #### Returns
 [CustomXmlPartScopedCollection](customxmlpartscopedcollection.md)

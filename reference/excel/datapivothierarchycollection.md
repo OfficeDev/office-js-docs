@@ -6,7 +6,7 @@ Represents a collection of DataPivotHierarchy items associated with the PivotTab
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[DataPivotHierarchy[]](datapivothierarchy.md)|A collection of dataPivotHierarchy objects. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[DataPivotHierarchy[]](datapivothierarchy.md)|A collection of dataPivotHierarchy objects. Read-only.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,11 +18,11 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(pivotHierarchy: PivotHierarchy)](#addpivothierarchy-pivothierarchy)|[DataPivotHierarchy](datapivothierarchy.md)|Adds the PivotHierarchy to the current axis.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Gets the number of pivot hierarchies in the collection.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(name: string)](#getitemname-string)|[DataPivotHierarchy](datapivothierarchy.md)|Gets a DataPivotHierarchy by its name or id.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[DataPivotHierarchy](datapivothierarchy.md)|Gets a DataPivotHierarchy by name. If the DataPivotHierarchy does not exist, will return a null object.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[remove(DataPivotHierarchy: DataPivotHierarchy)](#removedatapivothierarchy-datapivothierarchy)|void|Removes the PivotHierarchy from the current axis.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(pivotHierarchy: PivotHierarchy)](#addpivothierarchy-pivothierarchy)|[DataPivotHierarchy](datapivothierarchy.md)|Adds the PivotHierarchy to the current axis.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of pivot hierarchies in the collection.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[DataPivotHierarchy](datapivothierarchy.md)|Gets a DataPivotHierarchy by its name or id.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[DataPivotHierarchy](datapivothierarchy.md)|Gets a DataPivotHierarchy by name. If the DataPivotHierarchy does not exist, will return a null object.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|[remove(DataPivotHierarchy: DataPivotHierarchy)](#removedatapivothierarchy-datapivothierarchy)|void|Removes the PivotHierarchy from the current axis.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -38,7 +38,7 @@ dataPivotHierarchyCollectionObject.add(pivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|pivotHierarchy|PivotHierarchy|pivotHierarchy.|
+|pivotHierarchy|PivotHierarchy|..|
 
 #### Returns
 [DataPivotHierarchy](datapivothierarchy.md)
@@ -100,7 +100,7 @@ dataPivotHierarchyCollectionObject.remove(DataPivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|DataPivotHierarchy|DataPivotHierarchy|DataPivotHierarchy.|
+|DataPivotHierarchy|DataPivotHierarchy|..|
 
 #### Returns
 void

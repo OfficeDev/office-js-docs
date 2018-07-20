@@ -40,7 +40,7 @@ worksheetCollectionObject.add(name);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|string|Optional. The name of the worksheet to be added. If specified, name should be unqiue. If not specified, Excel determines the name of the new worksheet.|
+|name|string|Optional. Optional. The name of the worksheet to be added. If specified, name should be unqiue. If not specified, Excel determines the name of the new worksheet.|
 
 #### Returns
 [Worksheet](worksheet.md)
@@ -107,7 +107,7 @@ worksheetCollectionObject.getCount(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+|visibleOnly|bool|Optional. Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 int
@@ -123,7 +123,7 @@ worksheetCollectionObject.getFirst(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+|visibleOnly|bool|Optional. Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 [Worksheet](worksheet.md)
@@ -171,7 +171,7 @@ worksheetCollectionObject.getLast(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+|visibleOnly|bool|Optional. Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 [Worksheet](worksheet.md)

@@ -1,12 +1,12 @@
 # AreaCollection Object (JavaScript API for Excel)
 
-Represents a collection of all the Data Connections that are part of the workbook or worksheet.
+Represents the options in page layout margins.
 
 ## Properties
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Area[]](area.md)|A collection of area objects. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Area[]](area.md)|A collection of area objects. Read-only.|[ApiSet.InProgressFeatures.RangeAreas](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,8 +18,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getCount()](#getcount)|int|Gets the number of contiguous areas in a range.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[Range](range.md)|Gets a contiguous area object based on its position in the collection.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of contiguous areas in a range.|[ApiSet.InProgressFeatures.RangeAreas](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Range](range.md)|Gets a contiguous area object based on its position in the collection.|[ApiSet.InProgressFeatures.RangeAreas](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

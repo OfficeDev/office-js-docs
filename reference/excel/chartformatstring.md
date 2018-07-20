@@ -9,7 +9,7 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|font|[ChartFont](chartfont.md)|Represents the font attributes, such as font name, font size, color, etc. of chart characters object. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|font|[ChartFont](chartfont.md)|Represents the font attributes, such as font name, font size, color, etc. of chart characters object. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None

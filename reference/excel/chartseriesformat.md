@@ -1,6 +1,6 @@
 # ChartSeriesFormat Object (JavaScript API for Excel)
 
-encapsulates the format properties for the chart series
+Encapsulates the format properties for the chart series
 
 ## Properties
 

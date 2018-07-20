@@ -14,23 +14,23 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|bottom|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
-|left|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
-|right|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
-|top|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|bottom|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the bottom border. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|left|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the left border. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|right|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the right border. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|top|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets the top border. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getItem(index: string)](#getitemindex-string)|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets a border object using its name|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets a border object using its index|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(index: string)](#getitemindex-string)|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets a border object using its name.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[ConditionalRangeBorder](conditionalrangeborder.md)|Gets a border object using its index.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### getItem(index: string)
-Gets a border object using its name
+Gets a border object using its name.
 
 #### Syntax
 ```js
@@ -46,7 +46,7 @@ conditionalRangeBorderCollectionObject.getItem(index);
 [ConditionalRangeBorder](conditionalrangeborder.md)
 
 ### getItemAt(index: number)
-Gets a border object using its index
+Gets a border object using its index.
 
 #### Syntax
 ```js

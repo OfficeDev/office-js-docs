@@ -31,10 +31,10 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |fields|SortField[]|The list of conditions to sort on.|
-|matchCase|bool|Optional. Whether to have the casing impact string ordering.|
-|hasHeaders|bool|Optional. Whether the range has a header.|
-|orientation|string|Optional. Whether the operation is sorting rows or columns.  Possible values are: Rows, Columns|
-|method|string|Optional. The ordering method used for Chinese characters.  Possible values are: PinYin, StrokeCount|
+|matchCase|bool|Optional. Optional. Whether to have the casing impact string ordering.|
+|hasHeaders|bool|Optional. Optional. Whether the range has a header.|
+|orientation|string|Optional. Optional. Whether the operation is sorting rows or columns.  Possible values are: Rows, Columns|
+|method|string|Optional. Optional. The ordering method used for Chinese characters.  Possible values are: PinYin, StrokeCount|
 
 #### Returns
 void

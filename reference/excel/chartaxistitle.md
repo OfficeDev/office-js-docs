@@ -20,7 +20,7 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[setFormula(formula: string)](#setformulaformula-string)|void|A string value that represents the formula of chart axis title using A1-style notation.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[setFormula(formula: string)](#setformulaformula-string)|void|A string value that represents the formula of chart axis title using A1-style notation.|[ApiSet.InProgressFeatures.ChartingAPIWave2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

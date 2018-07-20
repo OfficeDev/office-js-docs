@@ -1,6 +1,6 @@
 # NamedItem Object (JavaScript API for Excel)
 
-Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range. This object can be used to obtain range object associated with names.
+Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, or a reference to a range. This object can be used to obtain range object associated with names.
 
 ## Properties
 
@@ -9,8 +9,8 @@ Represents a defined name for a range of cells or value. Names can be primitive 
 |comment|string|Represents the comment associated with this name.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |formula|object|Gets or sets the formula of the named item.  Formula always starts with a '=' sign.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The name of the object. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|scope|string|Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only. Possible values are: Worksheet, Workbook.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|type|string|Indicates the type of the value returned by the name's formula. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|scope|string|Indicates whether the name is scoped to the workbook or to a specific worksheet. Possible values are: Worksheet, Workbook. Read-only. Possible values are: Equal, Greater, GreaterEqual, Less, LessEqual, NotEqual.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Indicates the type of the value returned by the names formula. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |value|object|Represents the value computed by the name's formula. For a named range, will return the range address. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|Specifies whether the object is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -20,7 +20,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |arrayValues|[NamedItemArrayValues](nameditemarrayvalues.md)|Returns an object containing values and types of the named item. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|worksheet|[Worksheet](worksheet.md)|Returns the worksheet on which the named item is scoped to. Throws an error if the items is scoped to the workbook instead. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheet|[Worksheet](worksheet.md)|Returns the worksheet on which the named item is scoped to. Throws an error if the item is scoped to the workbook instead. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheetOrNullObject|[Worksheet](worksheet.md)|Returns the worksheet on which the named item is scoped to. Returns a null object if the item is scoped to the workbook instead. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods

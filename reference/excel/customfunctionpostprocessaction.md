@@ -6,14 +6,15 @@ Represents the border objects that make up range border.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|actionType|string|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|operationType|string|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: None, RegisterEvent, UnregisterEvent, CustomFunction, ShowCard.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|operationType|string|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|actionType|[PostProcessActionType](postprocessactiontype.md)|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|controlId|string|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None

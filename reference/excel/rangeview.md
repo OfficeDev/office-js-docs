@@ -16,7 +16,7 @@ RangeView represents a set of visible cells of the parent range.
 |rowCount|int|Returns the number of visible rows. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |text|string|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|values|object[][]|Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cells that contain an error will return the error string.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

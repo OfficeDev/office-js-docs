@@ -15,7 +15,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|criteria|[ConditionalIconCriterion](conditionaliconcriterion.md)|An array of Criteria and IconSets for the rules and potential custom icons for conditional icons. Note that for the first criterion only the custom icon can be modified, while type, formula and operator will be ignored when set.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|criteria|[ConditionalIconCriterion](conditionaliconcriterion.md)|An array of Criteria and IconSets for the rules and potential custom icons for conditional icons. Note that for the first criterion only the custom icon can be modified, while type, formula, and operator will be ignored when set.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None

@@ -9,7 +9,7 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|workbook|[Workbook](workbook.md)|Gets the workbook object that raised the SelectionChanged event.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|workbook|[Workbook](workbook.md)|Gets the workbook object that raised the SelectionChanged event.|[ApiSet.PolyfillableDownTo1_1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None
