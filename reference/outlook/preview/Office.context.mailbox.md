@@ -403,7 +403,7 @@ If any of the parameters exceed the specified size limits, or if an unknown para
 | `parameters.attachments.name` | String | A string that contains the name of the attachment, up to 255 characters in length.|
 | `parameters.attachments.url` | String | Only used if `type` is set to `file`. The URI of the location for the file. |
 | `parameters.attachments.isInline` | Boolean | Only used if `type` is set to `file`. If `true`, indicates that the attachment will be shown inline in the message body, and should not be displayed in the attachment list. |
-| `parameters.attachments.itemId` | String | Only used if `type` is set to `item`. The EWS item id of the attachment. This is a string up to 100 characters. |
+| `parameters.attachments.itemId` | String | Only used if `type` is set to `item`. The EWS item id of the existing e-mail you want to attach to the new message. This is a string up to 100 characters. |
 
 
 ##### Requirements
