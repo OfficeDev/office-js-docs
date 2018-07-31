@@ -25,7 +25,7 @@ var eventResult; //Global Variable to store the EventHandlerResult returned on a
 
 function AttachHandler()
 {
-    Visio.run(function(ctx)
+    Visio.run(session, function(ctx)
     {
         var doc = ctx.document;
         eventResult = doc.onSelectionChanged.add(
