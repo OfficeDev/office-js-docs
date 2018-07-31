@@ -44,7 +44,7 @@ object.load(param);
 void
 ### Property access examples
 ```js
- Visio.run(function (ctx) { 
+ Visio.run(session, function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	var shapeName = "Position Belt.41";
 	var shape = activePage.shapes.getItem(shapeName);
