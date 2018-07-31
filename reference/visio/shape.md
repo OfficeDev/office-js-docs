@@ -65,7 +65,7 @@ object.load(param);
 void
 ### Property access examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	var shapeName = "Sample Name";
 	var shape = activePage.shapes.getItem(shapeName);
@@ -86,7 +86,7 @@ Visio.run(function (ctx) {
 
 ### Property access examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	var shape = activePage.shapes.getItem(0);
 	shape.view.highlight = { color: "#E7E7E7", width: 100 };
