@@ -21,7 +21,7 @@ None
 
 ### Property access examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
   var document1= ctx.document;
                var page = document1.getActivePage();
 	eventResult2 = document1.onShapeMouseEnter.add(
