@@ -41,7 +41,7 @@ int
 
 #### Examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	var numShapesActivePage = activePage.shapes.getCount();
 	return ctx.sync().then(function () {
