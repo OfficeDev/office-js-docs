@@ -46,7 +46,7 @@ void
 
 #### Examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	var shape = activePage.shapes.getItem(0);
 	activePage.view.centerViewportOnShape(shape.Id);
@@ -151,7 +151,7 @@ pageViewObject.setPosition(Position);
 void
 ### Property access examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	activePage.view.zoom = 300;
 	return ctx.sync();
