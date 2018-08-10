@@ -41,7 +41,7 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 |:---------------|:--------|:----------|
 |type|string|Represents the type of a chart.  See below for possible values.|
 |sourceData|Range|The Range object corresponding to the source data.|
-|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart.  Possible values are: Auto, Scalar, Matrix|
+|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart.  Possible values are: Auto, Columns, Rows|
 
 ##### Possible chart types
 
