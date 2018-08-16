@@ -74,7 +74,7 @@ object.load(param);
 void
 ### Property access examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var activePage = ctx.document.getActivePage();
 	var shapeName = "Manager Belt";
 	var shape = activePage.shapes.getItem(shapeName);
