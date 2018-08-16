@@ -43,7 +43,7 @@ None
 
 #### Examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var document = ctx.document;
 	var activePage = document.getActivePage();
 	activePage.load();
@@ -93,7 +93,7 @@ void
 
 #### Examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var document = ctx.document;
 	var pageName = "Page-1";
 	document.setActivePage(pageName);
@@ -123,7 +123,7 @@ void
 
 #### Examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var document = ctx.document;
 	document.startDataRefresh();
 	return ctx.sync();
@@ -136,7 +136,7 @@ Visio.run(function (ctx) {
 ```
 ### Property access examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var pages = ctx.document.pages;
 	var pageCount = pages.getCount();
 	return ctx.sync().then(function () {
@@ -151,7 +151,7 @@ Visio.run(function (ctx) {
 ```
 
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var documentView = ctx.document.view;
 	documentView.disableHyperlinks();
 	return ctx.sync();
@@ -164,7 +164,7 @@ Visio.run(function (ctx) {
 ```
 
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var application = ctx.document.application;
 	application.showToolbars = false;
 	return ctx.sync();

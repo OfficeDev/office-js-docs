@@ -57,7 +57,7 @@ pageCollectionObject.getItem(key);
 
 #### Examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var pageName = 'Page-1';
 	var page = ctx.document.pages.getItem(pageName);
 	page.activate();
