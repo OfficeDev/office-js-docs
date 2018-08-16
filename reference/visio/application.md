@@ -59,7 +59,7 @@ object.load(param);
 void
 ### Property access examples
 ```js
-Visio.run(function (ctx) { 
+Visio.run(session, function (ctx) { 
 	var application = ctx.document.application;
 	application.showToolbars = false;
 	application.showBorders = false;
