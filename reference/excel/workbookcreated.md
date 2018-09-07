@@ -6,7 +6,7 @@ The WorkbookCreated object is the top level object created by Application.Create
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|id|string|Returns a value that uniquely identifies the WorkbookCreated object. Read-only.|[ApiSet.InProgressFeatures.CreateWorkbook](../requirement-sets/excel-api-requirement-sets.md)|
+|id|string|Returns a value that uniquely identifies the WorkbookCreated object. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,7 +18,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[open()](#open)|void|Open the workbook.|[ApiSet.InProgressFeatures.CreateWorkbook](../requirement-sets/excel-api-requirement-sets.md)|
+|[open()](#open)|void|Open the workbook.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

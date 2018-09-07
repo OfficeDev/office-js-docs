@@ -6,12 +6,12 @@ Represents the options in page layout margins.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|centerFooter|string|Gets or sets the center footer of the worksheet.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|centerHeader|string|Gets or sets the center header of the worksheet.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|leftFooter|string|Gets or sets the left footer of the worksheet.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|leftHeader|string|Gets or sets the left header of the worksheet.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|rightFooter|string|Gets or sets the right footer of the worksheet.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|rightHeader|string|Gets or sets the right header of the worksheet.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
+|centerFooter|string|Gets or sets the center footer of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|centerHeader|string|Gets or sets the center header of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|leftFooter|string|Gets or sets the left footer of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|leftHeader|string|Gets or sets the left header of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|rightFooter|string|Gets or sets the right footer of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|rightHeader|string|Gets or sets the right header of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

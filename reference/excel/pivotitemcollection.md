@@ -6,7 +6,7 @@ Represents a collection of all the Pivot Items related to their parent PivotFiel
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[PivotItem[]](pivotitem.md)|A collection of pivotItem objects. Read-only.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[PivotItem[]](pivotitem.md)|A collection of pivotItem objects. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,9 +18,9 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getCount()](#getcount)|int|Gets the number of pivot hierarchies in the collection.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(name: string)](#getitemname-string)|[PivotItem](pivotitem.md)|Gets a PivotHierarchy by its name or id.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[PivotItem](pivotitem.md)|Gets a PivotHierarchy by name. If the PivotHierarchy does not exist, will return a null object.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of pivot hierarchies in the collection.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[PivotItem](pivotitem.md)|Gets a PivotHierarchy by its name or id.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[PivotItem](pivotitem.md)|Gets a PivotHierarchy by name. If the PivotHierarchy does not exist, will return a null object.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

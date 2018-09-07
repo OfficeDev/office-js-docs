@@ -6,16 +6,16 @@ Provides information about the table that raised the OnAdded event.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|tableId|string|Gets the id of the table that is added.|[ApiSet.InProgressFeatures.EventWave3](../requirement-sets/excel-api-requirement-sets.md)|
-|type|string|Gets the type of the event.|[ApiSet.InProgressFeatures.EventWave3](../requirement-sets/excel-api-requirement-sets.md)|
-|worksheetId|string|Gets the id of the worksheet in which the table is added.|[ApiSet.InProgressFeatures.EventWave3](../requirement-sets/excel-api-requirement-sets.md)|
+|tableId|string|Gets the id of the table that is added.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Gets the type of the event.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheetId|string|Gets the id of the worksheet in which the table is added.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|source|string|Gets the source of the event.|[ApiSet.InProgressFeatures.EventWave3](../requirement-sets/excel-api-requirement-sets.md)|
+|source|string|Gets the source of the event.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None

@@ -18,7 +18,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(name: string, source: Range or string or Table, destination: Range or string)](#addname-string-source-range-or-string-or-table-destination-range-or-string)|[PivotTable](pivottable.md)|Add a Pivottable based on the specified source data and insert it at the top left cell of the destination range.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(name: string, source: object, destination: object)](#addname-string-source-object-destination-object)|[PivotTable](pivottable.md)|Add a Pivottable based on the specified source data and insert it at the top left cell of the destination range.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Gets the number of pivot tables in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(name: string)](#getitemname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[PivotTable](pivottable.md)|Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
@@ -27,7 +27,7 @@ None
 ## Method Details
 
 
-### add(name: string, source: Range or string or Table, destination: Range or string)
+### add(name: string, source: object, destination: object)
 Add a Pivottable based on the specified source data and insert it at the top left cell of the destination range.
 
 #### Syntax
@@ -39,8 +39,8 @@ pivotTableCollectionObject.add(name, source, destination);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |name|string|The name of the new PivotTable.|
-|source|Range or string or Table|The source data for the new PivotTable, this can either be a range (or string address including the worksheet name) or a table.|
-|destination|Range or string|The cell in the upper-left corner of the PivotTable report's destination range (the range on the worksheet where the resulting report will be placed).|
+|source|object|The source data for the new PivotTable, this can either be a range (or string address including the worksheet name) or a table.|
+|destination|object|The cell in the upper-left corner of the PivotTable report's destination range (the range on the worksheet where the resulting report will be placed).|
 
 #### Returns
 [PivotTable](pivottable.md)

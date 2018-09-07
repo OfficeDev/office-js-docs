@@ -6,16 +6,14 @@ A format object encapsulating the range's font, fill, borders, alignment, and ot
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|autoIndent|bool|Indicates if text is automatically indented when text alignment is set to equal distribution.|[ApiSet.InProgressFeatures.RangeDataImport](../requirement-sets/excel-api-requirement-sets.md)|
+|autoIndent|bool|Indicates if text is automatically indented when text alignment is set to equal distribution.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |columnWidth|double|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|indentLevel|int|An integer from 0 to 250 that indicates the indent level.|[ApiSet.InProgressFeatures.RangeDataImport](../requirement-sets/excel-api-requirement-sets.md)|
-|left|double|Returns the distance, in points, from left edge of the worksheet to left edge of the range. Read-only.|[ApiSet.InProgressFeatures.RangeTopLeft](../requirement-sets/excel-api-requirement-sets.md)|
-|readingOrder|string|The reading order for the range.|[ApiSet.InProgressFeatures.RangeDataImport](../requirement-sets/excel-api-requirement-sets.md)|
+|indentLevel|int|An integer from 0 to 250 that indicates the indent level.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|readingOrder|string|The reading order for the range. Possible values are: Context, LeftToRight, RightToLeft.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |rowHeight|double|Gets or sets the height of all rows in the range. If the row heights are not uniform, null will be returned.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|shrinkToFit|bool|Indicates if text automatically shrinks to fit in the available column width.|[ApiSet.InProgressFeatures.RangeDataImport](../requirement-sets/excel-api-requirement-sets.md)|
+|shrinkToFit|bool|Indicates if text automatically shrinks to fit in the available column width.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |textOrientation|int|Gets or sets the text orientation of all the cells within the range.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|top|double|Returns the distance, in points, from top edge of the worksheet to top edge of the range. Read-only.|[ApiSet.InProgressFeatures.RangeTopLeft](../requirement-sets/excel-api-requirement-sets.md)|
 |useStandardHeight|bool|Determines if the row height of the Range object equals the standard height of the sheet.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |useStandardWidth|bool|Indicates whether the column width of the Range object equals the standard width of the sheet.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |verticalAlignment|string|Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|

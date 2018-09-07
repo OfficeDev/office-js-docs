@@ -23,6 +23,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|autoFilter|[AutoFilter](autofilter.md)|Represents the AutoFilter object of the table. Read-Only. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |sort|[TableSort](tablesort.md)|Represents the sorting for the table. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
@@ -33,7 +34,7 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[clearFilters()](#clearfilters)|void|Clears all the filters currently applied on the table.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[clearStyle()](#clearstyle)|void|Changes the table to use the default table style.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[clearStyle()](#clearstyle)|void|Changes the table to use the default table style.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[convertToRange()](#converttorange)|[Range](range.md)|Converts the table into a normal range of cells. All data is preserved.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete()](#delete)|void|Deletes the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|

@@ -6,24 +6,24 @@ Workbook is the top level object which contains related workbook objects such as
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|calculationEngineVersion|int|Returns a number about the version of Excel Calculation Engine. Read-Only. Read-only.|[ApiSet.InProgressFeatures.CalcWave2](../requirement-sets/excel-api-requirement-sets.md)|
-|chartDataPointTrack|bool|True if all charts in the workbook are tracking the actual data points to which they are attached.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|autoSave|bool|True if the workbook is in auto save mode. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|calculationEngineVersion|int|Returns a number about the version of Excel Calculation Engine. Read-Only. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|chartDataPointTrack|bool|True if all charts in the workbook are tracking the actual data points to which they are attached.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|isDirty|bool|True if no changes have been made to the specified workbook since it was last saved.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Gets the workbook name. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|previouslySaved|bool|True if the workbook has ever been saved locally or online. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |readOnly|bool|True if the workbook is open in Read-only mode. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|saved|bool|True if no changes have been made to the specified workbook since it was last saved.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|use1904DateSystem|bool|True if the workbook uses the 1904 date system.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|usePrecisionAsDisplayed|bool|True if calculations in this workbook will be done using only the precision of the numbers as they're displayed.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|use1904DateSystem|bool|True if the workbook uses the 1904 date system.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|usePrecisionAsDisplayed|bool|True if calculations in this workbook will be done using only the precision of the numbers as they're displayed.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |application|[Application](application.md)|Represents the Excel application instance that contains this workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |bindings|[BindingCollection](bindingcollection.md)|Represents a collection of bindings that are part of the workbook. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|customFunctions|[CustomFunctionCollection](customfunctioncollection.md)|Represents the collection of custom functions defined in add-ins. Read-only.|[ApiSet.CustomBase.CustomFunctions](../requirement-sets/excel-api-requirement-sets.md)|
 |customXmlParts|[CustomXmlPartCollection](customxmlpartcollection.md)|Represents the collection of custom XML parts contained by this workbook. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |dataConnections|[DataConnectionCollection](dataconnectioncollection.md)|Represents all data connections in the workbook. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |functions|[Functions](functions.md)|Represents a collection of worksheet functions that can be used for computation. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|internalTest|[InternalTest](internaltest.md)|For internal use only. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Represents a collection of PivotTables associated with the workbook. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |properties|[DocumentProperties](documentproperties.md)|Gets the workbook properties. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
@@ -37,16 +37,33 @@ Workbook is the top level object which contains related workbook objects such as
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[close(closeBehavior: CloseBehavior)](#closeclosebehavior-closebehavior)|void|Close current workbook.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[getActiveCell()](#getactivecell)|[Range](range.md)|Gets the currently active cell from the workbook.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getActiveChart()](#getactivechart)|[Chart](chart.md)|Gets the currently active chart in the workbook. If there is no active chart, will throw exception when invoke this statement|[ApiSet.InProgressFeatures.chartingAPIWave3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getActiveChartOrNullObject()](#getactivechartornullobject)|[Chart](chart.md)|Gets the currently active chart in the workbook. If there is no active chart, will return null object|[ApiSet.InProgressFeatures.chartingAPIWave3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getIsActiveCollabSession()](#getisactivecollabsession)|bool|True if the workbook is being edited by multiple users (co-authoring).|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[ApiSet.InProgressFeatures.WorkbookRange](../requirement-sets/excel-api-requirement-sets.md)|
-|[getSelectedRange(allowMultiAreas: bool)](#getselectedrangeallowmultiareas-bool)|[Range](range.md)|Gets the currently selected range from the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[registerCustomFunctions(addinNamespace: string, metadataContent: string, addinId: string)](#registercustomfunctionsaddinnamespace-string-metadatacontent-string-addinid-string)|void|Registers the custom functions from the metadata file.|[ApiSet.CustomBase.CustomFunctions](../requirement-sets/excel-api-requirement-sets.md)|
+|[getActiveChart()](#getactivechart)|[Chart](chart.md)|Gets the currently active chart in the workbook. If there is no active chart, will throw exception when invoke this statement|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getActiveChartOrNullObject()](#getactivechartornullobject)|[Chart](chart.md)|Gets the currently active chart in the workbook. If there is no active chart, will return null object|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getIsActiveCollabSession()](#getisactivecollabsession)|bool|True if the workbook is being edited by multiple users (co-authoring).|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
+|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected single range from the workbook. If there are multiple ranges selected, this method will throw an error.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getSelectedRanges()](#getselectedranges)|[RangeAreas](rangeareas.md)|Gets the currently selected one or more ranges from the workbook. Unlike getSelectedRange(), this method returns a RangeAreas object that represents all the selected ranges.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### close(closeBehavior: CloseBehavior)
+Close current workbook.
+
+#### Syntax
+```js
+workbookObject.close(closeBehavior);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|closeBehavior|CloseBehavior|Optional. workbook close behavior.|
+
+#### Returns
+void
 
 ### getActiveCell()
 Gets the currently active cell from the workbook.
@@ -120,18 +137,16 @@ workbookObject.getRange(address);
 #### Returns
 [Range](range.md)
 
-### getSelectedRange(allowMultiAreas: bool)
-Gets the currently selected range from the workbook.
+### getSelectedRange()
+Gets the currently selected single range from the workbook. If there are multiple ranges selected, this method will throw an error.
 
 #### Syntax
 ```js
-workbookObject.getSelectedRange(allowMultiAreas);
+workbookObject.getSelectedRange();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|allowMultiAreas|bool|Optional. If true, the whole selected range is returned; otherwise, only the first selected area will be returned. Default is false.|
+None
 
 #### Returns
 [Range](range.md)
@@ -152,20 +167,16 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-### registerCustomFunctions(addinNamespace: string, metadataContent: string, addinId: string)
-Registers the custom functions from the metadata file.
+### getSelectedRanges()
+Gets the currently selected one or more ranges from the workbook. Unlike getSelectedRange(), this method returns a RangeAreas object that represents all the selected ranges.
 
 #### Syntax
 ```js
-workbookObject.registerCustomFunctions(addinNamespace, metadataContent, addinId);
+workbookObject.getSelectedRanges();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|addinNamespace|string||
-|metadataContent|string||
-|addinId|string|Optional. |
+None
 
 #### Returns
-void
+[RangeAreas](rangeareas.md)

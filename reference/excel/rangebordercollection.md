@@ -8,6 +8,7 @@ Represents the border objects that make up the range border.
 |:---------------|:--------|:----------|:----|
 |count|int|Number of border objects in the collection. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[RangeBorder[]](rangeborder.md)|A collection of rangeBorder objects. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|tintAndShade|double|Returns or sets a double that lightens or darkens a color for Range Borders, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

@@ -6,7 +6,7 @@ Represents a collection of FilterPivotHierarchy items associated with the PivotT
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[FilterPivotHierarchy[]](filterpivothierarchy.md)|A collection of filterPivotHierarchy objects. Read-only.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[FilterPivotHierarchy[]](filterpivothierarchy.md)|A collection of filterPivotHierarchy objects. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,17 +18,17 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(pivotHierarchy: PivotHierarchy)](#addpivothierarchy-pivothierarchy)|[FilterPivotHierarchy](filterpivothierarchy.md)|Adds the PivotHierarchy to the current axis.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Gets the number of pivot hierarchies in the collection.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(name: string)](#getitemname-string)|[FilterPivotHierarchy](filterpivothierarchy.md)|Gets a FilterPivotHierarchy by its name or id.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[FilterPivotHierarchy](filterpivothierarchy.md)|Gets a FilterPivotHierarchy by name. If the FilterPivotHierarchy does not exist, will return a null object.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
-|[remove(filterPivotHierarchy: FilterPivotHierarchy)](#removefilterpivothierarchy-filterpivothierarchy)|void|Removes the PivotHierarchy from the current axis.|[ApiSet.InProgressFeatures.PivotSharedApis](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(pivotHierarchy: PivotHierarchy)](#addpivothierarchy-pivothierarchy)|[FilterPivotHierarchy](filterpivothierarchy.md)|Adds the PivotHierarchy to the current axis. If the hierarchy is present elsewhere on the row, column,|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of pivot hierarchies in the collection.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[FilterPivotHierarchy](filterpivothierarchy.md)|Gets a FilterPivotHierarchy by its name or id.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[FilterPivotHierarchy](filterpivothierarchy.md)|Gets a FilterPivotHierarchy by name. If the FilterPivotHierarchy does not exist, will return a null object.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[remove(filterPivotHierarchy: FilterPivotHierarchy)](#removefilterpivothierarchy-filterpivothierarchy)|void|Removes the PivotHierarchy from the current axis.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### add(pivotHierarchy: PivotHierarchy)
-Adds the PivotHierarchy to the current axis.
+Adds the PivotHierarchy to the current axis. If the hierarchy is present elsewhere on the row, column,
 
 #### Syntax
 ```js
@@ -38,7 +38,7 @@ filterPivotHierarchyCollectionObject.add(pivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|pivotHierarchy|PivotHierarchy|..|
+|pivotHierarchy|PivotHierarchy|TODO|
 
 #### Returns
 [FilterPivotHierarchy](filterpivothierarchy.md)
@@ -100,7 +100,7 @@ filterPivotHierarchyCollectionObject.remove(filterPivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|filterPivotHierarchy|FilterPivotHierarchy|..|
+|filterPivotHierarchy|FilterPivotHierarchy|TODO|
 
 #### Returns
 void

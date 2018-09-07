@@ -6,8 +6,8 @@ Represents the options in page layout margins.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|columnIndex|int|Represents the column index for the page break Read-only.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|rowIndex|int|Represents the row index for the page break Read-only.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
+|columnIndex|int|Represents the column index for the page break Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|rowIndex|int|Represents the row index for the page break Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -19,8 +19,8 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[delete()](#delete)|void|Deletes a page break object.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|[getStartCell()](#getstartcell)|[Range](range.md)|Gets the first cell after the page break.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
+|[delete()](#delete)|void|Deletes a page break object.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getStartCell()](#getstartcell)|[Range](range.md)|Gets the first cell after the page break.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

@@ -24,8 +24,8 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[clear()](#clear)|void|Clears the data validation from the current range.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[getInvalidCells()](#getinvalidcells)|[Range](range.md)|Returns a range with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[getInvalidCellsOrNullObject()](#getinvalidcellsornullobject)|[Range](range.md)|Returns a range with invalid cell values. If all cell values are valid, this function will return null.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[getInvalidCells()](#getinvalidcells)|[RangeAreas](rangeareas.md)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getInvalidCellsOrNullObject()](#getinvalidcellsornullobject)|[RangeAreas](rangeareas.md)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will return null.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -45,7 +45,7 @@ None
 void
 
 ### getInvalidCells()
-Returns a range with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.
+Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.
 
 #### Syntax
 ```js
@@ -56,10 +56,10 @@ dataValidationObject.getInvalidCells();
 None
 
 #### Returns
-[Range](range.md)
+[RangeAreas](rangeareas.md)
 
 ### getInvalidCellsOrNullObject()
-Returns a range with invalid cell values. If all cell values are valid, this function will return null.
+Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will return null.
 
 #### Syntax
 ```js
@@ -70,4 +70,4 @@ dataValidationObject.getInvalidCellsOrNullObject();
 None
 
 #### Returns
-[Range](range.md)
+[RangeAreas](rangeareas.md)

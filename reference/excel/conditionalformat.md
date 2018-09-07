@@ -38,8 +38,9 @@ _See property access [examples.](#property-access-examples)_
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|Deletes this conditional format.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRange()](#getrange)|[Range](range.md)|Returns the range the conditonal format is applied to. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRangeOrNullObject()](#getrangeornullobject)|[Range](range.md)|Returns the range the conditonal format is applied to or a null object if the range is discontiguous. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Returns the range the conditonal format is applied to. Throws an error if the conditional format is applied to multiple ranges. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRangeOrNullObject()](#getrangeornullobject)|[Range](range.md)|Returns the range the conditonal format is applied to, or a null object if the conditional format is applied to multiple ranges. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRanges()](#getranges)|[RangeAreas](rangeareas.md)|Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -59,7 +60,7 @@ None
 void
 
 ### getRange()
-Returns the range the conditonal format is applied to. Read-only.
+Returns the range the conditonal format is applied to. Throws an error if the conditional format is applied to multiple ranges. Read-only.
 
 #### Syntax
 ```js
@@ -73,7 +74,7 @@ None
 [Range](range.md)
 
 ### getRangeOrNullObject()
-Returns the range the conditonal format is applied to or a null object if the range is discontiguous. Read-only.
+Returns the range the conditonal format is applied to, or a null object if the conditional format is applied to multiple ranges. Read-only.
 
 #### Syntax
 ```js
@@ -85,4 +86,18 @@ None
 
 #### Returns
 [Range](range.md)
+
+### getRanges()
+Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.
+
+#### Syntax
+```js
+conditionalFormatObject.getRanges();
+```
+
+#### Parameters
+None
+
+#### Returns
+[RangeAreas](rangeareas.md)
 ### Property access examples

@@ -20,7 +20,7 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[clear()](#clear)|void|Clear the border format of a chart element.|[ApiSet.InProgressFeatures.ChartingAPIWave2](../requirement-sets/excel-api-requirement-sets.md)|
+|[clear()](#clear)|void|Clear the border format of a chart element.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

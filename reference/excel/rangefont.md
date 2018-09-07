@@ -11,6 +11,10 @@ This object represents the font attributes (font name, font size, color, etc.) f
 |italic|bool|Represents the italic status of the font.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Font name (e.g. "Calibri")|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |size|double|Font size.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|strikethrough|bool|Represents the strikethrough status of font. A null value indicates that the entire range doesn't have uniform Strikethrough setting.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|subscript|bool|Represents the Subscript status of font.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|superscript|bool|Represents the Superscript status of font.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|tintAndShade|double|Returns or sets a double that lightens or darkens a color for Range Font, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |underline|string|Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_

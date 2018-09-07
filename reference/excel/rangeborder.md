@@ -10,6 +10,7 @@ Represents the border of an object.
 |id|string|Represents border identifier. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |sideIndex|string|Constant value that indicates the specific side of the border. Read-only. Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |style|string|One of the constants of line style specifying the line style for the border. Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|tintAndShade|double|Returns or sets a double that lightens or darkens a color for Range Border, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |weight|string|Specifies the weight of the border around a range. Possible values are: Hairline, Thin, Medium, Thick.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_

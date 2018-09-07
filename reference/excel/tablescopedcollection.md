@@ -6,7 +6,7 @@ Represents a scoped collection of tables. For each table its top-left corner is 
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[TableScoped[]](tablescoped.md)|A collection of tableScoped objects. Read-only.|[ApiSet.InProgressFeatures.RangeGetTables](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[TableScoped[]](tablescoped.md)|A collection of tableScoped objects. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,9 +18,9 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[getCount()](#getcount)|int|Gets the number of tables in the collection.|[ApiSet.InProgressFeatures.RangeGetTables](../requirement-sets/excel-api-requirement-sets.md)|
-|[getFirst()](#getfirst)|[Table](table.md)|Gets the first table in the collection. The tables in the collection are sorted top to bottom and left to right, such that top left table is the first table in the collection.|[ApiSet.InProgressFeatures.RangeGetTables](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(key: string)](#getitemkey-string)|[Table](table.md)|Gets a table by Name or ID.|[ApiSet.InProgressFeatures.RangeGetTables](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of tables in the collection.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getFirst()](#getfirst)|[Table](table.md)|Gets the first table in the collection. The tables in the collection are sorted top to bottom and left to right, such that top left table is the first table in the collection.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: string)](#getitemkey-string)|[Table](table.md)|Gets a table by Name or ID.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

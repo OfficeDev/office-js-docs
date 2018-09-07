@@ -6,7 +6,7 @@ Represents the options in page layout margins.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[PageBreak[]](pagebreak.md)|A collection of pageBreak objects. Read-only.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[PageBreak[]](pagebreak.md)|A collection of pageBreak objects. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
@@ -18,10 +18,10 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(pageBreakRange: Range or string)](#addpagebreakrange-range-or-string)|[PageBreak](pagebreak.md)|Adds a page break before the top-left cell of the range specified.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Gets the number of page breaks in the collection.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(index: number)](#getitemindex-number)|[PageBreak](pagebreak.md)|Gets a page break object via the index.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
-|[removePageBreaks()](#removepagebreaks)|void|Resets all manual page breaks in the collection.|[ApiSet.InProgressFeatures.PageLayout](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(pageBreakRange: Range or string)](#addpagebreakrange-range-or-string)|[PageBreak](pagebreak.md)|Adds a page break before the top-left cell of the range specified.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of page breaks in the collection.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(index: number)](#getitemindex-number)|[PageBreak](pagebreak.md)|Gets a page break object via the index.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[removePageBreaks()](#removepagebreaks)|void|Resets all manual page breaks in the collection.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 

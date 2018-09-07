@@ -10,7 +10,7 @@ Represents a defined name for a range of cells or value. Names can be primitive 
 |formula|object|Gets or sets the formula of the named item.  Formula always starts with a '=' sign.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The name of the object. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |scope|string|Indicates whether the name is scoped to the workbook or to a specific worksheet. Possible values are: Worksheet, Workbook. Read-only. Possible values are: Equal, Greater, GreaterEqual, Less, LessEqual, NotEqual.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|type|string|Indicates the type of the value returned by the names formula. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Indicates the type of the value returned by the name's formula. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |value|object|Represents the value computed by the name's formula. For a named range, will return the range address. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|Specifies whether the object is visible or not.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 

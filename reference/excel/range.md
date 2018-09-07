@@ -6,7 +6,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. "Sheet1!A1:B4"). Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |cellCount|int|Number of cells in the range. This API will return -1 if the cell count exceeds 2^31-1 (2,147,483,647). Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |columnCount|int|Represents the total number of columns in the range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -33,12 +33,11 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|areas|[AreaCollection](areacollection.md)|Represents a collection of contiguous areas for the range. Read-only.|[ApiSet.InProgressFeatures.RangeAreas](../requirement-sets/excel-api-requirement-sets.md)|
 |conditionalFormats|[ConditionalFormatCollection](conditionalformatcollection.md)|Collection of ConditionalFormats that intersect the range. Read-only.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |dataValidation|[DataValidation](datavalidation.md)|Returns a data validation object. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |hyperlink|[RangeHyperlink](rangehyperlink.md)|Represents the hyperlink for the current range.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|linkedDataTypeState|[LinkedDataTypeState](linkeddatatypestate.md)|Represents the data type state of each cell. Read-only.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|linkedDataTypeState|[LinkedDataTypeState](linkeddatatypestate.md)|Represents the data type state of each cell. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |sort|[RangeSort](rangesort.md)|Represents the range sort of the current range. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -48,20 +47,18 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[calculate()](#calculate)|void|Calculates a range of cells on a worksheet.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[convertDataTypeToText()](#convertdatatypetotext)|void|Converts the range cells with datatypes into text.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[convertToLinkedDataType(serviceID: number, languageCulture: string)](#converttolinkeddatatypeserviceid-number-languageculture-string)|void|Converts the range cells into linked datatype in the worksheet.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[copyFrom(sourceRange: Range or string, copyType: RangeCopyType, skipBlanks: bool, transpose: bool)](#copyfromsourcerange-range-or-string-copytype-rangecopytype-skipblanks-bool-transpose-bool)|void|Copies cell data or formatting from the source range to the current range.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[convertDataTypeToText()](#convertdatatypetotext)|void|Converts the range cells with datatypes into text.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[convertToLinkedDataType(serviceID: number, languageCulture: string)](#converttolinkeddatatypeserviceid-number-languageculture-string)|void|Converts the range cells into linked datatype in the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[copyFrom(sourceRange: Range or RangeAreas or string, copyType: RangeCopyType, skipBlanks: bool, transpose: bool)](#copyfromsourcerange-range-or-rangeareas-or-string-copytype-rangecopytype-skipblanks-bool-transpose-bool)|void|Copies cell data or formatting from the source range or RangeAreas to the current range.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[find(text: string, criteria: SearchCriteria)](#findtext-string-criteria-searchcriteria)|[Range](range.md)|Finds the given string based on the criteria specified.|[ApiSet.InProgressFeatures.SearchReplace](../requirement-sets/excel-api-requirement-sets.md)|
-|[findOrNullObject(text: string, criteria: SearchCriteria)](#findornullobjecttext-string-criteria-searchcriteria)|[Range](range.md)|Finds the given string based on the criteria specified.|[ApiSet.InProgressFeatures.SearchReplace](../requirement-sets/excel-api-requirement-sets.md)|
+|[find(text: string, criteria: SearchCriteria)](#findtext-string-criteria-searchcriteria)|[Range](range.md)|Finds the given string based on the criteria specified.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[findOrNullObject(text: string, criteria: SearchCriteria)](#findornullobjecttext-string-criteria-searchcriteria)|[Range](range.md)|Finds the given string based on the criteria specified.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[getAbsoluteResizedRange(numRows: number, numColumns: number)](#getabsoluteresizedrangenumrows-number-numcolumns-number)|[Range](range.md)|Gets a Range object with the same top-left cell as the current Range object, but with the specified numbers of rows and columns.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E15".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets a certain number of columns to the right of the current Range object.|[ApiSet.PolyfillableDownTo1_1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets a certain number of columns to the left of the current Range object.|[ApiSet.PolyfillableDownTo1_1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getDataValidationRange()](#getdatavalidationrange)|[Range](range.md)|Returns a range with data validation rules. If there is no data validation rules within the range, this function will throw an ItemNotFound error.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|[getDataValidationRangeOrNullObject()](#getdatavalidationrangeornullobject)|[Range](range.md)|Returns a range with data validation rules. If there is no data validation rules within the range, this function will return a null object.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range (for example, if the current range represents cells "B4:E11", its `getEntireColumn` is a range that represents columns "B:E").|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range (for example, if the current range represents cells "B4:E11", its `GetEntireRow` is a range that represents rows "4:11").|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getImage()](#getimage)|[System.IO.Stream](system.io.stream.md)|Renders the range as a base64-encoded png image.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
@@ -75,19 +72,19 @@ _See property access [examples.](#property-access-examples)_
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|Gets a certain number of rows above the current Range object.|[ApiSet.PolyfillableDownTo1_1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Gets a certain number of rows below the current Range object.|[ApiSet.PolyfillableDownTo1_1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getSpecialCells(cellType: SpecialCellType, cellValueType: SpecialCellValueType)](#getspecialcellscelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|[Range](range.md)|Gets the range object that represents all the cells that match the specified type and value. Throws an error if no special cells are found that match the criteria.|[ApiSet.InProgressFeatures.RangeSpecialCells](../requirement-sets/excel-api-requirement-sets.md)|
-|[getSpecialCellsOrNullObject(cellType: SpecialCellType, cellValueType: SpecialCellValueType)](#getspecialcellsornullobjectcelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|[Range](range.md)|Gets the range object that represents all the cells that match the specified type and value. Returns a null object if no special cells are found that match the criteria.|[ApiSet.InProgressFeatures.RangeSpecialCells](../requirement-sets/excel-api-requirement-sets.md)|
+|[getSpecialCells(cellType: SpecialCellType, cellValueType: SpecialCellValueType)](#getspecialcellscelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|[RangeAreas](rangeareas.md)|Gets the RangeAreas object, comprising one or more rectangular ranges, that represents all the cells that match the specified type and value.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getSpecialCellsOrNullObject(cellType: SpecialCellType, cellValueType: SpecialCellValueType)](#getspecialcellsornullobjectcelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|[RangeAreas](rangeareas.md)|Gets the RangeAreas object, comprising one or more ranges, that represents all the cells that match the specified type and value.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[getSurroundingRegion()](#getsurroundingregion)|[Range](range.md)|Returns a Range object that represents the surrounding region for the top-left cell in this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getTables(fullyContained: bool)](#gettablesfullycontained-bool)|[TableScopedCollection](tablescopedcollection.md)|Gets a scoped collection of tables that overlap with the range.|[ApiSet.InProgressFeatures.RangeGetTables](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTables(fullyContained: bool)](#gettablesfullycontained-bool)|[TableScopedCollection](tablescopedcollection.md)|Gets a scoped collection of tables that overlap with the range.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|Returns the used range of the given range object. If there are no used cells within the range, this function will throw an ItemNotFound error.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|Returns the used range of the given range object. If there are no used cells within the range, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Represents the visible rows of the current range.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[merge(across: bool)](#mergeacross-bool)|void|Merge the range cells into one region in the worksheet.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[removeDuplicates(columns: int[], includesHeader: bool)](#removeduplicatescolumns-int-includesheader-bool)|[RemoveDuplicatesResult](removeduplicatesresult.md)|Removes duplicate values from the range specified by the columns.|[ApiSet.InProgressFeatures.RemoveDuplicates](../requirement-sets/excel-api-requirement-sets.md)|
-|[replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)](#replacealltext-string-replacement-string-criteria-replacecriteria)|int|Finds and replaces the given string based on the criteria specified within the current range.|[ApiSet.InProgressFeatures.SearchReplace](../requirement-sets/excel-api-requirement-sets.md)|
-|[select(allowMultiAreas: bool)](#selectallowmultiareas-bool)|void|Selects the specified range in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[setDirty()](#setdirty)|void|Set a range to be recalculated when the next recalculation occurs.|[ApiSet.InProgressFeatures.CalcWave2](../requirement-sets/excel-api-requirement-sets.md)|
+|[removeDuplicates(columns: int[], includesHeader: bool)](#removeduplicatescolumns-int-includesheader-bool)|[RemoveDuplicatesResult](removeduplicatesresult.md)|Removes duplicate values from the range specified by the columns.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)](#replacealltext-string-replacement-string-criteria-replacecriteria)|int|Finds and replaces the given string based on the criteria specified within the current range.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[select()](#select)|void|Selects the specified range in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[setDirty()](#setdirty)|void|Set a range to be recalculated when the next recalculation occurs.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[showCard()](#showcard)|void|Displays the card for an active cell if it has rich value content.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -175,8 +172,8 @@ rangeObject.convertToLinkedDataType(serviceID, languageCulture);
 #### Returns
 void
 
-### copyFrom(sourceRange: Range or string, copyType: RangeCopyType, skipBlanks: bool, transpose: bool)
-Copies cell data or formatting from the source range to the current range.
+### copyFrom(sourceRange: Range or RangeAreas or string, copyType: RangeCopyType, skipBlanks: bool, transpose: bool)
+Copies cell data or formatting from the source range or RangeAreas to the current range.
 
 #### Syntax
 ```js
@@ -186,7 +183,7 @@ rangeObject.copyFrom(sourceRange, copyType, skipBlanks, transpose);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|sourceRange|Range or string|The source range to copy from.|
+|sourceRange|Range or RangeAreas or string|The source range or RangeAreas to copy from. When the source RangeAreas has multiple ranges, it must in the outline form which can be created by removing full rows or columns from a rectangular range.|
 |copyType|RangeCopyType|Optional. The type of cell data or formatting to copy over. Default is "All".|
 |skipBlanks|bool|Optional. True if to skip blank cells in the source range. Default is false.|
 |transpose|bool|Optional. True if to transpose the cells in the destination range. Default is false.|
@@ -280,7 +277,7 @@ rangeObject.getAbsoluteResizedRange(numRows, numColumns);
 [Range](range.md)
 
 ### getBoundingRect(anotherRange: Range or string)
-Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".
+Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E15".
 
 #### Syntax
 ```js
@@ -421,34 +418,6 @@ rangeObject.getColumnsBefore(count);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|number|Optional. Optional. The number of columns to include in the resulting range. In general, use a positive number to create a range outside the current range. You can also use a negative number to create a range within the current range. The default value is 1.|
-
-#### Returns
-[Range](range.md)
-
-### getDataValidationRange()
-Returns a range with data validation rules. If there is no data validation rules within the range, this function will throw an ItemNotFound error.
-
-#### Syntax
-```js
-rangeObject.getDataValidationRange();
-```
-
-#### Parameters
-None
-
-#### Returns
-[Range](range.md)
-
-### getDataValidationRangeOrNullObject()
-Returns a range with data validation rules. If there is no data validation rules within the range, this function will return a null object.
-
-#### Syntax
-```js
-rangeObject.getDataValidationRangeOrNullObject();
-```
-
-#### Parameters
-None
 
 #### Returns
 [Range](range.md)
@@ -823,7 +792,7 @@ rangeObject.getRowsBelow(count);
 [Range](range.md)
 
 ### getSpecialCells(cellType: SpecialCellType, cellValueType: SpecialCellValueType)
-Gets the range object that represents all the cells that match the specified type and value. Throws an error if no special cells are found that match the criteria.
+Gets the RangeAreas object, comprising one or more rectangular ranges, that represents all the cells that match the specified type and value.
 
 #### Syntax
 ```js
@@ -837,10 +806,10 @@ rangeObject.getSpecialCells(cellType, cellValueType);
 |cellValueType|SpecialCellValueType|Optional. If cellType is either Constants or Formulas, this argument is used to determine which types of cells to include in the result. These values can be combined together to return more than one type. The default is to select all constants or formulas, no matter what the type.|
 
 #### Returns
-[Range](range.md)
+[RangeAreas](rangeareas.md)
 
 ### getSpecialCellsOrNullObject(cellType: SpecialCellType, cellValueType: SpecialCellValueType)
-Gets the range object that represents all the cells that match the specified type and value. Returns a null object if no special cells are found that match the criteria.
+Gets the RangeAreas object, comprising one or more ranges, that represents all the cells that match the specified type and value.
 
 #### Syntax
 ```js
@@ -854,7 +823,7 @@ rangeObject.getSpecialCellsOrNullObject(cellType, cellValueType);
 |cellValueType|SpecialCellValueType|Optional. If cellType is either Constants or Formulas, this argument is used to determine which types of cells to include in the result. These values can be combined together to return more than one type. The default is to select all constants or formulas, no matter what the type.|
 
 #### Returns
-[Range](range.md)
+[RangeAreas](rangeareas.md)
 
 ### getSurroundingRegion()
 Returns a Range object that represents the surrounding region for the top-left cell in this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
@@ -1076,18 +1045,16 @@ rangeObject.replaceAll(text, replacement, criteria);
 #### Returns
 int
 
-### select(allowMultiAreas: bool)
+### select()
 Selects the specified range in the Excel UI.
 
 #### Syntax
 ```js
-rangeObject.select(allowMultiAreas);
+rangeObject.select();
 ```
 
 #### Parameters
-| Parameter	   | Type	|Description|
-|:---------------|:--------|:----------|
-|allowMultiAreas|bool|Optional. If true, a multi-area range can be selected; otherwise, only the first area will be selected. Default is false.|
+None
 
 #### Returns
 void
