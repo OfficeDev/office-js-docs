@@ -9,7 +9,7 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|binding|[Binding](binding.md)|Gets the Binding object that represents the binding that raised the DataChanged event.|[ApiSet.PolyfillableDownTo1_1](../requirement-sets/excel-api-requirement-sets.md)|
+|binding|[Binding](binding.md)|Gets the Binding object that represents the binding that raised the DataChanged event.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None
