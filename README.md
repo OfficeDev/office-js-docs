@@ -11,31 +11,7 @@ _**Note**: The following features are still under design and review phase and no
 > For the requirement sets that are marked as *Beta*, use the specified (or later) version of Office and use the Beta library of the CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Entries not listed as *Beta* are generally available and you can continue to use Production CDN library: https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 ## New APIs in Beta
-
-* __Events__: Support more events. For details, see [New Event API features](/reference/new-events.md) for details.
-
-* __Charts__: Get Chart ID and type, more properies, formats and position for Axis, control the styles and behaviors of Chart with advanced properties, control the styles and formats for DataLabel, customerize Ero bars and Legned, set the TrendlineLabel formats and positions, set the plot area of Charts etc. For details, see [New Chart API features](/reference/new-charts.md) for details.
-
-* __Calculate__: Set the calculation mode to Auto/Manual. It's a run-time only property and won't be persisted.
-
-* __Data Validation__: Basic functions of data validation APIs to apply customized validation. See [New Data Validation API features](/reference/new-datavalidation.md) for details.
-
-* __Workbook__: Access the readonly and save status of workbook.
-
-|Object| What is new| Description |
-|:----|:----|:----|
-|[workbook](reference/excel/workbook.md)|_Property_ > readOnly|True if the workbook is open in Read-only mode. Read-only.
-|[workbook](reference/excel/workbook.md)|_Property_ > saved|True if no changes have been made to the specified workbook since it was last saved.
-
-## Upcoming APIs to be previewed
-
-* __Events__: Add onChanged and onSelectionChanged under WorksheetCollection object. Add onAdded/onDeleted event under Table object.
-
-* __Calculate__: Get the calculate related info. 
-
-* __AutoFilter__: Create and apply an AutoFilter to a range in worksheet.
-
-* __Print layout and page setup__: Control the print style of worksheet, setup the page size and layout.
+Description coming soon...
 
 ## Give us feedback!
 
