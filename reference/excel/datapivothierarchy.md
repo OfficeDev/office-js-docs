@@ -24,13 +24,13 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[setToDefault()](#settodefault)|void|Reset the DataPivotHierarchy back to it's default values.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|[setToDefault()](#settodefault)|void|Reset the DataPivotHierarchy back to its default values.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
 
 ### setToDefault()
-Reset the DataPivotHierarchy back to it's default values.
+Reset the DataPivotHierarchy back to its default values.
 
 #### Syntax
 ```js

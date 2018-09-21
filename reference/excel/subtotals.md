@@ -16,8 +16,8 @@ Subtotals for the Pivot Field.
 |standardDeviation|bool|If Automatic is set to true, then all other values will be ignored when setting the Subtotals.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |standardDeviationP|bool|If Automatic is set to true, then all other values will be ignored when setting the Subtotals.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |sum|bool|If Automatic is set to true, then all other values will be ignored when setting the Subtotals.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|variation|bool|If Automatic is set to true, then all other values will be ignored when setting the Subtotals.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|variationP|bool|If Automatic is set to true, then all other values will be ignored when setting the Subtotals.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|variance|bool|If Automatic is set to true, then all other values will be ignored when setting the Subtotals.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|varianceP|bool|If Automatic is set to true, then all other values will be ignored when setting the Subtotals.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

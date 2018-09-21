@@ -6,12 +6,12 @@ Represents the protection of a sheet object.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|protected|bool|Indicates if the worksheet is protected. Read-Only. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|protected|bool|Indicates if the worksheet is protected. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Sheet protection options. Read-Only. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Sheet protection options. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
@@ -34,8 +34,8 @@ worksheetProtectionObject.protect(options, password);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|options|WorksheetProtectionOptions|Optional. sheet protection options.|
-|password|string|Optional. sheet protection password.|
+|options|WorksheetProtectionOptions|Optional. Optional. Sheet protection options.|
+|password|string|Optional. Optional. Sheet protection password.|
 
 #### Returns
 void

@@ -6,13 +6,14 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|gridlines|bool|Gets or sets the worksheet's gridlines flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|headings|bool|Gets or sets the worksheet's headings flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|enableCalculation|bool|Gets or sets the enableCalculation property of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|gridlines|bool|Gets or sets the worksheet's gridlines flag.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|headings|bool|Gets or sets the worksheet's headings flag.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|The display name of the worksheet.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|int|The zero-based position of the worksheet within the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|showGridlines|bool|Gets or sets the worksheet's gridlines flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|showHeadings|bool|Gets or sets the worksheet's headings flag.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|showGridlines|bool|Gets or sets the worksheet's gridlines flag.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|showHeadings|bool|Gets or sets the worksheet's headings flag.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |standardHeight|double|Returns the standard (default) height of all the rows in the worksheet, in points. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |standardWidth|double|Returns or sets the standard (default) width of all the columns in the worksheet.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |tabColor|string|Gets or sets the worksheet tab color.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
@@ -23,14 +24,17 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|autoFilter|[AutoFilter](autofilter.md)|Represents the AutoFilter object of the worksheet. Read-Only. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |charts|[ChartCollection](chartcollection.md)|Returns collection of charts that are part of the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|freezePanes|[WorksheetFreezePanes](worksheetfreezepanes.md)|Gets an object that can be used to manipulate frozen panes on the worksheet Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|freezePanes|[WorksheetFreezePanes](worksheetfreezepanes.md)|Gets an object that can be used to manipulate frozen panes on the worksheet. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|horizontalPageBreaks|[PageBreakCollection](pagebreakcollection.md)|Gets the horizontal page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |names|[NamedItemCollection](nameditemcollection.md)|Collection of names scoped to the current worksheet. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|pageLayout|[PageLayout](pagelayout.md)|Gets the PageLayout object of the worksheet. Read-only.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|pageLayout|[PageLayout](pagelayout.md)|Gets the PageLayout object of the worksheet. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Collection of PivotTables that are part of the worksheet. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |protection|[WorksheetProtection](worksheetprotection.md)|Returns sheet protection object for a worksheet. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|shapes|[ShapeCollection](shapecollection.md)|Returns the collection of all the Shape objects on the worksheet. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |tables|[TableCollection](tablecollection.md)|Collection of tables that are part of the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|visuals|[VisualCollection](visualcollection.md)|Returns collection of visuals that are part of the worksheet. Read-only.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|verticalPageBreaks|[PageBreakCollection](pagebreakcollection.md)|Gets the vertical page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 
@@ -40,15 +44,19 @@ _See property access [examples.](#property-access-examples)_
 |[calculate(markAllDirty: bool)](#calculatemarkalldirty-bool)|void|Calculates all cells on a worksheet.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[copy(positionType: WorksheetPositionType, relativeTo: Worksheet)](#copypositiontype-worksheetpositiontype-relativeto-worksheet)|[Worksheet](worksheet.md)|Copy a worksheet and place it at the specified position. Return the copied worksheet.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[delete()](#delete)|void|Deletes the worksheet from the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[findAll(text: string, criteria: WorksheetSearchCriteria)](#findalltext-string-criteria-worksheetsearchcriteria)|[RangeAreas](rangeareas.md)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[findAllOrNullObject(text: string, criteria: WorksheetSearchCriteria)](#findallornullobjecttext-string-criteria-worksheetsearchcriteria)|[RangeAreas](rangeareas.md)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it stays within the worksheet grid.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getNext(visibleOnly: bool)](#getnextvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getNextOrNullObject(visibleOnly: bool)](#getnextornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that follows this one. If there are no worksheets following this one, this method will return a null object.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getPrevious(visibleOnly: bool)](#getpreviousvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will throw an error.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |[getPreviousOrNullObject(visibleOnly: bool)](#getpreviousornullobjectvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the worksheet that precedes this one. If there are no previous worksheets, this method will return a null objet.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object, representing a single rectangular block of cells, specified by the address or name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](#getrangebyindexesstartrow-number-startcolumn-number-rowcount-number-columncount-number)|[Range](range.md)|Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRanges(address: string)](#getrangesaddress-string)|[RangeAreas](rangeareas.md)|Gets the RangeAreas object, representing one or more blocks of rectangular ranges, specified by the address or name.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e. it will *not* throw an error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)](#replacealltext-string-replacement-string-criteria-replacecriteria)|int|Finds and replaces the given string based on the criteria specified within the current worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -95,7 +103,7 @@ worksheetObject.calculate(markAllDirty);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|markAllDirty|bool|markAllDirty|
+|markAllDirty|bool|True, to mark all as dirty.|
 
 #### Returns
 void
@@ -111,8 +119,8 @@ worksheetObject.copy(positionType, relativeTo);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|positionType|WorksheetPositionType|Optional. positionType. Optional.|
-|relativeTo|Worksheet|Optional.  relativeTo. Optional.|
+|positionType|WorksheetPositionType|Optional. Optional.|
+|relativeTo|Worksheet|Optional. Optional.|
 
 #### Returns
 [Worksheet](worksheet.md)
@@ -148,8 +156,42 @@ Excel.run(function (ctx) {
 ```
 
 
+### findAll(text: string, criteria: WorksheetSearchCriteria)
+Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.
+
+#### Syntax
+```js
+worksheetObject.findAll(text, criteria);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|text|string|String to find.|
+|criteria|WorksheetSearchCriteria|Additional Criteria.|
+
+#### Returns
+[RangeAreas](rangeareas.md)
+
+### findAllOrNullObject(text: string, criteria: WorksheetSearchCriteria)
+Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.
+
+#### Syntax
+```js
+worksheetObject.findAllOrNullObject(text, criteria);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|text|string|String to find.|
+|criteria|WorksheetSearchCriteria|Additional Criteria.|
+
+#### Returns
+[RangeAreas](rangeareas.md)
+
 ### getCell(row: number, column: number)
-Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.
+Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it stays within the worksheet grid.
 
 #### Syntax
 ```js
@@ -196,7 +238,7 @@ worksheetObject.getNext(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+|visibleOnly|bool|Optional. Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 [Worksheet](worksheet.md)
@@ -212,7 +254,7 @@ worksheetObject.getNextOrNullObject(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+|visibleOnly|bool|Optional. Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 [Worksheet](worksheet.md)
@@ -228,7 +270,7 @@ worksheetObject.getPrevious(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+|visibleOnly|bool|Optional. Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 [Worksheet](worksheet.md)
@@ -244,13 +286,13 @@ worksheetObject.getPreviousOrNullObject(visibleOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|visibleOnly|bool|Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
+|visibleOnly|bool|Optional. Optional. If true, considers only visible worksheets, skipping over any hidden ones.|
 
 #### Returns
 [Worksheet](worksheet.md)
 
 ### getRange(address: string)
-Gets the range object specified by the address or name.
+Gets the range object, representing a single rectangular block of cells, specified by the address or name.
 
 #### Syntax
 ```js
@@ -260,7 +302,7 @@ worksheetObject.getRange(address);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|address|string|Optional. The address or the name of the range. If not specified, the entire worksheet range is returned.|
+|address|string|Optional. Optional. The string representing the address or name of the range. For example, "A1:B2". If not specified, the entire worksheet range is returned.|
 
 #### Returns
 [Range](range.md)
@@ -325,8 +367,24 @@ worksheetObject.getRangeByIndexes(startRow, startColumn, rowCount, columnCount);
 #### Returns
 [Range](range.md)
 
+### getRanges(address: string)
+Gets the RangeAreas object, representing one or more blocks of rectangular ranges, specified by the address or name.
+
+#### Syntax
+```js
+worksheetObject.getRanges(address);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|address|string|Optional. Optional. A string containing the comma-separated addresses or names of the individual ranges. For example, "A1:B2, A5:B5". If not specified, an RangeArea object for the entire worksheet is returned.|
+
+#### Returns
+[RangeAreas](rangeareas.md)
+
 ### getUsedRange(valuesOnly: [ApiSet(Version)
-The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e.,: it will *not* throw an error).
+The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return the top left cell (i.e. it will *not* throw an error).
 
 #### Syntax
 ```js
@@ -336,7 +394,7 @@ worksheetObject.getUsedRange(valuesOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|valuesOnly|[ApiSet(Version|Considers only cells with values as used cells (ignoring formatting).|
+|valuesOnly|[ApiSet(Version|Optional. If true, considers only cells with values as used cells (ignoring formatting).|
 
 #### Returns
 [Range](range.md)
@@ -372,10 +430,28 @@ worksheetObject.getUsedRangeOrNullObject(valuesOnly);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|valuesOnly|bool|Optional. Considers only cells with values as used cells.|
+|valuesOnly|bool|Optional. Optional. Considers only cells with values as used cells.|
 
 #### Returns
 [Range](range.md)
+
+### replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)
+Finds and replaces the given string based on the criteria specified within the current worksheet.
+
+#### Syntax
+```js
+worksheetObject.replaceAll(text, replacement, criteria);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|text|string|String to find.|
+|replacement|string|String to replace the original with.|
+|criteria|ReplaceCriteria|Additional Replace Criteria.|
+
+#### Returns
+int
 ### Property access examples
 
 Get worksheet properties based on sheet name.

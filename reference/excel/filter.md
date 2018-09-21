@@ -19,10 +19,10 @@ None
 |[applyBottomItemsFilter(count: number)](#applybottomitemsfiltercount-number)|void|Apply a "Bottom Item" filter to the column for the given number of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyBottomPercentFilter(percent: number)](#applybottompercentfilterpercent-number)|void|Apply a "Bottom Percent" filter to the column for the given percentage of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyCellColorFilter(color: string)](#applycellcolorfiltercolor-string)|void|Apply a "Cell Color" filter to the column for the given color.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[applyCustomFilter(criteria1: string, criteria2: string, oper: string)](#applycustomfiltercriteria1-string-criteria2-string-oper-string)|void|Apply a "Icon" filter to the column for the given criteria strings.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyCustomFilter(criteria1: string, criteria2: string, oper: string)](#applycustomfiltercriteria1-string-criteria2-string-oper-string)|void|Apply an "Icon" filter to the column for the given criteria strings.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyDynamicFilter(criteria: string)](#applydynamicfiltercriteria-string)|void|Apply a "Dynamic" filter to the column.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyFontColorFilter(color: string)](#applyfontcolorfiltercolor-string)|void|Apply a "Font Color" filter to the column for the given color.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Apply a "Icon" filter to the column for the given icon.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Apply an "Icon" filter to the column for the given icon.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyTopItemsFilter(count: number)](#applytopitemsfiltercount-number)|void|Apply a "Top Item" filter to the column for the given number of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Apply a "Top Percent" filter to the column for the given percentage of elements.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Apply a "Values" filter to the column for the given values.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
@@ -96,7 +96,7 @@ filterObject.applyCellColorFilter(color);
 void
 
 ### applyCustomFilter(criteria1: string, criteria2: string, oper: string)
-Apply a "Icon" filter to the column for the given criteria strings.
+Apply an "Icon" filter to the column for the given criteria strings.
 
 #### Syntax
 ```js
@@ -107,8 +107,8 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |criteria1|string|The first criteria string.|
-|criteria2|string|Optional. The second criteria string.|
-|oper|string|Optional. The operator that describes how the two criteria are joined.  Possible values are: And, Or|
+|criteria2|string|Optional. Optional. The second criteria string.|
+|oper|string|Optional. Optional. The operator that describes how the two criteria are joined.  Possible values are: And, Or|
 
 #### Returns
 void
@@ -146,7 +146,7 @@ filterObject.applyFontColorFilter(color);
 void
 
 ### applyIconFilter(icon: Icon)
-Apply a "Icon" filter to the column for the given icon.
+Apply an "Icon" filter to the column for the given icon.
 
 #### Syntax
 ```js
@@ -204,7 +204,7 @@ filterObject.applyValuesFilter(values);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|values|()[]|The list of values to show.|
+|values|()[]|The list of values to show. This must be an array of strings or an array of Excel.FilterDateTime objects.|
 
 #### Returns
 void

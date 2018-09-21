@@ -1,6 +1,6 @@
 # ConditionalRangeFont Object (JavaScript API for Excel)
 
-This object represents the font attributes (font style,, color, etc.) for an object.
+This object represents the font attributes (font style, color, etc.) for an object.
 
 ## Properties
 

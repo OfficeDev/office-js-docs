@@ -1,6 +1,6 @@
 # ConditionalColorScaleCriterion Object (JavaScript API for Excel)
 
-Represents a Color Scale Criterion which contains a type, value and a color.
+Represents a Color Scale Criterion which contains a type, value, and a color.
 
 ## Properties
 

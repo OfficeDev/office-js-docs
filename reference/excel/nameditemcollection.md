@@ -1,6 +1,6 @@
 # NamedItemCollection Object (JavaScript API for Excel)
 
-A collection of all the nameditem objects that are part of the workbook or worksheet, depending on how it was reached.
+A collection of all the NamedItem objects that are part of the workbook or worksheet, depending on how it was reached.
 
 ## Properties
 
@@ -21,8 +21,8 @@ None
 |[add(name: string, reference: Range or string, comment: string)](#addname-string-reference-range-or-string-comment-string)|[NamedItem](nameditem.md)|Adds a new name to the collection of the given scope.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[addFormulaLocal(name: string, formula: string, comment: string)](#addformulalocalname-string-formula-string-comment-string)|[NamedItem](nameditem.md)|Adds a new name to the collection of the given scope using the user's locale for the formula.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount()](#getcount)|int|Gets the number of named items in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name. If the nameditem object does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a NamedItem object using its name.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[NamedItem](nameditem.md)|Gets a NamedItem object using its name. If the nameditem object does not exist, will return a null object.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -40,7 +40,7 @@ namedItemCollectionObject.add(name, reference, comment);
 |:---------------|:--------|:----------|
 |name|string|The name of the named item.|
 |reference|Range or string|The formula or the range that the name will refer to.|
-|comment|string|Optional. The comment associated with the named item|
+|comment|string|Optional. Optional. The comment associated with the named item.|
 
 #### Returns
 [NamedItem](nameditem.md)
@@ -58,7 +58,7 @@ namedItemCollectionObject.addFormulaLocal(name, formula, comment);
 |:---------------|:--------|:----------|
 |name|string|The "name" of the named item.|
 |formula|string|The formula in the user's locale that the name will refer to.|
-|comment|string|Optional. The comment associated with the named item|
+|comment|string|Optional. Optional. The comment associated with the named item.|
 
 #### Returns
 [NamedItem](nameditem.md)
@@ -78,7 +78,7 @@ None
 int
 
 ### getItem(name: string)
-Gets a nameditem object using its name
+Gets a NamedItem object using its name.
 
 #### Syntax
 ```js
@@ -88,7 +88,7 @@ namedItemCollectionObject.getItem(name);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|string|nameditem name.|
+|name|string|Nameditem name.|
 
 #### Returns
 [NamedItem](nameditem.md)
@@ -111,7 +111,7 @@ Excel.run(function (ctx) {
 });
 ```
 ### getItemOrNullObject(name: string)
-Gets a nameditem object using its name. If the nameditem object does not exist, will return a null object.
+Gets a NamedItem object using its name. If the nameditem object does not exist, will return a null object.
 
 #### Syntax
 ```js
@@ -121,7 +121,7 @@ namedItemCollectionObject.getItemOrNullObject(name);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|name|string|nameditem name.|
+|name|string|Nameditem name.|
 
 #### Returns
 [NamedItem](nameditem.md)

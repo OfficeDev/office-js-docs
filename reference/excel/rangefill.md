@@ -7,12 +7,16 @@ Represents the background of a range object.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|patternColor|string|Sets HTML color code representing the color of the Range pattern, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|patternTintAndShade|double|Returns or sets a double that lightens or darkens a pattern color for Range Fill, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|tintAndShade|double|Returns or sets a double that lightens or darkens a color for Range Fill, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
 ## Relationships
-None
-
+| Relationship | Type	|Description| Req. Set|
+|:---------------|:--------|:----------|:----|
+|pattern|string|Gets or sets the pattern of a Range.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 

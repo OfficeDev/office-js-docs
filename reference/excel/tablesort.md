@@ -37,8 +37,8 @@ tableSortObject.apply(fields, matchCase, method);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |fields|SortField[]|The list of conditions to sort on.|
-|matchCase|bool|Optional. Whether to have the casing impact string ordering.|
-|method|string|Optional. The ordering method used for Chinese characters.  Possible values are: PinYin, StrokeCount|
+|matchCase|bool|Optional. Optional. Whether to have the casing impact string ordering.|
+|method|string|Optional. Optional. The ordering method used for Chinese characters.  Possible values are: PinYin, StrokeCount|
 
 #### Returns
 void
