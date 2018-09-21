@@ -42,7 +42,7 @@ Workbook is the top level object which contains related workbook objects such as
 |[getActiveChart()](#getactivechart)|[Chart](chart.md)|Gets the currently active chart in the workbook. If there is no active chart, will throw exception when invoke this statement|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[getActiveChartOrNullObject()](#getactivechartornullobject)|[Chart](chart.md)|Gets the currently active chart in the workbook. If there is no active chart, will return null object|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[getIsActiveCollabSession()](#getisactivecollabsession)|bool|True if the workbook is being edited by multiple users (co-authoring).|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[ApiSetAttribute.Spec](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
 |[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected single range from the workbook. If there are multiple ranges selected, this method will throw an error.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getSelectedRanges()](#getselectedranges)|[RangeAreas](rangeareas.md)|Gets the currently selected one or more ranges from the workbook. Unlike getSelectedRange(), this method returns a RangeAreas object that represents all the selected ranges.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
