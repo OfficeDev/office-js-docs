@@ -305,17 +305,17 @@ The following is an exahustive list of APIs in Beta. Make sure to be on the late
 |[workbook](/reference/excel/workbook.md )|_Method_ > [getActiveChartOrNullObject()](/reference/excel/workbook.md )|Gets the currently active chart in the workbook. If there is no active chart, will return null object|beta|
 |[workbook](/reference/excel/workbook.md )|_Method_ > [getIsActiveCollabSession()](/reference/excel/workbook.md ).|beta|
 |[workbook](/reference/excel/workbook.md )|_Method_ > [getSelectedRanges()](/reference/excel/workbook.md ), this method returns a RangeAreas object that represents all the selected ranges.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Property_ > enableCalculation|Gets or sets the enableCalculation property of the worksheet.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Relationship_ > autoFilter|Represents the AutoFilter object of the worksheet. Read-Only. Read-only.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Relationship_ > horizontalPageBreaks|Gets the horizontal page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Relationship_ > pageLayout|Gets the PageLayout object of the worksheet. Read-only.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Relationship_ > shapes|Returns the collection of all the Shape objects on the worksheet. Read-only.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Relationship_ > verticalPageBreaks|Gets the vertical page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Method_ > [findAll(text: string, criteria: WorksheetSearchCriteria)](/reference/excel/excel.worksheet)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Method_ > [findAllOrNullObject(text: string, criteria: WorksheetSearchCriteria)](/reference/excel/excel.worksheet)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Method_ > [getRanges(address: string)](/reference/excel/excel.worksheet)|Gets the RangeAreas object, representing one or more blocks of rectangular ranges, specified by the address or name.|beta|
-|[worksheet](/reference/excel/excel.worksheet)|_Method_ > [replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)](/reference/excel/excel.worksheet)|Finds and replaces the given string based on the criteria specified within the current worksheet.|beta|
-|[worksheetFilteredEventArgs](/reference/excel/excel.worksheetfilteredeventargs)|_Property_ > type|Represents the type of the event.|beta|
-|[worksheetFilteredEventArgs](/reference/excel/excel.worksheetfilteredeventargs)|_Property_ > worksheetId|Represents the id of the worksheet in which the filter is applied.|beta|
-|[worksheetSearchCriteria](/reference/excel/excel.worksheetsearchcriteria)|_Property_ > completeMatch|Specifies whether the match needs to be complete or partial. Default is false (partial).|beta|
-|[worksheetSearchCriteria](/reference/excel/excel.worksheetsearchcriteria)|_Property_ > matchCase|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Property_ > enableCalculation|Gets or sets the enableCalculation property of the worksheet.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Relationship_ > autoFilter|Represents the AutoFilter object of the worksheet. Read-Only. Read-only.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Relationship_ > horizontalPageBreaks|Gets the horizontal page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Relationship_ > pageLayout|Gets the PageLayout object of the worksheet. Read-only.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Relationship_ > shapes|Returns the collection of all the Shape objects on the worksheet. Read-only.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Relationship_ > verticalPageBreaks|Gets the vertical page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Method_ > [findAll(text: string, criteria: WorksheetSearchCriteria)](/reference/excel/excel.worksheet)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Method_ > [findAllOrNullObject(text: string, criteria: WorksheetSearchCriteria)](/reference/excel/worksheet.md)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Method_ > [getRanges(address: string)](/reference/excel/excel.worksheet)|Gets the RangeAreas object, representing one or more blocks of rectangular ranges, specified by the address or name.|beta|
+|[worksheet](/reference/excel/worksheet.md)|_Method_ > [replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)](/reference/excel/worksheet.md)|Finds and replaces the given string based on the criteria specified within the current worksheet.|beta|
+|[worksheetFilteredEventArgs](/reference/excel/worksheetfilteredeventargs.md)|_Property_ > type|Represents the type of the event.|beta|
+|[worksheetFilteredEventArgs](/reference/excel/worksheetfilteredeventargs.md)|_Property_ > worksheetId|Represents the id of the worksheet in which the filter is applied.|beta|
+|[worksheetSearchCriteria](/reference/excel/worksheetsearchcriteria.md)|_Property_ > completeMatch|Specifies whether the match needs to be complete or partial. Default is false (partial).|beta|
+|[worksheetSearchCriteria](/reference/excel/worksheetsearchcriteria.md)|_Property_ > matchCase|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
