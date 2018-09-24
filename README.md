@@ -20,12 +20,12 @@ New Beta APIs are ready for critique.
 
 Here is a summary of the APIs and relevant pointers for content. Please give it a try and open issues with your feedback.
 
-Included in this release are more than 400 new APIs for Excel, please refer to a detailed list here.
+Included in this release are more than 400 new APIs for Excel, please refer to a [detailed list here](betaMembers.md).
 
 | Feature Area | Description | Relevant Objects/Articles |
 | --- | --- | --- |
 | Shapes | Insert, position and format Images, Geometric Shapes and Text boxes. | [ShapeCollection](/reference/excel/shapecollection.md) [Shape](/reference/excel/shape.md) [GeometricShape](/reference/excel/geometrishape.md)  [Image](/reference/excel/image.md) |
-| New Charts | Explore our new supported chart types. | [Chart](/reference/excel/chert.md) |
+| New Charts | Explore our new supported chart types. | [Chart](/reference/excel/chart.md) |
 | Auto Filter | Add filters to ranges, sort, etc. | [Autofilter](/reference/excel/utofilter.md) [Range](/reference/excel/range.md) |
 | Areas | Finally, on the API we support discontinuous ranges! | [RangeAreas](/reference/excel/rangeareas.md) |
 | Special Cells |   | [Range](/reference/excel/range.md)|
