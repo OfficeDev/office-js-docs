@@ -32,26 +32,26 @@ The following is an exahustive list of APIs in Beta. Make sure to be on the late
 |[chartBinOptions](/reference/excel/chartbinoptions.md)|_Property_ > underflowValue|Returns or sets bin underflow value of a histogram chart or pareto chart. ReadWrite.|beta|
 |[chartBinOptions](/reference/excel/chartbinoptions.md)|_Property_ > width|Returns or sets bin width value of a histogram chart or pareto chart. ReadWrite.|beta|
 |[chartBinOptions](/reference/excel/chartbinoptions.md)|_Relationship_ > type|Returns or sets bin type of a histogram chart or pareto chart. ReadWrite.|beta|
-|[chartBoxwhiskerOptions](/reference/excel/chart.mdboxwhiskeroptions)|_Property_ > showInnerPoints|Returns or sets if inner points showed in a Box &amp; whisker chart. ReadWrite.|beta|
-|[chartBoxwhiskerOptions](/reference/excel/chart.mdboxwhiskeroptions)|_Property_ > showMeanLine|Returns or sets if mean line showed in a Box &amp; whisker chart. ReadWrite.|beta|
-|[chartBoxwhiskerOptions](/reference/excel/chart.mdboxwhiskeroptions)|_Property_ > showMeanMarker|Returns or sets if mean marker showed in a Box &amp; whisker chart. ReadWrite.|beta|
-|[chartBoxwhiskerOptions](/reference/excel/chart.mdboxwhiskeroptions)|_Property_ > showOutlierPoints|Returns or sets if outlier points showed in a Box &amp; whisker chart. ReadWrite.|beta|
-|[chartBoxwhiskerOptions](/reference/excel/chart.mdboxwhiskeroptions)|_Relationship_ > quartileCalculation|Returns or sets quartile calculation type of a Box &amp; whisker chart. ReadWrite.|beta|
-|[chartDataLabel](/reference/excel/chart.mddatalabel)|_Property_ > linkNumberFormat|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
-|[chartDataLabels](/reference/excel/chart.mddatalabels)|_Property_ > linkNumberFormat|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
-|[chartErrorBars](/reference/excel/chart.mderrorbars)|_Property_ > endStyleCap|Represents whether have the end style cap for the error bars.|beta|
-|[chartErrorBars](/reference/excel/chart.mderrorbars)|_Property_ > visible|Represents whether shown error bars.|beta|
-|[chartErrorBars](/reference/excel/chart.mderrorbars)|_Relationship_ > format|Represents the formatting of chart ErrorBars. Read-only.|beta|
-|[chartErrorBars](/reference/excel/chart.mderrorbars)|_Relationship_ > include|Represents which error-bar parts to include.|beta|
-|[chartErrorBars](/reference/excel/chart.mderrorbars)|_Relationship_ > type|Represents the range marked by error bars.|beta|
-|[chartErrorBarsFormat](/reference/excel/chart.mderrorbarsformat)|_Relationship_ > line|Represents chart line formatting. Read-only.|beta|
-|[chartMapOptions](/reference/excel/chart.mdmapoptions)|_Relationship_ > labelStrategy|Returns or sets series map labels strategy of a region map chart. ReadWrite.|beta|
-|[chartMapOptions](/reference/excel/chart.mdmapoptions)|_Relationship_ > level|Returns or sets series map area of a region map chart. ReadWrite.|beta|
-|[chartMapOptions](/reference/excel/chart.mdmapoptions)|_Relationship_ > projectionType|Returns or sets series projection type of a region map chart. ReadWrite.|beta|
-|[chartPivotOptions](/reference/excel/chart.mdpivotoptions)|_Property_ > showAxisFieldButtons|Represents whether to display axis field buttons on a PivotChart.|beta|
-|[chartPivotOptions](/reference/excel/chart.mdpivotoptions)|_Property_ > showLegendFieldButtons|Represents whether to display legend field buttons on a PivotChart.|beta|
-|[chartPivotOptions](/reference/excel/chart.mdpivotoptions)|_Property_ > showReportFilterFieldButtons|Represents whether to display report filter field buttons on a PivotChart.|beta|
-|[chartPivotOptions](/reference/excel/chart.mdpivotoptions)|_Property_ > showValueFieldButtons|Represents whether to display show value field buttons on a PivotChart.|beta|
+|[chartBoxwhiskerOptions](/reference/excel/chartboxwhiskeroptions.md)|_Property_ > showInnerPoints|Returns or sets if inner points showed in a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](/reference/excel/chartboxwhiskeroptions.md)|_Property_ > showMeanLine|Returns or sets if mean line showed in a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](/reference/excel/chartboxwhiskeroptions.md)|_Property_ > showMeanMarker|Returns or sets if mean marker showed in a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](/reference/excel/chartboxwhiskeroptions.md)|_Property_ > showOutlierPoints|Returns or sets if outlier points showed in a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](/reference/excel/chartboxwhiskeroptions.md)|_Relationship_ > quartileCalculation|Returns or sets quartile calculation type of a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartDataLabel](/reference/excel/chartdatalabel.md)|_Property_ > linkNumberFormat|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
+|[chartDataLabels](/reference/excel/chartdatalabel.mds)|_Property_ > linkNumberFormat|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
+|[chartErrorBars](/reference/excel/charterrorbars.md)|_Property_ > endStyleCap|Represents whether have the end style cap for the error bars.|beta|
+|[chartErrorBars](/reference/excel/charterrorbars.md)|_Property_ > visible|Represents whether shown error bars.|beta|
+|[chartErrorBars](/reference/excel/charterrorbars.md)|_Relationship_ > format|Represents the formatting of chart ErrorBars. Read-only.|beta|
+|[chartErrorBars](/reference/excel/charterrorbars.md)|_Relationship_ > include|Represents which error-bar parts to include.|beta|
+|[chartErrorBars](/reference/excel/charterrorbars.md)|_Relationship_ > type|Represents the range marked by error bars.|beta|
+|[chartErrorBarsFormat](/reference/excel/charterrorbars.mdformat)|_Relationship_ > line|Represents chart line formatting. Read-only.|beta|
+|[chartMapOptions](/reference/excel/chartmapoptions.md)|_Relationship_ > labelStrategy|Returns or sets series map labels strategy of a region map chart. ReadWrite.|beta|
+|[chartMapOptions](/reference/excel/chartmapoptions.md)|_Relationship_ > level|Returns or sets series map area of a region map chart. ReadWrite.|beta|
+|[chartMapOptions](/reference/excel/chartmapoptions.md)|_Relationship_ > projectionType|Returns or sets series projection type of a region map chart. ReadWrite.|beta|
+|[chartPivotOptions](/reference/excel/chartpivotoptions.md)|_Property_ > showAxisFieldButtons|Represents whether to display axis field buttons on a PivotChart.|beta|
+|[chartPivotOptions](/reference/excel/chartpivotoptions.md)|_Property_ > showLegendFieldButtons|Represents whether to display legend field buttons on a PivotChart.|beta|
+|[chartPivotOptions](/reference/excel/chartpivotoptions.md)|_Property_ > showReportFilterFieldButtons|Represents whether to display report filter field buttons on a PivotChart.|beta|
+|[chartPivotOptions](/reference/excel/chartpivotoptions.md)|_Property_ > showValueFieldButtons|Represents whether to display show value field buttons on a PivotChart.|beta|
 |[chartSeries](/reference/excel/chartseries.md)|_Property_ > bubbleScale|Returns or sets the scale factor for bubbles in the specified chart group. Can be an integer value from 0 (zero) to 300, corresponding to a percentage of the default size. Applies only to bubble charts. ReadWrite.|beta|
 |[chartSeries](/reference/excel/chartseries.md)|_Property_ > gradientMaximumColor|Returns or sets the Color for maximum value of a region map chart series. ReadWrite.|beta|
 |[chartSeries](/reference/excel/chartseries.md)|_Property_ > gradientMaximumValue|Returns or sets the maximum value of a region map chart series. ReadWrite.|beta|
@@ -73,9 +73,9 @@ The following is an exahustive list of APIs in Beta. Make sure to be on the late
 |[chartSeries](/reference/excel/chartseries.md)|_Relationship_ > parentLabelStrategy|Returns or sets series parent label strategy area of a treemap chart. ReadWrite.|beta|
 |[chartSeries](/reference/excel/chartseries.md)|_Relationship_ > xErrorBars|Represents the error bar object for a chart series. Read-only.|beta|
 |[chartSeries](/reference/excel/chartseries.md)|_Relationship_ > yErrorBars|Represents the error bar object for a chart series. Read-only.|beta|
-|[chartTrendlineLabel](/reference/excel/chart.mdtrendlinelabel)|_Property_ > linkNumberFormat|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
+|[chartTrendlineLabel](/reference/excel/charttrendlinelabel.md)|_Property_ > linkNumberFormat|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
 |[closeWorkbookPostProcessAction](/reference/excel/excel.closeworkbookpostprocessaction)|_Relationship_ > actionType|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|beta|
-|[conditionalFormat](/reference/excel/excel.conditionalformat)|_Method_ > [getRanges()](/reference/excel/excel.conditionalformat)|Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.|beta|
+|[conditionalFormat](/reference/excel/conditionalformat.md)|_Method_ > [getRanges()](/reference/excel/conditionalformat.md)|Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.|beta|
 |[dataValidation](/reference/excel/excel.datavalidation)|_Method_ > [getInvalidCells()](/reference/excel/excel.datavalidation)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.|beta|
 |[dataValidation](/reference/excel/excel.datavalidation)|_Method_ > [getInvalidCellsOrNullObject()](/reference/excel/excel.datavalidation)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will return null.|beta|
 |[filterCriteria](/reference/excel/filtercriteria.md )|_Property_ > subField|The property used by the filter to do rich filter on richvalues.|beta|
@@ -147,7 +147,7 @@ The following is an exahustive list of APIs in Beta. Make sure to be on the late
 |[pageLayoutZoomOptions](/reference/excel/pagelayoutzoomoptions.md )|_Property_ > horizontalFitToPages|Number of pages to fit horizontally. This value can be null if percentage scale is used.|beta|
 |[pageLayoutZoomOptions](/reference/excel/pagelayoutzoomoptions.md )|_Property_ > scale|Print page scale value can be between 10 and 400. This value can be null if fit to page tall or wide is specified.|beta|
 |[pageLayoutZoomOptions](/reference/excel/pagelayoutzoomoptions.md )|_Property_ > verticalFitToPages|Number of pages to fit vertically. This value can be null if percentage scale is used.|beta|
-|[pivotField](/reference/excel/excel.pivotfield)|_Method_ > [sortByValues(sortby: SortBy, valuesHierarchy: DataPivotHierarchy, pivotItemScope: ()[])](/reference/excel/excel.pivotfield)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|beta|
+|[pivotField](/reference/excel/pivotfield.md)|_Method_ > [sortByValues(sortby: SortBy, valuesHierarchy: DataPivotHierarchy, pivotItemScope: ()[])](/reference/excel/pivotfield.md)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|beta|
 |[pivotLayout](/reference/excel/excel.pivotlayout)|_Property_ > enableFieldList|True if the field list should be shown or hidden from the UI.|beta|
 |[pivotTable](/reference/excel/excel.pivottable)|_Property_ > useCustomSortLists|True if the PivotTable should use custom lists when sorting.|beta|
 |[range](/reference/excel/range.md )|_Relationship_ > linkedDataTypeState|Represents the data type state of each cell. Read-only.|beta|
