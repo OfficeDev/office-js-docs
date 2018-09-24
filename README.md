@@ -12,13 +12,13 @@ _**Note**: The following features are still under design and review phase and no
 
 # Announcements
 
-1.8 was released to GA during Ignite, September 24<sup>th</sup>, 2018\. Check our all the details in our documentation.
+1.8 was released to GA during Ignite, September 24<sup>th</sup>, 2018\. Check our all the details in our [documentation](https://docs.microsoft.com/en-us/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js#whats-new-in-excel-javascript-api-18).
 
 New Beta APIs are ready for critique.
 
 # What’s new in the Excel JavaScript Beta?
 
-Here is a summary of the APIs and relevant pointers for content. Please give it a try and open issues to send us feedback.
+Here is a summary of the APIs and relevant pointers for content. Please give it a try and open issues with your feedback.
 
 Included in this release are more than 400 new APIs for Excel, please refer to a detailed list here.
 
@@ -34,7 +34,7 @@ Included in this release are more than 400 new APIs for Excel, please refer to a
 | RangeFormat | New RangeFormat Capabilities  | [Range](/reference/excel/range.md) |
 | Workbook Save, Close | Save and Close workbooks  | [Workbook](/reference/excel/workbook.md) |
 | Filter Events | Get a trigger when users filter a range  | [AutoFilter](/reference/excel/autofilter.md) |
-| Data Change events | We added old value/new value information to our change events  | Range |
+| Data Change events | We added old value/new value information to our change events  | [Range](/reference/excel/range.md) |
 | Insert Workbook | Insert one workbook within another  | [Workbook](/reference/excel/workbook.md) |
 | Calculation |  Iterative calculation, suspend calculation among other calculation proeprties   | [Application](/reference/excel/application.md) |
 
