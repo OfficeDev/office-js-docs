@@ -24,7 +24,7 @@ Included in this release are more than 400 new APIs for Excel, please refer to a
 
 | Feature Area | Description | Relevant Objects/Articles |
 | --- | --- | --- |
-| Shapes | Insert, position and format Images, Geometric Shapes and Text boxes. | [ShapeCollection](/reference/excel/shapecollection.md)[Shape](/reference/excel/shape.md)[GeometricShapeImage](/reference/excel/geometrishape.md) [Image](/reference/excel/image.md) |
+| Shapes | Insert, position and format Images, Geometric Shapes and Text boxes. | [ShapeCollection](/reference/excel/shapecollection.md) [Shape](/reference/excel/shape.md) [GeometricShapeImage](/reference/excel/geometrishape.md)  [Image](/reference/excel/image.md) |
 | New Charts | Explore our new supported chart types. | [Chart](/reference/excel/chert.md) |
 | Auto Filter | Add filters to ranges, sort, etc. | [Autofilter](/reference/excel/utofilter.md) [Range](/reference/excel/range.md) |
 | Areas | Finally, on the API we support discontinuous ranges! | [RangeAreas](/reference/excel/rangeareas.md) |
