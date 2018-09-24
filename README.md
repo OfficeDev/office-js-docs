@@ -25,14 +25,14 @@ Included in this release are more than 400 new APIs for Excel, please refer to a
 | Feature Area | Description | Relevant Objects/Articles |
 | --- | --- | --- |
 | Shapes | Insert, position and format Images, Geometric Shapes and Text boxes. | [ShapeCollection](/reference/excel/shapecollection.md) [Shape](/reference/excel/shape.md) [GeometricShape](/reference/excel/geometrishape.md)  [Image](/reference/excel/image.md) |
-| New Charts | Explore our new supported chart types. | [Chart](/reference/excel/chart.md) |
+| New Charts | Explore our new supported chart types: maps, box and whisker, waterfall, sunburst, pareto and funnel | [Chart](/reference/excel/chart.md) |
 | Auto Filter | Add filters to ranges, sort, etc. | [Autofilter](/reference/excel/utofilter.md) [Range](/reference/excel/range.md) |
 | Areas | Finally, on the API we support discontinuous ranges! | [RangeAreas](/reference/excel/rangeareas.md) |
-| Special Cells |   | [Range](/reference/excel/range.md)|
-| Find |   | [Range](/reference/excel/range.md) [Worksheet](/reference/excel/worksheet.md) |
+| Special Cells | Get cells containing dates, comments, formulas, etc. within a range.   | [Range](/reference/excel/range.md)|
+| Find | Find values or formulas within a range or worksheet.   | [Range](/reference/excel/range.md) [Worksheet](/reference/excel/worksheet.md) |
 | Copy Paste | Copy values,formats and formulas from one range to the other  | [Range](/reference/excel/range.md) |
 | RangeFormat | New RangeFormat Capabilities  | [Range](/reference/excel/range.md) |
-| Workbook Save, Close | Save and Close workbooks  | [Workbook](/reference/excel/workbook.md) |
+| Workbook Save, Close | Save and close workbooks  | [Workbook](/reference/excel/workbook.md) |
 | Filter Events | Get a trigger when users filter a range  | [AutoFilter](/reference/excel/autofilter.md) |
 | Data Change events | We added old value/new value information to our change events  | [Range](/reference/excel/range.md) |
 | Insert Workbook | Insert one workbook within another  | [Workbook](/reference/excel/workbook.md) |
