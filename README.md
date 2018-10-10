@@ -12,7 +12,7 @@ _**Note**: The following features are still under design and review phase and no
 
 # Announcements
 
-1.8 was released to GA during Ignite, September 24<sup>th</sup>, 2018\. Check our all the details in our [documentation](https://docs.microsoft.com/en-us/javascript/office/requirement-sets/excel-api-requirement-sets?view=office-js#whats-new-in-excel-javascript-api-18).
+1.8 was released to GA during Ignite, September 24<sup>th</sup>, 2018\. Check our all the details in our [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets##whats-new-in-excel-javascript-api-18).
 
 New Beta APIs are ready for critique.
 
