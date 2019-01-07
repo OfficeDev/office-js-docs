@@ -6,9 +6,7 @@ Represents a collection of comment objects that are part of the workbook.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Comment[]](comment.md)|A collection of comment objects. Read-only.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-
-_See property access [examples.](#property-access-examples)_
+|items|[Comment[]](comment.md)|A collection of comment objects. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Relationships
 None
@@ -18,12 +16,12 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[add(content: string, cellAddress: Range or string, contentType: ContentType)](#addcontent-string-celladdress-range-or-string-contenttype-contenttype)|[Comment](comment.md)|Creates a new comment(comment thread) based on the cell location and content. Invalid argument will be thrown if the location is larger than one cell.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCount()](#getcount)|int|Gets the number of comments in the collection.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(commentId: string)](#getitemcommentid-string)|[Comment](comment.md)|Returns a comment identified by its ID. Read-only.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemAt(index: number)](#getitematindex-number)|[Comment](comment.md)|Gets a comment based on its position in the collection.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemByCell(cellAddress: Range or string)](#getitembycellcelladdress-range-or-string)|[Comment](comment.md)|Gets a comment on the specific cell in the collection.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemByReplyId(replyId: string)](#getitembyreplyidreplyid-string)|[Comment](comment.md)|Gets a comment related to its reply ID in the collection.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(content: string, cellAddress: Range or string, contentType: ContentType)](#addcontent-string-celladdress-range-or-string-contenttype-contenttype)|[Comment](comment.md)|Creates a new comment(comment thread) based on the cell location and content. Invalid argument will be thrown if the location is larger than one cell.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Gets the number of comments in the collection.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(commentId: string)](#getitemcommentid-string)|[Comment](comment.md)|Returns a comment identified by its ID. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Comment](comment.md)|Gets a comment based on its position in the collection.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemByCell(cellAddress: Range or string)](#getitembycellcelladdress-range-or-string)|[Comment](comment.md)|Gets a comment on the specific cell in the collection.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemByReplyId(replyId: string)](#getitembyreplyidreplyid-string)|[Comment](comment.md)|Gets a comment related to its reply ID in the collection.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -51,15 +49,14 @@ commentCollectionObject.add(content, cellAddress, contentType);
 ```js
 
 Excel.run(async (context) => {
-
     var range = context.workbook.getSelectedRange();
     context.workbook.comments.add("text of the comment", range);
-    await context.sync();
+	return context.sync();
 }).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
+	console.log("Error: " + error);
+	if (error instanceof OfficeExtension.Error) {
+		console.log("Debug info: " + JSON.stringify(error.debugInfo));
+	}
 });
 ```
 
@@ -140,17 +137,3 @@ commentCollectionObject.getItemByReplyId(replyId);
 
 #### Returns
 [Comment](comment.md)
-### Property access examples
-```js
-Excel.run(async (context) => {
-    var comment = context.workbook.comments.getItemAt(0);
-    comment.content = "new content for the comment";
-    await context.sync();
-
-}).catch(function(error) {
-		console.log("Error: " + error);
-		if (error instanceof OfficeExtension.Error) {
-			console.log("Debug info: " + JSON.stringify(error.debugInfo));
-		}
-});
-```
