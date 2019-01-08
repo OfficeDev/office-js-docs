@@ -20,7 +20,7 @@ Represents a single axis in a chart.
 |multiLevel|bool|Represents whether an axis is multilevel or not.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |numberFormat|string|Represents the format code for the axis tick label.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |offset|int|Represents the distance between the levels of labels, and the distance between the first level and the axis line. The value should be an integer from 0 to 1000.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|positionAt|double|Represents the specified axis position where the other axis crosses at. Read Only. Set to this property should use SetPositionAt(double) method. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|positionAt|double|Represents the specified axis position where the other axis crosses at. You should use the SetPositionAt(double) method to set this property. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |reversePlotOrder|bool|Represents whether Microsoft Excel plots data points from last to first.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |showDisplayUnitLabel|bool|Represents whether the axis display unit label is visible.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |textOrientation|object|Represents the text orientation of the axis tick label. The value should be an integer either from -90 to 90, or 180 for vertically-oriented text.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|

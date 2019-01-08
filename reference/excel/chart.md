@@ -15,7 +15,7 @@ Represents a chart object in a workbook.
 |plotVisibleOnly|bool|TrueΓö¼├íif only visible cells are plotted.Γö¼├íFalseΓö¼├íif both visible and hidden cells are plotted. ReadWrite.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |seriesNameLevel|int|Returns or sets a ChartSeriesNameLevel enumeration constant referring to|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |showAllFieldButtons|bool|Represents whether to display all field buttons on a PivotChart.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
-|showDataLabelsOverMaximum|bool|Represents whether to to show the data labels when the value is greater than the maximum value on the value axis.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|showDataLabelsOverMaximum|bool|Represents whether to show the data labels when the value is greater than the maximum value on the value axis.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |style|int|Returns or sets the chart style for the chart. ReadWrite.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |top|double|Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |width|double|Represents the width, in points, of the chart object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -34,7 +34,7 @@ _See property access [examples.](#property-access-examples)_
 |plotArea|[ChartPlotArea](chartplotarea.md)|Represents the plotArea for the chart. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |plotBy|[ChartPlotBy](chartplotby.md)|Returns or sets the way columns or rows are used as data series on the chart. ReadWrite.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |series|[ChartSeriesCollection](chartseriescollection.md)|Represents either a single series or collection of series in the chart. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|title|[ChartTitle](charttitle.md)|Represents the title of the specified chart, including the text, visibility, position, and formating of the title. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|title|[ChartTitle](charttitle.md)|Represents the title of the specified chart, including the text, visibility, position, and formatting of the title. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current chart. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods

@@ -1,6 +1,6 @@
 # RangeCollection Object (JavaScript API for Excel)
 
-Represents the options in page layout margins.
+Represents a collection of all the Data Connections that are part of the workbook or worksheet.
 
 ## Properties
 

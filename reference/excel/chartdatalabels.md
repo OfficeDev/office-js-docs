@@ -6,7 +6,7 @@ Represents a collection of all the data labels on a chart point.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|autoText|bool|Represents whether data labels automatically generates appropriate text based on context.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|autoText|bool|Represents whether data labels automatically generate appropriate text based on context.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |linkNumberFormat|bool|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |numberFormat|string|Represents the format code for data labels.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |position|string|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|

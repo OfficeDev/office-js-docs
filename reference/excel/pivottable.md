@@ -6,6 +6,7 @@ Represents an Excel PivotTable.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|enableDataValueEditing|bool|True if the PivotTable should use custom lists when sorting.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |id|string|Id of the PivotTable. Read-only.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Name of the PivotTable.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |useCustomSortLists|bool|True if the PivotTable should use custom lists when sorting.|[beta](../requirement-sets/excel-api-requirement-sets.md)|

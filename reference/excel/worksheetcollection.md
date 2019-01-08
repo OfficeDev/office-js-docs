@@ -19,6 +19,7 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[addFromBase64(base64File: string, sheetNamesToInsert: string[], positionType: WorksheetPositionType, relativeTo: Worksheet or string)](#addfrombase64base64file-string-sheetnamestoinsert-string-positiontype-worksheetpositiontype-relativeto-worksheet-or-string)|[string[]](string[].md)|Inserts the specified worksheets of a workbook into the current workbook.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Gets the currently active worksheet in the workbook.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCount(visibleOnly: bool)](#getcountvisibleonly-bool)|int|Gets the number of worksheets in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getFirst(visibleOnly: bool)](#getfirstvisibleonly-bool)|[Worksheet](worksheet.md)|Gets the first worksheet in the collection.|[1.5](../requirement-sets/excel-api-requirement-sets.md)|
@@ -63,6 +64,25 @@ Excel.run(function (ctx) {
 });
 ```
 
+
+### addFromBase64(base64File: string, sheetNamesToInsert: string[], positionType: WorksheetPositionType, relativeTo: Worksheet or string)
+Inserts the specified worksheets of a workbook into the current workbook.
+
+#### Syntax
+```js
+worksheetCollectionObject.addFromBase64(base64File, sheetNamesToInsert, positionType, relativeTo);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|base64File|string|Required. Base64 string representing the source workbook.|
+|sheetNamesToInsert|string[]|Optional. Optional. The speified worksheet names to insert. By default it will insert all worksheets from the source workbook.|
+|positionType|WorksheetPositionType|Optional. Optional. Insert position type, see Excel.WorksheetPositionType for details. Default is "Start".|
+|relativeTo|Worksheet or string|Optional. Optional. The referencing worksheet object or worksheet name/id in the current workbook. Default is null and based on the postionType parameter it will insert worksheets at the start or end of the current workbook.|
+
+#### Returns
+[string[]](string[].md)
 
 ### getActiveWorksheet()
 Gets the currently active worksheet in the workbook.

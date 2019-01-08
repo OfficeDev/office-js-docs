@@ -38,7 +38,7 @@ dataPivotHierarchyCollectionObject.add(pivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|pivotHierarchy|PivotHierarchy|TODO|
+|pivotHierarchy|PivotHierarchy|...|
 
 #### Returns
 [DataPivotHierarchy](datapivothierarchy.md)
@@ -100,7 +100,7 @@ dataPivotHierarchyCollectionObject.remove(DataPivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|DataPivotHierarchy|DataPivotHierarchy|TODO|
+|DataPivotHierarchy|DataPivotHierarchy|...|
 
 #### Returns
 void

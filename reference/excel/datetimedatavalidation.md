@@ -6,8 +6,8 @@ Represents the Date data validation criteria.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|formula1|object|Gets or sets the Formula1, i.e. minimum value or value depending of the operator.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|formula2|object|Gets or sets the Formula2, i.e. maximum value or value depending of the operator.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|formula1|object|Specifies the right-hand operand when the operator property is set to a binary operator such as GreaterThan (the left-hand operand is the value the user tries to enter in the cell). With the ternary operators Between and NotBetween, specifies the lower bound operand.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|formula2|object|With the ternary operators Between and NotBetween, specifies the upper bound operand. Is not used with the binary operators, such as GreaterThan.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 

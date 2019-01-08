@@ -13,6 +13,7 @@ _See property access [examples.](#property-access-examples)_
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|format|[PictureFormat](pictureformat.md)|Returns the format for the image. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |shape|[Shape](shape.md)|Returns the shape object for the image. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods

@@ -25,10 +25,6 @@ _See property access [examples.](#property-access-examples)_
 |[delete()](#delete)|void|Deletes the column from the table.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with the header row of the column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getNextColumn()](#getnextcolumn)|[TableColumn](tablecolumn.md)|Gets the table column that follows this one. If there are no table columns following this one, this method will throw an error.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
-|[getNextColumnOrNullObject()](#getnextcolumnornullobject)|[TableColumn](tablecolumn.md)|Gets the table column that follows this one. If there are no table columns following this one, this method will return a null object.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
-|[getPreviousColumn()](#getpreviouscolumn)|[TableColumn](tablecolumn.md)|Gets the table column that precedes this one. If there are no previous table columns, this method will throw an error.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
-|[getPreviousColumnOrNullObject()](#getpreviouscolumnornullobject)|[TableColumn](tablecolumn.md)|Gets the table column that precedes this one. If there are no previous table columns, this method will return a null objet.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with the totals row of the column.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -131,62 +127,6 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-
-### getNextColumn()
-Gets the table column that follows this one. If there are no table columns following this one, this method will throw an error.
-
-#### Syntax
-```js
-tableColumnObject.getNextColumn();
-```
-
-#### Parameters
-None
-
-#### Returns
-[TableColumn](tablecolumn.md)
-
-### getNextColumnOrNullObject()
-Gets the table column that follows this one. If there are no table columns following this one, this method will return a null object.
-
-#### Syntax
-```js
-tableColumnObject.getNextColumnOrNullObject();
-```
-
-#### Parameters
-None
-
-#### Returns
-[TableColumn](tablecolumn.md)
-
-### getPreviousColumn()
-Gets the table column that precedes this one. If there are no previous table columns, this method will throw an error.
-
-#### Syntax
-```js
-tableColumnObject.getPreviousColumn();
-```
-
-#### Parameters
-None
-
-#### Returns
-[TableColumn](tablecolumn.md)
-
-### getPreviousColumnOrNullObject()
-Gets the table column that precedes this one. If there are no previous table columns, this method will return a null objet.
-
-#### Syntax
-```js
-tableColumnObject.getPreviousColumnOrNullObject();
-```
-
-#### Parameters
-None
-
-#### Returns
-[TableColumn](tablecolumn.md)
 
 ### getRange()
 Gets the range object associated with the entire column.

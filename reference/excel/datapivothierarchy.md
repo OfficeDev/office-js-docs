@@ -17,7 +17,7 @@ _See property access [examples.](#property-access-examples)_
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |field|[PivotField](pivotfield.md)|Returns the PivotFields associated with the DataPivotHierarchy. Read-only.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
-|showAs|[ShowAsRule](showasrule.md)|Determines whether the data should be sown as a specific summary calculation or not.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
+|showAs|[ShowAsRule](showasrule.md)|Determines whether the data should be shown as a specific summary calculation or not.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 |summarizeBy|[AggregationFunction](aggregationfunction.md)|Determines whether to show all items of the DataPivotHierarchy.|[1.8](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods

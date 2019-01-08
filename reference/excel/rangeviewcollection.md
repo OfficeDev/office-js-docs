@@ -19,9 +19,7 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[getCount()](#getcount)|int|Gets the number of RangeView objects in the collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getFirst()](#getfirst)|[RangeView](rangeview.md)|Gets the first RangeView object in the collection.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[RangeView](rangeview.md)|Gets a RangeView Row via its index. Zero-Indexed.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[getLast()](#getlast)|[RangeView](rangeview.md)|Gets the last RangeView object in the collection.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -40,20 +38,6 @@ None
 #### Returns
 int
 
-### getFirst()
-Gets the first RangeView object in the collection.
-
-#### Syntax
-```js
-rangeViewCollectionObject.getFirst();
-```
-
-#### Parameters
-None
-
-#### Returns
-[RangeView](rangeview.md)
-
 ### getItemAt(index: number)
 Gets a RangeView Row via its index. Zero-Indexed.
 
@@ -66,20 +50,6 @@ rangeViewCollectionObject.getItemAt(index);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Index of the visible row.|
-
-#### Returns
-[RangeView](rangeview.md)
-
-### getLast()
-Gets the last RangeView object in the collection.
-
-#### Syntax
-```js
-rangeViewCollectionObject.getLast();
-```
-
-#### Parameters
-None
 
 #### Returns
 [RangeView](rangeview.md)

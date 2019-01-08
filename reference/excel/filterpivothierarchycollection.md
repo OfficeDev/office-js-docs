@@ -38,7 +38,7 @@ filterPivotHierarchyCollectionObject.add(pivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|pivotHierarchy|PivotHierarchy|TODO|
+|pivotHierarchy|PivotHierarchy|...|
 
 #### Returns
 [FilterPivotHierarchy](filterpivothierarchy.md)
@@ -100,7 +100,7 @@ filterPivotHierarchyCollectionObject.remove(filterPivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|filterPivotHierarchy|FilterPivotHierarchy|TODO|
+|filterPivotHierarchy|FilterPivotHierarchy|...|
 
 #### Returns
 void

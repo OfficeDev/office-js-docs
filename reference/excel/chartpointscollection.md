@@ -20,9 +20,7 @@ None
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |[getCount()](#getcount)|int|Returns the number of chart points in the series.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[getFirst()](#getfirst)|[ChartPoint](chartpoint.md)|Gets the first point in the series.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getLast()](#getlast)|[ChartPoint](chartpoint.md)|Gets the last point in the series.|[Design](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
@@ -40,20 +38,6 @@ None
 
 #### Returns
 int
-
-### getFirst()
-Gets the first point in the series.
-
-#### Syntax
-```js
-chartPointsCollectionObject.getFirst();
-```
-
-#### Parameters
-None
-
-#### Returns
-[ChartPoint](chartpoint.md)
 
 ### getItemAt(index: number)
 Retrieve a point based on its position within the series.
@@ -87,21 +71,7 @@ Excel.run(function (ctx) {
 			console.log("Debug info: " + JSON.stringify(error.debugInfo));
 		}
 });
-```
-### getLast()
-Gets the last point in the series.
-
-#### Syntax
-```js
-chartPointsCollectionObject.getLast();
-```
-
-#### Parameters
-None
-
-#### Returns
-[ChartPoint](chartpoint.md)
-### Property access examples
+```### Property access examples
 
 Get the names of points in the points collection
 

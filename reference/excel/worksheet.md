@@ -26,6 +26,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |autoFilter|[AutoFilter](autofilter.md)|Represents the AutoFilter object of the worksheet. Read-Only. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |charts|[ChartCollection](chartcollection.md)|Returns collection of charts that are part of the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|comments|[CommentCollection](commentcollection.md)|Returns a collection of all the Comments objects on the worksheet. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |freezePanes|[WorksheetFreezePanes](worksheetfreezepanes.md)|Gets an object that can be used to manipulate frozen panes on the worksheet. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |horizontalPageBreaks|[PageBreakCollection](pagebreakcollection.md)|Gets the horizontal page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |names|[NamedItemCollection](nameditemcollection.md)|Collection of names scoped to the current worksheet. Read-only.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
@@ -33,6 +34,7 @@ _See property access [examples.](#property-access-examples)_
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Collection of PivotTables that are part of the worksheet. Read-only.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |protection|[WorksheetProtection](worksheetprotection.md)|Returns sheet protection object for a worksheet. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |shapes|[ShapeCollection](shapecollection.md)|Returns the collection of all the Shape objects on the worksheet. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|slicers|[SlicerCollection](slicercollection.md)|Returns collection of slicers that are part of the worksheet. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |tables|[TableCollection](tablecollection.md)|Collection of tables that are part of the worksheet. Read-only.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |verticalPageBreaks|[PageBreakCollection](pagebreakcollection.md)|Gets the vertical page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 

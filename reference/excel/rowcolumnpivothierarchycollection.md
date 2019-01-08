@@ -38,7 +38,7 @@ rowColumnPivotHierarchyCollectionObject.add(pivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|pivotHierarchy|PivotHierarchy|TODO|
+|pivotHierarchy|PivotHierarchy|...|
 
 #### Returns
 [RowColumnPivotHierarchy](rowcolumnpivothierarchy.md)
@@ -100,7 +100,7 @@ rowColumnPivotHierarchyCollectionObject.remove(rowColumnPivotHierarchy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|rowColumnPivotHierarchy|RowColumnPivotHierarchy|TODO|
+|rowColumnPivotHierarchy|RowColumnPivotHierarchy|...|
 
 #### Returns
 void

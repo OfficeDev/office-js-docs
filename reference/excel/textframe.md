@@ -22,7 +22,7 @@ _See property access [examples.](#property-access-examples)_
 |horizontalOverflow|[ShapeTextHorzOverflowType](shapetexthorzoverflowtype.md)|Represents the horizontal overflow type of the text frame.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |orientation|[ShapeTextOrientationType](shapetextorientationtype.md)|Represents the text orientation of the text frame.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |readingOrder|[ShapeTextReadingOrder](shapetextreadingorder.md)|Represents the reading order of the text frame, RTL or LTR.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|textRange|[TextRange](textrange.md)|Returns or sets the degree of transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear). For API not supported shape types  or special fill type with inconsistent transparencies, return null. For example, gradient fill type could have inconsistent transparencies. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|textRange|[TextRange](textrange.md)|Represents the degree of transparency of the specified line as a value from 0.0 (opaque) through 1.0 (clear). Returns null when the shape has mixed line transparency property (e.g. group type of shape). Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |verticalAlignment|[ShapeTextVerticalAlignType](shapetextverticalaligntype.md)|Represents the vertical alignment of the text frame.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |verticalOverflow|[ShapeTextVertOverflowType](shapetextvertoverflowtype.md)|Represents the vertical overflow type of the text frame.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
