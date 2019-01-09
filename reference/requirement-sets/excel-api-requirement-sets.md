@@ -56,278 +56,489 @@ The following code example shows an add-in that loads in all Office host applica
 </Requirements>
 ```
 
-## Office common API requirement sets
-For information about common API requirement sets, see [Office common API requirement sets](office-add-in-requirement-sets.md).
+## What's new in Excel JavaScript 
 
-## Upcoming Excel 1.6 release features
 
-### Conditional formatting
-
-Introduces [Conditional formating](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/conditionalformat.md) of a range. Allows follwoing types of conditional formatting:
-
-* Color scale
-* Data bar
-* Icon set
-* Custom
-
-In addiiton:
-* Returns the range the conditonal format is applied to.
-* Removal of conditional formatting.
-* Provides priority and stopifTrue capability
-* Get collection of all conditional formatting on a given range.
-* Clears all conditional formats active on the current specified range.
-
-For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
-
-## Upcoming Excel 1.5 release features
-
-### Custom XML part
-
-* Addition of custom XML parts collection to workbook object.
-* Get custom XML part using ID
-* Get a new scoped collection of custom XML parts whose namespaces match the given namespace.
-* Get XML string associated with a part.
-* Provide id and namespace of a part.
-* Adds a new custom XML part to the workbook.
-* Set entire XML part.
-* Delete a custom XML part.
-* Delete an attribute with the given name from the element identified by xpath.
-* Query the XML content by xpath.
-* Insert, update and delete attribute.
-
-**Reference implementation:** Please refer [here](https://github.com/mandren/Excel-CustomXMLPart-Demo) for a reference implementation that shows how custom XML parts can be used in an add-in.
-
-### Others
-* `range.getSurroundingRegion()` Returns a Range object that represents the surrounding region for this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
-* `getNextColumn()` and `getPreviousColumn()`, `getLast() on table column.
-* `getActiveWorksheet()` on the workbook.
-* `getRange(address: string)` off of workbook.
-* `getBoundingRange(ranges: [])` Gets the smallest range object that encompasses the provided ranges. For example, the bounding range between "B2:C5" and "D10:E15" is "B2:E15".
-* `getCount()` on various collections such as named item, worksheet, table, etc. to get number of items in a collection. `workbook.worksheets.getCount()`
-* `getFirst()` and `getLast()` and get last on various collection such as tworksheet, able column, chart points, range view collection.
-* `getNext()` and `getPrevious()` on worksheet, table column collection.
-* `getRangeR1C1()` Gets the range object beginning at a particular row index and column index, and spanning a certain number of rows and columns.
-
-For API details, please refer to the Excel API [open specification](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec). 
-
-## What's new in Excel JavaScript API 1.4
-The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
-
-### Named item add and new properties
-
-New properties:
-
-* `comment`
-* `scope` worksheet or workbook scoped items
-* `worksheet` returns the worksheet on which the named item is scoped to.
-
-New methods:
-
-* `add(name: string, reference: Range or string, comment: string)`Adds a new name to the collection of the given scope.
-* `addFormulaLocal(name: string, formula: string, comment: string)` Adds a new name to the collection of the given scope using the user's locale for the formula.
-
-### Settings API in in Excel namespace
-
-[Setting](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpec/reference/excel/setting.md) object represents a key-value pair of a setting persisted to the document. Now, we've added settings related APIs under Excel namespace. This doesn't offer net new functionality - however this make easy to remain in the promise based batched API syntax reduce the dependency on common API for Excel related tasks.
-
-APIs include `getItem()` to get setting entry via the key, `add()` to add the specified key:value setting pair to the workbook.
-
-### Others
-
-* Set table column name (prior version only allows reading).
-* Add table column to the end of the table (prior version only allows anywhere but last).
-* Add multiple rows to a table at a time (prior version only allows 1 row at a time).
-* `range.getColumnsAfter(count: number)` and `range.getColumnsBefore(count: number)` to get a certain number of columns to the right/left of the current Range object.
-* Get item or null object function: This functionality allows getting object using a key. If the object does not exist, the returned object's isNullObject property will be true. This alows developers to check if an object exists or not without having to handle it thorugh exception handling. Available on worksheet, named-item, binding, chart series, etc.
-
-`worksheet.GetItemOrNullObject()`
-
-|Object| What is new| Description|Requirement set|
+|Object| What is new| Description|Feedback|
 |:----|:----|:----|:----|
-|[bindingCollection](../excel/bindingcollection.md)|_Method_ > [getCount()](../excel/bindingcollection.md#getcount)|Gets the number of bindings in the collection.|1.4|
-|[bindingCollection](../excel/bindingcollection.md)|_Method_ > [getItemOrNullObject(id: string)](../excel/bindingcollection.md#getitemornullobjectid-string)|Gets a binding object by ID. If the binding object does not exist, will return a null object.|1.4|
-|[chartCollection](../excel/chartcollection.md)|_Method_ > [getCount()](../excel/chartcollection.md#getcount)|Returns the number of charts in the worksheet.|1.4|
-|[chartCollection](../excel/chartcollection.md)|_Method_ > [getItemOrNullObject(name: string)](../excel/chartcollection.md#getitemornullobjectname-string)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|1.4|
-|[chartPointsCollection](../excel/chartpointscollection.md)|_Method_ > [getCount()](../excel/chartpointscollection.md#getcount)|Returns the number of chart points in the series.|1.4|
-|[chartSeriesCollection](../excel/chartseriescollection.md)|_Method_ > [getCount()](../excel/chartseriescollection.md#getcount)|Returns the number of series in the collection.|1.4|
-|[namedItem](../excel/nameditem.md)|_Property_ > comment|Represents the comment associated with this name.|1.4|
-|[namedItem](../excel/nameditem.md)|_Property_ > scope|Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only. Possible values are: Equal, Greater, GreaterEqual, Less, LessEqual, NotEqual.|1.4|
-|[namedItem](../excel/nameditem.md)|_Relationship_ > worksheet|Returns the worksheet on which the named item is scoped to. Throws an error if the items is scoped to the workbook instead. Read-only.|1.4|
-|[namedItem](../excel/nameditem.md)|_Relationship_ > worksheetOrNullObject|Returns the worksheet on which the named item is scoped to. Returns a null object if the item is scoped to the workbook instead. Read-only.|1.4|
-|[namedItem](../excel/nameditem.md)|_Method_ > [delete()](../excel/nameditem.md#delete)|Deletes the given name.|1.4|
-|[namedItem](../excel/nameditem.md)|_Method_ > [getRangeOrNullObject()](../excel/nameditem.md#getrangeornullobject)|Returns the range object that is associated with the name. Returns a null object if the named item's type is not a range.|1.4|
-|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [add(name: string, reference: Range or string, comment: string)](../excel/nameditemcollection.md#addname-string-reference-range-or-string-comment-string)|Adds a new name to the collection of the given scope.|1.4|
-|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [addFormulaLocal(name: string, formula: string, comment: string)](../excel/nameditemcollection.md#addformulalocalname-string-formula-string-comment-string)|Adds a new name to the collection of the given scope using the user's locale for the formula.|1.4|
-|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [getCount()](../excel/nameditemcollection.md#getcount)|Gets the number of named items in the collection.|1.4|
-|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [getItemOrNullObject(name: string)](../excel/nameditemcollection.md#getitemornullobjectname-string)|Gets a nameditem object using its name. If the nameditem object does not exist, will return a null object.|1.4|
-|[pivotTableCollection](../excel/pivottablecollection.md)|_Method_ > [getCount()](../excel/pivottablecollection.md#getcount)|Gets the number of pivot tables in the collection.|1.4|
-|[pivotTableCollection](../excel/pivottablecollection.md)|_Method_ > [getItemOrNullObject(name: string)](../excel/pivottablecollection.md#getitemornullobjectname-string)|Gets a PivotTable by name. If the PivotTable does not exist, will return a null object.|1.4|
-|[range](../excel/range.md)|_Method_ > [getIntersectionOrNullObject(anotherRange: Range or string)](../excel/range.md#getintersectionornullobjectanotherrange-range-or-string)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|1.4|
-|[range](../excel/range.md)|_Method_ > [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/range.md#getusedrangeornullobjectvaluesonly-bool)|Returns the used range of the given range object. If there are no used cells within the range, this function will return a null object.|1.4|
-|[rangeViewCollection](../excel/rangeviewcollection.md)|_Method_ > [getCount()](../excel/rangeviewcollection.md#getcount)|Gets the number of RangeView objects in the collection.|1.4|
-|[setting](../excel/setting.md)|_Property_ > key|Returns the key that represents the id of the Setting. Read-only.|1.4|
-|[setting](../excel/setting.md)|_Property_ > value|Represents the value stored for this setting.|1.4|
-|[setting](../excel/setting.md)|_Method_ > [delete()](../excel/setting.md#delete)|Deletes the setting.|1.4|
-|[settingCollection](../excel/settingcollection.md)|_Property_ > items|A collection of setting objects. Read-only.|1.4|
-|[settingCollection](../excel/settingcollection.md)|_Method_ > [add(key: string, value: (any)[])](../excel/settingcollection.md#addkey-string-value-any)|Sets or adds the specified setting to the workbook.|1.4|
-|[settingCollection](../excel/settingcollection.md)|_Method_ > [getCount()](../excel/settingcollection.md#getcount)|Gets the number of Settings in the collection.|1.4|
-|[settingCollection](../excel/settingcollection.md)|_Method_ > [getItem(key: string)](../excel/settingcollection.md#getitemkey-string)|Gets a Setting entry via the key.|1.4|
-|[settingCollection](../excel/settingcollection.md)|_Method_ > [getItemOrNullObject(key: string)](../excel/settingcollection.md#getitemornullobjectkey-string)|Gets a Setting entry via the key. If the Setting does not exist, will return a null object.|1.4|
-|[settingsChangedEventArgs](../excel/settingschangedeventargs.md)|_Relationship_ > settings|Gets the Setting object that represents the binding that raised the SettingsChanged event|1.4|
-|[tableCollection](../excel/tablecollection.md)|_Method_ > [getCount()](../excel/tablecollection.md#getcount)|Gets the number of tables in the collection.|1.4|
-|[tableCollection](../excel/tablecollection.md)|_Method_ > [getItemOrNullObject(key: number or string)](../excel/tablecollection.md#getitemornullobjectkey-number-or-string)|Gets a table by Name or ID. If the table does not exist, will return a null object.|1.4|
-|[tableColumnCollection](../excel/tablecolumncollection.md)|_Method_ > [getCount()](../excel/tablecolumncollection.md#getcount)|Gets the number of columns in the table.|1.4|
-|[tableColumnCollection](../excel/tablecolumncollection.md)|_Method_ > [getItemOrNullObject(key: number or string)](../excel/tablecolumncollection.md#getitemornullobjectkey-number-or-string)|Gets a column object by Name or ID. If the column does not exist, will return a null object.|1.4|
-|[tableRowCollection](../excel/tablerowcollection.md)|_Method_ > [getCount()](../excel/tablerowcollection.md#getcount)|Gets the number of rows in the table.|1.4|
-|[workbook](../excel/workbook.md)|_Relationship_ > settings|Represents a collection of Settings associated with the workbook. Read-only.|1.4|
-|[worksheet](../excel/worksheet.md)|_Relationship_ > names|Collection of names scoped to the current worksheet. Read-only.|1.4|
-|[worksheet](../excel/worksheet.md)|_Method_ > [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/worksheet.md#getusedrangeornullobjectvaluesonly-bool)|The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the entire worksheet is blank, this function will return a null object.|1.4|
-|[worksheetCollection](../excel/worksheetcollection.md)|_Method_ > [getCount(visibleOnly: bool)](../excel/worksheetcollection.md#getcountvisibleonly-bool)|Gets the number of worksheets in the collection.|1.4|
-|[worksheetCollection](../excel/worksheetcollection.md)|_Method_ > [getItemOrNullObject(key: string)](../excel/worksheetcollection.md#getitemornullobjectkey-string)|Gets a worksheet object using its Name or ID. If the worksheet does not exist, will return a null object.|1.4|
-
-
-
-## What's new in Excel JavaScript API 1.3
-The following are the new additions to the Excel JavaScript APIs in requirement set 1.3.
-
-|Object| What's new| Description|Requirement set|
-|:----|:----|:----|:----|
-|[binding](../excel/binding.md)|_Method_ > [delete()](../excel/binding.md#delete)|Deletes the binding.|1.3|
-|[bindingCollection](../excel/bindingcollection.md)|_Method_ > [add(range: Range or string, bindingType: string, id: string)](../excel/bindingcollection.md#addrange-range-or-string-bindingtype-string-id-string)|Add a new binding to a particular Range.|1.3|
-|[bindingCollection](../excel/bindingcollection.md)|_Method_ > [addFromNamedItem(name: string, bindingType: string, id: string)](../excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|Add a new binding based on a named item in the workbook.|1.3|
-|[bindingCollection](../excel/bindingcollection.md)|_Method_ > [addFromSelection(bindingType: string, id: string)](../excel/bindingcollection.md#addfromselectionbindingtype-string-id-string)|Add a new binding based on the current selection.|1.3|
-|[bindingCollection](../excel/bindingcollection.md)|_Method_ > [getItemOrNull(id: string)](../excel/bindingcollection.md#getitemornullid-string)|Gets a binding object by ID. If the binding object does not exist, the return object's isNull property will be true.|1.3|
-|[chartCollection](../excel/chartcollection.md)|_Method_ > [getItemOrNull(name: string)](../excel/chartcollection.md#getitemornullname-string)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|1.3|
-|[namedItemCollection](../excel/nameditemcollection.md)|_Method_ > [getItemOrNull(name: string)](../excel/nameditemcollection.md#getitemornullname-string)|Gets a nameditem object using its name. If the nameditem object does not exist, the returned object's isNull property will be true.|1.3|
-|[pivotTable](../excel/pivottable.md)|_Property_ > name|Name of the PivotTable.|1.3|
-|[pivotTable](../excel/pivottable.md)|_Relationship_ > worksheet|The worksheet containing the current PivotTable. Read-only.|1.3|
-|[pivotTable](../excel/pivottable.md)|_Method_ > [refresh()](../excel/pivottable.md#refresh)|Refreshes the PivotTable.|1.3|
-|[pivotTableCollection](../excel/pivottablecollection.md)|_Property_ > items|A collection of pivotTable objects. Read-only.|1.3|
-|[pivotTableCollection](../excel/pivottablecollection.md)|_Method_ > [getItem(name: string)](../excel/pivottablecollection.md#getitemname-string)|Gets a PivotTable by name.|1.3|
-|[pivotTableCollection](../excel/pivottablecollection.md)|_Method_ > [getItemOrNull(name: string)](../excel/pivottablecollection.md#getitemornullname-string)|Gets a PivotTable by name. If the PivotTable does not exist, the return object's isNull property will be true.|1.3|
-|[range](../excel/range.md)|_Method_ > [getIntersectionOrNull(anotherRange: Range or string)](../excel/range.md#getintersectionornullanotherrange-range-or-string)|Gets the range object that represents the rectangular intersection of the given ranges. If no intersection is found, will return a null object.|1.3|
-|[range](../excel/range.md)|_Method_ > [getVisibleView()](../excel/range.md#getvisibleview)|Represents the visible rows of the current range.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > cellAddresses|Represents the cell addresses of the RangeView. Read-only.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > columnCount|Returns the number of visible columns. Read-only.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > formulas|Represents the formula in A1-style notation.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > formulasLocal|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, introduced in 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > formulasR1C1|Represents the formula in R1C1-style notation.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > index|Returns a value that represents the index of the RangeView. Read-only.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > numberFormat|Represents Excel's number format code for the given cell.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > rowCount|Returns the number of visible rows. Read-only.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > text|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > valueTypes|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|1.3|
-|[rangeView](../excel/rangeview.md)|_Property_ > values|Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|1.3|
-|[rangeView](../excel/rangeview.md)|_Relationship_ > rows|Represents a collection of range views associated with the range. Read-only.|1.3|
-|[rangeView](../excel/rangeview.md)|_Method_ > [getRange()](../excel/rangeview.md#getrange)|Gets the parent range associated with the current RangeView.|1.3|
-|[rangeViewCollection](../excel/rangeviewcollection.md)|_Property_ > items|A collection of rangeView objects. Read-only.|1.3|
-|[rangeViewCollection](../excel/rangeviewcollection.md)|_Method_ > [getItemAt(index: number)](../excel/rangeviewcollection.md#getitematindex-number)|Gets a RangeView Row via it's index. Zero-Indexed.|1.3|
-|[setting](../excel/setting.md)|_Property_ > key|Returns the key that represents the id of the Setting. Read-only.|1.3|
-|[setting](../excel/setting.md)|_Method_ > [delete()](../excel/setting.md#delete)|Deletes the setting.|1.3|
-|[settingCollection](../excel/settingcollection.md)|_Property_ > items|A collection of setting objects. Read-only.|1.3|
-|[settingCollection](../excel/settingcollection.md)|_Method_ > [getItem(key: string)](../excel/settingcollection.md#getitemkey-string)|Gets a Setting entry via the key.|1.3|
-|[settingCollection](../excel/settingcollection.md)|_Method_ > [getItemOrNull(key: string)](../excel/settingcollection.md#getitemornullkey-string)|Gets a Setting entry via the key. If the Setting does not exist, the returned object's isNull property will be true.|1.3|
-|[settingCollection](../excel/settingcollection.md)|_Method_ > [set(key: string, value: string)](../excel/settingcollection.md#setkey-string-value-string)|Sets or adds the specified setting to the workbook.|1.3|
-|[settingsChangedEventArgs](../excel/settingschangedeventargs.md)|_Relationship_ > settingCollection|Gets the Setting object that represents the binding that raised the SettingsChanged event|1.3|
-|[table](../excel/table.md)|_Property_ > highlightFirstColumn|Indicates whether the first column contains special formatting.|1.3|
-|[table](../excel/table.md)|_Property_ > highlightLastColumn|Indicates whether the last column contains special formatting.|1.3|
-|[table](../excel/table.md)|_Property_ > showBandedColumns|Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.|1.3|
-|[table](../excel/table.md)|_Property_ > showBandedRows|Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.|1.3|
-|[table](../excel/table.md)|_Property_ > showFilterButton|Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.|1.3|
-|[tableCollection](../excel/tablecollection.md)|_Method_ > [getItemOrNull(key: number or string)](../excel/tablecollection.md#getitemornullkey-number-or-string)|Gets a table by Name or ID. If the table does not exist, the return object's isNull property will be true.|1.3|
-|[tableColumnCollection](../excel/tablecolumncollection.md)|_Method_ > [getItemOrNull(key: number or string)](../excel/tablecolumncollection.md#getitemornullkey-number-or-string)|Gets a column object by Name or ID. If the column does not exist, the returned object's isNull property will be true.|1.3|
-|[workbook](../excel/workbook.md)|_Relationship_ > pivotTables|Represents a collection of PivotTables associated with the workbook. Read-only.|1.3|
-|[workbook](../excel/workbook.md)|_Relationship_ > settings|Represents a collection of Settings associated with the workbook. Read-only.|1.3|
-|[worksheet](../excel/worksheet.md)|_Relationship_ > pivotTables|Collection of PivotTables that are part of the worksheet. Read-only.|1.3|
-
-## What's new in Excel JavaScript API 1.2
-The following are the new additions to the Excel JavaScript APIs in requirement set 1.2.
-
-|Object| What's new| Description|Requirement set|
-|:----|:----|:----|:----|
-|[chart](../excel/chart.md)|_Property_ > id|Gets a chart based on its position in the collection. Read-only.|1.2|
-|[chart](../excel/chart.md)|_Relationship_ > worksheet|The worksheet containing the current chart. Read-only.|1.2|
-|[chart](../excel/chart.md)|_Method_ > [getImage(height: number, width: number, fittingMode: string)](../excel/chart.md#getimageheight-number-width-number-fittingmode-string)|Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.|1.2|
-|[filter](../excel/filter.md)|_Relationship_ > criteria|The currently applied filter on the given column. Read-only.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [apply(criteria: FilterCriteria)](../excel/filter.md#applycriteria-filtercriteria)|Apply the given filter criteria on the given column.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyBottomItemsFilter(count: number)](../excel/filter.md#applybottomitemsfiltercount-number)|Apply a "Bottom Item" filter to the column for the given number of elements.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyBottomPercentFilter(percent: number)](../excel/filter.md#applybottompercentfilterpercent-number)|Apply a "Bottom Percent" filter to the column for the given percentage of elements.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyCellColorFilter(color: string)](../excel/filter.md#applycellcolorfiltercolor-string)|Apply a "Cell Color" filter to the column for the given color.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyCustomFilter(criteria1: string, criteria2: string, oper: string)](../excel/filter.md#applycustomfiltercriteria1-string-criteria2-string-oper-string)|Apply a "Icon" filter to the column for the given criteria strings.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyDynamicFilter(criteria: string)](../excel/filter.md#applydynamicfiltercriteria-string)|Apply a "Dynamic" filter to the column.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyFontColorFilter(color: string)](../excel/filter.md#applyfontcolorfiltercolor-string)|Apply a "Font Color" filter to the column for the given color.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyIconFilter(icon: Icon)](../excel/filter.md#applyiconfiltericon-icon)|Apply a "Icon" filter to the column for the given icon.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyTopItemsFilter(count: number)](../excel/filter.md#applytopitemsfiltercount-number)|Apply a "Top Item" filter to the column for the given number of elements.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyTopPercentFilter(percent: number)](../excel/filter.md#applytoppercentfilterpercent-number)|Apply a "Top Percent" filter to the column for the given percentage of elements.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [applyValuesFilter(values: ()[])](../excel/filter.md#applyvaluesfiltervalues-)|Apply a "Values" filter to the column for the given values.|1.2|
-|[filter](../excel/filter.md)|_Method_ > [clear()](../excel/filter.md#clear)|Clear the filter on the given column.|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Property_ > color|The HTML color string used to filter cells. Used with "cellColor" and "fontColor" filtering.|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Property_ > criterion1|The first criterion used to filter data. Used as an operator in the case of "custom" filtering.|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Property_ > criterion2|The second criterion used to filter data. Only used as an operator in the case of "custom" filtering.|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Property_ > dynamicCriteria|The dynamic criteria from the Excel.DynamicFilterCriteria set to apply on this column. Used with "dynamic" filtering. Possible values are: Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate, Yesterday.|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Property_ > filterOn|The property used by the filter to determine whether the values should stay visible. Possible values are: BottomItems, BottomPercent, CellColor, Dynamic, FontColor, Values, TopItems, TopPercent, Icon, Custom.|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Property_ > operator|The operator used to combine criterion 1 and 2 when using "custom" filtering. Possible values are: And, Or.|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Property_ > values|The set of values to be used as part of "values" filtering.|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Relationship_ > icon|The icon used to filter cells. Used with "icon" filtering.|1.2|
-|[filterDatetime](../excel/filterdatetime.md)|_Property_ > date|The date in ISO8601 format used to filter data.|1.2|
-|[filterDatetime](../excel/filterdatetime.md)|_Property_ > specificity|How specific the date should be used to keep data. For example, if the date is 2005-04-02 and the specifity is set to "month", the filter operation will keep all rows with a date in the month of april 2009. Possible values are: Year, Monday, Day, Hour, Minute, Second.|1.2|
-|[formatProtection](../excel/formatprotection.md)|_Property_ > formulaHidden|Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.|1.2|
-|[formatProtection](../excel/formatprotection.md)|_Property_ > locked|Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.|1.2|
-|[icon](../excel/icon.md)|_Property_ > index|Represents the index of the icon in the given set.|1.2|
-|[icon](../excel/icon.md)|_Property_ > set|Represents the set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.|1.2|
-|[range](../excel/range.md)|_Property_ > columnHidden|Represents if all columns of the current range are hidden.|1.2|
-|[range](../excel/range.md)|_Property_ > formulasR1C1|Represents the formula in R1C1-style notation.|1.2|
-|[range](../excel/range.md)|_Property_ > hidden|Represents if all cells of the current range are hidden. Read-only.|1.2|
-|[range](../excel/range.md)|_Property_ > rowHidden|Represents if all rows of the current range are hidden.|1.2|
-|[range](../excel/range.md)|_Relationship_ > sort|Represents the range sort of the current range. Read-only.|1.2|
-|[range](../excel/range.md)|_Method_ > [merge(across: bool)](../excel/range.md#mergeacross-bool)|Merge the range cells into one region in the worksheet.|1.2|
-|[range](../excel/range.md)|_Method_ > [unmerge()](../excel/range.md#unmerge)|Unmerge the range cells into separate cells.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Property_ > columnWidth|Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Property_ > rowHeight|Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Relationship_ > protection|Returns the format protection object for a range. Read-only.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Method_ > [autofitColumns()](../excel/rangeformat.md#autofitcolumns)|Changes the width of the columns of the current range to achieve the best fit, based on the current data in the columns.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Method_ > [autofitRows()](../excel/rangeformat.md#autofitrows)|Changes the height of the rows of the current range to achieve the best fit, based on the current data in the columns.|1.2|
-|[rangeReference](../excel/rangereference.md)|_Property_ > address|Represents the visible rows of the current range.|1.2|
-|[rangeSort](../excel/rangesort.md)|_Method_ > [apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](../excel/rangesort.md#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|Perform a sort operation.|1.2|
-|[sortField](../excel/sortfield.md)|_Property_ > ascending|Represents whether the sorting is done in an ascending fashion.|1.2|
-|[sortField](../excel/sortfield.md)|_Property_ > color|Represents the color that is the target of the condition if the sorting is on font or cell color.|1.2|
-|[sortField](../excel/sortfield.md)|_Property_ > dataOption|Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.|1.2|
-|[sortField](../excel/sortfield.md)|_Property_ > key|Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).|1.2|
-|[sortField](../excel/sortfield.md)|_Property_ > sortOn|Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.|1.2|
-|[sortField](../excel/sortfield.md)|_Relationship_ > icon|Represents the icon that is the target of the condition if the sorting is on the cell's icon.|1.2|
-|[table](../excel/table.md)|_Relationship_ > sort|Represents the sorting for the table. Read-only.|1.2|
-|[table](../excel/table.md)|_Relationship_ > worksheet|The worksheet containing the current table. Read-only.|1.2|
-|[table](../excel/table.md)|_Method_ > [clearFilters()](../excel/table.md#clearfilters)|Clears all the filters currently applied on the table.|1.2|
-|[table](../excel/table.md)|_Method_ > [convertToRange()](../excel/table.md#converttorange)|Converts the table into a normal range of cells. All data is preserved.|1.2|
-|[table](../excel/table.md)|_Method_ > [reapplyFilters()](../excel/table.md#reapplyfilters)|Reapplies all the filters currently on the table.|1.2|
-|[tableColumn](../excel/tablecolumn.md)|_Relationship_ > filter|Retrieve the filter applied to the column. Read-only.|1.2|
-|[tableSort](../excel/tablesort.md)|_Property_ > matchCase|Represents whether the casing impacted the last sort of the table. Read-only.|1.2|
-|[tableSort](../excel/tablesort.md)|_Property_ > method|Represents Chinese character ordering method last used to sort the table. Read-only. Possible values are: PinYin, StrokeCount.|1.2|
-|[tableSort](../excel/tablesort.md)|_Relationship_ > fields|Represents the current conditions used to last sort the table. Read-only.|1.2|
-|[tableSort](../excel/tablesort.md)|_Method_ > [apply(fields: SortField[], matchCase: bool, method: string)](../excel/tablesort.md#applyfields-sortfield-matchcase-bool-method-string)|Perform a sort operation.|1.2|
-|[tableSort](../excel/tablesort.md)|_Method_ > [clear()](../excel/tablesort.md#clear)|Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.|1.2|
-|[tableSort](../excel/tablesort.md)|_Method_ > [reapply()](../excel/tablesort.md#reapply)|Reapplies the current sorting parameters to the table.|1.2|
-|[workbook](../excel/workbook.md)|_Relationship_ > functions|Represents Excel application instance that contains this workbook. Read-only.|1.2|
-|[worksheet](../excel/worksheet.md)|_Relationship_ > protection|Returns sheet protection object for a worksheet. Read-only.|1.2|
-|[worksheetProtection](../excel/worksheetprotection.md)|_Property_ > protected|Indicates if the worksheet is protected. Read-Only. Read-only.|1.2|
-|[worksheetProtection](../excel/worksheetprotection.md)|_Relationship_ > options|Sheet protection options. Read-only.|1.2|
-|[worksheetProtection](../excel/worksheetprotection.md)|_Method_ > [protect(options: WorksheetProtectionOptions)](../excel/worksheetprotection.md#protectoptions-worksheetprotectionoptions)|Protects a worksheet. Fails if the worksheet has been protected.|1.2|
-|[worksheetProtection](../excel/worksheetprotection.md)|_Method_ > [unprotect()](../excel/worksheetprotection.md#unprotect)|Unprotects a worksheet.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowAutoFilter|Represents the worksheet protection option of allowing using auto filter feature.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowDeleteColumns|Represents the worksheet protection option of allowing deleting columns.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowDeleteRows|Represents the worksheet protection option of allowing deleting rows.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowFormatCells|Represents the worksheet protection option of allowing formatting cells.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowFormatColumns|Represents the worksheet protection option of allowing formatting columns.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowFormatRows|Represents the worksheet protection option of allowing formatting rows.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowInsertColumns|Represents the worksheet protection option of allowing inserting columns.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowInsertHyperlinks|Represents the worksheet protection option of allowing inserting hyperlinks.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowInsertRows|Represents the worksheet protection option of allowing inserting rows.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowPivotTables|Represents the worksheet protection option of allowing using PivotTable feature.|1.2|
-|[worksheetProtectionOptions](../excel/worksheetprotectionoptions.md)|_Property_ > allowSort|Represents the worksheet protection option of allowing using sort feature.|1.2|
-
-## Excel JavaScript API 1.1
-Excel JavaScript API 1.1 is the first version of the API. For details about the API,  see the Excel JavaScript API reference topics.  
-
+|[application](../excel/application.md)|_Property_ > calculationEngineVersion|Returns a number about the version of Excel Calculation Engine that the workbook was last fully recalculated by. Read-only.|beta|
+|[application](../excel/application.md)|_Relationship_ > calculationState|Returns a CalculationState that indicates the calculation state of the application. Read-only.|beta|
+|[application](../excel/application.md)|_Relationship_ > iterativeCalculation|Returns the Iterative Calculation settings. Read-only.|beta|
+|[application](../excel/application.md)|_Method_ > [suspendScreenUpdatingUntilNextSync()]((../excel/application.md#suspendscreenupdatinguntilnextsync)|Suspends sceen updating until the next "context.sync()" is called.|beta|
+|[autoFilter](../excel/autofilter.md)|_Property_ > enabled|Indicates if the AutoFilter is enabled or not. Read-Only. Read-only.|beta|
+|[autoFilter](../excel/autofilter.md)|_Property_ > isDataFiltered|Indicates if the AutoFilter has filter criteria. Read-Only. Read-only.|beta|
+|[autoFilter](../excel/autofilter.md)|_Relationship_ > criteria|Array that holds all filter criterias in an autofiltered range. Read-Only. Read-only.|beta|
+|[autoFilter](../excel/autofilter.md)|_Method_ > [apply(range: Range or string, columnIndex: number, criteria: FilterCriteria)]((../excel/autofilter.md#applyrange-range-or-string-columnindex-number-criteria-filtercriteria)|Applies AutoFilter on a range and filters the column if column index and filter criteria are specified.|beta|
+|[autoFilter](../excel/autofilter.md)|_Method_ > [clearCriteria()]((../excel/autofilter.md#clearcriteria)|Clears the criteria if AutoFilter has filters|beta|
+|[autoFilter](../excel/autofilter.md)|_Method_ > [getRange()]((../excel/autofilter.md#getrange)|Returns the Range object that represents the range to which the AutoFilter applies.|beta|
+|[autoFilter](../excel/autofilter.md)|_Method_ > [getRangeOrNullObject()]((../excel/autofilter.md#getrangeornullobject)|If there is Range object associated with the AutoFilter, this method returns it.|beta|
+|[autoFilter](../excel/autofilter.md)|_Method_ > [reapply()]((../excel/autofilter.md#reapply)|Applies the specified Autofilter object currently on the range.|beta|
+|[autoFilter](../excel/autofilter.md)|_Method_ > [remove()]((../excel/autofilter.md#remove)|Removes the AutoFilter for the range.|beta|
+|[cellBorder](../excel/cellborder.md)|_Property_ > color|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellBorder](../excel/cellborder.md)|_Property_ > style|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|beta|
+|[cellBorder](../excel/cellborder.md)|_Property_ > tintAndShade|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|beta|
+|[cellBorder](../excel/cellborder.md)|_Property_ > weight|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Property_ > items|A collection of cellBorder objects. Read-only.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Relationship_ > bottom|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Relationship_ > diagonalDown|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Relationship_ > diagonalUp|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Relationship_ > horizontal|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Relationship_ > left|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Relationship_ > right|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Relationship_ > top|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellBorderCollection](../excel/cellbordercollection.md)|_Relationship_ > vertical|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellPropertiesBorderLoadOptions](../excel/cellpropertiesborderloadoptions.md)|_Property_ > color|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesBorderLoadOptions](../excel/cellpropertiesborderloadoptions.md)|_Property_ > style|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesBorderLoadOptions](../excel/cellpropertiesborderloadoptions.md)|_Property_ > tintAndShade|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesBorderLoadOptions](../excel/cellpropertiesborderloadoptions.md)|_Property_ > weight|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFill](../excel/cellpropertiesfill.md)|_Property_ > color|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFill](../excel/cellpropertiesfill.md)|_Property_ > patternColor|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFill](../excel/cellpropertiesfill.md)|_Property_ > patternTintAndShade|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFill](../excel/cellpropertiesfill.md)|_Property_ > tintAndShade|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFill](../excel/cellpropertiesfill.md)|_Relationship_ > pattern|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFillLoadOptions](../excel/cellpropertiesfillloadoptions.md)|_Property_ > color|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFillLoadOptions](../excel/cellpropertiesfillloadoptions.md)|_Property_ > pattern|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFillLoadOptions](../excel/cellpropertiesfillloadoptions.md)|_Property_ > patternColor|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFillLoadOptions](../excel/cellpropertiesfillloadoptions.md)|_Property_ > patternTintAndShade|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFillLoadOptions](../excel/cellpropertiesfillloadoptions.md)|_Property_ > tintAndShade|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > bold|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > color|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > italic|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > name|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > size|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > strikethrough|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > subscript|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > superscript|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > tintAndShade|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellPropertiesFont](../excel/cellpropertiesfont.md)|_Property_ > underline|Specifies whether the match is case sensitive. Default is false (insensitive). Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > bold|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > color|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > italic|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > name|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > size|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > strikethrough|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > subscript|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > superscript|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > tintAndShade|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesFontLoadOptions](../excel/cellpropertiesfontloadoptions.md)|_Property_ > underline|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesProtection](../excel/cellpropertiesprotection.md)|_Property_ > formulaHidden|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[cellPropertiesProtection](../excel/cellpropertiesprotection.md)|_Property_ > locked|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[chart](../excel/chart.md)|_Relationship_ > pivotOptions|Encapsulates the options for the pivot chart. Read-only.|beta|
+|[chart](../excel/chart.md)|_Method_ > [activate()]((../excel/chart.md#activate)|Activate the chart in the Excel UI.|beta|
+|[chartAreaFormat](../excel/chartareaformat.md)|_Property_ > roundedCorners|TrueΓö¼├íif the chart area of the chart has rounded corners. ReadWrite.|beta|
+|[chartAreaFormat](../excel/chartareaformat.md)|_Relationship_ > colorScheme|Returns or sets anΓö¼├íintegerΓö¼├íthat represents the color scheme for the chart. ReadWrite.|beta|
+|[chartAxis](../excel/chartaxis.md)|_Property_ > linkNumberFormat|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
+|[chartBinOptions](../excel/chartbinoptions.md)|_Property_ > allowOverflow|Returns or sets if bin overflow enabled in a histogram chart or pareto chart. ReadWrite.|beta|
+|[chartBinOptions](../excel/chartbinoptions.md)|_Property_ > allowUnderflow|Returns or sets if bin underflow enabled in a histogram chart or pareto chart. ReadWrite.|beta|
+|[chartBinOptions](../excel/chartbinoptions.md)|_Property_ > count|Returns or sets count of bin of a histogram chart or pareto chart. ReadWrite.|beta|
+|[chartBinOptions](../excel/chartbinoptions.md)|_Property_ > overflowValue|Returns or sets bin overflow value of a histogram chart or pareto chart. ReadWrite.|beta|
+|[chartBinOptions](../excel/chartbinoptions.md)|_Property_ > underflowValue|Returns or sets bin underflow value of a histogram chart or pareto chart. ReadWrite.|beta|
+|[chartBinOptions](../excel/chartbinoptions.md)|_Property_ > width|Returns or sets bin width value of a histogram chart or pareto chart. ReadWrite.|beta|
+|[chartBinOptions](../excel/chartbinoptions.md)|_Relationship_ > type|Returns or sets bin type of a histogram chart or pareto chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](../excel/chartboxwhiskeroptions.md)|_Property_ > showInnerPoints|Returns or sets if inner points showed in a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](../excel/chartboxwhiskeroptions.md)|_Property_ > showMeanLine|Returns or sets if mean line showed in a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](../excel/chartboxwhiskeroptions.md)|_Property_ > showMeanMarker|Returns or sets if mean marker showed in a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](../excel/chartboxwhiskeroptions.md)|_Property_ > showOutlierPoints|Returns or sets if outlier points showed in a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartBoxwhiskerOptions](../excel/chartboxwhiskeroptions.md)|_Relationship_ > quartileCalculation|Returns or sets quartile calculation type of a Box &amp; whisker chart. ReadWrite.|beta|
+|[chartDataLabel](../excel/chartdatalabel.md)|_Property_ > linkNumberFormat|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
+|[chartDataLabels](../excel/chartdatalabels.md)|_Property_ > linkNumberFormat|Represents whether the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
+|[chartErrorBars](../excel/charterrorbars.md)|_Property_ > endStyleCap|Represents whether have the end style cap for the error bars.|beta|
+|[chartErrorBars](../excel/charterrorbars.md)|_Property_ > visible|Represents whether shown error bars.|beta|
+|[chartErrorBars](../excel/charterrorbars.md)|_Relationship_ > format|Represents the formatting of chart ErrorBars. Read-only.|beta|
+|[chartErrorBars](../excel/charterrorbars.md)|_Relationship_ > include|Represents which error-bar parts to include.|beta|
+|[chartErrorBars](../excel/charterrorbars.md)|_Relationship_ > type|Represents the range marked by error bars.|beta|
+|[chartErrorBarsFormat](../excel/charterrorbarsformat.md)|_Relationship_ > line|Represents chart line formatting. Read-only.|beta|
+|[chartMapOptions](../excel/chartmapoptions.md)|_Relationship_ > labelStrategy|Returns or sets series map labels strategy of a region map chart. ReadWrite.|beta|
+|[chartMapOptions](../excel/chartmapoptions.md)|_Relationship_ > level|Returns or sets series map area of a region map chart. ReadWrite.|beta|
+|[chartMapOptions](../excel/chartmapoptions.md)|_Relationship_ > projectionType|Returns or sets series projection type of a region map chart. ReadWrite.|beta|
+|[chartPivotOptions](../excel/chartpivotoptions.md)|_Property_ > showAxisFieldButtons|Represents whether to display axis field buttons on a PivotChart.|beta|
+|[chartPivotOptions](../excel/chartpivotoptions.md)|_Property_ > showLegendFieldButtons|Represents whether to display legend field buttons on a PivotChart.|beta|
+|[chartPivotOptions](../excel/chartpivotoptions.md)|_Property_ > showReportFilterFieldButtons|Represents whether to display report filter field buttons on a PivotChart.|beta|
+|[chartPivotOptions](../excel/chartpivotoptions.md)|_Property_ > showValueFieldButtons|Represents whether to display show value field buttons on a PivotChart.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > bubbleScale|Returns or sets the scale factor for bubbles in the specified chart group. Can be an integer value from 0 (zero) to 300, corresponding to a percentage of the default size. Applies only to bubble charts. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > gradientMaximumColor|Returns or sets the Color for maximum value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > gradientMaximumValue|Returns or sets the maximum value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > gradientMidpointColor|Returns or sets the Color for midpoint value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > gradientMidpointValue|Returns or sets the midpoint value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > gradientMinimumColor|Returns or sets the Color for minimum value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > gradientMinimumValue|Returns or sets the minimum value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > invertColor|Returns or sets the fill color for negative data points in a series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > showConnectorLines|Returns or sets if connector lines show in a waterfall chart. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > showLeaderLines|True if Microsoft Excel show leaderlines for each datalabel in series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Property_ > splitValue|Returns or sets the threshold value separating the two sections of either a pie of pie chart or a bar of pie chart. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > binOptions|Encapsulates the bin options only for histogram chart and pareto chart. Read-only.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > boxwhiskerOptions|Encapsulates the options for the Box &amp; Whisker chart. Read-only.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > gradientMaximumType|Returns or sets the type for maximum value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > gradientMidpointType|Returns or sets the type for midpoint value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > gradientMinimumType|Returns or sets the type for minimum value of a region map chart series. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > gradientStyle|Returns or sets series gradient style of a region map chart. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > mapOptions|Encapsulates the options for the Map chart. Read-only.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > parentLabelStrategy|Returns or sets series parent label strategy area of a treemap chart. ReadWrite.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > xErrorBars|Represents the error bar object for a chart series. Read-only.|beta|
+|[chartSeries](../excel/chartseries.md)|_Relationship_ > yErrorBars|Represents the error bar object for a chart series. Read-only.|beta|
+|[chartTrendlineLabel](../excel/charttrendlinelabel.md)|_Property_ > linkNumberFormat|Boolean value representing if the number format is linked to the cells (so that the number format changes in the labels when it changes in the cells).|beta|
+|[closeWorkbookPostProcessAction](../excel/closeworkbookpostprocessaction.md)|_Relationship_ > actionType|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: UpdateFilteredFunctionList, UpdateAllFunctionList, None.|beta|
+|[comment](../excel/comment.md)|_Property_ > content|GetSet the content.|beta|
+|[comment](../excel/comment.md)|_Property_ > id|Represents the comment identifier. Read-only.|beta|
+|[comment](../excel/comment.md)|_Property_ > isParent|Represents whether it is a comment thread or reply. Always return true here. Read-only.|beta|
+|[comment](../excel/comment.md)|_Relationship_ > replies|Represents a collection of reply objects associated with the comment. Read-only.|beta|
+|[comment](../excel/comment.md)|_Method_ > [delete()]((../excel/comment.md#delete)|Deletes the comment thread.|beta|
+|[commentCollection](../excel/commentcollection.md)|_Property_ > items|A collection of comment objects. Read-only.|beta|
+|[commentCollection](../excel/commentcollection.md)|_Method_ > [add(content: string, cellAddress: object, contentType: ContentType)]((../excel/commentcollection.md#addcontent-string-celladdress-object-contenttype-contenttype)|Creates a new comment(comment thread) based on the cell location and content. Invalid argument will be thrown if the location is larger than one cell.|beta|
+|[commentCollection](../excel/commentcollection.md)|_Method_ > [getCount()]((../excel/commentcollection.md#getcount)|Gets the number of comments in the collection.|beta|
+|[commentCollection](../excel/commentcollection.md)|_Method_ > [getItem(commentId: string)]((../excel/commentcollection.md#getitemcommentid-string)|Returns a comment identified by its ID. Read-only.|beta|
+|[commentCollection](../excel/commentcollection.md)|_Method_ > [getItemAt(index: number)]((../excel/commentcollection.md#getitematindex-number)|Gets a comment based on its position in the collection.|beta|
+|[commentCollection](../excel/commentcollection.md)|_Method_ > [getItemByCell(cellAddress: object)]((../excel/commentcollection.md#getitembycellcelladdress-object)|Gets a comment on the specific cell in the collection.|beta|
+|[commentCollection](../excel/commentcollection.md)|_Method_ > [getItemByReplyId(replyId: string)]((../excel/commentcollection.md#getitembyreplyidreplyid-string)|Gets a comment related to its reply ID in the collection.|beta|
+|[commentReply](../excel/commentreply.md)|_Property_ > content|GetSet the content.|beta|
+|[commentReply](../excel/commentreply.md)|_Property_ > id|Represents the comment reply identifier. Read-only.|beta|
+|[commentReply](../excel/commentreply.md)|_Property_ > isParent|Represents whether it is a comment thread or reply. Always return false here. Read-only.|beta|
+|[commentReply](../excel/commentreply.md)|_Method_ > [delete()]((../excel/commentreply.md#delete)|Deletes the comment reply.|beta|
+|[commentReply](../excel/commentreply.md)|_Method_ > [getParentComment()]((../excel/commentreply.md#getparentcomment)|Get its parent comment of this reply.|beta|
+|[commentReplyCollection](../excel/commentreplycollection.md)|_Property_ > items|A collection of commentReply objects. Read-only.|beta|
+|[commentReplyCollection](../excel/commentreplycollection.md)|_Method_ > [add(content: string, contentType: ContentType)]((../excel/commentreplycollection.md#addcontent-string-contenttype-contenttype)|Creates a comment reply for comment.|beta|
+|[commentReplyCollection](../excel/commentreplycollection.md)|_Method_ > [getCount()]((../excel/commentreplycollection.md#getcount)|Gets the number of comment replies in the collection.|beta|
+|[commentReplyCollection](../excel/commentreplycollection.md)|_Method_ > [getItem(commentReplyId: string)]((../excel/commentreplycollection.md#getitemcommentreplyid-string)|Returns a comment reply identified by its ID. Read-only.|beta|
+|[commentReplyCollection](../excel/commentreplycollection.md)|_Method_ > [getItemAt(index: number)]((../excel/commentreplycollection.md#getitematindex-number)|Gets a comment reply based on its position in the collection.|beta|
+|[conditionalFormat](../excel/conditionalformat.md)|_Method_ > [getRanges()]((../excel/conditionalformat.md#getranges)|Returns the RangeAreas, comprising one or more rectangular ranges, the conditonal format is applied to. Read-only.|beta|
+|[dataValidation](../excel/datavalidation.md)|_Method_ > [getInvalidCells()]((../excel/datavalidation.md#getinvalidcells)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will throw an ItemNotFound error.|beta|
+|[dataValidation](../excel/datavalidation.md)|_Method_ > [getInvalidCellsOrNullObject()]((../excel/datavalidation.md#getinvalidcellsornullobject)|Returns a RangeAreas, comprising one or more rectangular ranges, with invalid cell values. If all cell values are valid, this function will return null.|beta|
+|[filterCriteria](../excel/filtercriteria.md)|_Property_ > subField|The property used by the filter to do rich filter on richvalues.|beta|
+|[geometricShape](../excel/geometricshape.md)|_Property_ > id|Represents the shape identifier. Read-only.|beta|
+|[geometricShape](../excel/geometricshape.md)|_Relationship_ > shape|Returns the shape object for the geometric shape. Read-only.|beta|
+|[groupShapeCollection](../excel/groupshapecollection.md)|_Property_ > items|A collection of groupShape objects. Read-only.|beta|
+|[groupShapeCollection](../excel/groupshapecollection.md)|_Method_ > [getCount()]((../excel/groupshapecollection.md#getcount)|Returns the number of shapes in the group shape. Read-only.|beta|
+|[groupShapeCollection](../excel/groupshapecollection.md)|_Method_ > [getItem(name: string)]((../excel/groupshapecollection.md#getitemname-string)|Gets a shape using its name.|beta|
+|[groupShapeCollection](../excel/groupshapecollection.md)|_Method_ > [getItem(shapeId: string)]((../excel/groupshapecollection.md#getitemshapeid-string)|Returns a shape identified by the shape id. Read-only.|beta|
+|[groupShapeCollection](../excel/groupshapecollection.md)|_Method_ > [getItemAt(index: number)]((../excel/groupshapecollection.md#getitematindex-number)|Gets a shape based on its position in the collection.|beta|
+|[headerFooter](../excel/headerfooter.md)|_Property_ > centerFooter|Gets or sets the center footer of the worksheet.|beta|
+|[headerFooter](../excel/headerfooter.md)|_Property_ > centerHeader|Gets or sets the center header of the worksheet.|beta|
+|[headerFooter](../excel/headerfooter.md)|_Property_ > leftFooter|Gets or sets the left footer of the worksheet.|beta|
+|[headerFooter](../excel/headerfooter.md)|_Property_ > leftHeader|Gets or sets the left header of the worksheet.|beta|
+|[headerFooter](../excel/headerfooter.md)|_Property_ > rightFooter|Gets or sets the right footer of the worksheet.|beta|
+|[headerFooter](../excel/headerfooter.md)|_Property_ > rightHeader|Gets or sets the right header of the worksheet.|beta|
+|[headerFooterGroup](../excel/headerfootergroup.md)|_Property_ > useSheetMargins|Gets or sets a flag indicating if headersfooters are aligned with the page margins set in the page layout options for the worksheet.|beta|
+|[headerFooterGroup](../excel/headerfootergroup.md)|_Property_ > useSheetScale|Gets or sets a flag indicating if headersfooters should be scaled by the page percentage scale set in the page layout options for the worksheet.|beta|
+|[headerFooterGroup](../excel/headerfootergroup.md)|_Relationship_ > defaultForAllPages|The general headerfooter, used for all pages unless evenodd or first page is specified. Read-only.|beta|
+|[headerFooterGroup](../excel/headerfootergroup.md)|_Relationship_ > evenPages|The headerfooter to use for even pages, odd headerfooter needs to be specified for odd pages. Read-only.|beta|
+|[headerFooterGroup](../excel/headerfootergroup.md)|_Relationship_ > firstPage|The first page headerfooter, for all other pages general or evenodd is used. Read-only.|beta|
+|[headerFooterGroup](../excel/headerfootergroup.md)|_Relationship_ > oddPages|The headerfooter to use for odd pages, even headerfooter needs to be specified for even pages. Read-only.|beta|
+|[headerFooterGroup](../excel/headerfootergroup.md)|_Relationship_ > state|Gets or sets the state of which headersfooters are set.|beta|
+|[image](../excel/image.md)|_Property_ > id|Represents the shape identifier for the image object. Read-only.|beta|
+|[image](../excel/image.md)|_Relationship_ > format|Returns the format for the image. Read-only.|beta|
+|[image](../excel/image.md)|_Relationship_ > shape|Returns the shape object for the image. Read-only.|beta|
+|[iterativeCalculation](../excel/iterativecalculation.md)|_Property_ > enabled|True if Excel will use iteration to resolve circular references.|beta|
+|[iterativeCalculation](../excel/iterativecalculation.md)|_Property_ > maxChange|Returns or sets the maximum amount of change between each iteration as Excel resolves circular references.|beta|
+|[iterativeCalculation](../excel/iterativecalculation.md)|_Property_ > maxIteration|Returns or sets the maximum number of iterations that Excel can use to resolve a circular reference.|beta|
+|[line](../excel/line.md)|_Property_ > id|Represents the shape identifier. Read-only.|beta|
+|[line](../excel/line.md)|_Relationship_ > connectorType|Represents the connector type for the line.|beta|
+|[line](../excel/line.md)|_Relationship_ > shape|Returns the shape object for the line. Read-only.|beta|
+|[pageBreak](../excel/pagebreak.md)|_Property_ > columnIndex|Represents the column index for the page break Read-only.|beta|
+|[pageBreak](../excel/pagebreak.md)|_Property_ > rowIndex|Represents the row index for the page break Read-only.|beta|
+|[pageBreak](../excel/pagebreak.md)|_Method_ > [delete()]((../excel/pagebreak.md#delete)|Deletes a page break object.|beta|
+|[pageBreak](../excel/pagebreak.md)|_Method_ > [getStartCell()]((../excel/pagebreak.md#getstartcell)|Gets the first cell after the page break.|beta|
+|[pageBreakCollection](../excel/pagebreakcollection.md)|_Property_ > items|A collection of pageBreak objects. Read-only.|beta|
+|[pageBreakCollection](../excel/pagebreakcollection.md)|_Method_ > [add(pageBreakRange: Range or string)]((../excel/pagebreakcollection.md#addpagebreakrange-range-or-string)|Adds a page break before the top-left cell of the range specified.|beta|
+|[pageBreakCollection](../excel/pagebreakcollection.md)|_Method_ > [getCount()]((../excel/pagebreakcollection.md#getcount)|Gets the number of page breaks in the collection.|beta|
+|[pageBreakCollection](../excel/pagebreakcollection.md)|_Method_ > [getItem(index: number)]((../excel/pagebreakcollection.md#getitemindex-number)|Gets a page break object via the index.|beta|
+|[pageBreakCollection](../excel/pagebreakcollection.md)|_Method_ > [removePageBreaks()]((../excel/pagebreakcollection.md#removepagebreaks)|Resets all manual page breaks in the collection.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > blackAndWhite|Gets or sets the worksheet's black and white print option.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > bottomMargin|Gets or sets the worksheet's bottom page margin to use for printing in points.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > centerHorizontally|Gets or sets the worksheet's center horizontally flag. This flag determines whether the worksheet will be centered horizontally when it's printed.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > centerVertically|Gets or sets the worksheet's center vertically flag. This flag determines whether the worksheet will be centered vertically when it's printed.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > draftMode|Gets or sets the worksheet's draft mode option. If true the sheet will be printed without graphics.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > firstPageNumber|Gets or sets the worksheet's first page number to print. Null value represents "auto" page numbering.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > footerMargin|Gets or sets the worksheet's footer margin, in points, for use when printing.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > headerMargin|Gets or sets the worksheet's header margin, in points, for use when printing.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > leftMargin|Gets or sets the worksheet's left margin, in points, for use when printing.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > orientation|Gets or sets the worksheet's orientation of the page. Possible values are: Portrait, Landscape.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > paperSize|Gets or sets the worksheet's paper size of the page. Possible values are: Letter, LetterSmall, Tabloid, Ledger, Legal, Statement, Executive, A3, A4, A4Small, A5, B4, B5, Folio, Quatro, Paper10x14, Paper11x17, Note, Envelope9, Envelope10, Envelope11, Envelope12, Envelope14, Csheet, Dsheet, Esheet, EnvelopeDL, EnvelopeC5, EnvelopeC3, EnvelopeC4, EnvelopeC6, EnvelopeC65, EnvelopeB4, EnvelopeB5, EnvelopeB6, EnvelopeItaly, EnvelopeMonarch, EnvelopePersonal, FanfoldUS, FanfoldStdGerman, FanfoldLegalGerman.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > printGridlines|Gets or sets the worksheet's print gridlines flag. This flag determines whether gridlines will be printed or not.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > printHeadings|Gets or sets the worksheet's print headings flag. This flag determines whether headings will be printed or not.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > rightMargin|Gets or sets the worksheet's right margin, in points, for use when printing.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Property_ > topMargin|Gets or sets the worksheet's top margin, in points, for use when printing.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Relationship_ > headersFooters|Header and footer configuration for the worksheet. Read-only.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Relationship_ > printComments|Gets or sets whether the worksheet's comments should be displayed when printing.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Relationship_ > printErrors|Gets or sets the worksheet's print errors option.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Relationship_ > printOrder|Gets or sets the worksheet's page print order option. This specifies the order to use for processing the page number printed.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Relationship_ > zoom|Gets or sets the worksheet's print zoom options.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [getPrintArea()]((../excel/pagelayout.md#getprintarea)|Gets the RangeAreas object, comprising one or more rectangular ranges, that represents the print area for the worksheet. If there is no print area, an ItemNotFound error will be thrown.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [getPrintAreaOrNullObject()]((../excel/pagelayout.md#getprintareaornullobject)|Gets the RangeAreas object, comprising one or more rectangular ranges, that represents the print area for the worksheet. If there is no print area, a null object will be returned.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [getPrintTitleColumns()]((../excel/pagelayout.md#getprinttitlecolumns)|Gets the range object representing the title columns.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [getPrintTitleColumnsOrNullObject()]((../excel/pagelayout.md#getprinttitlecolumnsornullobject)|Gets the range object representing the title columns. If not set, this will return a null object.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [getPrintTitleRows()]((../excel/pagelayout.md#getprinttitlerows)|Gets the range object representing the title rows.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [getPrintTitleRowsOrNullObject()]((../excel/pagelayout.md#getprinttitlerowsornullobject)|Gets the range object representing the title rows. If not set, this will return a null object.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [setPrintArea(printArea: Range or RangeAreas or string)]((../excel/pagelayout.md#setprintareaprintarea-range-or-rangeareas-or-string)|Sets the worksheet's print area.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [setPrintMargins(unit: PrintMarginUnit, marginOptions: PageLayoutMarginOptions)]((../excel/pagelayout.md#setprintmarginsunit-printmarginunit-marginoptions-pagelayoutmarginoptions)|Sets the worksheet's page margins with units.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [setPrintTitleColumns(printTitleColumns: Range or string)]((../excel/pagelayout.md#setprinttitlecolumnsprinttitlecolumns-range-or-string)|Sets the columns that contain the cells to be repeated at the left of each page of the worksheet for printing.|beta|
+|[pageLayout](../excel/pagelayout.md)|_Method_ > [setPrintTitleRows(printTitleRows: Range or string)]((../excel/pagelayout.md#setprinttitlerowsprinttitlerows-range-or-string)|Sets the rows that contain the cells to be repeated at the top of each page of the worksheet for printing.|beta|
+|[pageLayoutMarginOptions](../excel/pagelayoutmarginoptions.md)|_Property_ > bottom|Represents the page layout bottom margin in the unit specified to use for printing.|beta|
+|[pageLayoutMarginOptions](../excel/pagelayoutmarginoptions.md)|_Property_ > footer|Represents the page layout footer margin in the unit specified to use for printing.|beta|
+|[pageLayoutMarginOptions](../excel/pagelayoutmarginoptions.md)|_Property_ > header|Represents the page layout header margin in the unit specified to use for printing.|beta|
+|[pageLayoutMarginOptions](../excel/pagelayoutmarginoptions.md)|_Property_ > left|Represents the page layout left margin in the unit specified to use for printing.|beta|
+|[pageLayoutMarginOptions](../excel/pagelayoutmarginoptions.md)|_Property_ > right|Represents the page layout right margin in the unit specified to use for printing.|beta|
+|[pageLayoutMarginOptions](../excel/pagelayoutmarginoptions.md)|_Property_ > top|Represents the page layout top margin in the unit specified to use for printing.|beta|
+|[pageLayoutZoomOptions](../excel/pagelayoutzoomoptions.md)|_Property_ > horizontalFitToPages|Number of pages to fit horizontally. This value can be null if percentage scale is used.|beta|
+|[pageLayoutZoomOptions](../excel/pagelayoutzoomoptions.md)|_Property_ > scale|Print page scale value can be between 10 and 400. This value can be null if fit to page tall or wide is specified.|beta|
+|[pageLayoutZoomOptions](../excel/pagelayoutzoomoptions.md)|_Property_ > verticalFitToPages|Number of pages to fit vertically. This value can be null if percentage scale is used.|beta|
+|[pivotField](../excel/pivotfield.md)|_Method_ > [sortByValues(sortby: SortBy, valuesHierarchy: DataPivotHierarchy, pivotItemScope: ()[])]((../excel/pivotfield.md#sortbyvaluessortby-sortby-valueshierarchy-datapivothierarchy-pivotitemscope-)|Sorts the PivotField by specified values in a given scope. The scope defines which specific values will be used to sort when|beta|
+|[pivotLayout](../excel/pivotlayout.md)|_Property_ > autoFormat|True if formatting will be automatically formatted when it╬ô├ç├ûs refreshed or when fields are moved|beta|
+|[pivotLayout](../excel/pivotlayout.md)|_Property_ > enableFieldList|True if the field list should be shown or hidden from the UI.|beta|
+|[pivotLayout](../excel/pivotlayout.md)|_Property_ > preserveFormatting|True if formatting is preserved when the report is refreshed or recalculated by operations such as pivoting, sorting, or changing page field items.|beta|
+|[pivotLayout](../excel/pivotlayout.md)|_Method_ > [getCell(dataHierarchy: DataPivotHierarchy or string, rowItems: ()[], columnItems: ()[])]((../excel/pivotlayout.md#getcelldatahierarchy-datapivothierarchy-or-string-rowitems--columnitems-)|Gets the cell in the PivotTable's data body that contains the value for the intersection of the specified dataHierarchy, rowItems, and columnItems.|beta|
+|[pivotLayout](../excel/pivotlayout.md)|_Method_ > [getDataHierarchy(cell: Range or string)]((../excel/pivotlayout.md#getdatahierarchycell-range-or-string)|Gets the DataHierarchy that is used to calculate the value in a specified range within the PivotTable.|beta|
+|[pivotLayout](../excel/pivotlayout.md)|_Method_ > [getPivotItems(axis: PivotAxis, cell: Range or string)]((../excel/pivotlayout.md#getpivotitemsaxis-pivotaxis-cell-range-or-string)|Gets the PivotItems from an axis that make up the value in a specified range within the PivotTable.|beta|
+|[pivotLayout](../excel/pivotlayout.md)|_Method_ > [setAutosortOnCell(cell: Range or string, sortby: SortBy)]((../excel/pivotlayout.md#setautosortoncellcell-range-or-string-sortby-sortby)|Sets an autosort using the specified cell to automatically select all criteria and context for the sort.|beta|
+|[pivotTable](../excel/pivottable.md)|_Property_ > enableDataValueEditing|True if the PivotTable should use custom lists when sorting.|beta|
+|[pivotTable](../excel/pivottable.md)|_Property_ > useCustomSortLists|True if the PivotTable should use custom lists when sorting.|beta|
+|[range](../excel/range.md)|_Property_ > hasSpill|Represents if all cells have a spill border. Read-only.|beta|
+|[range](../excel/range.md)|_Relationship_ > linkedDataTypeState|Represents the data type state of each cell. Read-only.|beta|
+|[range](../excel/range.md)|_Method_ > [autoFill(destinationRange: Range or string, autoFillType: AutoFillType)]((../excel/range.md#autofilldestinationrange-range-or-string-autofilltype-autofilltype)|Fills range from the current range to the destination range.|beta|
+|[range](../excel/range.md)|_Method_ > [convertDataTypeToText()]((../excel/range.md#convertdatatypetotext)|Converts the range cells with datatypes into text.|beta|
+|[range](../excel/range.md)|_Method_ > [convertToLinkedDataType(serviceID: number, languageCulture: string)]((../excel/range.md#converttolinkeddatatypeserviceid-number-languageculture-string)|Converts the range cells into linked datatype in the worksheet.|beta|
+|[range](../excel/range.md)|_Method_ > [copyFrom(sourceRange: Range or RangeAreas or string, copyType: RangeCopyType, skipBlanks: bool, transpose: bool)]((../excel/range.md#copyfromsourcerange-range-or-rangeareas-or-string-copytype-rangecopytype-skipblanks-bool-transpose-bool)|Copies cell data or formatting from the source range or RangeAreas to the current range.|beta|
+|[range](../excel/range.md)|_Method_ > [find(text: string, criteria: SearchCriteria)]((../excel/range.md#findtext-string-criteria-searchcriteria)|Finds the given string based on the criteria specified.|beta|
+|[range](../excel/range.md)|_Method_ > [findOrNullObject(text: string, criteria: SearchCriteria)]((../excel/range.md#findornullobjecttext-string-criteria-searchcriteria)|Finds the given string based on the criteria specified.|beta|
+|[range](../excel/range.md)|_Method_ > [getSpecialCells(cellType: SpecialCellType, cellValueType: SpecialCellValueType)]((../excel/range.md#getspecialcellscelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|Gets the RangeAreas object, comprising one or more rectangular ranges, that represents all the cells that match the specified type and value.|beta|
+|[range](../excel/range.md)|_Method_ > [getSpecialCellsOrNullObject(cellType: SpecialCellType, cellValueType: SpecialCellValueType)]((../excel/range.md#getspecialcellsornullobjectcelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|Gets the RangeAreas object, comprising one or more ranges, that represents all the cells that match the specified type and value.|beta|
+|[range](../excel/range.md)|_Method_ > [getSpillParent()]((../excel/range.md#getspillparent)|Gets the range object containing the anchor cell for a cell getting spilled into. Fails if applied to a range with more than one cell. Read only.|beta|
+|[range](../excel/range.md)|_Method_ > [getSpillingToRange()]((../excel/range.md#getspillingtorange)|Gets the range object containing the spill range when called on an anchor cell. Fails if applied to a range with more than one cell. Read only.|beta|
+|[range](../excel/range.md)|_Method_ > [getTables(fullyContained: bool)]((../excel/range.md#gettablesfullycontained-bool)|Gets a scoped collection of tables that overlap with the range.|beta|
+|[range](../excel/range.md)|_Method_ > [removeDuplicates(columns: int[], includesHeader: bool)]((../excel/range.md#removeduplicatescolumns-int-includesheader-bool)|Removes duplicate values from the range specified by the columns.|beta|
+|[range](../excel/range.md)|_Method_ > [replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)]((../excel/range.md#replacealltext-string-replacement-string-criteria-replacecriteria)|Finds and replaces the given string based on the criteria specified within the current range.|beta|
+|[range](../excel/range.md)|_Method_ > [setCellProperties(cellPropertiesData: CellPropertiesInternal[][])]((../excel/range.md#setcellpropertiescellpropertiesdata-cellpropertiesinternal)|Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.|beta|
+|[range](../excel/range.md)|_Method_ > [setColumnProperties(columnPropertiesData: CellPropertiesInternal[])]((../excel/range.md#setcolumnpropertiescolumnpropertiesdata-cellpropertiesinternal)|Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.|beta|
+|[range](../excel/range.md)|_Method_ > [setDirty()]((../excel/range.md#setdirty)|Set a range to be recalculated when the next recalculation occurs.|beta|
+|[range](../excel/range.md)|_Method_ > [setRowProperties(rowPropertiesData: CellPropertiesInternal[])]((../excel/range.md#setrowpropertiesrowpropertiesdata-cellpropertiesinternal)|Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Property_ > address|Returns the RageAreas reference in A1-style. Address value will contain the worksheet name for each rectangular block of cells (e.g. "Sheet1!A1:B4, Sheet1!D1:D4"). Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Property_ > addressLocal|Returns the RageAreas reference in the user locale. Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Property_ > areaCount|Returns the number of rectangular ranges that comprise this RangeAreas object. Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Property_ > cellCount|Returns the number of cells in the RangeAreas object, summing up the cell counts of all of the individual rectangular ranges. Returns -1 if the cell count exceeds 2^31-1 (2,147,483,647). Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Property_ > isEntireColumn|Indicates whether all the ranges on this RangeAreas object represent entire columns (e.g., "A:C, Q:Z"). Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Property_ > isEntireRow|Indicates whether all the ranges on this RangeAreas object represent entire rows (e.g., "1:3, 5:7"). Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Property_ > style|Represents the style for all ranges in this RangeAreas object.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Relationship_ > areas|Returns a collection of rectangular ranges that comprise this RangeAreas object. Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Relationship_ > conditionalFormats|Returns a collection of ConditionalFormats that intersect with any cells in this RangeAreas object. Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Relationship_ > dataValidation|Returns a dataValidation object for all ranges in the RangeAreas. Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Relationship_ > format|Returns a rangeFormat object, encapsulating the the font, fill, borders, alignment, and other properties for all ranges in the RangeAreas object. Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Relationship_ > worksheet|Returns the worksheet for the current RangeAreas. Read-only.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [calculate()]((../excel/rangeareas.md#calculate)|Calculates all cells in the RangeAreas.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [clear(applyTo: string)]((../excel/rangeareas.md#clearapplyto-string)|Clears values, format, fill, border, etc on each of the areas that comprise this RangeAreas object.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [convertDataTypeToText()]((../excel/rangeareas.md#convertdatatypetotext)|Converts all cells in the RangeAreas with datatypes into text.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [convertToLinkedDataType(serviceID: number, languageCulture: string)]((../excel/rangeareas.md#converttolinkeddatatypeserviceid-number-languageculture-string)|Converts all cells in the RangeAreas into linked datatype.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [copyFrom(sourceRange: Range or RangeAreas or string, copyType: RangeCopyType, skipBlanks: bool, transpose: bool)]((../excel/rangeareas.md#copyfromsourcerange-range-or-rangeareas-or-string-copytype-rangecopytype-skipblanks-bool-transpose-bool)|Copies cell data or formatting from the source range or RangeAreas to the current RangeAreas.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getEntireColumn()]((../excel/rangeareas.md#getentirecolumn)|Returns a RangeAreas object that represents the entire columns of the RangeAreas (for example, if the current RangeAreas represents cells "B4:E11, H2", it returns a RangeAreas that represents columns "B:E, H:H").|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getEntireRow()]((../excel/rangeareas.md#getentirerow)|Returns a RangeAreas object that represents the entire rows of the RangeAreas (for example, if the current RangeAreas represents cells "B4:E11", it returns a RangeAreas that represents rows "4:11").|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getIntersection(anotherRange: Range or RangeAreas or string)]((../excel/rangeareas.md#getintersectionanotherrange-range-or-rangeareas-or-string)|Returns the RangeAreas object that represents the intersection of the given ranges or RangeAreas. If no intersection is found, an ItemNotFound error will be thrown.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getIntersectionOrNullObject(anotherRange: Range or RangeAreas or string)]((../excel/rangeareas.md#getintersectionornullobjectanotherrange-range-or-rangeareas-or-string)|Returns the RangeAreas object that represents the intersection of the given ranges or RangeAreas. If no intersection is found, a null object is returned.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getOffsetRangeAreas(rowOffset: number, columnOffset: number)]((../excel/rangeareas.md#getoffsetrangeareasrowoffset-number-columnoffset-number)|Returns an RangeAreas object that is shifted by the specific row and column offset. The dimension of the returned RangeAreas will match the original object. If the resulting RangeAreas is forced outside the bounds of the worksheet grid, an error will be thrown.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getSpecialCells(cellType: SpecialCellType, cellValueType: SpecialCellValueType)]((../excel/rangeareas.md#getspecialcellscelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|Returns a RangeAreas object that represents all the cells that match the specified type and value. Throws an error if no special cells are found that match the criteria.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getSpecialCellsOrNullObject(cellType: SpecialCellType, cellValueType: SpecialCellValueType)]((../excel/rangeareas.md#getspecialcellsornullobjectcelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|Returns a RangeAreas object that represents all the cells that match the specified type and value. Returns a null object if no special cells are found that match the criteria.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getTables(fullyContained: bool)]((../excel/rangeareas.md#gettablesfullycontained-bool)|Returns a scoped collection of tables that overlap with any range in this RangeAreas object.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getUsedRangeAreas(valuesOnly: bool)]((../excel/rangeareas.md#getusedrangeareasvaluesonly-bool)|Returns the used RangeAreas that comprises all the used areas of individual rectangular ranges in the RangeAreas object.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [getUsedRangeAreasOrNullObject(valuesOnly: bool)]((../excel/rangeareas.md#getusedrangeareasornullobjectvaluesonly-bool)|Returns the used RangeAreas that comprises all the used areas of individual rectangular ranges in the RangeAreas object.|beta|
+|[rangeAreas](../excel/rangeareas.md)|_Method_ > [setDirty()]((../excel/rangeareas.md#setdirty)|Sets the RangeAreas to be recalculated when the next recalculation occurs.|beta|
+|[rangeBorder](../excel/rangeborder.md)|_Property_ > tintAndShade|Returns or sets a double that lightens or darkens a color for Range Border, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|beta|
+|[rangeBorderCollection](../excel/rangebordercollection.md)|_Property_ > tintAndShade|Returns or sets a double that lightens or darkens a color for Range Borders, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|beta|
+|[rangeCollection](../excel/rangecollection.md)|_Property_ > items|A collection of range objects. Read-only.|beta|
+|[rangeCollection](../excel/rangecollection.md)|_Method_ > [getCount()]((../excel/rangecollection.md#getcount)|Returns the number of ranges in the RangeCollection.|beta|
+|[rangeCollection](../excel/rangecollection.md)|_Method_ > [getItemAt(index: number)]((../excel/rangecollection.md#getitematindex-number)|Returns the range object based on its position in the RangeCollection.|beta|
+|[rangeFill](../excel/rangefill.md)|_Property_ > patternColor|Sets HTML color code representing the color of the Range pattern, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|beta|
+|[rangeFill](../excel/rangefill.md)|_Property_ > patternTintAndShade|Returns or sets a double that lightens or darkens a pattern color for Range Fill, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|beta|
+|[rangeFill](../excel/rangefill.md)|_Property_ > tintAndShade|Returns or sets a double that lightens or darkens a color for Range Fill, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|beta|
+|[rangeFill](../excel/rangefill.md)|_Relationship_ > pattern|Gets or sets the pattern of a Range.|beta|
+|[rangeFont](../excel/rangefont.md)|_Property_ > strikethrough|Represents the strikethrough status of font. A null value indicates that the entire range doesn't have uniform Strikethrough setting.|beta|
+|[rangeFont](../excel/rangefont.md)|_Property_ > subscript|Represents the Subscript status of font.|beta|
+|[rangeFont](../excel/rangefont.md)|_Property_ > superscript|Represents the Superscript status of font.|beta|
+|[rangeFont](../excel/rangefont.md)|_Property_ > tintAndShade|Returns or sets a double that lightens or darkens a color for Range Font, the value is between -1 (darkest) and 1 (brightest), with 0 for the original color.|beta|
+|[rangeFormat](../excel/rangeformat.md)|_Property_ > autoIndent|Indicates if text is automatically indented when text alignment is set to equal distribution.|beta|
+|[rangeFormat](../excel/rangeformat.md)|_Property_ > indentLevel|An integer from 0 to 250 that indicates the indent level.|beta|
+|[rangeFormat](../excel/rangeformat.md)|_Property_ > readingOrder|The reading order for the range. Possible values are: Context, LeftToRight, RightToLeft.|beta|
+|[rangeFormat](../excel/rangeformat.md)|_Property_ > shrinkToFit|Indicates if text automatically shrinks to fit in the available column width.|beta|
+|[removeDuplicatesResult](../excel/removeduplicatesresult.md)|_Property_ > removed|Number of duplicated rows removed by the operation. Read-only.|beta|
+|[removeDuplicatesResult](../excel/removeduplicatesresult.md)|_Property_ > uniqueRemaining|Number of remaining unique rows present in the resulting range. Read-only.|beta|
+|[replaceCriteria](../excel/replacecriteria.md)|_Property_ > completeMatch|Specifies whether the match needs to be complete or partial. Default is false (partial).|beta|
+|[replaceCriteria](../excel/replacecriteria.md)|_Property_ > matchCase|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[searchCriteria](../excel/searchcriteria.md)|_Property_ > completeMatch|Specifies whether the match needs to be complete or partial. Default is false (partial).|beta|
+|[searchCriteria](../excel/searchcriteria.md)|_Property_ > matchCase|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
+|[searchCriteria](../excel/searchcriteria.md)|_Relationship_ > searchDirection|Specifies the search direction. Default is forward.|beta|
+|[shape](../excel/shape.md)|_Property_ > altTextDescription|Returns or sets the alternative descriptive text string for a Shape object when the object is saved to a Web page.|beta|
+|[shape](../excel/shape.md)|_Property_ > altTextTitle|Returns or sets the alternative title text string for a Shape object when the object is saved to a Web page.|beta|
+|[shape](../excel/shape.md)|_Property_ > height|Represents the height, in points, of the shape.|beta|
+|[shape](../excel/shape.md)|_Property_ > id|Represents the shape identifier. Read-only.|beta|
+|[shape](../excel/shape.md)|_Property_ > left|The distance, in points, from the left side of the shape to the left of the worksheet.|beta|
+|[shape](../excel/shape.md)|_Property_ > level{|Represents the level of the specified shape. Level 0 means the shape is not part of any group, level 1 means the shape is part of a top-level group, etc. Read-only.|beta|
+|[shape](../excel/shape.md)|_Property_ > lockAspectRatio|Represents if the aspect ratio locked, in boolean, of the shape.|beta|
+|[shape](../excel/shape.md)|_Property_ > name|Represents the name of the shape.|beta|
+|[shape](../excel/shape.md)|_Property_ > rotation|Represents the rotation, in degrees, of the shape.|beta|
+|[shape](../excel/shape.md)|_Property_ > top|The distance, in points, from the top edge of the shape to the top of the worksheet.|beta|
+|[shape](../excel/shape.md)|_Property_ > visible{|Represents the visibility, in boolean, of the specified shape.|beta|
+|[shape](../excel/shape.md)|_Property_ > width|Represents the width, in points, of the shape.|beta|
+|[shape](../excel/shape.md)|_Property_ > zOrderPosition|Returns the position of the specified shape in the z-order, the very bottom shape's z-order value is 0. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > fill|Returns the fill formatting of the shape object. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > geometricShape|Returns the geometric shape for the shape object. Error will be thrown, if the shape object is other shape type (Like, Image, SmartArt, etc.) rather than GeometricShape. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > geometricShapeType|Represents the geometric shape type of the specified shape.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > group|Returns the shape group for the shape object. Error will be thrown, if the shape object is other shape type (Like, Image, SmartArt, etc.) rather than GroupShape. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > image|Returns the image for the shape object. Error will be thrown, if the shape object is other shape type (Like, GeometricShape, SmartArt, etc.) rather than Image. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > line|Returns the line object for the shape object. Error will be thrown, if the shape object is other shape type (Like, GeometricShape, SmartArt, etc.) rather than Image. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > lineFormat|Returns the line formatting of the shape object. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > parentGroup{|Represents the parent group of the specified shape. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > placement|Represents the placment, value that represents the way the object is attached to the cells below it.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > textFrame|Returns the textFrame object of a shape. Read only. Read-only.|beta|
+|[shape](../excel/shape.md)|_Relationship_ > type|Returns the type of the specified shape. Read-only.|beta|
+|[shape](../excel/shape.md)|_Method_ > [delete()]((../excel/shape.md#delete)|Deletes the Shape|beta|
+|[shape](../excel/shape.md)|_Method_ > [incrementLeft(increment: double)]((../excel/shape.md#incrementleftincrement-double)|Moves the shape horizontally by the specified number of points.|beta|
+|[shape](../excel/shape.md)|_Method_ > [incrementRotation(increment: double)]((../excel/shape.md#incrementrotationincrement-double)|Changes the rotation of the shape around the z-axis by the specified number of degrees.|beta|
+|[shape](../excel/shape.md)|_Method_ > [incrementTop(increment: double)]((../excel/shape.md#incrementtopincrement-double)|Moves the shape vertically by the specified number of points.|beta|
+|[shape](../excel/shape.md)|_Method_ > [saveAsPicture(format: PictureFormat)]((../excel/shape.md#saveaspictureformat-pictureformat)|Saves the shape as a picture and returns the picture in the form of base64 encoded string, using the DPI sets to 96. Only support saves as to Excel.PictureFormat.BMP, Excel.PictureFormat.PNG, Excel.PictureFormat.JPEG and Excel.PictureFormat.GIF.|beta|
+|[shape](../excel/shape.md)|_Method_ > [scaleHeight(scaleFactor: double, scaleType: ShapeScaleType, scaleFrom: ShapeScaleFrom)]((../excel/shape.md#scaleheightscalefactor-double-scaletype-shapescaletype-scalefrom-shapescalefrom)|Scales the height of the shape by a specified factor. For pictures, you can indicate whether you want to scale the shape relative to the original or the current size. Shapes other than pictures are always scaled relative to their current height.|beta|
+|[shape](../excel/shape.md)|_Method_ > [scaleWidth(scaleFactor: double, scaleType: ShapeScaleType, scaleFrom: ShapeScaleFrom)]((../excel/shape.md#scalewidthscalefactor-double-scaletype-shapescaletype-scalefrom-shapescalefrom)|Scales the width of the shape by a specified factor. For pictures, you can indicate whether you want to scale the shape relative to the original or the current size. Shapes other than pictures are always scaled relative to their current width.|beta|
+|[shape](../excel/shape.md)|_Method_ > [setZOrder(value: string)]((../excel/shape.md#setzordervalue-string)|Moves the specified shape in front of or behind other shapes in the collection (that is, changes the shape's position in the z-order).|beta|
+|[shapeActivatedEventArgs](../excel/shapeactivatedeventargs.md)|_Property_ > shapeId|Gets the id of the shape that is activated.|beta|
+|[shapeActivatedEventArgs](../excel/shapeactivatedeventargs.md)|_Property_ > type|Gets the type of the event.|beta|
+|[shapeActivatedEventArgs](../excel/shapeactivatedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the shape is activated.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Property_ > items|A collection of shape objects. Read-only.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [addGeometricShape(geometricShapeType: string, left: double, top: double, width: double, height: double)]((../excel/shapecollection.md#addgeometricshapegeometricshapetype-string-left-double-top-double-width-double-height-double)|Adds a geometric shape to worksheet. Returns a Shape object that represents the new shape.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [addGroup(values: ()[])]((../excel/shapecollection.md#addgroupvalues-)|Group a subset of shapes in a worksheet. Returns a Shape object that represents the new group of shapes.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [addImage(base64ImageString: string)]((../excel/shapecollection.md#addimagebase64imagestring-string)|Creates an image from a base64 string and adds it to worksheet. Returns the Shape object that represents the new Image.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [addLine(startLeft: double, startTop: double, endLeft: double, endTop: double, connectorType: string)]((../excel/shapecollection.md#addlinestartleft-double-starttop-double-endleft-double-endtop-double-connectortype-string)|Adds a line to worksheet. Returns a Shape object that represents the new line.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [addSVG(xmlImageString: string)]((../excel/shapecollection.md#addsvgxmlimagestring-string)|Creates an SVG from a XML string and adds it to worksheet. Returns a Shape object that represents the new Image.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [addTextBox(text: string)]((../excel/shapecollection.md#addtextboxtext-string)|Adds a textbox to worksheet by telling it's text content. Returns a Shape object that represents the new text box.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [getCount()]((../excel/shapecollection.md#getcount)|Returns the number of shapes in the worksheet. Read-only.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [getItem(shapeId: string)]((../excel/shapecollection.md#getitemshapeid-string)|Returns a shape identified by the shape id. Read-only.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [getItem(name: string)]((../excel/shapecollection.md#getitemname-string)|Gets a shape using its name.|beta|
+|[shapeCollection](../excel/shapecollection.md)|_Method_ > [getItemAt(index: number)]((../excel/shapecollection.md#getitematindex-number)|Gets a shape based on its position in the collection.|beta|
+|[shapeDeactivatedEventArgs](../excel/shapedeactivatedeventargs.md)|_Property_ > shapeId|Gets the id of the shape that is deactivated.|beta|
+|[shapeDeactivatedEventArgs](../excel/shapedeactivatedeventargs.md)|_Property_ > type|Gets the type of the event.|beta|
+|[shapeDeactivatedEventArgs](../excel/shapedeactivatedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the shape is deactivated.|beta|
+|[shapeFill](../excel/shapefill.md)|_Property_ > foreColor|Represents the shape fill fore color in HTML color format, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")|beta|
+|[shapeFill](../excel/shapefill.md)|_Property_ > transparency|Returns or sets the degree of transparency of the specified fill as a value from 0.0 (opaque) through 1.0 (clear). For API not supported shape types  or special fill type with inconsistent transparencies, return null. For example, gradient fill type could have inconsistent transparencies.|beta|
+|[shapeFill](../excel/shapefill.md)|_Relationship_ > type|Returns the fill type of the shape. Read-only.|beta|
+|[shapeFill](../excel/shapefill.md)|_Method_ > [clear()]((../excel/shapefill.md#clear)|Clears the fill formatting of a shape object.|beta|
+|[shapeFill](../excel/shapefill.md)|_Method_ > [setSolidColor(color: string)]((../excel/shapefill.md#setsolidcolorcolor-string)|Sets the fill formatting of a shape object to a uniform color, fill type changeing to Solid Fill.|beta|
+|[shapeFont](../excel/shapefont.md)|_Property_ > bold|Represents the bold status of font. Returns null the TextRange includes both bold and non-bold text fragments.|beta|
+|[shapeFont](../excel/shapefont.md)|_Property_ > color|HTML color code representation of the text color. E.g. #FF0000 represents Red. Returns null if the TextRange includes text fragments with different colors.|beta|
+|[shapeFont](../excel/shapefont.md)|_Property_ > italic|Represents the italic status of font. Return null if the TextRange includes both italic and non-italic text fragments.|beta|
+|[shapeFont](../excel/shapefont.md)|_Property_ > name|Represents font name (e.g. "Calibri"). If the text is Complex Script or East Asian language, represents corresponding font name; otherwise represents Latin font name.|beta|
+|[shapeFont](../excel/shapefont.md)|_Property_ > size|Represents font size in points (e.g. 11). Return null if the TextRange includes text fragments with different font sizes.|beta|
+|[shapeFont](../excel/shapefont.md)|_Relationship_ > underline|Type of underline applied to the font. Return null if the TextRange includes text fragments with different underline styles.|beta|
+|[shapeGroup](../excel/shapegroup.md)|_Property_ > id|Represents the shape identifier. Read-only.|beta|
+|[shapeGroup](../excel/shapegroup.md)|_Relationship_ > shape|Returns the shape object for the group. Read-only.|beta|
+|[shapeGroup](../excel/shapegroup.md)|_Relationship_ > shapes|Returns the shape collection in the group. Read-only.|beta|
+|[shapeGroup](../excel/shapegroup.md)|_Method_ > [ungroup()]((../excel/shapegroup.md#ungroup)|Ungroups any grouped shapes in the specified shape group.|beta|
+|[shapeLineFormat](../excel/shapelineformat.md)|_Property_ > color|Represents the line color in HTML color format, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|beta|
+|[shapeLineFormat](../excel/shapelineformat.md)|_Property_ > transparency|Represents the degree of transparency of the specified line as a value from 0.0 (opaque) through 1.0 (clear). Returns null when the shape has mixed line transparency property (e.g. group type of shape).|beta|
+|[shapeLineFormat](../excel/shapelineformat.md)|_Property_ > visible|Represents whether the line formatting of a shape element is visible. Returns null when the shape has mixed line visible property (e.g. group type of shape).|beta|
+|[shapeLineFormat](../excel/shapelineformat.md)|_Property_ > weight|Represents weight of the line, in points. Returns null when the line is not visible or has mixed line weight property (e.g. group type of shape).|beta|
+|[shapeLineFormat](../excel/shapelineformat.md)|_Relationship_ > dashStyle|Represents the line style of the shape. Returns null when line is not visible or has mixed line dash style property (e.g. group type of shape).|beta|
+|[shapeLineFormat](../excel/shapelineformat.md)|_Relationship_ > style|Represents the line style of the shape object. Returns null when line is not visible or has mixed line visible property (e.g. group type of shape).|beta|
+|[slicer](../excel/slicer.md)|_Property_ > caption|Represents the caption of slicer.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > height|Represents the shape, in points, of the slicer.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > id|Represents the unique id of slicer. Read-only.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > isFilterCleared|True if all filters currently applied on the slicer is cleared. Read-only.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > left|Represents the distance, in points, from the left side of the slicer to the left of the worksheet.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > name|Represents the name of slicer.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > nameInFormula|Represents the name used in the formula.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > style|Constant value that represents the Slicer style. Possible values are: SlicerStyleLight1 thru SlicerStyleLight6, TableStyleOther1 thru TableStyleOther2, SlicerStyleDark1 thru SlicerStyleDark6. A custom user-defined style present in the workbook can also be specified.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > top|Represents the distance, in points, from the top edge of the slicer to the right of the worksheet.|beta|
+|[slicer](../excel/slicer.md)|_Property_ > width|Represents the width, in points, of the slicer.|beta|
+|[slicer](../excel/slicer.md)|_Relationship_ > slicerItems|Represents the collection of SlicerItems that are part of the slicer. Read-only.|beta|
+|[slicer](../excel/slicer.md)|_Relationship_ > sortBy|Represents the sort order of the items in the slicer.|beta|
+|[slicer](../excel/slicer.md)|_Relationship_ > worksheet|Represents the worksheet containing the slicer. Read-only.|beta|
+|[slicer](../excel/slicer.md)|_Method_ > [clearFilters()]((../excel/slicer.md#clearfilters)|Clears all the filters currently applied on the slicer.|beta|
+|[slicer](../excel/slicer.md)|_Method_ > [delete()]((../excel/slicer.md#delete)|Deletes the slicer.|beta|
+|[slicer](../excel/slicer.md)|_Method_ > [getSelectedItems()]((../excel/slicer.md#getselecteditems)|Returns an array of selected items' names. Read-only.|beta|
+|[slicer](../excel/slicer.md)|_Method_ > [selectItems(items: string[])]((../excel/slicer.md#selectitemsitems-string)|Select slicer items based on their names. Previous selection will be cleared.|beta|
+|[slicerCollection](../excel/slicercollection.md)|_Property_ > items|A collection of slicer objects. Read-only.|beta|
+|[slicerCollection](../excel/slicercollection.md)|_Method_ > [add(slicerSource: object, sourceField: object, slicerDestination: object)]((../excel/slicercollection.md#addslicersource-object-sourcefield-object-slicerdestination-object)|Adds a new slicer to the workbook.|beta|
+|[slicerCollection](../excel/slicercollection.md)|_Method_ > [getCount()]((../excel/slicercollection.md#getcount)|Returns the number of slicers in the collection.|beta|
+|[slicerCollection](../excel/slicercollection.md)|_Method_ > [getItem(key: string)]((../excel/slicercollection.md#getitemkey-string)|Gets a slicer object using its name or id.|beta|
+|[slicerCollection](../excel/slicercollection.md)|_Method_ > [getItemAt(index: number)]((../excel/slicercollection.md#getitematindex-number)|Gets a slicer based on its position in the collection.|beta|
+|[slicerCollection](../excel/slicercollection.md)|_Method_ > [getItemOrNullObject(key: string)]((../excel/slicercollection.md#getitemornullobjectkey-string)|Gets a slicer using its name or id. If the slicer does not exist, will return a null object.|beta|
+|[slicerItem](../excel/sliceritem.md)|_Property_ > hasData|True if the slicer item has data. Read-only.|beta|
+|[slicerItem](../excel/sliceritem.md)|_Property_ > isSelected|True if the slicer item is selected. Setting this value will not clear other SlicerItems' selected state.|beta|
+|[slicerItem](../excel/sliceritem.md)|_Property_ > key|Represents the unique value representing the slicer item. Read-only.|beta|
+|[slicerItem](../excel/sliceritem.md)|_Property_ > name|Represents the value displayed on UI. Read-only.|beta|
+|[slicerItemCollection](../excel/sliceritemcollection.md)|_Property_ > items|A collection of slicerItem objects. Read-only.|beta|
+|[slicerItemCollection](../excel/sliceritemcollection.md)|_Method_ > [getCount()]((../excel/sliceritemcollection.md#getcount)|Returns the number of slicer items in the slicer.|beta|
+|[slicerItemCollection](../excel/sliceritemcollection.md)|_Method_ > [getItem(key: string)]((../excel/sliceritemcollection.md#getitemkey-string)|Gets a slicer item object using its key or name.|beta|
+|[slicerItemCollection](../excel/sliceritemcollection.md)|_Method_ > [getItemAt(index: number)]((../excel/sliceritemcollection.md#getitematindex-number)|Gets a slicer item based on its position in the collection.|beta|
+|[slicerItemCollection](../excel/sliceritemcollection.md)|_Method_ > [getItemOrNullObject(key: string)]((../excel/sliceritemcollection.md#getitemornullobjectkey-string)|Gets a slicer item using its key or name. If the slicer item does not exist, will return a null object.|beta|
+|[sortField](../excel/sortfield.md)|_Property_ > subField|Represents the subfield that is the target property name of a rich value to sort on.|beta|
+|[table](../excel/table.md)|_Relationship_ > autoFilter|Represents the AutoFilter object of the table. Read-Only. Read-only.|beta|
+|[table](../excel/table.md)|_Method_ > [clearStyle()]((../excel/table.md#clearstyle)|Changes the table to use the default table style.|beta|
+|[tableAddedEventArgs](../excel/tableaddedeventargs.md)|_Property_ > tableId|Gets the id of the table that is added.|beta|
+|[tableAddedEventArgs](../excel/tableaddedeventargs.md)|_Property_ > type|Gets the type of the event.|beta|
+|[tableAddedEventArgs](../excel/tableaddedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the table is added.|beta|
+|[tableAddedEventArgs](../excel/tableaddedeventargs.md)|_Relationship_ > source|Gets the source of the event.|beta|
+|[tableDeletedEventArgs](../excel/tabledeletedeventargs.md)|_Property_ > tableId|Specifies the id of the table that is deleted.|beta|
+|[tableDeletedEventArgs](../excel/tabledeletedeventargs.md)|_Property_ > tableName|Specifies the name of the table that is deleted.|beta|
+|[tableDeletedEventArgs](../excel/tabledeletedeventargs.md)|_Property_ > type|Specifies the type of the event.|beta|
+|[tableDeletedEventArgs](../excel/tabledeletedeventargs.md)|_Property_ > worksheetId|Specifies the id of the worksheet in which the table is deleted.|beta|
+|[tableDeletedEventArgs](../excel/tabledeletedeventargs.md)|_Relationship_ > source|Specifies the source of the event.|beta|
+|[tableFilteredEventArgs](../excel/tablefilteredeventargs.md)|_Property_ > tableId|Represents the id of the table in which the filter is applied..|beta|
+|[tableFilteredEventArgs](../excel/tablefilteredeventargs.md)|_Property_ > type|Represents the type of the event.|beta|
+|[tableFilteredEventArgs](../excel/tablefilteredeventargs.md)|_Property_ > worksheetId|Represents the id of the worksheet which contains the table.|beta|
+|[tableScopedCollection](../excel/tablescopedcollection.md)|_Property_ > items|A collection of tableScoped objects. Read-only.|beta|
+|[tableScopedCollection](../excel/tablescopedcollection.md)|_Method_ > [getCount()]((../excel/tablescopedcollection.md#getcount)|Gets the number of tables in the collection.|beta|
+|[tableScopedCollection](../excel/tablescopedcollection.md)|_Method_ > [getFirst()]((../excel/tablescopedcollection.md#getfirst)|Gets the first table in the collection. The tables in the collection are sorted top to bottom and left to right, such that top left table is the first table in the collection.|beta|
+|[tableScopedCollection](../excel/tablescopedcollection.md)|_Method_ > [getItem(key: string)]((../excel/tablescopedcollection.md#getitemkey-string)|Gets a table by Name or ID.|beta|
+|[textFrame](../excel/textframe.md)|_Property_ > bottomMargin|Represents the bottom margin, in points, of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Property_ > hasText|Specifies whether the TextFrame contains text. Read-only.|beta|
+|[textFrame](../excel/textframe.md)|_Property_ > leftMargin|Represents the left margin, in points, of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Property_ > rightMargin|Represents the right margin, in points, of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Property_ > topMargin|Represents the top margin, in points, of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Relationship_ > autoSize|Gets or sets the auto sizing settings for the text frame. A text frame can be set to auto size the text to fit the text frame, or auto size the text frame to fit the text, or without auto sizing.|beta|
+|[textFrame](../excel/textframe.md)|_Relationship_ > horizontalAlignment|Represents the horizontal alignment of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Relationship_ > horizontalOverflow|Represents the horizontal overflow type of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Relationship_ > orientation|Represents the text orientation of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Relationship_ > readingOrder|Represents the reading order of the text frame, RTL or LTR.|beta|
+|[textFrame](../excel/textframe.md)|_Relationship_ > textRange|Represents the degree of transparency of the specified line as a value from 0.0 (opaque) through 1.0 (clear). Returns null when the shape has mixed line transparency property (e.g. group type of shape). Read-only.|beta|
+|[textFrame](../excel/textframe.md)|_Relationship_ > verticalAlignment|Represents the vertical alignment of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Relationship_ > verticalOverflow|Represents the vertical overflow type of the text frame.|beta|
+|[textFrame](../excel/textframe.md)|_Method_ > [deleteText()]((../excel/textframe.md#deletetext)|Deletes all the text in the textframe.|beta|
+|[textRange](../excel/textrange.md)|_Property_ > text|Represents the plain text content of the text range.|beta|
+|[textRange](../excel/textrange.md)|_Relationship_ > font|Returns a ShapeFont object that represents the font attributes for the text range. Read-only.|beta|
+|[textRange](../excel/textrange.md)|_Method_ > [getCharacters(start: number, length: number)]((../excel/textrange.md#getcharactersstart-number-length-number)|Returns a TextRange object for characters in the given range.|beta|
+|[workbook](../excel/workbook.md)|_Property_ > autoSave|True if the workbook is in auto save mode. Read-only.|beta|
+|[workbook](../excel/workbook.md)|_Property_ > calculationEngineVersion|Returns a number about the version of Excel Calculation Engine. Read-Only. Read-only.|beta|
+|[workbook](../excel/workbook.md)|_Property_ > chartDataPointTrack|True if all charts in the workbook are tracking the actual data points to which they are attached.|beta|
+|[workbook](../excel/workbook.md)|_Property_ > isDirty|True if no changes have been made to the specified workbook since it was last saved.|beta|
+|[workbook](../excel/workbook.md)|_Property_ > previouslySaved|True if the workbook has ever been saved locally or online. Read-only.|beta|
+|[workbook](../excel/workbook.md)|_Property_ > use1904DateSystem|True if the workbook uses the 1904 date system.|beta|
+|[workbook](../excel/workbook.md)|_Property_ > usePrecisionAsDisplayed|True if calculations in this workbook will be done using only the precision of the numbers as they're displayed.|beta|
+|[workbook](../excel/workbook.md)|_Relationship_ > comments|Represents a collection of Comments associated with the workbook. Read-only.|beta|
+|[workbook](../excel/workbook.md)|_Relationship_ > slicers|Represents a collection of Slicers associated with the workbook. Read-only.|beta|
+|[workbook](../excel/workbook.md)|_Method_ > [close(closeBehavior: CloseBehavior)]((../excel/workbook.md#closeclosebehavior-closebehavior)|Close current workbook.|beta|
+|[workbook](../excel/workbook.md)|_Method_ > [getActiveChart()]((../excel/workbook.md#getactivechart)|Gets the currently active chart in the workbook. If there is no active chart, will throw exception when invoke this statement|beta|
+|[workbook](../excel/workbook.md)|_Method_ > [getActiveChartOrNullObject()]((../excel/workbook.md#getactivechartornullobject)|Gets the currently active chart in the workbook. If there is no active chart, will return null object|beta|
+|[workbook](../excel/workbook.md)|_Method_ > [getActiveSlicer()]((../excel/workbook.md#getactiveslicer)|Gets the currently active slicer in the workbook. If there is no active slicer, will throw exception when invoke this statement.|beta|
+|[workbook](../excel/workbook.md)|_Method_ > [getActiveSlicerOrNullObject()]((../excel/workbook.md#getactiveslicerornullobject)|Gets the currently active slicer in the workbook. If there is no active slicer, will return null object|beta|
+|[workbook](../excel/workbook.md)|_Method_ > [getIsActiveCollabSession()]((../excel/workbook.md#getisactivecollabsession)|True if the workbook is being edited by multiple users (co-authoring).|beta|
+|[workbook](../excel/workbook.md)|_Method_ > [getSelectedRanges()]((../excel/workbook.md#getselectedranges)|Gets the currently selected one or more ranges from the workbook. Unlike getSelectedRange(), this method returns a RangeAreas object that represents all the selected ranges.|beta|
+|[workbook](../excel/workbook.md)|_Method_ > [save(saveBehavior: SaveBehavior)]((../excel/workbook.md#savesavebehavior-savebehavior)|Save current workbook.|beta|
+|[workbookAutoSaveSettingChangedEventArgs](../excel/workbookautosavesettingchangedeventargs.md)|_Property_ > type|Represents the type of the event.|beta|
+|[worksheet](../excel/worksheet.md)|_Property_ > enableCalculation|Gets or sets the enableCalculation property of the worksheet.|beta|
+|[worksheet](../excel/worksheet.md)|_Relationship_ > autoFilter|Represents the AutoFilter object of the worksheet. Read-Only. Read-only.|beta|
+|[worksheet](../excel/worksheet.md)|_Relationship_ > comments|Returns a collection of all the Comments objects on the worksheet. Read-only.|beta|
+|[worksheet](../excel/worksheet.md)|_Relationship_ > horizontalPageBreaks|Gets the horizontal page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|beta|
+|[worksheet](../excel/worksheet.md)|_Relationship_ > pageLayout|Gets the PageLayout object of the worksheet. Read-only.|beta|
+|[worksheet](../excel/worksheet.md)|_Relationship_ > shapes|Returns the collection of all the Shape objects on the worksheet. Read-only.|beta|
+|[worksheet](../excel/worksheet.md)|_Relationship_ > slicers|Returns collection of slicers that are part of the worksheet. Read-only.|beta|
+|[worksheet](../excel/worksheet.md)|_Relationship_ > verticalPageBreaks|Gets the vertical page break collection for the worksheet. This collection only contains manual page breaks. Read-only.|beta|
+|[worksheet](../excel/worksheet.md)|_Method_ > [findAll(text: string, criteria: WorksheetSearchCriteria)]((../excel/worksheet.md#findalltext-string-criteria-worksheetsearchcriteria)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|beta|
+|[worksheet](../excel/worksheet.md)|_Method_ > [findAllOrNullObject(text: string, criteria: WorksheetSearchCriteria)]((../excel/worksheet.md#findallornullobjecttext-string-criteria-worksheetsearchcriteria)|Finds all occurrences of the given string based on the criteria specified and returns them as a RangeAreas object, comprising one or more rectangular ranges.|beta|
+|[worksheet](../excel/worksheet.md)|_Method_ > [getRanges(address: string)]((../excel/worksheet.md#getrangesaddress-string)|Gets the RangeAreas object, representing one or more blocks of rectangular ranges, specified by the address or name.|beta|
+|[worksheet](../excel/worksheet.md)|_Method_ > [replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)]((../excel/worksheet.md#replacealltext-string-replacement-string-criteria-replacecriteria)|Finds and replaces the given string based on the criteria specified within the current worksheet.|beta|
+|[worksheetCollection](../excel/worksheetcollection.md)|_Method_ > [addFromBase64(base64File: string, sheetNamesToInsert: string[], positionType: WorksheetPositionType, relativeTo: Worksheet or string)]((../excel/worksheetcollection.md#addfrombase64base64file-string-sheetnamestoinsert-string-positiontype-worksheetpositiontype-relativeto-worksheet-or-string)|Inserts the specified worksheets of a workbook into the current workbook.|beta|
+|[worksheetFilteredEventArgs](../excel/worksheetfilteredeventargs.md)|_Property_ > type|Represents the type of the event.|beta|
+|[worksheetFilteredEventArgs](../excel/worksheetfilteredeventargs.md)|_Property_ > worksheetId|Represents the id of the worksheet in which the filter is applied.|beta|
+|[worksheetFormatChangedEventArgs](../excel/worksheetformatchangedeventargs.md)|_Property_ > address|Gets the range address that represents the changed area of a specific worksheet.|beta|
+|[worksheetFormatChangedEventArgs](../excel/worksheetformatchangedeventargs.md)|_Property_ > type|Gets the type of the event.|beta|
+|[worksheetFormatChangedEventArgs](../excel/worksheetformatchangedeventargs.md)|_Property_ > worksheetId|Gets the id of the worksheet in which the data changed.|beta|
+|[worksheetFormatChangedEventArgs](../excel/worksheetformatchangedeventargs.md)|_Relationship_ > source|Gets the source of the event.|beta|
+|[worksheetSearchCriteria](../excel/worksheetsearchcriteria.md)|_Property_ > completeMatch|Specifies whether the match needs to be complete or partial. Default is false (partial).|beta|
+|[worksheetSearchCriteria](../excel/worksheetsearchcriteria.md)|_Property_ > matchCase|Specifies whether the match is case sensitive. Default is false (insensitive).|beta|
 ## Additional resources
 
 - [Specify Office hosts and API requirements](../../docs/overview/specify-office-hosts-and-api-requirements.md)

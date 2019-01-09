@@ -15,6 +15,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |formulas|object[][]|Represents the formula in A1-style notation.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |formulasR1C1|object[][]|Represents the formula in R1C1-style notation.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|hasSpill|bool|Represents if all cells have a spill border. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |hidden|bool|Represents if all cells of the current range are hidden. Read-only.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |isEntireColumn|bool|Represents if the current range is an entire column. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |isEntireRow|bool|Represents if the current range is an entire row. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
@@ -45,6 +46,7 @@ _See property access [examples.](#property-access-examples)_
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
+|[autoFill(destinationRange: Range or string, autoFillType: AutoFillType)](#autofilldestinationrange-range-or-string-autofilltype-autofilltype)|void|Fills range from the current range to the destination range.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[calculate()](#calculate)|void|Calculates a range of cells on a worksheet.|[1.6](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[convertDataTypeToText()](#convertdatatypetotext)|void|Converts the range cells with datatypes into text.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
@@ -84,12 +86,33 @@ _See property access [examples.](#property-access-examples)_
 |[removeDuplicates(columns: int[], includesHeader: bool)](#removeduplicatescolumns-int-includesheader-bool)|[RemoveDuplicatesResult](removeduplicatesresult.md)|Removes duplicate values from the range specified by the columns.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)](#replacealltext-string-replacement-string-criteria-replacecriteria)|int|Finds and replaces the given string based on the criteria specified within the current range.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[select()](#select)|void|Selects the specified range in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[setCellProperties(cellPropertiesData: CellPropertiesInternal[][])](#setcellpropertiescellpropertiesdata-cellpropertiesinternal)|void|Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[setColumnProperties(columnPropertiesData: CellPropertiesInternal[])](#setcolumnpropertiescolumnpropertiesdata-cellpropertiesinternal)|void|Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[setDirty()](#setdirty)|void|Set a range to be recalculated when the next recalculation occurs.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[setRowProperties(rowPropertiesData: CellPropertiesInternal[])](#setrowpropertiesrowpropertiesdata-cellpropertiesinternal)|void|Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[showCard()](#showcard)|void|Displays the card for an active cell if it has rich value content.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Method Details
 
+
+### autoFill(destinationRange: Range or string, autoFillType: AutoFillType)
+Fills range from the current range to the destination range.
+
+#### Syntax
+```js
+rangeObject.autoFill(destinationRange, autoFillType);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|destinationRange|Range or string|The destination range to autofill. 
+|
+|autoFillType|AutoFillType|Optional. The type of autofill. Specifies how the destination range is to be filled, based on the contents of the current range. Default is "FillDefault".|
+
+#### Returns
+void
 
 ### calculate()
 Calculates a range of cells on a worksheet.
@@ -825,6 +848,34 @@ rangeObject.getSpecialCellsOrNullObject(cellType, cellValueType);
 #### Returns
 [RangeAreas](rangeareas.md)
 
+### getSpillParent()
+Gets the range object containing the anchor cell for a cell getting spilled into. Fails if applied to a range with more than one cell. Read only.
+
+#### Syntax
+```js
+rangeObject.getSpillParent();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Range](range.md)
+
+### getSpillingToRange()
+Gets the range object containing the spill range when called on an anchor cell. Fails if applied to a range with more than one cell. Read only.
+
+#### Syntax
+```js
+rangeObject.getSpillingToRange();
+```
+
+#### Parameters
+None
+
+#### Returns
+[Range](range.md)
+
 ### getSurroundingRegion()
 Returns a Range object that represents the surrounding region for the top-left cell in this range. A surrounding region is a range bounded by any combination of blank rows and blank columns relative to this range.
 
@@ -1078,6 +1129,38 @@ Excel.run(function (ctx) {
 ```
 
 
+### setCellProperties(cellPropertiesData: CellPropertiesInternal[][])
+Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.
+
+#### Syntax
+```js
+rangeObject.setCellProperties(cellPropertiesData);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|cellPropertiesData|CellPropertiesInternal[][]|...|
+
+#### Returns
+void
+
+### setColumnProperties(columnPropertiesData: CellPropertiesInternal[])
+Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.
+
+#### Syntax
+```js
+rangeObject.setColumnProperties(columnPropertiesData);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|columnPropertiesData|CellPropertiesInternal[]|...|
+
+#### Returns
+void
+
 ### setDirty()
 Set a range to be recalculated when the next recalculation occurs.
 
@@ -1088,6 +1171,22 @@ rangeObject.setDirty();
 
 #### Parameters
 None
+
+#### Returns
+void
+
+### setRowProperties(rowPropertiesData: CellPropertiesInternal[])
+Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.
+
+#### Syntax
+```js
+rangeObject.setRowProperties(rowPropertiesData);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|rowPropertiesData|CellPropertiesInternal[]|...|
 
 #### Returns
 void
@@ -1224,4 +1323,3 @@ Excel.run(function (ctx) {
 		}
 });
 ```
-

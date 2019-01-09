@@ -9,7 +9,7 @@ None
 ## Relationships
 | Relationship | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|actionType|[PostProcessActionType](postprocessactiontype.md)|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|actionType|string|Transmits additional data to client side, e.g., worksheetId for TableSelectionChangedEvent. Possible values are: UpdateFilteredFunctionList, UpdateAllFunctionList, None.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## Methods
 None
