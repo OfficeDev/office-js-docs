@@ -86,7 +86,7 @@ slicerCollectionObject.getItemAt(index);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|number|index|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [Slicer](slicer.md)
