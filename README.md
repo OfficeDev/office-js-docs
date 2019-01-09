@@ -24,6 +24,8 @@ Included in this release are more than 400 new APIs for Excel, please refer to a
 
 | Feature Area | Description | Relevant Objects/Articles |
 | --- | --- | --- |
+| Slicer | Insert and configure slicers to tables and pivots   | [Slicer](/reference/excel/slicer.md) |
+| Comments | Add, edit, delete comments  | [Comment](/reference/excel/comment.md), [CommentCollection](/reference/excel/commentCollection.md) |
 | Shapes | Insert, position and format Images, Geometric Shapes and Text boxes. | [ShapeCollection](/reference/excel/shapecollection.md) [Shape](/reference/excel/shape.md) [GeometricShape](/reference/excel/geometrishape.md)  [Image](/reference/excel/image.md) |
 | New Charts | Explore our new supported chart types: maps, box and whisker, waterfall, sunburst, pareto and funnel | [Chart](/reference/excel/chart.md) |
 | Auto Filter | Add filters to ranges, sort, etc. | [Autofilter](/reference/excel/utofilter.md) [Range](/reference/excel/range.md) |
