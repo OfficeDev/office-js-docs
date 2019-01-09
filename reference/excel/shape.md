@@ -11,12 +11,12 @@ Represents a generic shape object in the worksheet.
 |height|double|Represents the height, in points, of the shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |id|string|Represents the shape identifier. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |left|double|The distance, in points, from the left side of the shape to the left of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|level{|int|Represents the level of the specified shape. Level 0 means the shape is not part of any group, level 1 means the shape is part of a top-level group, etc. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|level|int|Represents the level of the specified shape. Level 0 means the shape is not part of any group, level 1 means the shape is part of a top-level group, etc. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |lockAspectRatio|bool|Represents if the aspect ratio locked, in boolean, of the shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Represents the name of the shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |rotation|int|Represents the rotation, in degrees, of the shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |top|double|The distance, in points, from the top edge of the shape to the top of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|visible{|bool|Represents the visibility, in boolean, of the specified shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|visible|bool|Represents the visibility, in boolean, of the specified shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |width|double|Represents the width, in points, of the shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |zOrderPosition|int|Returns the position of the specified shape in the z-order, the very bottom shape's z-order value is 0. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -32,7 +32,7 @@ _See property access [examples.](#property-access-examples)_
 |image|[Image](image.md)|Returns the image for the shape object. Error will be thrown, if the shape object is other shape type (Like, GeometricShape, SmartArt, etc.) rather than Image. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |line|[Line](line.md)|Returns the line object for the shape object. Error will be thrown, if the shape object is other shape type (Like, GeometricShape, SmartArt, etc.) rather than Image. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |lineFormat|[ShapeLineFormat](shapelineformat.md)|Returns the line formatting of the shape object. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|parentGroup{|[Shape](shape.md)|Represents the parent group of the specified shape. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|parentGroup|[Shape](shape.md)|Represents the parent group of the specified shape. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |placement|[Placement](placement.md)|Represents the placment, value that represents the way the object is attached to the cells below it.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |textFrame|[TextFrame](textframe.md)|Returns the textFrame object of a shape. Read only. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |type|string|Returns the type of the specified shape. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
