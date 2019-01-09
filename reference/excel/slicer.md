@@ -7,7 +7,7 @@ Represents a slicer object in the workbook.
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
 |caption|string|Represents the caption of slicer.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|height|double|Represents the shape, in points, of the slicer.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|height|double|Represents the height, in points, of the slicer.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |id|string|Represents the unique id of slicer. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |isFilterCleared|bool|True if all filters currently applied on the slicer is cleared. Read-only.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |left|double|Represents the distance, in points, from the left side of the slicer to the left of the worksheet.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
