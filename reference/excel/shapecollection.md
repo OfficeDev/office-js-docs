@@ -18,7 +18,7 @@ None
 
 | Method		   | Return Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|[addGeometricShape(geometricShapeType: string, left: double, top: double, width: double, height: double)](#addgeometricshapegeometricshapetype-string-left-double-top-double-width-double-height-double)|[Shape](shape.md)|Adds a geometric shape to worksheet. Returns a Shape object that represents the new shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[addGeometricShape(geometricShapeType: string)](#addgeometricshapegeometricshapetype-string)|[Shape](shape.md)|Adds a geometric shape to worksheet. Returns a Shape object that represents the new shape.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[addGroup(values: ()[])](#addgroupvalues-)|[Shape](shape.md)|Group a subset of shapes in a worksheet. Returns a Shape object that represents the new group of shapes.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[addImage(base64ImageString: string)](#addimagebase64imagestring-string)|[Shape](shape.md)|Creates an image from a base64 string and adds it to worksheet. Returns the Shape object that represents the new Image.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[addLine(startLeft: double, startTop: double, endLeft: double, endTop: double, connectorType: string)](#addlinestartleft-double-starttop-double-endleft-double-endtop-double-connectortype-string)|[Shape](shape.md)|Adds a line to worksheet. Returns a Shape object that represents the new line.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
@@ -32,22 +32,18 @@ None
 ## Method Details
 
 
-### addGeometricShape(geometricShapeType: string, left: double, top: double, width: double, height: double)
+### addGeometricShape(geometricShapeType: string)
 Adds a geometric shape to worksheet. Returns a Shape object that represents the new shape.
 
 #### Syntax
 ```js
-shapeCollectionObject.addGeometricShape(geometricShapeType, left, top, width, height);
+shapeCollectionObject.addGeometricShape(geometricShapeType);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |geometricShapeType|string|Represents the geometric type of the shape.|
-|left|double|The distance, in points, from the left side of the shape to the left side of the worksheet.|
-|top|double| The distance, in points, from the top edge of the shape to the top of the worksheet.|
-|width|double|The width, in points, of the shape.|
-|height|double|The height, in points, of the shape.|
 
 #### Returns
 [Shape](shape.md)
