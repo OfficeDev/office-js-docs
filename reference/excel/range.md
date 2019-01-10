@@ -58,9 +58,9 @@ _See property access [examples.](#property-access-examples)_
 |[getAbsoluteResizedRange(numRows: number, numColumns: number)](#getabsoluteresizedrangenumrows-number-numcolumns-number)|[Range](range.md)|Gets a Range object with the same top-left cell as the current Range object, but with the specified numbers of rows and columns.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E15".|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getCellProperties(cellPropertiesLoadOptions: CellPropertiesLoadOptions)](#getcellpropertiescellpropertiesloadoptions-cellpropertiesloadoptions)|[CellProperties[][]](CellProperties[][].md)|Returns a 2D array, encapsulating the data for each cell's font, fill, borders, alignment, and other properties.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCellProperties(cellPropertiesLoadOptions: CellPropertiesLoadOptions)](#getcellpropertiescellpropertiesloadoptions-cellpropertiesloadoptions)|[CellProperties[][]](cellproperties[][].md)|Returns a 2D array, encapsulating the data for each cell's font, fill, borders, alignment, and other properties.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getColumnProperties(columnPropertiesLoadOptions: ColumnPropertiesLoadOptions)](#getcolumnpropertiescolumnpropertiesloadoptions-columnpropertiesloadoptions)|[ColumnProperties[]](ColumnProperties[].md)|Returns a single-dimensional array, encapsulating the data for each column's font, fill, borders, alignment, and other properties.  For properties that are not consistent across each cell within a given column, null will be returned.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnProperties(columnPropertiesLoadOptions: ColumnPropertiesLoadOptions)](#getcolumnpropertiescolumnpropertiesloadoptions-columnpropertiesloadoptions)|[ColumnProperties[]](columnproperties[].md)|Returns a single-dimensional array, encapsulating the data for each column's font, fill, borders, alignment, and other properties.  For properties that are not consistent across each cell within a given column, null will be returned.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumnsAfter(count: number)](#getcolumnsaftercount-number)|[Range](range.md)|Gets a certain number of columns to the right of the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getColumnsBefore(count: number)](#getcolumnsbeforecount-number)|[Range](range.md)|Gets a certain number of columns to the left of the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range (for example, if the current range represents cells "B4:E11", its `getEntireColumn` is a range that represents columns "B:E").|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -74,7 +74,7 @@ _See property access [examples.](#property-access-examples)_
 |[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an error will be thrown.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getResizedRange(deltaRows: number, deltaColumns: number)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Gets a Range object similar to the current Range object, but with its bottom-right corner expanded (or contracted) by some number of rows and columns.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getRowProperties(RowPropertiesLoadOptions: RowPropertiesLoadOptions)](#getrowpropertiesrowpropertiesloadoptions-rowpropertiesloadoptions)|[RowProperties[]](RowProperties[].md)|Returns a single-dimensional array, encapsulating the data for each row's font, fill, borders, alignment, and other properties.  For properties that are not consistent across each cell within a given row, null will be returned.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowProperties(RowPropertiesLoadOptions: RowPropertiesLoadOptions)](#getrowpropertiesrowpropertiesloadoptions-rowpropertiesloadoptions)|[RowProperties[]](rowproperties[].md)|Returns a single-dimensional array, encapsulating the data for each row's font, fill, borders, alignment, and other properties.  For properties that are not consistent across each cell within a given row, null will be returned.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowsAbove(count: number)](#getrowsabovecount-number)|[Range](range.md)|Gets a certain number of rows above the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Gets a certain number of rows below the current Range object.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getSpecialCells(cellType: SpecialCellType, cellValueType: SpecialCellValueType)](#getspecialcellscelltype-specialcelltype-cellvaluetype-specialcellvaluetype)|[RangeAreas](rangeareas.md)|Gets the RangeAreas object, comprising one or more rectangular ranges, that represents all the cells that match the specified type and value. You can check for ConditionalFormats, DataValidations,Blanks,Comments, Constants, Formulas, SameConditionalFormat, SameDataValidation, and Visible|[beta](../requirement-sets/excel-api-requirement-sets.md)|
@@ -393,7 +393,7 @@ rangeObject.getCellProperties(cellPropertiesLoadOptions);
 |cellPropertiesLoadOptions|CellPropertiesLoadOptions|...|
 
 #### Returns
-[CellProperties[][]]
+[CellProperties[][]](cellproperties[][].md)
 
 ### getColumn(column: number)
 Gets a column contained in the range.
@@ -446,7 +446,7 @@ rangeObject.getColumnProperties(columnPropertiesLoadOptions);
 |columnPropertiesLoadOptions|ColumnPropertiesLoadOptions|...|
 
 #### Returns
-[ColumnProperties[]]
+[ColumnProperties[]](columnproperties[].md)
 
 ### getColumnsAfter(count: number)
 Gets a certain number of columns to the right of the current Range object.
@@ -831,7 +831,7 @@ rangeObject.getRowProperties(rowPropertiesLoadOptions);
 |rowPropertiesLoadOptions|RowPropertiesLoadOptions|...|
 
 #### Returns
-[RowProperties[]]
+[RowProperties[]](rowproperties[].md)
 
 ### getRowsAbove(count: number)
 Gets a certain number of rows above the current Range object.
