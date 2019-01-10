@@ -86,10 +86,10 @@ _See property access [examples.](#property-access-examples)_
 |[removeDuplicates(columns: int[], includesHeader: bool)](#removeduplicatescolumns-int-includesheader-bool)|[RemoveDuplicatesResult](removeduplicatesresult.md)|Removes duplicate values from the range specified by the columns.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[replaceAll(text: string, replacement: string, criteria: ReplaceCriteria)](#replacealltext-string-replacement-string-criteria-replacecriteria)|int|Finds and replaces the given string based on the criteria specified within the current range.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[select()](#select)|void|Selects the specified range in the Excel UI.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[setCellProperties(cellPropertiesData: CellPropertiesInternal[][])](#setcellpropertiescellpropertiesdata-cellpropertiesinternal)|void|Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[setColumnProperties(columnPropertiesData: CellPropertiesInternal[])](#setcolumnpropertiescolumnpropertiesdata-cellpropertiesinternal)|void|Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[setCellProperties(cellPropertiesData: SettableCellProperties[][])](#setcellpropertiescellpropertiesdata-settablecellproperties)|void|Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[setColumnProperties(columnPropertiesData: SettableColumnProperties[])](#setcolumnpropertiescolumnpropertiesdata-settablecolumnproperties)|void|Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[setDirty()](#setdirty)|void|Set a range to be recalculated when the next recalculation occurs.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
-|[setRowProperties(rowPropertiesData: CellPropertiesInternal[])](#setrowpropertiesrowpropertiesdata-cellpropertiesinternal)|void|Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
+|[setRowProperties(rowPropertiesData: SettableRowProperties[])](#setrowpropertiesrowpropertiesdata-settablerowproperties)|void|Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.|[beta](../requirement-sets/excel-api-requirement-sets.md)|
 |[showCard()](#showcard)|void|Displays the card for an active cell if it has rich value content.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
 |[unmerge()](#unmerge)|void|Unmerge the range cells into separate cells.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -1129,7 +1129,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### setCellProperties(cellPropertiesData: CellPropertiesInternal[][])
+### setCellProperties(cellPropertiesData: SettableCellProperties[][])
 Updates the range based on a 2D array of cell properties , encapsulating things like font, fill, borders, alignment, and so forth.
 
 #### Syntax
@@ -1140,12 +1140,12 @@ rangeObject.setCellProperties(cellPropertiesData);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|cellPropertiesData|CellPropertiesInternal[][]|...|
+|cellPropertiesData|SettableCellProperties[][]|...|
 
 #### Returns
 void
 
-### setColumnProperties(columnPropertiesData: CellPropertiesInternal[])
+### setColumnProperties(columnPropertiesData: SettableColumnProperties[])
 Updates the range based on a single-dimensional array of column properties, encapsulating things like font, fill, borders, alignment, and so forth.
 
 #### Syntax
@@ -1156,7 +1156,7 @@ rangeObject.setColumnProperties(columnPropertiesData);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|columnPropertiesData|CellPropertiesInternal[]|...|
+|columnPropertiesData|SettableColumnProperties[]|...|
 
 #### Returns
 void
@@ -1175,7 +1175,7 @@ None
 #### Returns
 void
 
-### setRowProperties(rowPropertiesData: CellPropertiesInternal[])
+### setRowProperties(rowPropertiesData: SettableRowProperties[])
 Updates the range based on a single-dimensional array of row properties, encapsulating things like font, fill, borders, alignment, and so forth.
 
 #### Syntax
@@ -1186,7 +1186,7 @@ rangeObject.setRowProperties(rowPropertiesData);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|rowPropertiesData|CellPropertiesInternal[]|...|
+|rowPropertiesData|SettableRowProperties[]|...|
 
 #### Returns
 void
