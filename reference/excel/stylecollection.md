@@ -6,7 +6,7 @@ Represents a collection of all the styles.
 
 | Property	   | Type	|Description| Req. Set|
 |:---------------|:--------|:----------|:----|
-|items|[Style[]](style.md)|A collection of style objects. Read-only.|[1.7](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Style[]](style.md)|A collection of style objects. Read-only.|[1.9](../requirement-sets/excel-api-requirement-sets.md)|
 
 _See property access [examples.](#property-access-examples)_
 
