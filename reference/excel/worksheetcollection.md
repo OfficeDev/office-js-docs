@@ -77,7 +77,7 @@ worksheetCollectionObject.addFromBase64(base64File, sheetNamesToInsert, position
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |base64File|string|Required. Base64 string representing the source workbook.|
-|sheetNamesToInsert|string[]|Optional. Optional. The speified worksheet names to insert. By default it will insert all worksheets from the source workbook.|
+|sheetNamesToInsert|string[]|Optional. Optional. The specified worksheet names to insert. By default it will insert all worksheets from the source workbook.|
 |positionType|WorksheetPositionType|Optional. Optional. Insert position type, see Excel.WorksheetPositionType for details. Default is "Start".|
 |relativeTo|Worksheet or string|Optional. Optional. The referencing worksheet object or worksheet name/id in the current workbook. Default is null and based on the postionType parameter it will insert worksheets at the start or end of the current workbook.|
 
