@@ -1,3 +1,3 @@
-# Open Spec - New Location
+# Word APIs - New Location
 
-We are moving the Word open specifications to the [Word reference API documentation](https://docs.microsoft.com/javascript/api/word). The content in this branch is no longer maintained. Please head to the [office-js-pr-reference](https://github.com/OfficeDev/office-js-docs-reference) repo to leave feedback about new Word APIs.
+The Word preview API documentation is now hosted on [docs.microsoft.com](https://docs.microsoft.com/javascript/api/word). That documentation set is powered by the [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) repo, where you can leave feedback about the Word APIs.
