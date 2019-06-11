@@ -1,3 +1,3 @@
-## Open Spec - New Location
+# Excel APIs - New Location
 
-We are moving the Excel open specifications to the [Excel reference API documentation](https://docs.microsoft.com/javascript/api/excel). The content in this branch is no longer maintained. Please head to the [office-js-pr-reference repo](https://github.com/OfficeDev/office-js-docs-reference) to leave feedback about new Excel APIs.
+The Excel preview API documentation is now hosted on [docs.microsoft.com](https://docs.microsoft.com/javascript/api/excel). That documentation set is powered by the [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) repo, where you can leave feedback about the Excel APIs.
